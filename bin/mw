@@ -12,6 +12,14 @@ $ua->agent('mw-bot $Id$');
 
 dict() if $word = $ARGV[0];
 
+sub log_word {
+	return unless $ENV{'USER'} eq 'cb';
+
+	open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
+	print F "$word\n";
+	close F;
+}
+
 sub lookup {
 	my $req = new HTTP::Request GET => $url;
 
@@ -31,11 +39,7 @@ sub lookup {
 		$data =~ s/.*? found for //s;
 		$data =~ s/<table bgcolor.*//s;
 
-		if($ENV{'USER'} eq 'cb') {
-			open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
-			print F "$word\n";
-			close F;
-		}
+		log_word();
 	} else {
 		# Entry not found
 		$data =~ s/.*?The word you/The word you/s; # dict
@@ -85,9 +89,7 @@ sub leo {
 		$data =~ s/.*?<STRONG>//s;
 		$data =~ s/<td VALIGN.*//s;
 
-		open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
-		print F "$word\n";
-		close F;
+		log_word();
 	} else {
 		# Entry not found
 		$data =~ s/.*?Die Suche nach/Die Suche nach/s;
