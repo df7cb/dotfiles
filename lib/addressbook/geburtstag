@@ -11,13 +11,13 @@ $y = (localtime)[5] + 1900;
 
 while(<>) {
 	addr_get_line($_);
-	next unless $geburtstag;
-	$geburtstag =~ /^(?:(\d+)\.(\d+)\.)?(\d*)$/;
+	next unless $geb_tag;
+	$geb_jahr = " ($geb_jahr)" if $geb_jahr;
 	$z = $zusatz ? "$zusatz " : "";
 
-	print "$2/$1/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
+	print "$geb_mon/$geb_tag/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
 	print "R\t0 0 0 0 1\n";
-	print "N\t$z$vorname $nachname\n";
+	print "N\t$z$vorname $nachname$geb_jahr\n";
 }
 
 #1/13/2000  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0

@@ -1,15 +1,19 @@
 # $Id$
 
-DEPS = addressbook.pm
+DAT = cb.dat
+DEPS = cb.dat addressbook.pm
 ALIASES = $(HOME)/.mutt/aliases.addressbook
 
-all: $(ALIASES) geb.plan abi96.list
+all: do-check $(ALIASES) geb.plan abi96.list
 
-$(ALIASES): cb.dat aliases $(DEPS)
-	./aliases cb.dat > $@
+do-check:
+	-./check $(DAT)
 
-geb.plan: cb.dat geburtstag $(DEPS)
-	./geburtstag cb.dat > $@
+$(ALIASES): aliases $(DEPS)
+	./aliases $(DAT) > $@
 
-abi96.list: cb.dat mailinglist $(DEPS)
-	./mailinglist vdl cb.dat > $@
+geb.plan: geburtstag $(DEPS)
+	./geburtstag $(DAT) > $@
+
+abi96.list: mailinglist $(DEPS)
+	./mailinglist vdl $(DAT) > $@

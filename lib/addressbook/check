@@ -1,0 +1,30 @@
+#!/usr/bin/perl -w
+# $Id$
+
+use lib '.';
+use addressbook;
+
+$exit = 0;
+
+sub check {
+	my $field = shift;
+	my $regexp = shift;
+	return if $$field eq "";	# any field may be empty
+	return if $$field =~ /^($regexp)$/; # check field
+	print "line $.: malformated field $field: $$field, should match $regexp\n";
+	print "line $.: $_";
+	$exit = 1;
+}
+
+$old_nachname = $old_vorname = "";
+while(<>) {
+	addr_get_line($_);
+	if(($old_nachname gt $nachname) or ($old_nachname eq $nachname and $old_vorname gt $vorname)) {
+		print "line $.: out-of-order, file is not sorted\n";
+		print "line $.: $_";
+	}
+	check("geburtstag", '(\d+\.\d+\.)?\d*');
+	($old_nachname, $old_vorname) = ($nachname, $vorname);
+}
+
+exit $exit;
