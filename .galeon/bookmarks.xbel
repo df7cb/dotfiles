@@ -3705,6 +3705,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://scripts.irssi.de/html/centericq.pl.html">
+          <title>/home/stefan/public_html/scripts.irssi.org/scripts/centericq.pl</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061848741</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Sound/Linux</title>
@@ -3859,6 +3867,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1061838869</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.professional.org/procmail/disclaimer.html">
+          <title>Procmail disclaimer</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061848429</time_added>
             </metadata>
           </info>
         </bookmark>
