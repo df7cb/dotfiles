@@ -11,6 +11,10 @@ TEX = latex
 %.ps: %.dvi
 	dvips $<
 
+FIG2DEV = /home/cb/PVS/papers/misc/fig2eps.pl
+%.eps: %.fig
+	$(FIG2DEV) $< $@
+
 dvips: $(patsubst %.dvi, %.ps, $(wildcard *.dvi))
 
 texclean:
