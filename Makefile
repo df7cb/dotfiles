@@ -89,7 +89,7 @@ endif
 
 ifeq ($(shell [ -d .plan.dir ] && echo yes), yes)
 cleanup: .plan.dir/check-plan-running
-COMMITS += .plan.dir/dayplan
+COMMITS += .priv/dayplan
 endif
 .plan.dir/check-plan-running:
 	@[ ! -f .plan.dir/lock.plan ]
