@@ -1,11 +1,12 @@
 #!/usr/bin/perl
 # $Id$
 
-my $targs = "xfv";
-$targs = "xfvz" if $ARGV[0] =~ /gz$/;
-$targs = "xfvj" if $ARGV[0] =~ /bz2$/;
+my $cmd = "tar xfv";
+$cmd = "tar xfvz" if $ARGV[0] =~ /gz$/;
+$cmd = "tar xfvj" if $ARGV[0] =~ /bz2$/;
+$cmd = "unzip" if $ARGV[0] =~ /zip$/;
 
-open T, "tar $targs @ARGV |" or die "tar: $!";
+open T, "$cmd @ARGV |" or die "$cmd: $!";
 $_ = <T> || 0 or exit 1;
 ($prefix) = m|(.+)/|;
 print STDERR;
