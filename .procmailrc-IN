@@ -14,9 +14,30 @@ DEFAULT=mail/IN/cb
 #* ^TO_((berg|chbe0025)@|(cb|df7cb)@fsinfo)
 #mail/IN/old-addresses
 
+#:0
+#* ^To: cb\+ai
+#|/home/cb/lib/smartlist/.bin/flist ai
+#:0
+#* ^To: cb\+ai-request
+#|/home/cb/lib/smartlist/.bin/flist ai-request
+
+:0
+* ^To: cb\+minimalist
+|/home/cb/lib/minimalist/minimalist.pl
+:0
+* ^To: cb\+list
+* !^X-BeenThere:
+|/home/cb/lib/minimalist/minimalist.pl list
+
 :0fhw
 * !^Status:
 * ^From: Christoph Berg.*cb@
+| formail -i"Status: RO"
+
+# killfile
+:0fhw
+* !^Status:
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org)>
 | formail -i"Status: RO"
 
 #:0fhw
@@ -53,11 +74,11 @@ mail/IN/debian-bts
 
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
-* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: )
+* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*katie@ftp-master.debian.org)
 mail/IN/debian
 
 :0:
-* ^List-Id: .*asta.uni-saarland.de
+* ^List-Id: .*(asta.uni-saarland.de|bridge-runde.lists.mawan.de)
 $DEFAULT
 
 :0:
