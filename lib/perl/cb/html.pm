@@ -76,15 +76,15 @@ sub yymmdd2ymd {
 
 sub yymmdd2txt {
 	my ($y, $m, $d) = yymmdd2ymd(shift);
-	my @month = ("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
+	my @month = ("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 	return $y if $m == 0;
 	return "$month[$m - 1] $y" if $d == 0;
 	return "$d. $month[$m - 1] $y";
 }
 
-sub yymmdd2txtlatin1 { # kann irgendwann gelöscht werden
-	return yymmdd2txt(shift);
-}
+#sub yymmdd2txtlatin1 { # kann irgendwann geloescht werden
+#	return yymmdd2txt(shift);
+#}
 
 
 sub encode_special {
