@@ -12,6 +12,7 @@ if [ -z "$OS" ] ; then
 		FreeBSD*86)	OS="freebsd-intel" ;;
 		NetBSD*sparc)	OS="netbsd-sparc" ;;
 		IRIX*5*IP*)	OS="irix-sgi" ;;
+		CYGWIN*86)	OS="cygwin-intel" ;;
 		*)		OS="unknown" 
 				echo "os: warning: os type unknown" 1>&2 ;;
 	esac

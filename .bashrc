@@ -9,7 +9,7 @@ case $TERM in
 linux*|*vt100*|screen*|cons25)
 	PS1='\n[\[\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\] \$' 
 	LSCOLOR='--color=auto' ;;
-xterm*|rxvt)
+xterm*|rxvt|cygwin)
 	PS1='\n[\[\033]0;\u@\h:\w\007\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\] \$' 
 	[ "$console" ] && PS1='[\[\033]0;console@\h:\w\007\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\] \$'
 	LSCOLOR='--color=auto' ;;
