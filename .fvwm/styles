@@ -1,0 +1,126 @@
+# $Id$
+
+###############################################################################
+#   window buttons                                                            #
+#   1 3 5 7 9  0 8 6 4 2                                                      #
+###############################################################################
+
+# Dot for Zapp
+ButtonStyle 3 5 50x50@0 40x50@0 40x40@1 50x40@1 50x50@0
+
+# Box for Raise
+ButtonStyle 0 5 20x20@1 80x20@1 80x80@0 20x80@0 20x20@1
+
+# Cross for Stick
+ButtonStyle 8 13 20x60@1 20x40@1 40x40@1 40x20@1 60x20@1 60x40@0 80x40@1 80x60@0 60x60@0 60x80@0 40x80@0 40x60@1 20x60@0
+
+# Bar for Shade
+ButtonStyle 6 5 20x40@1 20x20@1 80x20@1 80x40@0 20x40@0
+
+# Large down Triangle for Iconify
+ButtonStyle 4 4 50x74@1 25x24@1 75x24@1 50x74@0
+
+# Large up Triangle for Maximize
+ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
+
+###############################################################################
+#   colors and fonts                                                          #
+###############################################################################
+
+# Text and background color for the title bar of the selected window
+#HilightColor 		yellow #c06077
+HilightColor 		red2 LightGreen
+
+Style	"*"		ForeColor Black
+Style	"*"		BackColor LightSkyBlue
+
+# Style for fonts is
+#-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng
+#
+
+# Menu colors and font
+#         bg    fg   disabled  font           sub-menu-style
+MenuStyle Black Grey LightGrey \
+	-misc-fixed-medium-r-normal-*-15-*-75-75-c-90-iso8859-1 fvwm
+
+# Now the common fonts - one for window titles, another for icons
+#WindowFont	-misc-fixed-bold-r-normal-*-13-*-75-75-c-80-iso8859-1
+WindowFont	-*-lucida-bold-r-*-*-14-*-*-*-*-*-iso8859-*
+IconFont	-misc-fixed-medium-r-normal-*-10-*-75-75-c-60-iso8859-1
+
+
+###############################################################################
+#   style options for modules and programs                                    #
+###############################################################################
+
+Style  "*"		BorderWidth 5, HandleWidth 5
+Style  "*"              Icon small.Template.xpm
+
+Style	"*"		SloppyFocus
+
+Style	"*"		SmartPlacement, RandomPlacement
+
+# decorations for transient windows
+Style	"*"		DecorateTransient
+#Style	"*"		NakedTransient
+
+# flat window borders when inactive
+BorderStyle Inactive -- HiddenHandles NoInset
+
+# where icons will be placed
+Style   "*"     IconBox +515 -95 -0 -0
+# icons are reachable in every virtual screen
+Style	"*"		StickyIcon
+#Style	"*"		SmartPlacement, RandomPlacement, ActivePlacement
+Style	"*"		NoPPosition
+
+# fvwm stuff
+Style  "FvwmPager"	NoTitle, Sticky, WindowListSkip
+Style  "FvwmButtons"	NoTitle, Sticky, WindowListSkip
+Style  "FvwmBanner"	NoTitle, Sticky, StaysOnTop, WindowListSkip
+Style  "FvwmWinList"	NoTitle, WindowListSkip, NakedTransient
+Style  "IconManModule"	NoTitle, Sticky, NoHandles, Icon toolbox.xpm
+
+# .xinitrc stuff
+Style	"console*"	Sticky, WindowListSkip
+Style	"coolmail"	NoTitle, Sticky, WindowListSkip
+Style	"*clock*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
+Style	"xclock"	StaysOnTop
+Style	"xeyes"		NoTitle, Sticky, WindowListSkip
+Style	"xmeter"	NoTitle, Sticky, WindowListSkip
+Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition, WindowListSkip
+Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
+
+# general
+#Style	"root*"		BackColor Red
+Style	"xv 3*"		NoTitle
+Style	"VNC*"		HandleWidth 0, NoTitle
+#Style	Netscape*	StartsOnPage 0 1, SkipMapping
+
+Style	"xterm"		Icon Terminal.xpm
+Style	"emacs*"	Icon DTP.xpm
+Style	"xconsole"	Icon clipboard_3d.xpm
+Style	"dsk_*"		Icon FileManager.xpm
+Style	"TkMan"		Icon library_3d.xpm
+Style	"Xman"		Icon xman3d.xpm
+Style	"Root"		Icon Diavolo.xpm
+Style	"xv*"		Icon xv.color.xpm 
+
+#Style  "xclock"		BackColor Grey
+
+# these are needed for the placement of the items in
+# the button bar
+#Style	"coolmail"	SmartPlacement, RandomPlacement
+#Style	"xeyes"		SmartPlacement, RandomPlacement
+#Style	"xclock"	SmartPlacement, RandomPlacement
+
+
+
+###############################################################################
+#   MWM emulation                                                             #
+###############################################################################
+# (view the original comment from .fvwm2rc)
+# mwm-style border reliefs (less deep than default fvwm) ?
+# Maximize button does mwm-inversion thingy
+
+Style "*" MWMBorder, MWMDecor, HintOverride, MWMFunctions, MWMButtons 

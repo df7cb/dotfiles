@@ -62,4 +62,4 @@ ifelse(HEIGHT, 480,
 )
 +		""		Nop
 
-include(.fvwm2rc-menus)
+include(.fvwm2/menus)

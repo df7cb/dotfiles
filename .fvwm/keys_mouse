@@ -1,0 +1,180 @@
+# $Id$
+
+###############################################################################
+#   key bindings                                                              #
+###############################################################################
+
+Key	Space	A	M	Popup WindowOps
+Key	Pause	A	N	Exec dpmsoff
+Key	Pause	A	S	Exec dpmsoff blank
+
+# cursor combinations for paging
+Key	Left	A	CS	Scroll -100 +0
+Key	Right	A	CS	Scroll +100 +0
+Key	Up	A	CS	Scroll +0   -100
+Key	Down	A	CS	Scroll +0   +100
+
+Key	Insert	A	CS	GotoPage 0 0
+Key	Home	A	CS	GotoPage 1 0
+Key	Prior	A	CS	GotoPage 2 0
+Key	Delete	A	CS	GotoPage 0 1
+Key	End	A	CS	GotoPage 1 1
+Key	Next	A	CS	GotoPage 2 1
+
+Key	q	A	4	GotoPage 0 0
+Key	w	A	4	GotoPage 1 0
+Key	e	A	4	GotoPage 2 0
+Key	a	A	4	GotoPage 0 1
+Key	s	A	4	GotoPage 1 1
+Key	d	A	4	GotoPage 2 1
+Key	z	A	4	GotoPage 0 2
+Key	x	A	4	GotoPage 1 2
+Key	c	A	4	GotoPage 2 2
+
+#Key	Home	A	C	Next [*-lo] WarpToWindow 11p 11p
+#Key	Prior	A	C	Next [*-ro] WarpToWindow 11p 11p
+#Key	End	A	C	Next [*-lu] WarpToWindow 11p 11p
+#Key	Next	A	C	Next [*-ru] WarpToWindow 11p 11p
+
+Key	Insert	A	C	JumpWindow 0 -88
+Key	Home	A	C	JumpWindow 0 -88
+Key	Prior	A	C	JumpWindow 50 -88
+Key	Delete	A	C	JumpWindow 0 -43
+Key	End	A	C	JumpWindow 0 -43
+Key	Next	A	C	JumpWindow 50 -43
+
+Key	k	A	4	JumpWindow 0 -88
+Key	l	A	4	JumpWindow 50 -88
+Key	comma	A	4	JumpWindow 0 -43
+Key	period	A	4	JumpWindow 50 -43
+Key	comma	A	C4	JumpWindow 11 0
+Key	period	A	C4	JumpWindow 50 0
+Key	End	A	4	JumpWindow 11 0
+Key	Next	A	4	JumpWindow 50 0
+
+Key	Insert	A	CSM	Function XTermLO
+Key	Home	A	CSM	Function XTermLO
+Key	Prior	A	CSM	Function XTermRO
+Key	Delete	A	CSM	Function XTermLU
+Key	End	A	CSM	Function XTermLU
+Key	Next	A	CSM	Function XTermRU
+
+Key	k	A	S4	Function XTermLO
+Key	l	A	S4	Function XTermRO
+Key	comma	A	S4	Function XTermLU
+Key	period	A	S4	Function XTermRU
+
+Key	Left	A	C	CursorMove -10 +0
+Key	Right	A	C	CursorMove +10 +0
+Key	Up	A	C	CursorMove +0 -10
+Key	Down	A	C	CursorMove +0 +10
+
+Key	semicolon A	4	CursorMove -10 +0
+Key	apostrophe A	4	CursorMove +10 +0
+Key	bracketleft A	4	CursorMove +0 -10
+Key	slash	A	4	CursorMove +0 +10
+
+Key	semicolon A	S4	CursorMove -1 0
+Key	apostrophe A	S4	CursorMove +1 +0
+Key	bracketleft A	S4	CursorMove +0 -1
+Key	slash	A	S4	CursorMove +0 +1
+
+# window ops
+# Sun keys
+Key	SunFront A	A	Raise
+
+# Meta keys
+Key	r	A	4	RaiseLower
+Key	r	A	S4	Resize
+Key	s	A	S4	Resize
+Key	x	A	S4	Close
+Key	m	A	4	Move
+Key	f	A	4	Function Maximize0100
+Key	f	A	S4	Function Maximize100100
+Key	f	A	C4	Function Maximize1000
+
+Key	1	A	4	Menu Main
+Key	2	A	4	Menu WindowOps
+Key	3	A	4	WindowList
+
+Key	Tab	A	4	Next [*] focus
+Key	Tab	A	S4	Prev [*] focus
+
+#Key	BackSpace A	CM	Function Quit
+
+# F keys
+Key	F1	A	N	Menu Main
+Key	F2	A	N	Menu WindowOps
+Key	F3	A	N	WindowList
+Key	F4	A	M	Close
+Key	F5	A	N	RaiseLower
+Key	F6	A	N	WindowShade
+Key	F7	A	N	Iconify
+Key	F8	A	N	Move
+Key	F9	A	N	Resize
+Key	F10	A	N	Function Maximize0100
+Key	F11	A	N	Function Maximize100100
+Key	F12	A	N	Function Maximize1000
+
+
+###############################################################################
+#   mouse bindings for fvwm2                                                  #
+###############################################################################
+# just to remember the syntax for the mouse bindings:
+# 
+#Mouse 	Button	Context	Modifiers Function
+#       1,2,3,0	IFRSTW	CSMA	  anything
+#
+# context:      I       icon
+#               R       root window
+#               F       frame (the corner handles)
+#               S       sides (top, sides, bottom)
+#               T       title bar
+#               W       application window
+#		0..9	title buttons
+#		A	Any
+
+# root menu bindings for fvwm2 and fvwm95
+Mouse	1	R	A	Popup Main		
+Mouse	2	R	A	Popup WindowOps
+Mouse	3	R	A	WindowList
+				#FvwmWinList Transient
+
+Mouse	1	TW	CM	RaiseLower
+Mouse	2	A	CM	Move
+Mouse	3	TW	CM	Close
+
+Mouse	1	TW	4	RaiseLower
+Mouse	2	A	4	Move
+Mouse	3	TW	4	Close
+
+# title, side, frame
+Mouse	1	T	A	Function "MoveOrRaise"
+Mouse	1	 SF	A	Function "ResizeOrRaise"
+Mouse	2	TSF	A	Move
+Mouse	3	TSF	A	RaiseLower
+
+# clicking on  the icon
+Mouse	1	I	A	Function "MenuOrIconify"
+Mouse	2	I	A	Iconify
+Mouse	3	I	A	RaiseLower
+
+# the title buttons
+# left side (13579)
+Mouse	0	1	A	Function MenuOrClose
+Mouse	1	3	A	Close
+Mouse	2	3	A	Close
+Mouse	3	3	A	Destroy
+
+# right side (08642)
+Mouse	1	0	A	RaiseLower
+Mouse	2	0	A	Raise
+Mouse	3	0	A	Lower
+Mouse	0	8	A	Stick
+Mouse	1	6	A	Function ShadeRaise	# toggle
+Mouse	2	6	A	WindowShade 1		# on
+Mouse	3	6	A	WindowShade 2		# off
+Mouse	0	4	A	Iconify
+Mouse	1	2	A	Function Maximize0100
+Mouse	2	2	A	Function Maximize100100
+Mouse	3	2	A	Function Maximize1000
