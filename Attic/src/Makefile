@@ -1,5 +1,6 @@
+# $Id$
 CC = gcc
-CFLAGS = -Wall -O2
+CFLAGS = -Wall -O2 -I/usr/X11R6/include
 LDFLAGS = -s -L/usr/X11R6/lib -lX11
 TARGETS = xkbd
 BINOSDIR = $(HOME)/bin/$(OS)
