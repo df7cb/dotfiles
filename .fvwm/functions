@@ -37,7 +37,7 @@ AddToFunc ShadeRaise	"I"	WindowShade
 +			"I"	Raise
 
 AddToFunc MoveOrRaise	"Click"	RaiseLower
-#+	"Motion"	Raise 
++	"Motion"	Raise 
 +	"Motion"	Move 
 +	"DoubleClick"	Function ShadeRaise
 
