@@ -1,6 +1,6 @@
 #!/bin/sh
 # $Id$
-set -v
+#set -v
 
 cd $HOME
 
@@ -27,6 +27,8 @@ type -p pland > /dev/null && pland -k &
 SHLVL=-1
 
 [ -f ~/.xsession-local ] && . ~/.xsession-local
+
+echo "DISPLAY=$DISPLAY" > .display
 
 # write ssh-agent info to file
 if [ $SSH_AUTH_SOCK ] ; then

@@ -1,13 +1,40 @@
+LOGFILE=lib/mail/procmail.log
+LOGABSTRACT=all
+
 #:0 c
 #.mail-backup
+
+#:0c:
+#* ^TO_((berg|chbe0025)@|(cb|df7cb)@fsinfo)
+#mail/IN/old-addresses
+
+:0
+* ^From: BugScan reporter <bugscan@debian.org>
+{
+	:0chw
+	| mv -f debian/rc-bugs debian/rc-bugs.old
+	:0:
+	debian/rc-bugs
+}
+
+:0
+* ^From:.*wnpp@debian.org
+* ^X-Mailer: maintainers-needed.pl
+{
+	:0chW
+	| mv -f debian/wnpp debian/wnpp.old
+	:0:
+	debian/wnpp
+}
 
 :0:
 * ^X-Mailing-List: .*debian-user-german
 #* ^To: .*debian
 mail/IN/debian-user-german
 
+#Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
-* ^X-Mailing-List: .*debian
+* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org)
 #* ^To: .*debian
 mail/IN/debian
 
@@ -16,7 +43,7 @@ mail/IN/debian
 mail/IN/fsinfo
 
 :0:
-* ^(Subject: .*\[Linux-sony\]|Sender: owner-mutt-.*@mutt.org|Mailing-List: .*vim-.*@vim.org|List-Id: <irssi-users.dragoncat.net>|X-BeenThere: aspell)
+* ^(Subject: .*\[Linux-sony\]|Sender: owner-mutt-.*@mutt.org|Mailing-List: .*vim-.*@vim.org|List-Id: |X-BeenThere: aspell|List-Owner:.*cert.org)
 mail/IN/lists
 
 :0:

@@ -1,13 +1,13 @@
 #!/bin/sh
 
 if [ -z "$1" ] ; then
-	set *\ *
+	set *
 fi
 
 for f in "$@" ; do
-	f2=`echo "$f" | tr ' ' _`
+	f2=`echo "$f" | tr ' ™šá„”' '_ÄÖÜßäöü'`
 	if [ "$f" = "$f2" ] ; then
-		echo "$f: no change"
+		#echo "$f: no change"
 		continue
 	fi
 	mv -iv "$f" "$f2"

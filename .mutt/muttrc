@@ -16,20 +16,23 @@ bind	index	<esc><tab> previous-unread
 bind	pager	<esc><tab> previous-unread
 bind	index	<tab>	next-unread
 bind	pager	<tab>	next-unread
-bind	index	\#	delete-message
-bind	pager	\#	delete-message
+bind	index	^	link-threads
+bind	pager	^	link-threads
 bind	index	*	toggle-new	# this should be mark-as-new :-/
 bind	pager	*	mark-as-new	# this should be toggle-new :-/
 macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
-macro	generic	d	s=deleted<return>	'Move message to trash folder'
-macro	index	d	s=deleted<return>	'Move message to trash folder'
-macro	pager	d	s=deleted<return>	'Move message to trash folder'
-macro	index	\cd	'<esc>t;d'	'Move all messages in thread to trash folder'
+#macro	generic	d	s=deleted<return>	'Move message to trash folder'
+#macro	index	d	s=deleted<return>	'Move message to trash folder'
+#macro	pager	d	s=deleted<return>	'Move message to trash folder'
+#macro	index	\cd	'<esc>t;d'	'Move all messages in thread to trash folder'
+bind	index	D	purge-message
+bind	pager	D	purge-message
 bind	index	G	last-entry
 bind	pager	G	bottom
 bind	generic	N	search-opposite
 bind	index	N	search-opposite
 bind	pager	N	search-opposite
+#macro	index	S	|sa-spam<enter>\#	'Nachricht an sa-spam schicken'
 bind	browser	v	view-file
 bind	index	x	sync-mailbox
 bind	pager	x	sync-mailbox
@@ -41,10 +44,9 @@ macro	compose	=	f=		'Fcc to ~/mail/'
 bind	compose	v	view-attach
 
 # headers
-#my_hdr fcc: bla
 ignore Importance # M$
 ignore Organisation Organization # stuff
-ignore Mail-Followup-To # mailing lists
+#ignore Mail-Followup-To # mailing lists
 ignore X-BeenThere X-Mailman List- # mailman
 ignore Delivered-To Precedence X-Loop Errors-To # mailman (video4linux)
 ignore X-Envelope-From X-Envelope-To Path Newsgroups NNTP-Posting-Host X-Trace # NNTP->Mail postings
@@ -52,20 +54,31 @@ ignore X-Bulkmail # tagesschau.de
 ignore X-Cron-Env # cron
 ignore X-MIME-Autoconverted Auto-Submitted # sendmail
 ignore X-Spam-Level X-Keywords X-UID X-Spam-Checker-Version X-Spam-Status # spamassassin
+ignore X-Virus-Scanned X-Scanned-By X-AntiVirus # scanners
 ignore X-Mailer X-Accept-Language # Mozilla
 ignore User-Agent # slrn
-ignore X-Sender, X-X-Sender # t-dialin.net, crap
+ignore X-Sender X-X-Sender # t-dialin.net, crap
+ignore Old-Return-Path Resent-Message-ID Resent-From X-Mailing-List Resent-Sender Resent-Date # lists.debian.org
+ignore Original-Sender Resent-To Resent-Cc # bugs.debian.org
+#unignore X-Debian-PR-Message
+ignore X-PTS- X-Unsubscribe # packages.qa.debian.org
+ignore X-Cookie X-Operating X-Sheldon X-Url # various induhviduals
+
 unignore Date
+unhdr_order *
+hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
 
 # options
 #set abort_nosubject
 set abort_unmodified=ask-yes
 set alias_file=~/.mutt/aliases
-set alternates=^cb@.*uni-sb.de$
+set alternates="^cb@((heim-d|cs).uni-sb|df7cb).de$"
 set attribution="Re: %s [%f, %d, %i]"
+set auto_tag
 unset beep
 #set beep_new
 unset bounce_delivered
+unset collapse_unread
 unset confirmappend
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c '/^$'"
@@ -76,10 +89,12 @@ set folder="~/mail"
 set forward_format="%s (fwd)"
 unset help
 set hidden_host
-set index_format="%3C %Z %4c %[%b %e %k:%M] %-15.15L %s"
+#set index_format="%3C %Z %4c %[%b %e %k:%M] %-15.15F %s"
 set ispell="aspell --lang=de check"
 #set locale="de_DE.ISO-8859-1"
+unset markers
 set menu_scroll
+set mime_forward=ask-yes
 unset move
 set pager_index_lines=5
 set pager_stop
@@ -89,14 +104,19 @@ set pgp_sign_as="0x6D8ABE71"
 set pgp_timeout=14400
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
+set quit=ask-yes
+set quote_regexp="^([ 	]*[|>:}%])+|^[a-zA-Z]{,9}>"
 set record="=sent-mail"
+set rfc2047_parameters
 #unset save_empty
 set sendmail_wait=5
 unset sig_dashes
+set status_format="-%r-Mutt: %f%?V?[%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
 set status_on_top
 set sort=threads
 set tilde
 set timeout=30
+set trash="=trash"
 set use_domain
 set use_from
 unset write_bcc
@@ -111,7 +131,6 @@ color hdrdefault cyan default
 color indicator default cyan
 color markers   green default
 color message	cyan default
-color quoted    green default
 color signature cyan default
 color status    brightgreen blue
 color tilde     blue default
@@ -119,16 +138,26 @@ color tree      red default
 color underline	brightdefault default
 
 color index	blue default ~p
+color index	green default ~P
+color index	cyan default ~v
 color index	brightdefault default ~T
 color index	brightdefault default ~F
+color index	green default "~t debian-news"
+color index	default red "~t debian-security-announce"
 
-color header    brightgreen default ^From:
-color header    brightcyan default ^To:
-color header    brightcyan default ^Reply-To:
-color header    brightcyan default ^Cc:
+color header    brightdefault default ^From:
+color header    blue default ^(Date|To|Reply-To|Cc):
 color header    brightred default ^Subject:
+color quoted	green default
+color quoted1	cyan default
+color quoted2	blue default
+color quoted3	red default
 color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 color body      blue default (https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+
+#color body	cyan default "^> >.*"
+
+source ~/.mutt/hooks
+source ~/.mutt/lists
 
 # local configuration options
 source ~/.mutt/muttrc.local
