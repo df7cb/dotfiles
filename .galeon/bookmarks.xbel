@@ -104,7 +104,7 @@
       </bookmark>
     </folder>
   </folder>
-  <folder folded="no">
+  <folder folded="yes">
     <title>bookmarks</title>
     <info>
       <metadata owner="http://galeon.sourceforge.net/">
@@ -281,7 +281,7 @@
             <time_added>961116962</time_added>
           </metadata>
         </info>
-        <folder folded="no">
+        <folder folded="yes">
           <title>2000</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -305,7 +305,7 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>2001</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -377,7 +377,7 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>2002</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -457,14 +457,6 @@
             <time_added>976822967</time_added>
           </metadata>
         </info>
-        <bookmark href="http://www-wjp.cs.uni-sb.de/">
-          <title>WJP</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>934039328</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://infobib.cs.uni-sb.de/">
           <title>Fachbereichsbibliothek Informatik</title>
           <info>
@@ -489,6 +481,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/">
+          <title>WJP</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934039328</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://www.rz.uni-saarland.de/">
           <title>Rechenzentrum</title>
           <info>
@@ -506,17 +506,19 @@
           </info>
         </bookmark>
         <bookmark href="http://www.zbi.uni-saarland.de/">
-          <title>Zentrum f&#239;&#191;&#189;r Bioinformatik Saar</title>
+          <title>Bioinformatik</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1039105591</time_modified>
               <time_added>993320976</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://www.szsb.uni-sb.de/frameset.html">
-          <title>Sprachenzentrum Saarbr&#239;&#191;&#189;cken (SZSB)</title>
+          <title>Sprachenzentrum</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1039105595</time_modified>
               <time_added>1005495448</time_added>
             </metadata>
           </info>
@@ -543,14 +545,6 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>986472836</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www-wjp.cs.uni-sb.de/~tante/tebank.html">
-          <title>Tante Emma Online Banking</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>987593978</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -747,14 +741,6 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/i2.html">
-          <title>http://www-wjp.cs.uni-sb.de/~cb/i2.html</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>957574383</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www.cert.org/research/JHThesis/Start.html">
           <title>CERT&#239;&#191;&#189; Coordination Center Research</title>
           <info>
@@ -858,7 +844,7 @@
               </metadata>
             </info>
           </bookmark>
-          <folder folded="no">
+          <folder folded="yes">
             <title>PVS Resources</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -930,7 +916,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>PVS People</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -970,7 +956,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Other Theorem Provers</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1019,14 +1005,14 @@
             </bookmark>
           </folder>
           <separator/>
-          <folder folded="no">
+          <folder folded="yes">
             <title>L4</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
                 <time_added>1003761393</time_added>
               </metadata>
             </info>
-            <folder folded="no">
+            <folder folded="yes">
               <title>Other Microkernels</title>
               <info>
                 <metadata owner="http://galeon.sourceforge.net/">
@@ -1059,7 +1045,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Software Verification</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1375,6 +1361,57 @@
           </metadata>
         </info>
       </bookmark>
+    </folder>
+    <folder folded="yes">
+      <title>RW</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <pixmap>.galeon/favicons/rw4.gif</pixmap>
+          <time_modified>1039106763</time_modified>
+          <time_added>1039105640</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://rw4.cs.uni-sb.de/">
+        <title>Lehrstuhl Wilhelm</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1039105691</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <folder folded="yes">
+        <title>PowerPC</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1039105662</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www-106.ibm.com/developerworks/library/l-ppc/">
+          <title>developerWorks: Linux : PowerPC assembly</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1039105675</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.lightsoft.co.uk/Fantasm/Beginners/begin1.html">
+          <title>Beginners Guide to PowerPC Assembly Language</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1039179784</time_modified>
+              <time_added>1039179770</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://linuxassembly.org/resources.html">
+          <title>Linux Assembly: resources</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1039179968</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Boerse</title>
@@ -2854,7 +2891,7 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>IRC</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
