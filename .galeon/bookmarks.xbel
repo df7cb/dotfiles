@@ -3066,6 +3066,14 @@
             </info>
           </bookmark>
         </folder>
+        <bookmark href="https://www.dyndns.org/services/statdns/">
+          <title>DynDNS.org -- Services -- Static DNS</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1049791458</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>AFu</title>
@@ -3624,6 +3632,53 @@
       </folder>
     </folder>
     <folder folded="yes">
+      <title>Debian</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <pixmap>/RW/users/cb/.galeon/favicons/debian.gif</pixmap>
+          <time_modified>1049805591</time_modified>
+          <time_added>1049805263</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://www.debian.org">
+        <title>Debian</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1049805540</time_modified>
+            <time_added>1042724966</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.debian.org">
+        <title>Debian Packages</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1049805546</time_modified>
+            <time_added>1042724966</time_added>
+            <smarturl>http://packages.debian.org/cgi-bin/search_packages.pl?keywords=%s&amp;searchon=names&amp;version=all&amp;release=all</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.debian.org">
+        <title>Debian Bugs</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1049805500</time_modified>
+            <time_added>1042724966</time_added>
+            <smarturl>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.linuxgazette.com/issue89/gonzales.html">
+        <title>Security Administration with Debian GNU/Linux LG #89</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1049891476</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="yes">
       <title>Zeug</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
@@ -3631,14 +3686,6 @@
           <time_added>976823097</time_added>
         </metadata>
       </info>
-      <bookmark href="https://members.dyndns.org/nic/statdns/">
-        <title>members.DynDNS.org -- NIC -- Static DNS</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1033942999</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <folder folded="yes">
         <title>Meine Homepages</title>
         <info>
@@ -4077,6 +4124,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1026821983</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.stud.ntnu.no/~shane/stasj/div_bilder/">
+          <title>Index of Pictures</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1049901835</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -5330,16 +5385,6 @@
           <time_modified>1042548640</time_modified>
           <time_added>1042548584</time_added>
           <smarturl>http://citeseer.nj.nec.com/cs?q=%s</smarturl>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="http://www.debian.org">
-      <title></title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1042735951</time_modified>
-          <time_added>1042724966</time_added>
-          <smarturl>http://packages.debian.org/cgi-bin/search_packages.pl?keywords=%s&amp;searchon=names&amp;version=all&amp;release=all</smarturl>
         </metadata>
       </info>
     </bookmark>
