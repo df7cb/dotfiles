@@ -8,16 +8,16 @@ source ~/.zshkeys
 case $TERM in
 linux*|*vt100*|screen*|cons25)
 	prompt="
-[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%40<..<%B%{[34m%}%/%{[0m%}%b %#"
+[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%40<..<%B%{[34m%}%~%{[0m%}%b %#"
 	LSCOLOR='--color=auto' ;;
 xterm*|rxvt)
-	prompt="%{]0;%n@%m:%/%}
-[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%40<..<%B%{[34m%}%/%{[0m%}%b %#"
-	[ "$console" ] && prompt="%{]0;console@%m:%/%}[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%30<..<%B%{[34m%}%/%{[0m%}%b %#"
+	prompt="%{]0;%n@%m:%~%}
+[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%40<..<%B%{[34m%}%~%{[0m%}%b %#"
+	[ "$console" ] && prompt="%{]0;console@%m:%/%}[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%30<..<%B%{[34m%}%~%{[0m%}%b %#"
 	LSCOLOR='--color=auto' ;;
 *)
 	prompt="
-[%B%?%b] %U%n@%m%u:%40<..<%B%/%b %#" ;;
+[%B%?%b] %U%n@%m%u:%40<..<%B%~%b %#" ;;
 esac
 
 [ -z "$USER" ] && if [ "$LOGNAME" ] ; then export USER=$LOGNAME

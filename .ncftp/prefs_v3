@@ -1,15 +1,19 @@
-# NcFTP 3 preferences file
-# $Id$
-# This file is loaded and overwritten each time NcFTP is run.
-#
-anon-password=cb@wurzelausix.cs.uni-sb.de
-confirm-close=no
-connect-timeout=20
-control-timeout=135
-one-time-messages-seen=
-pager=less
-passive=optional
-progress-meter=2 (statbar)
-save-passwords=no
-show-status-in-xterm-titlebar=no
-xfer-timeout=3600
+anonopen 1
+anonpass cb@hal.heim-d.uni-sb.de
+blank-lines 1
+ftp-mode 0
+logsize 10240
+maxbookmarks 0
+pager less
+progress-meter 2
+remote-msgs 0
+startup-lcwd 
+startup-msgs 3
+timeout 30
+trace 0
+utime 1
+visual 1
+show-trailing-space 0
+total-runs 2
+total-xfer-hundredths-of-seconds 425
+total-xfer-kbytes 1161

@@ -14,7 +14,7 @@
 /set help_prompt on
 /set hide_private_channels off
 /set hold_mode on
-/set hold_mode_max 500
+/set hold_mode_max 100
 /set indent on
 /set input_prompt $T>
 /set logfile /home/cb/.irclog.txt
@@ -105,7 +105,7 @@
 /who #heim-d
 /notify Y_Plentyn mawan roquas mah schnueff df7cb cb cb7 alfons alfonz
 /notify
-/ignore heimgeist public msgs
+# /ignore heimgeist public msgs
 /ignore opaunger public msgs
 /ignore profhase public msgs
 /ignore
