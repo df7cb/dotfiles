@@ -169,18 +169,18 @@ Mouse	3	I	A	Menu WindowOps
 # the title buttons
 # left side (13579)
 Mouse	0	1	A	Function MenuOrClose
-Mouse	1	3	A	Close
-Mouse	2	3	A	Close
-Mouse	3	3	A	Destroy
 
 # right side (08642)
-Mouse	1	0	A	RaiseLower
-Mouse	2	0	A	Raise
-Mouse	3	0	A	Lower
-Mouse	0	8	A	Stick
-Mouse	1	6	A	Function ShadeRaise
-Mouse	2	6	A	Maximize50left
-Mouse	3	6	A	Maximize50right
+#Mouse	1	0	A	RaiseLower
+#Mouse	2	0	A	Raise
+#Mouse	3	0	A	Lower
+Mouse	0	0	A	Stick
+Mouse	1	8	A	Function ShadeRaise
+Mouse	2	8	A	Maximize50left
+Mouse	3	8	A	Maximize50right
+Mouse	1	6	A	Close
+Mouse	2	6	A	Close
+Mouse	3	6	A	Destroy
 Mouse	0	4	A	Iconify
 Mouse	1	2	A	Function Maximize0100
 Mouse	2	2	A	Function Maximize100100
