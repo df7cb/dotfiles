@@ -1,5 +1,6 @@
 # vim:ft=muttrc:
 unhook folder-hook
+unhook send-hook
 
 folder-hook .			'push ,=;set record="!" trash="=trash/trash" menu_context=4'
 folder-hook IN/.		'set record="^" trash="^.trash"'
@@ -13,6 +14,9 @@ folder-hook debian|lists	'push ,r;set menu_context=8'
 
 folder-hook .			'push <collapse-all>'
 
-send-hook . "set pgp_autosign"
+send-hook . "set pgp_autosign pgp_sign_as=0x6D8ABE71"
 send-hook '~t (majordomo\|-request)' "unset pgp_autosign"
+send-hook '~t debian\.org$' "set pgp_sign_as=0x58510B5A"
 
+send-hook . 'unmy_hdr X-Debbugs-No-Ack:'
+send-hook '~t bugs\.debian\.org$' 'my_hdr X-Debbugs-No-Ack: please'
