@@ -6,6 +6,7 @@ set autowrite		" Automatically save before commands like :next and :make
 set backspace=2		" allow backspacing over everything in insert mode
 set backup		" keep a backup file
 set nocompatible	" Use Vim defaults (much better!)
+set hidden		" use multiple buffers
 set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
@@ -24,6 +25,7 @@ set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 imap <c-z> <esc><c-z>
 nmap <space> <c-f>
 nmap <c-h> i<c-h>
+nmap <tab> :bn<cr>
 nmap b <c-b>
 nmap - <c-b>
 
