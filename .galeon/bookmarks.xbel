@@ -3989,6 +3989,30 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>Spiele</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1060471505</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.svenheidel.de/mi-inside/mi1info.shtml">
+          <title>Monkey Island Inside</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060471510</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cheatsgame.de/wfiles/monkeyisland1.htm">
+          <title>Monkey Island 1 - Walktrough Solution</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060471809</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Debian</title>
@@ -5379,6 +5403,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1058137807</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://d114.stw.stud.uni-saarland.de/~naga/movies/">
+        <title>Index of /~naga/movies</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1060473066</time_added>
           </metadata>
         </info>
       </bookmark>
