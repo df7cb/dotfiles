@@ -61,25 +61,25 @@
 \def\labelitemi{\ensuremath{\blacktriangleright}}
 
 \newcommand{\slidetitle}[1]{%
-  \rput[rb](11.6cm,3.6cm){%
-    \parbox{12cm}{\begin{flushright}\fontTitle{#1}\end{flushright}}}}
+  \rput[rb](118mm,40mm){%
+    \parbox{124mm}{\begin{flushright}\fontTitle{#1}\end{flushright}}}}
 
 \LogoPosition{-.7,-.1}
 
-\def\TWRcb#1{%
+\def\TWRcb#1{% (leftx, bottomy)(rightx, topy)
   % left
   \psframe[linestyle=none,fillstyle=solid, fillcolor=yellow]%
-  (-1.9cm,-1.4cm)(-0.8cm,8.8cm)
+  (-19mm,-14mm)(-11mm,88mm)
   % bottom
   \psframe[linestyle=none,fillstyle=solid, fillcolor=blue]%
-  (-0.8cm,-1.4cm)(13.0cm,-0.6cm)
+  (-11mm,-14mm)(125mm,-6mm)
   % line under title
   \psframe[linestyle=none,fillstyle=solid, fillcolor=red]%
-  (-1.2cm,7cm)(11.6cm,7.1cm)
+  (-15mm,74mm)(118mm,75mm)
   \PutLogo % Mandatory
   {#1}}
 
-\NewSlideStyle[12cm]{t}{5.5cm,2.9cm}{TWRcb}
+\NewSlideStyle[124mm]{t}{57mm,34mm}{TWRcb}% {middlex, topy}
 \PDFCroppingBox{10 40 594 820}
 
 \myitem{1}{$\blacktriangleright$}

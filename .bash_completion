@@ -73,7 +73,7 @@
 # general stuff
 complete -o default -d cd
 complete -o default -A running disown
-complete -o default -c type
+complete -o default -c strace type
 complete -v unset vared
 
 # generic filetype rules
@@ -84,7 +84,7 @@ complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|zip)' ttar xtar
 
 # stuff that uses my completer
 complete -o default -C completer man
-complete -o default -X '!&*' -C completer mutt make ncftp super
+complete -o default -X '!&*' -C completer mutt make ncftp ssh super
 complete -X '!&*' -C completer complete mailsync
 
 # special rules

@@ -19,14 +19,18 @@ elif [ "$PROG" = cvs ] ; then
 	perl -ne "print \"$PRINTDIR\$1\\n\" if m|^/([^/]+)/|" "$ENTRIES"
 
 elif [ "$PROG" = mailsync ] ; then
-	grep ^channel ~/.mailsync | cut -d ' ' -f 2
+	egrep '^(channel|store)' ~/.mailsync | cut -d ' ' -f 2
 
 elif [ "$PROG" = make ] ; then
 	[ -f Makefile ] || exit 0
 	perl -ne 'print "$1\n" if /^([^ :]+):/' Makefile
 
 elif [ "$PROG" = man ] ; then
-	whatis -w "$PREFIX*" | cut -d ' ' -f 1 | grep -v ':$'
+	if [ -f $TMP/whatis.cache ] ; then
+		egrep "^$PREFIX" $TMP/whatis.cache
+	else
+		whatis -w "$PREFIX*" | cut -d ' ' -f 1 | grep -v ':$'
+	fi
 
 elif [ "$PROG" = mutt ] ; then
 	MUTT=$HOME/.mutt

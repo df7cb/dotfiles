@@ -2,30 +2,62 @@
 # $Id$
 # rename multiple files
 # Christoph Berg <cb@cs.uni-sb.de>
-# 010711 cb
+# 010711 cb v0.1
+# 030312 cb v0.2: better quoting
 
-$tmp="/tmp/mvi-$$";
+$quote_re = '^[\w./_-]+$';
+
+$opt_q = $opt_Q = 0;
+use Getopt::Std;
+getopts("qQ");
 
 unless(@ARGV) {
-	print STDERR "usage: $0 file...\n";
+	print STDERR <<EOT;
+mvi v0.2 (c) Christoph Berg <cb\@cs.uni-sb.de>
+interactively rename files using \$EDITOR
+usage: $0 [-qQ] file...
+-q	quote all filenames
+-Q	only quote filenames not matching $quote_re
+without -q and -Q, quote all files if quoting is necessary for at least one file
+EOT
 	exit 1;
+}
+
+unless(-e $ARGV[0]) { # catch unexpanded wildcard (mvi *)
+	die "$ARGV[0]: $!\n";
+}
+
+if($opt_Q) { # only quote if necessary
+	$quote = 0;
+} elsif($opt_q) { # quote all files
+	$quote = 1;
+} else { # quote all files if necessary for at least one
+	$quote = ((grep { $_ !~ /$quote_re/} @ARGV) > 0);
 }
 
 $len = 0;
 for (@ARGV) {
-	$len = length($_) if length($_) > $len;
+	s#/$##; # remove trailing slash
+	s/"/\\"/g; # " -> \"
+	$_ = "\"$_\"" if $quote or $_ !~ /$quote_re/; # quote filename
+	$len = length($_) if length($_) > $len; # find longest name
 }
 
+$ENV{'TMP'} ||= "/tmp";
+$tmp="$ENV{'TMP'}/mvi-$$";
 open TMP, ">$tmp" or die "$tmp: $!";
 
-print TMP "#!/bin/sh\n";
-print TMP "# edit this file to rename the files\n";
-print TMP "alias mv='mv -iv' ; set -e\n";
-print TMP "\n";
+print TMP <<EOT;
+#!/bin/sh
+set -e ; trap 'rm -f $tmp~ ; [ -f $tmp ] && rm -iv $tmp' 0
+function mv () { [ "\$1" != "\$2" ] && /bin/mv -iv "\$@" || true; }
+# edit this file to rename the files
+
+EOT
 
 for (@ARGV) {
-	s/(.*)/'$1'/ if /[ ?*\[\]]/;
-	printf TMP "mv %-${len}s $_\n", $_;
+	printf TMP "mv %-${len}s $_\n", $_ unless $seen{$_};
+	$seen{$_} = 1; # print each filename at most once
 }
 
 print TMP "\nrm -f $tmp $tmp~\n";
@@ -35,7 +67,7 @@ $age = (stat $tmp)[9];
 
 $ENV{'EDITOR'} ||= 'vi';
 
-system "$ENV{'EDITOR'} +5 $tmp";
+system "$ENV{'EDITOR'} +6 $tmp";
 
 $age2 = (stat $tmp)[9];
 if($age2 > $age) {

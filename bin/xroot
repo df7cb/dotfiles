@@ -1,12 +1,15 @@
 #!/bin/sh
 # $Id$
 
-URL=${1:-http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic}
-FILE=${1:-$HOME/bilder/back}
-XV="xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy"
-
-if up d096.stw.stud.uni-saarland.de ; then
-	wget -q -O - "$URL" | $XV -
-elif [ -f $FILE ] ; then
-	$XV $FILE
+if [ $1 ] ; then
+	FILE="$1"
+elif up d096.stw.stud.uni-saarland.de ; then
+	URL="http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic"
+	FILE="/tmp/xroot-$$"
+	wget -q -O "$FILE" "$URL"
+else
+	FILE="$HOME/bilder/back"
 fi
+
+XV="xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy"
+[ -f $FILE ] && $XV $FILE

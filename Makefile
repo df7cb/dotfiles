@@ -58,19 +58,24 @@ safe: cleanup # conflict
 conflict:
 	-cvs -q -n update | grep '^C '
 
+STAMPS = .netscape/.bookmarks.html .galeon/.bookmarks.xbel .ssh/.known_hosts .mutt/.aliases
+CLEANS = .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .mutt/aliases
+COMMITS = $(CLEANS) .ncftp/bookmarks .plan.dir/dayplan lib/addressbook/cb.dat lib/todo/todo
+RUNS = plan-run addressbook-run
+
 com: commit
 commit: cleanup
-	cvs commit -m "make commit by $(USER)@$(HOST)" .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan lib/addressbook/cb.dat lib/todo/todo
+	cvs commit -m "make commit by $(USER)@$(HOST)" $(COMMITS)
 
 cycle: update commit
 
 ## cleanup stuff ##
 
-cleanup: .netscape/.bookmarks.html .galeon/.bookmarks.xbel .ssh/.known_hosts \
-	.mutt/.aliases netscape-run plan-run addressbook-run
+cleanup: $(RUN) $(STAMPS)
 
 .netscape/.bookmarks.html: .netscape/bookmarks.html
 	# Cleaning $<
+	@[ ! -L .netscape/lock ]
 	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
 	@touch $@
 
@@ -90,14 +95,6 @@ known_hosts-uniq:
 	@rm -f $<.bak
 	@touch $@
 
-.ssh/known_hosts:
-	# Fetching new $@
-	echo "#!/bin/sh" > $(HOME)/ssh-update
-	echo 'ssh -o "UserKnownHostsFile $$HOME/ssh_known_hosts" "$$@"' >> $(HOME)/ssh-update
-	chmod 700 $(HOME)/ssh-update
-	CVS_RSH="$(HOME)/ssh-update" cvs up $@
-	rm -f $(HOME)/ssh-update $(HOME)/ssh_known_hosts
-
 .mutt/.aliases: .mutt/aliases
 	# Sorting $<
 	@grep -qv '<<<<' $<
@@ -107,9 +104,6 @@ known_hosts-uniq:
 	@touch $@
 # find duplicate aliases
 	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
-
-netscape-run:
-	@[ ! -L .netscape/lock ]
 
 plan-run:
 	@[ ! -f .plan.dir/lock.plan ]
@@ -137,5 +131,13 @@ install:
 	echo "" >> .configrc
 	echo "divert(0)dnl" >> .configrc
 	vim .configrc || vi .configrc
+
+.ssh/known_hosts:
+	# Fetching new $@
+	echo "#!/bin/sh" > $(HOME)/ssh-update
+	echo 'ssh -o "UserKnownHostsFile $$HOME/ssh_known_hosts" "$$@"' >> $(HOME)/ssh-update
+	chmod 700 $(HOME)/ssh-update
+	CVS_RSH="$(HOME)/ssh-update" cvs up $@
+	rm -f $(HOME)/ssh-update $(HOME)/ssh_known_hosts
 
 ##
