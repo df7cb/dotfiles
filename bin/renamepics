@@ -59,7 +59,7 @@ foreach $file (@ARGV) {
 	my $prompt = sprintf "%02i-", $nr;
 	$new = $term->readline($prompt);
 	chomp ($new);
-	$term->addhistory($new);
+	#$term->addhistory($new);
 	if ($new =~ /^#/) {
 		print "File $file will be deleted.\n";
 		unlink $file;

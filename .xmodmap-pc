@@ -53,7 +53,7 @@ keycode 0x25 =	Control_L
 ! left alt
 keycode 0x40 =	Alt_L
 ! right alt
-keycode 0x71 =	Mode_switch
+keycode 0x71 =	Mode_switch	Multi_key
 ! right control
 keycode 0x6D =	Control_R
 ! left win
