@@ -114,8 +114,8 @@ addressbook-run:
 ## installation stuff ##
 
 install:
-	@case "$(PWD)" in *conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
-	-rm ../.ssh/known_hosts
+	[ ! -f .configrc ]
+	rm -f ../.ssh/known_hosts
 	-rmdir ../.ssh
 	mv * .[a-z]* .[A-Z]* ..
 	@cd .. && rmdir conf && $(MAKE)
