@@ -1,0 +1,111 @@
+# $Id$
+
+# Allgemeine Einstellungen
+/set auto_whowas on
+/set beep on
+/set beep_when_away 0
+/set beep_on_msg msg notice note
+/set channel_name_with 12
+/set clock on
+/set clock_24hour on
+/set eight_bit_characters on
+/set full_status_line on
+/set help_pager on
+/set help_prompt on
+/set hide_private_channels off
+/set hold_mode on
+/set hold_mode_max 500
+/set indent on
+/set input_prompt $T>
+/set logfile /home/cb/.irclog.txt
+/set mail 2
+/set minimum_servers 0
+/set minimum_users 0
+/set novice off
+/set scroll on
+/set scroll_lines 1
+/set send_ignore_msg on
+/set shell /bin/bash
+/set shell_flags -c
+/set shell_limit 0
+/set show_away_once off
+/set show_channel_names on
+/set show_end_of_msgs off
+/set show_numerics off
+/set show_status_all on
+/set show_who_hopcount on
+/set status_channel  on %C
+/set status_chanop @
+/set status_clock  %T
+/set status_hold  [more]
+/set status_hold_lines  (%B)
+/set status_insert  [ins]
+/set status_mail  [%M Mails]
+/set status_mode  (+%+)
+/set status_oper *
+/set status_overtype  [ovt]
+/set status_server  via %S
+/set suppress_server_motd on
+/set tab on
+/set tab_max 0
+/set underline_video on
+/set use_old_msg off
+/set user_information Student of Computer Science
+/set verbose_ctcp on
+/set warn_on_ignores on
+
+# Tasten
+/load tabkey
+/bind ^B self_insert
+/bind ^W SWITCH_CHANNELS
+/bind ^Z STOP_IRC
+/bind META1-[ META2_CHARACTER
+/bind META2-A BACKWARD_HISTORY 
+/bind META2-B FORWARD_HISTORY 
+/bind META2-C FORWARD_CHARACTER 
+/bind META2-D BACKWARD_CHARACTER 
+
+# Allgemeine Aliase
+/alias . /msg .
+/alias , /msg ,
+/alias a /away
+#/alias cls /clear
+/alias g /me grinst.
+/alias h /set hold_mode toggle
+/alias i /invite
+/alias l /leave *
+/alias log /set log
+/alias m /msg
+/alias mo /mode
+/alias op /mode * +o
+/alias quit /exit
+/alias sb /who *-sb.*
+/alias t /topic
+/alias umode /mode $N
+/alias unop /mode * -o
+/alias w /who *
+/alias wsb /who *-sb.*
+/alias j /join
+#/alias j {
+#  /leave $C
+#  /channel $0-
+#}
+#/alias nc {/window new channel $0-}
+#/alias h /set hold_mode $0-
+
+# Channel-Aliase
+/alias sar /join #saar
+/alias wsar /who #saar
+/alias heimd /join #heim-d
+/alias wheimd /who #heim-d
+/alias tt /msg trancetip
+
+# 'login'-Anzeige
+/who *-sb.*
+/who #heim-d
+/notify Y_Plentyn mawan roquas mah schnueff df7cb cb cb7 alfons alfonz
+/notify
+/ignore heimgeist public msgs
+/ignore opaunger public msgs
+/ignore profhase public msgs
+/ignore
