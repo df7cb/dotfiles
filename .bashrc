@@ -3,8 +3,18 @@
 #echo .bashrc
 
 # Environment
+. ~/bin/os > /dev/null
 . ~/.path
 . ~/.env
+
+# general stuff
+shopt -s extglob
+ulimit -Sc 0	# disable core dumps
+umask 022
+
+# check whether we run interactively
+[ "$PS1" ] || return
+#echo ".bashrc: interactive"
 
 case $BASH_VERSION in
 	2.0[4-9]*) # new bash supporting '\j' and completion
@@ -37,16 +47,14 @@ auto_resume=substring
 HISTCONTROL=ignoredups
 #histchars='!^#'
 HISTFILESIZE=100
+HISTIGNORE="..:[bf]g:cd:l:ls"
 HISTSIZE=500
 unset ignoreeof
 shopt -s no_empty_cmd_completion
 #[ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
 #[ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
-stty erase ^H &> /dev/null
+[ -t 0 ] && stty erase ^H &> /dev/null
 #unset noclobber
 
-# general stuff
-ulimit -Sc 0	# disable core dumps
-umask 022
-
-[ -f ~/.bashrc-local ] && . ~/.bashrc-local || true
+[ -f ~/.bashrc-local ] && . ~/.bashrc-local
+true
