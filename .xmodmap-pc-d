@@ -1,0 +1,85 @@
+! $Id$
+! This is an xmodmap input file for PC 102 key #1 (Linux/XFree86; US) keyboards.
+
+keycode 0x31 =	asciicircum	degree
+keycode 0x0A =	1		exclam		onesuperior	exclamdown
+keycode 0x0B =	2		quotedbl	twosuperior
+keycode 0x0C =	3		section		threesuperior
+keycode 0x0D =	4		dollar		sterling	onequarter
+keycode 0x0E =	5		percent		plusminus
+keycode 0x0F =	6		ampersand
+keycode 0x10 =	7		slash		braceleft
+keycode 0x11 =	8		parenleft	bracketleft
+keycode 0x12 =	9		parenright	bracketright
+keycode 0x13 =	0		equal		braceright
+keycode 0x14 =	ssharp		question	backslash
+keycode 0x15 =	apostrophe	grave
+keycode 0x16 =	BackSpace
+keycode 0x17 =	Tab		ISO_Left_Tab
+keycode 0x18 =	q		Q		at
+keycode 0x1A =	e		E		currency
+keycode 0x1B =	r		R		r		registered
+keycode 0x1D =	z		Z		z
+keycode 0x1E =	u		U		udiaeresis	Udiaeresis
+keycode 0x20 =	o		O		odiaeresis	Odiaeresis
+keycode 0x21 =	p		P
+keycode 0x22 =	udiaeresis	Udiaeresis
+keycode 0x23 =	plus		asterisk	asciitilde
+keycode 0x6B =	Delete
+keycode 0x26 =	a		A		adiaeresis	Adiaeresis
+keycode 0x27 =	s		S		ssharp		section
+keycode 0x28 =	d		D		degree
+keycode 0x2F =	odiaeresis	Odiaeresis
+keycode 0x30 =	adiaeresis	Adiaeresis
+keycode 0x33 =	numbersign	apostrophe
+keycode 0x53 =	KP_Left		KP_4
+keycode 0x54 =	KP_Begin	KP_5
+keycode 0x55 =	KP_Right	KP_6
+keycode 0x5E =	less		greater		bar		brokenbar
+keycode 0x34 =	y		Y		y
+keycode 0x36 =	c		C		copyright	dead_cedilla
+keycode 0x3A =	m		M		mu
+keycode 0x3B =	comma		semicolon
+keycode 0x3C =	period		colon
+keycode 0x3D =	minus		underscore
+keycode 0x62 =	Up
+
+keycode 0x32 =	Shift_L
+keycode 0x3E =	Shift_R
+! capslock
+keycode 0x42 =	Control_L
+! left control
+keycode 0x25 =	Control_L
+! left alt
+keycode 0x40 =	Alt_L
+! right alt
+keycode 0x71 =	Mode_switch
+! right control
+keycode 0x6D =	Control_R
+! "third" win key
+keycode 0x72 =	Mode_switch
+! left win
+keycode 0x73 =	Hyper_L
+! right win
+keycode 0x74 =	Mode_switch
+! left meta
+keycode 0x81 =	Hyper_R
+! right meta
+keycode 0x83 =	Hyper_L
+
+clear Shift
+clear Lock
+clear Control
+clear Mod1
+clear Mod2
+clear Mod3
+clear Mod4
+clear Mod5
+
+add	Shift	= Shift_L Shift_R
+add	Control	= Control_L Control_R
+add	Mod1	= Alt_L
+add	Mod2	= Num_Lock
+add	Mod3	= Mode_switch
+add	Mod4	= Hyper_L Hyper_R
+! add	Mod5	= Scroll_Lock
