@@ -3869,6 +3869,30 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://home.uchicago.edu/~dgc/mutt/">
+          <title>dgc: Mutt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1062759239</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <folder folded="yes">
+          <title>Mutt people</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1063025898</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.math.uni-hamburg.de/home/rado/">
+            <title>Rado Smiljanic</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1063025904</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
       </folder>
       <folder folded="yes">
         <title>tnt</title>
@@ -4000,6 +4024,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1062005273</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.catb.org/~esr/jargon/">
+          <title>Jargon File Resources</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1062769800</time_added>
             </metadata>
           </info>
         </bookmark>
