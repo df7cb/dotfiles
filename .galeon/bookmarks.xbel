@@ -3267,6 +3267,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.cisco.com/univercd/cc/td/doc/product/vpn/">
+          <title>Cisco: Virtual Private Networks</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061810934</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>AFu</title>
@@ -3846,6 +3854,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://bugs.guug.de/db/pa/lmutt.html">
+          <title>GUUG bug reports: package mutt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061838869</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>tnt</title>
@@ -4162,6 +4178,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1061288028</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.openoffice.de/linux/packages/">
+        <title>Debian GNU/Linux Anwenderhandbuch</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1061486091</time_added>
           </metadata>
         </info>
       </bookmark>
