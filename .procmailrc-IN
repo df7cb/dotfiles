@@ -19,14 +19,14 @@ DEFAULT=mail/IN/cb
 * ^From: Christoph Berg.*cb@
 | formail -i"Status: RO"
 
-:0fhw
-* ^From: BugScan reporter <bugscan@debian.org>
-| formail -i"Status: RO"
+#:0fhw
+#* ^From: BugScan reporter <bugscan@debian.org>
+#| formail -i"Status: RO"
 
-:0fhw
-* ^From:.*wnpp@debian.org
-* ^X-Mailer: maintainers-needed.pl
-| formail -i"Status: RO"
+#:0fhw
+#* ^From:.*wnpp@debian.org
+#* ^X-Mailer: maintainers-needed.pl
+#| formail -i"Status: RO"
 
 :0
 * ^To: mutt-dev@mutt.org
@@ -53,7 +53,7 @@ mail/IN/debian-bts
 
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
-* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org)
+* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: )
 mail/IN/debian
 
 :0:
