@@ -1,45 +1,32 @@
 # $Id$
 
-DEPS = Makefile .configrc
-UNDEFINE = -Uformat -Uindex -Uunix
-
-all: cleanup .mutt/muttrc.local \
-	.less .pinerc .ytalkrc .xinitrc .configrc bin/ctar
+all: cleanup .configrc .less .mutt/muttrc.local .ssh/config .ytalkrc .xinitrc bin/ctar
 
 ## targets ##
 
 .less: .lesskey
 	lesskey
 
-.PHONY: /tmp/$(USER) tmp
-/tmp/$(USER):
-	umask 077 ; mkdir $@ ; ls -ld $@
-tmp:
-	umask 077 ; mkdir $@ ; ls -ld $@
-
-# mutt
 .mutt/muttrc.local:
 	touch .mutt/muttrc.local
 
-# pine
-.pinerc: .pinerc.m4 .configrc
-	m4 $(UNDEFINE) .configrc .pinerc.m4 > .pinerc
-diff:
-	diff -u .pinerc.m4 .pinerc || true
-
-.ytalkrc: .ytalkrc.m4 .configrc
-	m4 $(UNDEFINE) .configrc .ytalkrc.m4 > .ytalkrc
+.ssh/config: .ssh/config.m4
+	@rm -f $@
+	m4 $< > $@
+	@chmod -w $@
 
 .xinitrc:
 	ln -s .xsession .xinitrc
 
-mail/d:
-	@mkdir mail || true
-	touch mail/deleted
-	ln -s deleted mail/d
+.ytalkrc: .ytalkrc.m4 .configrc
+	m4 .configrc .ytalkrc.m4 > .ytalkrc
 
 bin/ctar:
 	ln -s ttar bin/ctar
+
+.PHONY: /tmp/$(USER) tmp
+tmp /tmp/$(USER):
+	mkdir -m 0700 $@ ; ls -ld $@
 
 ## update stuff ##
 
@@ -65,7 +52,7 @@ RUNS = plan-run addressbook-run
 
 com: commit
 commit: cleanup
-	cvs commit -m "make commit by $(USER)@$(HOST)" $(COMMITS)
+	cvs commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
 
 cycle: update commit
 
@@ -118,9 +105,10 @@ install:
 	[ ! -f .configrc ]
 	rm -f ../.ssh/known_hosts
 	-rmdir ../.ssh
+	-[ -d ../.ssh ] && mv ../.ssh ../ssh~
+	-[ -d ../.ssh2 ] && mv ../.ssh2 ../ssh2~
 	mv * .[a-z]* .[A-Z]* ..
-	@cd .. && rmdir conf && $(MAKE)
-	@echo "Fertig. cd .."
+	cd .. ; rmdir cb conf ; $(MAKE)
 
 .configrc:
 	echo "divert(-1)" >> .configrc
