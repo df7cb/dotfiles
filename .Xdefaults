@@ -31,6 +31,13 @@ XTerm*scrollTtyOutput:	false
 XTerm*saveLines:	500
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
+xterm*VT100.Translations: #override <Key>BackSpace: string(0x08)
+!\n\
+!	<Key>Delete:	string(0x1b) string("[3~")\n\
+!	<Key>Home:	string(0x1b) string("[1~")\n\
+!	<Key>End:	string(0x1b) string("[4~")\n\
+!	Ctrl<Key>Prior:	string(0x1b) string("[40~")\n\
+!	Ctrl<Key>Next:	string(0x1b) string("[41~")
 xv.preset1.igraf: S 3 : 0,0 : 127,137 : 255,255
 xv.preset2.igraf: S 3 : 0,0 : 127,147 : 255,255
 xv.preset3.igraf: S 3 : 0,0 : 127,157 : 255,255
