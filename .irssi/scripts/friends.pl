@@ -2346,6 +2346,7 @@ sub event_ctcpmsg {
 				$reason = "Bad password for $channelName";
 			}
 			Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $sender.'!'.$userhost, $reason);
+			$server->command("/^NOTICE $sender $reason");
 		}
 		goto SIGSTOP;
 	}
@@ -2356,6 +2357,7 @@ sub event_ctcpmsg {
 	if ($idx == -1) {
 		my $reason = "Not a friend" . (($command ne "PASS") ? " for $channelName" : "");
 		Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $sender.'!'.$userhost, $reason);
+		$server->command("/^NOTICE $sender Not a friend");
 		goto SIGSTOP;
 	}
 
@@ -2366,6 +2368,7 @@ sub event_ctcpmsg {
 	# (first argument, should be always given)
 	if ($channelName eq "") {
 		Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $handle, "Not enough arguments");
+		$server->command("/^NOTICE $sender Not enough arguments");
 		goto SIGSTOP;
 	}
 
@@ -2376,6 +2379,7 @@ sub event_ctcpmsg {
 			# if cmdargs[1] ($channelName, that is) is a valid password (current)
 			if (!friends_passwdok($idx, $channelName)) {
 				Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $handle, "Bad password");
+				$server->command("/^NOTICE $sender Bad password");
 				goto SIGSTOP;
 			}
 			# and $cmdargs[2] ($password, that is) contains something ...
@@ -2407,6 +2411,7 @@ sub event_ctcpmsg {
 	my $channel = $server->channel_find($channelName);
 	if (!$channel) {
 		Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $handle, "Not on channel $channelName");
+		$server->command("/^NOTICE $sender Not on channel $channelName");
 		goto SIGSTOP;
 	}
 
@@ -2416,10 +2421,12 @@ sub event_ctcpmsg {
 	if ($command eq "OP") {
 		if (!friend_is_wrapper($idx, $channelName, "o", "d")) {
 			Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $handle, "Not enough flags");
+			$server->command("/^NOTICE $sender Not enough flags on channel $channelName");
 			goto SIGSTOP;
 		}
 		if (!friends_passwdok($idx, $password)) {
 			Irssi::printformat(MSGLEVEL_CRAP, 'friends_ctcpfail', $command, $handle, "Bad password");
+			$server->command("/^NOTICE $sender Bad password");
 			goto SIGSTOP;
 		}
 
