@@ -15,7 +15,6 @@ $len = 0;
 for (@ARGV) {
 	$len = length($_) if length($_) > $len;
 }
-$len = 30 if $len > 30;
 
 open TMP, ">$tmp" or die "$tmp: $!";
 
@@ -28,20 +27,22 @@ for (@ARGV) {
 	s/(.*)/'$1'/ if /[ ?*\[\]]/;
 	printf TMP "mv %-${len}s $_\n", $_;
 }
+
+print TMP "\nrm -f $tmp $tmp~\n";
 close TMP;
 
 $age = (stat $tmp)[9];
 
 $ENV{'EDITOR'} ||= 'vi';
 
-system "$ENV{'EDITOR'} $tmp";
+system "$ENV{'EDITOR'} +5 $tmp";
 
 $age2 = (stat $tmp)[9];
 if($age2 > $age) {
 	system "sh $tmp";
 } else {
-	print STDERR "$0: file unchanged, aborting\n";
+	print STDERR "$0: not processing unchanged file\n";
+	unlink $tmp;
 }
 
-unlink $tmp;
 -e "$tmp~" && unlink "$tmp~"; # delete backup
