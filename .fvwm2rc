@@ -182,7 +182,7 @@ Style "*" MWMBorder, MWMDecor, HintOverride, MWMFunctions, MWMButtons
 
 Key	Space	A	M	Popup WindowOps
 Key	Pause	A	N	Exec dpmsoff
-Key	Pause	A	S	Exec dpmsoff xlock
+Key	Pause	A	S	Exec dpmsoff blank
 
 # cursor combinations for paging
 Key	Left	A	CS	Scroll -100 +0
