@@ -42,8 +42,11 @@ elif [ "$PROG" = mutt ] ; then
 elif [ "$PROG" = ncftp ] ; then
 	cut -f 1 -d , ~/.ncftp/bookmarks | egrep -v '^Number|NcFTP'
 
-elif [ "$PROG" = ssh ] || [ "$PROG" = scp ] ; then
-	cut -d ' ' -f 1 ~/.ssh/known_hosts | tr ',' '\n' | sort -u
+elif [ "$PROG" = ssh ] ; then
+	perl -ne 's/^#| .*//; s/,/\n/g; print if $_;' ~/.ssh/known_hosts
+
+elif [ "$PROG" = scp ] ; then
+	perl -ne 'chomp; s/^#| .*//; s/,/:\n/g; print "$_:\n" if $_;' ~/.ssh/known_hosts
 
 elif [ "$PROG" = super ] ; then
 	cut -f 1 /etc/super.tab | egrep '^[a-z]'
