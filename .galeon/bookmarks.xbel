@@ -1574,6 +1574,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.asta.uni-sb.de/wahl/wahlbeteiligung.html">
+        <title>Wahlen zum StuPa/Frauenreferat</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1057681306</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>RW</title>
@@ -3902,11 +3910,11 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.debian.org">
+      <bookmark href="http://www.debian.org/distrib/packages#search_packages">
         <title>Debian Packages</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1049805546</time_modified>
+            <time_modified>1057263024</time_modified>
             <time_added>1042724966</time_added>
             <smarturl>http://packages.debian.org/cgi-bin/search_packages.pl?keywords=%s&amp;searchon=names&amp;version=all&amp;release=all</smarturl>
           </metadata>
@@ -5139,6 +5147,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://elektra.e-technik.uni-ulm.de/~mbuck/vtx/">
+          <title>Videotext/Teletext-Decoder for Linux</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1057622526</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <bookmark href="http://www.tvinfo.de/">
         <title>TVinfo.de - sehen was l&#195;&#164;uft</title>
@@ -5229,6 +5245,14 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://www.palfrader.org/#cabot">
+        <title>Peter Palfrader's Projects</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1058137807</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Search</title>
