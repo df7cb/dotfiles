@@ -1,0 +1,11 @@
+bind -m vi-command 'Control-a: vi-insert-beg'
+bind -m vi-command 'Control-e: vi-append-eol'
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-command '"ZZ": emacs-editing-mode'
+bind -m vi-command 'ESC: ""'
+
+bind -m vi-insert 'Control-a: beginning-of-line'
+bind -m vi-insert 'Control-e: end-of-line'
+bind -m vi-insert 'Control-d: delete-char'
+bind -m vi-insert 'Control-k: kill-line'
+bind -m vi-insert 'Control-l: clear-screen'
