@@ -200,6 +200,13 @@ Key	Delete	A	CS	GotoPage 0 1
 Key	End	A	CS	GotoPage 1 1
 Key	Next	A	CS	GotoPage 2 1
 
+Key	q	A	4	GotoPage 0 0
+Key	w	A	4	GotoPage 1 0
+Key	e	A	4	GotoPage 2 0
+Key	a	A	4	GotoPage 0 1
+Key	s	A	4	GotoPage 1 1
+Key	d	A	4	GotoPage 2 1
+
 #Key	Home	A	C	Next [*-lo] WarpToWindow 11p 11p
 #Key	Prior	A	C	Next [*-ro] WarpToWindow 11p 11p
 #Key	End	A	C	Next [*-lu] WarpToWindow 11p 11p
@@ -212,6 +219,11 @@ Key	Delete	A	C	JumpWindow 0 -43
 Key	End	A	C	JumpWindow 0 -43
 Key	Next	A	C	JumpWindow 50 -43
 
+Key	k	A	4	JumpWindow 0 -88
+Key	l	A	4	JumpWindow 50 -88
+Key	comma	A	4	JumpWindow 0 -43
+Key	period	A	4	JumpWindow 50 -43
+
 Key	Insert	A	CSM	Function XTermLO
 Key	Home	A	CSM	Function XTermLO
 Key	Prior	A	CSM	Function XTermRO
@@ -219,18 +231,31 @@ Key	Delete	A	CSM	Function XTermLU
 Key	End	A	CSM	Function XTermLU
 Key	Next	A	CSM	Function XTermRU
 
+Key	k	A	S4	Function XTermLO
+Key	l	A	S4	Function XTermRO
+Key	comma	A	S4	Function XTermLU
+Key	period	A	S4	Function XTermRU
+
 Key	Left	A	C	CursorMove -10 +0
 Key	Right	A	C	CursorMove +10 +0
 Key	Up	A	C	CursorMove +0 -10
 Key	Down	A	C	CursorMove +0 +10
 
-#Key	Left	A	S	CursorMove -1 0
-#Key	Right	A	S	CursorMove +1 +0
-#Key	Up	A	S	CursorMove +0 -1
-#Key	Down	A	S	CursorMove +0 +1
+Key	semicolon A	4	CursorMove -10 +0
+Key	apostrophe A	4	CursorMove +10 +0
+Key	bracketleft A	4	CursorMove +0 -10
+Key	slash	A	4	CursorMove +0 +10
+
+Key	semicolon A	S4	CursorMove -1 0
+Key	apostrophe A	S4	CursorMove +1 +0
+Key	bracketleft A	S4	CursorMove +0 -1
+Key	slash	A	S4	CursorMove +0 +1
 
 # window ops
 Key	SunFront A	A	Raise
+Key	r	A	4	RaiseLower
+Key	x	A	S4	Close
+Key	m	A	4	Move
 
 #Key	Tab	A	4	Next [*] focus
 #Key	Tab	A	S4	Prev [*] focus
@@ -263,8 +288,12 @@ Mouse	3	R	A	WindowList
 				#FvwmWinList Transient
 
 Mouse	1	TW	CM	RaiseLower
-Mouse	2	TW	CM	Move
+Mouse	2	A	CM	Move
 Mouse	3	TW	CM	Close
+
+Mouse	1	TW	4	RaiseLower
+Mouse	2	A	4	Move
+Mouse	3	TW	4	Close
 
 # title, side, frame
 Mouse	1	T	A	Function "MoveOrRaise"
