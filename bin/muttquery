@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+# $Id$
+
+$query = $ARGV[0] or die "$0: no query?\n";
+
+print "Looking for $query..\n";
+
+# personal mutt aliases
+if (open A, "$ENV{HOME}/.mutt/aliases") {
+	while (<A>) {
+		next if /^#/;
+		next unless /$query/i;
+		next unless /^alias (.*?)\s+(.*)\s+<(.*)>/;
+		print "$3\t$2\t$1\n";
+	}
+	close A;
+}
+
+# system passwd
+while (($name, $comment, $gecos) = (getpwent)[0,5,6]) {
+	$gecos =~ s/,| (\()/\t$1/;
+	print "$name\t$gecos\t$comment\n" if $name =~ /$query/i
+		or $comment =~ /$query/i or $gecos =~ /$query/i;
+}
+
+# sendmail aliases
+if (open A, "/etc/aliases" or open "/etc/mail/aliases") {
+	while (<A>) {
+		next if /^#/;
+		next unless /$query/i;
+		next unless /^(.*?):\s+(.*)/;
+		print "$1\t \t$2\n";
+	}
+	close A;
+}
