@@ -3,7 +3,7 @@
 use Getopt::Std;
 
 ($opt_1, $opt_a, $opt_b, $opt_e, $opt_t) = ();
-getopts('1abet:');
+getopts('1abeht:');
 
 $twocolumn = 'twocolumn,';
 $twocolumn = '' if $opt_1;
@@ -20,6 +20,9 @@ if($opt_b) {
 if($opt_e) {
 	$directorystyle = "email";
 	$title = "Email-Adressen";
+}
+if($opt_h) {
+	$directorystyle = "address-html";
 }
 
 if(!@ARGV) {
@@ -85,6 +88,8 @@ close A;
 
 if ($opt_a) {
 	system("make aliases");
+} elsif ($opt_h) {
+	system("make addr.html");
 } else {
 	system("make");
 }
