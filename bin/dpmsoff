@@ -1,0 +1,6 @@
+#!/bin/sh
+# $Id$
+
+xset dpms 0 0 2
+sleep 2
+xset dpms 0 0 1800
