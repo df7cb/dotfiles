@@ -7,22 +7,7 @@
 
 # Environment
 
-for dir in ~/bin ~/bin/`~/bin/os` ; do
-	case :$PATH: in 
-		*:$dir:*) ;;
-		*) [ -d $dir ] && PATH=$dir:$PATH
-	esac
-done
-for dir in /usr/local/bin /bin /usr/bin \
-	/usr/local/sbin /sbin /usr/sbin \
-	/usr/openwin/bin /usr/X11R6/bin \
-	/usr/games/bin /usr/games /shared/bin /shared/games/bin \
-	/usr/ucb /usr/5bin /usr/pkg/bin /usr/compat/linux/bin ; do
-	case :$PATH: in 
-		*:$dir:*) ;;
-		*) [ -d $dir ] && PATH=$PATH:$dir
-	esac
-done
+. ~/.bash_path
 
 case $TERM in
 linux*|*vt100*|screen*|cons25)
