@@ -137,6 +137,7 @@ aliases = {
   think = "say .oO($0-)";
   heim = "msg heimgeist";
   plonk = "ignore -time 600";
+  rn = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen ein.";
 };
 
 statusbar = {
@@ -272,6 +273,8 @@ settings = {
     autolog = "yes";
     hilight_nick_matches = "no";
     show_nickmode = "no";
+    activity_hide_targets = "";
+    activity_hide_level = " actions";
   };
 };
 hilights = ( { text = "Myon"; nick = "no"; word = "yes"; } );
