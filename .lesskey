@@ -1,0 +1,9 @@
+# $Id$
+
+#command
+-	back-screen
+=	toggle-option
+
+#env
+LESS=-aiMq
+LESSCHARSET=latin1

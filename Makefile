@@ -4,9 +4,12 @@ DEPS = Makefile .configrc
 UNDEFINE = -Uformat -Uindex -Uunix
 
 all: .mutt/aliases.new .mutt/muttrc.local \
-	.pinerc .ytalkrc .xinitrc .configrc
+	.less .pinerc .ytalkrc .xinitrc .configrc
 
 ## targets ##
+
+.less: .lesskey
+	lesskey
 
 # mutt
 .mutt/aliases.new:
@@ -15,12 +18,12 @@ all: .mutt/aliases.new .mutt/muttrc.local \
 	touch .mutt/muttrc.local
 
 # pine
-.pinerc: .pinerc.m4 $(DEPS)
+.pinerc: .pinerc.m4 .configrc
 	m4 $(UNDEFINE) .configrc .pinerc.m4 > .pinerc
 diff:
 	diff -u .pinerc.m4 .pinerc || true
 
-.ytalkrc: .ytalkrc.m4 $(DEPS)
+.ytalkrc: .ytalkrc.m4 .configrc
 	m4 $(UNDEFINE) .configrc .ytalkrc.m4 > .ytalkrc
 
 .xinitrc:
