@@ -28,7 +28,7 @@ ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
 ###############################################################################
 
 # Text and background color for the title bar of the selected window
-HilightColor 		red2 LightGreen
+Style	"*"		HilightFore red2, HilightBack LightGreen
 Style	"*"		ForeColor Black, BackColor LightSkyBlue
 
 # Style for fonts is
@@ -86,9 +86,10 @@ Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition,
 Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 
 # general
-Style	"xv 3*"		NoTitle
-Style	"VNC*"		HandleWidth 0, NoTitle
+#Style	"xv 3*"		NoTitle
+#Style	"VNC*"		HandleWidth 0, NoTitle
 #Style	Netscape*	StartsOnPage 0 1, SkipMapping
+Style	"xine*"		HilightFore DarkGrey, HilightBack black
 
 # icons
 Style	"xterm"		Icon Terminal.xpm
