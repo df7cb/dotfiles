@@ -38,6 +38,7 @@ endif
 
 " Vim5 comes with syntaxhighlighting.
 if has("syntax")
+  let mysyntaxfile = "~/.vim/syntax.vim"
   syntax on
 endif
 
