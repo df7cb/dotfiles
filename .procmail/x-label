@@ -36,18 +36,21 @@
 
 :0fhw
 * !^X-Label:
+* ^TO_f[br]-?mit@cs.uni-sb.de
+| formail -i"X-Label: frmit"
+:0fhw
+* !^X-Label:
 * ^TO_g-wilhelm@cs.uni-sb.de
 | formail -i"X-Label: g-wilhelm"
-
 :0fhw
 * !^X-Label:
 * ^TO_.*@avacs.org
 | formail -i"X-Label: avacs"
 
-:0fhw
-* !^X-Label:
-* ^Received: .* for <cb\+cs@heim-d
-| formail -i"X-Label: cs"
+#:0fhw
+#* !^X-Label:
+#* ^Received: .* for <cb\+cs@heim-d
+#| formail -i"X-Label: cs"
 
 :0fhw
 * !^X-Label:
