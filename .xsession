@@ -22,6 +22,4 @@ fvwm2 -s &
 
 [ -f ~/.xsession-local ] && . ~/.xsession-local
 
-console=yes
-export console
-exec xterm +ut -vb -C -geometry 62x5+120-0 -T console
+console=yes exec xterm +ut -vb -C -geometry 62x5+120-0 -T console

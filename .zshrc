@@ -27,4 +27,16 @@ source $ZDOTDIR/.zshkeys
 setopt autolist
 setopt no_beep
 
+# history settings
+HISTSIZE=800
+SAVEHIST=500
+HISTFILE=~/.bash_history
+#setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_STORE
+#setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+#setopt SHARE_HISTORY
+
 [ -f $ZDOTDIR/.zshrc-local ] && source $ZDOTDIR/.zshrc-local || true

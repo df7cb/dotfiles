@@ -15,6 +15,8 @@ for dir in /usr/local/sbin /sbin /usr/sbin \
 	/usr/ucb /usr/5bin /usr/etc /usr/pkg/bin \
 	/usr/ccs/bin \
 	/shared/bin /shared/games/bin \
-	/usr/compat/linux/bin ; do
+	/usr/compat/linux/bin \
+	/usr/local/teTeX/bin/sparc-solaris2.4 \
+	/usr/local/teTeX/bin/i386-pc-solaris2.7 ; do
 	[ -d $dir ] && PATH=$PATH:$dir
 done

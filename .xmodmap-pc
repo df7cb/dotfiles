@@ -56,16 +56,16 @@ keycode 0x40 =	Alt_L
 keycode 0x71 =	Mode_switch
 ! right control
 keycode 0x6D =	Control_R
-! "third" win key
-keycode 0x72 =	Mode_switch
 ! left win
 keycode 0x73 =	Hyper_L
 ! right win
 keycode 0x74 =	Mode_switch
+! "third" win key (menu)
+keycode 0x75 =	Hyper_R
 ! left meta
-keycode 0x81 =	Hyper_R
-! right meta
 keycode 0x83 =	Hyper_L
+! right meta
+keycode 0x81 =	Hyper_R
 
 clear Shift
 clear Lock
