@@ -3,5 +3,6 @@ turn scrolling on
 turn word-wrap on
 turn auto-import on
 turn auto-invite off
-turn auto-rering on
 turn X off
+turn auto-rering on
+# turn prompt-rering off (new syntax)
