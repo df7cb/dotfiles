@@ -21,7 +21,6 @@
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>google</nick>
           <pixmap>/usr/share/galeon/google.png</pixmap>
-          <time_visited>1028496894</time_visited>
           <smarturl>http://www.google.com/search?q=%s</smarturl>
         </metadata>
       </info>
@@ -33,7 +32,6 @@
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>news</nick>
           <pixmap>/usr/share/galeon/google_groups.png</pixmap>
-          <time_visited>1028225863</time_visited>
           <smarturl>http://groups.google.com/groups?q=%s&amp;meta=site%3Dgroups</smarturl>
         </metadata>
       </info>
@@ -45,7 +43,6 @@
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>img</nick>
           <pixmap>/usr/share/galeon/google_images.png</pixmap>
-          <time_visited>1026822012</time_visited>
           <smarturl>http://images.google.com/images?q=%s</smarturl>
         </metadata>
       </info>
@@ -57,7 +54,6 @@
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>dict</nick>
           <pixmap>/usr/share/galeon/dictionary.png</pixmap>
-          <time_visited>1027428853</time_visited>
           <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
         </metadata>
       </info>
@@ -73,7 +69,6 @@
         <title>More Bookmarklets</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1026130799</time_visited>
           </metadata>
         </info>
       </bookmark>
@@ -96,7 +91,6 @@
         <title>Scroll Page (very slow)</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1023796588</time_visited>
           </metadata>
         </info>
       </bookmark>
@@ -104,7 +98,6 @@
         <title>Scroll Page (slow)</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027519247</time_visited>
           </metadata>
         </info>
       </bookmark>
@@ -122,7 +115,6 @@
         <title>Page Freshness?</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1023796563</time_visited>
           </metadata>
         </info>
       </bookmark>
@@ -143,7 +135,6 @@
         <title>Read Cookie for Site</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1026130925</time_visited>
           </metadata>
         </info>
       </bookmark>
@@ -154,7 +145,6 @@
         <title>Translate to English</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1023874734</time_visited>
           </metadata>
         </info>
       </bookmark>
@@ -181,7 +171,6 @@
         <title>Heim D</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027946973</time_visited>
             <time_added>907234230</time_added>
           </metadata>
         </info>
@@ -198,7 +187,6 @@
         <title>Bilder</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027946976</time_visited>
             <time_added>976830278</time_added>
           </metadata>
         </info>
@@ -319,7 +307,6 @@
         <title>WJP</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027949290</time_visited>
             <time_added>934039328</time_added>
           </metadata>
         </info>
@@ -328,7 +315,6 @@
         <title>www.uni-sb.de</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027073139</time_visited>
             <time_added>953821724</time_added>
           </metadata>
         </info>
@@ -337,7 +323,6 @@
         <title>www.cs.uni-sb.de</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1026204504</time_visited>
             <time_added>953821338</time_added>
           </metadata>
         </info>
@@ -521,7 +506,6 @@
           <title>Fachbereichsbibliothek Informatik</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1025618084</time_visited>
               <time_added>985790251</time_added>
             </metadata>
           </info>
@@ -530,7 +514,6 @@
           <title>Graduiertenkolleg &quot;Leistungsgarantien f&#239;&#191;&#189;r Rechnersysteme&quot;</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1024053797</time_visited>
               <time_added>988284136</time_added>
             </metadata>
           </info>
@@ -547,7 +530,6 @@
           <title>Rechenzentrum</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1027952875</time_visited>
               <time_added>1004630977</time_added>
             </metadata>
           </info>
@@ -556,7 +538,6 @@
           <title>Max-Planck-Institut f&#239;&#191;&#189;r Informatik: Home Page</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1027950795</time_visited>
               <time_added>973726868</time_added>
             </metadata>
           </info>
@@ -598,7 +579,6 @@
           <title>Telefon/Email-Recherche</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1025601743</time_visited>
               <time_added>961266741</time_added>
             </metadata>
           </info>
@@ -607,7 +587,6 @@
           <title>Eulen</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1027952598</time_visited>
               <time_added>986472836</time_added>
             </metadata>
           </info>
@@ -640,7 +619,6 @@
           <title>Die Fachschaft Informatik</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1026827268</time_visited>
               <time_added>877508777</time_added>
             </metadata>
           </info>
@@ -842,7 +820,6 @@
           <title>Erics E-Commerce-Bookmarks (Proseminar SS00)</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1025782863</time_visited>
               <time_added>959443152</time_added>
             </metadata>
           </info>
@@ -1109,7 +1086,6 @@
         <title>Aktive Idealisten</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1024565121</time_visited>
             <time_added>1023440985</time_added>
           </metadata>
         </info>
@@ -1141,7 +1117,6 @@
           <title>DIE ZEIT Debatte</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1028497316</time_visited>
               <time_added>955234604</time_added>
             </metadata>
           </info>
@@ -2496,7 +2471,6 @@
         <title>H&#239;&#191;&#189;ufig genutzte Links: Hardware</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1028497796</time_visited>
             <time_added>993818564</time_added>
           </metadata>
         </info>
@@ -2522,7 +2496,6 @@
         <title>DAX Webcam</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1023795028</time_visited>
             <time_added>984059991</time_added>
           </metadata>
         </info>
@@ -2531,7 +2504,6 @@
         <title>DAX</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1028497749</time_visited>
             <time_added>987594376</time_added>
           </metadata>
         </info>
@@ -2540,7 +2512,6 @@
         <title>Activest Lux Globalchoice 1</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1024992848</time_visited>
             <time_added>983570335</time_added>
           </metadata>
         </info>
@@ -2557,7 +2528,6 @@
         <title>Gartmore CSF-Contin.Europe</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1024992862</time_visited>
             <time_added>1015861435</time_added>
           </metadata>
         </info>
@@ -2575,7 +2545,6 @@
         <title>HypoVereinsbank Startseite</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1028482520</time_visited>
             <time_added>1018264014</time_added>
           </metadata>
         </info>
@@ -2599,7 +2568,6 @@
           <title>DF7CB - Die Amateurfunk-Seite</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1023796806</time_visited>
               <time_added>877524801</time_added>
             </metadata>
           </info>
@@ -2608,7 +2576,6 @@
           <title>DF7CB umgezogen</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1023796798</time_visited>
               <time_added>887329625</time_added>
             </metadata>
           </info>
@@ -2697,7 +2664,6 @@
           <title>Comics</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1023796834</time_visited>
               <time_added>900495209</time_added>
             </metadata>
           </info>
@@ -3692,7 +3658,6 @@
           <title>Frescores - index</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1026926455</time_visited>
               <time_added>1026926452</time_added>
             </metadata>
           </info>
@@ -3871,7 +3836,6 @@
         <title>FTP Search</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1026896761</time_visited>
             <time_added>934989653</time_added>
           </metadata>
         </info>
@@ -3928,7 +3892,6 @@
         <title>Teleauskunft</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1028483545</time_visited>
             <time_added>1004955828</time_added>
           </metadata>
         </info>
@@ -3937,7 +3900,6 @@
         <title>LEO English/German Dictionary</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027343570</time_visited>
             <time_added>1022667050</time_added>
           </metadata>
         </info>
@@ -3962,7 +3924,6 @@
         <title>Campus -&gt; Rathaus</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1023894182</time_visited>
             <time_added>938875840</time_added>
           </metadata>
         </info>
@@ -4004,7 +3965,6 @@
       <title>Speiseplan</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_visited>1027069421</time_visited>
           <time_added>942277185</time_added>
         </metadata>
       </info>
@@ -4020,7 +3980,6 @@
         <title>PVS</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1028497876</time_visited>
             <time_added>953734137</time_added>
           </metadata>
         </info>
@@ -4084,7 +4043,6 @@
           <title>NASA Langley PVS Libraries</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1026402406</time_visited>
               <time_added>990523894</time_added>
             </metadata>
           </info>
@@ -4125,7 +4083,6 @@
           <title>Hendrik Tews</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1024397828</time_visited>
               <time_added>991748297</time_added>
             </metadata>
           </info>
@@ -4207,7 +4164,6 @@
           <title>System Architecture Group</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_visited>1024996696</time_visited>
               <time_added>993648530</time_added>
             </metadata>
           </info>
@@ -4338,7 +4294,6 @@
         <title>Datenbank bearbeiten</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027070495</time_visited>
             <time_added>960660355</time_added>
           </metadata>
         </info>
@@ -4355,7 +4310,6 @@
         <title>Bewohnerliste</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027413669</time_visited>
             <time_added>964390609</time_added>
           </metadata>
         </info>
@@ -4398,7 +4352,6 @@
       <title>Die Zeit</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_visited>1028497865</time_visited>
           <time_added>1028497554</time_added>
         </metadata>
       </info>
