@@ -3,12 +3,15 @@
 # Allgemeine Einstellungen
 /set auto_whowas on
 /set beep on
-/set beep_when_away 0
-/set beep_on_msg msg notice note
-/set channel_name_with 12
+/set beep_when_away 1
+#/set beep_on_msg msg notice note
+/set channel_name_width 12
 /set clock on
 /set clock_24hour on
+# debian syntax
 /set color on
+# native ircII 4.4 syntax
+/set colour on
 /set eight_bit_characters on
 /set full_status_line on
 /set help_pager on
@@ -96,18 +99,18 @@
 #/alias h /set hold_mode $0-
 
 # Channel-Aliase
-/alias sar /join #saar
-/alias wsar /who #saar
+#/alias sar /join #saar
+#/alias wsar /who #saar
 /alias heimd /join #heim-d
 /alias wheimd /who #heim-d
 /alias tt /msg trancetip
 
 # 'login'-Anzeige
-/who *-sb.*
-/who #heim-d
+#/who *-sb.*
+#/who #heim-d
 /notify Y_Plentyn mawan roquas mah schnueff df7cb cb cb7 alfons alfonz
 /notify
 # /ignore heimgeist public msgs
 /ignore opaunger public msgs
 /ignore profhase public msgs
-/ignore
+#/ignore
