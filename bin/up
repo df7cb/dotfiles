@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ping -q -c1 -w1 "$@" >/dev/null
