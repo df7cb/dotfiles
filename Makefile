@@ -3,7 +3,7 @@
 DEPS = Makefile .configrc
 UNDEFINE = -Uformat -Uindex -Uunix
 
-all: .pinerc .ytalkrc .xinitrc mail/d .configrc
+all: .pinerc .ytalkrc .xinitrc mail/d .configrc bin/$(OS)/xkbd
 
 .pinerc: .pinerc.m4 $(DEPS)
 	m4 $(UNDEFINE) .configrc .pinerc.m4 > .pinerc
@@ -19,6 +19,9 @@ mail/d:
 	touch mail/deleted
 	ln -s deleted mail/d
 
+bin/$(OS)/xkbd:
+	make -C bin/src install
+
 diff:
 	diff -u .pinerc.m4 .pinerc || true
 
@@ -32,9 +35,9 @@ commit:
 		.ssh/known_hosts .ncftp/bookmarks
 
 install:
-	@case "$(PWD)" in */cb-conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
+	@case "$(PWD)" in *conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
 	mv * .[a-z]* .[A-Z]* ..
-	@cd .. && rmdir cb-conf && make
+	@cd .. && rmdir conf && make
 	@echo "Fertig. cd .."
 
 .configrc:
