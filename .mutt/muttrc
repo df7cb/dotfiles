@@ -92,6 +92,7 @@ hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
 #set abort_nosubject
 set abort_unmodified=ask-yes
 set alias_file=~/.mutt/aliases
+#set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
 alternates ^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$
 set attribution="Re: %F in %i"
 set auto_tag
@@ -138,6 +139,7 @@ set reverse_name
 unset reverse_realname
 set rfc2047_parameters
 #unset save_empty
+set send_charset="us-ascii:iso-8859-1:iso-8859-15:utf-8"
 set sendmail_wait=15
 unset sig_dashes
 set status_format="-%r-Mutt: %f%?V?[%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
