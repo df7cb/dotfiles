@@ -82,7 +82,7 @@ endif
 
 " Screen has a title bar
 if &term =~ "screen*"
-  set t_ts=[0;
+  set t_ts=]0;
   set t_fs=
 endif
 
