@@ -2,8 +2,8 @@
 
 use Getopt::Std;
 
-($opt_1, $opt_a, $opt_b, $opt_e, $opt_t) = ();
-getopts('1abeht:');
+($opt_1, $opt_a, $opt_b, $opt_e, $opt_h, $opt_l, $opt_t) = ();
+getopts('1abehlt:');
 
 $twocolumn = 'twocolumn,';
 $twocolumn = '' if $opt_1;
@@ -23,6 +23,9 @@ if($opt_e) {
 }
 if($opt_h) {
 	$directorystyle = "address-html";
+}
+if($opt_l) {
+	$directorystyle = "email-list";
 }
 
 if(!@ARGV) {
@@ -86,7 +89,7 @@ print A '\documentclass['. $twocolumn. '12pt]{article}
 
 close A;
 
-if ($opt_a) {
+if ($opt_a or $opt_l) {
 	system("make aliases");
 } elsif ($opt_h) {
 	system("make addr.html");
