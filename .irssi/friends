@@ -1,5 +1,5 @@
 # version = 2.4.1 (20021124)
-# written = 1069685406
+# written = 1069764220
 handle=Myon%hosts=*!cb@sycorax.cs.uni-sb.de *!cberg@hamberg.it.uu.se%globflags=omr%chanflags=%password=bxEtV2DlRwxq2%comment=%
 handle=HeimGeist%hosts=*!heimfee@d096.stw.stud.uni-saarland.de%globflags=r%chanflags=#heim-d,ao,%password=%comment=%
 handle=Reisender%hosts=*!~schoenin@hspc05.cs.uni-sb.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
