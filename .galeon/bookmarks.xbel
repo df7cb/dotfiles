@@ -457,6 +457,14 @@
             <time_added>976822967</time_added>
           </metadata>
         </info>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/">
+          <title>WJP</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934039328</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://infobib.cs.uni-sb.de/">
           <title>Fachbereichsbibliothek Informatik</title>
           <info>
@@ -481,14 +489,6 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www-wjp.cs.uni-sb.de/">
-          <title>WJP</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>934039328</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www.rz.uni-saarland.de/">
           <title>Rechenzentrum</title>
           <info>
@@ -506,19 +506,17 @@
           </info>
         </bookmark>
         <bookmark href="http://www.zbi.uni-saarland.de/">
-          <title>Bioinformatik</title>
+          <title>Zentrum f&#239;&#191;&#189;r Bioinformatik Saar</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1039105591</time_modified>
               <time_added>993320976</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://www.szsb.uni-sb.de/frameset.html">
-          <title>Sprachenzentrum</title>
+          <title>Sprachenzentrum Saarbr&#239;&#191;&#189;cken (SZSB)</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1039105595</time_modified>
               <time_added>1005495448</time_added>
             </metadata>
           </info>
@@ -545,6 +543,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>986472836</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/~tante/tebank.html">
+          <title>Tante Emma Online Banking</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>987593978</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -738,6 +744,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>956665361</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/i2.html">
+          <title>http://www-wjp.cs.uni-sb.de/~cb/i2.html</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>957574383</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -1363,57 +1377,6 @@
       </bookmark>
     </folder>
     <folder folded="yes">
-      <title>RW</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>.galeon/favicons/rw4.gif</pixmap>
-          <time_modified>1039106763</time_modified>
-          <time_added>1039105640</time_added>
-        </metadata>
-      </info>
-      <bookmark href="http://rw4.cs.uni-sb.de/">
-        <title>Lehrstuhl Wilhelm</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1039105691</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <folder folded="yes">
-        <title>PowerPC</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1039105662</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www-106.ibm.com/developerworks/library/l-ppc/">
-          <title>developerWorks: Linux : PowerPC assembly</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1039105675</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.lightsoft.co.uk/Fantasm/Beginners/begin1.html">
-          <title>Beginners Guide to PowerPC Assembly Language</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1039179784</time_modified>
-              <time_added>1039179770</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://linuxassembly.org/resources.html">
-          <title>Linux Assembly: resources</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1039179968</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-    </folder>
-    <folder folded="yes">
       <title>Boerse</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
@@ -1596,6 +1559,15 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>925078120</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.genion.de/genion/login/my__account/mein-vertrag/index.html">
+          <title>o2 Genion: Mein Vertrag</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1039261744</time_modified>
+              <time_added>1039261695</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -4504,6 +4476,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1033942999</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://selfhtml.teamone.de/">
+        <title>SELFHTML</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1039391407</time_added>
           </metadata>
         </info>
       </bookmark>
