@@ -13,6 +13,7 @@ unset PATH
 for dir in \
 	/local/atools/cb/bin \
 	/local/atools/bin \
+	/local/cb/bin \
 	$HOME/bin/${OS:-OSDIR} \
 	$HOME/bin \
 	$HOME/bin/misc-bin \
