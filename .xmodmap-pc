@@ -3,9 +3,9 @@
 
 keycode 0x31 =	grave		asciitilde	dead_grave	dead_tilde
 keycode 0x0A =	1		exclam		onesuperior	exclamdown
-keycode 0x0B =	2		at		twosuperior
-keycode 0x0C =	3		numbersign	threesuperior
-keycode 0x0D =	4		dollar		sterling
+keycode 0x0B =	2		at		twosuperior	onehalf
+keycode 0x0C =	3		numbersign	threesuperior	threequarters
+keycode 0x0D =	4		dollar		sterling	onequarter
 keycode 0x0E =	5		percent		plusminus
 keycode 0x0F =	6		asciicircum	notsign		dead_circumflex
 keycode 0x10 =	7		ampersand	braceleft
@@ -22,38 +22,49 @@ keycode 0x1B =	r		R		r		registered
 keycode 0x1D =	y		Y
 keycode 0x1E =	u		U		udiaeresis	Udiaeresis
 keycode 0x20 =	o		O		odiaeresis	Odiaeresis
-keycode 0x21 =	p		P		Pause
+keycode 0x21 =	p		P
 keycode 0x22 =	bracketleft	braceleft
 keycode 0x23 =	bracketright	braceright	asciitilde
 keycode 0x6B =	Delete
-keycode 0x42 =	Control_L
 keycode 0x26 =	a		A		adiaeresis	Adiaeresis
-keycode 0x27 =	s		S		ssharp
+keycode 0x27 =	s		S		ssharp		section
 keycode 0x28 =	d		D		degree
-keycode 0x2F =	semicolon	colon		Left		dead_diaeresis
-keycode 0x30 =	apostrophe	quotedbl	Right		dead_acute
+keycode 0x2F =	semicolon	colon		dead_diaeresis	dead_diaeresis
+keycode 0x30 =	apostrophe	quotedbl	dead_acute
 keycode 0x33 =	backslash	bar		NoSymbol	brokenbar
 keycode 0x53 =	KP_Left		KP_4
 keycode 0x54 =	KP_Begin	KP_5
 keycode 0x55 =	KP_Right	KP_6
-keycode 0x32 =	Shift_L
 keycode 0x5E =	less		greater		bar		brokenbar
 keycode 0x34 =	z		Z
 keycode 0x36 =	c		C		copyright	dead_cedilla
 keycode 0x3A =	m		M		mu
-keycode 0x3B =	comma		less		End
-keycode 0x3C =	period		greater		Next		periodcentered
-keycode 0x3D =	slash		question	Down		questiondown
-keycode 0x3E =	Shift_R
+keycode 0x3B =	comma		less		NoSymbol	guillemotleft
+keycode 0x3C =	period		greater		periodcentered	guillemotright
+keycode 0x3D =	slash		question	questiondown	questiondown
 keycode 0x62 =	Up
+
+keycode 0x32 =	Shift_L
+keycode 0x3E =	Shift_R
+! capslock
+keycode 0x42 =	Control_L
+! left control
 keycode 0x25 =	Control_L
+! left alt
 keycode 0x40 =	Alt_L
+! right alt
 keycode 0x71 =	Mode_switch
+! right control
 keycode 0x6D =	Control_R
+! "third" win key
 keycode 0x72 =	Mode_switch
+! left win
 keycode 0x73 =	Meta_L
+! right win
 keycode 0x74 =	Mode_switch
+! left meta
 keycode 0x81 =	Meta_R
+! right meta
 keycode 0x83 =	Meta_L
 
 clear Shift
