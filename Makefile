@@ -3,7 +3,7 @@
 DEPS = Makefile .configrc
 UNDEFINE = -Uformat -Uindex -Uunix
 
-all: .pinerc .ytalkrc .xinitrc mail/d .configrc bin/$(OS)/xkbd
+all: .pinerc .ytalkrc .xinitrc mail/d .configrc
 
 ## targets ##
 
@@ -21,14 +21,12 @@ mail/d:
 	touch mail/deleted
 	ln -s deleted mail/d
 
-bin/$(OS)/xkbd: bin/src/xkbd.c
-	$(MAKE) -C bin/src install
-
 diff:
 	diff -u .pinerc.m4 .pinerc || true
 
 ## update stuff ##
 
+# this needs GNU make
 export CVSIGNORE=*
 export CVS_RSH=ssh
 
