@@ -39,7 +39,7 @@ imap <c-z> <esc><c-z>
 nmap <space> <c-f>
 nmap - <c-b>
 nmap M :make!<cr><cr>
-nmap b <c-b>
+set pastetoggle=<f11> " turn on/off paste in insert mode
 
 nmap <f1>	:b1<cr>
 nmap <f2>	:b2<cr>
