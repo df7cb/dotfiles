@@ -3,21 +3,22 @@
 
 # convert addressbook database to Geburtstage
 
+use strict;
 use lib '.';
 use addressbook;
 
 # plan kann keine Jahre vor 1970 :-/
-$y = (localtime)[5] + 1900;
+my $y = (localtime)[5] + 1900;
 
 while(<>) {
-	addr_get_line($_);
-	next unless $geb_tag;
-	$geb_jahr = " *". ($geb_jahr % 100) if $geb_jahr;
-	$z = $zusatz ? "$zusatz " : "";
+	my $f = addressbook::addr_get_line($_);
+	next unless $f->{geb_tag};
+	$f->{geb_jahr} = " *". ($f->{geb_jahr} % 100) if $f->{geb_jahr};
+	my $z = $f->{zusatz} ? "$f->{zusatz} " : "";
 
-	print "$geb_mon/$geb_tag/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
+	print "$f->{geb_mon}/$f->{geb_tag}/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
 	print "R\t0 0 0 0 1\n";
-	print "N\t$z$vorname $nachname$geb_jahr\n";
+	print "N\t$z$f->{vorname} $f->{nachname}$f->{geb_jahr}\n";
 }
 
 #1/13/2000  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0

@@ -3,17 +3,17 @@
 
 # convert addressbook database to mailing list
 
+use strict;
 use lib '.';
 use addressbook;
 
-$kat = shift || "";
+my $kat = shift || "";
 
 while(<>) {
-	addr_get_line($_);
-	$kategorie ||= "";
-	next unless $kategorie =~ /\b$kat\b/;
-	next unless $email;
-	foreach (split /,\s*/, $email) {
-		print "$vorname $nachname <$_>\n";
+	my $f = addressbook::addr_get_line($_);
+	next unless $f->{kategorie} =~ /\b$kat\b/;
+	next unless $f->{email};
+	foreach (split /,\s*/, $f->{email}) {
+		print "$f->{vorname} $f->{nachname} <$_>\n";
 	}
 }

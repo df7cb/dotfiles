@@ -1,10 +1,11 @@
 #!/usr/bin/perl -w
 # $Id$
 
+use strict;
 use lib '.';
 use addressbook;
 
-$exit = 0;
+my $exit = 0;
 
 sub check {
 	my $field = shift;
@@ -16,15 +17,30 @@ sub check {
 	$exit = 1;
 }
 
-$old_nachname = $old_vorname = "";
+my ($old_nachname, $old_vorname) = ("", "");
+my %K;
+
 while(<>) {
-	addr_get_line($_);
-	if(($old_nachname gt $nachname) or ($old_nachname eq $nachname and $old_vorname gt $vorname)) {
+	my $f = addressbook::addr_get_line($_);
+	if(($old_nachname gt $f->{nachname}) or ($old_nachname eq $f->{nachname} and $old_vorname gt $f->{vorname})) {
 		print "line $.: out-of-order, file is not sorted\n";
 		print "line $.: $_";
 	}
-	check("geburtstag", '(\d+\.\d+\.)?\d*');
-	($old_nachname, $old_vorname) = ($nachname, $vorname);
+	$f->{geburtstag} =~ /^(\d+\.\d+\.)?\d*$/ or warn "Geburtstag $f->{vorname} $f->{nachname}: $f->{geburtstag}";
+	($old_nachname, $old_vorname) = ($f->{nachname}, $f->{vorname});
+	if($f->{kategorie}) {
+		my @k = split /, */, $f->{kategorie};
+		foreach my $k (@k) {
+			$K{$k}++;
+		}
+	} else {
+		$K{"(keine)"}++;
+	}
 }
+
+foreach(sort keys %K) {
+	print "$_: $K{$_} ";
+}
+print "\n";
 
 exit $exit;

@@ -3,19 +3,21 @@
 
 # convert addressbook database to mutt aliases
 
+use strict;
 use lib '.';
 use addressbook;
 
+my %MAIL;
 while(<>) {
-	addr_get_line($_);
-	next unless $email;
-	foreach (split /,\s*/, $email) {
+	my $f = addressbook::addr_get_line($_);
+	next unless $f->{email};
+	foreach (split /,\s*/, $f->{email}) {
 		/(.+)@/;
 		if(exists $MAIL{"\L$1"}) {
 			die if exists $MAIL{$_};
-			$MAIL{$_} = "$vorname $nachname <$_>";
+			$MAIL{$_} = "$f->{vorname} $f->{nachname} <$_>";
 		} else {
-			$MAIL{"\L$1"} = "$vorname $nachname <$_>";
+			$MAIL{"\L$1"} = "$f->{vorname} $f->{nachname} <$_>";
 		}
 	}
 }
