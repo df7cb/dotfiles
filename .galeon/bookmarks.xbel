@@ -1750,6 +1750,30 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>Modelchecking</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1056631697</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://nusmv.irst.itc.it/">
+          <title>NuSMV home page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1056631704</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-2.cs.cmu.edu/~modelcheck/smv.html">
+          <title>The SMV System</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1056631794</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>B&#195;&#182;rse</title>
