@@ -3987,6 +3987,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.spinnaker.de/mutt/compressed/">
+          <title>Compressed folders patch for Mutt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1077621730</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>procmail</title>
