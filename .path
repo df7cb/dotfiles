@@ -80,13 +80,15 @@ for dir in $save ; do
 done
 export INFOPATH
 
+# really ugly, broken workaround for SunOS 4
+if [ -f /bin/test ] ; then TEST=/bin/test ; else TEST=test ; fi
 for dir in $TMPDIRS ; do
-	if [ -d $dir ] && /bin/test -O $dir ; then # work around Solaris sh without -O
+	if [ -d $dir ] && $TEST -O $dir ; then
 		export TEMP=$dir TMP=$dir TMPDIR=$dir
 		break
 	fi
 done
-unset TMPDIRS
+unset TMPDIRS TEST
 
 #unset TEXINPUTS
 #for dir in \
