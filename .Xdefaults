@@ -14,6 +14,7 @@ XDvi.keepPosition:	true
 Fig*inches:		false
 Fig*library_dir:	~/lib/xfig
 Fig*PaperSize:		A4
+Fig*specialtext:	true
 Netscape*blinkingEnabled: false
 Netscape*installColormap: true
 XTerm*color3:		orange
