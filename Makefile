@@ -30,9 +30,13 @@ update:
 	cvs update -I "*"
 
 com: commit
-commit:
+commit: bookmark-clean
 	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html \
 		.ssh/known_hosts .ncftp/bookmarks
+
+bookmark-clean:
+	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' \
+		.netscape/bookmarks.html
 
 install:
 	@case "$(PWD)" in *conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
