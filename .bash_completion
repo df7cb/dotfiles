@@ -75,7 +75,7 @@ complete -r
 # general stuff
 complete -d cd rd
 complete -o default -A running disown
-complete -o default -c strace sudo type
+complete -o default -c strace sudo type xargs
 complete -v unset vared
 
 # generic filetype rules
