@@ -4,9 +4,10 @@ DAT = cb.dat
 DEPS = cb.dat addressbook.pm
 ALIASES = $(HOME)/.mutt/aliases.addressbook
 
-all: do-check $(ALIASES) geb.plan abi96.list bibtex/cb.bib
+all: check $(ALIASES) geb.plan abi96.list bibtex/cb.bib
 
-do-check:
+.PHONY: check
+check:
 	-./check $(DAT)
 
 $(ALIASES): aliases $(DEPS)
@@ -20,3 +21,7 @@ abi96.list: mailinglist $(DEPS)
 
 bibtex/cb.bib: address2bib $(DEPS)
 	./address2bib $(DAT) > $@
+
+.PHONY: bibtex
+bibtex: do-check bibtex/cb.bib
+	make -C bibtex
