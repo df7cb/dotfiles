@@ -4372,6 +4372,14 @@
             <time_added>1068132989</time_added>
           </metadata>
         </info>
+        <bookmark href="http://channel.debian.de/">
+          <title>#debian.de</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1073479105</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://www.youam.net/maps/%2523debian.de.html">
           <title>~youam/maps/#debian.de</title>
           <info>
@@ -4423,6 +4431,14 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://people.debian.org/~keybuk/planetdebian/">
+        <title>Planet Debian</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1073297379</time_added>
+          </metadata>
+        </info>
+      </bookmark>
       <bookmark href="http://www.linuxgazette.com/issue89/gonzales.html">
         <title>Security Administration with Debian GNU/Linux LG #89</title>
         <info>
