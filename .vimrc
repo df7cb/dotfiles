@@ -41,18 +41,30 @@ nmap - <c-b>
 nmap M :make!<cr><cr>
 nmap b <c-b>
 
-nmap <f1> :b1<cr>
-nmap <f2> :b2<cr>
-nmap <f3> :b3<cr>
-nmap <f4> :b4<cr>
-nmap <f5> :b5<cr>
-nmap <f6> :b6<cr>
-nmap <f7> :b7<cr>
-nmap <f8> :b8<cr>
-nmap <f9> :b9<cr>
-nmap <f10> :b10<cr>
-nmap <f11> :b11<cr>
-nmap <f12> :b12<cr>
+nmap <f1>	:b1<cr>
+nmap <f2>	:b2<cr>
+nmap <f3>	:b3<cr>
+nmap <f4>	:b4<cr>
+nmap <f5>	:b5<cr>
+nmap <f6>	:b6<cr>
+nmap <f7>	:b7<cr>
+nmap <f8>	:b8<cr>
+nmap <f9>	:b9<cr>
+nmap <f10>	:b10<cr>
+nmap <f11>	:b11<cr>
+nmap <f12>	:b12<cr>
+nmap <s-f1>	:b13<cr>
+nmap <s-f2>	:b14<cr>
+nmap <s-f3>	:b15<cr>
+nmap <s-f4>	:b16<cr>
+nmap <s-f5>	:b17<cr>
+nmap <s-f6>	:b18<cr>
+nmap <s-f7>	:b19<cr>
+nmap <s-f8>	:b20<cr>
+nmap <s-f9>	:b21<cr>
+nmap <s-f10>	:b22<cr>
+nmap <s-f11>	:b23<cr>
+nmap <s-f12>	:b24<cr>
 
 " highlights
 hi NonText cterm=NONE
