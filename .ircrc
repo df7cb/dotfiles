@@ -149,6 +149,7 @@
 /delop 0
 /delop 0
 /delop 0
+/delop 0
 # hal
 /addop *!byteace@d096.stw.stud.uni-saarland.de
 /addop *!cb@d096.stw.stud.uni-saarland.de
@@ -157,6 +158,7 @@
 /addop *!sauer@d096.stw.stud.uni-saarland.de
 /addop *!schutz@d096.stw.stud.uni-saarland.de
 # heim-d
+/addop *!ameise@d114.stw.stud.uni-saarland.de
 /addop *!mo@d144.stw.stud.uni-saarland.de
 /addop *!cb@d158.stw.stud.uni-saarland.de
 /addop *!~cb@d158.stw.stud.uni-saarland.de
