@@ -113,8 +113,8 @@
 #/on who "#heim-d HeimGeist H *heimfee hal.heim-d.uni-sb.de" mode * +o HeimGeist
 /alias ts echo $0- \($Z)
 /on ^action "* *" echo 4* $0 $2-
-/on ^join "* *" who $0;ts 6*** $0 joined $1
-/on ^leave "* * *" ts 6*** $0 left $1: $2-
+/on ^join "* *" whois $0;ts 6*** $0 joined $1
+/on ^leave "* * *" whois $0;ts 6*** $0 left $1: $2-
 /on ^mode "* * *" echo 11*** Mode change "$2-" on $1 by $0
 /on ^msg "* *" ts 3*$0* $1-
 /on ^nick "* *" echo 6*** $0 -> $1
@@ -122,9 +122,9 @@
 /on ^public "* * *cb*" echo <2$0> $2-
 /on ^public "* * *myon*" echo <2$0> $2-
 /on ^topic "* * *" ts 7*** Topic on $1 by $0: $2-
-/on ^signoff "* *" ts 6*** $0 signed off: $1-
+/on ^signoff "* *" whowas $0;ts 6*** $0 signed off: $1-
 /on ^send_action "*" echo 4* $N $1-
-/on ^send_msg "* *" echo 3-> *$0* $1-
+/on ^send_msg "* *" echo ->3 *$0* $1-
 /on ^send_public "*" echo 4> $1-
 
 #autoop
