@@ -117,7 +117,7 @@ set ispell="aspell --lang=de check"
 unset markers
 set mbox_type=mbox
 set menu_context=3
-unset menu_move_off
+#unset menu_move_off
 set menu_scroll
 set mime_forward=ask-yes
 unset move
@@ -125,7 +125,7 @@ set pager_index_lines=5
 set pager_stop
 unset pipe_decode
 set pipe_split
-#set pgp_auto_decode
+set pgp_auto_traditional
 set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x6D8ABE71"
@@ -193,8 +193,7 @@ color body      blue default (https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+
 # MIME config
 auto_view text/html
 alternative_order text/plain text/html
-
-#open-hook ^http: "wget -O %t %f"
+mime_lookup application/octet-stream
 
 source ~/.mutt/hooks
 source ~/.mutt/lists
