@@ -617,23 +617,6 @@
             <time_added>976822967</time_added>
           </metadata>
         </info>
-        <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/">
-          <title>Graduiertenkolleg &quot;Leistungsgarantien f&#195;&#188;r Rechnersysteme&quot;</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1054047481</time_modified>
-              <time_added>988284136</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/berichte-15januar-imjahre-2002/">
-          <title>Index of /gradkoll/berichte-15januar-imjahre-2002</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1011176183</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www-wjp.cs.uni-sb.de/">
           <title>WJP</title>
           <info>
@@ -1641,6 +1624,41 @@
           </metadata>
         </info>
       </bookmark>
+      <separator/>
+      <folder folded="yes">
+        <title>Graduiertenkolleg</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1055510742</time_modified>
+            <time_added>1055510735</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/">
+          <title>Graduiertenkolleg Leistungsgarantien f&#195;&#188;r Rechnersysteme</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1055510777</time_modified>
+              <time_added>988284136</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/berichte-15januar-imjahre-2002/">
+          <title>Index of /gradkoll/berichte-15januar-imjahre-2002</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1011176183</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-i4.informatik.rwth-aachen.de/Kolleg/dagstuhl.html">
+          <title>Dagstuhl-Workshop (16.-18. Juni 2003)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1055510821</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
       <separator/>
       <folder folded="yes">
         <title>Assembly</title>
