@@ -35,6 +35,7 @@ sub template_output {
 		undef $template_stop_rest;
 	}
 	while(<TEMPLATE>) {
+		s/__IF\((.*)\)\((.*)\)__/eval($1) ? $2 : "";/eg; # __IF(cond)(value)__
 		foreach my $k (keys %SUBST_STR) {
 			s/$k/$SUBST_STR{$k}/g;
 		}
@@ -51,6 +52,7 @@ sub template_output {
 	undef $template_file unless $stop;
 }
 
+# TODO: template_output should probably not be called upon die()
 END {
 	template_output if $template_file;
 }
