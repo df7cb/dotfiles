@@ -18,6 +18,10 @@ up: update
 update:
 	cvs update -I "*"
 
+com: commit
+commit:
+	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts
+
 __tests:
 	@echo "Starte Tests..."
 	@test -L mail/d || echo "mail/d ist kein Link auf mail/deleted!"
