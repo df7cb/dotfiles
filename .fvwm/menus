@@ -25,9 +25,11 @@ AddToMenu Main	"fvwm2"		Title
 
 DestroyMenu ProgMenu
 AddToMenu ProgMenu	"Programs"	Title
-+		"Netscape"		Exec netscape
-+		"Netscape @ wjpserver"	Exec ssh -f wjpserver netscape
-+		"Netscape @ spiff"	Exec ssh -f spiff netscape
++		"netscape"		Exec netscape
++		"netscape@wjpserver"	Exec ssh -f wjpserver netscape
++		"netscape@goedel"	Exec ssh -f goedel netscape
++		"netscape@zuse"		Exec ssh -f zuse netscape
++		"xtnt"			Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 +		"gv"			Exec gv
 
 
