@@ -11,9 +11,11 @@ sub oerks {
 	# </ul></td></tr></table>
 	print "<p><font color=red>Suddenly, the script named $0 died for some strange reason:\n<pre>$_</pre></font>\n";
 	print "<p>Fehlermeldungen bitte an $ENV{SERVER_ADMIN} senden!\n";
-	print "<p>Please mail error messages to $ENV{SERVER_ADMIN}!\n";
+	print "<br>Please mail error messages to $ENV{SERVER_ADMIN}!\n";
 	my $time = scalar(localtime);
-	print STDERR "[$time] [die] $0: @_";
+	my $options = $ENV{QUERY_STRING} || "";
+	my $path = $ENV{PATH_INFO} || "";
+	print STDERR "[$time] [die] $0: @_ [QUERY_STRING=$options PATH_INFO=$path]";
 	exit 1;
 }
 # install handler
@@ -22,7 +24,9 @@ $SIG{__DIE__} = \&oerks;
 # make warnings more readable in the apache error log
 sub warn_oerks {
 	my $time = scalar(localtime);
-	print STDERR "[$time] [warn] $0: @_";
+	my $options = $ENV{QUERY_STRING} || "";
+	my $path = $ENV{PATH_INFO} || "";
+	print STDERR "[$time] [warn] $0: @_ [QUERY_STRING=$options PATH_INFO=$path]";
 }
 # install handler
 $SIG{__WARN__} = \&warn_oerks;
