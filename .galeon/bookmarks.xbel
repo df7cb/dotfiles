@@ -4356,6 +4356,16 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://lists.debian.org/">
+          <title>lists.debian.org</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <nick>l.d.o</nick>
+              <time_modified>1074075955</time_modified>
+              <time_added>1074075940</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://www.backports.org/">
           <title>Debian Backports</title>
           <info>
