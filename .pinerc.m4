@@ -24,7 +24,7 @@
 personal-name=
 
 # Sets domain part of From: and local addresses in outgoing mail.
-user-domain=_MAILDOMAIN_
+user-domain=ifdef(`_MAILDOMAIN_', `_MAILDOMAIN_', `errprint(`_MAILDOMAIN_ undefined.')')
 
 # List of SMTP servers for sending mail. If blank: Unix Pine uses sendmail.
 smtp-server=""
@@ -159,7 +159,7 @@ customized-hdrs=From:,
 	Lcc:,
 	Newsgroups:,
 	Approved:,
-	Organization: "_ORGANIZATION_",
+	Organization: ifdef(`_ORGANIZATION_', `_ORGANIZATION_', `errprint(`_ORGANIZATION_ undefined.')'),
 	Attchmnt:,
 	Subject:
 
