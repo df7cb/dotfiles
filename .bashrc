@@ -6,7 +6,11 @@
 . ~/.path
 . ~/.env
 
-j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
+case $BASH_VERSION in
+	2.0[4-9]*) j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")' ;;
+	2.0[0-3]*) j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s ")' ;;
+	*) echo "$0: unknown bash version $BASH_VERSION" 1>&2 ;;
+esac
 u='[\[\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\]'
 case $TERM in
 linux*|*vt100*|cons25)
@@ -29,9 +33,10 @@ HISTCONTROL=ignoredups
 HISTFILESIZE=100
 HISTSIZE=500
 unset ignoreeof
-[ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
-[ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
-stty erase  >& /dev/null
+shopt -s no_empty_cmd_completion
+#[ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
+#[ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
+stty erase ^H &> /dev/null
 #unset noclobber
 
 # general stuff
