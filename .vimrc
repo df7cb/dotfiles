@@ -26,12 +26,12 @@ set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 filetype plugin on
 
 " Key bindings
-nmap <c-h> i<c-h>
+nmap <c-h> :bp<cr>
 nmap <tab> :bn<cr>
 imap <c-z> <esc><c-z>
 nmap <space> <c-f>
 nmap - <c-b>
-map _i i\begin{itemize}<cr>\item <esc>mi}O\end{itemize}<esc>'i
+map _i i\begin{itemize}<cr>\item <esc>mi}O\end{itemize}<esc>`i
 nmap M :make!<cr><cr>
 nmap b <c-b>
 
