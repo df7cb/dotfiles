@@ -2,8 +2,8 @@
 handle=Myon%hosts=*!cberg@hamberg.it.uu.se *!cb@sycorax.cs.uni-sb.de%globflags=omr%chanflags=%password=bxEtV2DlRwxq2%comment=%
 handle=At-Tifl%hosts=*!*Miranda@*.mnet-online.de *!*hagen@ppp-82-135-0-151.mnet-online.de%globflags=%chanflags=#plant,o,%password=6RrlI9bDyBO2Q%comment=%
 handle=beeelze%hosts=*!*schutz@d139.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
-handle=bernhard%hosts=*!*bernhard@139.124.18.229%globflags=%chanflags=#plant,ao,%password=%comment=%
-handle=chris101%hosts=*!chcl@*.mpi-sb.mpg.de *!~chcl@mpii-cf.zb.mpi-sb.mpg.de *!~chcl@paris.mpi-sb.mpg.de *!~ich@mpii-cf.zb.mpi-sb.mpg.de *!*chcl@mpiat0205.mpi-sb.mpg.de *!*ich@ganymed.mpi-sb.mpg.de%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=bernhard%hosts=*!*bernhard@pc-atelier.crmcn.univ-mrs.fr *!*bernhard@139.124.18.229 *!*bernhard@xGagC632.WH1.TU-Dresden.De%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=chris101%hosts=*!chcl@*.mpi-sb.mpg.de *!~chcl@mpii-cf.zb.mpi-sb.mpg.de *!~chcl@paris.mpi-sb.mpg.de *!~ich@mpii-cf.zb.mpi-sb.mpg.de *!*ich@mpiat0205.mpi-sb.mpg.de *!*ich@ganymed.mpi-sb.mpg.de%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=deOnkel%hosts=*!bruno@fsinfo.cs.uni-sb.de *!bruno@wh106.stw.stud.uni-saarland.de *!bruno@amalthea.cs.uni-sb.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
 handle=DerBerg%hosts=*!matber@d020.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=Desira%hosts=Desira!*@*.dip.t-dialin.net *!*blub@*.arcor-ip.net%globflags=%chanflags=#heim-d,o, #plant,o,%password=9btlt6qV0kOGU%comment=%
@@ -36,3 +36,5 @@ handle=Xellos%hosts=*!*adh@fsphy.fs.uni-sb.de%globflags=%chanflags=#plant,ao,%pa
 handle=XTaran%hosts=*!*abe@virtually.noone.org *!abe@sycorax.cs.uni-sb.de%globflags=%chanflags=#plant,oa,%password=Cg7GqlJIx34rU%comment=%
 handle=Y_Plentyn%hosts=*!*aw@crow.net.uni-sb.de *!*aw@raven.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,aomr,%password=%comment=%
 handle=Zwiebeltu%hosts=*!*m@elvis.franken.de%globflags=%chanflags=%password=%comment=%
+handle=dyfa%hosts=*!dyfa@imperial.addict.de%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=bjoerny%hosts=*!*bjmi0000@sbustd.stud.uni-saarland.de%globflags=%chanflags=#plant,ao,%password=%comment=%

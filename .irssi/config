@@ -16,11 +16,6 @@ servers = (
     autoconnect = "yes";
   },
   {
-    address = "brunner.freenode.net";
-    chatnet = "freenode";
-    port = "6667";
-  },
-  {
     address = "vinge.freenode.net";
     chatnet = "freenode";
     port = "6667";
@@ -95,7 +90,9 @@ channels = (
   { name = "#procmail"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#debian.de"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#xskat"; chatnet = "ircnet"; autojoin = "yes"; },
-  { name = "#xskat"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#xskat"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian"; chatnet = "oftc"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -111,7 +108,6 @@ aliases = {
   HOST = "userhost";
   LAST = "lastlog";
   SAY = "msg *";
-  WI = "whois";
   WII = "whois $0 $0";
   WW = "whowas";
   W = "who";
@@ -147,11 +143,13 @@ aliases = {
   think = "say .oO($0-)";
   heim = "msg heimgeist";
   plonk = "ignore -time 600";
-  rn = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen (VN NN) ein, danke";
+  realname = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen (VN NN) ein, danke";
   cs = "chanserv";
   ns = "quote nickserv";
   cskick = "quote cs op $C $N ; /wait 2000; /k $*; /mode -o $N";
   csvoice = "quote cs op $C $N ; /wait 2000 ; /mode +v-o $* $N";
+  WI = "whois";
+  fuckinggoogleit = "say http://www.fuckinggoogleit.com/?q=$0-";
 };
 
 statusbar = {
@@ -290,11 +288,12 @@ settings = {
     autolog_path = "~/irc/autolog/%Y-%m/${0}_$tag/${0}-%Y-%m-%d";
     autolog = "yes";
     hilight_nick_matches = "no";
-    show_nickmode = "no";
+    show_nickmode = "yes";
     activity_hide_targets = "";
     activity_hide_level = " actions";
     autoclose_windows = "yes";
     reuse_unused_windows = "yes";
+    show_nickmode_empty = "no";
   };
   proxy = {
     irssiproxy_password = "wb0Biz";
@@ -402,23 +401,24 @@ keyboard = (
   { key = "^O"; id = "upper_window"; data = ""; }
 );
 windows = {
-  2 = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  8 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#heim-d";
-        tag = "ircnet";
+        name = "#debian.de";
+        tag = "oftc";
       }
     );
   };
-  10 = {
+  4 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#xskat";
-        tag = "freenode";
+        name = "#debian.de";
+        tag = "ircnet";
       }
     );
   };
@@ -432,13 +432,33 @@ windows = {
       }
     );
   };
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  8 = {
+  9 = { };
+  10 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian.de";
+        name = "#xskat";
+        tag = "freenode";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "freenode";
+      }
+    );
+  };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
         tag = "oftc";
       }
     );
@@ -453,12 +473,12 @@ windows = {
       }
     );
   };
-  4 = {
+  2 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian.de";
+        name = "#heim-d";
         tag = "ircnet";
       }
     );
@@ -483,15 +503,5 @@ windows = {
       }
     );
   };
-  9 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#xskat";
-        tag = "ircnet";
-      }
-    );
-  };
 };
-mainwindows = { 2 = { first_line = "1"; lines = "32"; }; };
+mainwindows = { 1 = { first_line = "1"; lines = "32"; }; };
