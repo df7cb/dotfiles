@@ -13,6 +13,7 @@ alias bogdana Bogdana Dakova <bogdana@cs.uni-sb.de>
 alias cbieg Claudia Bieg <cbieg@cs.uni-sb.de>
 alias champagnnia Verena Bürger <champagnnia@yahoo.de>
 alias control Debian Bugs Control <control@bugs.debian.org>
+alias control@bugs.guug.de Mutt Bugs Control <control@bugs.guug.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
@@ -60,6 +61,7 @@ alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias resa ReSa <resa@asta.uni-saarland.de>
 alias stupisten \"51. Stupa\" <stupisten@asta.uni-saarland.de>
 alias submit Debian Bugs Submit <submit@bugs.debian.org>
+alias submit@bugs.guug.de Mutt Bugs Submit <submit@bugs.guug.de>
 alias timovoe Timo von Oertzen <timovoe@studcs.uni-sb.de>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
