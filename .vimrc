@@ -44,6 +44,18 @@ endif
 
 if has("autocmd")
 
+" HTML (.shtml for server side)
+augroup html
+  au!
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ä &auml;
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ä &Auml;
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ö &ouml;
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ö &Ouml;
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ü &uuml;
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ü &Uuml;
+  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ß &szlig;
+augroup END
+
 " Set some sensible defaults for editing C-files
 augroup cprog
   " Remove all cprog autocommands
