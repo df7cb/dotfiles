@@ -30,7 +30,7 @@ set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y
 set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
 
-filetype plugin on
+filetype plugin indent on
 
 " Key bindings
 nmap <c-h> :bp<cr>
@@ -78,6 +78,12 @@ if &term =~ "xterm*"
   set t_Co=16
   set t_Sf=[3%dm
   set t_Sb=[4%dm
+endif
+
+" Screen has a title bar
+if &term =~ "screen*"
+  set t_ts=[0;
+  set t_fs=
 endif
 
 " Vim5 comes with syntaxhighlighting.
