@@ -9,8 +9,12 @@
 *FvwmPagerRows 		1
 *FvwmPagerColumns 	1
 *FvwmPagerGeometry	108x85+0-0
-*FvwmPagerFore		Black
-*FvwmPagerBack		grey67
-*FvwmPagerHilight	grey50
 *FvwmPagerFont		none
 *FvwmPagerSmallFont	-misc-fixed-medium-r-normal--7-70-75-75-c-50-iso8859-1
+
+#*FvwmPagerFore		Black
+#*FvwmPagerBack		grey67
+#*FvwmPagerHilight	grey50
+*FvwmPagerFore		RoyalBlue
+*FvwmPagerBack		Yellow
+*FvwmPagerHilight	Red

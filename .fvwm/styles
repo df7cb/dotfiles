@@ -29,11 +29,14 @@ ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
 
 # Text and background color for the title bar of the selected window
 # 'Lola rennt' style back from 1998
-Style	"*"		HilightFore red2, HilightBack LightGreen
-Style	"*"		ForeColor Black, BackColor LightSkyBlue
+#Style	"*"		HilightFore red2, HilightBack LightGreen
+#Style	"*"		ForeColor Black, BackColor LightSkyBlue
 # Blue style like df7cb.dyndns.info (030430)
 #Style	"*"		HilightFore yellow, HilightBack #5176e8
 #Style	"*"		ForeColor #5176e8, BackColor #90abf4
+# colorful style (030930)
+Style	"*"		HilightFore Yellow, HilightBack Orange
+Style	"*"		ForeColor Orange, BackColor RoyalBlue
 
 # Style for fonts is
 #-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng

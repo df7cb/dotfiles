@@ -2,7 +2,7 @@
 *background:		white
 *foreground:		black
 !*Scrollbar*background:	Navy
-*Scrollbar*foreground:	LightSkyBlue
+*Scrollbar*foreground:	LimeGreen
 *Scrollbar*thickness:	8
 *Scrollbar*thumb:	None
 XApm*background:	LightSkyBlue
@@ -14,7 +14,8 @@ XApm.Form.Scrollbar.width:	30
 Xawtv*basename:		snap
 Xawtv.geometry:		320x240
 XClock*analog:		false
-XClock*background:	LightSkyBlue
+XClock*background:	RoyalBlue
+XClock*foreground:	Yellow
 XClock*padding:		0
 XClock*update:		1
 XClock*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
@@ -76,9 +77,9 @@ XTerm*color3:		orange
 XTerm*color5:		maroon
 XTerm*color11:		orange
 XTerm*color13:		maroon
-XTerm*cursorColor:	brown
+XTerm*cursorColor:	RoyalBlue
 XTerm*font:		fixed
-XTerm*highlightColor:	LimeGreen
+XTerm*highlightColor:	Orange
 !XTerm*highlightSelection: true
 XTerm*scrollBar:	true
 XTerm*scrollKey:	true
