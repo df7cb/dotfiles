@@ -2095,14 +2095,6 @@
               </metadata>
             </info>
           </bookmark>
-          <bookmark href="http://www.networksorcery.com/enp/default0404.htm">
-            <title>RFC Sourcebook</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>1038316746</time_added>
-              </metadata>
-            </info>
-          </bookmark>
         </folder>
         <folder folded="yes">
           <title>Latex</title>
@@ -4385,64 +4377,51 @@
           <time_added>935086944</time_added>
         </metadata>
       </info>
-      <bookmark href="http://www.saarbahn.de/fahrplan/von_a_nach_b/index.php">
-        <title>Saarbahn-Fahrplan</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1038306815</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Campus%26n=%26z=%26d=%26tr=v">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Campus%26n=%26z=%26d=%26tr=v">
         <title>Campus -&gt; ?</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310115</time_modified>
             <time_added>934992344</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Saarbr%25FCcken+Rathaus%26n=%26z=%26d=%26tr=v%26ao=Suchen">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Saarbr%25FCcken+Rathaus%26n=%26z=%26d=%26tr=v%26ao=Suchen">
         <title>Campus -&gt; Rathaus</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310126</time_modified>
+            <time_modified>1032961757</time_modified>
             <time_added>938875840</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Scheidt+Im+Fl%25FCrchen%26n=%26z=%26d=%26tr=v%26ao=Suchen">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Scheidt+Im+Fl%25FCrchen%26n=%26z=%26d=%26tr=v%26ao=Suchen">
         <title>Campus -&gt; Scheidt</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310130</time_modified>
             <time_added>938875840</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=campus%26n=sb+hbf%26z=%26d=%26tr=v%26ao=Suchen">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=campus%26n=sb+hbf%26z=%26d=%26tr=v%26ao=Suchen">
         <title>Campus -&gt; HBF</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310134</time_modified>
             <time_added>935086923</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Campus%26n=Schneidershof%26z=%26d=%26tr=v%26ao=Suchen">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Campus%26n=Schneidershof%26z=%26d=%26tr=v%26ao=Suchen">
         <title>Campus -&gt; Saarbasar</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310140</time_modified>
             <time_added>935531953</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Mensa%26n=%26z=%26d=%26tr=v">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Mensa%26n=%26z=%26d=%26tr=v">
         <title>Mensa -&gt; ?</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310144</time_modified>
             <time_added>934992344</time_added>
           </metadata>
         </info>
