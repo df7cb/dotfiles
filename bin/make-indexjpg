@@ -11,6 +11,7 @@ $opt_w = 120;
 $opt_h = 90;
 $opt_b = 1;
 $opt_n = 6;
+$opt_m = 0;
 $opt_f = "index";
 $opt_L = 1; # obsolete
 $opt_s = 0;
@@ -18,12 +19,12 @@ $opt_t = "";
 $opt_v = 0;
 
 use Getopt::Std;
-getopts('w:h:b:n:f:Lst:v');
+getopts('w:h:b:n:mf:Lst:v');
 
 @ARGV = sort @ARGV if $opt_s;
 
 @files = @ARGV;
-map {
+@files = map {
 	if($opt_t) {
 		if(-f "$opt_t/$_") { # look for thumbs
 			$_ = "$opt_t/$_";
@@ -32,14 +33,17 @@ map {
 		}
 	}
 	s/\.gif$/.gif[0]/; # extract first frame from from animated gifs
-	"'$_'"; # quote filenames
+	$_ = "'$_'"; # quote filenames
 } @files;
 $files = join " ", @files;
 
-$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background white -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
-print "$command\n" if $opt_v;
-print "Schreibe $opt_f.jpg...";
-system $command;
+print "Schreibe";
+unless($opt_m) {
+	$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background white -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
+	print "$command\n" if $opt_v;
+	print " $opt_f.jpg...";
+	system $command;
+}
 
 my $map = "$opt_f-map.html";
 print " $map...\n";
@@ -71,6 +75,7 @@ B<make-indexjpg>
 [I<-h> B<y>]
 [I<-b> B<b>]
 [I<-n> B<n>]
+[I<-m>]
 [I<-f> B<name>]
 [I<-s>]
 [I<-t> B<directory>]
@@ -97,6 +102,10 @@ Put a border of B<b> pixels around each image. [1]
 =head2 I<-n> B<n>
 
 Arrange the thumbnails in a grid with B<n> columns. [6]
+
+=head2 I<-m>
+
+Only generate the B<name>-map.html file, omit B<name>.jpg. [generate both]
 
 =head2 I<-f> B<name>
 
