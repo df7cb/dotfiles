@@ -3,25 +3,63 @@
 # This file is read by .fvwm2rc-xterm.m4
 # otherwise, the menu entry order is screwed up
 
-#DestroyMenu Main
-AddToMenu Main	"netscape"	Exec netscape
-+		" @hal"		Exec ssh -f -c none hal netscape
-+		" @goedel"	Exec ssh -f goedel netscape
+DestroyMenu Main
+AddToMenu Main	"fvwm2"		Title
++		"&xterm"	Popup xterm
++		"Apps"		Popup Apps
++		"Init"		Popup Init
++		"Fvwm"		Popup FvwmMenu
++		"Keymaps"	Popup KeymapMenu
++		"Mail"		Popup Mail
++		"Network"	Popup Network
++		"Screen"	Popup Screen
++		"Window"	Popup WindowOps
++		""		Nop
+#+		"Quit FVWM"	Quit
++		"Quit X"	Exec killall xterm
+
+
+DestroyMenu Apps
+AddToMenu Apps	"Apps"		Title
++		"netscape"	Exec netscape
 +		"opera"		Exec opera
 +		"xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 +		"gv"		Exec gv
 +		"mw"		Exec mw
 +		"tet"		Exec ssh -f tante@goedel tet
-+		""		Nop
+
+
+DestroyMenu Init
+AddToMenu Init	"Init"		Title
++		"poweroff"	Exec poweroff
++		"halt"		Exec halt
++		"reboot"	Exec reboot
++		"init 2"	Exec init 2
++		"init 3"	Exec init 3
+
+
+DestroyMenu Mail
+AddToMenu Mail	"Mail"	Title
++		"wmbiff"	Exec wmbiff -geometry +960+416
++		"  offline"	Exec wmbiff -geometry +960+416 -c /home/cb/.wmbiffrc-offline
++		"mailsync"	Nop
++		"  heim-d-in"	Exec mailsync -lf heim-d-in
++		"  heim-d"	Exec mailsync -lf heim-d
++		"  wjp-in"	Exec mailsync -lf wjp-in
++		"  wjp"		Exec mailsync -lf wjp
+
+
+DestroyMenu Network
+AddToMenu Network	"Network"	Title
++		"pump"		Exec pump
+
+
+DestroyMenu Screen
+AddToMenu Screen	"Screen"	Title
 +		"dpmsoff"	Exec dpmsoff
 +		"xlock"		Exec dpmsoff blank
-+		""		Nop
-+		"Window Ops"	Popup WindowOps
-+		"fvwm2..."	Popup FvwmMenu
-+		"Keymaps"	Popup KeymapMenu
-+		""		Nop
-+		"Quit FVWM"	Quit
-+		"Quit X"	Exec killall xterm
++		"xroot"		Exec xroot
++		" offline"	Exec xv -root -quit +noresetroot bilder/back
 
 
 DestroyMenu FvwmMenu
@@ -48,7 +86,6 @@ AddToMenu WindowOps "Window Ops"	Title
 +	"Lower	 S5"		Lower
 +	"Shade	 F6"		WindowShade
 +	"Stick	 S6"		Stick
-+	""			Nop
 +	"Move	 F8"		Move
 +	"Resize	 F9"		Resize
 #+	"Resize..."		Popup ResizeMenu

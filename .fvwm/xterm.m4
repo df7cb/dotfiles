@@ -48,18 +48,18 @@ ifelse(HEIGHT, 480, `',
 +		 "I" Exec xterm -geometry _RU
 )dnl
 
-DestroyMenu Main
-AddToMenu Main	"fvwm2"		Title
+DestroyMenu xterm
+AddToMenu xterm	"xterm"		Title
 ifelse(HEIGHT, 480,
-`+		"2 xterms"	Function XTerms
-+		"xterm L"	Function XTermLO
-+		"xterm R"	Function XTermRO',
-`+		"4 xterms"	Function XTerms
+`+		"2 &xterms"	Function XTerms
++		"xterm &L"	Function XTermLO
++		"xterm &R"	Function XTermRO',
+`+		"4 &xterms"	Function XTerms
 +		"xterm LO"	Function XTermLO
 +		"xterm RO"	Function XTermRO
-+		"xterm LU"	Function XTermLU
-+		"xterm RU"	Function XTermRU'
++		"xterm &LU"	Function XTermLU
++		"xterm &RU"	Function XTermRU'
 )
-+		""		Nop
+dnl+		""		Nop
 
-include(.fvwm2/menus)
+dnl include(.fvwm2/menus)
