@@ -407,6 +407,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.pmshost.com/ricardosilv/">
+        <title>Saarbr&#195;&#188;cken Story's (Ricardo)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1053277801</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Uni</title>
@@ -3424,6 +3432,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.arrl.org/lotw/">
+          <title>ARRLWeb: Logbook of the World</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1053629878</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Hardware kaufen</title>
@@ -3631,6 +3647,14 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://www.emule-project.net/faq/progress.htm">
+        <title>eMule FAQ :: Colors Of The Progess Bar</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1053196342</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Unix</title>
