@@ -7,9 +7,16 @@ my $tmp = "renamepics-$$.jpg";
 my $xv = 0;
 my $offset = 0;
 my ($nr, $file, $new);
-my @XVOPTIONS = qw/-geometry +0+0 -ceg +0-0 -cem -cge -0+0 -cma/;
+# -cem: color editor
+my @XVOPTIONS = qw/-geometry +0+0 -ceg +0-0 -cge -0+0 -cma/;
 
-$offset = $ARGV[0] if defined $ARGV[0];
+#$offset = $ARGV[0] if defined $ARGV[0];
+$offset = 0;
+
+# Readline support
+use Term::ReadLine;
+my $term = new Term::ReadLine "$0";
+#my $OUT = $term->OUT || STDOUT;
 
 # spawn xv
 sub spawn {
@@ -24,25 +31,38 @@ sub spawn {
 }
 
 # fixup some insanities
-foreach (<*.JPG>) {
-	system "mv $_ \L$_";
+foreach (@ARGV) {
+	system "chmod 644 '". join("' '", @ARGV) ."'";
 }
-system "chmod u+w *.jpg";
+foreach (grep /JPG$/, @ARGV) {
+	system "mv '$_' '\L$_'";
+}
 
+print scalar(@ARGV) ." pictures ";
 print "(# will delete picture)\n";
 
 # rename each file
-foreach $file (<[0-9]*.jpg>) {
+#foreach $file (<[0-9]*.jpg>) {
+foreach $file (@ARGV) {
+	$file =~ /(\d+)\.jpg/;
+	my $number = $1;
+	if($number == 0) {
+		print "error: $file contains no number.\n";
+		next;
+	}
 	unlink "$tmp";
 	symlink $file, $tmp;
 	kill "QUIT", $xv if $xv;
 	spawn() unless $xv;
-	$file =~ /(\d+)\.jpg/;
-	$nr = $1 + $offset;
-	printf "Enter new name for $file:\n%02i-", $nr;
-	chomp ($new = <STDIN>);
+	$nr = $number + $offset;
+	printf "Enter new name for $file:\n";
+	my $prompt = sprintf "%02i-", $nr;
+	$new = $term->readline($prompt);
+	chomp ($new);
+	$term->addhistory($new);
 	if ($new =~ /^#/) {
 		print "File $file will be deleted.\n";
+		unlink $file;
 		next;
 	}
 	if ($new) {
