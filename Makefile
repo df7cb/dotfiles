@@ -93,7 +93,7 @@ endif
 	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
 	@touch $@
 
-ifeq ($(shell [ -d .plan.dir ] && echo yes), yes)
+ifeq ($(shell [ -e .priv/dayplan ] && echo yes), yes)
 cleanup: .plan.dir/check-plan-running
 COMMITS += .priv/dayplan
 endif
