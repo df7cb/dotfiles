@@ -24,10 +24,13 @@ AddToFunc RestartFunction
 
 # window functions #########################################################
 
-AddToFunc JumpWindow	"I"	Next [FvwmPager] WarpToWindow 21p 11p
-+			"I"	Next [FvwmPager] Lower
-#+			"I"	Lower
+AddToFunc JumpWindow	"I"	Next [xclock] WarpToWindow 13p 14p
 +			"I"	CursorMove $0 $1
+
+AddToFunc JumpWindowLO	"I"	JumpWindow 124p 0
+AddToFunc JumpWindowRO	"I"	JumpWindow  50  0
+AddToFunc JumpWindowLU	"I"	JumpWindow   0 45
+AddToFunc JumpWindowRU	"I"	JumpWindow  50 45
 
 AddToFunc ShadeRaise	"I"	WindowShade
 +			"I"	Raise

@@ -5,10 +5,15 @@
 ###############################################################################
 
 Key	Space	A	M	Popup WindowOps
-Key	Pause	A	N	Exec dpmsoff
-Key	Pause	A	S	Exec dpmsoff blank
-Key	Print	A	N	Prev [*] WarpToWindow 11p 11p
+Key	Print	A	C	Prev [*] WarpToWindow 11p 11p
+Key	Select	A	N	Prev [*] WarpToWindow 11p 11p
 Key	Print	A	S	PrevPrevWarp
+Key	Pause	A	N	Exec xscreensaver-command -activate
+Key	Pause	A	S	Exec dpmsoff blank
+Key	Pause	A	C	Exec dpmsoff
+
+# "3rd" windows key
+Key	Menu	A	N	RaiseLower
 
 # cursor combinations for paging
 Key	Left	A	CS	Scroll -100 +0
@@ -33,26 +38,21 @@ Key	z	A	4	GotoPage 0 2
 Key	x	A	4	GotoPage 1 2
 Key	c	A	4	GotoPage 2 2
 
-#Key	Home	A	C	Next [*-lo] WarpToWindow 11p 11p
-#Key	Prior	A	C	Next [*-ro] WarpToWindow 11p 11p
-#Key	End	A	C	Next [*-lu] WarpToWindow 11p 11p
-#Key	Next	A	C	Next [*-ru] WarpToWindow 11p 11p
+Key	Insert	A	C	JumpWindowLO
+Key	Home	A	C	JumpWindowLO
+Key	Prior	A	C	JumpWindowRO
+Key	Delete	A	C	JumpWindowLU
+Key	End	A	C	JumpWindowLU
+Key	Next	A	C	JumpWindowRU
 
-Key	Insert	A	C	JumpWindow 0 -88
-Key	Home	A	C	JumpWindow 0 -88
-Key	Prior	A	C	JumpWindow 50 -88
-Key	Delete	A	C	JumpWindow 0 -43
-Key	End	A	C	JumpWindow 0 -43
-Key	Next	A	C	JumpWindow 50 -43
-
-Key	k	A	4	JumpWindow 0 -88
-Key	l	A	4	JumpWindow 50 -88
-Key	comma	A	4	JumpWindow 0 -43
-Key	period	A	4	JumpWindow 50 -43
-Key	comma	A	C4	JumpWindow 11 0
-Key	period	A	C4	JumpWindow 50 0
-Key	End	A	4	JumpWindow 11 0
-Key	Next	A	4	JumpWindow 50 0
+Key	k	A	4	JumpWindowLO
+Key	l	A	4	JumpWindowRO
+Key	comma	A	4	JumpWindowLU
+Key	period	A	4	JumpWindowRU
+#Key	comma	A	C4	JumpWindow 11 0
+#Key	period	A	C4	JumpWindow 50 0
+#Key	End	A	4	JumpWindow 11 0
+#Key	Next	A	4	JumpWindow 50 0
 
 Key	Insert	A	CSM	Function XTermLO
 Key	Home	A	CSM	Function XTermLO

@@ -22,7 +22,7 @@ WIDTH.HEIGHT, 1152.864, `define(_LO,92x27+_T)define(_RO,92x27-_T)
 WIDTH.HEIGHT, 1152.900, `define(_LO,92x28+_T)define(_RO,92x28-_T)
 			 define(_LU,92x29+_B)define(_RU,92x29-_B)',
 WIDTH, 1280,		`define(_LO,103x33+_T)define(_RO,103x33-_T)
-			 define(_LU,103x33+_B)define(_RU,103x33-_B)',
+			 define(_LU,103x34+0+461)define(_RU,103x34-0+461)',
 WIDTH, 1600,		`define(_LO,130x40+_T)define(_RO,129x40-_T)
 			 define(_LU,130x40+_B)define(_RU,129x40-_B)',
 			`define(_LO,80x25+_T)define(_RO,80x25-_T)
@@ -30,16 +30,16 @@ WARNING: screen size?	 define(_LU,80x25+_B)define(_RU,80x25-_B)'
 )dnl
 
 AddToFunc XTermLO "I" Exec xterm -geometry _LO
-+ "I"     JumpWindow 0 -88
++ "I"     JumpWindowLO
 
 AddToFunc XTermRO "I" Exec xterm -geometry _RO
-+ "I"     JumpWindow 50 -88
++ "I"     JumpWindowRO
 
 AddToFunc XTermLU "I" Exec xterm -geometry _LU
-+ "I"     JumpWindow 0 -43
++ "I"     JumpWindowLU
 
 AddToFunc XTermRU "I" Exec xterm -geometry _RU
-+ "I"     JumpWindow 50 -43
++ "I"     JumpWindowRU
 
 AddToFunc XTerms "I" Exec xterm -geometry _LO
 +		 "I" Exec xterm -geometry _RO
