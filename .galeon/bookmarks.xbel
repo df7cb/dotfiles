@@ -58,9 +58,17 @@
       <separator/>
       <bookmark href="javascript:var wN2sc8Rl;Sa5gNA9k=new Function('clearTimeout(wN2sc8Rl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2sc8Rl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',150))">
         <title>Scroll Page (very slow)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (slow)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
@@ -70,6 +78,10 @@
       </bookmark>
       <bookmark href="javascript:var wN2scRl;S3g=new Function('clearTimeout(wN2scRl)');document.onkeydown=S3g;a7T=prompt('Rate...','');if(a7T!=null){S3g();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){scrollBy(0,a7T)}else{S3g()}',50))}else{void(null)}">
         <title>Scroll Page... (variable)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:if(frames.length%3C1){alert('The server indicates that the page was last modified: ' + window.document.lastModified)}else{alert('Page is framed. Use version of bookmarklet for frames. (bookmarklets.com)')}">
@@ -157,6 +169,10 @@
         </bookmark>
         <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic.php">
           <title>traffic heim-d</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+            </metadata>
+          </info>
         </bookmark>
         <separator/>
         <bookmark href="http://www.heim-d.uni-sb.de/doc/">
