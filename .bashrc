@@ -20,7 +20,10 @@ linux*|*vt100*|cons25)
 	PS1='\n'$u' '$j'\$' ;;
 xterm*|rxvt|screen*|cygwin)
 	PS1='\n\[\033]0;\u@\h:\w\007\]'$u' '$j'\$'
-	[ "$console" ] && PS1='\[\033]0;console@\h:\w\007'$u' '$j'\$' ;;
+	if [ "$console" ] ; then
+		PS1='\[\033]0;console@\h:\w\007'$u' '$j'\$'
+		export -n console
+	fi ;;
 97801)	PS1='\n\[\033[2m\][\[\033[m\]$?\[\033[2m\]] \u@\h:\[\033[4m\]\w\[\033[2m\] '$j'\$\[\033[m\]' ;;
 *)
 	PS1='\n[$?] \u@\h:\w '$j'\$' ;;
