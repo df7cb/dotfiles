@@ -6,7 +6,7 @@ DestroyFunc XTermLU
 DestroyFunc XTermRU
 
 ifelse(
-WIDTH, 1024, `define(LO,81x24)define(RO,80x24)define(LU,81x23)define(RU,80x23)',
+WIDTH, 1024, `define(LO,82x24)define(RO,81x24)define(LU,82x23)define(RU,81x23)',
 WIDTH.HEIGHT, 1152.864, `define(LO,92x27)define(RO,92x27)define(LU,92x27)define(RU,92x27)',
 WIDTH.HEIGHT, 1152.900, `define(LO,92x28)define(RO,92x28)define(LU,92x29)define(RU,92x29)',
 WIDTH, 1280, `define(LO,102x33)define(RO,102x33)define(LU,102x33)define(RU,102x33)',
