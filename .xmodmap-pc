@@ -35,7 +35,7 @@ keycode 0x33 =	backslash	bar		NoSymbol	brokenbar
 keycode 0x53 =	KP_Left		KP_4
 keycode 0x54 =	KP_Begin	KP_5
 keycode 0x55 =	KP_Right	KP_6
-keycode 0x5E =	less		greater		bar		brokenbar
+keycode 0x5E =	Select
 keycode 0x34 =	z		Z
 keycode 0x36 =	c		C		copyright	dead_cedilla
 keycode 0x3A =	m		M		mu
@@ -61,7 +61,7 @@ keycode 0x73 =	Hyper_L
 ! right win
 keycode 0x74 =	Mode_switch
 ! "third" win key (menu)
-keycode 0x75 =	Hyper_R
+keycode 0x75 =	Menu
 ! left meta
 keycode 0x83 =	Hyper_L
 ! right meta
