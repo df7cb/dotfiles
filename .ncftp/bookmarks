@@ -1,5 +1,5 @@
 NcFTP bookmark-file version: 8
-Number of bookmarks: 23
+Number of bookmarks: ??
 cs,ftp.cs,,,,/pub/mail,I,21,18446744073709551615,1,1,0,1,134.96.254.254,,,,,,S,-1,
 debian,ftp.de.debian.org,,,,pub/debian/dists,I,21,18446744073709551615,-1,-1,1,1,141.76.20.99,,,,,,S,-1,
 debian-archive,ftp.debian.org,,,,debian-archive/dists/slink,I,21,18446744073709551615,-1,-1,1,1,216.66.54.50,,,,,,S,-1,
@@ -24,3 +24,4 @@ vk5abn,ftp.ping.net.au,,,,/pub/unix/ham,I,21,934920454,1,1,0,1,203.30.126.1,,,,,
 Wordperfect8,ftp.mpi-sb.mpg.de,,,,pub/misc/mirror/ftp.simtel.net/cnet/win95/business,I,21,39194731136,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
 freebsd-4-packa,ftp4.de.freebsd.org,,,,pub/FreeBSD/releases/i386/4.0-RELEASE/packages,I,21,957891422,-1,-1,1,1,131.159.72.9,,,,,,S,-1,
 staroffice,ftp.fh-schmalkalden.de,,,,pub/staroffice,I,21,957895161,-1,-1,-1,1,194.94.30.52,,,,,,S,-1,
+kernel-mpi,ftp.mpi-sb.mpg.de,,,,pub/linux/mirror/www.kernel.org/pub/linux/kernel,I,21,1016279193,1,1,1,1,139.19.1.151,,,,,,S,-1,
