@@ -8,5 +8,9 @@
 #	fortune
 #fi
 
-# remove .display if we created it
-[ -f ~/.display ] && grep -q "pid $$\$" ~/.display && rm -f ~/.display
+# remove our .display entry
+if [ -f ~/.display ] ; then
+	grep -v "pid $$ " ~/.display > ~/.display.tmp
+	/bin/mv -f ~/.display.tmp ~/.display
+	[ -s ~/.display ] || rm -f ~/.display
+fi

@@ -7,8 +7,7 @@ mesg y
 finger
 
 if [ "$DISPLAY" ] ; then
-	echo "export DISPLAY=$DISPLAY" > ~/.display
-	echo "# pid $$" >> ~/.display
+	echo "export DISPLAY=$DISPLAY # pid $$ `tty` `date`" >> ~/.display
 fi
 
 if [ -x ~/bin/$OS/utf8term ] || [ -x ~/bin/utf8term ] ; then
