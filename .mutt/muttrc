@@ -34,6 +34,7 @@ unset bounce_delivered
 unset confirmappend
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c '/^$'"
+set delete=yes
 set fast_reply
 unset fcc_attach
 set folder="~/mail"
