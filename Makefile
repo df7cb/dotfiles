@@ -97,6 +97,8 @@ known_hosts-uniq:
 	@LC_ALL=C sort -u $<.bak > $<
 	@rm -f $<.bak
 	@touch $@
+# find duplicate aliases
+	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
 
 plan-run:
 	@[ ! -f .plan.dir/lock.plan ]
