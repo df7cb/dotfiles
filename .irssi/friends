@@ -1,5 +1,5 @@
 # version = 2.4.1 (20021124)
-# written = 1083007722
+# written = 1085092552
 handle=Myon%hosts=*!cberg@hamberg.it.uu.se *!cb@sycorax.cs.uni-sb.de%globflags=omr%chanflags=%password=bxEtV2DlRwxq2%comment=%
 handle=At-Tifl%hosts=*!*hagen@ppp-82-135-0-151.mnet-online.de *!*Miranda@*.mnet-online.de%globflags=%chanflags=#plant,o,%password=6RrlI9bDyBO2Q%comment=%
 handle=beeelze%hosts=*!*schutz@d139.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
@@ -19,7 +19,7 @@ handle=LnxBil%hosts=*!*lnxbil@smartie.cs.uni-sb.de *!*lnxbil@balora.cs.uni-sb.de
 handle=[mIc]%hosts=*!*mic@p*.dip0.t-ipconnect.de *!~sauer@hspc01.cs.uni-sb.de%globflags=%chanflags=#heim-d,o,%password=%comment=%
 handle=mjung%hosts=*!*madbob@mpii00103.mpi-sb.mpg.de *!*madbob@mpiat0209.zb.mpi-sb.mpg.de *!*madbob@contact.mpi-sb.mpg.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
 handle=_nexus_%hosts=*!~nexus@hspc05.cs.uni-sb.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
-handle=pacman%hosts=*!pacman@serverraum.org%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=pacman%hosts=*!pacman@serverraum.org%globflags=%chanflags=#plant,,%password=%comment=%
 handle=pwAIn%hosts=*!mike@*.dip.t-dialin.net *!pwain@*.dip.t-dialin.net%globflags=%chanflags=#plant,,%password=UEOK9X4TGHwjQ%comment=%
 handle=pwAIn-TU%hosts=*!~pwain@finch.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,,%password=%comment=%
 handle=Re-EL%hosts=*!*el@212.88.154.242 *!*El_Nino@242-154-088-212.ip-addr.teresto.net *!el@h10.rk4.iku-netz.de%globflags=%chanflags=#plant,ao,%password=%comment=%
