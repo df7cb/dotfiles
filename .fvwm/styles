@@ -50,7 +50,7 @@ IconFont	-misc-fixed-medium-r-normal-*-10-*-75-75-c-60-iso8859-1
 #   style options for modules and programs                                    #
 ###############################################################################
 
-Style	"*"		BorderWidth 5, HandleWidth 5
+Style	"*"		BorderWidth 5, HandleWidth 5, DepressableBorder
 Style	"*"		Icon small.Template.xpm
 Style	"*"		SlipperyIcon, IconBox +515 -95 -0 -0
 Style	"*"		NoPPosition
@@ -80,6 +80,7 @@ Style	"coolmail"	NoTitle, Sticky, WindowListSkip
 Style	"*clock*"	NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
 Style	"xeyes"		NoTitle, Sticky, WindowListSkip
 Style	"xmeter"	NoTitle, Sticky, WindowListSkip
+Style	"Mixer*"	NoTitle, Sticky, WindowListSkip, HandleWidth 0
 Style	"OpenSSH*"	StaysOnTop
 Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition, WindowListSkip
 Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus

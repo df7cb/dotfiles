@@ -12,6 +12,10 @@ Key	Pause	A	N	Exec xscreensaver-command -activate
 Key	Pause	A	S	Exec dpmsoff blank
 Key	Pause	A	C	Exec dpmsoff
 
+Key	minus	A	4	Exec xvidtune -prev
+Key	equal	A	4	Exec xvidtune -next
+Key	plus	A	4	Exec xvidtune -next
+
 # "3rd" windows key
 Key	Menu	A	N	RaiseLower
 
@@ -87,6 +91,7 @@ Key	SunFront A	A	Raise
 
 # Meta keys
 Key	r	A	4	RaiseLower
+Key	Space	A	4	RaiseLower
 Key	r	A	S4	Resize
 Key	s	A	S4	Resize
 Key	x	A	S4	Close
@@ -96,7 +101,7 @@ Key	f	A	S4	Function Maximize100100
 Key	f	A	C4	Function Maximize1000
 
 Key	1	A	4	Menu Main
-Key	2	A	4	Menu WindowOps
+Key	2	A	4	Menu Apps
 Key	3	A	4	WindowList
 
 Key	Tab	A	4	Next [*] focus
@@ -105,23 +110,23 @@ Key	Tab	A	S4	Prev [*] focus
 #Key	BackSpace A	CM	Function Quit
 
 # F keys
-Key	F1	A	N	Menu Main
-Key	F1	A	S	Module FvwmIdent
-Key	F2	A	N	Menu WindowOps
-Key	F3	A	N	WindowList "Prev [*] WarpToWindow 14p 14p"
-Key	F4	A	N	Iconify
-Key	F4	A	S	RefreshWindow
-Key	F4	A	M	Close
-Key	F4	A	MC	Destroy
-Key	F5	A	N	RaiseLower
-Key	F5	A	S	Lower
-Key	F6	A	N	WindowShade
-Key	F6	A	S	Stick
-Key	F8	A	N	Move
-Key	F9	A	N	Resize
-Key	F10	A	N	Function Maximize0100
-Key	F11	A	N	Function Maximize100100
-Key	F12	A	N	Function Maximize1000
+#Key	F1	A	N	Menu Main
+#Key	F1	A	S	Module FvwmIdent
+#Key	F2	A	N	Menu WindowOps
+#Key	F3	A	N	WindowList "Prev [*] WarpToWindow 14p 14p"
+#Key	F4	A	N	Iconify
+#Key	F4	A	S	RefreshWindow
+#Key	F4	A	M	Close
+#Key	F4	A	MC	Destroy
+#Key	F5	A	N	RaiseLower
+#Key	F5	A	S	Lower
+#Key	F6	A	N	WindowShade
+#Key	F6	A	S	Stick
+#Key	F8	A	N	Move
+#Key	F9	A	N	Resize
+#Key	F10	A	N	Function Maximize0100
+#Key	F11	A	N	Function Maximize100100
+#Key	F12	A	N	Function Maximize1000
 
 
 ###############################################################################
@@ -143,7 +148,7 @@ Key	F12	A	N	Function Maximize1000
 
 # root menu bindings for fvwm2 and fvwm95
 Mouse	1	R	A	Menu Main
-Mouse	2	R	A	Menu WindowOps
+Mouse	2	R	A	Menu Apps
 Mouse	3	R	A	WindowList
 				#FvwmWinList Transient
 

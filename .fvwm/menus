@@ -23,12 +23,15 @@ AddToMenu Main	"fvwm2"		Title
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
 +		"g&aleon"	Exec galeon
++		"address&book"	Exec addressbook
 +		"&grip"		Exec grip
 +		"gv"		Exec gv
 +		"m&w"		Exec mw
 +		"&netscape"	Exec netscape
 +		"oo&ffice"	Exec ooffice
 +		"&opera"	Exec opera
++		"&plan"		Exec plan
++		"xawt&v"	Exec xawtv
 +		"x&mms"		Exec xmms
 +		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 #+		"tet"		Exec ssh -f tante@goedel tet
@@ -45,8 +48,8 @@ AddToMenu Init	"Init"		Title
 
 DestroyMenu Mail
 AddToMenu Mail	"Mail"	Title
-+		"w&mbiff"	Exec wmbiff -geometry +960+416
-+		"  &offline"	Exec wmbiff -geometry +960+416 -c /home/cb/.wmbiffrc-offline
++		"w&mbiff"	Exec wmbiff
++		"  &offline"	Exec wmbiff -c /home/cb/.wmbiffrc-offline
 #+		"mailsync"	Nop
 #+		"  heim-d-in"	Exec mailsync -lf heim-d-in
 #+		"  heim-d"	Exec mailsync -lf heim-d
