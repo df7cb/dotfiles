@@ -86,6 +86,7 @@ XTerm*cursorColor:	RoyalBlue
 XTerm*font:		fixed
 XTerm*highlightColor:	Orange
 !XTerm*highlightSelection: true
+XTerm*metaSendsEscape:	true
 XTerm*scrollBar:	true
 XTerm*scrollKey:	true
 XTerm*scrollTtyOutput:	false
