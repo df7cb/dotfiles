@@ -9,8 +9,8 @@ sub oerks {
 	$_ = join ' ', @_;
 	chomp;
 	my $time = scalar(localtime);
-	my $options = $ENV{QUERY_STRING} || "";
-	my $path = $ENV{PATH_INFO} || "";
+	my $options = exists $ENV{QUERY_STRING} ? $ENV{QUERY_STRING} : "(undef)";
+	my $path = exists $ENV{PATH_INFO} ? $ENV{PATH_INFO} : "(undef)";
 	print STDERR "[$time] [die] $0: $_ [QUERY_STRING=$options PATH_INFO=$path]\n";
 	s/</&lt;/g; s/>/&gt;/g;
 	# </ul></td></tr></table>

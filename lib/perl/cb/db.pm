@@ -8,8 +8,6 @@ $POSTGRES_PW_FILE = "/home/httpd/secret/postgres-pw";
 $POSTGRES_USER = "www";
 $POSTGRES_USER_ID = 31; # 31 = postgres
 $DO_QUERY_EXIT_ON_ERROR = 1;
-$PRINT_TIMESTAMPS = 0;	# whether to print created... fields
-
 
 sub get_postgres_pw {
 	my $f = shift || $POSTGRES_PW_FILE;
@@ -53,10 +51,12 @@ sub do_query {
 	my $result = $conn->exec($query);
 	if($result->resultStatus != PGRES_TUPLES_OK and
 			$result->resultStatus != PGRES_COMMAND_OK and
-			$DO_QUERY_EXIT_ON_ERROR and !$ignore_errors) {
+			$DO_QUERY_EXIT_ON_ERROR and !$ignore_errors)
+	{
+		my $e = $conn->errorMessage;
+		chomp $e;
 		die "Postgres query '$query' returned ".
-			$PG_RESULTSTATUS[$result->resultStatus]. ": ".
-			$conn->errorMessage;
+			$PG_RESULTSTATUS[$result->resultStatus]. ": $e";
 	}
 	return $result;
 }
@@ -114,19 +114,17 @@ sub html_query {
 	foreach my $f (0..$nfields-1) {
 		my $oidnr = 0;
 		my $cap = $fname[$f];
-		if($PRINT_TIMESTAMPS == 0 and $cap =~ /^(created|updated)(_by)?$/) { next; }
 		print "<th>";
 		if ($cap eq "oid") {
-			print "<a href=$scriptname?command=new\&table=$tables[$oidnr++]>Neu</a>";
+			print "<a href=?command=new\&table=$tables[$oidnr++]>Neu</a>";
 		} else {
-			print "<a href=$scriptname?$command\&order=$cap>$cap</a>";
+			print "<a href=?$command\&order=$cap>$cap</a>";
 		}
 	}
 	print "\n";
 	# Typen ausdrucken
 	print "<tr>";
 	foreach my $f (0..$nfields-1) {
-		if($PRINT_TIMESTAMPS == 0 and $fname[$f] =~ /^(created|updated)(_by)?$/) { next; }
 		print "<th>$ftype[$f]</th>";
 	}
 	print "\n";
@@ -137,14 +135,10 @@ sub html_query {
 		my $oidnr = 0;
 		print "<tr>";
 		foreach my $f (0..$nfields-1) {
-			if($PRINT_TIMESTAMPS == 0 and $fname[$f] =~ /^(created|updated)(_by)?$/) { next; }
 			if($fname[$f] eq "oid" and $row[$f]) {
-				print "<td><a href=$scriptname?command=edit\&table=$tables[$oidnr++]\&oid=$row[$f]>Edit</a></td>";
+				print "<td><a href=?command=edit\&table=$tables[$oidnr++]\&oid=$row[$f]>Edit</a></td>";
 			} else {
-				# # Hack: stud.uni-sb.de-hook einfügen
-				# $row[$_] = "<a href=stud?mail=$1>$row[$_]</a>" if
-				# 	/(\w+)\@stud/;
-				my $v = $row[$f] || ($ftype[$f] eq "int4" ? 0 : "");
+				my $v = defined $row[$f] ? $row[$f] : "";
 				printf "<td>$v</td>";
 			}
 		}
@@ -153,8 +147,6 @@ sub html_query {
 	print "\n</table>\n";
 
 	print "($ntuples Tupel mit $nfields Feldern)\n";
-	my $print_timestamps_toggle = (! $PRINT_TIMESTAMPS) || 0;
-	print "<a href=$scriptname?$command\&timestamps=$print_timestamps_toggle>Timestamps anzeigen</a>\n";
 }
 
 # render a sql query as a html table
