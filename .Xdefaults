@@ -19,6 +19,10 @@ Fig*PaperSize:		A4
 Fig*specialtext:	true
 Netscape*blinkingEnabled: false
 Netscape*installColormap: true
+XLock.logoutButton:	-1
+XLock.background:	black
+XLock.foreground:	red
+XLock.echokeys:		true
 XTerm*color3:		orange
 XTerm*color5:		maroon
 XTerm*color11:		orange
@@ -26,7 +30,7 @@ XTerm*color13:		maroon
 XTerm*cursorColor:	brown
 XTerm*font:		fixed
 XTerm*highlightColor:	LimeGreen
-XTerm*highlightSelection: true
+!XTerm*highlightSelection: true
 XTerm*scrollBar:	true
 XTerm*scrollKey:	true
 XTerm*scrollTtyOutput:	false
