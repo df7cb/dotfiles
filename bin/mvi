@@ -21,6 +21,7 @@ open TMP, ">$tmp" or die "$tmp: $!";
 
 print TMP "#!/bin/sh\n";
 print TMP "# edit this file to rename the files\n";
+print TMP "alias mv='mv -iv' ; set -e\n";
 print TMP "\n";
 
 for (@ARGV) {
@@ -37,7 +38,7 @@ system "$ENV{'EDITOR'} $tmp";
 
 $age2 = (stat $tmp)[9];
 if($age2 > $age) {
-	system "sh -v $tmp";
+	system "sh $tmp";
 } else {
 	print STDERR "$0: file unchanged, aborting\n";
 }
