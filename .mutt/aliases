@@ -1,5 +1,6 @@
 # $Id$
 # mutt aliases
+alias 'root@asta' root@asta.uni-saarland.de
 alias DVABernd Bernd Dörr <DVABernd@aol.com>
 alias StefanChadzelek Stefan Chadzelek <StefanChadzelek@web.de>
 alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
