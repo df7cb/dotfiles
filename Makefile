@@ -90,6 +90,14 @@ known_hosts-uniq:
 	@rm -f $<.bak
 	@touch $@
 
+.ssh/known_hosts:
+	# Fetching new $@
+	echo "#!/bin/sh" > $(HOME)/ssh-update
+	echo 'ssh -o "UserKnownHostsFile $$HOME/ssh_known_hosts" "$$@"' >> $(HOME)/ssh-update
+	chmod 700 $(HOME)/ssh-update
+	CVS_RSH="$(HOME)/ssh-update" cvs up $@
+	rm -f $(HOME)/ssh-update $(HOME)/ssh_known_hosts
+
 .mutt/.aliases: .mutt/aliases
 	# Sorting $<
 	@grep -qv '<<<<' $<
