@@ -16,11 +16,19 @@ mail/IN/debian
 mail/IN/fsinfo
 
 :0:
-* ^Subject: .*\[Linux-sony\]
-mail/IN/linux-sony
+* ^X-BeenThere: aspell
+mail/IN/lists
 
 :0:
-* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte)@
+* ^List-Id: <irssi-users.dragoncat.net>
+mail/IN/lists
+
+:0:
+* ^Subject: .*\[Linux-sony\]
+mail/IN/lists
+
+:0:
+* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
 mail/IN/root
 
 :0:
