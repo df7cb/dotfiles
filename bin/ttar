@@ -1,0 +1,10 @@
+#!/bin/sh
+# $Id$
+
+case "$1" in
+	*tar)	tar tfv "$@" ;;
+	*gz)	tar tfvz "$@" ;;
+	*bz2)	tar tfvj "$@" ;;
+	*)	echo "$0 warning: suffix not recognized" 1>&2
+		tar tfv "$@" ;;
+esac
