@@ -22,7 +22,8 @@ links:	autorun/friends.pl \
 	autorun/len.pl \
 	autorun/nickcolor.pl \
 	autorun/recode.pl \
-	autorun/title.pl
+	autorun/title.pl \
+	autorun/topic-diff.pl
 
 autorun/%.pl: %.pl
 	ln -s ../$< $@
