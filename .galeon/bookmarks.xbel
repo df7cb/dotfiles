@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE xbel PUBLIC "+//IDN python.org//DTD XML Bookmark Exchange Language 1.0//EN//XML" "http://www.python.org/topics/xml/dtds/xbel-1.0.dtd">
 <xbel version="1.0">
-  <info>
-    <metadata owner="http://galeon.sourceforge.net/">
-      <default_folder>yes</default_folder>
-    </metadata>
-  </info>
   <title>Bookmarks</title>
   <folder folded="yes">
     <title>Smart Bookmarks Toolbar</title>
@@ -3188,6 +3183,7 @@
       <title>Zeug</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
+          <default_folder>yes</default_folder>
           <time_added>976823097</time_added>
         </metadata>
       </info>
@@ -4124,63 +4120,6 @@
         </bookmark>
       </folder>
       <folder folded="yes">
-        <title>audio limiter</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1031179365</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www.geist-electronic.de/Elektor-Projekte/Monatsliste_Elektor/Elektor_2002/Elektor_7-8_02/hauptteil_elektor_7-8_02.html">
-          <title>Elektor 7-8/02</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1031179371</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.netzmarkt.de/thomann/behringer_mdx4400_multicom_pro_prodinfo.html">
-          <title>Behringer Multicom Pro MDX4400 Produktinformationen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1035805218</time_modified>
-              <time_added>1035805113</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.netzmarkt.de/thomann/alesis_nanocompressor_prodinfo.html">
-          <title>Alesis Nano-Compressor Produktinformationen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1035805174</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.netzmarkt.de/thomann/dbx_266_xl_prodinfo.html">
-          <title>DBX 266 XL Compressor/Limiter/Gate Produktinformationen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1035805317</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.netzmarkt.de/thomann/pas_ds22_dual_limiter_prodinfo.html">
-          <title>PAS DS22 Dual Limiter Produktinformationen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1035805430</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.netzmarkt.de/thomann/artikel-129498.html?ARTTEXTSPRACHE=D%26WAEHRUNG=DM%26PRL=">
-          <title>Behringer MDX 2200 Composer Pro Produktinformationen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1035809315</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <folder folded="yes">
         <title>Saabruecken</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -4244,6 +4183,22 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1041643482</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.rubiks.com/challenges.html">
+        <title>Rubik's Online - Play Online</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1042198111</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://web.usna.navy.mil/~wdj/rubik.html">
+        <title>RUBIK's CUBE-LIKE PUZZLES</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1042201350</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -4762,6 +4717,26 @@
           <time_modified>1041861693</time_modified>
           <time_added>1041861029</time_added>
           <smarturl>http://german.imdb.com/Find?for=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://www.tagesschau.de/">
+      <title></title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1042548027</time_modified>
+          <time_added>1042548001</time_added>
+          <smarturl>http://www.tagesschau.de/search/?searchText=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://citeseer.nj.nec.com/cs">
+      <title></title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1042548640</time_modified>
+          <time_added>1042548584</time_added>
+          <smarturl>http://citeseer.nj.nec.com/cs?q=%s</smarturl>
         </metadata>
       </info>
     </bookmark>
