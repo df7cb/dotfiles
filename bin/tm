@@ -1,0 +1,12 @@
+#!/bin/sh
+# $Id$
+
+while [ $1 ] ; do
+    echo -n "ctime "
+    ls -Fcld $1
+    echo -n "mtime "
+    ls -Ftld $1
+    echo -n "atime "
+    ls -Fuld $1
+    shift
+done

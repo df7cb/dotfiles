@@ -1,0 +1,12 @@
+#!/bin/sh
+# $Id$
+
+case "`uname -srm`" in
+	Linux*86)	echo "linux-intel" ;;
+	Linux*alpha)	echo "linux-alpha" ;;
+	SunOS*4.*sun*)	echo "sunos4-sparc" ;;
+	SunOS*5.*sun*)	echo "solaris-sparc" ;;
+	SunOS*5.*86*)	echo "solaris-intel" ;;
+	FreeBSD*86)	echo "freebsd-intel" ;;
+	*)		echo "unknown" ;;
+esac
