@@ -1,7 +1,7 @@
 #!/bin/sh
 # $Id$
 
-: ${PATH_SET:=$PATH}
+: ${PATH_OLD:=$PATH}
 
 PATH=/usr/local/bin:/usr/bin:/bin
 
@@ -10,9 +10,9 @@ for dir in $HOME/bin $HOME/bin/`$HOME/bin/os` ; do
 done
 for dir in /usr/local/sbin /sbin /usr/sbin \
 	/usr/openwin/bin /usr/X11R6/bin \
-	/usr/games/bin /usr/games /shared/bin /shared/games/bin \
-	/usr/ucb /usr/5bin /usr/etc /usr/pkg/bin /usr/compat/linux/bin ; do
+	/usr/games/bin /usr/games \
+	/usr/ucb /usr/5bin /usr/etc /usr/pkg/bin \
+	/shared/bin /shared/games/bin \
+	/usr/compat/linux/bin ; do
 	[ -d $dir ] && PATH=$PATH:$dir
 done
-
-export PATH_SET ; PATH_SET=yes
