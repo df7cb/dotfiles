@@ -914,7 +914,7 @@ sub save_friends {
 	print(F "# version = $friends_file_version\n");
 	# write current unixtime and update corresponding variable
 	$friends_file_written = time;
-	print(F "# written = $friends_file_written\n");
+	#cb: make it CVS-friendly# print(F "# written = $friends_file_written\n");
 
 	# go through all entries
 	for (my $idx = 0; $idx < @friends; ++$idx) {
