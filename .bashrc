@@ -3,9 +3,8 @@
 #echo .bashrc
 
 # general stuff
-shopt -s extglob
 ulimit -Sc 0	# disable core dumps
-if [ $UID -gt 0 ] && [ $UID -eq $GROUPS ] ; then umask 002 ; else umask 022 ; fi
+if [ $UID -gt 0 ] && [ $LOGNAME = $(id -ng) ] ; then umask 002 ; else umask 022 ; fi
 
 # Environment
 [ -f ~/bin/os ] && . ~/bin/os > /dev/null
@@ -16,14 +15,12 @@ if [ $UID -gt 0 ] && [ $UID -eq $GROUPS ] ; then umask 002 ; else umask 022 ; fi
 [ "$PS1" ] || return
 #echo ".bashrc: interactive"
 
-case $BASH_VERSION in
-	2.0[4-9]*) # new bash supporting '\j' and completion
-		j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
-		[ -f ~/.bash_completion ] && . ~/.bash_completion ;;
-	2.0[0-3]*) # old bash
-		j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s ")' ;;
-	*) echo "$0: unknown bash version $BASH_VERSION" 1>&2 ;;
-esac
+if [ "$BASH_VERSION" \> "2.04" ] ; then # new bash supporting '\j' and completion
+	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
+	[ -f ~/.bash_completion ] && . ~/.bash_completion
+else
+	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s ")'
+fi
 u='[\[\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\]'
 case $TERM in
 linux*|*vt100*|cons25)
@@ -53,7 +50,7 @@ HISTFILESIZE=100
 HISTIGNORE="..:[bf]g:cd:l:ls"
 HISTSIZE=500
 unset ignoreeof
-shopt -s no_empty_cmd_completion
+shopt -s extglob no_empty_cmd_completion
 [ -t 0 ] && stty erase ^H &> /dev/null
 #unset noclobber
 
