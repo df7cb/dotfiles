@@ -45,10 +45,6 @@
       </info>
       <bookmark href="http://www.bookmarklets.com/">
         <title>More Bookmarklets</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
@@ -67,17 +63,9 @@
       <separator/>
       <bookmark href="javascript:var wN2sc8Rl;Sa5gNA9k=new Function('clearTimeout(wN2sc8Rl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2sc8Rl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',150))">
         <title>Scroll Page (very slow)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (slow)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
@@ -91,10 +79,6 @@
       <separator/>
       <bookmark href="javascript:if(frames.length%3C1){alert('The server indicates that the page was last modified: ' + window.document.lastModified)}else{alert('Page is framed. Use version of bookmarklet for frames. (bookmarklets.com)')}">
         <title>Page Freshness?</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){alert('Frames!')}else{ulBV3pQy=document.getSelection();if(ulBV3pQy!=''){location.href=ulBV3pQy.replace(/\042/g,'').replace(/\047/g,'').replace(/\s/g,'')}else{alert('Select text on page like:\n   http://www.domain.com...')}}">
         <title>Go To Selected URL</title>
@@ -111,20 +95,12 @@
       <separator/>
       <bookmark href="javascript:if(document.cookie.length%3C1){alert('No cookie for this site.')}else{alert('Cookie for this site: '+document.cookie)}">
         <title>Read Cookie for Site</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:function ROIoiW(){var i=0,j,A='anonymous',D,E,F=document.forms;while(i%3CF.length){E=F[i].elements;for(j=0;j%3CE.length;j++){D=E[j];if(D.type=='text'){D.value=(D.name.toUpperCase().indexOf('MAIL')!=-1)?A+'@example.com':A}}i++}}ROIoiW();void(null)">
         <title>AutoFill Anonymous</title>
       </bookmark>
       <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
         <title>Translate to English</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
     </folder>
   </folder>
