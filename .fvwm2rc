@@ -5,7 +5,7 @@
 ###############################################################################
 # n.b. These paths must NOT be longer than 255 chars
 
-ModulePath /usr/X11R6/lib/X11/fvwm2:/usr/X11R6/lib/X11/fvwm2/2.2:/usr/X11R6/libexec/fvwm/2.2.2
+ModulePath /usr/X11R6/lib/X11/fvwm2:/usr/X11R6/lib/X11/fvwm2/2.2:/usr/X11R6/libexec/fvwm/2.2.2:/usr/X11R6/lib/X11/fvwm/2.2.4
 
 PixmapPath /usr/include/X11/3dpixmaps/small:\
 	/usr/include/X11/3dpixmaps/normal:\
@@ -120,7 +120,7 @@ Style	"*"		DecorateTransient
 BorderStyle Inactive -- HiddenHandles NoInset
 
 # where icons will be placed
-Style   "*"     IconBox +55 +85 +130 +480
+Style   "*"     IconBox -500 -95 -0 -0
 # icons are reachable in every virtual screen
 Style	"*"		StickyIcon
 #Style	"*"		SmartPlacement, RandomPlacement, ActivePlacement
