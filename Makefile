@@ -56,7 +56,7 @@ bookmark-clean:
 	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
 
 known_hosts-uniq:
-	@cut -d' ' -f 1 < .ssh/known_hosts | uniq -d
+	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
 known_hosts-sort: known_hosts-uniq
 	mv .ssh/known_hosts .ssh/known_hosts-
 	sort -u .ssh/known_hosts- > .ssh/known_hosts
