@@ -19,3 +19,12 @@ clean:
 
 distclean: clean
 	-rm *.ps *~
+
+aliases: addr.tex $(BIB) email-alias.bst
+	@-rm addr.bbl
+	latex addr
+	bibtex addr
+	mv addr.bbl aliases
+
+install: aliases
+	cp aliases $(HOME)/.mutt/

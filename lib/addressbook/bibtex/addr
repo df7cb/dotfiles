@@ -2,13 +2,17 @@
 
 use Getopt::Std;
 
-getopts('1bet:');
+($opt_1, $opt_a, $opt_b, $opt_e, $opt_t) = ();
+getopts('1abet:');
 
 $twocolumn = 'twocolumn,';
 $twocolumn = '' if $opt_1;
 
 $directorystyle = "address";
-$title = "Adressen";
+$title = $opt_t || "Adressen";
+if($opt_a) {
+	$directorystyle = "email-alias";
+}
 if($opt_b) {
 	$directorystyle = "birthday";
 	$title = "Geburtstage";
@@ -79,4 +83,8 @@ print A '\documentclass['. $twocolumn. '12pt]{article}
 
 close A;
 
-system("make");
+if ($opt_a) {
+	system("make alias");
+} else {
+	system("make");
+}
