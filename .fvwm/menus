@@ -1,35 +1,41 @@
 # $Id$
-# .fvwm2rc-menus cb 990804
-
-# import other menu files
-
-Read .fvwm2rc-menus-xlock
-Read .fvwm2rc-menus-rlogin
 
 # main menus
 
+DestroyMenu Main
 AddToMenu Main	"fvwm2"		Title
 +		"xterm LO"	Function XTermLO
 +		"xterm RO"	Function XTermRO
 +		"xterm LU"	Function XTermLU
 +		"xterm RU"	Function XTermRU
 +		"4 xterms"	Function 4XTerm
-+		"Rlogins"	Popup Rlogins
 +		""		Nop
-+		"xlock"		Popup xlock
++		"Programs"	Popup ProgMenu
++		""		Nop
++		"dpmsoff"	Exec dpmsoff
++		"xlock"		Exec dpmsoff blank
 +		""		Nop
 +		"Window Ops"	Popup WindowOps
 +		"fvwm2..."	Popup FvwmMenu
++		"Keymaps"	Popup KeymapMenu
 +		""		Nop
 +		"Quit FVWM"	Quit
 +		"Quit X"	Exec killall xterm
 
 
+DestroyMenu ProgMenu
+AddToMenu ProgMenu	"Programs"	Title
++		"Netscape"		Exec netscape
++		"Netscape @ wjpserver"	Exec ssh -f wjpserver netscape
++		"Netscape @ spiff"	Exec ssh -f spiff netscape
++		"gv"			Exec gv
+
+
+DestroyMenu FvwmMenu
 AddToMenu FvwmMenu	"fvwm2"	Title
 +			"FvwmTalk"	Module FvwmTalk
 +			"3x3 Desktop"	DeskTopSize 3 3
 +			"Modules"	Popup ModulePopup
-+			"Man pages"	Popup FvwmManPages
 +			""		Nop
 +			"Refresh"	Refresh
 +			"Recapture"	Recapture
@@ -38,6 +44,7 @@ AddToMenu FvwmMenu	"fvwm2"	Title
 +			"Quit"		Quit
 
 
+DestroyMenu WindowOps
 AddToMenu WindowOps "Window Ops"	Title
 +			"Move"		Move
 +			"Resize"	Resize
@@ -61,6 +68,7 @@ AddToMenu WindowOps "Window Ops"	Title
 +			"Destroy"	Destroy
 
 
+DestroyMenu ResizeMenu
 AddToMenu ResizeMenu	"Resize/Move"	Title
 +			"80x25"		Resize 49 43
 +			"Max hor"	Maximize 100 0
@@ -73,10 +81,21 @@ AddToMenu ResizeMenu	"Resize/Move"	Title
 +			"RU"		Move 50 44
 
 
+DestroyMenu KeymapMenu
+AddToMenu KeymapMenu	"Keymaps"	Title
++			"PC"		Exec xmodmap $HOME/.xmodmap-pc
++			"PC (D)"	Exec xmodmap $HOME/.xmodmap-pc-d
++			"Sun"		Exec xmodmap $HOME/.xmodmap-sun
++			"NCD"		Exec xmodmap $HOME/.xmodmap-ncd
++			""		Nop
++			"xkeycaps"	Exec xkeycaps
+
+
 # fvwm modules ############################################################
 
+DestroyMenu ModulePopup
 AddToMenu ModulePopup "Fvwm2-Module"	Title
-+	"Audio"	Module FvwmAudio
++	"Audio"		Module FvwmAudio
 +	"AutoRaise ein"	Module FvwmAuto 500
 +	"AutoRaise aus"	KillModule FvwmAuto
 +	"Banner"	Module FvwmBanner
@@ -85,53 +104,21 @@ AddToMenu ModulePopup "Fvwm2-Module"	Title
 +	"Command"	Module FvwmCommand
 +	"Config"	Module FvwmConfig
 +	"Console"	Module FvwmConsole
-+	"Debug"	Module FvwmDebug
-+	"Form"	Module FvwmForm
++	"Debug"		Module FvwmDebug
++	"Form"		Module FvwmForm
 +	"GoodStuff"	Module FvwmGoodStuff
 +	"IconBox"	Module FvwmIconBox
 +	"IconMan"	Module FvwmIconMan
-+	"Ident"	Module FvwmIdent
-+	"M4"	Module FvwmM4
-+	"Pager"	Module FvwmPager 0 0
-+	"Pipe"	Module FvwmPipe
-+	"Save"	Module FvwmSave
++	"Ident"		Module FvwmIdent
++	"M4"		Module FvwmM4
++	"Pager"		Module FvwmPager 0 0
++	"Pipe"		Module FvwmPipe
++	"Save"		Module FvwmSave
 +	"SaveDesk"	Module FvwmSaveDesk
 +	"Script"	Module FvwmScript
 +	"Scroll"	Module FvwmScroll
-+	"Talk"	Module FvwmTalk
++	"Talk"		Module FvwmTalk
 +	"TaskBar"	Module FvwmTaskBar
-+	"Tile"	Module FvwmTile
-+	"Wharf"	Module FvwmWharf
++	"Tile"		Module FvwmTile
++	"Wharf"		Module FvwmWharf
 +	"WinList"	Module FvwmWinList
-
-AddToMenu FvwmManPages "Fvwm man pages"	Title
-+	"Fvwm2"		Exec xterm -title fvwm2 -e man fvwm2
-+	""	Nop
-+	"FvwmAudio"	Exec xterm -title "fvwm2: FvwmAudio" -e man FvwmAudio
-+	"FvwmAutoRaise"	Exec xterm -title "fvwm2: FvwmAuto" -e man FvwmAuto
-+	"FvwmBacker"	Exec xterm -title "fvwm2: FvwmBacker" -e man FvwmBacker
-+	"FvwmBanner"	Exec xterm -title "fvwm2: FvwmBanner" -e man FvwmBanner
-+	"FvwmButtons"	Exec xterm -title "fvwm2: FvwmButtons" -e man FvwmButtons
-+	"FvwmCascade"	Exec xterm -title "fvwm2: FvwmCascade" -e man FvwmCascade
-+	"FvwmCommand"	Exec xterm -title "fvwm2: FvwmCommand" -e man FvwmCommand
-+	"FvwmConfig"	Exec xterm -title "fvwm2: FvwmConfig" -e man FvwmConfig
-+	"FvwmConsole"	Exec xterm -title "fvwm2: FvwmConsole" -e man FvwmConsole
-+	"FvwmConsoleC"	Exec xterm -title "fvwm2: FvwmConsoleC" -e man FvwmConsoleC
-+	"FvwmCpp"	Exec xterm -title "fvwm2: FvwmCpp" -e man FvwmCpp
-+	"FvwmDebug"	Exec xterm -title "fvwm2: FvwmDebug" -e man FvwmDebug
-+	"FvwmForm"	Exec xterm -title "fvwm2: FvwmForm" -e man FvwmForm
-+	"FvwmGoodStuff"	Exec xterm -title "fvwm2: FvwmGoodStuff" -e man FvwmGoodStuff
-+	"FvwmIconBox"	Exec xterm -title "fvwm2: FvwmIconBox" -e man FvwmIconBox
-+	"FvwmIconMan"	Exec xterm -title "fvwm2: FvwmIconMan" -e man FvwmIconMan
-+	"FvwmIdent"	Exec xterm -title "fvwm2: FvwmIdent" -e man FvwmIdent
-+	"FvwmM4"	Exec xterm -title "fvwm2: FvwmM4" -e man FvwmM4
-+	"FvwmPager"	Exec xterm -title "fvwm2: FvwmPager" -e man FvwmPager
-+	"FvwmSave"	Exec xterm -title "fvwm2: FvwmSave" -e man FvwmSave
-+	"FvwmSaveDesk"	Exec xterm -title "fvwm2: FvwmSaveDesk" -e man FvwmSaveDesk
-+	"FvwmScript"	Exec xterm -title "fvwm2: FvwmScript" -e man FvwmScript
-+	"FvwmScroll"	Exec xterm -title "fvwm2: FvwmScroll" -e man FvwmScroll
-+	"FvwmTalk"	Exec xterm -title "fvwm2: FvwmTalk" -e man FvwmTalk
-+	"FvwmTaskBar"	Exec xterm -title "fvwm2: FvwmTaskBar" -e man FvwmTaskBar
-+	"FvwmTile"	Exec xterm -title "fvwm2: FvwmTile" -e man FvwmTile
-+	"FvwmWharf"	Exec xterm -title "fvwm2: FvwmWharf" -e man FvwmWharf
-+	"FvwmWinList"	Exec xterm -title "fvwm2: FvwmWinList" -e man FvwmWinList
