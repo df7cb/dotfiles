@@ -21,11 +21,26 @@ if (open A, "$ENV{HOME}/.mutt/aliases") {
 	close A;
 }
 
+# personal pine aliases
+if (open A, "$ENV{HOME}/.addressbook") {
+	while (<A>) {
+		next unless /$query/i;
+		if (/(.*)\t(.*)\t(.*)/) {
+			print "$3\t$2\t$1\n" unless $3 eq "";
+			($alias, $name) = ($1, $2);
+		}
+		if (/^   (.*)/) { # multi-line
+			print "$1\t$name\t$alias (pine)\n";
+		}
+	}
+}
+
 # pgp keys
 if (open P, "pgpk -l $query |") {
 	while (<P>) {
 		next unless /^uid  (.*) <(.*)>(.*)/;
-		print "$2\t$1\t$3\n";
+		$comment = $3 . "(pgp)";
+		print "$2\t$1\t$comment\n";
 	}
 	close P;
 }
@@ -33,6 +48,7 @@ if (open P, "pgpk -l $query |") {
 # system passwd
 while (($name, $comment, $gecos) = (getpwent)[0,5,6]) {
 	$gecos =~ s/,| (\()/\t$1/;
+	$comment ||= "(passwd)";
 	print "$name\t$gecos\t$comment\n" if $name =~ /$query/i
 		or $comment =~ /$query/i or $gecos =~ /$query/i;
 }
@@ -43,7 +59,8 @@ if (open A, "/etc/aliases" or open "/etc/mail/aliases") {
 		next if /^#/;
 		next unless /$query/i;
 		next unless /^(.*?):\s+(.*)/;
-		print "$1\t \t$2\n";
+		$alias = substr($2, 0, 50);
+		print "$1\t \t$alias\n";
 	}
 	close A;
 }
