@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for i in "$@" ; do
+	echo convert -verbose -geometry '1000x1000>' "$i" "$i"
+	convert -verbose -geometry '1000x1000>' "$i" "$i"
+done
