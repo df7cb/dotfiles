@@ -5,18 +5,18 @@
 ###############################################################################
 # n.b. These paths must NOT be longer than 255 chars
 
-ModulePath /usr/X11R6/lib/X11/fvwm2: \
+ModulePath +:/usr/X11R6/lib/X11/fvwm2: \
 	:/usr/X11R6/lib/X11/fvwm2/2.2: \
 	:/usr/X11R6/libexec/fvwm/2.2.2: \
 	:/usr/X11R6/lib/X11/fvwm/2.2.4:\
 	:/usr/X11R6/libexec/fvwm/2.2.4
 
-PixmapPath /usr/include/X11/3dpixmaps/small:\
-	/usr/include/X11/3dpixmaps/normal:\
-	/usr/include/X11/pixmaps:\
-	/home/cb/lib/pixmaps
+#PixmapPath /usr/include/X11/3dpixmaps/small:\
+#	/usr/include/X11/3dpixmaps/normal:\
+#	/usr/include/X11/pixmaps:\
+#	/home/cb/lib/pixmaps
 
-IconPath /usr/X11R6/include/X11/bitmaps
+#IconPath /usr/X11R6/include/X11/bitmaps
 
 
 ###############################################################################
@@ -36,10 +36,10 @@ ColormapFocus FollowsMouse
 
 OpaqueMoveSize 10
 
-CursorStyle TITLE 52	# fleur
-CursorStyle SYS 90	# plus
-CursorStyle MOVE 50	# exchange
-CursorStyle MENU 122	# spider
+CursorStyle TITLE 52
+CursorStyle SYS 90
+CursorStyle MOVE 50
+CursorStyle MENU 122
 #CursorStyle SELECT 0	# X_cursor
 
 # value to make frames visible when dragging or resizing a window
