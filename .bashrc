@@ -94,7 +94,7 @@ alias rd=rmdir
 which ytalk > /dev/null && alias talk='ytalk -x'
 alias ttar='tar tvfz'
 alias xtar='tar xvfz'
-alias X='exec startx'
+alias X='mesg n;exec startx'
 
 # Functions
 
