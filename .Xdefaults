@@ -1,0 +1,17 @@
+! $Id$
+*background:		white
+XClock*analog:		false
+XClock*background:	LightSkyBlue
+XClock*padding:		0
+XClock*update:		1
+XClock*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
+Fig*inches:		false
+Fig*PaperSize:		A4
+Netscape*blinkingEnabled: false
+XTerm*cursorColor:	Brown
+XTerm*font:		fixed
+XTerm*scrollBar:	True
+XTerm*saveLines:	500
+XTerm*utmpInhibit:	true
+XTerm*visualBell:	true
+XTerm*thickness:	8

@@ -77,6 +77,7 @@ alias -- -=popd
 alias ..='cd ..'
 alias ...='cd ../..'
 alias /='cd /'
+alias ctar='tar cvfz'
 alias d=date
 alias e='$EDITOR'
 alias f=finger
@@ -92,6 +93,7 @@ alias rd=rmdir
 which ytalk > /dev/null && alias talk='ytalk -x'
 alias ttar='tar tvfz'
 alias xtar='tar xvfz'
+alias X='exec startx'
 
 # Functions
 
