@@ -2,6 +2,15 @@
 <!DOCTYPE xbel PUBLIC "+//IDN python.org//DTD XML Bookmark Exchange Language 1.0//EN//XML" "http://www.python.org/topics/xml/dtds/xbel-1.0.dtd">
 <xbel version="1.0">
   <title>Bookmarks</title>
+  <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
+    <title>Christoph Berg</title>
+    <info>
+      <metadata owner="http://galeon.sourceforge.net/">
+        <time_modified>1048014704</time_modified>
+        <time_added>1033992657</time_added>
+      </metadata>
+    </info>
+  </bookmark>
   <folder folded="yes">
     <title>Smart Bookmarks Toolbar</title>
     <info>
@@ -3608,6 +3617,7 @@
             </metadata>
           </info>
         </bookmark>
+        <separator/>
         <bookmark href="http://www.gtz.de/drogen/deutsch/kontakt.htm">
           <title>Aktionsprogramm Drogen und Entwicklung - Kontakt</title>
           <info>
@@ -3616,19 +3626,27 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://home.t-online.de/home/christoph.berg/">
-          <title>Reisef&#239;&#191;&#189;hrer f&#239;&#191;&#189;r Motorradtouren in Korsika</title>
+        <bookmark href="http://www.bike-and-smile.de/">
+          <title>Mit dem Motorrad in Korsika; Touren, Wanderungen und jede Menge Tipps</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1021303910</time_added>
+              <time_added>1048014366</time_added>
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
-          <title>Christoph Berg</title>
+        <bookmark href="http://www.schloeder.net/d0002/g0000084.html#I4184">
+          <title>I4346: Barbara Alsheimer (ca. 1820 - )</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1033992657</time_added>
+              <time_added>1048014492</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.kpm-sport.de/kpm_impressum.php">
+          <title>KPM Sport-Service - Impressum</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048014675</time_added>
             </metadata>
           </info>
         </bookmark>
