@@ -8,6 +8,7 @@ case "`uname -srm`" in
 	SunOS*5.*sun*)	echo "solaris-sparc" ;;
 	SunOS*5.*86*)	echo "solaris-intel" ;;
 	FreeBSD*86)	echo "freebsd-intel" ;;
+	NetBSD*sparc)	echo "netbsd-sparc" ;;
 	IRIX*5*IP*)	echo "irix-sgi" ;;
 	*)		echo "unknown" 
 			echo "os: warning: os type unknown" 1>&2 ;;
