@@ -7,8 +7,9 @@ source ~/.mutt/aliases.new
 
 # key bindings
 bind index - previous-page
-bind browser <space> next-page
+#bind browser <space> next-page
 bind index <space> next-page
+bind generic <space> next-page
 #bind pager <space> next-page
 bind pager <up> previous-line
 bind pager <down> next-line
@@ -24,9 +25,19 @@ bind compose <return> send-message
 bind compose v view-attach
 macro index = s=
 macro pager = s=
+bind index x sync-mailbox
+bind pager x sync-mailbox
 
 # headers
 #my_hdr fcc: bla
+ignore Importance # M$
+ignore Organisation Organization # stuff
+ignore Mail-Followup-To # mailing lists
+ignore X-BeenThere X-Mailman List- # mailman
+ignore X-Bulkmail # tagesschau.de
+ignore X-Cron-Env # cron
+ignore X-MIME-Autoconverted Auto-Submitted # sendmail
+ignore X-Spam-Level X-Keywords X-UID # spamassassin
 
 # options
 #set abort_nosubject
@@ -89,7 +100,6 @@ color header    brightcyan default ^Cc:
 color header    brightred default ^Subject:
 color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 color body      blue default (https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+
-
 
 # local configuration options
 source ~/.mutt/muttrc.local
