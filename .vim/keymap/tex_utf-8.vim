@@ -25,8 +25,6 @@ _6	₆
 _7	₇
 _8	₈
 _9	₉
-...	…
-\\dots	…
 
 " logical symbols
 \\iff	⇔
@@ -53,11 +51,17 @@ _9	₉
 \\therefore	∴
 \\because	∵
 
-" arrows
+" arrows and dots
 \\uparrow	↑
 \\rightarrow	→
 \\downarrow	↓
 \\rightleftharpoons	⇌
+"...	…
+\\dots	…
+\\cdot	⋅
+\\vdots	⋮
+\\cdots	⋯
+\\ddots	⋱
 
 " sets
 \\emptyset	∅
@@ -100,17 +104,17 @@ _9	₉
 \\gg	≫
 \\oplus	⊕
 \\diamond	⋄
-\\cdot	⋅
 \\star	⋆
-\\vdots	⋮
-\\cdots	⋯
-\\ddots	⋱
+\\leadsto	↝
+\\nabla	∇
+
+" brackets
 \\lceil	⌈
 \\rceil	⌉
 \\lfloor	⌊
 \\rfloor	⌋
-\\leadsto	↝
-\\nabla	∇
+\\langle	〈
+\\rangle	〉
 
 " greek letters
 \\Alpha	Α
@@ -171,4 +175,5 @@ _9	₉
 \\rat	ℚ
 \\real	ℝ
 \\int	ℤ
+\\powset	℘
 \\mathcal<Space>P	℘
