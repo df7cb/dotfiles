@@ -142,7 +142,7 @@ Key	F12	A	N	Function Maximize1000
 #		A	Any
 
 # root menu bindings for fvwm2 and fvwm95
-Mouse	1	R	A	Menu Main		
+Mouse	1	R	A	Menu Main
 Mouse	2	R	A	Menu WindowOps
 Mouse	3	R	A	WindowList
 				#FvwmWinList Transient
@@ -162,9 +162,9 @@ Mouse	2	TSF	A	Move
 Mouse	3	TSF	A	RaiseLower
 
 # clicking on  the icon
-Mouse	1	I	A	Function "MenuOrIconify"
-Mouse	2	I	A	Iconify
-Mouse	3	I	A	RaiseLower
+Mouse	1	I	A	Iconify
+Mouse	2	I	A	Move
+Mouse	3	I	A	Menu WindowOps
 
 # the title buttons
 # left side (13579)
@@ -178,9 +178,9 @@ Mouse	1	0	A	RaiseLower
 Mouse	2	0	A	Raise
 Mouse	3	0	A	Lower
 Mouse	0	8	A	Stick
-Mouse	1	6	A	Function ShadeRaise	# toggle
-Mouse	2	6	A	WindowShade 1		# on
-Mouse	3	6	A	WindowShade 2		# off
+Mouse	1	6	A	Function ShadeRaise
+Mouse	2	6	A	Maximize50left
+Mouse	3	6	A	Maximize50right
 Mouse	0	4	A	Iconify
 Mouse	1	2	A	Function Maximize0100
 Mouse	2	2	A	Function Maximize100100

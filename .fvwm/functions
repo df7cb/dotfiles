@@ -24,7 +24,7 @@ AddToFunc RestartFunction
 
 # window functions #########################################################
 
-AddToFunc JumpWindow	"I"	Next [FvwmPager] WarpToWindow 11p 11p
+AddToFunc JumpWindow	"I"	Next [FvwmPager] WarpToWindow 21p 11p
 +			"I"	Next [FvwmPager] Lower
 #+			"I"	Lower
 +			"I"	CursorMove $0 $1
@@ -53,6 +53,14 @@ AddToFunc Maximize100100 "I" Raise
 
 AddToFunc Maximize1000 "I" Raise
 +	"I"		Maximize 100 0
+
+AddToFunc Maximize50left "I" Raise
++	"I"		Maximize 50 100
++	"I"		Move 0 0%
+
+AddToFunc Maximize50right "I" Raise
++	"I"		Maximize 50 100
++	"I"		Move -0 0%
 
 AddToFunc MoveOrIconify	"Immediate"	Raise 
 #+	"Motion"	Raise 
