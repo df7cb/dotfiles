@@ -21,7 +21,7 @@
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>google</nick>
           <pixmap>/usr/share/galeon/google.png</pixmap>
-          <time_visited>1027958313</time_visited>
+          <time_visited>1028496894</time_visited>
           <smarturl>http://www.google.com/search?q=%s</smarturl>
         </metadata>
       </info>
@@ -172,6 +172,8 @@
       <title>Heim D</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
+          <pixmap>/home/cb/HEIM-D/logo/16x16.png</pixmap>
+          <time_modified>1028497721</time_modified>
           <time_added>934990422</time_added>
         </metadata>
       </info>
@@ -340,7 +342,175 @@
           </metadata>
         </info>
       </bookmark>
-      <folder folded="no">
+      <folder folded="yes">
+        <title>Conferences</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>961116962</time_added>
+          </metadata>
+        </info>
+        <folder folded="no">
+          <title>2000</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1017156234</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www-cse.ucsd.edu/groups/hldvt/00/">
+            <title>IEEE International High Level Design Validation and Test Workshop</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>961116985</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.dagstuhl.de/10Years/">
+            <title>IBFI - &quot;Informatics - 10 Years Back, 10 Years Ahead&quot;</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1015580592</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>2001</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1017156245</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.iasted.com/conferences/2001/austria/ai.htm">
+            <title>IASTED Applied Informatics Conference</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>977177758</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.iwls.org/">
+            <title>IWLS 2001</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>977177796</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.dcs.gla.ac.uk/CHARME2001/">
+            <title>CHARME 2001</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>981040730</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.dcs.gla.ac.uk/TPHOLs2001/">
+            <title>TPHOLs 2001</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>985999713</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ee.rochester.edu:8080/~albonesi/wced01/">
+            <title>Workshop on Complexity-Effective Design</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>988631695</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ee.princeton.edu/~isca2001/">
+            <title>ISCA2001</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>988631800</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.dii.unisi.it/~ijcar/">
+            <title>IJCAR 2001 - International Joint Conference on Automated Reasoning</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>986895535</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.iccd-conference.org/index2.html">
+            <title>ICCD 2001</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>991389403</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>2002</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1017156258</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://ece.tamu.edu/MTV/">
+            <title>MTV'02</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>994780894</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.cs.chalmers.se/~ms/DCC02/">
+            <title>Designing Correct Circuits 2002</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1004520237</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.mpi-sb.mpg.de/conferences/elics02/">
+            <title>Symposium on the Effectiveness of Logic in Computer Science (ELICS02)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1011802573</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://research.microsoft.com/specncheck/">
+          <title>UW/MSR 2001 Institute on Specifying and Checking Properties of Software</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1004540003</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-etaps.imag.fr/">
+          <title>ETAPS 2002</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1013763340</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.computer.org/micro/articles/CFP/mi0502cfp.htm">
+          <title>mi0502cfp</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1017156158</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.kluweronline.com/issn/0925-9856">
+          <title>Kluwer Academic Publishers - Formal Methods in System Design</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1019666430</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
         <title>Weitere Institute</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -459,7 +629,7 @@
           </info>
         </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Fachschaft</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -533,7 +703,7 @@
           </info>
         </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Vorlesungen</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -548,7 +718,7 @@
             </metadata>
           </info>
         </bookmark>
-        <folder folded="no">
+        <folder folded="yes">
           <title>Verifikation</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -620,7 +790,7 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>IR</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -734,14 +904,14 @@
           </info>
         </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Informatik</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>976822824</time_added>
           </metadata>
         </info>
-        <folder folded="no">
+        <folder folded="yes">
           <title>Rechnerarchitektur</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -798,7 +968,7 @@
           </info>
         </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Mathematik</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -814,7 +984,7 @@
           </info>
         </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Physik</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -846,7 +1016,7 @@
           </info>
         </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Linguistik</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -946,174 +1116,6 @@
       </bookmark>
     </folder>
     <folder folded="yes">
-      <title>Conferences</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_added>961116962</time_added>
-        </metadata>
-      </info>
-      <folder folded="no">
-        <title>2000</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1017156234</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www-cse.ucsd.edu/groups/hldvt/00/">
-          <title>IEEE International High Level Design Validation and Test Workshop</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>961116985</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.dagstuhl.de/10Years/">
-          <title>IBFI - &quot;Informatics - 10 Years Back, 10 Years Ahead&quot;</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1015580592</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <folder folded="no">
-        <title>2001</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1017156245</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www.iasted.com/conferences/2001/austria/ai.htm">
-          <title>IASTED Applied Informatics Conference</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>977177758</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.iwls.org/">
-          <title>IWLS 2001</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>977177796</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.dcs.gla.ac.uk/CHARME2001/">
-          <title>CHARME 2001</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>981040730</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.dcs.gla.ac.uk/TPHOLs2001/">
-          <title>TPHOLs 2001</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>985999713</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.ee.rochester.edu:8080/~albonesi/wced01/">
-          <title>Workshop on Complexity-Effective Design</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>988631695</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.ee.princeton.edu/~isca2001/">
-          <title>ISCA2001</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>988631800</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.dii.unisi.it/~ijcar/">
-          <title>IJCAR 2001 - International Joint Conference on Automated Reasoning</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>986895535</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.iccd-conference.org/index2.html">
-          <title>ICCD 2001</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>991389403</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <folder folded="no">
-        <title>2002</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1017156258</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://ece.tamu.edu/MTV/">
-          <title>MTV'02</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>994780894</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.cs.chalmers.se/~ms/DCC02/">
-          <title>Designing Correct Circuits 2002</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1004520237</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.mpi-sb.mpg.de/conferences/elics02/">
-          <title>Symposium on the Effectiveness of Logic in Computer Science (ELICS02)</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1011802573</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <bookmark href="http://research.microsoft.com/specncheck/">
-        <title>UW/MSR 2001 Institute on Specifying and Checking Properties of Software</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1004540003</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www-etaps.imag.fr/">
-        <title>ETAPS 2002</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1013763340</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.computer.org/micro/articles/CFP/mi0502cfp.htm">
-        <title>mi0502cfp</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1017156158</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.kluweronline.com/issn/0925-9856">
-        <title>Kluwer Academic Publishers - Formal Methods in System Design</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1019666430</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-    </folder>
-    <folder folded="yes">
       <title>Internet</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
@@ -1139,6 +1141,7 @@
           <title>DIE ZEIT Debatte</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_visited>1028497316</time_visited>
               <time_added>955234604</time_added>
             </metadata>
           </info>
@@ -2493,6 +2496,7 @@
         <title>H&#239;&#191;&#189;ufig genutzte Links: Hardware</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028497796</time_visited>
             <time_added>993818564</time_added>
           </metadata>
         </info>
@@ -2527,6 +2531,7 @@
         <title>DAX</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028497749</time_visited>
             <time_added>987594376</time_added>
           </metadata>
         </info>
@@ -2570,6 +2575,7 @@
         <title>HypoVereinsbank Startseite</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028482520</time_visited>
             <time_added>1018264014</time_added>
           </metadata>
         </info>
@@ -3765,15 +3771,6 @@
         </metadata>
       </info>
     </bookmark>
-    <bookmark href="http://www.google.com/">
-      <title>Google</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_visited>1026477000</time_visited>
-          <time_added>941661503</time_added>
-        </metadata>
-      </info>
-    </bookmark>
     <folder folded="yes">
       <title>Search</title>
       <info>
@@ -3931,6 +3928,7 @@
         <title>Teleauskunft</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028483545</time_visited>
             <time_added>1004955828</time_added>
           </metadata>
         </info>
@@ -4022,7 +4020,7 @@
         <title>PVS</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_visited>1027348686</time_visited>
+            <time_visited>1028497876</time_visited>
             <time_added>953734137</time_added>
           </metadata>
         </info>
@@ -4396,6 +4394,15 @@
         </info>
       </bookmark>
     </folder>
+    <bookmark href="http://www.zeit.de/">
+      <title>Die Zeit</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_visited>1028497865</time_visited>
+          <time_added>1028497554</time_added>
+        </metadata>
+      </info>
+    </bookmark>
   </folder>
   <folder folded="no">
     <title>URLs recovered on 2002-07-18 13:52:50</title>
