@@ -19,8 +19,11 @@ xsetroot -solid navy
 ( sleep 10 ; xroot ) &
 xclock -g 116x12+41+0 &
 
-fvwm2 -s &
+# ugly hack to make SHLVL=1 in xterms spawned by fvwm
+SHLVL=-1
 
 [ -f ~/.xsession-local ] && . ~/.xsession-local
+
+fvwm2 -s &
 
 console=yes exec xterm +ut -vb -C -geometry 62x5+120-0 -T console
