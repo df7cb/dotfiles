@@ -6,16 +6,23 @@
 ulimit -Sc 0	# disable core dumps
 if [ $UID -gt 0 ] && [ $LOGNAME = $(id -ng) ] ; then umask 002 ; else umask 022 ; fi
 
+source_rc () {
+	if [ -e ~/$1 ] ; then . ~/$1
+	elif [ -e ~cb/$1 ] ; then . ~cb/$1
+	else echo "$0: $1 not found" 1>&2
+	fi
+}
+
 # Environment
-[ -f ~/bin/os ] && . ~/bin/os > /dev/null
-[ -f ~/.path ] && . ~/.path
-[ -f ~/.env ] && . ~/.env
+source_rc bin/os > /dev/null
+source_rc .path
+source_rc .env
 
 # check whether we run interactively
 [ "$PS1" ] || return
 #echo ".bashrc: interactive"
 
-[ -f ~/.bash_bind ] && . ~/.bash_bind
+source_rc .bash_bind
 
 if [ "$BASH_VERSION" \> "2.04" ] ; then # new bash supporting '\j' and completion
 	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
