@@ -1362,6 +1362,14 @@
               </metadata>
             </info>
           </bookmark>
+          <bookmark href="http://www.informatik.uni-ulm.de/ki/Edu/Diplomarbeiten/mstegmueller-dipl.html">
+            <title>Diplomarbeit: Michael Stegm&#195;&#131;&#194;&#188;ller</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1058479780</time_added>
+              </metadata>
+            </info>
+          </bookmark>
         </folder>
         <folder folded="yes">
           <title>Rechnerarchitektur</title>
@@ -3681,6 +3689,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://irssi.atn.pl/friends/current/README">
+          <title>friends.pl README</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1058628521</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Sound/Linux</title>
@@ -5083,6 +5099,14 @@
             <time_added>1043155324</time_added>
           </metadata>
         </info>
+        <bookmark href="http://etext.lib.virginia.edu/ebooks/ebooklist.html">
+          <title>E-Book Library at the Electronic Text Center, University of Virginia</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043678124</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://www.giungato.it/antonio/">
           <title>Pinnacle PCTV/RAVE &amp; Linux</title>
           <info>
@@ -5156,23 +5180,6 @@
           </info>
         </bookmark>
       </folder>
-      <bookmark href="http://www.tvinfo.de/">
-        <title>TVinfo.de - sehen was l&#195;&#164;uft</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1043750188</time_modified>
-            <time_added>1043673403</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://etext.lib.virginia.edu/ebooks/ebooklist.html">
-        <title>E-Book Library at the Electronic Text Center, University of Virginia</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1043678124</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <folder folded="yes">
         <title>Digicams</title>
         <info>
@@ -5520,6 +5527,15 @@
           <time_added>894974902</time_added>
         </metadata>
       </info>
+      <bookmark href="http://www.tvinfo.de/">
+        <title>TVinfo.de - sehen was l&#195;&#164;uft</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1043750188</time_modified>
+            <time_added>1043673403</time_added>
+          </metadata>
+        </info>
+      </bookmark>
       <bookmark href="http://www.zeit.de/">
         <title>Die Zeit</title>
         <info>
