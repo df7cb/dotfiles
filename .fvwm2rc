@@ -5,11 +5,16 @@
 ###############################################################################
 # n.b. These paths must NOT be longer than 255 chars
 
-ModulePath /usr/X11R6/lib/X11/fvwm2:/usr/X11R6/lib/X11/fvwm2/2.2:/usr/X11R6/libexec/fvwm/2.2.2:/usr/X11R6/lib/X11/fvwm/2.2.4
+ModulePath /usr/X11R6/lib/X11/fvwm2: \
+	:/usr/X11R6/lib/X11/fvwm2/2.2: \
+	:/usr/X11R6/libexec/fvwm/2.2.2: \
+	:/usr/X11R6/lib/X11/fvwm/2.2.4:\
+	:/usr/X11R6/libexec/fvwm/2.2.4
 
 PixmapPath /usr/include/X11/3dpixmaps/small:\
 	/usr/include/X11/3dpixmaps/normal:\
-	/usr/include/X11/pixmaps
+	/usr/include/X11/pixmaps:\
+	/home/cb/lib/pixmaps
 
 IconPath /usr/X11R6/include/X11/bitmaps
 
@@ -259,7 +264,10 @@ Key	bracketleft A	S4	CursorMove +0 -1
 Key	slash	A	S4	CursorMove +0 +1
 
 # window ops
+# Sun keys
 Key	SunFront A	A	Raise
+
+# Meta keys
 Key	r	A	4	RaiseLower
 Key	r	A	S4	Resize
 Key	s	A	S4	Resize
@@ -277,6 +285,20 @@ Key	Tab	A	4	Next [*] focus
 Key	Tab	A	S4	Prev [*] focus
 
 #Key	BackSpace A	CM	Function Quit
+
+# F keys
+Key	F1	A	N	Menu Main
+Key	F2	A	N	Menu WindowOps
+Key	F3	A	N	WindowList
+Key	F4	A	N	Close
+Key	F5	A	N	RaiseLower
+Key	F6	A	N	WindowShade
+Key	F7	A	N	Iconify
+Key	F8	A	N	Move
+Key	F9	A	N	Resize
+Key	F10	A	N	Function Maximize0100
+Key	F11	A	N	Function Maximize100100
+Key	F12	A	N	Function Maximize1000
 
 
 ###############################################################################
