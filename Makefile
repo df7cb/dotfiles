@@ -19,7 +19,7 @@ mail/d:
 	touch mail/deleted
 	ln -s deleted mail/d
 
-bin/$(OS)/xkbd:
+bin/$(OS)/xkbd: bin/src/xkbd.c
 	make -C bin/src install
 
 diff:
