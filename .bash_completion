@@ -73,6 +73,7 @@
 # general stuff
 complete -o default -d cd
 complete -o default -A running disown
+complete -o default -c type
 complete -v unset vared
 
 # generic filetype rules
@@ -89,4 +90,5 @@ complete -X '!&*' -C completer complete mailsync
 # special rules
 complete -W "install remove" -C completer apt-get
 complete -o default -d -X '!&*' -C completer cvs
+complete -o default -X '!&*' -C completer ssh
 complete -o default -f -W Makefile vim
