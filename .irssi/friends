@@ -1,5 +1,5 @@
 # version = 2.4.1 (20021124)
-# written = 1085092552
+# written = 1085674780
 handle=Myon%hosts=*!cberg@hamberg.it.uu.se *!cb@sycorax.cs.uni-sb.de%globflags=omr%chanflags=%password=bxEtV2DlRwxq2%comment=%
 handle=At-Tifl%hosts=*!*hagen@ppp-82-135-0-151.mnet-online.de *!*Miranda@*.mnet-online.de%globflags=%chanflags=#plant,o,%password=6RrlI9bDyBO2Q%comment=%
 handle=beeelze%hosts=*!*schutz@d139.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
@@ -28,7 +28,7 @@ handle=robilad%hosts=*!*topic@mpiat*.ag2.mpi-sb.mpg.de%globflags=%chanflags=#pla
 handle=rossinie%hosts=*!*rossinie@*.*.pppool.de%globflags=%chanflags=%password=ss3SqdcffFmP2%comment=%
 handle=Schnueff%hosts=*!*mah@susie.cs.uni-sb.de *!*mah@schnuller.cs.uni-sb.de *!mah@d096.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=[TnT]%hosts=*!*tsc@213.135.4.2%globflags=%chanflags=#heim-d,ao,%password=%comment=%
-handle=wam%hosts=*!*arnew@80-190-52-11.kunde.vdserver.de *!*arnew@62-241-36-151.kunde.vdserver.de%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=wam%hosts=*!arnew@p*.dip.t-dialin.net%globflags=%chanflags=#plant,o,%password=%comment=%
 handle=x11y%hosts=*!*raya@*.pppool.de%globflags=%chanflags=#plant,oa,%password=%comment=%
 handle=XTaran%hosts=*!*abe@virtually.noone.org *!abe@sycorax.cs.uni-sb.de%globflags=%chanflags=#plant,oa,%password=Cg7GqlJIx34rU%comment=%
 handle=Y_Plentyn%hosts=*!*aw@crow.net.uni-sb.de *!*aw@raven.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,aomr,%password=%comment=%
