@@ -3,6 +3,11 @@
 # $Id$
 
 use strict;
+
+my %opts;
+use Getopt::Std;
+getopts('c', \%opts);
+
 my $tmp = "renamepics-$$.jpg";
 my $xv = 0;
 my $offset = 0;
@@ -31,9 +36,8 @@ sub spawn {
 }
 
 # fixup some insanities
-foreach (@ARGV) {
-	system "chmod 644 '". join("' '", @ARGV) ."'";
-}
+chmod 0644, @ARGV;
+
 #foreach (grep /JPG$/, @ARGV) {
 #	system "mv '$_' '\L$_'";
 #}
@@ -71,6 +75,10 @@ foreach $file (@ARGV) {
 		system "convert -verbose -rotate -90 $file $file" if $1 eq "<";
 		system "convert -verbose -rotate  90 $file $file" if $1 eq ">";
 		utime $atime, $mtime, $file;
+	} elsif($opts{c}) { # send all files to convert (default: only for rotation)
+		my ($atime, $mtime) = (stat $file)[8, 9];
+		system "convert -verbose $file $file";
+		utime $atime, $mtime, $file;
 	}
 	if ($new) {
 		$new = sprintf "%02i-$new.jpg", $nr;
@@ -83,6 +91,8 @@ foreach $file (@ARGV) {
 	system "mv '$file' '$new'" if $file ne $new;
 }
 
-# clean up	
-unlink $tmp;
-kill "TERM", $xv;
+# clean up
+END {
+	unlink $tmp;
+	kill "TERM", $xv;
+}
