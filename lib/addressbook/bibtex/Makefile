@@ -4,6 +4,7 @@ addr.ps: addr.dvi
 	dvips addr
 
 addr.dvi: addr.tex *.bib
+	@-rm addr.aux addr.bbl
 	latex addr
 	bibtex addr
 	latex addr
