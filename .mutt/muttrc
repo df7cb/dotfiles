@@ -67,6 +67,28 @@ set tilde
 set use_domain
 set use_from
 unset write_bcc
+set xterm_set_titles
+
+# colors
+color normal    default default
+color attachment brightyellow default
+color hdrdefault cyan default
+color indicator default cyan
+color markers   green default
+color quoted    green default
+color signature cyan default
+color status    brightgreen blue
+color tilde     blue default
+color tree      red default
+
+color header    brightgreen default ^From:
+color header    brightcyan default ^To:
+color header    brightcyan default ^Reply-To:
+color header    brightcyan default ^Cc:
+color header    brightred default ^Subject:
+color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body      blue default (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9]+
+
 
 # local configuration options
 source ~/.mutt/muttrc.local
