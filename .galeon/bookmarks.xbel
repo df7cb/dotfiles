@@ -3869,6 +3869,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://mutt.justpickone.org/">
+          <title>The JustPickOne mutt page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1062701691</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://home.uchicago.edu/~dgc/mutt/">
           <title>dgc: Mutt</title>
           <info>
@@ -4233,6 +4241,22 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1061486091</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=207624">
+        <title>Debian Bug report logs - #207624 - ITP: tetrinet -- client and server for tetrinet, a networked tetris version</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1062618085</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://people.debian.org/~mpalmer/debian-mentors_FAQ.html">
+        <title>Unofficial debian-mentors FAQ</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1062932730</time_added>
           </metadata>
         </info>
       </bookmark>
