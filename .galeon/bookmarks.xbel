@@ -3989,6 +3989,23 @@
         </bookmark>
       </folder>
       <folder folded="yes">
+        <title>procmail</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1076080706</time_modified>
+            <time_added>1076080700</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.ii.com/internet/robots/procmail/qs/">
+          <title>Procmail Quick Start</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1076080731</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
         <title>tnt</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
