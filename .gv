@@ -1,0 +1,21 @@
+# $Id$
+
+GV.defaultSaveDir:      
+GV.scratchDir:		
+GV*dirs:		Home
+GV*filters:		None
+GV*filter:		no .*
+
+GV.scale:		0
+GV.scaleBase:		1
+GV.fallbackOrientation: Portrait
+GV.orientation:		Automatic
+GV.fallbackPageMedia:   A4
+GV.pageMedia:		Automatic
+GV.swapLandscape:       True
+GV.autoResize:		True
+GV.antialias:		False
+GV.watchFile:		False
+GV.ignoreEOF:		True
+GV.respectDSC:		True
+
