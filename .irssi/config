@@ -30,6 +30,14 @@ servers = (
     chatnet = "freenode";
     port = "6667";
     autoconnect = "yes";
+  },
+  {
+    address = "irc.de.oftc.net";
+    chatnet = "oftc";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -74,6 +82,7 @@ chatnets = {
   };
   SILC = { type = "SILC"; };
   freenode = { type = "IRC"; };
+  oftc = { type = "IRC"; };
 };
 
 channels = (
@@ -83,7 +92,8 @@ channels = (
   { name = "#debian.de"; chatnet = "ircnet"; autojoin = "yes"; },
   { name = "#debian.de"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#mutt"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#procmail"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#procmail"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian.de"; chatnet = "oftc"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -137,7 +147,7 @@ aliases = {
   think = "say .oO($0-)";
   heim = "msg heimgeist";
   plonk = "ignore -time 600";
-  rn = "/say $0: trage im Ircname-Feld bitte deinen vollst‰ndigen Namen ein.";
+  rn = "/say $0: trage im Ircname-Feld bitte deinen vollst√§ndigen Namen ein.";
 };
 
 statusbar = {
@@ -276,6 +286,11 @@ settings = {
     activity_hide_targets = "";
     activity_hide_level = " actions";
   };
+  proxy = {
+    irssiproxy_password = "wb0Biz";
+    irssiproxy_ports = "ircnet=13331 freenode=13332 oftc=13333";
+    irssiproxy_bind = "127.0.0.1";
+  };
 };
 hilights = (
   { text = "Myon"; nick = "no"; word = "yes"; },
@@ -338,3 +353,77 @@ keyboard = (
   { key = "meta-[23~"; id = "change_window"; data = "11"; },
   { key = "meta-[24~"; id = "change_window"; data = "12"; }
 );
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "IRCNet";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#plant";
+        tag = "IRCNet";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#procmail";
+        tag = "freenode";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "oftc";
+      }
+    );
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#heim-d";
+        tag = "IRCNet";
+      }
+    );
+  };
+};
+mainwindows = { 1 = { first_line = "1"; lines = "32"; }; };
