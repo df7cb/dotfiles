@@ -86,12 +86,13 @@ set pgp_timeout=14400
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set record="=sent-mail"
-unset save_empty
+#unset save_empty
 set sendmail_wait=5
 unset sig_dashes
 set status_on_top
 set sort=threads
 set tilde
+set timeout=30
 set use_domain
 set use_from
 unset write_bcc
