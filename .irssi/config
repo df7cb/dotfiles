@@ -6,11 +6,31 @@ servers = (
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { address = "irc.openprojects.net"; chatnet = "OPN"; port = "6667"; },
   { address = "irc.gnome.org"; chatnet = "GIMPNet"; port = "6667"; },
   { address = "irc.ptlink.net"; chatnet = "PTlink"; port = "6667"; },
   { address = "silc.pspt.fi"; chatnet = "SILC"; port = "706"; },
-  { address = "random.ircd.de"; chatnet = "IRCNet"; port = "6667"; }
+  {
+    address = "random.ircd.de";
+    chatnet = "IRCNet";
+    port = "6667";
+    autoconnect = "yes";
+  },
+  {
+    address = "brunner.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+  },
+  {
+    address = "vinge.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+  },
+  {
+    address = "irc.de.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    autoconnect = "yes";
+  }
 );
 
 chatnets = {
@@ -40,7 +60,6 @@ chatnets = {
     max_modes = "6";
     max_msgs = "3";
   };
-  OPN = { type = "IRC"; max_kicks = "4"; max_modes = "4"; max_msgs = "1"; };
   GIMPNet = {
     type = "IRC";
     max_kicks = "4";
@@ -54,12 +73,17 @@ chatnets = {
     max_msgs = "100";
   };
   SILC = { type = "SILC"; };
+  freenode = { type = "IRC"; };
 };
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "#irssi"; chatnet = "opn"; autojoin = "No"; },
-  { name = "#silc"; chatnet = "silc"; autojoin = "No"; }
+  { name = "#heim-d"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#plant"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#debian.de"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#debian.de"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#mutt"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#procmail"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -110,6 +134,9 @@ aliases = {
   identify = "/quote nickserv identify";
   memoserv = "/quote memoserv";
   nickserv = "/quote nickserv";
+  think = "say .oO($0-)";
+  heim = "msg heimgeist";
+  plonk = "ignore -time 600";
 };
 
 statusbar = {
@@ -168,9 +195,9 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
+        chanact = { };
       };
     };
 
@@ -226,23 +253,75 @@ settings = {
     user_name = "cb";
     nick = "Myon";
     override_coredump_limit = "no";
+    log_create_mode = "644";
+    timestamp_format = "%H:%M";
   };
   "irc/core" = { alternate_nick = "Tauon"; };
+  "perl/core/scripts" = {
+    friends_show_flags_on_join = "yes";
+    friends_autosave = "yes";
+    title_string = "irssi $winname$C@$tag";
+  };
+  "fe-text" = { scroll_page_count = "/1"; };
 };
-hilights = (
-  {
-    text = "*!*@d177.stw.stud.uni-saarland.de";
-    nick = "yes";
-    word = "yes";
-    mask = "yes";
-  },
-  { text = "cb"; nick = "yes"; word = "yes"; },
-  { text = "Myon"; nick = "yes"; word = "yes"; }
-);
+hilights = ( { text = "Myon"; nick = "yes"; word = "yes"; } );
 ignores = (
-  { 
-    mask = "*!testshell@using.ircplus.info";
-    level = "CRAP PUBLICS";
-  }
+  { mask = "*!pitbul@*"; level = "CRAP ACTIONS"; },
+  { mask = "*!testshell@*"; level = "CRAP ACTIONS"; }
 );
-logs = { };
+logs = {
+  "~/irc/log/heim-d/heim-d-%Y-%m-%d" = {
+    level = "ALL";
+    auto_open = "yes";
+    items = ( 
+      { type = "target"; name = "#heim-d"; server = "IRCNet"; }
+    );
+  };
+  "~/irc/log/plant/plant-%Y-%m-%d" = {
+    level = "ALL";
+    auto_open = "yes";
+    items = ( { type = "target"; name = "#plant"; server = "IRCNet"; } );
+  };
+  "~/irc/log/debian.de@ircnet/debian.de-%Y-%m-%d" = {
+    auto_open = "yes";
+    level = "ALL";
+    items = (
+      { type = "target"; name = "#debian.de"; server = "IRCNet"; }
+    );
+  };
+  "~/irc/log/debian.de@freenode/debian.de-%Y-%m-%d" = {
+    auto_open = "yes";
+    level = "ALL";
+    items = (
+      { type = "target"; name = "#debian.de"; server = "freenode"; }
+    );
+  };
+  "~/irc/log/mutt/mutt-%Y-%m-%d" = {
+    level = "ALL";
+    auto_open = "yes";
+    items = ( 
+      { type = "target"; name = "#mutt"; server = "freenode"; }
+    );
+  };
+  "~/irc/log/procmail/procmail-%Y-%m-%d" = {
+    level = "ALL";
+    auto_open = "yes";
+    items = (
+      { type = "target"; name = "#procmail"; server = "freenode"; }
+    );
+  };
+};
+keyboard = (
+  { key = "meta2-P"; id = "change_window"; data = "1"; },
+  { key = "meta2-Q"; id = "change_window"; data = "2"; },
+  { key = "meta2-R"; id = "change_window"; data = "3"; },
+  { key = "meta2-S"; id = "change_window"; data = "4"; },
+  { key = "meta-[15~"; id = "change_window"; data = "5"; },
+  { key = "meta-[17~"; id = "change_window"; data = "6"; },
+  { key = "meta-[18~"; id = "change_window"; data = "7"; },
+  { key = "meta-[19~"; id = "change_window"; data = "8"; },
+  { key = "meta-[20~"; id = "change_window"; data = "9"; },
+  { key = "meta-[21~"; id = "change_window"; data = "10"; },
+  { key = "meta-[23~"; id = "change_window"; data = "11"; },
+  { key = "meta-[24~"; id = "change_window"; data = "12"; }
+);
