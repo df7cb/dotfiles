@@ -213,6 +213,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/~heimfee/">
+          <title>HeimGeist</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1067893812</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <separator/>
       <bookmark href="http://www.heim-d.uni-sb.de/netzwart/netzuser.cgi">
@@ -3303,6 +3311,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1061810934</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.unix-ag.uni-kl.de/~massar/vpnc/">
+          <title>vpnc - client for cisco3000 VPN Concentrator</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1067557536</time_added>
             </metadata>
           </info>
         </bookmark>
