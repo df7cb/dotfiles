@@ -1528,6 +1528,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.absint.com/">
+        <title>AbsInt: Advanced Compiler Technology for Embedded Systems</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1046078782</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>B&#195;&#182;rse</title>
@@ -2179,6 +2187,14 @@
             </info>
           </bookmark>
         </folder>
+        <bookmark href="http://vt100.net/">
+          <title>VT100.net: Terminal Information</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1046177390</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Software</title>
@@ -3337,6 +3353,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1042019536</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.so.cc.va.us/its/security/Security_Guidelines_for_Linux.htm">
+          <title>Security_Guidelines_Linux</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1045828096</time_added>
             </metadata>
           </info>
         </bookmark>
