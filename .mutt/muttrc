@@ -47,6 +47,7 @@ set forward_format="%s (fwd)"
 unset help
 set hidden_host
 set index_format="%3C %Z %4c %[%b %e %k:%M] %-15.15L %s"
+set ispell="aspell --lang=de check"
 set menu_scroll
 unset move
 set pager_index_lines=5
@@ -87,7 +88,7 @@ color header    brightcyan default ^Reply-To:
 color header    brightcyan default ^Cc:
 color header    brightred default ^Subject:
 color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body      blue default (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9]+
+color body      blue default (https?|ftp)://[\-\.\,/%~_:?\#=a-zA-Z0-9]+
 
 
 # local configuration options
