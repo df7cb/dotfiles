@@ -1,9 +1,18 @@
 ! $Id$
 *background:		white
 *foreground:		black
+!*Scrollbar*background:	Navy
 *Scrollbar*foreground:	LightSkyBlue
 *Scrollbar*thickness:	8
 *Scrollbar*thumb:	None
+XApm*background:	LightSkyBlue
+XApm*delay:		5
+XApm*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
+XApm*height:		12
+#XApm*highColor:		MediumSpringGreen
+XApm.Form.Scrollbar.width:	30
+Xawtv*basename:		snap
+Xawtv.geometry:		320x240
 XClock*analog:		false
 XClock*background:	LightSkyBlue
 XClock*padding:		0
@@ -18,6 +27,44 @@ Fig*library_dir:	~/lib/xfig
 Fig*PaperSize:		A4
 Fig*specialtext:	true
 Netscape*blinkingEnabled: false
+! From http://kaluta.ilog.fr/colas/mouse-wheel-scroll/
+Netscape*drawingArea.translations:  #replace    \
+	<Btn1Down>:           ArmLink()   \n\
+	<Btn2Down>:           ArmLink()   \n\
+	~Shift<Btn1Up>:       ActivateLink()  \n\
+	~Shift<Btn2Up>:       ActivateLink(new-window)  \
+	DisarmLink()    \n\
+	Shift<Btn1Up>:        ActivateLink(save-only)  \
+	DisarmLink()    \n\
+	Shift<Btn2Up>:        ActivateLink(save-only)  \
+	DisarmLink()    \n\
+	<Btn1Motion>:             DisarmLinkIfMoved()  \n\
+	<Btn2Motion>:             DisarmLinkIfMoved()  \n\
+	<Btn3Motion>:             DisarmLinkIfMoved()  \n\
+	<Motion>:             DescribeLink()  \n\
+	<Btn3Down>:           xfeDoPopup()    \n\
+	<Btn3Up>:             ActivatePopup() \n\
+	Ctrl<Btn4Down>: PageUp()\n\
+	Ctrl<Btn5Down>: PageDown()\n\
+	Shift<Btn4Down>: LineUp()\n\
+	Shift<Btn5Down>: LineDown()\n\
+	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()\n\
+	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
+	Alt<Btn4Down>: xfeDoCommand(forward)\n\
+	Alt<Btn5Down>: xfeDoCommand(back)\n\
+	<Btn3Down>: \n\
+	<Btn3Down>,<Btn3Up>: xfeDoCommand(back)\n\
+	<Btn3Down>,<Btn3Motion>: xfeDoPopup()\n
+Netscape*globalNonTextTranslations: #override\n\
+	Shift<Btn4Down>: LineUp()\n\
+	Shift<Btn5Down>: LineDown()\n\
+	None<Btn4Down>:LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()\n\
+	None<Btn5Down>:LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
+	Alt<Btn4Down>: xfeDoCommand(forward)\n\
+	Alt<Btn5Down>: xfeDoCommand(back)\n\
+	<Btn3Down>: \n\
+	<Btn3Down>,<Btn3Up>: xfeDoCommand(back)\n\
+	<Btn3Down>,<Btn3Motion>: xfeDoPopup()\n
 Netscape*installColormap: true
 XLock.logoutButton:	-1
 XLock.background:	black
@@ -42,12 +89,15 @@ xterm*VT100.Translations: #override <Key>BackSpace: string(0x08) \n\
 	Shift <KeyPress> Next:scroll-forw(2,halfpage) \n\
 	<Btn4Down>:scroll-back(2,halfpage,m)     \n\
 	<Btn5Down>:scroll-forw(2,halfpage,m)
+!	<Btn4Down>: string(0x1b) string("[5~") \n\
+!	<Btn5Down>: string(0x1b) string("[6~") \n
 !\n\
 !	<Key>Delete:	string(0x1b) string("[3~")\n\
 !	<Key>Home:	string(0x1b) string("[1~")\n\
 !	<Key>End:	string(0x1b) string("[4~")\n\
 !	Ctrl<Key>Prior:	string(0x1b) string("[40~")\n\
 !	Ctrl<Key>Next:	string(0x1b) string("[41~")
+xv*ctrlGeometry: -15-30
 xv.preset1.igraf: S 3 : 0,0 : 127,137 : 255,255
 xv.preset2.igraf: S 3 : 0,0 : 127,147 : 255,255
 xv.preset3.igraf: S 3 : 0,0 : 127,157 : 255,255
@@ -55,6 +105,8 @@ xv.preset4.igraf: S 3 : 0,0 : 127,167 : 255,255
 xv.*.rgraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 xv.*.ggraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 xv.*.bgraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
+xv.saveNormal: true
+wmWeather*geometry:	+898+416
 
 pvs.activedisplayforeground: red
 pvs.font:		9x15
