@@ -96,6 +96,10 @@
       </bookmark>
       <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
         <title>Translate to English</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
     </folder>
   </folder>
@@ -1869,6 +1873,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1018264014</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="https://my.hypovereinsbank.de/prot/templates/login_frame.jsp">
+        <title>HypoVereinsbank</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1063794462</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -3803,6 +3815,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/~uwe/lehre/unixffb/quoting-guide.html">
+          <title>Uwe Waldmann - A Guide to Unix Shell Quoting</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1063641276</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>mutt</title>
@@ -4100,6 +4120,22 @@
           </info>
         </bookmark>
       </folder>
+      <folder folded="yes">
+        <title>PGP</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1063376728</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://keyserver.kjsl.com/~jharris/ka/">
+          <title>jharris.cjb.net: keyanalyze Results</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1063376734</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Debian</title>
@@ -4123,7 +4159,8 @@
         <title>Debian Packages</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1057263024</time_modified>
+            <nick>p</nick>
+            <time_modified>1063636652</time_modified>
             <time_added>1042724966</time_added>
             <smarturl>http://packages.debian.org/cgi-bin/search_packages.pl?keywords=%s&amp;searchon=names&amp;version=all&amp;release=all</smarturl>
           </metadata>
@@ -4133,7 +4170,8 @@
         <title>Debian Bugs</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1056806828</time_modified>
+            <nick>b</nick>
+            <time_modified>1063636646</time_modified>
             <time_added>1042724966</time_added>
             <smarturl>http://bugs.debian.org/%s</smarturl>
           </metadata>
@@ -4241,6 +4279,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1061486091</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://people.debian.org/~noel/changelogs/">
+        <title>changelogs of the Debian packages</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1063886092</time_added>
           </metadata>
         </info>
       </bookmark>
