@@ -610,9 +610,10 @@
           </metadata>
         </info>
         <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/">
-          <title>Graduiertenkolleg &quot;Leistungsgarantien f&#239;&#191;&#189;r Rechnersysteme&quot;</title>
+          <title>Graduiertenkolleg &quot;Leistungsgarantien f&#195;&#188;r Rechnersysteme&quot;</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1051629067</time_modified>
               <time_added>988284136</time_added>
             </metadata>
           </info>
@@ -3665,6 +3666,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.phon.ucl.ac.uk/home/wells/ipa-unicode.htm">
+          <title>IPA in Unicode (Lautschrift)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051882497</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>IRC</title>
@@ -3799,6 +3808,22 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1050435377</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://trilldev.sourceforge.net/files/remotedeb.html">
+        <title>HOWTO - Install Debian Onto a Remote Linux System</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1051694638</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://debianham.sunsite.dk/">
+        <title>Debian-Ham</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1051694706</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -4040,6 +4065,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>991835431</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://users.rcn.com/dtweed/calvin/">
+          <title>Dave's Calvin and Hobbes Index</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1052232179</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -5490,20 +5523,19 @@
           <metadata owner="http://galeon.sourceforge.net/">
             <nick>dict</nick>
             <pixmap>.galeon/favicons/dictionary.png</pixmap>
-            <time_modified>1046777920</time_modified>
+            <time_modified>1052227583</time_modified>
             <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://wordreference.com/de/Translation.asp">
-        <title>en&gt;de</title>
-        <desc>Enter English term</desc>
+      <bookmark href="http://www.m-w.com">
+        <title>MW Thesaurus</title>
+        <desc>Enter word to look up</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <pixmap>.galeon/favicons/ende.gif</pixmap>
-            <time_modified>1050410309</time_modified>
-            <time_added>1006260135</time_added>
-            <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
+            <nick>dict</nick>
+            <time_modified>1052227605</time_modified>
+            <smarturl>http://www.m-w.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=%s</smarturl>
           </metadata>
         </info>
       </bookmark>
@@ -5519,15 +5551,15 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://wordreference.com/fr/Translation.asp">
-        <title>en&gt;fr</title>
-        <desc>Tapez mot francais</desc>
+      <bookmark href="http://wordreference.com/de/Translation.asp">
+        <title>en&gt;de</title>
+        <desc>Enter English term</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <pixmap>.galeon/favicons/enfr.gif</pixmap>
-            <time_modified>1050410321</time_modified>
-            <time_added>1006260178</time_added>
-            <smarturl>http://wordreference.com/fr/Translation.asp?enfr=%s</smarturl>
+            <pixmap>.galeon/favicons/ende.gif</pixmap>
+            <time_modified>1050410309</time_modified>
+            <time_added>1006260135</time_added>
+            <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
           </metadata>
         </info>
       </bookmark>
@@ -5540,6 +5572,28 @@
             <time_modified>1050410477</time_modified>
             <time_added>1006260178</time_added>
             <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wordreference.com/fr/Translation.asp">
+        <title>en&gt;fr</title>
+        <desc>Tapez mot francais</desc>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <pixmap>.galeon/favicons/enfr.gif</pixmap>
+            <time_modified>1050410321</time_modified>
+            <time_added>1006260178</time_added>
+            <smarturl>http://wordreference.com/fr/Translation.asp?enfr=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://dict.leo.org/">
+        <title>LEO</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1052228396</time_modified>
+            <time_added>1052228352</time_added>
+            <smarturl>http://dict.leo.org/?search=%s</smarturl>
           </metadata>
         </info>
       </bookmark>
