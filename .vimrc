@@ -35,6 +35,7 @@ filetype plugin indent on
 
 " Key bindings
 nmap <c-h> :bp<cr>
+nmap <c-?> :bp<cr>
 nmap <tab> :bn<cr>
 imap <c-z> <esc><c-z>
 nmap <space> <c-f>
