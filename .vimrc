@@ -13,6 +13,7 @@ set incsearch		" Incremental search
 set list		" show tabs et al.
 set lcs=tab:·\ ,trail:·	" how to show tabs
 set nojoinspaces	" \frenchspacing
+set nrformats=hex	" drop octal number format
 set ruler		" Show the line and column numbers of the cursor 
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
