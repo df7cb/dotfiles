@@ -68,6 +68,7 @@ galeon-clean:
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
 known_hosts-sort: known_hosts-uniq
+	@grep -qv '<<<<' .ssh/known_hosts
 	mv .ssh/known_hosts .ssh/known_hosts-
 	sort -u .ssh/known_hosts- > .ssh/known_hosts
 	@rm .ssh/known_hosts-
