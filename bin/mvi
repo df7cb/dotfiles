@@ -24,6 +24,7 @@ print TMP "# edit this file to rename the files\n";
 print TMP "\n";
 
 for (@ARGV) {
+	s/(.*)/'$1'/ if /[ ?*\[\]]/;
 	printf TMP "mv %-${len}s $_\n", $_;
 }
 close TMP;
