@@ -1,11 +1,11 @@
 #!/bin/sh
 # $Id$
 
-: ${PATH_OLD:=$PATH}
+: ${PATH_OLD:=$PATH} ${ZDOTDIR:=$HOME}
 
 PATH=/usr/local/bin:/usr/bin:/bin
 
-for dir in $HOME/bin $HOME/bin/`$HOME/bin/os` ; do
+for dir in $HOME/bin $HOME/bin/`source $ZDOTDIR/bin/os` ; do
 	[ -d $dir ] && PATH=$dir:$PATH
 done
 for dir in /usr/local/sbin /sbin /usr/sbin \
