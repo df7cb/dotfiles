@@ -71,7 +71,7 @@ alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
 alias vdl-abi96 Abi 96 <vdl-abi96@heim-d.uni-sb.de>
 alias video4linux-list Video4Linux <video4linux-list@redhat.com>
 alias w.mueller Wolfgang Müller <w.mueller@univw.uni-saarland.de>
-alias weber.alex Alexandra Weber <weber.alex@gmx.ne>
+alias weber.alex Alexandra Weber <weber.alex@gmx.net>
 alias weikum Gerhard Weikum <weikum@cs.uni-sb.de>
 alias wspark Wooseok Park <wspark@cs.uni-sb.de>
 source ~/.mutt/aliases.addressbook
