@@ -27,6 +27,7 @@ xhost - >/dev/null
 xkbd load
 xrdb .Xdefaults
 xset b 0 0  # xset b off does not work
+xset r rate 400 30
 
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
