@@ -27,6 +27,15 @@ host planck.df7cb.de planck
  checkHostIP no)
  #localForward 5901 localhost:5901
  #remoteForward 16001 localhost:16001
+host meitner.df7cb.de meitner
+ hostname meitner.df7cb.de
+ forwardagent yes
+ifdomain(planck.df7cb.de,host irssi
+ hostname meitner.df7cb.de
+ forwardagent yes
+ localForward 13331 localhost:13331
+ localForward 13332 localhost:13332
+ localForward 13333 localhost:13333)
 
 ifdomain(planck.df7cb.de, # woody chroot planck:/data/debian/woody-root
 host woody
@@ -39,12 +48,6 @@ host sid
 host d096.stw.stud.uni-saarland.de d096 hal.heim-d.uni-sb.de hal hal.cs
  hostname d096.stw.stud.uni-saarland.de
  forwardagent yes
-ifdomain(planck.df7cb.de,host irssi
- hostname d096.stw.stud.uni-saarland.de
- forwardagent yes
- localForward 13331 localhost:13331
- localForward 13332 localhost:13332
- localForward 13333 localhost:13333)
 
 host maggie.cs.uni-sb.de maggie
  hostname maggie.cs.uni-sb.de
