@@ -28,8 +28,12 @@ ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
 ###############################################################################
 
 # Text and background color for the title bar of the selected window
+# 'Lola rennt' style back from 1998
 Style	"*"		HilightFore red2, HilightBack LightGreen
 Style	"*"		ForeColor Black, BackColor LightSkyBlue
+# Blue style like df7cb.dyndns.info (030430)
+#Style	"*"		HilightFore yellow, HilightBack #5176e8
+#Style	"*"		ForeColor #5176e8, BackColor #90abf4
 
 # Style for fonts is
 #-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng
@@ -64,23 +68,23 @@ Style	"*"		DecorateTransient
 BorderStyle Inactive -- HiddenHandles NoInset
 
 # fvwm stuff
-Style  "FvwmPager"	NoTitle, Sticky, WindowListSkip
-Style  "FvwmButtons"	NoTitle, Sticky, WindowListSkip
-Style  "FvwmBanner"	NoTitle, Sticky, StaysOnTop, WindowListSkip
+Style  "FvwmPager"	NoTitle, Sticky, WindowListSkip, StaysOnBottom
+#Style  "FvwmButtons"	NoTitle, Sticky, WindowListSkip
+#Style  "FvwmBanner"	NoTitle, Sticky, StaysOnTop, WindowListSkip
 Style  "FvwmWinList"	NoTitle, WindowListSkip, NakedTransient
 Style  "IconManModule"	NoTitle, Sticky, NoHandles, Icon toolbox.xpm
 
 # .xinitrc stuff
 Style	"*apm"		NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
-Style	"*biff"		NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff
+Style	"*biff"		NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff,StaysOnBottom
 Style	"xlassie"	NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff
-Style	"wmWeather"	NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff
-Style	"console*"	Sticky
+Style	"wmWeather"	NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff,StaysOnBottom
+Style	"console*"	Sticky, StaysOnBottom
 Style	"coolmail"	NoTitle, Sticky, WindowListSkip
 Style	"*clock*"	NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
 Style	"xeyes"		NoTitle, Sticky, WindowListSkip
 Style	"xmeter"	NoTitle, Sticky, WindowListSkip
-Style	"Mixer*"	NoTitle, Sticky, WindowListSkip, HandleWidth 0
+Style	"Mixer*"	NoTitle, Sticky, WindowListSkip, HandleWidth 0, StaysOnBottom
 Style	"OpenSSH*"	StaysOnTop
 Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition, WindowListSkip
 Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
