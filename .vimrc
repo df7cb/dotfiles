@@ -9,6 +9,7 @@ set nocompatible	" Use Vim defaults (much better!)
 set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
+set nojoinspaces	" \frenchspacing
 set ruler		" Show the line and column numbers of the cursor 
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
