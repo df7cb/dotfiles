@@ -31,6 +31,7 @@ AddToMenu Apps	"Apps"		Title
 +		"oo&ffice"	Exec ooffice
 +		"&opera"	Exec opera
 +		"&plan"		Exec plan
++		"&teatimer"	Exec teatimer 02:30
 +		"xawt&v"	Exec xawtv -geometry 780x585
 +		"x&mms"		Exec xmms
 +		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
