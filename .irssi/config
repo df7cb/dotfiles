@@ -108,6 +108,7 @@ aliases = {
   chandserv = "/quote chanserv $0 #heim-d $1-";
   chanserv = "/quote chanserv";
   identify = "/quote nickserv identify";
+  memoserv = "/quote memoserv";
   nickserv = "/quote nickserv";
 };
 
