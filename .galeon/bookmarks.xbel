@@ -322,6 +322,22 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>cb</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1049726149</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/cb/bilder/bilder">
+          <title>Bilder</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1049726161</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Uni</title>
