@@ -22,4 +22,4 @@ case :$PATH: in
 	*.*) echo 'Warning: $PATH contains "."' ;;
 esac
 
-export PATH_SET=yes
+export PATH_SET ; PATH_SET=yes
