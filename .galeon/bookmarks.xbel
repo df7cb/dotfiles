@@ -760,6 +760,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://scidok.sulb.uni-saarland.de/">
+          <title>SciDok-Datenbank</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1057228012</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Fachschaft</title>
@@ -3730,6 +3738,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://developer.gnome.org/doc/API/glib/index.html">
+        <title>GLib Reference Manual</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1058434515</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Unix</title>
@@ -5252,6 +5268,14 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://rws72.dyndns.org/">
+        <title>Discothek</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1057756047</time_added>
+          </metadata>
+        </info>
+      </bookmark>
       <bookmark href="http://www.palfrader.org/#cabot">
         <title>Peter Palfrader's Projects</title>
         <info>
@@ -5571,6 +5595,57 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.taz.de/pt/.nf/home">
+        <title>taz, die tageszeitung</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1029364215</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.spiegel.de/">
+        <title>SPIEGEL ONLINE</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1034082696</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.faz.net/s/homepage.html">
+        <title>FAZ.net</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1037894197</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.tagesschau.de/">
+        <title>tagesschau.de</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1029930309</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.tagesschau.de/">
+        <title>tagesschau Suche</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1050410557</time_modified>
+            <time_added>1042548001</time_added>
+            <smarturl>http://www.tagesschau.de/search/?searchText=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.fr-aktuell.de/">
+        <title>Frankfurter Rundschau</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1057233619</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <separator/>
       <bookmark href="http://www.ct.heise.de/ct/">
         <title>c't</title>
         <info>
@@ -5588,6 +5663,7 @@
           </metadata>
         </info>
       </bookmark>
+      <separator/>
       <bookmark href="http://www.wetter.net/cgi-bin/wetter-net/wetter_stadt.pl?ID=334">
         <title>wetter.net</title>
         <info>
@@ -5597,7 +5673,6 @@
           </metadata>
         </info>
       </bookmark>
-      <separator/>
       <bookmark href="http://www.dwd.de/forecasts/forecasts.html">
         <title>Wettervorhersage</title>
         <info>
@@ -5623,52 +5698,12 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.taz.de/pt/.nf/home">
-        <title>taz, die tageszeitung</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1029364215</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.tagesschau.de/">
-        <title>tagesschau.de</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1029930309</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.tagesschau.de/">
-        <title>tagesschau Suche</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1050410557</time_modified>
-            <time_added>1042548001</time_added>
-            <smarturl>http://www.tagesschau.de/search/?searchText=%s</smarturl>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.spiegel.de/">
-        <title>SPIEGEL ONLINE</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1034082696</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.faz.net/s/homepage.html">
-        <title>FAZ.net</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1037894197</time_added>
-          </metadata>
-        </info>
-      </bookmark>
+      <separator/>
       <bookmark href="http://lgrb1.lgrb.uni-freiburg.de/d/fach/led/led_2_1.htm">
-        <title>LGRB - Arbeitsbereich Erdbebendienst</title>
+        <title>LGRB - Erdbebendienst</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1057233554</time_modified>
             <time_added>1046012697</time_added>
           </metadata>
         </info>
