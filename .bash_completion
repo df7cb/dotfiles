@@ -81,6 +81,7 @@ complete -o default -f -X '!*.pdf' acroread
 complete -o default -f -X '!*.?(e)ps*(.gz)' gv
 complete -o default -f -X '!*.tex' latex
 complete -o default -f -X '!*.dvi' xdvi
+complete -o default -f -X '!*.fig' xfig
 complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|zip)' ttar xtar
 
 # stuff that uses my completer
