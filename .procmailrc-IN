@@ -19,31 +19,19 @@ DEFAULT=mail/IN/cb
 * ^From: Christoph Berg.*cb@
 | formail -i"Status: RO"
 
-:0
+:0fhw
 * ^From: BugScan reporter <bugscan@debian.org>
-{
-	:0chw
-	| mv -f debian/rc-bugs debian/rc-bugs.old
-	:0:
-	debian/rc-bugs
-}
+| formail -i"Status: RO"
 
-:0
+:0fhw
 * ^From:.*wnpp@debian.org
 * ^X-Mailer: maintainers-needed.pl
-{
-	:0chW
-	| mv -f debian/wnpp debian/wnpp.old
-	:0:
-	debian/wnpp
-}
+| formail -i"Status: RO"
 
 :0
 * ^To: mutt-dev@mutt.org
 * ^Subject: \[.*\] CVS repository changes
 {
-	:0fhw
-	| formail -i"References: <cvs-repository-changes@mutt.org>"
 	:0Bfhw
 	* !\*
 	| formail -i"Status: RO"
@@ -65,7 +53,7 @@ mail/IN/debian-bts
 
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
-* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org)
+* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org)
 mail/IN/debian
 
 :0:
@@ -77,7 +65,7 @@ $DEFAULT
 mail/IN/tagesschau
 
 :0:
-* ^(Sender: owner-mutt-.*@mutt.org|Mailing-List: |List-Id: |X-BeenThere: aspell|List-Owner: |X-list: muttpatches|X-GUUG-PR-Message: )
+* ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|Mailing-List: |List-Id: |X-BeenThere: aspell|List-Owner: |X-list: muttpatches|X-GUUG-PR-Message: )
 mail/IN/lists
 
 :0:

@@ -1,80 +1,80 @@
 #!/usr/bin/perl -w
+# mvi - rename files interactively (mv-vi)
 # $Id$
-# rename multiple files
-# Christoph Berg <cb@cs.uni-sb.de>
+# (c) 2001..2004 Christoph Berg <cb@df7cb.de>
+# This program is free software covered by the GNU GPL.
+#
 # 010711 cb v0.1
 # 030312 cb v0.2: better quoting
+# 040408 cb v0.3: support for editing symlinks, use strict
+# 040507 cb v0.4: does not use a sh script any more
 
-$quote_re = '^[\w./_-]+$';
-
-$opt_q = $opt_Q = 0;
+use strict;
+use File::Temp qw/tempfile/;
 use Getopt::Std;
-getopts("qQ");
 
-unless(@ARGV) {
-	print STDERR <<EOT;
-mvi v0.2 (c) Christoph Berg <cb\@cs.uni-sb.de>
-interactively rename files using \$EDITOR
-usage: $0 [-qQ] file...
--q	quote all filenames
--Q	only quote filenames not matching $quote_re
-without -q and -Q, quote all files if quoting is necessary for at least one file
-EOT
-	exit 1;
+my %opts;
+getopts("0f:", \%opts);
+
+my $argc = @ARGV;
+$opts{f} ||= "-" if $opts{0};
+die "$0: no arguments given" if $argc == 0 and not $opts{f};
+die "$0: arguments given with -f" if $argc > 0 and $opts{f};
+if($opts{f}) {
+	open F, $opts{f} or die "$0: $opts{f}: $!";
+	while(<F>) {
+		chomp;
+		push @ARGV, $_;
+	}
+	close F;
+	$argc = @ARGV;
 }
 
-unless(-e $ARGV[0]) { # catch unexpanded wildcard (mvi *)
-	die "$ARGV[0]: $!\n";
+my ($fh, $file) = tempfile();
+
+print $fh "apply mv -iv %O %N\n";
+print $fh "skip-unchanged 1\n";
+print $fh "verbose 0\n";
+for my $i (0 .. $argc - 1) {
+	printf $fh "%6d\t$ARGV[$i]\n", $i + 1;
 }
 
-if($opt_Q) { # only quote if necessary
-	$quote = 0;
-} elsif($opt_q) { # quote all files
-	$quote = 1;
-} else { # quote all files if necessary for at least one
-	$quote = ((grep { $_ !~ /$quote_re/} @ARGV) > 0);
+my $editor = $ENV{EDITOR} || "vi";
+system "$editor +4 $file";
+
+seek($fh, 0, 0);
+
+my $apply = "echo apply undefined";
+my $skip = 1;
+my $verbose = 0;
+while(<$fh>) {
+	next if /^\s*#/;
+	if(/^apply (.*)/) {
+		$apply = $1;
+		next;
+	}
+	if(/^skip-unchanged (1|0)$/) {
+		$skip = $1;
+		next;
+	}
+	if(/^verbose (1|0)$/) {
+		$verbose = $1;
+		next;
+	}
+	if(/^([ \d]{6})\t(.+)/) {
+		my $i = $1 + 0;
+		my $n = $2;
+		die "$file.$.: unknown number '$i'" if $i <= 0 or $i > $argc;
+		next if $skip and $n eq $ARGV[$i - 1];
+		#my $cmd = $apply;
+		#$cmd =~ s/\%O/$ARGV[$i - 1]/;
+		#$cmd =~ s/\%N/$n/;
+		#print "$i: $cmd\n" if $verbose;
+		#system $cmd;
+		rename $ARGV[$i - 1], $n;
+		next;
+	}
+	die "$file.$.: parse error: $_"; # $_ ends with \n
 }
 
-$len = 0;
-for (@ARGV) {
-	s#/$##; # remove trailing slash
-	s/"/\\"/g; # " -> \"
-	$_ = "\"$_\"" if $quote or $_ !~ /$quote_re/; # quote filename
-	$len = length($_) if length($_) > $len; # find longest name
-}
-
-$ENV{'TMP'} ||= "/tmp";
-$tmp="$ENV{'TMP'}/mvi-$$";
-open TMP, ">$tmp" or die "$tmp: $!";
-
-print TMP <<EOT;
-#!/bin/sh
-set -e ; trap 'rm -f $tmp~ ; [ -f $tmp ] && rm -iv $tmp' 0
-function mv () { [ "\$1" != "\$2" ] && /bin/mv -iv "\$@" || true; }
-# edit this file to rename the files
-
-EOT
-
-for (@ARGV) {
-	printf TMP "mv %-${len}s %s\n", $_, $_ unless $seen{$_};
-	$seen{$_} = 1; # print each filename at most once
-}
-
-print TMP "\nrm -f $tmp $tmp~\n";
-close TMP;
-
-$age = (stat $tmp)[9];
-
-$ENV{'EDITOR'} ||= 'vi';
-
-system "$ENV{'EDITOR'} +6 $tmp";
-
-$age2 = (stat $tmp)[9];
-if($age2 > $age) {
-	system "sh $tmp";
-} else {
-	print STDERR "$0: not processing unchanged file\n";
-	unlink $tmp;
-}
-
--e "$tmp~" && unlink "$tmp~"; # delete backup
+unlink $file, "$file~";

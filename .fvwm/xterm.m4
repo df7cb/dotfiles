@@ -60,6 +60,3 @@ ifelse(HEIGHT, 480,
 +		"xterm &LU"	Function XTermLU
 +		"xterm &RU"	Function XTermRU'
 )
-dnl+		""		Nop
-
-dnl include(.fvwm2/menus)

@@ -34,6 +34,7 @@ AddToMenu Apps	"Apps"		Title
 +		"&opera"	Exec opera
 +		"&plan"		Exec plan
 +		"&teatimer"	Exec teatimer 02:30
++		"&unison-gtk"	Exec unison-gtk
 +		"xawt&v"	Exec xawtv -geometry 780x585
 +		"x&mms"		Exec xmms
 +		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
