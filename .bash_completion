@@ -73,6 +73,8 @@
 complete -r
 
 # general stuff
+complete -g -u adduser deluser
+complete -u id
 complete -d cd rd
 complete -o default -A running disown
 complete -o default -c strace sudo type xargs
