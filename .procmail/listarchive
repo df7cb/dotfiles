@@ -2,66 +2,112 @@
 # cb 2004-10-05
 
 :0c
-* ^Sender: (.*@mutt.org|mutt-newbie-list-admin@lists.sourceforge.net|muttpatches-owner@ml.free.fr|procmail.*@lists.RWTH-Aachen.DE|owner-(ai|fs-oldies|fs-nulldevice)@(fsinfo.cs.uni-sb.de|lists.lithe.de))|^Delivered-To: .* mutt-rpm@mutt.justpickone.org
-#* ^Date: *\/.*
+* ^Sender: (.*owner.*@mutt.org|mutt-newbie-list-admin@lists.sourceforge.net|muttpatches-owner@ml.free.fr|procmail.*@lists.RWTH-Aachen.DE)|^Delivered-To: .* mutt-rpm@mutt.justpickone.org
 {
 	LOGFILE=$LOGDIR/archive-$MONTH.log
-	#DATE=`date -d "$MATCH" "+%Y-%m"`
 	DATE=`date -u "+%Y-%m"`
 	UMASK=033
+
+	MUTTDIR="/cb/www.df7cb.de/mutt/archive"
+
+	:0
+	* ^(X-)No-Archive: (yes|true)
+	{ NOARCHIVE=.no-archive }
+
+	:0
+	* ^Sender: owner-mutt-announce@mutt.org
+	{ MUTTLIST=mutt-announce }
+	:0
+	* ^Sender: owner-mutt-dev@mutt.org
+	{ MUTTLIST=mutt-dev }
+	:0
+	* ^Sender: owner-mutt-po@mutt.org
+	{ MUTTLIST=mutt-po }
+	:0
+	* ^Sender: owner-mutt-users@mutt.org
+	{ MUTTLIST=mutt-users }
+	:0
+	* ^Sender: owner-mutt-users-fr@mutt.org
+	{ MUTTLIST=mutt-users-fr }
+	:0
+	* ^Delivered-To: mailing list mutt-rpm@mutt.justpickone.org
+	{ MUTTLIST=mutt-rpm }
+	:0
+	* ^Sender: mutt-newbie-list-admin@lists.sourceforge.net
+	{ MUTTLIST=mutt-newbie-list }
+	:0
+	* ^Sender: muttpatches-owner@ml.free.fr
+	{ MUTTLIST=muttpatches }
+	:0
+	* ^Sender: procmail-bounces@lists.RWTH-Aachen.DE
+	{ MUTTLIST=procmail }
+
+	:0
+	* MUTTLIST ?? .
+	{
+		:0c:
+		* !^(X-)No-Archive: (yes|true)
+		$MUTTDIR/lurker-queue/$MUTTLIST
+		:0:
+		$MUTTDIR/$MUTTLIST/$MUTTLIST-$DATE$NOARCHIVE
+	}
+
+	:0:
+	$MUTTDIR/unknown-list-$DATE$NOARCHIVE
+}
+
+:0c
+* ^Sender: owner-(fs-oldies|fs-nulldevice)@fsinfo.cs.uni-sb.de
+{
+	LOGFILE=$LOGDIR/archive-$MONTH.log
+	DATE=`date -u "+%Y-%m"`
+	UMASK=033
+
+	ARCHIVEDIR="/cb/www.df7cb.de/fs-lurker/archive"
+
+	:0
+	* ^(X-)No-Archive: (yes|true)
+	{ NOARCHIVE=.no-archive }
+
+	:0
+	* ^Sender: owner-fs-oldies@
+	{ LIST=fs-oldies }
+	:0
+	* ^Sender: owner-fs-nulldevice@
+	{ LIST=fs-nulldevice }
+
+	:0
+	* LIST ?? .
+	{
+		:0c:
+		* !^(X-)No-Archive: (yes|true)
+		$ARCHIVEDIR/fs-queue/$LIST
+		:0:
+		$ARCHIVEDIR/$LIST/$LIST-$DATE$NOARCHIVE
+	}
+
+	:0:
+	$ARCHIVEDIR/unknown-list-$DATE$NOARCHIVE
+}
+
+:0c
+* ^Sender: owner-ai@lists.lithe.de
+{
+	LOGFILE=$LOGDIR/archive-$MONTH.log
+	DATE=`date -u "+%Y-%m"`
+	UMASK=033
+
+	ARCHIVEDIR="/cb/www.df7cb.de/mail"
 
 	:0
 	* ^(X-)No-Archive: (yes|true)
 	{ NOARCHIVE=.no-archive }
 
 	:0:
-	* ^Sender: owner-mutt-announce@mutt.org
-	public_html/mutt/archive/mutt-announce/mutt-announce-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: owner-mutt-dev@mutt.org
-	public_html/mutt/archive/mutt-dev/mutt-dev-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: owner-mutt-po@mutt.org
-	public_html/mutt/archive/mutt-po/mutt-po-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: owner-mutt-users@mutt.org
-	public_html/mutt/archive/mutt-users/mutt-users-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: owner-mutt-users-fr@mutt.org
-	public_html/mutt/archive/mutt-users-fr/mutt-users-fr-$DATE$NOARCHIVE
-	:0:
-	* ^Delivered-To: mailing list mutt-rpm@mutt.justpickone.org
-	public_html/mutt/archive/mutt-rpm/mutt-rpm-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: mutt-newbie-list-admin@lists.sourceforge.net
-	public_html/mutt/archive/mutt-newbie-list/mutt-newbie-list-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: muttpatches-owner@ml.free.fr
-	public_html/mutt/archive/muttpatches/muttpatches-$DATE$NOARCHIVE
-	:0:
-	* ^Sender: procmail-bounces@lists.RWTH-Aachen.DE
-	public_html/mutt/archive/procmail/procmail-$DATE$NOARCHIVE
-	:0:
 	* ^Sender: owner-ai@
-	www.df7cb.de/mail/ai/ai-$DATE$NOARCHIVE
-
-	:0c: lib/mail/.lurker.lock
-	* ^Sender: owner-fs-oldies@
-	* !^(X-)No-Archive: (yes|true)
-	| /home/cb/www.df7cb.de/fs-lurker/bin/fs-lurker-index -l fs-oldies -m
-	:0:
-	* ^Sender: owner-fs-oldies@
-	www.df7cb.de/mail/fs-oldies/fs-oldies-$DATE$NOARCHIVE
-
-	:0c: lib/mail/.lurker.lock
-	* ^Sender: owner-fs-nulldevice@
-	* !^(X-)No-Archive: (yes|true)
-	| /home/cb/www.df7cb.de/fs-lurker/bin/fs-lurker-index -l fs-nulldevice -m
-	:0:
-	* ^Sender: owner-fs-nulldevice@
-	www.df7cb.de/mail/fs-nulldevice/fs-nulldevice-$DATE$NOARCHIVE
+	$ARCHIVEDIR/ai/ai-$DATE$NOARCHIVE
 
 	:0:
-	www.df7cb.de/mail/unknown-list-$DATE$NOARCHIVE
+	$ARCHIVEDIR/unknown-list-$DATE$NOARCHIVE
 }
 
