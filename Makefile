@@ -11,6 +11,12 @@ all: .mutt/aliases.new .mutt/muttrc.local \
 .less: .lesskey
 	lesskey
 
+.PHONY: /tmp/$(USER) tmp
+/tmp/$(USER):
+	umask 077 ; mkdir $@ ; ls -ld $@
+tmp:
+	umask 077 ; mkdir $@ ; ls -ld $@
+
 # mutt
 .mutt/aliases.new:
 	touch .mutt/aliases.new
