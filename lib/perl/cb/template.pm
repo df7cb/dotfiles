@@ -36,11 +36,14 @@ sub template_output {
 	}
 	while(<TEMPLATE>) {
 		s/__IF\((.*)\)\((.*)\)__/eval($1) ? $2 : "";/eg; # __IF(cond)(value)__
-		foreach my $k (keys %SUBST_STR) {
-			s/$k/$SUBST_STR{$k}/g;
-		}
 		foreach my $k (keys %SUBST_SUB) {
 			s/(.*)$k/print $1; &{$SUBST_SUB{$k}}/eg;
+			my $a = $k;
+			$a =~ s/__$/\\((.*)\\)__/;
+			s/(.*)$a/print $1; &{$SUBST_SUB{$k}}($2)/eg;
+		}
+		foreach my $k (keys %SUBST_STR) {
+			s/$k/$SUBST_STR{$k}/g;
 		}
 		if($stop and /(.*)$stop(.*)/s) {
 			print $1;
