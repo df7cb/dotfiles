@@ -49,10 +49,6 @@
       <separator/>
       <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
         <title>Old versions of this page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){F=' (Open frame in new window first.)'}else{F=''}Q=document.getSelection();if(!Q){void(Q=prompt('No text selected on page.'+F+'\n\nKeywords...?',''))};if(Q)location.href='http://bookmarklets.com/moreinfo.phtml?q='+escape(Q)">
         <title>More Info About...</title>
@@ -86,10 +82,6 @@
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){alert('Frames!')}else{ulBV3pQy=document.getSelection();if(ulBV3pQy!=''){location.href=ulBV3pQy.replace(/\042/g,'').replace(/\047/g,'').replace(/\s/g,'')}else{alert('Select text on page like:\n   http://www.domain.com...')}}">
         <title>Go To Selected URL</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:dT30FfN3b=new Date();void(window.open(location.href,'w'+dT30FfN3b.getTime()))">
         <title>Duplicate Page</title>
@@ -103,10 +95,6 @@
       <separator/>
       <bookmark href="javascript:if(document.cookie.length%3C1){alert('No cookie for this site.')}else{alert('Cookie for this site: '+document.cookie)}">
         <title>Read Cookie for Site</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:function ROIoiW(){var i=0,j,A='anonymous',D,E,F=document.forms;while(i%3CF.length){E=F[i].elements;for(j=0;j%3CE.length;j++){D=E[j];if(D.type=='text'){D.value=(D.name.toUpperCase().indexOf('MAIL')!=-1)?A+'@example.com':A}}i++}}ROIoiW();void(null)">
         <title>AutoFill Anonymous</title>
@@ -1392,7 +1380,8 @@
       <title>Boerse</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1026821968</time_modified>
+          <pixmap>.galeon/favicons/deutsche-boerse.com_favicon.ico</pixmap>
+          <time_modified>1037225831</time_modified>
           <time_added>987594497</time_added>
         </metadata>
       </info>
@@ -4502,6 +4491,23 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.taz.de/pt/.nf/home">
+        <title>taz</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1037145030</time_modified>
+            <time_added>1029364215</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.tagesschau.de/">
+        <title>tagesschau.de</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1029930309</time_added>
+          </metadata>
+        </info>
+      </bookmark>
       <bookmark href="http://www.ct.heise.de/ct/">
         <title>c't</title>
         <info>
@@ -4519,20 +4525,30 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.wetter.net/cgi-bin/wetter-net/wetter_stadt.pl?ID=334">
-        <title>Wetter in 5000 St&#239;&#191;&#189;dte weltweit - wetter.net: weltweite Wettervorhersagen</title>
+      <bookmark href="http://www.spiegel.de/">
+        <title>Spiegel</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>988718268</time_added>
+            <time_modified>1037145023</time_modified>
+            <time_added>1034082696</time_added>
           </metadata>
         </info>
       </bookmark>
       <separator/>
-      <bookmark href="http://www.dwd.de/forecasts/forecasts.html">
-        <title>Wettervorhersage</title>
+      <bookmark href="http://www.wetter.net/cgi-bin/wetter-net/wetter_stadt.pl?ID=334">
+        <title>wetter.net</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>894227321</time_added>
+            <time_modified>1037145107</time_modified>
+            <time_added>988718268</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.dwd.de/de/WundK/W_aktuell/index.htm">
+        <title>Wetter aktuell</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1037145364</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -4549,30 +4565,6 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>894050601</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.taz.de/pt/.nf/home">
-        <title>taz, die tageszeitung</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1029364215</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.tagesschau.de/">
-        <title>tagesschau.de</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1029930309</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.spiegel.de/">
-        <title>SPIEGEL ONLINE</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1034082696</time_added>
           </metadata>
         </info>
       </bookmark>
