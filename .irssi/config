@@ -270,6 +270,8 @@ settings = {
   "fe-common/core" = {
     autolog_path = "~/irc/autolog/${tag}_$0/${0}-%Y-%m-%d";
     autolog = "yes";
+    hilight_nick_matches = "no";
+    show_nickmode = "no";
   };
 };
 hilights = ( { text = "Myon"; nick = "no"; word = "yes"; } );
