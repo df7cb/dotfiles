@@ -24,7 +24,7 @@ macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
 macro	generic	d	s=deleted<return>	'Move message to trash folder'
 macro	index	d	s=deleted<return>	'Move message to trash folder'
 macro	pager	d	s=deleted<return>	'Move message to trash folder'
-macro	index	^d	'<esc>t;d'	'Move all messages in thread to trash folder'
+macro	index	\cd	'<esc>t;d'	'Move all messages in thread to trash folder'
 bind	index	G	last-entry
 bind	pager	G	bottom
 bind	generic	N	search-opposite
