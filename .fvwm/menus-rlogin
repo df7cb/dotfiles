@@ -1,0 +1,36 @@
+# .fvwm2rc-menus-rlogin cb 990804
+
+AddToMenu Rlogins "rlogins" Title
++	"Wohnheim"	Popup RloginWohnheim
++	"Fachschaft"	Popup RloginFachschaft
++	"Lehrstuhl"	Popup RloginLehrstuhl
++	"Labor"		Popup RloginLabor
+
+AddToMenu RloginWohnheim "Wohnheim" Title
++	"df7cb"		Exec xterm -e ssh df7cb.heim-d.uni-sb.de
++	"hal"		Exec xterm -e ssh hal.heim-d.uni-sb.de
++	"earth"		Exec xterm -e ssh earth.heim-d.uni-sb.de
++	"deep-thought"	Exec xterm -e ssh deep-thougth.heim-d.uni-sb.de
++	""		Nop
++	"Switch 18.1"	Exec xterm -e telnet 134.96.114.12
++	"Switch 18.2"	Exec xterm -e telnet 134.96.114.13
+
+AddToMenu RloginFachschaft "Fachschaft" Title
++	"fsinfo"	Exec xterm -e ssh fsinfo.cs.uni-sb.de
++	"oberon"	Exec xterm -e ssh oberon.cs.uni-sb.de
++	"titan"		Exec xterm -e ssh titan.cs.uni-sb.de
++	"puck"		Exec xterm -e ssh puck.cs.uni-sb.de
++	"sycorax"	Exec xterm -e telnet sycorax.cs.uni-sb.de
+
+AddToMenu RloginLehrstuhl "Lehrstuhl" Title
++	"wjpserver"	Exec xterm -e ssh wjpserver.cs.uni-sb.de
++	"wurzelausix"	Exec xterm -e ssh wurzelausix.cs.uni-sd.de
+
+AddToMenu RloginLabor "Labor" Title
++	"busserver"	Exec xterm -e ssh busserver.cs.uni-sb.de
++	"calvin"	Exec xterm -e ssh calvin.cs.uni-sb.de
++	"hobbes"	Exec xterm -e ssh hobbes.cs.uni-sb.de
++	"lunix"		Exec xterm -e ssh lunix.cs.uni-sb.de
++	"spiff"		Exec xterm -e ssh spiff.cs.uni-sb.de
++	"rosalyn"	Exec xterm -e ssh rosalyn.cs.uni-sb.de
++	"vodix"		Exec xterm -e ssh vodix.cs.uni-sb.de

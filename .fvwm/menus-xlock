@@ -1,0 +1,203 @@
+DestroyMenu xlock
+DestroyMenu xlock1
+DestroyMenu xlock2
+DestroyMenu xnolock1
+DestroyMenu xnolock2
+
+AddToMenu xlock "xlock" Title
++	"lock"		Title
++	"A-L"		Popup xlock1
++	"M-Z"		Popup xlock2
++	"random"	Exec xlock
++	""		Nop
++	"nolock"	Title
++	"A-L"		Popup xnolock1
++	"M-Z"		Popup xnolock2
++	"random"	Exec xlock -nolock
+
+AddToMenu xlock1 "xlock" Title
++	"ant:	Shows Langton's and Turk's generalized ants." Exec xlock -mode ant
++	"ball:	Shows bouncing balls." Exec xlock -mode ball
++	"bat:	Shows bouncing flying bats." Exec xlock -mode bat
++	"blot:	Shows Rorschach's ink blot test." Exec xlock -mode blot
++	"bouboule:	Shows Mimi's bouboule of moving stars." Exec xlock -mode bouboule
++	"bounce:	Shows bouncing footballs." Exec xlock -mode bounce
++	"braid:	Shows random braids and knots." Exec xlock -mode braid
++	"bug:	Shows Palmiter's bug evolution and a garden of Eden." Exec xlock -mode bug
++	"cartoon:	Shows bouncing cartoons. (1)" Exec xlock -mode cartoon
++	"clock:	Shows Packard's oclock." Exec xlock -mode clock
++	"crystal:	Shows polygons in 2D plane groups." Exec xlock -mode crystal
++	"daisy:	Shows a meadow of daisies." Exec xlock -mode daisy
++	"dclock:	Shows a floating digital clock." Exec xlock -mode dclock
++	"demon:	Shows Griffeath's cellular automata." Exec xlock -mode demon
++	"drift:	Shows cosmic drifting flame fractals." Exec xlock -mode drift
++	"escher:	Shows Escher-like GL stuff. (2)" Exec xlock -mode escher
++	"eyes:	Shows eyes following a bouncing grelb." Exec xlock -mode eyes
++	"fadeplot:	Shows f fading plot of sine squared." Exec xlock -mode fadeplot
++	"flag:	Shows a waving flag of your operating system." Exec xlock -mode flag
++	"flame:	Shows cosmic flame fractals." Exec xlock -mode flame
++	"forest:	Shows binary trees of a fractal forest." Exec xlock -mode forest
++	"galaxy:	Shows crashing spiral galaxies." Exec xlock -mode galaxy
++	"gears:	Shows GL's gears. (2)" Exec xlock -mode gears
++	"geometry:	Shows morphing of a complete graph." Exec xlock -mode geometry
++	"grav:	Shows orbiting planets." Exec xlock -mode grav
++	"helix:	Shows string art." Exec xlock -mode helix
++	"hop:	Shows real plane iterated fractals." Exec xlock -mode hop
++	"hyper:	Shows a spinning tesseract in 4D space." Exec xlock -mode hyper
++	"ico:	Shows a bouncing polyhedra." Exec xlock -mode ico
++	"ifs:	Shows a modified iterated function system." Exec xlock -mode ifs
++	"image:	Shows randomly appearing logos." Exec xlock -mode image
++	"julia:	Shows the Julia set." Exec xlock -mode julia
++	"kaleid:	Shows a kaleidoscope." Exec xlock -mode kaleid
++	"laser:	Shows spinning lasers." Exec xlock -mode laser
++	"life:	Shows Conway's game of life." Exec xlock -mode life
++	"life1d:	Shows Wolfram's game of 1D life." Exec xlock -mode life1d
++	"life3d:	Shows Bays' game of 3D life." Exec xlock -mode life3d
++	"lightning:	Shows Keith's fractal lightning bolts." Exec xlock -mode lightning
++	"lisa:	Shows animated lissajous loops." Exec xlock -mode lisa
++	"lissie:	Shows lissajous worms." Exec xlock -mode lissie
++	"loop:	Shows Langton's self-producing loops." Exec xlock -mode loop
++	"" Nop
++	"(1)	Not compiled in by default." Nop
++	"(2)	May not be available depending on how it was configured." Nop
++	"(3)	Does not show up in random mode." Nop
+
+AddToMenu xlock2 "xlock" Title
++	"marquee:	Shows messages." Exec xlock -mode marquee
++	"maze:	Shows a random maze and a depth first search solution." Exec xlock -mode maze
++	"morph3d:	Shows GL morphing polyhedra. (2)" Exec xlock -mode morph3d
++	"mountain:	Shows Papo's mountain range." Exec xlock -mode mountain
++	"munch:	Shows munching squares." Exec xlock -mode munch
++	"nose:	Shows a man with a big nose runs around spewing out messages." Exec xlock -mode nose
++	"pacman:	Shows Pacman(tm)." Exec xlock -mode pacman
++	"pipes:	Shows a self-building pipe system. (2)" Exec xlock -mode pipes
++	"penrose:	Shows Penrose's quasiperiodic tilings." Exec xlock -mode penrose
++	"petal:	Shows various GCD Flowers." Exec xlock -mode petal
++	"puzzle:	Shows a puzzle being scrambled and then solved." Exec xlock -mode puzzle
++	"pyro:	Shows fireworks." Exec xlock -mode pyro
++	"qix:	Shows spinning lines a la Qix(tm)." Exec xlock -mode qix
++	"roll:	Shows a rolling ball." Exec xlock -mode roll
++	"rotor:	Shows Tom's Roto-Rooter." Exec xlock -mode rotor
++	"rubik:	Shows an auto-solving Rubik's Cube. (2)" Exec xlock -mode rubik
++	"shape:	Shows stippled rectangles, ellipses, and triangles." Exec xlock -mode shape
++	"sierpinski:	Shows a Sierpinski's triangle." Exec xlock -mode sierpinski
++	"slip:	Shows slipping blits." Exec xlock -mode slip
++	"sphere:	Shows a bunch of shaded spheres." Exec xlock -mode sphere
++	"spiral:	Shows helixes of dots." Exec xlock -mode spiral
++	"spline:	Shows colorful moving splines." Exec xlock -mode spline
++	"sproingies:	Shows Sproingies! Nontoxic. Safe for pets and small children. (2)" Exec xlock -mode sproingies
++	"star:	Shows a star field with a twist." Exec xlock -mode star
++	"strange:	Shows strange attractors." Exec xlock -mode strange
++	"superquadrics:	Shows 3D mathematical shapes. (2)" Exec xlock -mode superquadrics
++	"swarm:	Shows a swarm of bees following a wasp." Exec xlock -mode swarm
++	"swirl:	Shows animated swirling patterns." Exec xlock -mode swirl
++	"triangle:	Shows a triangular mountain range." Exec xlock -mode triangle
++	"tube:	Shows an animated tube." Exec xlock -mode tube
++	"turtle:	Shows turtle fractals." Exec xlock -mode turtle
++	"vines:	Shows fractal-like vines." Exec xlock -mode vines
++	"voters:	Shows Dewdney's Voters." Exec xlock -mode voters
++	"wator:	Shows Dewdney's Water-Torus planet of fish and sharks." Exec xlock -mode wator
++	"wire:	Shows a random circuit with 2 electrons." Exec xlock -mode wire
++	"world:	Shows spinning Earths." Exec xlock -mode world
++	"worm:	Shows wiggly worms." Exec xlock -mode worm
++	"blank:	Shows nothing but a black screen. (3)" Exec xlock -mode blank
++	"bomb:	Shows a bomb and will autologout after a time. (2,3)" Exec xlock -mode bomb
++	"random:	Shows a random mode from above except blank (and bomb)." Exec xlock -mode random
++	"" Nop
++	"(1)	Not compiled in by default." Nop
++	"(2)	May not be available depending on how it was configured." Nop
++	"(3)	Does not show up in random mode." Nop
+
+
+AddToMenu xnolock1 "x-nolock" Title
++	"ant:	Shows Langton's and Turk's generalized ants." Exec xlock -nolock -mode ant
++	"ball:	Shows bouncing balls." Exec xlock -nolock -mode ball
++	"bat:	Shows bouncing flying bats." Exec xlock -nolock -mode bat
++	"blot:	Shows Rorschach's ink blot test." Exec xlock -nolock -mode blot
++	"bouboule:	Shows Mimi's bouboule of moving stars." Exec xlock -nolock -mode bouboule
++	"bounce:	Shows bouncing footballs." Exec xlock -nolock -mode bounce
++	"braid:	Shows random braids and knots." Exec xlock -nolock -mode braid
++	"bug:	Shows Palmiter's bug evolution and a garden of Eden." Exec xlock -nolock -mode bug
++	"cartoon:	Shows bouncing cartoons. (1)" Exec xlock -nolock -mode cartoon
++	"clock:	Shows Packard's oclock." Exec xlock -nolock -mode clock
++	"crystal:	Shows polygons in 2D plane groups." Exec xlock -nolock -mode crystal
++	"daisy:	Shows a meadow of daisies." Exec xlock -nolock -mode daisy
++	"dclock:	Shows a floating digital clock." Exec xlock -nolock -mode dclock
++	"demon:	Shows Griffeath's cellular automata." Exec xlock -nolock -mode demon
++	"drift:	Shows cosmic drifting flame fractals." Exec xlock -nolock -mode drift
++	"escher:	Shows Escher-like GL stuff. (2)" Exec xlock -nolock -mode escher
++	"eyes:	Shows eyes following a bouncing grelb." Exec xlock -nolock -mode eyes
++	"fadeplot:	Shows f fading plot of sine squared." Exec xlock -nolock -mode fadeplot
++	"flag:	Shows a waving flag of your operating system." Exec xlock -nolock -mode flag
++	"flame:	Shows cosmic flame fractals." Exec xlock -nolock -mode flame
++	"forest:	Shows binary trees of a fractal forest." Exec xlock -nolock -mode forest
++	"galaxy:	Shows crashing spiral galaxies." Exec xlock -nolock -mode galaxy
++	"gears:	Shows GL's gears. (2)" Exec xlock -nolock -mode gears
++	"geometry:	Shows morphing of a complete graph." Exec xlock -nolock -mode geometry
++	"grav:	Shows orbiting planets." Exec xlock -nolock -mode grav
++	"helix:	Shows string art." Exec xlock -nolock -mode helix
++	"hop:	Shows real plane iterated fractals." Exec xlock -nolock -mode hop
++	"hyper:	Shows a spinning tesseract in 4D space." Exec xlock -nolock -mode hyper
++	"ico:	Shows a bouncing polyhedra." Exec xlock -nolock -mode ico
++	"ifs:	Shows a modified iterated function system." Exec xlock -nolock -mode ifs
++	"image:	Shows randomly appearing logos." Exec xlock -nolock -mode image
++	"julia:	Shows the Julia set." Exec xlock -nolock -mode julia
++	"kaleid:	Shows a kaleidoscope." Exec xlock -nolock -mode kaleid
++	"laser:	Shows spinning lasers." Exec xlock -nolock -mode laser
++	"life:	Shows Conway's game of life." Exec xlock -nolock -mode life
++	"life1d:	Shows Wolfram's game of 1D life." Exec xlock -nolock -mode life1d
++	"life3d:	Shows Bays' game of 3D life." Exec xlock -nolock -mode life3d
++	"lightning:	Shows Keith's fractal lightning bolts." Exec xlock -nolock -mode lightning
++	"lisa:	Shows animated lissajous loops." Exec xlock -nolock -mode lisa
++	"lissie:	Shows lissajous worms." Exec xlock -nolock -mode lissie
++	"loop:	Shows Langton's self-producing loops." Exec xlock -nolock -mode loop
++	"" Nop
++	"(1)	Not compiled in by default." Nop
++	"(2)	May not be available depending on how it was configured." Nop
++	"(3)	Does not show up in random mode." Nop
+
+AddToMenu xnolock2 "x-nolock" Title
++	"marquee:	Shows messages." Exec xlock -nolock -mode marquee
++	"maze:	Shows a random maze and a depth first search solution." Exec xlock -nolock -mode maze
++	"morph3d:	Shows GL morphing polyhedra. (2)" Exec xlock -nolock -mode morph3d
++	"mountain:	Shows Papo's mountain range." Exec xlock -nolock -mode mountain
++	"munch:	Shows munching squares." Exec xlock -nolock -mode munch
++	"nose:	Shows a man with a big nose runs around spewing out messages." Exec xlock -nolock -mode nose
++	"pacman:	Shows Pacman(tm)." Exec xlock -nolock -mode pacman
++	"pipes:	Shows a self-building pipe system. (2)" Exec xlock -nolock -mode pipes
++	"penrose:	Shows Penrose's quasiperiodic tilings." Exec xlock -nolock -mode penrose
++	"petal:	Shows various GCD Flowers." Exec xlock -nolock -mode petal
++	"puzzle:	Shows a puzzle being scrambled and then solved." Exec xlock -nolock -mode puzzle
++	"pyro:	Shows fireworks." Exec xlock -nolock -mode pyro
++	"qix:	Shows spinning lines a la Qix(tm)." Exec xlock -nolock -mode qix
++	"roll:	Shows a rolling ball." Exec xlock -nolock -mode roll
++	"rotor:	Shows Tom's Roto-Rooter." Exec xlock -nolock -mode rotor
++	"rubik:	Shows an auto-solving Rubik's Cube. (2)" Exec xlock -nolock -mode rubik
++	"shape:	Shows stippled rectangles, ellipses, and triangles." Exec xlock -nolock -mode shape
++	"sierpinski:	Shows a Sierpinski's triangle." Exec xlock -nolock -mode sierpinski
++	"slip:	Shows slipping blits." Exec xlock -nolock -mode slip
++	"sphere:	Shows a bunch of shaded spheres." Exec xlock -nolock -mode sphere
++	"spiral:	Shows helixes of dots." Exec xlock -nolock -mode spiral
++	"spline:	Shows colorful moving splines." Exec xlock -nolock -mode spline
++	"sproingies:	Shows Sproingies! Nontoxic. Safe for pets and small children. (2)" Exec xlock -nolock -mode sproingies
++	"star:	Shows a star field with a twist." Exec xlock -nolock -mode star
++	"strange:	Shows strange attractors." Exec xlock -nolock -mode strange
++	"superquadrics:	Shows 3D mathematical shapes. (2)" Exec xlock -nolock -mode superquadrics
++	"swarm:	Shows a swarm of bees following a wasp." Exec xlock -nolock -mode swarm
++	"swirl:	Shows animated swirling patterns." Exec xlock -nolock -mode swirl
++	"triangle:	Shows a triangular mountain range." Exec xlock -nolock -mode triangle
++	"tube:	Shows an animated tube." Exec xlock -nolock -mode tube
++	"turtle:	Shows turtle fractals." Exec xlock -nolock -mode turtle
++	"vines:	Shows fractal-like vines." Exec xlock -nolock -mode vines
++	"voters:	Shows Dewdney's Voters." Exec xlock -nolock -mode voters
++	"wator:	Shows Dewdney's Water-Torus planet of fish and sharks." Exec xlock -nolock -mode wator
++	"wire:	Shows a random circuit with 2 electrons." Exec xlock -nolock -mode wire
++	"world:	Shows spinning Earths." Exec xlock -nolock -mode world
++	"worm:	Shows wiggly worms." Exec xlock -nolock -mode worm
++	"blank:	Shows nothing but a black screen. (3)" Exec xlock -nolock -mode blank
++	"bomb:	Shows a bomb and will autologout after a time. (2,3)" Exec xlock -nolock -mode bomb
++	"random:	Shows a random mode from above except blank (and bomb)." Exec xlock -nolock -mode random
++	"" Nop
++	"(1)	Not compiled in by default." Nop
++	"(2)	May not be available depending on how it was configured." Nop
++	"(3)	Does not show up in random mode." Nop

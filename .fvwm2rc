@@ -1,0 +1,297 @@
+# cb 990603 ###################################################################
+
+###############################################################################
+#   paths specific to fvwm2                                                   #
+###############################################################################
+# n.b. These paths must NOT be longer than 255 chars
+
+ModulePath /usr/X11R6/lib/X11/fvwm2
+
+PixmapPath /usr/include/X11/3dpixmaps/small:\
+	/usr/include/X11/3dpixmaps/normal:\
+	/usr/include/X11/pixmaps:\
+	/usr/include/X11/susexpm/small:\
+	/usr/include/X11/susexpm/normal:\
+	/usr/include/X11/susexpm/mini\
+
+IconPath /usr/X11R6/include/X11/bitmaps
+
+
+# Import other files ######################################################
+
+Read .fvwm2rc-local
+FvwmM4 .fvwm2rc-xterm.m4 
+Read .fvwm2rc-functions
+Read .fvwm2rc-modules
+Read .fvwm2rc-menus
+
+
+###############################################################################
+#   window buttons                                                            #
+#   1 3 5 7 9  0 8 6 4 2                                                      #
+###############################################################################
+
+# Dot for Zapp
+ButtonStyle 3 5 50x50@0 40x50@0 40x40@1 50x40@1 50x50@0
+
+# Box for Raise
+ButtonStyle 0 5 20x20@1 80x20@1 80x80@0 20x80@0 20x20@1
+
+# Cross for Stick
+ButtonStyle 8 13 20x60@1 20x40@1 40x40@1 40x20@1 60x20@1 60x40@0 80x40@1 80x60@0 60x60@0 60x80@0 40x80@0 40x60@1 20x60@0
+
+# Bar for Shade
+ButtonStyle 6 5 20x40@1 20x20@1 80x20@1 80x40@0 20x40@0
+
+# Large down Triangle for Iconify
+ButtonStyle 4 4 50x74@1 25x24@1 75x24@1 50x74@0
+
+# Large up Triangle for Maximize
+ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
+
+
+###############################################################################
+#   general configuration                                                     #
+###############################################################################
+
+# this describes how many rows and columns are displayed in the pager
+DeskTopSize 3x2
+
+#EdgeResistance 300 20
+EdgeResistance 0 20
+EdgeScroll 100 100
+
+ClickTime 200
+
+ColormapFocus FollowsMouse
+
+OpaqueMoveSize 10
+
+CursorStyle TITLE 52	# fleur
+CursorStyle SYS 90	# plus
+CursorStyle MOVE 50	# exchange
+CursorStyle MENU 122	# spider
+#CursorStyle SELECT 0	# X_cursor
+
+# value to make frames visible when dragging or resizing a window
+# for more info see "man fvwm95"
+#XORvalue 255
+XORvalue 205
+
+###############################################################################
+#   colors and fonts                                                          #
+###############################################################################
+
+# Text and background color for the title bar of the selected window
+HilightColor 		yellow #c06077
+
+Style	"*"		ForeColor Black
+Style	"*"		BackColor LightSkyBlue
+
+# Style for fonts is
+#-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng
+#
+
+# Menu colors and font
+#         bg    fg   disabled  font           sub-menu-style
+MenuStyle Black Grey LightGrey \
+	-misc-fixed-medium-r-normal-*-15-*-75-75-c-90-iso8859-1 fvwm
+
+# Now the common fonts - one for window titles, another for icons
+#WindowFont	-misc-fixed-bold-r-normal-*-13-*-75-75-c-80-iso8859-1
+WindowFont	-*-lucida-bold-r-*-*-14-*-*-*-*-*-iso8859-*
+IconFont	-misc-fixed-medium-r-normal-*-10-*-75-75-c-60-iso8859-1
+
+
+###############################################################################
+#   style options for modules and programs                                    #
+###############################################################################
+
+Style  "*"		BorderWidth 5, HandleWidth 5
+Style  "*"              Icon small.Template.xpm
+
+Style	"*"		SloppyFocus
+
+Style	"*"		SmartPlacement, RandomPlacement
+
+# decorations for transient windows
+#Style	"*"		DecorateTransient
+Style	"*"		NakedTransient
+
+# flat window borders when inactive
+BorderStyle Inactive -- HiddenHandles NoInset
+
+# where icons will be placed
+Style   "*"     IconBox +55 +85 +130 +480
+# icons are reachable in every virtual screen
+Style	"*"		StickyIcon
+#Style	"*"		SmartPlacement, RandomPlacement, ActivePlacement
+Style	"*"		NoPPosition
+
+# fvwm stuff
+Style  "FvwmPager"	NoTitle, Sticky, WindowListSkip
+Style  "FvwmButtons"	NoTitle, Sticky, WindowListSkip
+Style  "FvwmBanner"	NoTitle, Sticky, StaysOnTop, WindowListSkip
+Style  "FvwmWinList"	NoTitle, WindowListSkip, NakedTransient
+Style  "IconManModule"	NoTitle, Sticky, NoHandles, Icon toolbox.xpm
+
+# .xinitrc stuff
+Style	"console*"	Sticky, WindowListSkip
+Style	"coolmail"	NoTitle, Sticky, WindowListSkip
+Style	"*clock*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
+Style	"xclock"	StaysOnTop
+Style	"xeyes"		NoTitle, Sticky, WindowListSkip
+Style	"xmeter"	NoTitle, Sticky, WindowListSkip
+Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition, WindowListSkip
+Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
+
+# general
+#Style	"root*"		BackColor Red
+Style	"xv 3*"		NoTitle
+Style	"xterm"		Icon Terminal.xpm
+Style	"emacs*"	Icon DTP.xpm
+Style	"xconsole"	Icon clipboard_3d.xpm
+Style	"dsk_*"		Icon FileManager.xpm
+Style	"TkMan"		Icon library_3d.xpm
+Style	"Xman"		Icon xman3d.xpm
+Style	"Root"		Icon Diavolo.xpm
+Style	"xv*"		Icon xv.color.xpm 
+
+#Style  "xclock"		BackColor Grey
+
+# these are needed for the placement of the items in
+# the button bar
+#Style	"coolmail"	SmartPlacement, RandomPlacement
+#Style	"xeyes"		SmartPlacement, RandomPlacement
+#Style	"xclock"	SmartPlacement, RandomPlacement
+
+
+
+###############################################################################
+#   MWM emulation                                                             #
+###############################################################################
+# (view the original comment from .fvwm2rc)
+# mwm-style border reliefs (less deep than default fvwm) ?
+# Maximize button does mwm-inversion thingy
+
+Style "*" MWMBorder, MWMDecor, HintOverride, MWMFunctions, MWMButtons 
+
+
+
+###############################################################################
+#   key bindings                                                              #
+###############################################################################
+
+Key	Space	A	M	Popup WindowOps
+Key	Pause	A	N	Exec xset dpms force off
+Key	Pause	A	S	Exec xlock
+
+# cursor combinations for paging
+Key	Left	A	CS	Scroll -100 +0
+Key	Right	A	CS	Scroll +100 +0
+Key	Up	A	CS	Scroll +0   -100
+Key	Down	A	CS	Scroll +0   +100
+
+Key	Insert	A	CS	GotoPage 0 0
+Key	Home	A	CS	GotoPage 1 0
+Key	Prior	A	CS	GotoPage 2 0
+Key	Delete	A	CS	GotoPage 0 1
+Key	End	A	CS	GotoPage 1 1
+Key	Next	A	CS	GotoPage 2 1
+
+#Key	Home	A	C	Next [*-lo] WarpToWindow 11p 11p
+#Key	Prior	A	C	Next [*-ro] WarpToWindow 11p 11p
+#Key	End	A	C	Next [*-lu] WarpToWindow 11p 11p
+#Key	Next	A	C	Next [*-ru] WarpToWindow 11p 11p
+
+Key	Insert	A	C	JumpWindow 0 -88
+Key	Home	A	C	JumpWindow 0 -88
+Key	Prior	A	C	JumpWindow 50 -88
+Key	Delete	A	C	JumpWindow 0 -43
+Key	End	A	C	JumpWindow 0 -43
+Key	Next	A	C	JumpWindow 50 -43
+
+Key	Insert	A	CSM	Function XTermLO
+Key	Home	A	CSM	Function XTermLO
+Key	Prior	A	CSM	Function XTermRO
+Key	Delete	A	CSM	Function XTermLU
+Key	End	A	CSM	Function XTermLU
+Key	Next	A	CSM	Function XTermRU
+
+Key	Left	A	C	CursorMove -10 +0
+Key	Right	A	C	CursorMove +10 +0
+Key	Up	A	C	CursorMove +0 -10
+Key	Down	A	C	CursorMove +0 +10
+
+#Key	Left	A	S	CursorMove -1 0
+#Key	Right	A	S	CursorMove +1 +0
+#Key	Up	A	S	CursorMove +0 -1
+#Key	Down	A	S	CursorMove +0 +1
+
+# window ops
+Key	SunFront A	A	Raise
+
+#Key	Tab	A	4	Next [*] focus
+#Key	Tab	A	S4	Prev [*] focus
+#Key	Shift_R	A	5	Menu	WindowOps
+
+#Key	BackSpace A	CM	Function Quit
+
+
+###############################################################################
+#   mouse bindings for fvwm2                                                  #
+###############################################################################
+# just to remember the syntax for the mouse bindings:
+# 
+#Mouse 	Button	Context	Modifiers Function
+#       1,2,3,0	IFRSTW	CSMA	  anything
+#
+# context:      I       icon
+#               R       root window
+#               F       frame (the corner handles)
+#               S       sides (top, sides, bottom)
+#               T       title bar
+#               W       application window
+#		0..9	title buttons
+#		A	Any
+
+# root menu bindings for fvwm2 and fvwm95
+Mouse	1	R	A	Popup Main		
+Mouse	2	R	A	Popup WindowOps
+Mouse	3	R	A	WindowList
+				#FvwmWinList Transient
+
+Mouse	1	TW	CM	RaiseLower
+Mouse	2	TW	CM	Move
+Mouse	3	TW	CM	Close
+
+# title, side, frame
+Mouse	1	T	A	Function "MoveOrRaise"
+Mouse	1	 SF	A	Function "ResizeOrRaise"
+Mouse	2	TSF	A	Move
+Mouse	3	TSF	A	RaiseLower
+
+# clicking on  the icon
+Mouse	1	I	A	Function "MenuOrIconify"
+Mouse	2	I	A	Iconify
+Mouse	3	I	A	RaiseLower
+
+# the title buttons
+# left side (13579)
+Mouse	0	1	A	Function MenuOrClose
+Mouse	1	3	A	Close
+Mouse	2	3	A	Close
+Mouse	3	3	A	Destroy
+
+# right side (08642)
+Mouse	1	0	A	RaiseLower
+Mouse	2	0	A	Raise
+Mouse	3	0	A	Lower
+Mouse	0	8	A	Stick
+Mouse	1	6	A	Function ShadeRaise	# toggle
+Mouse	2	6	A	WindowShade 1		# on
+Mouse	3	6	A	WindowShade 2		# off
+Mouse	0	4	A	Iconify
+Mouse	1	2	A	Function Maximize0100
+Mouse	2	2	A	Function Maximize100100
+Mouse	3	2	A	Function Maximize1000

@@ -1,0 +1,135 @@
+# .fvwm2rc-menus cb 990804
+
+# import other menu files
+
+Read .fvwm2rc-menus-xlock
+Read .fvwm2rc-menus-rlogin
+
+# main menus
+
+AddToMenu Main	"fvwm2"		Title
++		"xterm LO"	Function XTermLO
++		"xterm RO"	Function XTermRO
++		"xterm LU"	Function XTermLU
++		"xterm RU"	Function XTermRU
++		"4 xterms"	Function 4XTerm
++		"Rlogins"	Popup Rlogins
++		""		Nop
++		"xlock"		Popup xlock
++		""		Nop
++		"Window Ops"	Popup WindowOps
++		"fvwm2..."	Popup FvwmMenu
++		""		Nop
++		"Quit"		Quit
+
+
+AddToMenu FvwmMenu	"fvwm2"	Title
++			"FvwmTalk"	Module FvwmTalk
++			"3x3 Desktop"	DeskTopSize 3 3
++			"Modules"	Popup ModulePopup
++			"Man pages"	Popup FvwmManPages
++			""		Nop
++			"Refresh"	Refresh
++			"Recapture"	Recapture
++			"Restart"	Restart fvwm2
+#+			"Start fvwm1"	Restart fvwm
++			"Quit"		Quit
+
+
+AddToMenu WindowOps "Window Ops"	Title
++			"Move"		Move
++			"Resize"	Resize
++			"Resize..."	Popup ResizeMenu
++			"Maximize"	Maximize
++			"Iconify"	Iconify
++			"Stick"		Stick
++			"Shade"		WindowShade
++			""		Nop
++			"Raise"		Raise
++			"Lower"		Lower
++			"Refresh"	RefreshWindow
++			""		Nop
+#+			"Next focus"	Next [*] Focus
+#+			"Prev focus"	Prev [*] Focus
++			"Window list"	WindowList
++			"Identify"	Module FvwmIdent
++			""		Nop
++			"Delete"	Delete
++			"Close"		Close
++			"Destroy"	Destroy
+
+
+AddToMenu ResizeMenu	"Resize/Move"	Title
++			"80x25"		Resize 49 43
++			"Max hor"	Maximize 100 0
++			"Max vert"	Maximize 0 100
++			"Maximize"	Maximize 100 100
++			""		Nop
++			"LO"		Move 0 0
++			"RO"		Move 50 0
++			"LU"		Move 0 44
++			"RU"		Move 50 44
+
+
+# fvwm modules ############################################################
+
+AddToMenu ModulePopup "Fvwm2-Module"	Title
++	"Audio"	Module FvwmAudio
++	"AutoRaise ein"	Module FvwmAuto 500
++	"AutoRaise aus"	KillModule FvwmAuto
++	"Banner"	Module FvwmBanner
++	"Buttons"	Module FvwmButtons
++	"Cascade"	Module FvwmCascade
++	"Command"	Module FvwmCommand
++	"Config"	Module FvwmConfig
++	"Console"	Module FvwmConsole
++	"Debug"	Module FvwmDebug
++	"Form"	Module FvwmForm
++	"GoodStuff"	Module FvwmGoodStuff
++	"IconBox"	Module FvwmIconBox
++	"IconMan"	Module FvwmIconMan
++	"Ident"	Module FvwmIdent
++	"M4"	Module FvwmM4
++	"Pager"	Module FvwmPager 0 0
++	"Pipe"	Module FvwmPipe
++	"Save"	Module FvwmSave
++	"SaveDesk"	Module FvwmSaveDesk
++	"Script"	Module FvwmScript
++	"Scroll"	Module FvwmScroll
++	"Talk"	Module FvwmTalk
++	"TaskBar"	Module FvwmTaskBar
++	"Tile"	Module FvwmTile
++	"Wharf"	Module FvwmWharf
++	"WinList"	Module FvwmWinList
+
+AddToMenu FvwmManPages "Fvwm man pages"	Title
++	"Fvwm2"		Exec xterm -title fvwm2 -e man fvwm2
++	""	Nop
++	"FvwmAudio"	Exec xterm -title "fvwm2: FvwmAudio" -e man FvwmAudio
++	"FvwmAutoRaise"	Exec xterm -title "fvwm2: FvwmAuto" -e man FvwmAuto
++	"FvwmBacker"	Exec xterm -title "fvwm2: FvwmBacker" -e man FvwmBacker
++	"FvwmBanner"	Exec xterm -title "fvwm2: FvwmBanner" -e man FvwmBanner
++	"FvwmButtons"	Exec xterm -title "fvwm2: FvwmButtons" -e man FvwmButtons
++	"FvwmCascade"	Exec xterm -title "fvwm2: FvwmCascade" -e man FvwmCascade
++	"FvwmCommand"	Exec xterm -title "fvwm2: FvwmCommand" -e man FvwmCommand
++	"FvwmConfig"	Exec xterm -title "fvwm2: FvwmConfig" -e man FvwmConfig
++	"FvwmConsole"	Exec xterm -title "fvwm2: FvwmConsole" -e man FvwmConsole
++	"FvwmConsoleC"	Exec xterm -title "fvwm2: FvwmConsoleC" -e man FvwmConsoleC
++	"FvwmCpp"	Exec xterm -title "fvwm2: FvwmCpp" -e man FvwmCpp
++	"FvwmDebug"	Exec xterm -title "fvwm2: FvwmDebug" -e man FvwmDebug
++	"FvwmForm"	Exec xterm -title "fvwm2: FvwmForm" -e man FvwmForm
++	"FvwmGoodStuff"	Exec xterm -title "fvwm2: FvwmGoodStuff" -e man FvwmGoodStuff
++	"FvwmIconBox"	Exec xterm -title "fvwm2: FvwmIconBox" -e man FvwmIconBox
++	"FvwmIconMan"	Exec xterm -title "fvwm2: FvwmIconMan" -e man FvwmIconMan
++	"FvwmIdent"	Exec xterm -title "fvwm2: FvwmIdent" -e man FvwmIdent
++	"FvwmM4"	Exec xterm -title "fvwm2: FvwmM4" -e man FvwmM4
++	"FvwmPager"	Exec xterm -title "fvwm2: FvwmPager" -e man FvwmPager
++	"FvwmSave"	Exec xterm -title "fvwm2: FvwmSave" -e man FvwmSave
++	"FvwmSaveDesk"	Exec xterm -title "fvwm2: FvwmSaveDesk" -e man FvwmSaveDesk
++	"FvwmScript"	Exec xterm -title "fvwm2: FvwmScript" -e man FvwmScript
++	"FvwmScroll"	Exec xterm -title "fvwm2: FvwmScroll" -e man FvwmScroll
++	"FvwmTalk"	Exec xterm -title "fvwm2: FvwmTalk" -e man FvwmTalk
++	"FvwmTaskBar"	Exec xterm -title "fvwm2: FvwmTaskBar" -e man FvwmTaskBar
++	"FvwmTile"	Exec xterm -title "fvwm2: FvwmTile" -e man FvwmTile
++	"FvwmWharf"	Exec xterm -title "fvwm2: FvwmWharf" -e man FvwmWharf
++	"FvwmWinList"	Exec xterm -title "fvwm2: FvwmWinList" -e man FvwmWinList
