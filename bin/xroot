@@ -6,6 +6,7 @@ if [ $1 ] ; then
 elif up d096.stw.stud.uni-saarland.de ; then
 	URL="http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic"
 	FILE="/tmp/xroot-$$"
+	RM=1
 	wget -q -O "$FILE" "$URL"
 else
 	FILE="$HOME/bilder/back"
@@ -13,3 +14,5 @@ fi
 
 XV="xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy"
 [ -f $FILE ] && $XV $FILE
+
+[ $RM ] && rm -f $FILE
