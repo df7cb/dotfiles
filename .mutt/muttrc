@@ -3,7 +3,7 @@
 # external files
 source ~/.mutt/aliases
 source ~/.mutt/aliases.new
-source ~/.mutt/pgp5
+#source ~/.mutt/pgp5
 
 # key bindings
 bind index - previous-page
