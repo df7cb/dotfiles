@@ -1956,6 +1956,30 @@
               </metadata>
             </info>
           </bookmark>
+          <bookmark href="http://www-jcsu.jesus.cam.ac.uk/~mma29/c1/">
+            <title>Linux on the C1VE (Sony Vaio Picturebook C1 models)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1043671174</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.mbsi.ca/cnxtlindrv/">
+            <title>Linux drivers for Conexant Chips - Home</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1043671302</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://page.inf.fu-berlin.de/~wittenbu/projects/#jogdial">
+            <title>XInput-jodial</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1043754651</time_added>
+              </metadata>
+            </info>
+          </bookmark>
         </folder>
         <folder folded="yes">
           <title>X-NCD</title>
@@ -3908,6 +3932,30 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.depression.ch/">
+          <title>www.depression.ch - Ein Angebot f&#195;&#131;&#194;&#188;r Betroffene und Angeh&#195;&#131;&#194;&#182;rige</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043676356</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.depress.de/">
+          <title>Umgang mit Depression</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043676376</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.buendnis-depression.de/">
+          <title>nuernberger buendnis gegen depression</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043676390</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <separator/>
       <folder folded="yes">
@@ -4153,10 +4201,10 @@
         </bookmark>
       </folder>
       <folder folded="yes">
-        <title>Saabruecken</title>
+        <title>Saabr&#195;&#188;cken</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1034163266</time_modified>
+            <time_modified>1043750205</time_modified>
             <time_added>1034163026</time_added>
           </metadata>
         </info>
@@ -4239,7 +4287,8 @@
         <title>My Ebay</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1043065775</time_modified>
+            <pixmap>.galeon/favicons/pages.ebay.com_favicon.ico</pixmap>
+            <time_modified>1043400992</time_modified>
             <time_added>1043065756</time_added>
           </metadata>
         </info>
@@ -4299,7 +4348,40 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.mythtv.org/">
+          <title>MythTV - PVR</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043662687</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.terratec.de/">
+          <title>TerraTec Electronic</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043666431</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
+      <bookmark href="http://www.tvinfo.de/">
+        <title>TVinfo.de - sehen was l&#195;&#164;uft</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1043750188</time_modified>
+            <time_added>1043673403</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://etext.lib.virginia.edu/ebooks/ebooklist.html">
+        <title>E-Book Library at the Electronic Text Center, University of Virginia</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1043678124</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Search</title>
