@@ -1,19 +1,22 @@
 # template.pm
 # cb 031004
 
-my $template_file;
 my %SUBST_STR;
 my %SUBST_SUB;
-my $template_output = 0;
 
 sub template_file {
-	$template_file = shift || die "template_file: no filename given";
+	foreach my $f (@_) {
+		next unless $f;
+		return if open TEMPLATE, $f;
+	}
+	die "@_: $!"
 }
 
 # replace key by value
 sub template_replace {
-	my $k = shift;
+	my $k = shift || warn "template_replace: key undefined";
 	my $v = shift;
+	warn "template_replace: value for key $k undefined" unless defined($v);
 	$SUBST_STR{$k} = $v;
 }
 
@@ -21,8 +24,9 @@ sub template_replace {
 # NOTE: one may use print in functions, but the print output will show up
 # before any other stuff from the current line.
 sub template_sub {
-	my $k = shift;
+	my $k = shift || warn "template_sub: key undefined";
 	my $v = shift;
+	warn "template_sub: value for key $k undefined" unless defined($v);
 	$SUBST_SUB{$k} = $v;
 }
 
@@ -35,9 +39,20 @@ sub template_print {
 		my $k2 = "__$1\\((.*)\\)__";
 		if($l =~ /$k2/) {
 			my $return = &$f($1);
-			$l =~ s/$k2/$return/g;
+			if(defined $return) {
+				$l =~ s/$k2/$return/g;
+			} else {
+				warn "$k returned undef";
+			}
 		}
-		$l =~ s/$k/&$f()/eg;
+		if($l =~ /$k/) {
+			my $return = &$f();
+			if(defined $return) {
+				$l =~ s/$k/$return/g;
+			} else {
+				warn "$k returned undef";
+			}
+		}
 	}
 	foreach my $k (keys %SUBST_STR) {
 		$l =~ s/$k/$SUBST_STR{$k}/g;
@@ -46,11 +61,6 @@ sub template_print {
 }
 
 sub template_output {
-	die "template_output: no output file defined / already spilled out" unless $template_file;
-	unless ($template_output) {
-		open TEMPLATE, $template_file or die "$template_file: $!";
-		$template_output = 1;
-	}
 	my $stop = shift;
 	my $l;
 	while(defined($l = <TEMPLATE>)) {
@@ -61,7 +71,7 @@ sub template_output {
 
 # TODO: template_output should probably not be called upon die()
 END {
-	template_output if $template_file;
+	template_output;
 }
 
 $| = 1;
