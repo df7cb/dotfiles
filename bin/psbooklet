@@ -1,3 +1,7 @@
 #!/bin/sh
 #
-psbook | pstops "4:0R@.7(0,29.7cm)+1R@.7(0,14.85cm),2L@.7(21cm,0)+3L@.7(21cm,14.85cm)"
+if [ "$1" = "-a6" ]; then
+  psbook -s8 | psbook -s8 | psbook -s8 | psbook -s8 | psbook -s8 | psbook -s8 | psbook | psbook | pstops -pa4 "8:1@.5(0cm,14.85cm)+2@.5(10.5cm,14.85cm)+0U@.5(10.5cm,14.85cm)+3U@.5(21cm,14.85cm),5@.5(0cm,14.85cm)+6@.5(10.5cm,14.85cm)+4U@.5(10.5cm,14.85cm)+7U@.5(21cm,14.85cm)"
+else
+  psbook | pstops "4:0R@.7(0,29.7cm)+1R@.7(0,14.85cm),2L@.7(21cm,0)+3L@.7(21cm,14.85cm)"
+fi
