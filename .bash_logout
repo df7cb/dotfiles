@@ -8,9 +8,4 @@
 #	fortune
 #fi
 
-# remove our .display entry
-if [ -f ~/.display ] ; then
-	grep -v "pid $$ " ~/.display > ~/.display.tmp
-	/bin/mv -f ~/.display.tmp ~/.display
-	[ -s ~/.display ] || rm -f ~/.display
-fi
+[ "$DISPLAY" ] && update-display remove

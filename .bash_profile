@@ -6,8 +6,6 @@
 mesg y
 finger
 
-if [ "$DISPLAY" ] ; then
-	echo "export DISPLAY=$DISPLAY # pid $$ `tty` `date`" >> ~/.display
-fi
+[ "$DISPLAY" ] && update-display add
 
 [ -f ~/.bash_profile-local ] && . ~/.bash_profile-local || true

@@ -1,0 +1,32 @@
+#!/bin/sh
+# (c) 2004 Christoph Berg <cb@df7cb.de>
+# This program is free software covered by the GNU GPL.
+# $Id$
+# cb 040405
+
+[ -z "$DISPLAY" ] && exit 1
+
+DISPLAYRC="$HOME/.display"
+TTY=$(tty)
+DATE=$(date)
+
+purge_display () {
+	[ -f $DISPLAYRC ] || return
+	egrep -v "DISPLAY=$DISPLAY |$TTY " $DISPLAYRC > $DISPLAYRC.tmp
+	mv -f $DISPLAYRC.tmp $DISPLAYRC
+	[ -s $DISPLAYRC ] || rm -f $DISPLAYRC
+}
+
+case "$1" in
+	add)
+		purge_display
+		echo "export DISPLAY=$DISPLAY # $TTY $DATE" >> $DISPLAYRC
+		;;
+	remove|del*)
+		purge_display
+		;;
+	*)
+		echo "usage: $0 {add|remove}" 1>&2
+		exit 1
+		;;
+esac
