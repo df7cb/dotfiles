@@ -67,3 +67,6 @@ host stud stud.uni-sb.de
 host hamberg hamberg.it.uu.se
  hostname hamberg.it.uu.se
  user cberg
+
+host shell.sourceforge.net
+ user df7cb
