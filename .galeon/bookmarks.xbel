@@ -53,10 +53,6 @@
       <separator/>
       <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
         <title>Old versions of this page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){F=' (Open frame in new window first.)'}else{F=''}Q=document.getSelection();if(!Q){void(Q=prompt('No text selected on page.'+F+'\n\nKeywords...?',''))};if(Q)location.href='http://bookmarklets.com/moreinfo.phtml?q='+escape(Q)">
         <title>More Info About...</title>
@@ -3776,6 +3772,14 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://www.catb.org/~esr/faqs/smart-questions.html">
+        <title>How To Ask Questions The Smart Way</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1053437538</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Debian</title>
