@@ -13,8 +13,14 @@ Netscape*blinkingEnabled: false
 Netscape*installColormap: true
 XTerm*cursorColor:	Brown
 XTerm*font:		fixed
+XTerm*highlightColor:	LimeGreen
 XTerm*scrollBar:	True
+XTerm*scrollKey:	True
+XTerm*scrollTtyOutput:	False
 XTerm*saveLines:	500
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
 XTerm*thickness:	8
+
+pvs.activedisplayforeground: red
+pvs.geometry:		87x63+0+0
