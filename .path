@@ -10,12 +10,14 @@ for dir in $HOME/bin $HOME/bin/$OS ; do
 	[ -d $dir ] && PATH=$dir:$PATH
 done
 for dir in /usr/local/sbin /sbin /usr/sbin \
+	$HOME/bin/misc-bin \
 	/usr/openwin/bin /usr/X11R6/bin \
 	/usr/games/bin /usr/games \
 	/usr/ucb /usr/5bin /usr/etc /usr/pkg/bin \
 	/usr/ccs/bin \
 	/shared/bin /shared/games/bin \
 	/usr/compat/linux/bin \
+	/usr/local/pgsql/bin \
 	/usr/local/teTeX/bin/sparc-solaris2.4 \
 	/usr/local/teTeX/bin/i386-pc-solaris2.7 ; do
 	[ -d $dir ] && PATH=$PATH:$dir
