@@ -3,9 +3,9 @@
 #echo .bashrc
 
 # Environment
-. ~/bin/os > /dev/null
-. ~/.path
-. ~/.env
+[ -f ~/bin/os ] && . ~/bin/os > /dev/null
+[ -f ~/.path ] && . ~/.path
+[ -f ~/.env ] && . ~/.env
 
 # general stuff
 shopt -s extglob
@@ -19,7 +19,7 @@ umask 022
 case $BASH_VERSION in
 	2.0[4-9]*) # new bash supporting '\j' and completion
 		j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
-		. ~/.bash_completion ;;
+		[ -f ~/.bash_completion ] && . ~/.bash_completion ;;
 	2.0[0-3]*) # old bash
 		j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s ")' ;;
 	*) echo "$0: unknown bash version $BASH_VERSION" 1>&2 ;;
