@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "$1" ] ; then
+	set *\ *
+fi
+
+for f in "$@" ; do
+	f2=`echo "$f" | tr ' ' _`
+	if [ "$f" = "$f2" ] ; then
+		echo "$f: no change"
+		continue
+	fi
+	mv -iv "$f" "$f2"
+done
