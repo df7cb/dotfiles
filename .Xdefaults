@@ -88,6 +88,8 @@ XTerm*highlightColor:	Orange
 !XTerm*highlightSelection: true
 XTerm*metaSendsEscape:	true
 XTerm*saveLines:	500
+! work around xterm select() bug
+XTerm*sessionMgt:	false
 XTerm*scrollBar:	true
 XTerm*scrollKey:	true
 XTerm*scrollTtyOutput:	false
