@@ -1617,6 +1617,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://web.swi.uni-saarland.de/swi/root-t3/index.php?id=59">
+        <title>HSSP - Unifit</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1066480424</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>RW</title>
@@ -3185,6 +3193,22 @@
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
                 <time_added>895617390</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sks.keyserver.penguin.de/key_count/">
+            <title>SKS OpenPGP Keyserver @sks.keyserver.penguin.de / Keyserver Statistics</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1066429889</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sks.keyserver.penguin.de/graphs/">
+            <title>sks.keyserver.penguin.de/graphs</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1066429998</time_added>
               </metadata>
             </info>
           </bookmark>
