@@ -18,4 +18,5 @@ Wordperfect8,ftp.mpi-sb.mpg.de,,,,pub/misc/mirror/ftp.simtel.net/cnet/win95/busi
 opensound,www.se.opensound.com,,,,pub/oss,I,21,933791060,-1,-1,1,1,193.13.151.45,,,,,,S,-1,
 tnt,excelsior.kullen.rwth-aachen.de,,,,pub/packet_radio/tnt,I,21,936277970,-1,-1,1,1,137.226.79.66,,,,,,S,-1,
 netbsd-1.4.1,ftp.de.netbsd.org,,,,pub/unix/systems/BSD/NetBSD/NetBSD-1.4.1/alpha,I,21,936901870,1,-1,1,1,136.199.8.81,,,,,,S,-1,
-mpi-ftp,ftp.mpi-sb.mpg.de,,,,pub,I,21,937250803,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
+stampede,ftp.baw.uni-bremen.de,,,,pub/mirrors/ftp.stampede.org/stable,I,21,937496538,-1,-1,1,1,134.102.44.120,,,,,,S,-1,
+mpi-sb,ftp.mpi-sb.mpg.de,,,,pub,I,21,937694809,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
