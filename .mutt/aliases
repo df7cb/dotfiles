@@ -28,6 +28,7 @@ alias fsm fsm@fsinfo.cs.uni-sb.de
 alias fsn /dev/null <fs-nulldevice@fsinfo.cs.uni-sb.de>
 alias fsr Fachschaftsrat Informatik <fsr@fsinfo.cs.uni-sb.de>
 alias g-wilhelm Lehrstuhl Wilhelm <g-wilhelm@cs.uni-sb.de>
+alias gg Gunter Gerhardt <gg@guntergerhardt.de>
 alias gk Graduiertenkolleg Leistungsgarantien <gk@cs.uni-sb.de>
 alias guenther Margot Günther <guenther@cs.uni-sb.de>
 alias gz Geschäftszimmer <gz@cs.uni-sb.de>
