@@ -66,6 +66,9 @@ nmap <s-f10>	:b22<cr>
 nmap <s-f11>	:b23<cr>
 nmap <s-f12>	:b24<cr>
 
+" swap C arguments
+nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
+
 " highlights
 hi NonText cterm=NONE
 
