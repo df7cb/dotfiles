@@ -6,32 +6,41 @@ use strict;
 
 my %opts;
 use Getopt::Std;
-getopts('c', \%opts);
+getopts('cl:o:', \%opts);
 
 my $tmp = "renamepics-$$.jpg";
 my $xv = 0;
-my $offset = 0;
-my ($nr, $file, $new);
-# -cem: color editor
-my @XVOPTIONS = qw/-geometry +0+0 -ceg +0-0 -cge -0+0 -cma/;
+my $offset = $opts{'o'} || 0;
+my $fmt = sprintf "%%0%ii", $opts{'l'} || 2; # %02i
+my ($nr, $file, $new, %WORDS);
 
-#$offset = $ARGV[0] if defined $ARGV[0];
-$offset = 0;
+$SIG{INT} = \&cleanup;
+$SIG{TERM} = \&cleanup;
 
 # Readline support
 use Term::ReadLine;
 my $term = new Term::ReadLine "$0";
-#my $OUT = $term->OUT || STDOUT;
+my $attribs = $term->Attribs;
+$attribs->{catch_signals} = 0;
+$attribs->{completion_entry_function} = $attribs->{list_completion_function};
+$attribs->{completion_word} = [];
+
+sub feed_completion {
+	foreach my $w (split / /, shift) {
+		$WORDS{$w} = 1;
+	}
+	$attribs->{completion_word} = [keys %WORDS];
+}
 
 # spawn xv
 sub spawn {
 	if (defined ($xv = fork)) {
-	        unless ($xv) {
-	                exec ("xv", @XVOPTIONS, $tmp);
-	                die "Couldn't open xv!\n";
-	        }
+		unless ($xv) {
+			exec ("xv", qw/-geometry +0+0 -ceg +0-0 -cge -0+0 -cma/, $tmp);
+			die "Couldn't open xv!";
+		}
 	} else {
-	        die "Could not fork xv: $!";
+		die "Could not fork xv: $!";
 	}
 }
 
@@ -42,28 +51,34 @@ chmod 0644, @ARGV;
 #	system "mv '$_' '\L$_'";
 #}
 
-print scalar(@ARGV) ." pictures ";
-print "(# will delete picture)\n";
+my $count = scalar(@ARGV);
+print "$count pictures ";
 
 # rename each file
-#foreach $file (<[0-9]*.jpg>) {
-foreach $file (@ARGV) {
-	$file =~ /(\d+)/;
-	my $number = $1;
-	if($number == 0) {
+for(my $i = 0; $i < $count; $i++) {
+	my $file = $ARGV[$i];
+	unless($file =~ /(\d+)-?(.*)\.jpg$/) {
 		print "error: $file contains no number.\n";
 		next;
 	}
+	my ($number, $old) = ($1, $2);
+	$old =~ s/_/ /g;
+
 	unlink "$tmp";
 	symlink $file, $tmp;
 	kill "QUIT", $xv if $xv;
 	spawn() unless $xv;
-	$nr = $number + $offset;
-	printf "Enter new name for $file: (# delete < > rotate)\n";
-	my $prompt = sprintf "%02i-", $nr;
-	$new = $term->readline($prompt);
+
+	$nr = sprintf $fmt, $number + $offset;
+	printf "Enter new name for $file: (# delete < > rotate ! back)\n";
+	$new = $term->readline("$nr-", $old);
 	chomp ($new);
-	#$term->addhistory($new);
+	$new =~ s/\s+$//;
+
+	if ($new =~ /^!/) {
+		$i -= 2;
+		next;
+	}
 	if ($new =~ /^#/) {
 		print "File $file will be deleted.\n";
 		unlink $file;
@@ -81,18 +96,28 @@ foreach $file (@ARGV) {
 		utime $atime, $mtime, $file;
 	}
 	if ($new) {
-		$new = sprintf "%02i-$new.jpg", $nr;
+		feed_completion($new);
+		$new = "$nr-$new.jpg";
 	} else {
-		$new = sprintf "%02i.jpg", $nr;
+		$new = "$nr.jpg";
 	}
+
 	$new =~ s/ /_/g;
-	#link $file, $new;
-	#system "ls -l $new";
-	system "mv '$file' '$new'" if $file ne $new;
+	rename $file, $new if $file ne $new;
+	$ARGV[$i] = $new;
 }
 
 # clean up
-END {
+sub cleanup {
+	$SIG{INT} = 'DEFAULT';
+	$SIG{TERM} = 'DEFAULT';
+	$term->free_line_state();
+	$term->cleanup_after_signal();
 	unlink $tmp;
 	kill "TERM", $xv;
+	exit 0;
+}
+
+END {
+	cleanup();
 }
