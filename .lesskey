@@ -8,5 +8,6 @@ p	prev-file
 ^H	prev-file
 
 #env
-LESS=-aiMq -PM\033]0;less ?f%f:stdin.\007?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :byte %bB?s/%s. .?e(END) ?x- Next\\: %x.:?pB%pB\\%..%t
+# ?X and %[ work with less >= 382
+LESS=-aiMq -PM?f%f:stdin. ?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :byte %bB?s/%s. .?e(END) ?x- Next\\: %x.:?pB%pB\\%..%t?X%[\033]0;less ?f%f:stdin.\007.
 #LESSCHARSET=latin1
