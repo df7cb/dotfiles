@@ -146,6 +146,8 @@ Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 # general
 #Style	"root*"		BackColor Red
 Style	"xv 3*"		NoTitle
+Style	"VNC*"		HandleWidth 0, NoTitle
+
 Style	"xterm"		Icon Terminal.xpm
 Style	"emacs*"	Icon DTP.xpm
 Style	"xconsole"	Icon clipboard_3d.xpm
