@@ -21,6 +21,7 @@ links:	autorun/friends.pl \
 	autorun/keepnick.pl \
 	autorun/len.pl \
 	autorun/nickcolor.pl \
+	autorun/recode.pl \
 	autorun/title.pl
 
 autorun/%.pl: %.pl
