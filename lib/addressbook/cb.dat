@@ -56,6 +56,7 @@ Michael;Bosch;;Schwabstr. 114, 70193 Stuttgart;;;;05.05.;0178/4725971, 0711/2849
 Thorsten;Brauer;;Schwesterntalstr. 37, 66440 Niederwürzbach;;;;29.3.1976;06842/6837;;;tbrauer@onlinehome.de, Thorsten.Brauer@Saint-Gobain.com;;vdl;
 Karina;Breyer;;Hofstr. 12, 66399 Ommersheim;;;;29.5.1977;06803/1413;;;;;vdl;
 Nicole;Britz;dyfa;;;;;18.1.;;;;;;;;
+Marc;Brockschmidt;HE;;;;;30.1.;;;;he@debian.org;;debian;;
 Dominik;Bruch;;Magerbacher Str. 4, 66399 Bebelsheim;;;;26.4.1977;06804/6121;;;;;vdl;
 Dagmar;Bubel;;;;;;20.1.1977;;;;dagmar.bubel@web.de;;vdl;Würzbacher Str. 5, 66440 Biesingen, 06803/3579
 Claas;Buchterkirche;;Merklingerstr. 20, 71063 Sindelfingen;;;;28.11.1972;07031 / 80 71 01;;;questor@fsinfo.cs.uni-sb.de;;fsinfo;
@@ -269,7 +270,7 @@ Michael;Sauer;;;;66346;Püttlingen;8.10.1974;06898/61350;501 5887;;sauer@okolni.
 Gregor;Schaffrath;kodomo;;;;;;;;;grsch@net.in.tum.de;;plant;;48.25/11.57
 Marc;Schickling;;;;;;29.6.;;;;scma0002@cs.uni-sb.de;;;;
 Patrick;Schiel;;;;;;;0170/7169989;;;;;heim-d;
-Alexander;Schmehl;Tolimar;;;;;;+49-176-24635785;;;;;debian;;
+Alexander;Schmehl;Tolimar;;;;;31.1.;+49-176-24635785;;;;;debian;;
 Marion;Schmelzer-Darani;;Birkenweg 40;;;66127 SB-Klarenthal;10.03.1975;06898/93 55 04, 0179/79 33 32 4;;;;;asta;
 Wolfgang;Schmenger;DB6WY;;;;Pirmasens;09.04.;06331/79898;;;;;afu;
 Rainer Michael;Schmid;;Sulzbachstraße 27;;66111;Saarbrücken;25.8.1974;0681/938 35 27;;;rms@outside-of-the-asylum.de;;fsinfo, ai;
