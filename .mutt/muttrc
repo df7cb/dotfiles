@@ -134,7 +134,7 @@ set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set quit=ask-yes
 set quote_regexp="^([ \t]*[|>:}%])+|^[a-zA-Z]{,9}>"
-set record="=sent-mail"
+set record="!"
 set reverse_name
 unset reverse_realname
 set rfc2047_parameters

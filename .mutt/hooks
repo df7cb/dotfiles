@@ -1,10 +1,10 @@
 # vim:ft=muttrc:
 unhook folder-hook
 
-folder-hook .			'push ,=;set trash="=trash/trash" menu_context=4'
-#folder-hook IN/.		'set trash="^.trash"' -- does not work - mutt bug?
-folder-hook \.trash$		'push ":unset trash\n"'
-folder-hook IN/.		'push ":set trash=\"^.trash\"\n"'
+folder-hook .			'push ,=;set record="!" trash="=trash/trash" menu_context=4'
+folder-hook IN/.		'set record="^" trash="^.trash"'
+folder-hook =rw/.		'set record="^" trash="=rw/trash/trash"'
+folder-hook \.trash$		'unset trash'
 
 #folder-hook .			'set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %s"'
 #folder-hook debian|lists	'set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"'
@@ -12,3 +12,7 @@ folder-hook IN/.		'push ":set trash=\"^.trash\"\n"'
 folder-hook debian|lists	'push ,r;set menu_context=8'
 
 folder-hook .			'push <collapse-all>'
+
+send-hook . "set pgp_autosign"
+send-hook '~t (majordomo\|-request)' "unset pgp_autosign"
+
