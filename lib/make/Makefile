@@ -21,10 +21,10 @@ dvips: $(patsubst %.dvi, %.ps, $(wildcard *.dvi))
 
 dvipdf: $(patsubst %.dvi, %.pdf, $(wildcard *.dvi))
 
-# fig -> eps
-FIG2DEV = /home/cb/PVS/papers/misc/fig2eps.pl
-%.eps: %.fig
-	$(FIG2DEV) $< $@
+## fig -> eps
+#FIG2DEV = /home/cb/PVS/papers/misc/fig2eps.pl
+#%.eps: %.fig
+#	$(FIG2DEV) $< $@
 
 fig2eps: $(patsubst %.fig, %.eps, $(wildcard *.fig))
 
