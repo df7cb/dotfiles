@@ -24,6 +24,7 @@ alias fsi FS Intern <fsi@fsinfo.cs.uni-sb.de>
 alias fsm fsm@fsinfo.cs.uni-sb.de
 alias fsn /dev/null <fs-nulldevice@fsinfo.cs.uni-sb.de>
 alias fsr Fachschaftsrat Informatik <fsr@fsinfo.cs.uni-sb.de>
+alias g-wilhelm Lehrstuhl Wilhelm <g-wilhelm@cs.uni-sb.de>
 alias gk Graduiertenkolleg Leistungsgarantien <gk@cs.uni-sb.de>
 alias guenther Margot Günther <guenther@cs.uni-sb.de>
 alias gz Geschäftszimmer <gz@cs.uni-sb.de>
@@ -41,14 +42,17 @@ alias kempe Benjamin Kempe <kempe@studcs.uni-sb.de>
 alias krieger Hans-Ulrich Krieger <krieger@dfki.de>
 alias labor Labor <labor@wjpserver.cs.uni-sb.de>
 alias m Majordomo List Manager <majordomo@heim-d.uni-sb.de>
+alias marco Marco Vujevic <marco@mars.saar.de>
 alias marechal Marechal Nadege <marechal@cs.uni-sb.de>
 alias matuschewski Peter Matuschewski <matuschewski@rz.uni-saarland.de>
 alias mschmidt Michael Schmidt <mschmidt@absint.com>
 alias neli Neli Busch <cb@labastide.net>
 alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
+alias pilzecker Markus Pilzecker <pilzecker@free.fr>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
 alias preiss Jochen Preiss <preiss@de.ibm.com>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
+alias timovoe Timo von Oertzen <timovoe@studcs.uni-sb.de>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
