@@ -2,8 +2,8 @@
 
 use Getopt::Std;
 
-($opt_1, $opt_a, $opt_b, $opt_e, $opt_h, $opt_l, $opt_t) = ();
-getopts('1abehlt:');
+($opt_1, $opt_a, $opt_b, $opt_B, $opt_e, $opt_h, $opt_l, $opt_t) = ();
+getopts('1abBehlt:');
 
 $twocolumn = 'twocolumn,';
 $twocolumn = '' if $opt_1;
@@ -16,6 +16,9 @@ if($opt_a) {
 if($opt_b) {
 	$directorystyle = "birthday";
 	$title = "Geburtstage";
+}
+if($opt_B) {
+	$directorystyle = "birthday-plan";
 }
 if($opt_e) {
 	$directorystyle = "email";
@@ -91,7 +94,7 @@ close A;
 
 if ($opt_a or $opt_l) {
 	system("make aliases");
-} elsif ($opt_h) {
+} elsif ($opt_h or $opt_B) {
 	system("make addr.html");
 } else {
 	system("make");
