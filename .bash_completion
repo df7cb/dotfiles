@@ -70,6 +70,8 @@
 #      variable
 #              Names of all shell variables.  May also be specified as -v.
 
+complete -r
+
 # general stuff
 complete -d cd rd
 complete -o default -A running disown
@@ -86,7 +88,7 @@ complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|ar|deb|arj|lzh|rar|zip)' 
 
 # stuff that uses my completer
 complete -o default -C completer man
-complete -o default -X '!&*' -C completer bibtex mutt make ncftp ssh super
+complete -o default -X '!&*' -C completer bibtex make ncftp ssh super
 complete -X '!&*' -C completer complete mailsync
 
 # special rules
