@@ -40,6 +40,10 @@ xterm*|rxvt|screen*|cygwin)
 esac
 unset j u
 
+case $TERM in # update $DISPLAY in screen shells
+	screen*) [ -f ~/.display ] && . ~/.display ;;
+esac
+
 # internal shell settings
 auto_resume=substring
 #FIGNORE='~'

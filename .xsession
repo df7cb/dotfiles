@@ -29,7 +29,8 @@ SHLVL=-1
 
 [ -f ~/.xsession-local ] && . ~/.xsession-local
 
-echo "DISPLAY=$DISPLAY" > .display
+echo "export DISPLAY=$DISPLAY" > .display
+echo "# pid $$" >> ~/.display
 
 # write ssh-agent info to file
 if [ $SSH_AUTH_SOCK ] ; then

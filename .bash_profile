@@ -6,7 +6,10 @@
 mesg y
 finger
 
-[ "$DISPLAY" ] && echo "DISPLAY=$DISPLAY" > ~/.display
+if [ "$DISPLAY" ] ; then
+	echo "export DISPLAY=$DISPLAY" > ~/.display
+	echo "# pid $$" >> ~/.display
+fi
 
 if [ -x ~/bin/$OS/utf8term ] || [ -x ~/bin/utf8term ] ; then
 	case `utf8term` in

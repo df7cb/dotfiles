@@ -7,3 +7,6 @@
 #	echo -ne "\e[2J"
 #	fortune
 #fi
+
+# remove .display if we created it
+[ -f ~/.display ] && grep -q "pid $$\$" ~/.display && rm -f ~/.display
