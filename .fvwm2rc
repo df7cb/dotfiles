@@ -73,7 +73,7 @@ CursorStyle MENU 122	# spider
 # value to make frames visible when dragging or resizing a window
 # for more info see "man fvwm95"
 #XORvalue 255
-XORvalue 205
+XORvalue 0
 
 ###############################################################################
 #   colors and fonts                                                          #
