@@ -1,0 +1,24 @@
+#!/bin/sh
+
+ID=`echo "$1" | perl -ne 'print $1 if /(\d+)/'`
+[ "$ID" ] || exit 1
+[ "$ID" -gt 0 ] || exit 1
+
+URL="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=$ID&mbox=yes"
+BOX=`mktemp -t \#$ID.XXXXXX`
+PROCMAILRC=`mktemp -t \#$ID.procmailrc.XXXXXX`
+
+cat > "$PROCMAILRC" << EOF
+:0f
+* !^Reply-To:
+| formail -i"Reply-To: $ID@bugs.debian.org"
+
+:0:
+$BOX
+EOF
+
+wget -O - "$URL" | formail -s procmail "$PROCMAILRC"
+rm -f "$PROCMAILRC"
+
+mutt -Rf "$BOX" -e 'push l!~=<enter>'
+rm -f "$BOX"
