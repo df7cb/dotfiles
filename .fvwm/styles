@@ -80,6 +80,7 @@ Style	"coolmail"	NoTitle, Sticky, WindowListSkip
 Style	"*clock*"	NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
 Style	"xeyes"		NoTitle, Sticky, WindowListSkip
 Style	"xmeter"	NoTitle, Sticky, WindowListSkip
+Style	"OpenSSH*"	StaysOnTop
 Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition, WindowListSkip
 Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 
