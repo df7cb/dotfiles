@@ -1,5 +1,4 @@
-# Updated by Pine(tm) 4.10, copyright 1989-1999 University of Washington.
-# $Id$
+# Updated by Pine(tm) 4.21, copyright 1989-1999 University of Washington.
 #
 # Pine configuration file -- customize as needed.
 #
@@ -17,6 +16,8 @@
 # empty string.  Switch variables are set to either "yes" or "no", and
 # default to "no".
 # Lines beginning with "#" are comments, and ignored by Pine.
+
+# $Id$
 
 ########################### Essential Parameters ###########################
 
@@ -142,13 +143,22 @@ feature-list=enable-suspend,
 	enable-arrow-navigation-relaxed,
 	show-plain-text-internally,
 	show-selected-in-boldface,
-	strip-from-sigdashes-on-reply
+	strip-from-sigdashes-on-reply,
+	selectable-item-nobold,
+	disable-keymenu,
+	enable-fast-recent-test,
+	quell-status-message-beeping,
+	fcc-without-attachments
 
 # Pine executes these keys upon startup (e.g. to view msg 13: i,j,1,3,CR,v)
 initial-keystroke-list=i
 
 # Only show these headers (by default) when composing messages
-default-composer-hdrs=
+default-composer-hdrs=To:,
+	Cc:,
+	Fcc:,
+	Attchmnt:,
+	Subject:
 
 # Add these customized headers (and possible default values) when composing
 customized-hdrs=From:,
@@ -194,7 +204,7 @@ character-set=ISO-8859-1
 
 # Specifies the program invoked by ^_ in the Composer,
 # or the "enable-alternate-editor-implicitly" feature.
-editor=emacs
+editor=vim
 
 # Specifies the program invoked by ^T in the Composer.
 speller=ispell
@@ -226,7 +236,7 @@ personal-print-command=
 personal-print-category=2
 
 # Set by Pine; controls display of "new version" message.
-last-version-used=4.10
+last-version-used=4.21
 
 # This names the path to an alternative program, and any necessary arguments,
 # to be used in posting mail messages.  Example:
@@ -392,6 +402,74 @@ reply-leadin=
 #patterns=LIT:pattern="/NICK=DF7CB/TO=dl0uds,tnt" action="/ROLE=1/FROM=Christoph Berg DF7CB <df7cb@heim-d.uni-sb.de>/FCC=owner-tnt-devel/SIG=.signature-df7cb/RTYPE=NC/FTYPE=YES",
 #	LIT:pattern="/NICK=default" action="/ROLE=1/RTYPE=YES/FTYPE=YES"
 patterns=
+
+# Controls display of color
+color-style=use-termdef
+
+# Sets the time in seconds that Pine will attempt to open a UNIX secure
+# shell connection.  The default is 15, min is 5, and max is unlimited.
+# Zero disables ssh altogether.
+ssh-open-timeout=
+
+# Sets the name of the command used to open a UNIX secure shell connection.
+# Tyically this is /usr/local/bin/ssh.
+ssh-path=
+
+# Sets the format of the command used to open a UNIX secure
+# shell connection.  The default is "%s %s -l %s exec /etc/r%sd"
+# NOTE: the 4 (four) "%s" entries MUST exist in the provided command
+# where the first is for the command's path, the second is for the
+# host to connnect to, the third is for the user to connect as, and the
+# fourth is for the connection method (typically "imap")
+ssh-command=
+
+# Minimum number of minutes between checks for remote address book changes.
+# 0 means never check except when opening a remote address book.
+# -1 means never check. Default: 5
+remote-abook-validity=
+
+# Choose: black,blue,green,cyan,red,magenta,yellow,or white.
+normal-foreground-color=white
+normal-background-color=black
+reverse-foreground-color=black
+reverse-background-color=green
+title-foreground-color=black
+title-background-color=cyan
+status-foreground-color=blue
+status-background-color=green
+keylabel-foreground-color=cyan
+keylabel-background-color=black
+keyname-foreground-color=cyan
+keyname-background-color=blue
+selectable-item-foreground-color=yellow
+selectable-item-background-color=black
+quote1-foreground-color=cyan
+quote1-background-color=black
+quote2-foreground-color=green
+quote2-background-color=black
+quote3-foreground-color=magenta
+quote3-background-color=black
+prompt-foreground-color=
+prompt-background-color=
+index-to-me-foreground-color=
+index-to-me-background-color=
+index-important-foreground-color=
+index-important-background-color=
+index-deleted-foreground-color=white
+index-deleted-background-color=red
+index-answered-foreground-color=white
+index-answered-background-color=blue
+index-new-foreground-color=black
+index-new-background-color=green
+index-recent-foreground-color=
+index-recent-background-color=
+index-unseen-foreground-color=
+index-unseen-background-color=
+
+# When viewing messages, these are the header colors
+viewer-hdr-colors=/HDR=Subject/FG=yellow/BG=black,
+	/HDR=From/FG=green/BG=black,
+	/HDR=to/FG=green/BG=black
 
 # Set by Pine; controls beginning-of-month sent-mail pruning.
 last-time-prune-questioned=
