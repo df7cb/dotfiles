@@ -6,6 +6,5 @@ case "$1" in
 	*.tgz|*.gz|*.tar.Z)	tar tfvz "$@" ;;
 	*.bz2)	tar tfvj "$@" ;;
 	*.zip)	unzip -l "$@" ;;
-	*)	echo "$0 warning: suffix not recognized" 1>&2
-		tar tfv "$@" ;;
+	*)	echo "$0 error: suffix not recognized: $1" 1>&2 ;;
 esac

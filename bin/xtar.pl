@@ -1,10 +1,16 @@
 #!/usr/bin/perl
 # $Id$
 
-my $cmd = "tar xfv";
-$cmd = "tar xfvz" if $ARGV[0] =~ /gz$/;
-$cmd = "tar xfvj" if $ARGV[0] =~ /bz2$/;
-$cmd = "unzip" if $ARGV[0] =~ /zip$/;
+my $cmd = "";
+$cmd = "tar xfv"  if $ARGV[0] =~ /\.tar$/;
+$cmd = "tar xfvz" if $ARGV[0] =~ /\.(tgz|tar\.gz|tar\.Z)$/;
+$cmd = "tar xfvj" if $ARGV[0] =~ /\.tar\.bz2$/;
+$cmd = "unzip" if $ARGV[0] =~ /\.zip$/;
+
+if ($cmd eq "") {
+	print STDERR "$0 error: suffix not recognized: $ARGV[0]\n";
+	exit(1);
+}
 
 open T, "$cmd @ARGV |" or die "$cmd: $!";
 $_ = <T> || 0 or exit 1;
