@@ -1,6 +1,11 @@
 #!/bin/sh
+# $Id$
 
 for i in "$@" ; do
 	echo convert -verbose -geometry '1000x1000>' "$i" "$i"
+	touch -r "$i" .stamp
 	convert -verbose -geometry '1000x1000>' "$i" "$i"
+	touch -r .stamp "$i"
 done
+
+rm -f .stamp
