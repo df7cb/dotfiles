@@ -120,7 +120,7 @@ Style	"*"		DecorateTransient
 BorderStyle Inactive -- HiddenHandles NoInset
 
 # where icons will be placed
-Style   "*"     IconBox -500 -95 -0 -0
+Style   "*"     IconBox +515 -95 -0 -0
 # icons are reachable in every virtual screen
 Style	"*"		StickyIcon
 #Style	"*"		SmartPlacement, RandomPlacement, ActivePlacement
@@ -147,6 +147,7 @@ Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 #Style	"root*"		BackColor Red
 Style	"xv 3*"		NoTitle
 Style	"VNC*"		HandleWidth 0, NoTitle
+Style	Netscape*	StartsOnPage 0 1, SkipMapping
 
 Style	"xterm"		Icon Terminal.xpm
 Style	"emacs*"	Icon DTP.xpm
