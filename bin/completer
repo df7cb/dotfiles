@@ -6,6 +6,9 @@ PREFIX=$2
 if [ "$PROG" = apt-get ] ; then
 	apt-cache pkgnames "$PREFIX"
 
+elif [ "$PROG" = bibtex ] ; then
+	ls -d "$PREFIX"*.tex 2> /dev/null | sed -e 's/\.tex$//'
+
 elif [ "$PROG" = complete ] ; then
 	. ~/.bash_completion
 	complete | sed -e 's/.* //'
