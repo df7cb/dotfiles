@@ -44,7 +44,7 @@ set folder="~/mail"
 set forward_format="%s (fwd)"
 unset help
 set hidden_host
-set index_format="%4C %Z %4c %[%b %e %k:%M] %-15.15L %s"
+set index_format="%3C %Z %4c %[%b %e %k:%M] %-15.15L %s"
 set menu_scroll
 unset move
 set pager_index_lines=5
