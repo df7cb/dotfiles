@@ -465,11 +465,11 @@
           <time_added>934990382</time_added>
         </metadata>
       </info>
-      <bookmark href="http://www.uni-saarland.de/">
+      <bookmark href="http://www.uni-saarland.de/de">
         <title>www.uni-saarland.de</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1029932238</time_modified>
+            <time_modified>1064924482</time_modified>
             <time_added>1029932187</time_added>
           </metadata>
         </info>
@@ -1434,6 +1434,30 @@
             </metadata>
           </info>
         </bookmark>
+        <folder folded="yes">
+          <title>Busy Beavers</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1064928151</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://eden.dei.uc.pt/~machado/research/bb/BB.html">
+            <title>Genetic Beaver Project</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1064928157</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://grail.cba.csuohio.edu/~somos/bb.html">
+            <title>Busy Beaver Turing Machine</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1064928169</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
       </folder>
       <folder folded="yes">
         <title>Mathematik</title>
@@ -5632,32 +5656,6 @@
           <time_added>938087953</time_added>
         </metadata>
       </info>
-      <bookmark href="http://wordreference.com/de/Translation.asp">
-        <title>English - German</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1037113870</time_modified>
-            <time_added>1006260135</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://wordreference.com/fr/Translation.asp">
-        <title>French - English</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1037113872</time_modified>
-            <time_added>1006260178</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://dict.leo.org/">
-        <title>LEO English/German Dictionary</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1022667050</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <folder folded="yes">
         <title>Dictionaries</title>
         <info>
@@ -6072,9 +6070,9 @@
         <desc>Enter word to look up</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <nick>dict</nick>
+            <nick>mw</nick>
             <pixmap>.galeon/favicons/dictionary.png</pixmap>
-            <time_modified>1052227583</time_modified>
+            <time_modified>1064925579</time_modified>
             <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
           </metadata>
         </info>
@@ -6095,8 +6093,9 @@
         <desc>Enter English term</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <nick>de</nick>
             <pixmap>.galeon/favicons/deen.gif</pixmap>
-            <time_modified>1050410314</time_modified>
+            <time_modified>1064925426</time_modified>
             <time_added>1006260135</time_added>
             <smarturl>http://wordreference.com/de/en/translation.asp?deen=%s</smarturl>
           </metadata>
@@ -6107,8 +6106,9 @@
         <desc>Enter English term</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <nick>ed</nick>
             <pixmap>.galeon/favicons/ende.gif</pixmap>
-            <time_modified>1050410309</time_modified>
+            <time_modified>1064925431</time_modified>
             <time_added>1006260135</time_added>
             <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
           </metadata>
@@ -6119,8 +6119,9 @@
         <desc>Tapez mot francais</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <nick>fe</nick>
             <pixmap>.galeon/favicons/fren.gif</pixmap>
-            <time_modified>1050410477</time_modified>
+            <time_modified>1064925434</time_modified>
             <time_added>1006260178</time_added>
             <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
           </metadata>
@@ -6131,8 +6132,9 @@
         <desc>Tapez mot francais</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <nick>ef</nick>
             <pixmap>.galeon/favicons/enfr.gif</pixmap>
-            <time_modified>1050410321</time_modified>
+            <time_modified>1064925436</time_modified>
             <time_added>1006260178</time_added>
             <smarturl>http://wordreference.com/fr/Translation.asp?enfr=%s</smarturl>
           </metadata>
@@ -6142,7 +6144,8 @@
         <title>LEO</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1052228396</time_modified>
+            <nick>leo</nick>
+            <time_modified>1064925441</time_modified>
             <time_added>1052228352</time_added>
             <smarturl>http://dict.leo.org/?search=%s</smarturl>
           </metadata>
