@@ -68,7 +68,7 @@ sub yymmdd2ymd {
 		if $date =~ /^(\d\d)(\d\d)$/;           # 9805
 	return (($1 > 50 ? 1900 : 2000) + $1, $2, $3)
 		if $date =~ /^(\d\d)(\d\d)0?(\d\d?)$/;  # 001213
-		# übler Hack: führende Null im Tag weglassen
+		# Ã¼bler Hack: fÃ¼hrende Null im Tag weglassen
 	return ($1, $2, $3)
 		if $date =~ /^(\d\d\d\d)(\d\d)0?(\d\d?)$/;  # 20001213
 	return ($date, 0, 0);  # nicht erkannt
@@ -76,13 +76,13 @@ sub yymmdd2ymd {
 
 sub yymmdd2txt {
 	my ($y, $m, $d) = yymmdd2ymd(shift);
-	my @month = ("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
+	my @month = ("Januar", "Februar", "MÃ¤rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 	return $y if $m == 0;
 	return "$month[$m - 1] $y" if $d == 0;
 	return "$d. $month[$m - 1] $y";
 }
 
-sub yymmdd2txtlatin1 { # kann irgendwann gelöscht werden
+sub yymmdd2txtlatin1 { # kann irgendwann gelÃ¶scht werden
 	return yymmdd2txt(shift);
 }
 
