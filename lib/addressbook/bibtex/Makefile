@@ -1,37 +1,25 @@
 BIB = *.bib
-BST = address.bst
-STY = directory.sty
+DEP = $(BIB) address.bst directory.sty
 
-all: addr.ps
+all: addr.ps geb.ps email.ps
 
-addr.ps: addr.dvi
-	dvips addr
+%.ps: %.tex
+	latex $(basename $@)
+	bibtex $(basename $@)
+	perl -i -pe 's/_/\\_/g; s/\/~/\/\\~{}/g;' $(basename $@).bbl
+	latex $(basename $@)
+	latex $(basename $@)
+	dvips $(basename $@)
+	@rm -f *.aux *.log *.bbl *.blg *.dvi
 
-addr.dvi: addr.tex $(BIB) $(BST) $(STY)
-	@-rm addr.aux addr.bbl
-	latex addr
-	bibtex addr
-	perl -i -pe 's/_/\\_/g; s/\/~/\/\\~{}/g;' addr.bbl
-	latex addr
-	latex addr
+addr.tex: addr $(DEP)
+	./addr -o addr.tex
+
+geb.tex: addr $(DEP)
+	./addr -o geb.tex -b
+
+email.tex: addr $(DEP)
+	./addr -o email.tex -e
 
 clean:
-	-rm *.aux *.log *.bbl *.blg *.dvi
-
-distclean: clean
-	-rm *.ps *~
-
-aliases: addr.tex $(BIB) email-alias.bst
-	@-rm addr.bbl 2> /dev/null
-	latex addr
-	bibtex addr
-	mv addr.bbl aliases
-
-addr.html: addr.tex $(BIB) address-html.bst
-	@-rm addr.bbl 2> /dev/null
-	latex addr
-	bibtex addr
-	mv addr.bbl addr.html
-
-install: aliases
-	cp aliases $(HOME)/.mutt/
+	rm -f *.tex *.ps *.aux *.log *.bbl *.blg *.dvi

@@ -1,9 +1,7 @@
-addr.log
-addr.aux
-addr.dvi
-addr.blg
-addr.bbl
+cb.bib
 addr.ps
 addr.tex
-aliases
-addr.html
+email.ps
+email.tex
+geb.ps
+geb.tex

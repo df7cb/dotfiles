@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+# $Id$
+
+# convert addressbook database to BibTeX/directory.sty
+
+use lib '.';
+use addressbook;
+
+while(<>) {
+	addr_get_line($_);
+	#print "\@Person{$vorname.$nachname,\n";
+	$p++;
+	print "\@Person{p$p,\n";
+	print " name = {", join(", ", grep $_, ($nachname, $zusatz, $vorname)), "},\n";
+	printf " birthday = {%02d %02d},\n", $geb_tag, $geb_mon if $geb_tag or $geb_mon;
+	print " birthyear = {$geb_jahr},\n" if $geb_jahr;
+	print " p.address = {", join(", ", grep $_, ($strasse,$land,$plz,$ort)), "},\n";
+	print " p.phone = {$tel_priv},\n" if $tel_priv;
+	print " w.phone = {$tel_arbeit},\n" if $tel_arbeit;
+	print " p.email = {$email},\n" if $email;
+	print "}\n\n";
+}

@@ -2,34 +2,23 @@
 
 use Getopt::Std;
 
-($opt_1, $opt_a, $opt_b, $opt_B, $opt_e, $opt_h, $opt_l, $opt_t) = ();
-getopts('1abBehlt:');
+($opt_1, $opt_b, $opt_e, $opt_o, $opt_t) = ();
+getopts('1beo:t:');
 
 $twocolumn = 'twocolumn,';
 $twocolumn = '' if $opt_1;
 
 $directorystyle = "address";
-$title = $opt_t || "Adressen";
-if($opt_a) {
-	$directorystyle = "email-alias";
-}
 if($opt_b) {
 	$directorystyle = "birthday";
 	$title = "Geburtstage";
-}
-if($opt_B) {
-	$directorystyle = "birthday-plan";
 }
 if($opt_e) {
 	$directorystyle = "email";
 	$title = "Email-Adressen";
 }
-if($opt_h) {
-	$directorystyle = "address-html";
-}
-if($opt_l) {
-	$directorystyle = "email-list";
-}
+$output = $opt_o || "addr.tex";
+$title = $opt_t || "Adressen";
 
 if(!@ARGV) {
 	@ARGV = <*.bib>;
@@ -38,7 +27,7 @@ if(!@ARGV) {
 map { s/\.bib$// } @ARGV;
 $bibfiles = join ",", @ARGV;
 
-open A, ">addr.tex" or die "addr.tex: $!";
+open A, ">$output" or die "$output: $!";
 
 print A '\documentclass['. $twocolumn. '12pt]{article}
 \usepackage{times,isolatin1,german}
@@ -91,11 +80,3 @@ print A '\documentclass['. $twocolumn. '12pt]{article}
 ';
 
 close A;
-
-if ($opt_a or $opt_l) {
-	system("make aliases");
-} elsif ($opt_h or $opt_B) {
-	system("make addr.html");
-} else {
-	system("make");
-}
