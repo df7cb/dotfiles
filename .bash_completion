@@ -83,7 +83,7 @@ complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|zip)' ttar xtar
 
 # stuff that uses my completer
 complete -o default -C completer man
-complete -o default -X '!&*' -C completer mutt make ncftp
+complete -o default -X '!&*' -C completer mutt make ncftp super
 complete -X '!&*' -C completer complete mailsync
 
 # special rules
