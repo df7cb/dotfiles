@@ -60,7 +60,7 @@ bookmark-clean:
 	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
 
 galeon-clean:
-	perl -i -ne 'print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
+	-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 'print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
 
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
