@@ -7,8 +7,8 @@ set nobackup
 set nohlsearch
 set textwidth=70
 
-map _d mm1GSFrom: Christoph Berg <cb@df7cb.de><esc>G4kdG:r ~/.mutt/signature.cb@df7cb.de<cr>`m
-map _c mm1GSFrom: Christoph Berg <cb@cs.uni-sb.de><esc>G4kdG:r ~/.mutt/signature.cs<cr>`m
-map _h mm1GSFrom: Christoph Berg <cb@heim-d.uni-sb.de><esc>G4kdG:r ~/.mutt/signature.heim-d<cr>`m
-map _7 mm1GSFrom: Christoph Berg DF7CB <df7cb@df7cb.de><esc>G4kdG:r ~/.mutt/signature.df7cb<cr>`m
-map _a mm1GSFrom: Christoph Berg <cb@asta.uni-saarland.de><esc>G4kdG:r ~/.mutt/signature.cb@df7cb.de<cr>`m
+map _d mm1GSFrom: Christoph Berg <cb@df7cb.de><esc>`m
+map _c mm1GSFrom: Christoph Berg <cb@cs.uni-sb.de><esc>`m
+map _h mm1GSFrom: Christoph Berg <cb@heim-d.uni-sb.de><esc>`m
+map _7 mm1GSFrom: Christoph Berg DF7CB <df7cb@df7cb.de><esc>`m
+map _a mm1GSFrom: Christoph Berg <cb@asta.uni-saarland.de><esc>`m
