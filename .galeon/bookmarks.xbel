@@ -254,8 +254,6 @@
       <title>Uni</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>.galeon/favicons/www.uni-saarland.de_icons_favicon.ico</pixmap>
-          <time_modified>1041861593</time_modified>
           <time_added>934990382</time_added>
         </metadata>
       </info>
@@ -1451,8 +1449,7 @@
       <title>Boerse</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>.galeon/favicons/deutsche-boerse.com_favicon.ico</pixmap>
-          <time_modified>1041861540</time_modified>
+          <time_modified>1026821968</time_modified>
           <time_added>987594497</time_added>
         </metadata>
       </info>
@@ -4696,8 +4693,7 @@
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>google</nick>
-          <pixmap>.galeon/favicons/www.google.de_favicon.ico</pixmap>
-          <time_modified>1041861467</time_modified>
+          <pixmap>/usr/share/galeon/google.png</pixmap>
           <smarturl>http://www.google.com/search?q=%s</smarturl>
         </metadata>
       </info>
@@ -4716,11 +4712,10 @@
     </bookmark>
     <bookmark href="http://wordreference.com/de/Translation.asp">
       <title>en&gt;de</title>
-      <desc>Enter English term</desc>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <pixmap>.galeon/favicons/en.gif</pixmap>
-          <time_modified>1041861728</time_modified>
+          <time_modified>1037181391</time_modified>
           <time_added>1006260135</time_added>
           <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
         </metadata>
@@ -4728,24 +4723,12 @@
     </bookmark>
     <bookmark href="http://wordreference.com/fr/Translation.asp">
       <title>fr&gt;en</title>
-      <desc>Tapez mot francais</desc>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <pixmap>.galeon/favicons/fr.gif</pixmap>
-          <time_modified>1041861759</time_modified>
+          <time_modified>1037181398</time_modified>
           <time_added>1006260178</time_added>
           <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="http://german.imdb.com">
-      <title></title>
-      <desc>Enter film title</desc>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1041861693</time_modified>
-          <time_added>1041861029</time_added>
-          <smarturl>http://german.imdb.com/Find?for=%s</smarturl>
         </metadata>
       </info>
     </bookmark>
