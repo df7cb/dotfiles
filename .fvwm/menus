@@ -66,6 +66,8 @@ AddToMenu Screen	"Screen"	Title
 +		"x&lock"	Exec dpmsoff blank
 +		"x&root"	Exec xroot
 +		" &offline"	Exec xv -root -quit +noresetroot bilder/back
++		""		Nop
++		"xscr prefs"	Exec xscreensaver-command -prefs
 
 
 DestroyMenu FvwmMenu
