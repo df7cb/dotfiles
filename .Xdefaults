@@ -87,13 +87,16 @@ XTerm*font:		fixed
 XTerm*highlightColor:	Orange
 !XTerm*highlightSelection: true
 XTerm*metaSendsEscape:	true
+XTerm*saveLines:	500
 XTerm*scrollBar:	true
 XTerm*scrollKey:	true
 XTerm*scrollTtyOutput:	false
-XTerm*saveLines:	500
+XTerm*showBlinkAsBold:	true
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
 xterm*VT100.Translations: #override <Key>BackSpace: string(0x08) \n\
+	Ctrl ~Shift <KeyPress> -: smaller-vt-font() \n\
+	Ctrl ~Shift <KeyPress> =: larger-vt-font() \n\
 	Shift <KeyPress> Prior:scroll-back(2,halfpage) \n\
 	Shift <KeyPress> Next:scroll-forw(2,halfpage) \n\
 	<Btn4Down>:scroll-back(2,halfpage,m)     \n\
