@@ -1,5 +1,6 @@
 # $Id$
 # mutt aliases
+alias 'martin@absint.com' Florian Martin <martin@absint.com>
 alias AlfonTZ Michael Sauer <AlfonTZ@web.de>
 alias DVABernd Bernd Dörr <DVABernd@aol.com>
 alias Joern.Schneider Jörn Schneider <Joern.Schneider@de.bosch.com>
@@ -23,6 +24,7 @@ alias dowe0009 Dominik Weber <dowe0009@stud.uni-sb.de>
 alias edith.klee Edith Klee <edith@familieklee.de>
 alias engblom Jakob Engblom <jakob@acm.org>
 alias ferdinand Christian Ferdinand <ferdinand@absint.com>
+alias ff Frank Fontaine <ff@absint.com>
 alias fje Franz Josef Engel <fje@rz.uni-sb.de>
 alias fsg FS Gossip <fsg@fsinfo.cs.uni-sb.de>
 alias fsi FS Intern <fsi@fsinfo.cs.uni-sb.de>
@@ -65,6 +67,7 @@ alias pisg-general Pisg <pisg-general@lists.sourceforge.net>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
 alias preiss Jochen Preiss <preiss@de.ibm.com>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
+alias reinhold.heckmann Reinhold Heckmann <Reinhold.Heckmann@absint.com>
 alias timovoe Timo von Oertzen <timovoe@studcs.uni-sb.de>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
