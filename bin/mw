@@ -36,7 +36,8 @@ sub lookup {
 		close F;
 	} else {
 		# Entry not found
-		$data =~ s/.*?The word you/The word you/s;
+		$data =~ s/.*?The word you/The word you/s; # dict
+		$data =~ s/.*?No entries found/No entries found/s; # thes
 		$data =~ s/<\/PRE>.*//s;
 	}
 
