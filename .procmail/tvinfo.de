@@ -8,6 +8,6 @@
 	* !^Content-Type:
 	| formail -i'Content-Type: text/plain; charset="iso-8859-1"' -i'Content-Transfer-Encoding: 8bit'
 	:0fbw
-	| /home/cb/bin/tvinfo.de-parser
+	| .procmail/tvinfo.de-parser
 }
 

@@ -44,6 +44,10 @@ $SPAMDIR/prefiltered
 :0
 * ^X-Spam-Status: Yes
 {
+	:0f
+	* !^X-Label:
+	* X-Spam-Status: (Yes|No), \/hits=[-0-9.]*
+	| formail -i"X-Label: $MATCH"
 	:0:
 	* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org)
 	$SPAMDIR/debian
