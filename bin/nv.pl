@@ -14,6 +14,6 @@ if (! -d $dir) {
 	mkdir $dir, 0777 or die "mkdir: $!";
 }
 
-exit 1 if system "mv -iv '" .join("' '", @ARGV). "' $dir 1>&2";
+exit 1 if system "mv -iv '" .join("' '", map { s/'/'\\''/g; $_; } @ARGV). "' '$dir' 1>&2";
 
 print "$dir\n";
