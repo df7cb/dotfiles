@@ -13,10 +13,11 @@ while(<>) {
 	addr_get_line($_);
 	next unless $geburtstag;
 	$geburtstag =~ /^(?:(\d+)\.(\d+)\.)?(\d*)$/;
+	$z = $zusatz ? "$zusatz " : "";
 
 	print "$2/$1/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
 	print "R\t0 0 0 0 1\n";
-	print "N\t$vorname $nachname\n";
+	print "N\t$z$vorname $nachname\n";
 }
 
 #1/13/2000  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0
