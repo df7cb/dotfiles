@@ -290,7 +290,7 @@ Key	Tab	A	S4	Prev [*] focus
 Key	F1	A	N	Menu Main
 Key	F2	A	N	Menu WindowOps
 Key	F3	A	N	WindowList
-Key	F4	A	N	Close
+Key	F4	A	M	Close
 Key	F5	A	N	RaiseLower
 Key	F6	A	N	WindowShade
 Key	F7	A	N	Iconify
