@@ -17,7 +17,7 @@ Michael;Backes;;;;;;;;;;MBC@zurich.ibm.com;;cs;
 Werner;Backes;;;;;;;0681/5891236;0681/9325-220 (92-220);;backes@mpi-sb.mpg.de;;wjp;
 Daniela;Barbier;desira;;;;;;;;;;;plant;;51.03/7.57
 Roswitha;Bardohl;;;;;;;;;;rosi@dagstuhl.de;;;
-Regine;Bartels;;;;;;;06894/966486, 06894/966499, 0172/6825848;;;regine.bartels@t-online.de;;;;
+Regine;Bartels;;;;;;;06894/966486, 06894/966499, 0172/6825848;;;regine.bartels@t-online.de;;bridge;;
 Caroline;Barth;;Robert-Koch-Straße 27, 66125 Saarbrücken;;;;13.09.;06897 - 778 796, 0173 - 59 48 995;;;caroline@fsinfo.cs.uni-sb.de;;fsinfo;
 Anne-Katrin;Bauer;;;;;;2.3.1977;06842/2562;;;;;vdl;Richard Wagner Str. 23, 66440 Mimbach;
 Jörg;Bauer;;Richard-Wagner-Str. 5;;;;22.9.1976;;;;joba@cs.uni-sb.de;;rw;
@@ -45,6 +45,7 @@ Michael;Bloch;DF2VO;Hegelstr. 64, 55122 Mainz;;;;25.10.1955;06131/373168;;;;;afu
 Katrin;Blumenauer;;;;;;26.9.1976;0178/5496772;;;blka@gmx.de;;vdl;Auf der Agt 1, 66440 Blieskastel, 06842/51632
 Sebastian;Bogan;;;;;;;;;;Sebastian.Bogan@alumni.TU-Berlin.DE;;;
 Mike;Bohr;pwAIn;;;;;;;;;;;plant;
+Frederic;Boldt;;;;;;;0179/2175306;;;;;bridge;;
 Petra;Bormann;;;;;;9.9.;;;;peba0007@stud.uni-sb.de;;heim-d;
 Michael;Bosch;;Schwabstr. 114, 70193 Stuttgart;;;;05.05.;0178/4725971, 0711/2849055;;;hirbli@nettmail.de, Michael.Bosch@etas.de;;wjp;
 Thorsten;Brauer;;Schwesterntalstr. 37, 66440 Niederwürzbach;;;;29.3.1976;06842/6837;;;tbrauer@onlinehome.de, Thorsten.Brauer@Saint-Gobain.com;;vdl;
@@ -184,7 +185,7 @@ Cédric;Lichtenau;;Brunnenstraße 31/2, 71032 Böblingen;;;;07.12.;07031/389152,
 Martin;Loschwitz;madkiss;;;;;7.10.1986;;;;madkiss@madkiss.org;www.madkiss.org;debian;
 Philipp;Lucas;;;;;;7.11.;;;;phlucas@cs.uni-sb.de;;rw;
 Ulrike;Luck;DL8ULY;Hirschbergstr. 14, 66459 Kirkel;;;;6.3.1958;06849/1489;;;;;afu;
-Frank;Luithle;;Hellwigstrasse 5;;;;13.9.1977;0681/9658067 (G), 0179/2423872;;;sigi@fsinfo.cs.uni-sb.de;;fsinfo, heim-d;Josefstr. 116a, 66809 Nalbach, 06838-9 23 87
+Frank;Luithle;;Hellwigstrasse 5;;;;13.9.1977;0681/9658067 (G), 0179/2423872;;;sigi@fsinfo.cs.uni-sb.de;;fsinfo, heim-d, bridge;Josefstr. 116a, 66809 Nalbach, 06838-9 23 87;
 Olaf;Maennel;;;;;;14.9.1973;;;;info@olafm.de;;fsinfo, heim-d;
 Uli;Martens;;;;;;;;;;uli@youam.net;;;;
 Daniel;Marthaler;;Dekan Albrecht-Str. 3, 66440 Blieskastel;;;;7.1.1976;06842/2891;;;dama0008@stud.uni-sb.de;;vdl;
@@ -234,12 +235,13 @@ Gert;Reinschmitt;DF4VM;Turnhallenstr. 14, 66440 Webenheim;;;;;06842/930114;;;;;a
 Michaela;Reising;;;;;;;;;;michaelareising@aol.com;;;;
 Uwe;Reitenbach;;;;;;14.06.;;;;uwe@cs.uni-sb.de;;wjp;
 Torben;Reuter;;Heim D, 2227, 66123 Saarbrücken;;;;20.8.1976;0681/817757, 0174/5471223, 06856/428;;;torben@reu-ter.de, tore0004@stud.uni-sb.de;;heim-d;Margeritenstr. 2, 66606 St. Wendel-Osterbrücken;49,4909/7,268
+Markus;Riedheimer;;;;;;;0178/8101066;;;markus101066@aol.com;;bridge;;
 Katharina;Rinderele;;;;;;;;;;krin0117@rz.uni-hildesheim.de;;;;
 Konstantin;Rinderle;;Merketalstr.;;;Weimar;15.6.1977;0364/804683, 06842/1251;;;konstantinrinderle@web.de;;vdl;Prälat Lauer-Str. 4, 66440 Lautzkirchen;50,9652/11,339
 Bettina;Rinsche;;;;;;;06842/3605;;;premier.cru@t-online.de;;vdl;geb. Theissen
 Vincenzo;Rizzo;;Hauptstrasse 15;;;66424 Homburg;26.05.1977;0173/92 84 15 4;;;;;asta;
 Emmanuel;Rondeau;;;;;;14.6.;;;;;;heim-d;
-Manuel;Rosinus;rossinie;;;;;13.8.;;;;;;plant;;49.53/6.88
+Manuel;Rosinus;rossinie;;;;;13.8.1986;;;;;;plant;;49.53/6.88
 Jan;Ruffing;;;;;;26.7.1980;0175/4988295;;;naga@uni.de;;heim-d;
 Peter;Rullmann;;;;;;;0681/9388281;;;peterpan@fsinfo.cs.uni-sb.de;;fsinfo;
 Jochen;Röhrig;;;;;;14.06.;07031/162698;;;roehrig@de.ibm.com;;wjp;
