@@ -28,11 +28,8 @@ ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
 ###############################################################################
 
 # Text and background color for the title bar of the selected window
-#HilightColor 		yellow #c06077
 HilightColor 		red2 LightGreen
-
-Style	"*"		ForeColor Black
-Style	"*"		BackColor LightSkyBlue
+Style	"*"		ForeColor Black, BackColor LightSkyBlue
 
 # Style for fonts is
 #-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng
@@ -53,12 +50,11 @@ IconFont	-misc-fixed-medium-r-normal-*-10-*-75-75-c-60-iso8859-1
 #   style options for modules and programs                                    #
 ###############################################################################
 
-Style  "*"		BorderWidth 5, HandleWidth 5
-Style  "*"              Icon small.Template.xpm
-
-Style	"*"		SloppyFocus
-
-Style	"*"		SmartPlacement, RandomPlacement
+Style	"*"		BorderWidth 5, HandleWidth 5
+Style	"*"		Icon small.Template.xpm
+Style	"*"		StickyIcon, IconBox +515 -95 -0 -0
+Style	"*"		NoPPosition
+Style	"*"		SloppyFocus, SmartPlacement, RandomPlacement
 
 # decorations for transient windows
 Style	"*"		DecorateTransient
@@ -66,13 +62,6 @@ Style	"*"		DecorateTransient
 
 # flat window borders when inactive
 BorderStyle Inactive -- HiddenHandles NoInset
-
-# where icons will be placed
-Style   "*"     IconBox +515 -95 -0 -0
-# icons are reachable in every virtual screen
-Style	"*"		StickyIcon
-#Style	"*"		SmartPlacement, RandomPlacement, ActivePlacement
-Style	"*"		NoPPosition
 
 # fvwm stuff
 Style  "FvwmPager"	NoTitle, Sticky, WindowListSkip
@@ -82,21 +71,21 @@ Style  "FvwmWinList"	NoTitle, WindowListSkip, NakedTransient
 Style  "IconManModule"	NoTitle, Sticky, NoHandles, Icon toolbox.xpm
 
 # .xinitrc stuff
+Style	"*apm"		NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
 Style	"console*"	Sticky, WindowListSkip
 Style	"coolmail"	NoTitle, Sticky, WindowListSkip
-Style	"*clock*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
-Style	"xclock"	StaysOnTop
+Style	"*clock*"	NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
 Style	"xeyes"		NoTitle, Sticky, WindowListSkip
 Style	"xmeter"	NoTitle, Sticky, WindowListSkip
 Style	"xosview*"	Icon meter_3d.xpm, ClickToFocus, NoTitle, Sticky, UsePPosition, WindowListSkip
 Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 
 # general
-#Style	"root*"		BackColor Red
 Style	"xv 3*"		NoTitle
 Style	"VNC*"		HandleWidth 0, NoTitle
 #Style	Netscape*	StartsOnPage 0 1, SkipMapping
 
+# icons
 Style	"xterm"		Icon Terminal.xpm
 Style	"emacs*"	Icon DTP.xpm
 Style	"xconsole"	Icon clipboard_3d.xpm
@@ -105,16 +94,6 @@ Style	"TkMan"		Icon library_3d.xpm
 Style	"Xman"		Icon xman3d.xpm
 Style	"Root"		Icon Diavolo.xpm
 Style	"xv*"		Icon xv.color.xpm 
-
-#Style  "xclock"		BackColor Grey
-
-# these are needed for the placement of the items in
-# the button bar
-#Style	"coolmail"	SmartPlacement, RandomPlacement
-#Style	"xeyes"		SmartPlacement, RandomPlacement
-#Style	"xclock"	SmartPlacement, RandomPlacement
-
-
 
 ###############################################################################
 #   MWM emulation                                                             #

@@ -135,8 +135,8 @@ Key	F12	A	N	Function Maximize1000
 #		A	Any
 
 # root menu bindings for fvwm2 and fvwm95
-Mouse	1	R	A	Popup Main		
-Mouse	2	R	A	Popup WindowOps
+Mouse	1	R	A	Menu Main		
+Mouse	2	R	A	Menu WindowOps
 Mouse	3	R	A	WindowList
 				#FvwmWinList Transient
 
