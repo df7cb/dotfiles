@@ -4373,6 +4373,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://channel.debian.de/">
+          <title>#debian.de</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1071955620</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Postings</title>
