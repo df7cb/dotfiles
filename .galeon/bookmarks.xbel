@@ -58,17 +58,9 @@
       <separator/>
       <bookmark href="javascript:var wN2sc8Rl;Sa5gNA9k=new Function('clearTimeout(wN2sc8Rl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2sc8Rl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',150))">
         <title>Scroll Page (very slow)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (slow)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
@@ -78,10 +70,6 @@
       </bookmark>
       <bookmark href="javascript:var wN2scRl;S3g=new Function('clearTimeout(wN2scRl)');document.onkeydown=S3g;a7T=prompt('Rate...','');if(a7T!=null){S3g();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){scrollBy(0,a7T)}else{S3g()}',50))}else{void(null)}">
         <title>Scroll Page... (variable)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:if(frames.length%3C1){alert('The server indicates that the page was last modified: ' + window.document.lastModified)}else{alert('Page is framed. Use version of bookmarklet for frames. (bookmarklets.com)')}">
@@ -169,10 +157,6 @@
         </bookmark>
         <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic.php">
           <title>traffic heim-d</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-            </metadata>
-          </info>
         </bookmark>
         <separator/>
         <bookmark href="http://www.heim-d.uni-sb.de/doc/">
@@ -610,6 +594,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1043248283</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.uni-saarland.de/z-einr/ub/uni-veroeff/jbanf.html">
+          <title>Ver&#195;&#182;ffentlichungen von Universit&#195;&#164;tsangeh&#195;&#182;rigen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044877172</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -4881,9 +4873,10 @@
         </info>
       </bookmark>
       <bookmark href="http://www.wetter.net/cgi-bin/wetter-net/wetter_stadt.pl?ID=334">
-        <title>Wetter in 5000 St&#239;&#191;&#189;dte weltweit - wetter.net: weltweite Wettervorhersagen</title>
+        <title>wetter.net</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1044877662</time_modified>
             <time_added>988718268</time_added>
           </metadata>
         </info>
@@ -4906,9 +4899,10 @@
         </info>
       </bookmark>
       <bookmark href="http://www.skyview.de/uebersicht.htm">
-        <title>SkyView &#239;&#191;&#189;bersicht</title>
+        <title>SkyView &#195;&#156;bersicht</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1044877653</time_modified>
             <time_added>894050601</time_added>
           </metadata>
         </info>
