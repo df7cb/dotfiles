@@ -73,6 +73,10 @@
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,10)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (very fast)</title>
@@ -3803,6 +3807,22 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1047297660</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://tellus.dyndns.org/?topic=mutthowto">
+          <title>mutt-fetchmail-...qmail howto</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1059496144</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://spurious.biz/~pkremer/projects/mepfd/mepfd.html">
+          <title>Mutt-Exim-Procmail-Fetchmail-Dialup Mini-Howto (mepfd)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1059496175</time_added>
             </metadata>
           </info>
         </bookmark>
