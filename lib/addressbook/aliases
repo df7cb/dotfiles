@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+# $Id$
+
+# convert addressbook database to mutt aliases
+
+use lib '.';
+use addressbook;
+
+while(<>) {
+	addr_get_line($_);
+	next unless $email;
+	foreach (split /,\s*/, $email) {
+		/(.+)@/;
+		if(exists $MAIL{"\L$1"}) {
+			die if exists $MAIL{$_};
+			$MAIL{$_} = "$vorname $nachname <$_>";
+		} else {
+			$MAIL{"\L$1"} = "$vorname $nachname <$_>";
+		}
+	}
+}
+
+foreach (sort keys %MAIL) {
+	print "alias $_ $MAIL{$_}\n";
+}

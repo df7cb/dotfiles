@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w
+# $Id$
+
+# convert addressbook database to Geburtstage
+
+use lib '.';
+use addressbook;
+
+# plan kann keine Jahre vor 1970 :-/
+$y = (localtime)[5] + 1900;
+
+while(<>) {
+	addr_get_line($_);
+	next unless $geburtstag;
+	$geburtstag =~ /^(?:(\d+)\.(\d+)\.)?(\d*)$/;
+
+	print "$2/$1/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
+	print "R\t0 0 0 0 1\n";
+	print "N\t$vorname $nachname\n";
+}
+
+#1/13/2000  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0
+#R	0 0 0 0 1
+#N	Elke Berg
