@@ -1,7 +1,7 @@
 # $Id$
 
-# escape character is ^W
-escape ^Ww
+# escape character is ^W, ^Wa for literal ^W
+escape ^Wa
 
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
