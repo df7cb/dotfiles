@@ -19,8 +19,12 @@ bind index G last-entry
 bind pager G bottom
 macro index = s=
 
+# headers
+#my_hdr fcc: bla
+
 # options
-set abort_nosubject
+#set abort_nosubject
+set abort_unmodified=ask-yes
 set alias_file=~/.mutt/aliases
 set alternates=^cb@.*uni-sb.de$
 unset beep
@@ -29,18 +33,28 @@ unset bounce_delivered
 unset confirmappend
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c '/^$'"
+set fast_reply
 unset fcc_attach
 set folder="~/mail"
+set forward_format="%s (fwd)"
+unset help
 set hidden_host
 set index_format="%4C %Z %[%b %e %k:%M] %15.15L (%4l) %s"
+set menu_scroll
 unset move
 set pager_index_lines=5
 set pager_stop
 set pgp_autosign
+set pgp_replyencrypt
 set pgp_sign_as="0x6D8ABE71"
+set pgp_timeout=900
+set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set record="=sent-mail"
+unset save_empty
+set sendmail_wait=5
 unset sig_dashes
+set status_on_top
 set sort=threads
 set tilde
 set use_domain
