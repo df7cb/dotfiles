@@ -109,11 +109,45 @@
 /alias wheimd /who #heim-d
 /alias tt /msg trancetip
 
+# /on stuff
+#/on join "heimgeist" who $0
+#/on who "#heim-d HeimGeist H *heimfee hal.heim-d.uni-sb.de" mode * +o HeimGeist
+/on -msg "*" echo $Z
+
+#autoop
+/load autoop
+/delchan 1
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/delop 0
+/addop *!heimfee@hal.heim-d.uni-sb.de
+/addop *!cb@hal.heim-d.uni-sb.de
+/addop *!cb@df7cb.heim-d.uni-sb.de
+/addop *!~cb@df7cb.heim-d.uni-sb.de
+/addop *!sauer@hal.heim-d.uni-sb.de
+/addop *!schutz@hal.heim-d.uni-sb.de
+/addop *!mo@sphere.heim-d.uni-sb.de
+/addop *!sauer@saarland.heim-d.uni-sb.de
+/addop *!^nexus@hspc01.cs.uni-sb.de
+/addop *!~mah@wjpserver.cs.uni-sb.de
+/addop *!~schuerge@wjpserver.cs.uni-sb.de
+#/showop
+
 # 'login'-Anzeige
 #/who *-sb.*
 #/who #heim-d
-/notify Y_Plentyn mawan roquas mah schnueff df7cb cb cb7 alfons alfonz
-/notify
+/notify mah schnueff df7cb cb cb7 alfons alfonz myon heimgeist
+#/notify
+
 # /ignore heimgeist public msgs
 /ignore opaunger public msgs
 /ignore profhase public msgs
