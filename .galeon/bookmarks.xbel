@@ -3970,6 +3970,14 @@
               </metadata>
             </info>
           </bookmark>
+          <bookmark href="http://www.bigfatdave.com/dave/mutt/">
+            <title>BigFatDave.Com</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1079000274</time_added>
+              </metadata>
+            </info>
+          </bookmark>
         </folder>
         <bookmark href="http://www.rachinsky.de/nicolas/mutt.html">
           <title>threadcomplete patch (rachinsky.de)</title>
@@ -3992,6 +4000,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1077621730</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.pizzashack.org/mutt/">
+          <title>pizzashack.org/mutt/</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1078925382</time_added>
             </metadata>
           </info>
         </bookmark>
