@@ -97,6 +97,9 @@ Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 #Style	"VNC*"		HandleWidth 0, NoTitle
 #Style	Netscape*	StartsOnPage 0 1, SkipMapping
 Style	"xine*"		HilightFore DarkGrey, HilightBack black
+Style	"XMMS*"		StartsOnPage 2 0, SkipMapping
+# firefox
+#Style	"navigator:browser"	StartsOnPage 0 1, SkipMapping
 
 # icons
 Style	"xterm"		Icon Terminal.xpm
