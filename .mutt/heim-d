@@ -1,12 +1,13 @@
 # $Id$
-set folder="~/mail"
+#set folder="~/mail"
 set from="cb@heim-d.uni-sb.de"
 unset hidden_host
 set hostname="heim-d.uni-sb.de"
+#set record="=sent-mail"
 set signature="~/.signature"
 set spoolfile="/var/mail/cb"
-bind index & sync-mailbox
-macro generic $ "&!mailsync heim-d-in\cM"
-macro index $ "&!mailsync heim-d-in\cM"
+bind index $ sync-mailbox
+macro generic & "$!mailsync -f heim-d-in\cM"
+macro index & "$!mailsync -f heim-d-in\cM"
 macro index H ":source ~/.mutt/heim-d\cMc!\cM"
 macro index S ":source ~/.mutt/wjp\cMc!\cM"
