@@ -1,6 +1,7 @@
-~ .vimrc for mutt
-~ $Id$
+" .vimrc for mutt
+" $Id$
 
 source ~/.vimrc
 
+set nobackup
 set nohlsearch
