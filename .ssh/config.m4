@@ -9,12 +9,12 @@ define([ifndomain], [ifelse(regexp(HOSTNAME, [$1$]), -1, [$2], [$3])])dnl
 ForwardX11 yes
 NumberOfPasswordPrompts 3
 
-ifdomain(intertalk.cs.uni-sb.de,
- Host knecht.cs.uni-sb.de knecht
-  ProxyCommand none
- Host *
-  ProxyCommand ssh knecht /RW/users/cb/bin/linux-intel/nc -q0 %h %p
-)
+#ifdomain(intertalk.cs.uni-sb.de,
+# Host knecht.cs.uni-sb.de knecht
+#  ProxyCommand none
+# Host *
+#  ProxyCommand ssh knecht /RW/users/cb/bin/linux-intel/nc -q0 %h %p
+#)
 
 host fermi.df7cb.de fermi
  hostname fermi.df7cb.de
