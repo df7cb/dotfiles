@@ -1,6 +1,6 @@
 # $Id$
 
-all: cleanup .configrc .less .mutt/muttrc.local .ssh/config .ytalkrc .xinitrc bin/ctar
+all: .configrc .less .mutt/muttrc.local .ssh/config .ytalkrc .xinitrc bin/ctar
 
 ## targets ##
 
@@ -28,6 +28,92 @@ bin/ctar:
 tmp /tmp/$(USER):
 	mkdir -m 0700 $@ ; ls -ld $@
 
+## cleanup stuff ##
+
+cleanup:
+COMMITS =
+
+ifeq ($(shell [ -d .firefox ] && echo yes), yes)
+cleanup: .firefox/cb/cbcbcbcb.slt/.bookmarks.html
+COMMITS += .firefox/cb/cbcbcbcb.slt/bookmarks.html
+endif
+.firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html
+	# Cleaning $<
+	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
+	@perl -i -pe 's/ (LAST_VISIT)="\d+"//g' $<
+	@touch $@
+
+ifeq ($(shell [ -d .galeon ] && echo yes), yes)
+cleanup: .galeon/.bookmarks.xbel
+COMMITS += .galeon/bookmarks.xbel
+endif
+.galeon/.bookmarks.xbel: .galeon/bookmarks.xbel
+	# Cleaning $<
+	@if pidof galeon-bin > /dev/null ; then echo "Galeon is running " ; false ; else true ; fi
+	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
+	@touch $@
+
+ifeq ($(shell [ -d .mutt ] && echo yes), yes)
+cleanup: .mutt/.aliases
+COMMITS += .mutt/aliases
+endif
+.mutt/.aliases: .mutt/aliases
+	# Sorting $<
+	@grep -qv '<<<<' $<
+	@mv $< $<.bak
+	@LC_ALL=C sort -u $<.bak > $<
+	@rm -f $<.bak
+	@touch $@
+# find duplicate aliases
+	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
+
+ifeq ($(shell [ -d .ncftp ] && echo yes), yes)
+COMMITS += .ncftp/bookmarks
+endif
+
+ifeq ($(shell [ -d .netscape ] && echo yes), yes)
+cleanup: .netscape/.bookmarks.html
+COMMITS += .netscape/bookmarks.html
+endif
+.netscape/.bookmarks.html: .netscape/bookmarks.html
+	# Cleaning $<
+	@[ ! -L .netscape/lock ]
+	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
+	@touch $@
+
+ifeq ($(shell [ -d .plan.dir ] && echo yes), yes)
+cleanup: .plan.dir/check-plan-running
+COMMITS += .plan.dir/dayplan
+endif
+.plan.dir/check-plan-running:
+	@[ ! -f .plan.dir/lock.plan ]
+
+ifeq ($(shell [ -f .ssh/known_hosts ] && echo yes), yes)
+cleanup: .ssh/.known_hosts
+COMMITS += .ssh/known_hosts
+endif
+known_hosts-uniq:
+	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
+	@perl -e 'while(<>){ foreach(/^(\w+)\b/) { print "repeated: $$_\n" if $$1 eq $$l; $$l = $$1; }}' .ssh/known_hosts
+.ssh/.known_hosts: .ssh/known_hosts
+	# Sorting $<
+	@grep -qv '<<<<' $<
+	@mv $< $<.bak
+	@LC_ALL=C sort -u $<.bak > $<
+	@rm -f $<.bak
+	@touch $@
+
+ifeq ($(shell [ -d lib/addressbook ] && echo yes), yes)
+cleanup: lib/addressbook/check-addressbook-running
+COMMITS += lib/addressbook/cb.dat
+endif
+lib/addressbook/check-addressbook-running:
+	@[ ! -f lib/addressbook/cb.dat.lock ]
+
+ifeq ($(shell [ -d lib/todo ] && echo yes), yes)
+COMMITS += lib/todo/todo
+endif
+
 ## update stuff ##
 
 # this needs GNU make
@@ -45,56 +131,9 @@ safe: cleanup # conflict
 conflict:
 	-cvs -q -n update | grep '^C '
 
-STAMPS = .netscape/.bookmarks.html .galeon/.bookmarks.xbel .ssh/.known_hosts .mutt/.aliases
-CLEANS = .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .mutt/aliases
-COMMITS = $(CLEANS) .ncftp/bookmarks .plan.dir/dayplan lib/addressbook/cb.dat lib/todo/todo
-
 com: commit
 commit: cleanup
 	cvs commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
-
-cycle: update commit
-
-## cleanup stuff ##
-
-cleanup: abort-if-running $(STAMPS)
-
-.netscape/.bookmarks.html: .netscape/bookmarks.html
-	# Cleaning $<
-	@[ ! -L .netscape/lock ]
-	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
-	@touch $@
-
-.galeon/.bookmarks.xbel: .galeon/bookmarks.xbel
-	# Cleaning $<
-	@if pidof galeon-bin > /dev/null ; then echo "Galeon is running " ; false ; else true ; fi
-	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
-	@touch $@
-
-known_hosts-uniq:
-	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
-	@perl -e 'while(<>){ foreach(/^(\w+)\b/) { print "repeated: $$_\n" if $$1 eq $$l; $$l = $$1; }}' .ssh/known_hosts
-.ssh/.known_hosts: .ssh/known_hosts
-	# Sorting $<
-	@grep -qv '<<<<' $<
-	@mv $< $<.bak
-	@LC_ALL=C sort -u $<.bak > $<
-	@rm -f $<.bak
-	@touch $@
-
-.mutt/.aliases: .mutt/aliases
-	# Sorting $<
-	@grep -qv '<<<<' $<
-	@mv $< $<.bak
-	@LC_ALL=C sort -u $<.bak > $<
-	@rm -f $<.bak
-	@touch $@
-# find duplicate aliases
-	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
-
-abort-if-running:
-	@[ ! -d .plan.dir ] || [ ! -f .plan.dir/lock.plan ]
-	@[ ! -d lib/addressbook ] || [ ! -f lib/addressbook/cb.dat.lock ]
 
 ## installation stuff ##
 
