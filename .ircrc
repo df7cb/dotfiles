@@ -8,6 +8,7 @@
 /set channel_name_with 12
 /set clock on
 /set clock_24hour on
+/set color on
 /set eight_bit_characters on
 /set full_status_line on
 /set help_pager on
@@ -57,6 +58,7 @@
 # Tasten
 /load tabkey
 /bind ^B self_insert
+/bind ^C self_insert
 /bind ^W SWITCH_CHANNELS
 /bind ^Z STOP_IRC
 /bind META1-[ META2_CHARACTER
