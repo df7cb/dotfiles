@@ -74,8 +74,8 @@ for dir in \
 	$HOME/lib/latex $HOME/lib/latex/*
 	do case $dir in
 		*CVS) ;;
-		*) [ -d $dir ] && TEXINPUTS=${TEXINPUTS}$dir: ;;
-	esac
+		*) [ -d $dir ] && TEXINPUTS="${TEXINPUTS}:$dir" ;;
+	esac	# $TEXINPUTS starts with ':'
 done
 
 [ -f $HOME/lib/make/Makefile ] && export MAKEFILES=$HOME/lib/make/Makefile
