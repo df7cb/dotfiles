@@ -8,7 +8,7 @@ linux*|*vt100*|cons25)	# colored prompt
 	prompt="
 [%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%B%{[34m%}%40<..<%~%{[0m%}%b %#"
 	LSCOLOR='--color=auto' ;;
-xterm*|rxvt|screen*)	# colored prompt, X window titlebar
+xterm*|rxvt|screen*|cygwin)	# colored prompt, X window titlebar
 	prompt="%{]0;%n@%m:%~%}
 [%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%B%{[34m%}%40<..<%~%{[0m%}%b %#"
 	[ "$console" ] && prompt="%{]0;console@%m:%~%}[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%B%{[34m%}%30<..<%~%{[0m%}%b %#"
