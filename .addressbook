@@ -1,3 +1,4 @@
+#DELETED-00/10/05#caroline	Caroline Zunckel	cazu0000@stud.uni-sb.de
 720	Fakultaet 6	720@fsinfo.cs.uni-sb.de
 abe	Beckert, Axel	Axel Beckert <abe@fsinfo.cs.uni-sb.de>
 alpha	alpha-Typen	l-apx@bong.saar.de
@@ -8,7 +9,6 @@ baschdel	Bastiaan Hageman	Hagblies <Hagblies@aol.com>
 bertram	Bertram Schuck	schu@uni-landau.de
 cage	Nico Fritz	cage@studcs.uni-sb.de
 caro	Zunckel, Caroline	Caroline Zunckel <cazu0000@stud.uni-sb.de>
-caroline	Caroline Zunckel	cazu0000@stud.uni-sb.de
 christina	Christina Burda	Christina Burda <chbu0011@stud.uni-sb.de>
 cibis	Cibis, Nicolaus	Nicolaus Cibis <Nicolaus.Cibis@t-online.de>
 dagmar	Dagmar Bubel	uily@rz.uni-karlsruhe.de
@@ -29,6 +29,7 @@ fsn	/dev/null	fs-nulldevice@fsinfo.cs.uni-sb.de
 fsr	FSR Informatik	fsr@fsinfo.cs.uni-sb.de
 g.berg	Berg, Gregor	Gregor Berg <g.berg@hs-hom.handshake.de>
 HP	=?ISO-8859-1?Q?Heimpr=E4sidenten_D?=	hp@heim-d.uni-sb.de
+jnf	Fingerle, Jan Niklas	Jan Niklas Fingerle <jnf@gmx.net>
 kassenwart	Kassenwart D	kassenwart@heim-d.uni-sb.de
 konstantin	Konstantin Rinderle	konstantin.rinderle@hfm.uni-weimar.de
 lynx	Stephan Wiehr	lynx@fsinfo.cs.uni-sb.de
@@ -52,4 +53,3 @@ sven	Sven Mayer	Sven Mayer <Sgt.Sven@t-online.de>
 tnt-devel	TNT developers	tnt-devel@excelsior.kullen.rwth-aachen.de
 uli	Ulrike Neumueller	ulne0001@stud.uni-sb.de
 vuje	Vujevic, Marco	vuje@studcs.uni-sb.de		3907606
-zwenti	Fingerle, Jan Niklas	Jan Niklas Fingerle <jnf@gmx.net>
