@@ -24,7 +24,7 @@ set abort_nosubject
 set alias_file=~/.mutt/aliases
 set alternates=^cb@.*uni-sb.de$
 unset beep
-set beep_new
+#set beep_new
 unset bounce_delivered
 unset confirmappend
 set edit_headers
