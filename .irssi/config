@@ -98,7 +98,10 @@ channels = (
   { name = "#debian"; chatnet = "freenode"; },
   { name = "#debian"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#pisg"; chatnet = "quakenet"; autojoin = "yes"; },
-  { name = "#ircmarkers"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#ircmarkers"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-release"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-qa"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-bugs"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -285,6 +288,8 @@ settings = {
     chanact_display = "$H$N$C$S";
     trackbar_string = "-";
     chanact_remove_prefix = "debian.";
+    screen_away_repeat = "30";
+    screen_away_message = "screen detached";
   };
   "fe-text" = {
     scroll_page_count = "/1";
@@ -293,7 +298,7 @@ settings = {
     term_type = "utf-8";
   };
   "fe-common/core" = {
-    autolog_path = "~/irc/autolog/%Y-%m/${0}_$tag/${0}-%Y-%m-%d";
+    autolog_path = "/cb/irc/autolog/%Y-%m/${0}_$tag/${0}-%Y-%m-%d";
     autolog = "yes";
     hilight_nick_matches = "no";
     show_nickmode = "yes";
@@ -350,40 +355,40 @@ hilights = (
 );
 ignores = ( { level = "NOTICES"; channels = ( "#xskat1" ); } );
 logs = {
-  "~/irc/log/heim-d/heim-d-%Y-%m-%d" = {
+  "/cb/irc/log/heim-d/heim-d-%Y-%m-%d" = {
     level = "ALL";
     auto_open = "yes";
     items = ( 
       { type = "target"; name = "#heim-d"; server = "ircnet"; }
     );
   };
-  "~/irc/log/plant/plant-%Y-%m-%d" = {
+  "/cb/irc/log/plant/plant-%Y-%m-%d" = {
     level = "ALL";
     auto_open = "yes";
     items = ( { type = "target"; name = "#plant"; server = "ircnet"; } );
   };
-  "~/irc/log/debian.de_ircnet/debian.de-%Y-%m-%d" = {
+  "/cb/irc/log/debian.de_ircnet/debian.de-%Y-%m-%d" = {
     auto_open = "yes";
     level = "ALL";
     items = (
       { type = "target"; name = "#debian.de"; server = "ircnet"; }
     );
   };
-  "~/irc/log/debian.de_freenode/debian.de-%Y-%m-%d" = {
+  "/cb/irc/log/debian.de_freenode/debian.de-%Y-%m-%d" = {
     auto_open = "yes";
     level = "ALL";
     items = (
       { type = "target"; name = "#debian.de"; server = "freenode"; }
     );
   };
-  "~/irc/log/mutt/mutt-%Y-%m-%d" = {
+  "/cb/irc/log/mutt/mutt-%Y-%m-%d" = {
     level = "ALL";
     auto_open = "yes";
     items = ( 
       { type = "target"; name = "#mutt"; server = "freenode"; }
     );
   };
-  "~/irc/log/procmail/procmail-%Y-%m-%d" = {
+  "/cb/irc/log/procmail/procmail-%Y-%m-%d" = {
     level = "ALL";
     auto_open = "yes";
     items = (
@@ -408,8 +413,29 @@ keyboard = (
   { key = "meta-="; id = "command"; data = "window grow"; },
   { key = "^O"; id = "upper_window"; data = ""; }
 );
+notifies = { };
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#procmail";
+        tag = "freenode";
+      }
+    );
+  };
   8 = {
     items = (
       {
@@ -420,33 +446,22 @@ windows = {
       }
     );
   };
-  4 = {
+  9 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian.de";
-        tag = "ircnet";
-      }
-    );
-  };
-  5 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian.de";
+        name = "#debian-bugs";
         tag = "freenode";
       }
     );
   };
-  9 = { };
   10 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#xskat";
+        name = "#debian-release";
         tag = "freenode";
       }
     );
@@ -456,7 +471,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian";
+        name = "#debian-qa";
         tag = "freenode";
       }
     );
@@ -466,17 +481,37 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
+        name = "#pisg";
+        tag = "quakenet";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
         name = "#debian";
         tag = "oftc";
       }
     );
   };
-  6 = {
+  14 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#mutt";
+        name = "#ircmarkers";
+        tag = "freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
         tag = "freenode";
       }
     );
@@ -501,16 +536,15 @@ windows = {
       }
     );
   };
-  7 = {
+  4 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#procmail";
-        tag = "freenode";
+        name = "#debian.de";
+        tag = "ircnet";
       }
     );
   };
 };
-mainwindows = { 1 = { first_line = "1"; lines = "32"; }; };
-notifies = { };
+mainwindows = { 1 = { first_line = "1"; lines = "31"; }; };
