@@ -21,21 +21,22 @@ bind	index	\#	delete-message
 bind	pager	\#	delete-message
 bind	index	*	toggle-new	# this should be mark-as-new :-/
 bind	pager	*	mark-as-new	# this should be toggle-new :-/
-macro	generic	A	:source<space>~/.mutt/muttrc<enter>	'Re-read aliases/muttrc'
-macro	generic	d	s=deleted<enter>	'Move message to trash folder'
-macro	index	d	s=deleted<enter>	'Move message to trash folder'
-macro	pager	d	s=deleted<enter>	'Move message to trash folder'
+macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
+macro	generic	d	s=deleted<return>	'Move message to trash folder'
+macro	index	d	s=deleted<return>	'Move message to trash folder'
+macro	pager	d	s=deleted<return>	'Move message to trash folder'
 macro	index	^d	'<esc>t;d'	'Move all messages in thread to trash folder'
 bind	index	G	last-entry
 bind	pager	G	bottom
 bind	generic	N	search-opposite
 bind	index	N	search-opposite
+bind	pager	N	search-opposite
 bind	index	x	sync-mailbox
 bind	pager	x	sync-mailbox
 macro	index	=	s=		'Save to ~/mail/'
 macro	pager	=	s=		'Save to ~/mail/'
 
-bind	compose	<enter>	send-message
+bind	compose	<return> send-message	# <enter> = numeric keypad
 macro	compose	=	f=		'Fcc to ~/mail/'
 bind	compose	v	view-attach
 
