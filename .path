@@ -2,7 +2,7 @@
 # $Id$
 
 : ${PATH_OLD:=$PATH} ${ZDOTDIR:=$HOME}
-[ -z $OS ] && . $ZDOTDIR/bin/os quiet
+[ -z "$OS" ] && . $ZDOTDIR/bin/os quiet
 
 PATH=/usr/local/bin:/usr/bin:/bin
 
