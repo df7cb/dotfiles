@@ -2449,6 +2449,22 @@
               </metadata>
             </info>
           </bookmark>
+          <bookmark href="http://www.tsu.ru/~pascal/en/xkb/internals.html">
+            <title>About XKB internals.</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1044566575</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.uni-ulm.de/~s_smasch/X11/xmodmap.html">
+            <title>Some hints about xmodmap(1) and the X11 keyboard model</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1044566649</time_added>
+              </metadata>
+            </info>
+          </bookmark>
         </folder>
         <folder folded="yes">
           <title>SQL</title>
