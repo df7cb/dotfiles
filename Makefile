@@ -64,9 +64,11 @@ com: commit
 commit: cleanup
 	cvs commit -m "make commit by $(USER)@$(HOST)" .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan lib/addressbook/cb.dat lib/todo/todo
 
+cycle: update commit
+
 ## cleanup stuff ##
 
-cleanup: bookmark-clean galeon-clean known_hosts-sort
+cleanup: bookmark-clean galeon-clean known_hosts-sort plan-run addressbook-run
 
 bookmark-clean:
 	# Cleaning .netscape/bookmarks.html
@@ -74,6 +76,7 @@ bookmark-clean:
 
 galeon-clean:
 	# Cleaning .galeon/bookmarks.xbel
+	@if pidof galeon-bin > /dev/null ; then echo "Galeon is running " ; false ; else true ; fi
 	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
 
 known_hosts-uniq:
@@ -84,6 +87,12 @@ known_hosts-sort: # known_hosts-uniq
 	@mv .ssh/known_hosts .ssh/known_hosts-
 	@LC_ALL=C sort -u .ssh/known_hosts- > .ssh/known_hosts
 	@rm .ssh/known_hosts-
+
+plan-run:
+	@[ ! -f .plan.dir/lock.plan ]
+
+addressbook-run:
+	@if ps x | grep -q "[a]ddressbook" ; then echo "Addressbook is running " ; false ; else true ; fi
 
 ## installation stuff ##
 
