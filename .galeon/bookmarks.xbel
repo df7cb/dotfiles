@@ -3660,6 +3660,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.cosiworld.de/">
+          <title>Medion 9901 Mainboard</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1073078795</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Linux Kernel</title>
@@ -4345,6 +4353,14 @@
               <time_modified>1068133208</time_modified>
               <time_added>1059820831</time_added>
               <smarturl>http://people.debian.org/~%s</smarturl>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.backports.org/">
+          <title>Debian Backports</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1073326878</time_added>
             </metadata>
           </info>
         </bookmark>
