@@ -6,7 +6,8 @@ test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
 
 #set up X server
 xhost - >/dev/null
-[ -f ~/.xmodmap ] && xmodmap ~/.xmodmap
+XMODMAP=`os kbd`
+[ -f $XMODMAP ] && xmodmap $XMODMAP
 xset s off
 xset dpms 0 0 600 2> /dev/null
 xrdb -merge .Xdefaults
