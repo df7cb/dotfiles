@@ -1,0 +1,7 @@
+#!/usr/bin/perl -w
+
+$url = $ARGV[0] or die "no URL given!";
+
+$url =~ s/,/%2c/g;
+
+system "netscape-remote", "-remote", "openURL($url)";
