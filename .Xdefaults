@@ -10,7 +10,9 @@ XClock*padding:		0
 XClock*update:		1
 XClock*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
 XDvi.expert:		true
+XDvi.highlight:		blue
 XDvi.keepPosition:	true
+XEmacs.font:		-*-Fixed-medium-r-*-*-*-160-*-*-*-*-ISO8859-1
 Fig*inches:		false
 Fig*library_dir:	~/lib/xfig
 Fig*PaperSize:		A4
