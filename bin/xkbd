@@ -1,0 +1,11 @@
+#!/bin/sh
+# $Id$
+
+VENDOR=`xdpyinfo | grep 'vendor string'`
+
+case "$VENDOR" in
+	*'The XFree86 Project, Inc') echo pc ;;
+	*'X Consortium') echo sun ;;
+	*'Network Computing Devices Inc.') echo ncd ;;
+	*) echo "$0: unknown $VENDOR" 1>&2
+esac
