@@ -14,14 +14,14 @@ set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set textwidth=0		" Don't wrap words by default
 set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
-set viminfo='20,\"50	" read/write a .viminfo file, don't store more than
-			" 50 lines of registers
+set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
+			" 50 lines of registers, do not highlight searches
 
 " Key bindings
 " use Q for formatting, not ex-mode:
-map Q gq
+"map Q gq
 nmap <space> <c-f>
-nmap <c-h> <c-b>
+nmap <c-h> i<c-h>
 nmap b <c-b>
 nmap - <c-b>
 
