@@ -52,7 +52,7 @@ IconFont	-misc-fixed-medium-r-normal-*-10-*-75-75-c-60-iso8859-1
 
 Style	"*"		BorderWidth 5, HandleWidth 5
 Style	"*"		Icon small.Template.xpm
-Style	"*"		StickyIcon, IconBox +515 -95 -0 -0
+Style	"*"		SlipperyIcon, IconBox +515 -95 -0 -0
 Style	"*"		NoPPosition
 Style	"*"		SloppyFocus, SmartPlacement, RandomPlacement
 
