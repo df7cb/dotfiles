@@ -269,6 +269,7 @@ latex-sectioning	latexhelp.txt	/*latex-sectioning*
 latex-spaces-boxes	latexhelp.txt	/*latex-spaces-boxes*
 latex-special	latexhelp.txt	/*latex-special*
 latex-start-end	latexhelp.txt	/*latex-start-end*
+latex-symbols.txt	latex-symbols.txt	/*latex-symbols.txt*
 latex-terminal	latexhelp.txt	/*latex-terminal*
 latex-toc	latexhelp.txt	/*latex-toc*
 latex-typefaces	latexhelp.txt	/*latex-typefaces*
@@ -307,6 +308,7 @@ slides-class	latexhelp.txt	/*slides-class*
 sub-sup	latexhelp.txt	/*sub-sup*
 subscripts	latexhelp.txt	/*subscripts*
 superscripts	latexhelp.txt	/*superscripts*
+symbols	latex-symbols.txt	/*symbols*
 tab'	latexhelp.txt	/*tab'*
 tab+	latexhelp.txt	/*tab+*
 tab-	latexhelp.txt	/*tab-*

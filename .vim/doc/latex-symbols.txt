@@ -1,0 +1,248 @@
+*latex-symbols.txt*   For Vim version 6.0.  Last change: 2003 Apr 05
+
+*symbols*
+
+                                 Latex Symbols
+            based on texmf/source/latex/amslatex.extra/symbols.tex
+                    converted to unicode by Mark Hillebrand
+
+==============================================================================
+
+(there are some things missing at the end, I need a break from all
+those symbols)
+
+==============================================================================
+
+Greek Letters
+
+    α \alpha          θ \theta        o o             τ \tau
+    β \beta           θ \vartheta     π \pi           υ \upsilon
+    γ \gamma          ι \iota         π \varpi        φ \phi
+    δ \delta          κ \kappa        ρ \rho          φ \varphi
+    ε \epsilon        λ \lambda       ρ \varrho       χ \chi
+    ε \varepsilon     μ \mu           σ \sigma        ψ \psi
+    ζ \zeta           ν \nu           ς \varsigma     ω \omega
+    η \eta            ξ \xi                          
+
+    Γ \Gamma          Λ \Lambda       Σ \Sigma        Ψ \Psi
+    ∆ \Delta          Ξ \Xi           Υ \Upsilon      Ω \Omega
+    Θ \Theta          Π \Pi           Φ \Phi
+
+==============================================================================
+
+Binary Operation Symbols
+
+    ± \pm         ∩ \cap          ⋄ \diamond             ⊕ \oplus
+    ∓ \mp         ∪ \cup          △ \bigtriangleup       ⊖ \ominus
+    × \times      ⊎ \uplus        ▽ \bigtriangledown     ⊗ \otimes
+    ÷ \div        ⊓ \sqcap        ◃ \triangleleft        ⊘ \oslash
+    ∗ \ast        ⊔ \sqcup        ▹ \triangleright       ⊙ \odot
+    ⋆ \star       ∨ \vee          ⊲ \lhd(*)              ○ \bigcirc
+    ∘ \circ       ∧ \wedge        ⊲ \rhd(*)              † \dagger
+    ∙ \bullet     ∖ \setminus     ⊴ \unlhd(*)            ‡ \ddagger
+    ⋅ \cdot       ≀ \wr           ⊵ \unrhd(*)            ? \amalg
+    + +           - -
+
+    (*) Not predefined in Latex 2e.
+        Use one of the packages {latexsym}, {amsfonts} or {amssymb}.
+
+==============================================================================
+
+Relation Symbols
+
+    ≤ \leq             ≥ \geq             ≡ \equiv      ⊨ \models
+    ≺ \prec            ≻ \succ            ∼ \sim        ⊥ \perp
+    ≼ \preceq          ≽ \succeq          ≃ \simeq      ∣ \mid
+    ≪ \ll              ≫ \gg              ≍ \asymp      ∥ \parallel
+    ⊂ \subset          ⊃ \supset          ≈ \approx     ⋈ \bowtie
+    ⊆ \subseteq        ⊇ \supseteq        ≅ \cong       ⋈ \Join(*)
+    ⊏ \sqsubset(*)     ⊐ \sqsupset(*)     ≠ \neq        ⌣ \smile
+    ⊑ \sqsubseteq      ⊒ \sqsupseteq      ≐ \doteq      ⌢ \frown
+    ∈ \in              ∋ \ni              ∝ \propto     = =
+    ⊢ \vdash           ⊣ \dashv           > >           < <           
+    : :
+
+    (*) Not predefined in Latex 2e.
+        Use one of the packages {latexsym}, {amsfonts} or {amssymb}.
+
+==============================================================================
+
+Punctuation Symbols
+
+    , ,     ; ;     : \colon     . \ldotp     ⋅ \cdotp
+
+==============================================================================
+
+Arrow Symbols
+
+    ← \leftarrow             ← \longleftarrow          ↑ \uparrow
+    ⇐ \Leftarrow             ⇐ \Longleftarrow          ⇑ \Uparrow
+    → \rightarrow            → \longrightarrow         ↓ \downarrow
+    ⇒ \Rightarrow            ⇒ \Longrightarrow         ⇓ \Downarrow
+    ↔ \leftrightarrow        ↔ \longleftrightarrow     ↕ \updownarrow
+    ⇔ \Leftrightarrow        ⇔ \Longleftrightarrow     ⇕ \Updownarrow
+    ↦ \mapsto                ↦ \longmapsto             ↗ \nearrow
+    ↩ \hookleftarrow         ↪ \hookrightarrow         ↘ \searrow
+    ↼ \leftharpoonup         ⇀ \rightharpoonup         ↙ \swarrow
+    ↽ \leftharpoondown       ⇁ \rightharpoondown       ↖ \nwarrow
+    ⇌ \rightleftharpoons     ↝ \leadsto(*)
+
+    (*) Not predefined in Latex 2e.
+        Use one of the packages {latexsym}, {amsfonts} or {amssymb}.
+
+==============================================================================
+
+Miscellaneous Symbols
+
+    … \ldots      ⋯ \cdots        ⋮ \vdots         ⋱ \ddots
+    א \aleph      ′ \prime        ∀ \forall        ∞ \infty
+    ℏ \hbar       ∅ \emptyset     ∃ \exists        □ \Box(*)
+    ⍳ \imath      ∇ \nabla        ¬ \neg           ◇ \Diamond(*)
+    ? \jmath      √ \surd         ♭ \flat          △ \triangle
+    ℓ \ell        ⊤ \top          ♮ \natural       ♣ \clubsuit
+    ℘ \wp         ⊥ \bot          ♯ \sharp         ♢ \diamondsuit
+    ℜ \Re         ∣ \|            \ \backslash     ♡ \heartsuit
+    ℑ \Im         ∠ \angle        ∂ \partial       ♠ \spadesuit
+    ℧ \mho(*)     . .             | |
+
+    (*) Not predefined in Latex 2e.
+        Use one of the packages {latexsym}, {amsfonts} or {amssymb}.
+
+==============================================================================
+
+Variable-sized Symbols
+
+    ∑ \sum        ⋂ \bigcap       ⊙ \bigodot
+    ∏ \prod       ⋃ \bigcup       ⊗ \bigotimes
+    ∐ \coprod     ⊓ \bigsqcup     ⊕ \bigoplus
+    ∫ \int        ⋁ \bigvee       ⊎ \biguplus
+    ∮ \oint       ⋀ \bigwedge
+
+==============================================================================
+
+Log-like Symbols
+
+    \arccos     \cos      \csc     \exp     \ker        \limsup     \min     \sinh
+    \arcsin     \cosh     \deg     \gcd     \lg         \ln         \Pr      \sup
+    \arctan     \cot      \det     \hom     \lim        \log        \sec     \tan
+    \arg        \coth     \dim     \inf     \liminf     \max        \sin     \tanh
+
+==============================================================================
+
+Delimiters
+
+    ( (           ) )           ↑ \uparrow         ⇑ \Uparrow
+    [ [           ] ]           ↓ \downarrow       ⇓ \Downarrow
+    { \{          } \}          ↕ \updownarrow     ⇕ \Updownarrow
+    ⌊ \lfloor     ⌋ \rfloor     ⌈ \lceil           ⌉ \rceil
+    〈 \langle     〉 \rangle     / /                \ \backslash
+    ∣ |           \|
+
+==============================================================================
+
+Large Delimiters
+
+    ? \rmoustache     ? \lmoustache     ? \rgroup        ? \lgroup
+    ? \arrowvert      ? \Arrowvert      ? \bracevert
+
+==============================================================================
+
+Math mode accents
+
+    â \hat{a}       á \acute{a}     a̅ \bar{a}     ȧ \dot{a}      ă \breve{a}
+    ǎ \check{a}     à \grave{a}     a⃗ \vec{a}     ä \ddot{a}     ã \tilde{a}
+
+==============================================================================
+
+Some other constructions
+
+    g͠  \widetilde{g}         ĝ  \widehat{g}
+    g⃖  \overleftarrow{g}     g⃗  \overrightarrow{g}
+    g̅  \overline{g}          g̲  \underline{g}
+    ?  \overbrace{g}         ?  \underbrace{g}
+    √g \sqrt{g}              ∛g \sqrt[3]{g}
+    fʹ f'                    ?  \frac{abc}{xyz}
+
+==============================================================================
+
+AMS Delimiters
+    ⌜ \ulcorner     ⌝ \urcorner     ⌞ \llcorner     ⌟ \lrcorner
+
+==============================================================================
+
+AMS Arrows
+
+    ⇢  \dashrightarrow          ⇠ \dashleftarrow         ⇇ \leftleftarrows       ⇆ \leftrightarrows
+    ⇚  \Lleftarrow              ↞ \twoheadleftarrow      ↢ \leftarrowtail        ↫ \looparrowleft
+    ⇋  \leftrightharpoons       ↶ \curvearrowleft        ↺ \circlearrowleft      ↰ \Lsh
+    ⇈  \upuparrows              ↿ \upharpoonleft         ⇃ \downharpoonleft      ⊸ \multimap
+    ⇜⇝ \leftrightsquigarrow     ⇉ \rightrightarrows      ⇄ \rightleftarrows      ⇉ \rightrightarrows
+    ⇄  \rightleftarrows         ↠ \twoheadrightarrow     ↣ \rightarrowtail       ↬ \looparrowright
+    ⇌  \rightleftharpoons       ↷ \curvearrowright       ↻ \circlearrowright     ↱ \Rsh
+    ⇊  \downdownarrows          ↿ \upharpoonright        ⇂ \downharpoonright     ⇝ \rightsquigarrow
+
+==============================================================================
+
+AMS Negated Arrows
+
+    ←̷ \nleftarrow          →̷ \nrightarrow         ⇐̷ \nLeftarrow     ⇒̷ \nRightarrow
+    ↔̷ \nleftrightarrow     ⇔̷ \nLeftrightarrow
+
+==============================================================================
+
+AMS Greek
+
+    Ϝ \digamma     ϰ \varkappa
+
+==============================================================================
+
+AMS Hebrew
+
+    ℶ \beth     ℸ \daleth     ℷ \gimel
+
+==============================================================================
+
+AMS Miscellaneous
+
+    ħ \hbar              ℏ \hslash                △ \vartriangle    ▽ \triangledown
+    □ \square            ◊ \lozenge               S⃝ \circledS       ∠ \angle
+    ∡ \measuredangle     ∄ \nexists               ℧ \mho            Ⅎ \Finv
+    ? \Game              ? \Bbbk                  ‵ \backprime      ø \varnothing
+    ▲ \blacktriangle     ▼ \blacktriangledown     ■ \blacksquare    ? \blacklozenge
+    ★ \bigstar           ∢ \sphericalangle        ∁ \complement     ð \eth
+    ╱ \diagup            ╲ \diagdown
+
+==============================================================================
+
+AMS Binary Operators
+
+    ∔ \dotplus         ∖ \smallsetminus     ⋒ \Cap                ⋓ \Cup
+    ⊼ \barwedge        ⊻ \veebar            ∧̿ \doublebarwedge     ⊟ \boxminus
+    ⊠ \boxtimes        ⊡ \boxdot            ⊞ \boxplus            ⋇ \divideontimes
+    ⋉ \ltimes          ⋊ \rtimes            ⋋ \leftthreetimes     ⋌ \rightthreetimes
+    ⋏ \curlywedge      ⋎ \curlyvee          ⊝ \circleddash        ⊛ \circledast
+    ⊚ \circledcirc     ⋅ \centerdot         ⊺ \intercal
+
+==============================================================================
+
+AMS Binary Relations
+
+    ≦ \leqq                   ? \leqslant              ⋜ \eqslantless          ≲ \lesssim
+    ? \lessapprox             ≅ \approxeq              ⋖ \lessdot              ⋘ \lll
+    ≶ \lessgtr                ⋚ \lesseqgtr             ? \lesseqqgtr           ≑ \doteqdot
+    ≓ \risingdotseq           ≒ \fallingdotseq         ∽ \backsim              ⋍ \backsimeq
+    ⊂͇ \subseteqq              ⋐ \Subset                ⊏ \sqsubset             ≼ \preccurlyeq
+    ⋞ \curlyeqprec            ≾ \precsim               ? \precapprox           ◁ \vartriangleleft
+    ◁̲ \trianglelefteq         ⊧ \vDash                 ⊪ \Vvdash               ⌣ \smallsmile
+    ⌢ \smallfrown             ≏ \bumpeq                ≎ \Bumpeq               ≧ \geqq
+    ? \geqslant               ⋝ \eqslantgtr            ≳ \gtrsim               ? \gtrapprox
+    ⋗ \gtrdot                 ⋙ \ggg                   ≷ \gtrless              ⋛ \gtreqless
+    ? \gtreqqless             ≖ \eqcirc                ≗ \circeq               ≜ \triangleq
+    ∼ \thicksim               ≈ \thickapprox           ⊃͇ \supseteqq            ⋑ \Supset
+    ⊐ \sqsupset               ≽ \succcurlyeq           ⋟ \curlyeqsucc          ≿ \succsim
+    ? \succapprox             ▷ \vartriangleright      ▷̲ \trianglerighteq      ⊩ \Vdash
+     ? \shortmid               ? \shortparallel         ≬ \between              ⋔ \pitchfork
+    ∝ \varpropto              ◀ \blacktriangleleft     ∴ \therefore            ɜ \backepsilon
+    ▶ \blacktriangleright     ∵ \because
+
+==============================================================================
