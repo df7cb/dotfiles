@@ -1,10 +1,9 @@
-;;gogo;;;;Neunkirchen;;;;;;;;;49.33/7.17
 Alex;;DL4PQ;;;;Bischmisheim;22.4.1963;;;;;;afu;
 Andreas;;Xellos;;;;;;;;;;;;;49.26/7.04
 Claus;;DB7WD;;;;;;06898/83848;;;;;afu;
-Guiliana;;;;;;;6.10.1977;;;;;;heim-d;
 Hanna;;;;;;;;0681/3014161, 0178/4728513;;;;;asta;
 Lothar;;DC6KO;Jahnstr. 10;;;Dudweiler;;;;;;;afu;
+Robert;;gogo;;;;Neunkirchen;;;;;;;;;49.33/7.17
 Stephan;;lizz;;;;Dresden;16.2.1977;;;;;;plant;;51.05/13.73
 Tuija;;;;;;;5.10.1977;;;;;;heim-d;
 Uni KL;AFG;DL0XK;Bau 24;;;;;0631/205-3130;;;;;afu;
@@ -184,12 +183,14 @@ Philipp;Lucas;;;;;;7.11.;;;;phlucas@cs.uni-sb.de;;rw;
 Ulrike;Luck;DL8ULY;Hirschbergstr. 14, 66459 Kirkel;;;;6.3.1958;06849/1489;;;;;afu;
 Frank;Luithle;;Hellwigstrasse 5;;;;13.9.1977;0681/9658067 (G), 0179/2423872;;;sigi@fsinfo.cs.uni-sb.de;;fsinfo, heim-d;Josefstr. 116a, 66809 Nalbach, 06838-9 23 87
 Olaf;Maennel;;;;;;14.9.1973;;;;info@olafm.de;;fsinfo, heim-d;
+Uli;Martens;;;;;;;;;;uli@youam.net;;;;
 Daniel;Marthaler;;Dekan Albrecht-Str. 3, 66440 Blieskastel;;;;7.1.1976;06842/2891;;;dama0008@stud.uni-sb.de;;vdl;
 Florian;Martin;;;;;;;;;;martin@absint.com;;rw;
 Niklas;Matthies;;Meerwiesertalweg 14, 66123 Saarbrücken;;;;13.6.1974;0681/3 90 42 39;;;matthies@fsinfo.cs.uni-sb.de;;fsinfo;
 Anne;Matysiak;;Kahlheckerweg 2, 66440 Blieskastel;;;;16.5.1977;06842/51750;;;annematysiak@gmx.de;;vdl;
 Herbert;Mayer;;;;;;1.9.1921;;;;;;;
 Sven;Mayer;;;;;;;;;;Sgt.Sven@t-online.de;;;
+Guiliana;Mazzotta;;;;;;6.10.1977;;;;;;heim-d;;
 Orla;McCarthy;;;;;;12.1.1981;;;;;;heim-d;
 Lennart;Meier;DK8TE;;CH;;;15.3.1976;+41 76 5292266;;;meier@tik.ee.ethz.ch;;heim-d, wjp;
 Christian;Meiser;;;;;;18.2.1974;;;;;;heim-d;
@@ -208,7 +209,7 @@ Annie-Colette;Ngoum;;Kaiserslauterer Strasse 30;;;66123 Saarbrücken;20.01.1975;
 Johannes;Niklas;;;;;;;;;;johannesniklas@altavista.net;;heim-d;
 Ines;Oberhofer;;Waldhausweg 17, 720103;;;66123 Saarbrücken;07.03.1980;0681/95 81 02 4, 0177/20 06 85 1;;;;;asta, ai;
 Sascha;Pallasch;;;;;;;;;;;;vdl;
-Arndt;Paschke;;;;;;4.10.1976;;;;arndtpas@gmx.de, arpa0002@stud.uni-sb.de;;heim-d;
+Arndt;Paschke;;Via Prov. Le Galatina 4 E;I;73010 Noha (Lecce);;4.10.1976;0039-(0)836602477, 00393477816515;0039-(0)836602081;;arndtpaschke@web.de, arndtpas@gmx.de;;heim-d;;
 Andreas;Paul;;;;;;;;;;andreas.paul@sap.com;;wjp;
 Frank;Paulus-Rieth;DL4VCG;Illinger Str. 6, 66564 Ottweiler;;;;;06824/5537;4193;2678;dl4vcg@lpa.uni-sb.de;;afu;Lehrstuhl für Prozessautomation, Uni 13, 66123 Saarbrücken
 Jan;Pessenlehner;;Stefanstraße 13, 66125 Sulzbach;;;;;06897/55770, 0177/4052542, 06897/515001 (Wache);;;pessi@gmx.net;;wjp;
@@ -267,6 +268,7 @@ Volker;Schumann;DF5VO;;;;Frankenholz;;0171/7204399;;;;;afu;
 Alexander;Schutz;;Heim D, 2127;;;;3.9.1976;0681/842935, 02403/65921, 0176/60020166;;;schutz@coli.uni-sb.de, alex_schutz@web.de;;heim-d;Eschweiler
 Petra;Schwarz;;Oberdorfstr. 9, 66453 Rubenheim;;;;21.1.1977;06843/261;;;;;vdl;geb. Lenert
 Sandra;Schwarz;;Mühlenweg 4b, 66399 Erfweiler-Ehlingen;;;;10.12.1976;06803/1376;;;;;vdl;
+Deborrah;Schäfer;;Hellwigstr.5;;66121 Saarbrücken;;;0681-9685713, 0160-3674092;;;schade78@web.de;;klettern;;
 Helmut;Schönenberger;;166b;;;Köllerbach;14.2.1941;06806/46496;;;h.schoenenberger@studentenwerk-saarland.de;;heim-d;
 Sebastian;Schöning;;;;;;18.2.1976;0171/9238745;;;schoenin@studcs.uni-sb.de, Sebastian.Schoening@gmx.de;;heim-d;
 Andreas;Schörnig;DF4IAE;;;;Dossenheim;8.10.1976;;;;;;afu;
@@ -288,6 +290,7 @@ Dominique;Taffin;;;;;;;0170/9077717;;;taffin@wjpserver.cs.uni-sb.de;;wjp;
 Ülker;Tapkan;;;;;;30.11.;;;;ulta0000@stud.uni-saarland.de;;heim-d;
 Henrik;Theiling;;;;;;7.2.1973;;;;theiling@absint.com;;rw;
 Stephan;Thesing;;;;;;;;;;thesing@cs.uni-sb.de;;rw;
+Silke;Tonner;;;;;;;;;;joker007@web.de;;asta;;
 Dalibor;Topic;robilad;;;;;;0177/2664192;;;topic@mpi-sb.mpg.de;;plant;
 Stefan;Toussaint;;Pfaffentalstr. 60, 66399 Ommersheim;;;;27.1.1977;06803/2468, 0177/2683676;;;stefantoussaint@gmx.de;;vdl;
 Alina;Trimborn;;;;;;;;;;alina.trimborn@gmx.de;;ai;;
