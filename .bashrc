@@ -38,7 +38,6 @@ xterm*|rxvt|screen*|cygwin)
 *)
 	PS1='\n[$?] \u@\h:\w '$j'\$' ;;
 esac
-export PS1
 unset j u
 
 # internal shell settings
