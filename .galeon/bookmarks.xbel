@@ -209,6 +209,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/listargate.cgi">
+          <title>LSG/2: Mailing List Interface</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048773237</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <bookmark href="http://www.rz.uni-saarland.de/services/netz/wohnheime/">
         <title>RZ: Wohnheime</title>
@@ -303,6 +311,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1047778465</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic/netzwart-statistik.shtml">
+        <title>Gesamt-Statistik</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1048672643</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -633,19 +649,29 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://rzblx1.uni-regensburg.de/ezeit/search.phtml?bibid=SULB">
-          <title>Elektronische Zeitschriftenbibliothek</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1046016455</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www.uni-saarland.de/z-einr/ub/uni-veroeff/jbanf.html">
           <title>Ver&#195;&#182;ffentlichungen von Universit&#195;&#164;tsangeh&#195;&#182;rigen</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1044877172</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rzblx1.uni-regensburg.de/ezeit/search.phtml?bibid=SULB">
+          <title>Elektronische Zeitschriften SULB</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1048768913</time_modified>
+              <time_added>1046016455</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rzblx1.uni-regensburg.de/ezeit/search.phtml?bibid=MPII%26colors=7%26lang=de">
+          <title>Elektronische Zeitschriften MPI</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1048768918</time_modified>
+              <time_added>1048768888</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -1480,6 +1506,39 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.absint.com/">
+        <title>AbsInt: Advanced Compiler Technology for Embedded Systems</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1046078782</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <folder folded="yes">
+        <title>People</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1048499343</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1047658502</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://user.it.uu.se/~jakob/">
+          <title>Jakob Engblom's Homepage</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048499348</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <separator/>
       <folder folded="yes">
         <title>Assembly</title>
         <info>
@@ -1543,22 +1602,6 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1043074940</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.absint.com/">
-        <title>AbsInt: Advanced Compiler Technology for Embedded Systems</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1046078782</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
-        <title>Christoph Berg</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1047658502</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -3380,6 +3423,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.qcc.ca/~charlesc/software/getmail-3.0/">
+          <title>Charles Cazabon's getmail</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048844615</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Hardware kaufen</title>
@@ -4783,6 +4834,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.digitalkamera.de/">
+          <title>digitalkamera.de -- Das Online-Magazin zur Digitalfotografie</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048690754</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
     </folder>
     <folder folded="yes">
@@ -5265,6 +5324,16 @@
           <time_modified>1042735951</time_modified>
           <time_added>1042724966</time_added>
           <smarturl>http://packages.debian.org/cgi-bin/search_packages.pl?keywords=%s&amp;searchon=names&amp;version=all&amp;release=all</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://www.dfn-pca.de/pgpkserv/">
+      <title>PGP</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1048681430</time_modified>
+          <time_added>1048681211</time_added>
+          <smarturl>http://blackhole.pca.dfn.de:11371/pks/lookup?op=index&amp;search=%s</smarturl>
         </metadata>
       </info>
     </bookmark>
