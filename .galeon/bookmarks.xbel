@@ -45,25 +45,13 @@
       </info>
       <bookmark href="http://www.bookmarklets.com/">
         <title>More Bookmarklets</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
         <title>Old versions of this page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){F=' (Open frame in new window first.)'}else{F=''}Q=document.getSelection();if(!Q){void(Q=prompt('No text selected on page.'+F+'\n\nKeywords...?',''))};if(Q)location.href='http://bookmarklets.com/moreinfo.phtml?q='+escape(Q)">
         <title>More Info About...</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:if(document.images.length%3C1){alert('No image!')}else{D0iB=document.images[0];sZ2T=prompt('Resize by..','1.5');if(sZ2T){with(document){write('%3Cimg src='+D0iB.src+' width='+sZ2T*D0iB.width+' height='+sZ2T*D0iB.height+'%3E');close()}}}void(null)">
@@ -75,17 +63,9 @@
       <separator/>
       <bookmark href="javascript:var wN2sc8Rl;Sa5gNA9k=new Function('clearTimeout(wN2sc8Rl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2sc8Rl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',150))">
         <title>Scroll Page (very slow)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (slow)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
@@ -99,10 +79,6 @@
       <separator/>
       <bookmark href="javascript:if(frames.length%3C1){alert('The server indicates that the page was last modified: ' + window.document.lastModified)}else{alert('Page is framed. Use version of bookmarklet for frames. (bookmarklets.com)')}">
         <title>Page Freshness?</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){alert('Frames!')}else{ulBV3pQy=document.getSelection();if(ulBV3pQy!=''){location.href=ulBV3pQy.replace(/\042/g,'').replace(/\047/g,'').replace(/\s/g,'')}else{alert('Select text on page like:\n   http://www.domain.com...')}}">
         <title>Go To Selected URL</title>
@@ -119,20 +95,12 @@
       <separator/>
       <bookmark href="javascript:if(document.cookie.length%3C1){alert('No cookie for this site.')}else{alert('Cookie for this site: '+document.cookie)}">
         <title>Read Cookie for Site</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:function ROIoiW(){var i=0,j,A='anonymous',D,E,F=document.forms;while(i%3CF.length){E=F[i].elements;for(j=0;j%3CE.length;j++){D=E[j];if(D.type=='text'){D.value=(D.name.toUpperCase().indexOf('MAIL')!=-1)?A+'@example.com':A}}i++}}ROIoiW();void(null)">
         <title>AutoFill Anonymous</title>
       </bookmark>
       <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
         <title>Translate to English</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
     </folder>
   </folder>
@@ -1474,7 +1442,7 @@
         </info>
       </bookmark>
     </folder>
-    <folder folded="no">
+    <folder folded="yes">
       <title>Zeug</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
@@ -4087,8 +4055,49 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/behringer_mdx4400_multicom_pro_prodinfo.html">
+          <title>Behringer Multicom Pro MDX4400 Produktinformationen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1035805218</time_modified>
+              <time_added>1035805113</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/alesis_nanocompressor_prodinfo.html">
+          <title>Alesis Nano-Compressor Produktinformationen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1035805174</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/dbx_266_xl_prodinfo.html">
+          <title>DBX 266 XL Compressor/Limiter/Gate Produktinformationen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1035805317</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/pas_ds22_dual_limiter_prodinfo.html">
+          <title>PAS DS22 Dual Limiter Produktinformationen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1035805430</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/artikel-129498.html?ARTTEXTSPRACHE=D%26WAEHRUNG=DM%26PRL=">
+          <title>Behringer MDX 2200 Composer Pro Produktinformationen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1035809315</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
-      <folder folded="no">
+      <folder folded="yes">
         <title>Saabruecken</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
