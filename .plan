@@ -10,53 +10,59 @@
    Universität, Bau 18                0681/96 57 944
    66123 Saarbrücken                  0179/45 30 792 (Mobile)
 * Work:
-   Christoph Berg                     cb@wjpserver.cs.uni-sb.de
+   Christoph Berg                     cb@cs.uni-sb.de
    Lehrstuhl für Rechnerarchitektur   http://www-wjp.cs.uni-sb.de/~cb/
    Computer Science Department        +49 (0)681/302-4490
    Universität des Saarlandes         +49 (0)681/302-4290 (Fax)
    66123 Saarbrücken
 * Ham Radio: DF7CB, Packet: df7cb@db0hom.#sar.deu.eu
 
-Typ  Bits    ID      Datum    Benutzer
-öff  1024/6D8ABE71 1998/07/25 Christoph Berg <cb@fsinfo.cs.uni-sb.de>
+Type Bits/KeyID    Date       User ID
+pub  1024/6D8ABE71 1998/07/25 Christoph Berg <cb@cs.uni-sb.de>
+                              Christoph Berg <cb@fsinfo.cs.uni-sb.de>
                               Christoph Berg <cb@heim-d.uni-sb.de>
+
 -----BEGIN PGP PUBLIC KEY BLOCK-----
-Version: 2.6.3i
+Version: 2.6.3ia
 
 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
-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
-sL+FawgucShwT68prEGbnc2EDJpLSg==
-=ofRl
+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
+cShwT68prEGbnc2EDJpLSg==
+=1jQ8
 -----END PGP PUBLIC KEY BLOCK-----
 
 -----BEGIN GEEK CODE BLOCK-----
