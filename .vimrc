@@ -25,7 +25,7 @@ set smartcase		" Do case-sensitive case sensitive matching
 set nostartofline	" Do not move to start of line on buffer change etc.
 set textwidth=0		" Don't wrap words by default
 set title		" Set xterm title ... to:
-set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y
+set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
 "set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
 set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
