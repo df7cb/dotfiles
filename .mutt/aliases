@@ -24,6 +24,7 @@ alias fsi FS Intern <fsi@fsinfo.cs.uni-sb.de>
 alias fsm fsm@fsinfo.cs.uni-sb.de
 alias fsn /dev/null <fs-nulldevice@fsinfo.cs.uni-sb.de>
 alias fsr Fachschaftsrat Informatik <fsr@fsinfo.cs.uni-sb.de>
+alias gk Graduiertenkolleg Leistungsgarantien <gk@cs.uni-sb.de>
 alias guenther Margot Günther <guenther@cs.uni-sb.de>
 alias gz Geschäftszimmer <gz@cs.uni-sb.de>
 alias h.becker Hendrik Becker <h.becker@internett.de>
@@ -46,11 +47,13 @@ alias mschmidt Michael Schmidt <mschmidt@absint.com>
 alias neli Neli Busch <cb@labastide.net>
 alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
+alias preiss Jochen Preiss <preiss@de.ibm.com>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
 alias vdl-abi96 Abi 96 <vdl-abi96@heim-d.uni-sb.de>
 alias video4linux-list Video4Linux <video4linux-list@redhat.com>
+alias weikum Gerhard Weikum <weikum@cs.uni-sb.de>
 alias wspark Wooseok Park <wspark@cs.uni-sb.de>
 source ~/.mutt/aliases.addressbook
