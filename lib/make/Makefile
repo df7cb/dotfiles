@@ -12,6 +12,7 @@ TEX = latex
 	dvips $<
 
 FIG2DEV = /home/cb/PVS/papers/misc/fig2eps.pl
+fig2eps: $(patsubst %.fig, %.eps, $(wildcard *.fig))
 %.eps: %.fig
 	$(FIG2DEV) $< $@
 
