@@ -281,6 +281,7 @@ alt-addresses=cb@fsinfo.cs.uni-sb.de,
 	berg@fsinfo.cs.uni-sb.de,
 	chbe0025@stud.uni-sb.de,
 	cb@heim-d.uni-sb.de,
+	cb@cs.uni-sb.de,
 	cb@wjpserver.cs.uni-sb.de,
 	cb@wurzelausix.cs.uni-sb.de
 
