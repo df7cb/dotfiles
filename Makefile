@@ -38,10 +38,10 @@ export CVSIGNORE=*
 export CVS_RSH=ssh
 
 up: update
-update: bookmark-clean known_hosts-sort
+update: cleanup
 	cvs -q update
 
-safe: bookmark-clean known_hosts-sort conflict
+safe: cleanup conflict
 	for file in `cvs -q -n update | grep '^[MPU] ' | cut -c 3-` ; do \
 		cvs update $$file ; done
 
@@ -49,11 +49,18 @@ conflict:
 	-cvs -q -n update | grep '^C '
 
 com: commit
-commit: bookmark-clean known_hosts-sort
-	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan
+commit: cleanup
+	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan
+
+## cleanup stuff ##
+
+cleanup: bookmark-clean galeon-clean known_hosts-sort
 
 bookmark-clean:
 	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
+
+galeon-clean:
+	perl -i -ne 'print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
 
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
