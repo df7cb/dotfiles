@@ -71,7 +71,7 @@
 #              Names of all shell variables.  May also be specified as -v.
 
 # general stuff
-complete -o default -d cd
+complete -o default -d cd rd
 complete -o default -A running disown
 complete -o default -c strace type
 complete -v unset vared
