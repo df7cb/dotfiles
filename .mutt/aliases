@@ -1,18 +1,18 @@
 # $Id$
 # mutt aliases
-alias DVABernd Bernd Dörr <DVABernd@aol.com>
+alias DVABernd Bernd DÃ¶rr <DVABernd@aol.com>
 alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
-alias aerat-ml Ältestenrat <aerat-ml@asta.uni-saarland.de>
+alias aerat-ml Ã„ltestenrat <aerat-ml@asta.uni-saarland.de>
 alias ai Aktive Idealisten <ai@fsinfo.cs.uni-sb.de>
-alias altpraesis Alt-Präsis <altpraesis@heim-d.uni-sb.de>
+alias altpraesis Alt-PrÃ¤sis <altpraesis@heim-d.uni-sb.de>
 alias andrewmort Andrew Morton <andrewmort@yahoo.com>
 alias arnaud.fietzke Arnaud Fietzke <arnaud.fietzke@gmx.net>
-alias asta AStA Saarbrücken <asta@asta.uni-saarland.de>
+alias asta AStA SaarbrÃ¼cken <asta@asta.uni-saarland.de>
 alias asta_rso_gewinnspiel AStA-RSO-Gewinnspiel <asta_rso_gewinnspiel@web.de>
 alias bogdana Bogdana Dakova <bogdana@cs.uni-sb.de>
 alias cbieg Claudia Bieg <cbieg@cs.uni-sb.de>
 alias cfry Charles Fry <cfry@frogcircus.org>
-alias champagnnia Verena Bürger <champagnnia@yahoo.de>
+alias champagnnia Verena BÃ¼rger <champagnnia@yahoo.de>
 alias control Debian Bugs Control <control@bugs.debian.org>
 alias control@bugs.guug.de Mutt Bugs Control <control@bugs.guug.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
@@ -30,8 +30,8 @@ alias fsr Fachschaftsrat Informatik <fsr@fsinfo.cs.uni-sb.de>
 alias g-wilhelm Lehrstuhl Wilhelm <g-wilhelm@cs.uni-sb.de>
 alias gg Gunter Gerhardt <gg@guntergerhardt.de>
 alias gk Graduiertenkolleg Leistungsgarantien <gk@cs.uni-sb.de>
-alias guenther Margot Günther <guenther@cs.uni-sb.de>
-alias gz Geschäftszimmer <gz@cs.uni-sb.de>
+alias guenther Margot GÃ¼nther <guenther@cs.uni-sb.de>
+alias gz GeschÃ¤ftszimmer <gz@cs.uni-sb.de>
 alias h-j.schmidt Hans-Joachim Schmidt <h-j.schmidt@bildung.saarland.de>
 alias h.becker Hendrik Becker <h.becker@internett.de>
 alias h.schuh Hans Joachim Schuh <h.schuh@rz.uni-sb.de>
@@ -41,9 +41,9 @@ alias heimfee Heimgeist <heimfee@heim-d.uni-sb.de>
 alias heimlich Heimlich <heimlich@heim-d.uni-sb.de>
 alias heimlinge Heimbewohner D <heimlinge@heim-d.uni-sb.de>
 alias herve Herve Peuengueu <herve@heim-d.uni-sb.de>
-alias hp Heimpräsidenten D <hp@heim-d.uni-sb.de>
+alias hp HeimprÃ¤sidenten D <hp@heim-d.uni-sb.de>
 alias jakob Jakob Engblom <jakob@virtutech.com>
-alias joern.schneider Jörn Schneider <Joern.Schneider@de.bosch.com>
+alias joern.schneider JÃ¶rn Schneider <Joern.Schneider@de.bosch.com>
 alias kassenwart Kassenwart D <kassenwart@heim-d.uni-sb.de>
 alias krieger Hans-Ulrich Krieger <krieger@dfki.de>
 alias labor Labor <labor@wjpserver.cs.uni-sb.de>
@@ -61,20 +61,20 @@ alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
 alias nkuttler Jean-Nicolas Kuttler <nkuttler@asta.uni-saarland.de>
 alias pilzecker Markus Pilzecker <pilzecker@free.fr>
 alias pisg-general Pisg <pisg-general@lists.sourceforge.net>
-alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
+alias praesidium HeimprÃ¤sidium D <praesidium@heim-d.uni-sb.de>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias resa ReSa <resa@asta.uni-saarland.de>
-alias stupisten \"51. Stupa\" <stupisten@asta.uni-saarland.de>
+alias stupisten 51. Stupa <stupisten@asta.uni-saarland.de>
 alias submit Debian Bugs Submit <submit@bugs.debian.org>
 alias submit@bugs.guug.de Mutt Bugs Submit <submit@bugs.guug.de>
 alias timovoe Timo von Oertzen <timovoe@studcs.uni-sb.de>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
-alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
+alias tnt-devel TNT developers <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
 alias vdl-abi96 Abi 96 <vdl-abi96@heim-d.uni-sb.de>
 alias video4linux-list Video4Linux <video4linux-list@redhat.com>
 alias w.heidrich Waltraud Heidrich <w.heidrich@studentenwerk-saarland.de>
-alias w.mueller Wolfgang Müller <w.mueller@univw.uni-saarland.de>
+alias w.mueller Wolfgang MÃ¼ller <w.mueller@univw.uni-saarland.de>
 alias weber.alex Alexandra Weber <weber.alex@gmx.net>
 alias weikum Gerhard Weikum <weikum@cs.uni-sb.de>
 alias wspark Wooseok Park <wspark@cs.uni-sb.de>
