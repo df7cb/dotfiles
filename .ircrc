@@ -52,6 +52,8 @@
 /set suppress_server_motd on
 /set tab on
 /set tab_max 0
+# NONE muﬂ man erst installieren :-(
+/set translation NONE
 /set underline_video on
 /set use_old_msg off
 /set user_information Student of Computer Science
@@ -82,7 +84,7 @@
 /alias log /set log
 /alias m /msg
 /alias mo /mode
-/alias op /mode * +o
+/alias op /mode * +ooo
 /alias quit /exit
 /alias sb /who *-sb.*
 /alias t /topic
@@ -101,6 +103,8 @@
 # Channel-Aliase
 #/alias sar /join #saar
 #/alias wsar /who #saar
+/alias heim /msg heimgeist
+/alias heimgeist /msg heimgeist
 /alias heimd /join #heim-d
 /alias wheimd /who #heim-d
 /alias tt /msg trancetip
