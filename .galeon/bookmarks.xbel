@@ -3276,30 +3276,6 @@
           </metadata>
         </info>
         <folder folded="yes">
-          <title>TNT</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>969120724</time_added>
-            </metadata>
-          </info>
-          <bookmark href="ftp://excelsior.kullen.rwth-aachen.de/pub/packet_radio/tnt/">
-            <title>Directory of /pub/packet_radio/tnt</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>933179997</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-          <bookmark href="http://excelsior.kullen.rwth-aachen.de/WSPse/Packet.php3?lang=de">
-            <title>WSPse: Packet-Radio</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>969120754</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-        </folder>
-        <folder folded="yes">
           <title>ampr.org</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -3832,6 +3808,31 @@
         </bookmark>
       </folder>
       <folder folded="yes">
+        <title>tnt</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1059301172</time_modified>
+            <time_added>969120724</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.wspse.de/WSPse/Packet.php3?lang=de">
+          <title>WSPse: Packet-Radio</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1059301227</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="ftp://excelsior.kullen.rwth-aachen.de/pub/packet_radio/tnt/">
+          <title>Directory of /pub/packet_radio/tnt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>933179997</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
         <title>vim</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -3893,6 +3894,23 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>964196556</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>AFu</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1059310431</time_modified>
+            <time_added>1059310424</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://home.t-online.de/home/dg1bbq/">
+          <title>DG1BBQ's 7PLUS/BS Homepage</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1059310466</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -4015,6 +4033,22 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1051694706</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.steve.org.uk/Debian/">
+        <title>steve.org.uk: Debian Security Auditing Project</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1059820721</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://db.debian.org/">
+        <title>db.debian.org</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1059820831</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -5844,15 +5878,15 @@
         </info>
       </bookmark>
     </folder>
-    <bookmark href="http://www.google.com">
+    <bookmark href="http://www.google.de">
       <title>Google</title>
       <desc>Enter web search term</desc>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>google</nick>
           <pixmap>.galeon/favicons/www.google.de_favicon.ico</pixmap>
-          <time_modified>1041861467</time_modified>
-          <smarturl>http://www.google.com/search?q=%s</smarturl>
+          <time_modified>1059819435</time_modified>
+          <smarturl>http://www.google.de/search?q=%s</smarturl>
         </metadata>
       </info>
     </bookmark>
