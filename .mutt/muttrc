@@ -62,6 +62,7 @@ unignore Date
 set abort_unmodified=ask-yes
 set alias_file=~/.mutt/aliases
 set alternates=^cb@.*uni-sb.de$
+set attribution="Re: %s [%f, %d, %i]"
 unset beep
 #set beep_new
 unset bounce_delivered
