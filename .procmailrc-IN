@@ -38,53 +38,6 @@ DEFAULT=mail/IN/cb
 	debian/wnpp
 }
 
-### X-Label
-
-# X-GUUG-PR-Message: report 1680
-:0fhw
-* !^X-Label:
-* ^X-(Debian|GUUG)-PR-Message: (report|closed|ack-info) \/[0-9]*
-| formail -i"X-Label: #$MATCH"
-:0fhw
-* !^X-Label:
-* ^X-PTS-Package: \/.*
-| formail -i"X-Label: p $MATCH"
-:0fhw
-* !^X-Label:
-* ^List-Id: <debian-\/[a-z-]*
-| formail -i"X-Label: $MATCH"
-
-# List-Id: discussion of the procmail program <procmail.lists.RWTH-Aachen.DE>
-# List-Id: <irssi-users.dragoncat.net>
-# List-Id: Unix Selbsthilfegruppe <unix-ag.net.uni-sb.de>
-# Delivered-To: mailing list mutt-rpm@mutt.justpickone.org
-# X-list: muttpatches
-:0fhw
-* !^X-Label:
-* ^(List-Id: .*<|X-list: |Sender: owner-|Delivered-To: mailing list )\/[a-z-]*
-| formail -i"X-Label: $MATCH"
-
-:0fhw
-* !^X-Label:
-* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
-| formail -i"X-Label: root"
-
-:0fhw
-* !^X-Label:
-* ^TO_g-wilhelm@cs.uni-sb.de
-| formail -i"X-Label: g-wilhelm"
-
-:0fhw
-* !^X-Label:
-* ^TO_cb
-| formail -i"X-Label: cb"
-
-:0fhw
-* !^X-Label:
-| formail -i"X-Label: -"
-
-### /X-Label
-
 :0
 * ^To: mutt-dev@mutt.org
 * ^Subject: \[.*\] CVS repository changes
@@ -102,19 +55,17 @@ DEFAULT=mail/IN/cb
 # X-Debian-PR-Message: ack-info
 # Sender: Debian BTS <debbugs@master.debian.org>
 #* ^Sender:.*(debbugs@master.debian.org|bugs@trithemius.gnupg.org)
-* ^Sender:.*debbugs@master.debian.org
+#* ^Sender:.*debbugs@master.debian.org
 * ^X-(Debian|GUUG)-PR-Message: ack-info
 mail/IN/debian-bts
 
-:0:
-* ^X-Mailing-List: .*debian-user-german
-#* ^To: .*debian
-mail/IN/debian-user-german
+#:0:
+#* ^X-Mailing-List: .*debian-user-german
+#mail/IN/debian-user-german
 
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
 * ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org)
-#* ^To: .*debian
 mail/IN/debian
 
 :0:
@@ -132,10 +83,6 @@ mail/IN/lists
 :0:
 * ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
 mail/IN/root
-
-:0:
-* ^Sender: owner-(fs[rgm]|720)@fsinfo.cs.uni-sb.de
-mail/IN/fsinfo
 
 :0:
 mail/IN/cb
