@@ -128,8 +128,8 @@
       <title>Heim D</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>/home/cb/.galeon/favicons/www.heim-d.uni-sb.de_d-icon.gif</pixmap>
-          <time_modified>1030658195</time_modified>
+          <pixmap>.galeon/favicons/www.heim-d.uni-sb.de_d-icon.gif</pixmap>
+          <time_modified>1037186365</time_modified>
           <time_added>934990422</time_added>
         </metadata>
       </info>
@@ -4462,8 +4462,8 @@
       <title>News</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>/home/cb/.galeon/favicons/zeit.gif</pixmap>
-          <time_modified>1029098566</time_modified>
+          <pixmap>.galeon/favicons/zeit.gif</pixmap>
+          <time_modified>1037186346</time_modified>
           <time_added>894974902</time_added>
         </metadata>
       </info>
