@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+# $Id$
+
+# convert addressbook database to mailing list
+
+use lib '.';
+use addressbook;
+
+$kat = shift || "";
+
+while(<>) {
+	addr_get_line($_);
+	$kategorie ||= "";
+	next unless $kategorie =~ /\b$kat\b/;
+	next unless $email;
+	foreach (split /,\s*/, $email) {
+		print "$vorname $nachname <$_>\n";
+	}
+}

@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+# $Id$
+
+# convert addressbook database to .html
+
+use lib '.';
+use addressbook;
+
+while(<>) {
+	addr_get_line($_);
+
+	print "<dt>$vorname $nachname\n";
+	print "<dd>\n";
+	print "$strasse\n";
+	print "$land-" if $land;
+	print "$plz $ort\n";
+	print "email: $email\n" if $email;
+	print "www: $www\n" if $www;
+}
