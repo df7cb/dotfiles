@@ -233,3 +233,4 @@ hilights = (
   { text = "cb"; nick = "yes"; word = "yes"; },
   { text = "Myon"; nick = "yes"; word = "yes"; }
 );
+logs = { };
