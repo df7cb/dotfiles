@@ -87,7 +87,7 @@ Key	slash	A	S4	CursorMove +0 +1
 
 # window ops
 # Sun keys
-Key	SunFront A	A	Raise
+#Key	SunFront A	A	Raise
 
 # Meta keys
 Key	r	A	4	RaiseLower
