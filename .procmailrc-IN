@@ -20,7 +20,7 @@ mail/IN/fsinfo
 mail/IN/linux-sony
 
 :0:
-* ^From: .*(MAILER-DAEMON|root|rzsnetz)@
+* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte)@
 mail/IN/root
 
 :0:
