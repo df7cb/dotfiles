@@ -47,15 +47,16 @@
 * ^TO_.*@avacs.org
 | formail -i"X-Label: avacs"
 
-#:0fhw
-#* !^X-Label:
-#* ^Received: .* for <cb\+cs@heim-d
-#| formail -i"X-Label: cs"
-
 :0fhw
 * !^X-Label:
-* ^TO_cb
-| formail -i"X-Label: cb"
+* ^Delivered-To: .*@df7cb.de
+* ^Delivered-To: \/[^@]*
+| formail -i"X-Label: $MATCH"
+
+#:0fhw
+#* !^X-Label:
+#* ^TO_cb
+#| formail -i"X-Label: cb"
 
 :0fhw
 * !^X-Label:
