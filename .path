@@ -8,6 +8,9 @@
 # and other stuff are located. ~/.path-local can be used to add local prefixes
 # and single directories.
 
+# get canonized OS name
+[ -z "$OS" ] && . $HOME/bin/os
+
 # some defaults
 PREFIXES="$HOME:/usr/local:/usr/pkg:/usr::/usr/X11R6:/usr/openwin"
 # :: is /, /usr/pkg NetBSD, /usr/openwin Solaris
@@ -15,7 +18,7 @@ PATH_PRELOAD="$HOME/bin/${OS:-/not/found/}" # my arch-dependent binaries
 PATH="$PATH:/usr/ucb:/usr/5bin:/usr/games" # some strange locations
 # in theory, manpath should make this script mostly redundant, but this does
 # not work for $HOME/man etc.
-if which manpath > /dev/null ; then
+if which manpath > /dev/null 2> /dev/null ; then
 	save="$MANPATH"
 	unset MANPATH
 	MANPATH="$save:`manpath 2> /dev/null`"
