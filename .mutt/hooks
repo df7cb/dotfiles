@@ -19,4 +19,4 @@ send-hook '~t (majordomo\|-request)' "unset pgp_autosign"
 send-hook '~t debian\.org$' "set pgp_sign_as=0x58510B5A"
 
 send-hook . 'unmy_hdr X-Debbugs-No-Ack:'
-send-hook '~t bugs\.debian\.org$' 'my_hdr X-Debbugs-No-Ack: please'
+send-hook '~C bugs\.debian\.org$' 'my_hdr X-Debbugs-No-Ack: please'
