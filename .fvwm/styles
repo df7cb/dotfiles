@@ -72,8 +72,9 @@ Style  "IconManModule"	NoTitle, Sticky, NoHandles, Icon toolbox.xpm
 
 # .xinitrc stuff
 Style	"*apm"		NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
-Style	"*biff"		NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
-Style	"console*"	Sticky, WindowListSkip
+Style	"*biff"		NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff
+Style	"wmWeather"	NoTitle,Sticky,WindowListSkip,ClickToFocus,NoUSPosition,GrabFocusOff
+Style	"console*"	Sticky
 Style	"coolmail"	NoTitle, Sticky, WindowListSkip
 Style	"*clock*"	NoTitle,Sticky,WindowListSkip,ClickToFocus,StaysOnTop
 Style	"xeyes"		NoTitle, Sticky, WindowListSkip

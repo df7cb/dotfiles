@@ -4,13 +4,9 @@
 # fvwm-startup functions ##################################################
 
 AddToFunc InitFunction
-#+	"I"	Module FvwmBanner
 +	"I"	Module FvwmPager 0 0
 +	"I"	Wait FvwmPager
 +	"I"	Function XTerms
-#+	"I"	Module FvwmButtons
-#+	"I"	Exec xterm -ls -geometry +150+85
-#+	"I"	Exec xosview -geometry 175x135-10-10
 
 # fvwm-restart
 AddToFunc RestartFunction
@@ -69,3 +65,9 @@ AddToFunc MenuOrClose	"Click"	Menu WindowOps
 
 AddToFunc DeleteOrClose	"Click"	Delete
 +	"DoubleClick"	Close
+
+AddToFunc PrevPrevWarp	"I"	Prev [*] Focus NoWarp
++			"I"	Prev [*] FlipFocus NoWarp
++			"I"	Next [*] Focus NoWarp
++			"I"	Next [*] Focus NoWarp
++			"I"	Prev [*] WarpToWindow 11p 11p

@@ -3,6 +3,7 @@
 # This file is read by .fvwm2rc-xterm.m4
 # otherwise, the menu entry order is screwed up
 
+#DestroyMenu Main
 AddToMenu Main	"netscape"	Exec netscape
 +		" @hal"		Exec ssh -f -c none hal netscape
 +		" @goedel"	Exec ssh -f goedel netscape
@@ -38,26 +39,22 @@ AddToMenu FvwmMenu	"fvwm2"	Title
 
 DestroyMenu WindowOps
 AddToMenu WindowOps "Window Ops"	Title
-+			"Move"		Move
-+			"Resize"	Resize
-+			"Resize..."	Popup ResizeMenu
-+			"Maximize"	Maximize
-+			"Iconify"	Iconify
-+			"Stick"		Stick
-+			"Shade"		WindowShade
-+			""		Nop
-+			"Raise"		Raise
-+			"Lower"		Lower
-+			"Refresh"	RefreshWindow
-+			""		Nop
-#+			"Next focus"	Next [*] Focus
-#+			"Prev focus"	Prev [*] Focus
-+			"Window list"	WindowList
-+			"Identify"	Module FvwmIdent
-+			""		Nop
-+			"Delete"	Delete
-+			"Close"		Close
-+			"Destroy"	Destroy
++	"Identify	 S1"	Module FvwmIdent
++	"Iconify	 F4"	Iconify
++	"Refresh	 S4"	RefreshWindow
++	"Close	 A4"		Close
++	"Destroy	CA4"	Destroy
++	"Raise	 F5"		Raise
++	"Lower	 S5"		Lower
++	"Shade	 F6"		WindowShade
++	"Stick	 S6"		Stick
++	""			Nop
++	"Move	 F8"		Move
++	"Resize	 F9"		Resize
+#+	"Resize..."		Popup ResizeMenu
++	"Max vert	F10"	Function Maximize0100
++	"Maximize	F11"	Function Maximize100100
++	"Max horiz	F12"	Function Maximize1000
 
 
 DestroyMenu ResizeMenu
