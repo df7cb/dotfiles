@@ -4127,6 +4127,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://members.lycos.nl/amazingart/E/index.html">
+          <title>Amazing Art (optical illusions)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1049736141</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://www.stud.ntnu.no/~shane/stasj/div_bilder/">
           <title>Index of Pictures</title>
           <info>
@@ -4747,8 +4755,7 @@
         <title>My Ebay</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <pixmap>.galeon/favicons/pages.ebay.com_favicon.ico</pixmap>
-            <time_modified>1043400992</time_modified>
+            <time_modified>1050139662</time_modified>
             <time_added>1043065756</time_added>
           </metadata>
         </info>
@@ -5395,6 +5402,24 @@
           <time_modified>1048681430</time_modified>
           <time_added>1048681211</time_added>
           <smarturl>http://blackhole.pca.dfn.de:11371/pks/lookup?op=index&amp;search=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="javascript:var a=location.href.search(/[0-9]+/);location.href=(location.href.replace(/[0-9]+/,-1+parseInt(location.href.substr(a,10))));">
+      <title>-</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1050102608</time_modified>
+          <time_added>1050102570</time_added>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="javascript:var a=location.href.search(/[0-9]+/);location.href=(location.href.replace(/[0-9]+/,1+parseInt(location.href.substr(a,10))));">
+      <title>+</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1050102590</time_modified>
+          <time_added>1050102570</time_added>
         </metadata>
       </info>
     </bookmark>
