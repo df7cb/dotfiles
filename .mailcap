@@ -1,0 +1,39 @@
+application/excel;/home/cb/.openoffice/1.1.1/soffice %s
+application/msexcel;/home/cb/.openoffice/1.1.1/soffice %s
+application/mspowerpoint;/home/cb/.openoffice/1.1.1/soffice %s
+application/msword;/home/cb/.openoffice/1.1.1/soffice %s
+application/pdf; acroread '%s'
+application/postscript; gv '%s'
+application/powerpoint;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.ms-excel;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.ms-powerpoint;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.calc;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.draw;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.impress-packed;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.impress;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.math;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.writer-global;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.stardivision.writer;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.calc.template;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.calc;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.draw.template;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.draw;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.impress.template;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.impress;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.math;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.writer.global;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.writer.template;/home/cb/.openoffice/1.1.1/soffice %s
+application/vnd.sun.xml.writer;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-gunzip; gunzip -c '%s'; copiousoutput; description=Gzipped data
+application/x-msexcel;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-mspowerpoint;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-perl;xterm -e less %s
+application/x-starcalc;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-stardraw;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-starimpress;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-starmath;/home/cb/.openoffice/1.1.1/soffice %s
+application/x-starwriter;/home/cb/.openoffice/1.1.1/soffice %s
+audio/x-pn-realaudio;realplay '%s'
+image/*; xv '%s'; test=test -n "$DISPLAY"
+text/html; /usr/bin/links '%s'; needsterminal; description=HTML Text; nametemplate=%s.html
+text/html; /usr/bin/links -dump '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
