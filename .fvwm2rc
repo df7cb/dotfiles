@@ -84,7 +84,8 @@ XORvalue 205
 ###############################################################################
 
 # Text and background color for the title bar of the selected window
-HilightColor 		yellow #c06077
+#HilightColor 		yellow #c06077
+HilightColor 		red2 LightGreen
 
 Style	"*"		ForeColor Black
 Style	"*"		BackColor LightSkyBlue
