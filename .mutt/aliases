@@ -12,6 +12,7 @@ alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
 alias daniel Daniel Schröter <daniel@asta.uni-sb.de>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
 alias dowe0009 Dominik Weber <dowe0009@stud.uni-sb.de>
+alias engblom Jakob Engblom <jakob@acm.org>
 alias ferdinand Christian Ferdinand <ferdinand@absint.com>
 alias fje Franz Josef Engel <fje@rz.uni-sb.de>
 alias fsg FS Gossip <fsg@fsinfo.cs.uni-sb.de>
@@ -40,5 +41,6 @@ alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
+alias vdl-abi96 Abi 96 <vdl-abi96@heim-d.uni-sb.de>
 alias video4linux-list Video4Linux <video4linux-list@redhat.com>
 source ~/.mutt/aliases.addressbook
