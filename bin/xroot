@@ -1,18 +1,22 @@
 #!/bin/sh
 # $Id$
 
-if [ $1 ] ; then
-	FILE="$1"
-elif up d096.stw.stud.uni-saarland.de ; then
-	URL="http://www.df7cb.de/bin/random-comic"
-	FILE="/tmp/xroot-$$"
-	RM=1
-	wget -q -O "$FILE" "$URL"
-else
-	FILE="$HOME/bilder/back"
-fi
+FILE="http://www.df7cb.de/bin/random-comic"
 
-XV="xv -root -quit +noresetroot -rmode 5 -rbg navy"
+[ $1 ] && FILE="$1"
+
+case $FILE in
+	http*) URL="$FILE"
+	FILE="/tmp/xroot-$$"
+	if wget -T 5 -q -O "$FILE" "$URL" ; then
+		RM=1
+	else
+		FILE="$HOME/bilder/back"
+	fi ;;
+esac
+
+#XV="xv -root -quit +noresetroot -rmode 5 -rbg navy"
+XV="display -window root -backdrop -foreground navy"
 [ -f $FILE ] && $XV $FILE
 
 [ $RM ] && rm -f $FILE
