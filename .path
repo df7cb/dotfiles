@@ -13,6 +13,7 @@ for dir in /usr/local/sbin /sbin /usr/sbin \
 	/usr/openwin/bin /usr/X11R6/bin \
 	/usr/games/bin /usr/games \
 	/usr/ucb /usr/5bin /usr/etc /usr/pkg/bin \
+	/usr/ccs/bin \
 	/shared/bin /shared/games/bin \
 	/usr/compat/linux/bin ; do
 	[ -d $dir ] && PATH=$PATH:$dir
