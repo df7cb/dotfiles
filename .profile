@@ -3,7 +3,7 @@
 
 . $HOME/.path
 
-SHELL=`which zsh` && exec $SHELL -l
+#SHELL=`which zsh` && exec $SHELL -l
 SHELL=`which bash` && exec $SHELL -login
 SHELL=`which tcsh` && exec $SHELL
 SHELL=/bin/sh
