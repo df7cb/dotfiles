@@ -6,27 +6,38 @@ source ~/.mutt/aliases.new
 #source ~/.mutt/pgp5
 
 # key bindings
-bind index - previous-page
-#bind browser <space> next-page
-bind index <space> next-page
-bind generic <space> next-page
-#bind pager <space> next-page
-bind pager <up> previous-line
-bind pager <down> next-line
-bind index \# delete-message
-bind pager \# delete-message
-macro generic d s=deleted\cM 'Move message to trash folder'
-macro index d s=deleted\cM 'Move message to trash folder'
-macro pager d s=deleted\cM 'Move message to trash folder'
-bind index G last-entry
-bind pager G bottom
-macro compose = f=
-bind compose <return> send-message
-bind compose v view-attach
-macro index = s=
-macro pager = s=
-bind index x sync-mailbox
-bind pager x sync-mailbox
+bind	index	-	previous-page
+#bind	browser	<space>	next-page
+bind	index	<space>	next-page
+bind	generic	<space>	next-page
+#bind	pager	<space>	next-page
+bind	pager	<up>	previous-line
+bind	pager	<down>	next-line
+bind	index	<esc><tab> previous-unread
+bind	pager	<esc><tab> previous-unread
+bind	index	<tab>	next-unread
+bind	pager	<tab>	next-unread
+bind	index	\#	delete-message
+bind	pager	\#	delete-message
+bind	index	*	toggle-new	# this should be mark-as-new :-/
+bind	pager	*	mark-as-new	# this should be toggle-new :-/
+macro	generic	A	:source<space>~/.mutt/muttrc<enter>	'Re-read aliases/muttrc'
+macro	generic	d	s=deleted<enter>	'Move message to trash folder'
+macro	index	d	s=deleted<enter>	'Move message to trash folder'
+macro	pager	d	s=deleted<enter>	'Move message to trash folder'
+macro	index	^d	'<esc>t;d'	'Move all messages in thread to trash folder'
+bind	index	G	last-entry
+bind	pager	G	bottom
+bind	generic	N	search-opposite
+bind	index	N	search-opposite
+bind	index	x	sync-mailbox
+bind	pager	x	sync-mailbox
+macro	index	=	s=		'Save to ~/mail/'
+macro	pager	=	s=		'Save to ~/mail/'
+
+bind	compose	<enter>	send-message
+macro	compose	=	f=		'Fcc to ~/mail/'
+bind	compose	v	view-attach
 
 # headers
 #my_hdr fcc: bla
@@ -34,10 +45,15 @@ ignore Importance # M$
 ignore Organisation Organization # stuff
 ignore Mail-Followup-To # mailing lists
 ignore X-BeenThere X-Mailman List- # mailman
+ignore Delivered-To Precedence X-Loop Errors-To # mailman (video4linux)
+ignore X-Envelope-From X-Envelope-To Path Newsgroups NNTP-Posting-Host X-Trace # NNTP->Mail postings
 ignore X-Bulkmail # tagesschau.de
 ignore X-Cron-Env # cron
 ignore X-MIME-Autoconverted Auto-Submitted # sendmail
 ignore X-Spam-Level X-Keywords X-UID # spamassassin
+ignore X-Mailer X-Accept-Language # Mozilla
+ignore User-Agent # slrn
+ignore X-Sender, X-X-Sender # t-dialin.net, crap
 
 # options
 #set abort_nosubject
