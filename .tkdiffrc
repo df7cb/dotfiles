@@ -79,7 +79,7 @@ define tagtext {1}
 define toolbarIcons {1}
 
 # Directory for scratch files
-define tmpdir "/tmp/cb"
+#define tmpdir "/tmp/cb"
 
 # custom code
 # put any custom code you want to be executed in the
