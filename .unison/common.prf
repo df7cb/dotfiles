@@ -1,0 +1,22 @@
+# common config
+
+ignore = Name .*.swp
+ignore = Name .#*
+ignore = Name *~
+ignore = Name .*~
+ignore = Name .nfs*
+
+diff = tkdiff
+merge = tkdiff CURRENT1 CURRENT2 -a OLD -o NEW
+merge2 = tkdiff CURRENT1 CURRENT2 -o NEW
+editor = vim
+
+logfile = tmp/unison.log
+
+## example
+#include common.prf
+#label = server.asta.uni-saarland.de
+#root = /data/unison/asta
+#root = ssh://server.asta.uni-saarland.de//home
+#group = true
+#times = true
