@@ -93,6 +93,10 @@
       </bookmark>
       <bookmark href="javascript:function ROIoiW(){var i=0,j,A='anonymous',D,E,F=document.forms;while(i%3CF.length){E=F[i].elements;for(j=0;j%3CE.length;j++){D=E[j];if(D.type=='text'){D.value=(D.name.toUpperCase().indexOf('MAIL')!=-1)?A+'@example.com':A}}i++}}ROIoiW();void(null)">
         <title>AutoFill Anonymous</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
         <title>Translate to English</title>
