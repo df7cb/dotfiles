@@ -18,8 +18,7 @@ set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
 
 " Key bindings
-" use Q for formatting, not ex-mode:
-"map Q gq
+imap <c-z> <esc><c-z>
 nmap <space> <c-f>
 nmap <c-h> i<c-h>
 nmap b <c-b>
