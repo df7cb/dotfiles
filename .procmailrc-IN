@@ -1,0 +1,26 @@
+#:0 c
+#.mail-backup
+
+:0:
+* ^X-Mailing-List: .*debian
+#* ^To: .*debian
+mail/IN/debian
+
+:0:
+* ^To: .*fs.*@fsinfo
+mail/IN/fsinfo
+
+:0:
+* ^Subject: .*\[Linux-sony\]
+mail/IN/linux-sony
+
+:0:
+* ^From: .*(MAILER-DAEMON|root|rzsnetz)@
+mail/IN/root
+
+:0:
+* ^From: tagesschau
+mail/IN/tagesschau
+
+:0:
+mail/IN/cb
