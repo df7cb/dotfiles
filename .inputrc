@@ -7,8 +7,13 @@ set convert-meta off
 set bell-style visible
 set completion-ignore-case off
 set completion-query-items 200
-set expand-tilde on
-set show-all-if-ambiguous on
+set expand-tilde off
+set history-preserve-point on
+set match-hidden-files off
+set mark-directories on
+set mark-symlinked-directories on
+set page-completions off
+set show-all-if-ambiguous off
 set visible-stats on
 #
 # VI line editing

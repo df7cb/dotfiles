@@ -76,6 +76,8 @@ print A '\documentclass['. $twocolumn. '12pt]{article}
 \directorystyle{' .$directorystyle. '}
 \directory{' .$bibfiles. '}
 
+{\hfill Stand: \today}
+
 \end{document}
 ';
 

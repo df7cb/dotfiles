@@ -2,5 +2,11 @@
 # $Id$
 
 URL=${1:-http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic}
+FILE=${1:-$HOME/bilder/back}
+XV="xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy"
 
-wget -q -O - $URL | xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy -
+if up d096.stw.stud.uni-saarland.de ; then
+	wget -q -O - "$URL" | $XV -
+elif [ -f $FILE ] ; then
+	$XV $FILE
+fi

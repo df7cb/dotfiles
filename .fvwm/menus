@@ -6,25 +6,25 @@
 DestroyMenu Main
 AddToMenu Main	"fvwm2"		Title
 +		"&xterm"	Popup xterm
-+		"Apps"		Popup Apps
-+		"Init"		Popup Init
-+		"Fvwm"		Popup FvwmMenu
-+		"Keymaps"	Popup KeymapMenu
-+		"Mail"		Popup Mail
-+		"Network"	Popup Network
-+		"Screen"	Popup Screen
-+		"Window"	Popup WindowOps
++		"&Apps"		Popup Apps
++		"&Init"		Popup Init
++		"&Fvwm"		Popup FvwmMenu
++		"&Keymaps"	Popup KeymapMenu
++		"&Mail"		Popup Mail
++		"&Network"	Popup Network
++		"&Screen"	Popup Screen
++		"&Window"	Popup WindowOps
 +		""		Nop
 #+		"Quit FVWM"	Quit
-+		"Quit X"	Exec killall xterm
++		"&Quit X"	Exec killall xterm
 
 
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
-+		"galeon"	Exec galeon
-+		"netscape"	Exec netscape
-+		"opera"		Exec opera
-+		"xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
++		"g&aleon"	Exec galeon
++		"&netscape"	Exec netscape
++		"&opera"	Exec opera
++		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 +		"gv"		Exec gv
 +		"mw"		Exec mw
 #+		"tet"		Exec ssh -f tante@goedel tet
@@ -32,17 +32,17 @@ AddToMenu Apps	"Apps"		Title
 
 DestroyMenu Init
 AddToMenu Init	"Init"		Title
-+		"poweroff"	Exec super poweroff
-+		"halt"		Exec super halt
-+		"reboot"	Exec super reboot
-+		"init 2"	Exec super init-2
-+		"init 3"	Exec super init-3
++		"&poweroff"	Exec super poweroff
++		"&halt"		Exec super halt
++		"&reboot"	Exec super reboot
++		"init &2"	Exec super init-2
++		"init &3"	Exec super init-3
 
 
 DestroyMenu Mail
 AddToMenu Mail	"Mail"	Title
-+		"wmbiff"	Exec wmbiff -geometry +960+416
-+		"  offline"	Exec wmbiff -geometry +960+416 -c /home/cb/.wmbiffrc-offline
++		"w&mbiff"	Exec wmbiff -geometry +960+416
++		"  &offline"	Exec wmbiff -geometry +960+416 -c /home/cb/.wmbiffrc-offline
 #+		"mailsync"	Nop
 #+		"  heim-d-in"	Exec mailsync -lf heim-d-in
 #+		"  heim-d"	Exec mailsync -lf heim-d
@@ -52,48 +52,48 @@ AddToMenu Mail	"Mail"	Title
 
 DestroyMenu Network
 AddToMenu Network	"Network"	Title
-+		"heim-d"	Exec super heim-d
-+		"pump"		Exec super pump
++		"&heim-d"	Exec super heim-d
++		"&pump"		Exec super pump
 
 
 DestroyMenu Screen
 AddToMenu Screen	"Screen"	Title
-+		"dpmsoff"	Exec dpmsoff
-+		"xlock"		Exec dpmsoff blank
-+		"xroot"		Exec xroot
-+		" offline"	Exec xv -root -quit +noresetroot bilder/back
++		"&dpmsoff"	Exec dpmsoff
++		"x&lock"	Exec dpmsoff blank
++		"x&root"	Exec xroot
++		" &offline"	Exec xv -root -quit +noresetroot bilder/back
 
 
 DestroyMenu FvwmMenu
 AddToMenu FvwmMenu	"fvwm2"	Title
-+			"FvwmTalk"	Module FvwmTalk
-+			"3x3 Desktop"	DeskTopSize 3 3
-+			"Modules"	Popup ModulePopup
++			"Fvwm&Talk"	Module FvwmTalk
++			"&3x3 Desktop"	DeskTopSize 3 3
++			"&Modules"	Popup ModulePopup
 +			""		Nop
-+			"Refresh"	Refresh
-+			"Recapture"	Recapture
-+			"Restart"	Restart fvwm2
++			"Re&fresh"	Refresh
++			"Re&capture"	Recapture
++			"Re&start"	Restart fvwm2
 #+			"Start fvwm1"	Restart fvwm
-+			"Quit"		Quit
++			"&Quit"		Quit
 
 
 DestroyMenu WindowOps
 AddToMenu WindowOps "Window Ops"	Title
 +	"Identify	 S1"	Module FvwmIdent
-+	"Iconify	 F4"	Iconify
-+	"Refresh	 S4"	RefreshWindow
-+	"Close	 A4"		Close
-+	"Destroy	CA4"	Destroy
-+	"Raise	 F5"		Raise
-+	"Lower	 S5"		Lower
-+	"Shade	 F6"		WindowShade
-+	"Stick	 S6"		Stick
-+	"Move	 F8"		Move
-+	"Resize	 F9"		Resize
++	"&Iconify	 F4"	Iconify
++	"Re&fresh	 S4"	RefreshWindow
++	"&Close	 A4"		Close
++	"&Destroy	CA4"	Destroy
++	"&Raise	 F5"		Raise
++	"&Lower	 S5"		Lower
++	"S&hade	 F6"		WindowShade
++	"S&tick	 S6"		Stick
++	"&Move	 F8"		Move
++	"Re&size	 F9"	Resize
 #+	"Resize..."		Popup ResizeMenu
-+	"Max vert	F10"	Function Maximize0100
-+	"Maximize	F11"	Function Maximize100100
-+	"Max horiz	F12"	Function Maximize1000
++	"Max &vert	F10"	Function Maximize0100
++	"Ma&ximize	F11"	Function Maximize100100
++	"Max &horiz	F12"	Function Maximize1000
 
 
 DestroyMenu ResizeMenu
@@ -111,12 +111,12 @@ AddToMenu ResizeMenu	"Resize/Move"	Title
 
 DestroyMenu KeymapMenu
 AddToMenu KeymapMenu	"Keymaps"	Title
-+			"PC"		Exec xmodmap $HOME/.xmodmap-pc
-+			"PC (D)"	Exec xmodmap $HOME/.xmodmap-pc-d
-+			"Sun"		Exec xmodmap $HOME/.xmodmap-sun
-+			"NCD"		Exec xmodmap $HOME/.xmodmap-ncd
++			"&PC"		Exec xmodmap $HOME/.xmodmap-pc
++			"PC (&D)"	Exec xmodmap $HOME/.xmodmap-pc-d
++			"&Sun"		Exec xmodmap $HOME/.xmodmap-sun
++			"&NCD"		Exec xmodmap $HOME/.xmodmap-ncd
 +			""		Nop
-+			"xkeycaps"	Exec xkeycaps
++			"&xkeycaps"	Exec xkeycaps
 
 
 # fvwm modules ############################################################
