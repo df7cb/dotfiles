@@ -87,6 +87,7 @@ which gmake > /dev/null && alias make=gmake
 alias md=mkdir
 alias o=less
 alias p=pine
+alias pine='pine -d0'
 alias pwd='builtin pwd ; /bin/pwd'
 alias q=exit
 alias rd=rmdir
