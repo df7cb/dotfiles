@@ -3730,6 +3730,22 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>C++</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1060092403</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.sgi.com/tech/stl/table_of_contents.html">
+          <title>Standard Template Library</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060092411</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Unix</title>
@@ -3803,6 +3819,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1059496175</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.bofh.it/~md/mutt/">
+          <title>Index of /~md/mutt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060593500</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -4049,6 +4073,22 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1059820831</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://lists.debian.org/debian-legal/2000/debian-legal-200012/msg00058.html">
+        <title>Re: plain language disclaimer</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1060082018</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://nm.debian.org/index.php">
+        <title>Debian GNU/Linux -- Debian New Maintainer</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1060181998</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -5763,6 +5803,15 @@
           <metadata owner="http://galeon.sourceforge.net/">
             <time_modified>1057233554</time_modified>
             <time_added>1046012697</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.theonion.com/">
+        <title>The Onion</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1060168330</time_modified>
+            <time_added>1060168310</time_added>
           </metadata>
         </info>
       </bookmark>
