@@ -43,6 +43,8 @@ bind	compose	<return> send-message	# <enter> = numeric keypad
 macro	compose	=	f=		'Fcc to ~/mail/'
 bind	compose	v	view-attach
 
+macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10B %s'\n"
+
 # headers
 ignore Importance # M$
 ignore Organisation Organization # stuff
