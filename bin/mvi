@@ -7,7 +7,7 @@
 $tmp="/tmp/mvi-$$";
 
 unless(@ARGV) {
-	print STDERR "usage: $0 file...";
+	print STDERR "usage: $0 file...\n";
 	exit 1;
 }
 

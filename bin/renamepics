@@ -1,0 +1,61 @@
+#!/usr/bin/perl -w
+# cb 001124
+# $Id$
+
+use strict;
+my $tmp = "renamepics-$$.jpg";
+my $xv = 0;
+my $offset = 0;
+my ($nr, $file, $new);
+my @XVOPTIONS = qw/-geometry +0+0 -ceg +0-0 -cem -cge -0+0 -cma/;
+
+$offset = $ARGV[0] if defined $ARGV[0];
+
+# spawn xv
+sub spawn {
+	if (defined ($xv = fork)) {
+	        unless ($xv) {
+	                exec ("xv", @XVOPTIONS, $tmp);
+	                die "Couldn't open xv!\n";
+	        }
+	} else {
+	        die "Could not fork xv: $!";
+	}
+}
+
+# fixup some insanities
+foreach (<*.JPG>) {
+	system "mv $_ \L$_";
+}
+system "chmod u+w *.jpg";
+
+print "(# will delete picture)\n";
+
+# rename each file
+foreach $file (<[0-9]*.jpg>) {
+	unlink "$tmp";
+	symlink $file, $tmp;
+	kill "QUIT", $xv if $xv;
+	spawn() unless $xv;
+	$file =~ /(\d+)\.jpg/;
+	$nr = $1 + $offset;
+	printf "Enter new name for $file:\n%02i-", $nr;
+	chomp ($new = <STDIN>);
+	if ($new =~ /^#/) {
+		print "File $file will be deleted.\n";
+		next;
+	}
+	if ($new) {
+		$new = sprintf "%02i-$new.jpg", $nr;
+	} else {
+		$new = sprintf "%02i.jpg", $nr;
+	}
+	$new =~ s/ /_/g;
+	#link $file, $new;
+	#system "ls -l $new";
+	system "mv '$file' '$new'" if $file ne $new;
+}
+
+# clean up	
+unlink $tmp;
+kill "TERM", $xv;
