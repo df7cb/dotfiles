@@ -1,5 +1,5 @@
 : There is a theory which states that if ever anyone discovers exactly what
-: the Universe is for and why it is there, it will instantly disappear and
+: the universe is for and why it is there, it will instantly disappear and
 : be replaced by something even more bizarre and inexplicable.
 :
 : There is another theory which states that this has already happened.
@@ -20,8 +20,10 @@ Type Bits/KeyID     Date       User ID
 pub  1024R/6D8ABE71 1998-07-25 Christoph Berg <cb@df7cb.de>
      Key fingerprint = 09 9D 09 8F 89 52 24 12  FE C2 31 9D FE F8 5C 03
 uid                            Christoph Berg <cb@cs.uni-sb.de>
-uid                            Christoph Berg <cb@heim-d.uni-sb.de>
-uid                            Christoph Berg <cb@fsinfo.cs.uni-sb.de>
+
+pub  1024D/58510B5A 2004-04-17 Christoph Berg <cb@df7cb.de>
+     Key fingerprint = D224 C8B0 7E63 A694 6DA3  2E07 C5AF 774A 5851 0B5A
+sub  1024g/4772A2E5 2004-04-17
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.2.1 (GNU/Linux)
