@@ -3839,6 +3839,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://lefort.be.eu.org/irssi/markers/">
+          <title>The #irssi markers</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1071758157</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Sound/Linux</title>
@@ -5149,6 +5157,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1045229770</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.elho.net/misc/xplanet/">
+          <title>Xplanet</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1071763199</time_added>
             </metadata>
           </info>
         </bookmark>
