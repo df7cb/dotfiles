@@ -1,6 +1,9 @@
 ! $Id$
 *background:		white
 *foreground:		black
+*Scrollbar*foreground:	LightSkyBlue
+*Scrollbar*thickness:	8
+*Scrollbar*thumb:	None
 XClock*analog:		false
 XClock*background:	LightSkyBlue
 XClock*padding:		0
@@ -12,16 +15,20 @@ Fig*inches:		false
 Fig*PaperSize:		A4
 Netscape*blinkingEnabled: false
 Netscape*installColormap: true
-XTerm*cursorColor:	Brown
+XTerm*color3:		orange
+XTerm*color5:		maroon
+XTerm*color11:		orange
+XTerm*color13:		maroon
+XTerm*cursorColor:	brown
 XTerm*font:		fixed
 XTerm*highlightColor:	LimeGreen
-XTerm*scrollBar:	True
-XTerm*scrollKey:	True
-XTerm*scrollTtyOutput:	False
+XTerm*highlightSelection: true
+XTerm*scrollBar:	true
+XTerm*scrollKey:	true
+XTerm*scrollTtyOutput:	false
 XTerm*saveLines:	500
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
-XTerm*thickness:	8
 xv.preset1.igraf: S 3 : 0,0 : 127,137 : 255,255
 xv.preset2.igraf: S 3 : 0,0 : 127,147 : 255,255
 xv.preset3.igraf: S 3 : 0,0 : 127,157 : 255,255
