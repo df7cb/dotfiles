@@ -70,12 +70,22 @@
 #      variable
 #              Names of all shell variables.  May also be specified as -v.
 
-complete -W "install remove" -C '_apt-get' apt-get
-complete -d cd
-complete -C _complete -X '!&*' complete
-complete -A running disown
-complete -C _mailsync -X '!&*' mailsync
-complete -c man
-complete -C _ncftp -X '!&*' ncftp
-complete -v unset
-complete -f -W Makefile vim
+# general stuff
+complete -o default -d cd
+complete -o default -A running disown
+complete -v unset vared
+
+# generic filetype rules
+complete -o default -f -X '!*.pdf' acroread
+complete -o default -f -X '!*.ps*(.gz)' gv
+complete -o default -f -X '!*.tex' latex
+
+# stuff that uses my completer
+complete -o default -C completer man
+complete -o default -X '!&*' -C completer mutt make ncftp
+complete -X '!&*' -C completer complete mailsync
+
+# special rules
+complete -W "install remove" -C completer apt-get
+complete -o default -d -X '!&*' -C completer cvs
+complete -o default -f -W Makefile vim

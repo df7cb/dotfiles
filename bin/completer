@@ -1,0 +1,41 @@
+#!/bin/sh
+
+PROG=$1
+PREFIX=$2
+
+if [ "$PROG" = apt-get ] ; then
+	apt-cache pkgnames "$PREFIX"
+
+elif [ "$PROG" = complete ] ; then
+	. ~/.bash_completion
+	complete | sed -e 's/.* //'
+
+elif [ "$PROG" = cvs ] ; then
+	#sed -e 's|[^/]*/||' -e 's|/.*||' < CVS/Entries | grep -v '^D$'
+	PREFIXDIR=`dirname "$PREFIX."`
+	ENTRIES="$PREFIXDIR/CVS/Entries"
+	[ -f "$ENTRIES" ] || exit 0
+	[ $PREFIXDIR != . ] && PRINTDIR="$PREFIXDIR/"
+	perl -ne "print \"$PRINTDIR\$1\\n\" if m|^/([^/]+)/|" "$ENTRIES"
+
+elif [ "$PROG" = mailsync ] ; then
+	grep ^channel ~/.mailsync | cut -d ' ' -f 2
+
+elif [ "$PROG" = make ] ; then
+	[ -f Makefile ] || exit 0
+	perl -ne 'print "$1\n" if /^([^ :]+):/' Makefile
+
+elif [ "$PROG" = man ] ; then
+	whatis -w "$PREFIX*" | cut -d ' ' -f 1 | grep -v ':$'
+
+elif [ "$PROG" = mutt ] ; then
+	MUTT=$HOME/.mutt
+	cut -d ' ' -f 2 $MUTT/aliases $MUTT/aliases.addressbook| egrep "^$PREFIX"
+
+elif [ "$PROG" = ncftp ] ; then
+	cut -f 1 -d , ~/.ncftp/bookmarks | egrep -v '^Number|NcFTP'
+
+else
+	echo "$0: cannot complete program $PROG, prefix $PREFIX" 1>&2
+	exit 1
+fi
