@@ -553,6 +553,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/services/library/catalogues/catalogues.html">
+          <title>MPI Library Homepage: Catalogues</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043248283</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Fachschaft</title>
@@ -1385,9 +1393,10 @@
         </info>
       </bookmark>
       <folder folded="yes">
-        <title>PowerPC</title>
+        <title>Assembly</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1043074959</time_modified>
             <time_added>1039105662</time_added>
           </metadata>
         </info>
@@ -1441,13 +1450,21 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://portal.acm.org/citation.cfm?id=224673%26dl=ACM%26coll=portal%26CFID=6997658%26CFTOKEN=82037404">
+        <title>Citation</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1043074940</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
-      <title>Boerse</title>
+      <title>B&#195;&#182;rse</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <pixmap>.galeon/favicons/deutsche-boerse.com_favicon.ico</pixmap>
-          <time_modified>1041861540</time_modified>
+          <time_modified>1042797853</time_modified>
           <time_added>987594497</time_added>
         </metadata>
       </info>
@@ -3177,6 +3194,22 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.cl.cam.ac.uk/~mgk25/unicode.html">
+          <title>UTF-8 and Unicode FAQ</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1042817963</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-1.html">
+          <title>Linux Online - The Unicode HOWTO: Introduction</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1042818084</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
     </folder>
     <folder folded="yes">
@@ -4202,6 +4235,71 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://cgi1.ebay.de/aw-cgi/eBayISAPI.dll?MyEbayLogin">
+        <title>My Ebay</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1043065775</time_modified>
+            <time_added>1043065756</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <folder folded="yes">
+        <title>TV-Karten</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1043155324</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.giungato.it/antonio/">
+          <title>Pinnacle PCTV/RAVE &amp; Linux</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043155344</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mind.lu/~yg/ftvco/">
+          <title>find_tvcardoptions.sh and Pinnacle Studio PCTV Rave TV-Card Settings</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043155366</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://sdb.suse.de/en/sdb/html/jsj_tv_handbuch_70.html">
+          <title>SDB: Television on PC / Chapter 8 of the Configuration Manual</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043157337</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.monsieurprix.com/fiche/genavis/J000002507.html">
+          <title>Pinnacle Systems Studio PCTV Rave - Avis des internautes - Monsieur Prix</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043157481</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://bytesex.org/bttv/">
+          <title>bttv</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043160054</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://home.t-online.de/home/gunther.mayer/bttv/118-1897_IMG_Pinnacle_PCTV_mt2032-ntsc.JPG">
+          <title>118-1897_IMG_Pinnacle_PCTV_mt2032-ntsc.JPG (JPEG Image, 353x300 pixels)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1043160636</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Search</title>
@@ -4560,19 +4658,19 @@
         </info>
       </bookmark>
       <bookmark href="http://www.sz-newsline.de/">
-        <title>Saarbruecker</title>
+        <title>Saarbr&#195;&#188;cker</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1029097586</time_modified>
+            <time_modified>1042797821</time_modified>
             <time_added>899294147</time_added>
           </metadata>
         </info>
       </bookmark>
       <bookmark href="http://www.sueddeutsche.de/">
-        <title>Sueddeutsche</title>
+        <title>S&#195;&#188;ddeutsche</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1029169169</time_modified>
+            <time_modified>1042797829</time_modified>
             <time_added>936790148</time_added>
           </metadata>
         </info>
