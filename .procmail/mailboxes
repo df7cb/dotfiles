@@ -1,0 +1,47 @@
+:0:
+# X-Debian-PR-Message: ack-info
+# Sender: Debian BTS <debbugs@master.debian.org>
+#* ^Sender:.*(debbugs@master.debian.org|bugs@trithemius.gnupg.org)
+#* ^Sender:.*debbugs@master.debian.org
+* ^X-(Debian|GUUG)-PR-Message: ack-info
+mail/IN/debian-bts
+
+#:0:
+#* ^X-Mailing-List: .*debian-user-german
+#mail/IN/debian-user-german
+
+#Resent-From: Debian BTS <debbugs@master.debian.org>
+:0:
+* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*katie@ftp-master.debian.org)
+mail/IN/debian
+
+:0:
+* ^List-Id: .*(asta.uni-saarland.de|bridge-runde.lists.mawan.de)
+$DEFAULT
+
+:0:
+* ^From: .*(tagesschau.de|@zeit.de)
+mail/IN/tagesschau
+
+# pisg-general list
+:0:
+* ^List-Id: .pisg-general
+mail/IN/pisg
+# pisg tracker items
+:0:
+* ^Sender: .*nobody@sourceforge.net
+* ^Subject: .*pisg
+mail/IN/pisg
+
+# catch-all recipe
+:0:
+* ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|Mailing-List: |List-Id: |X-BeenThere: aspell|List-Owner: |X-list: muttpatches|X-GUUG-PR-Message: )
+mail/IN/lists
+
+:0:
+* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
+mail/IN/root
+
+:0:
+mail/IN/cb
+

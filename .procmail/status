@@ -1,0 +1,28 @@
+:0fhw
+* !^Status:
+* ^From: Christoph Berg.*cb@
+| formail -i"Status: RO"
+
+# killfile
+:0fhw
+* !^Status:
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org)>
+| formail -i"Status: RO"
+
+#:0fhw
+#* ^From: BugScan reporter <bugscan@debian.org>
+#| formail -i"Status: RO"
+
+#:0fhw
+#* ^From:.*wnpp@debian.org
+#* ^X-Mailer: maintainers-needed.pl
+#| formail -i"Status: RO"
+
+:0
+* ^To: mutt-dev@mutt.org
+* ^Subject: \[.*\] CVS repository changes
+{
+	:0Bfhw
+	* !\*
+	| formail -i"Status: RO"
+}
