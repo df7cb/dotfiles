@@ -53,10 +53,10 @@ XORvalue 0
 ###############################################################################
 
 # this file includes .fvwm2rc-menus
-FvwmM4 .fvwm2/xterm.m4
-Read .fvwm2/menus
-Read .fvwm2/functions
-Read .fvwm2/modules
-Read .fvwm2/keys_mouse
-Read .fvwm2/styles
-Read .fvwm2/local
+FvwmM4 .fvwm/xterm.m4
+Read .fvwm/menus
+Read .fvwm/functions
+Read .fvwm/modules
+Read .fvwm/keys_mouse
+Read .fvwm/styles
+Read .fvwm/local
