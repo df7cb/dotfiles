@@ -4,7 +4,8 @@
 if [ $1 ] ; then
 	FILE="$1"
 elif up d096.stw.stud.uni-saarland.de ; then
-	URL="http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic"
+	#URL="http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic"
+	URL="http://df7cb.dyndns.info/bin/random-comic"
 	FILE="/tmp/xroot-$$"
 	RM=1
 	wget -q -O "$FILE" "$URL"
