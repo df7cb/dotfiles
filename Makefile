@@ -28,7 +28,8 @@ update:
 
 com: commit
 commit:
-	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts
+	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html \
+		.ssh/known_hosts .ncftp/bookmarks
 
 install:
 	@case "$(PWD)" in */cb-conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
