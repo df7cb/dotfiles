@@ -1,9 +1,0 @@
-@Person{,
-  name = {},
-  birthday = {},
-  birthyear = {},
-  p.address = {},
-  p.phone = {},
-  p.email = {},
-}
-
