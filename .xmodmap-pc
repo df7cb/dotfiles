@@ -15,7 +15,7 @@ keycode 0x13 =	0		parenright	braceright
 keycode 0x14 =	minus		underscore	hyphen
 keycode 0x15 =	equal		plus		backslash	plusminus
 keycode 0x16 =	BackSpace
-keycode 0x17 =	Tab		ISO_Left_Tab
+keycode 0x17 =	Tab		ISO_Left_Tab	Multi_key
 keycode 0x18 =	q		Q		at
 keycode 0x1A =	e		E		currency
 keycode 0x1B =	r		R		r		registered
@@ -53,7 +53,7 @@ keycode 0x25 =	Control_L
 ! left alt
 keycode 0x40 =	Alt_L
 ! right alt
-keycode 0x71 =	Mode_switch	Multi_key
+keycode 0x71 =	Mode_switch
 ! right control
 keycode 0x6D =	Control_R
 ! left win
