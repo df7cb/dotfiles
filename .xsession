@@ -8,10 +8,9 @@ fi
 
 #set up X server
 xhost - >/dev/null
-XMODMAP=`os kbd`
-[ -f $XMODMAP ] && xmodmap $XMODMAP
-xset s off
-xset dpms 0 0 900 2> /dev/null
+XKBD=`xkbd` && xmodmap .xmodmap-$XKBD
+xset s 900
+xset dpms 0 0 960 2> /dev/null
 xrdb -merge .Xdefaults
 
 xsetroot -solid navy
