@@ -41,6 +41,11 @@
 
 :0fhw
 * !^X-Label:
+* ^TO_.*@avacs.org
+| formail -i"X-Label: avacs"
+
+:0fhw
+* !^X-Label:
 * ^Received: .* for <cb\+cs@heim-d
 | formail -i"X-Label: cs"
 
