@@ -364,6 +364,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://hoohoo.ncsa.uiuc.edu/cgi/interface.html">
+          <title>The Common Gateway Interface Specification</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1052391345</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <separator/>
       <bookmark href="http://home.tu-clausthal.de/student/wohnheime/AK-WaN.html">
@@ -1704,6 +1712,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1051546704</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.systemes-critiques.org/ARTIST/">
+        <title>ARTIST Home Page</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1052312216</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -5604,6 +5620,16 @@
             <time_modified>1051542096</time_modified>
             <time_added>1051542053</time_added>
             <smarturl>http://www.britannica.com/search?query=%s&amp;submit=Find</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.brockhaus.de/">
+        <title>Brockhaus</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1052392574</time_modified>
+            <time_added>1052392550</time_added>
+            <smarturl>http://brockhaus.xipolis.net/suche/suche_treffer.php?such_modus=einfach&amp;wo=1&amp;s1=%s</smarturl>
           </metadata>
         </info>
       </bookmark>
