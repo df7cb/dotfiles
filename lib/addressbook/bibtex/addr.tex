@@ -1,20 +1,45 @@
-\documentclass[twocolumn]{article}
-\usepackage{a4wide}
-\usepackage{isolatin1,german}
-\usepackage{directory}
+\documentclass[twocolumn,12pt]{article}
+\usepackage{times,isolatin1,german}
+%\usepackage[split,break]{directory}
+\usepackage[split]{directory}
+
+\setlength{\hoffset}{-1in}
+\setlength{\voffset}{-1in}
+\setlength{\oddsidemargin}{2cm}
+\setlength{\topmargin}{2cm}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25.7cm}
 
 \renewcommand{\dirand}{und}
 \renewcommand{\Dirbirthday}[2]{#1.#2.}
 \renewcommand{\Dirbirthyear}[1]{#1}
+%\renewcommand{\Dirheader}[1]{\item\hspace{-\dirindent}\textbf{\MakeUppercase{#1}}}
+%\renewcommand{\Dirheader}[1]{
+%  \item\hspace{-\dirindent}
+%  {\centerline{\textbf{\MakeUppercase{#1}}}}
+%}
+\renewcommand{\Dirheader}[1]{%
+  \item\hspace{-\dirindent}%
+  {\rule{3cm}{2pt} \MakeUppercase{\large #1} \rule{3cm}{2pt}}%
+}
+\renewcommand{\Dirbirthday}[2]
+{#1.~{\ifcase #2\or Januar\or Februar\or März\or April%
+	\or Mai\or Juni\or Juli\or August\or September%
+	\or Oktober\or November\or Dezember\fi}
+}
 
 \begin{document}
 
+\section*{Adressen}
+
 \nodir{*}
 
-\bibliographystyle{address}
+\directorystyle{address}
 %\bibliographystyle{address-html}
 %\bibliographystyle{birthday}
 %\bibliographystyle{email}
-\bibliography{afu,berg,cb,fs,heim-d,ls,misc,vdl}
+\directory{afu,berg,cb,fs,heim-d,ls,misc,vdl}
 
 \end{document}
