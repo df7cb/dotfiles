@@ -4,7 +4,8 @@ DAT = cb.dat
 DEPS = cb.dat addressbook.pm
 ALIASES = $(HOME)/.mutt/aliases.addressbook
 
-all: check $(ALIASES) geb.plan abi96.list bibtex/cb.bib
+this: check $(ALIASES) geb.plan abi96.list bibtex/cb.bib
+all: this bibtex
 
 .PHONY: check
 check:
