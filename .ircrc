@@ -84,6 +84,7 @@
 /alias m /msg
 /alias mo /mode
 /alias op /mode * +ooo
+/alias q /query
 /alias quit /exit
 /alias sb /who *-sb.*
 /alias t /topic
