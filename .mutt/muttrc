@@ -47,7 +47,7 @@ set pager_stop
 set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x6D8ABE71"
-set pgp_timeout=900
+set pgp_timeout=7200
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set record="=sent-mail"
@@ -60,3 +60,6 @@ set tilde
 set use_domain
 set use_from
 unset write_bcc
+
+# local configuration options
+source ~/.mutt/muttrc.local
