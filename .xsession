@@ -1,7 +1,7 @@
 #!/bin/sh
 # $Id$
 
-. ~/.path
+. $HOME/.path
 test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
 
 #set up X server
@@ -15,7 +15,7 @@ xsetroot -solid navy
 xroot
 xclock -g +41+0 &
 
-fvwm2 &
+fvwm2 -s &
 
 [ -f ~/.xsession-local ] && . ~/.xsession-local
 
