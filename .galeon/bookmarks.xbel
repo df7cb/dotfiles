@@ -3337,6 +3337,25 @@
             </info>
           </bookmark>
         </folder>
+        <folder folded="yes">
+          <title>vim</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1048718452</time_modified>
+              <time_added>1048718447</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://vim.sourceforge.net/">
+            <title>welcome : vim online</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_modified>1031429291</time_modified>
+                <time_added>991699015</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <separator/>
         <bookmark href="http://www.bitrot.de/plan.html">
           <title>plan - calendar and day planner</title>
           <info>
@@ -3345,20 +3364,19 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://vim.sourceforge.net/">
-          <title>welcome : vim online</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1031429291</time_modified>
-              <time_added>991699015</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://cedricduval.free.fr/mutt/">
           <title>Mutt Patches</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1047297660</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.gedanken.demon.co.uk/wwwoffle/">
+          <title>The WWWOFFLE Homepage</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048718425</time_added>
             </metadata>
           </info>
         </bookmark>
