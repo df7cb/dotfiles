@@ -174,7 +174,7 @@ customized-hdrs=From:,
 	Lcc:,
 	Newsgroups:,
 	Approved:,
-	Organization: "Wohnheim D, Universitaet des Saarlandes",
+	Organization: "_ORGANIZATION_",
 	Attchmnt:,
 	Subject:
 
