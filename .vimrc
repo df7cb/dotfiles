@@ -1,30 +1,32 @@
 " $Id$
-" Configuration file for gvim
-" Written for Debian GNU/Linux by W.Akkerman <wakkerma@debian.org>
-" Some modifications by J.H.M. Dassen <jdassen@wi.LeidenUniv.nl>
 
-
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible	" Use Vim defaults (much better!)
-" use Q for formatting, not ex-mode:
-map Q gq
-set backspace=2		" allow backspacing over everything in insert mode
-
-" Now we set some defaults for the editor
+" Options
 set autoindent		" always set autoindenting on
-set textwidth=0		" Don't wrap words by default
+set autowrite		" Automatically save before commands like :next and :make
+set backspace=2		" allow backspacing over everything in insert mode
 set backup		" keep a backup file
+set nocompatible	" Use Vim defaults (much better!)
+set ignorecase		" Do case insensitive matching
+set incsearch		" Incremental search
+set ruler		" Show the line and column numbers of the cursor 
+set showcmd		" Show (partial) command in status line.
+set showmatch		" Show matching brackets.
+set textwidth=0		" Don't wrap words by default
+set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers
+
+" Key bindings
+" use Q for formatting, not ex-mode:
+map Q gq
+nmap <space> <c-f>
+nmap <c-h> <c-b>
+nmap b <c-b>
+nmap - <c-b>
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-
-" Make vim consult the external termcap entries first, so we get all of
-" Debian's termcap settings correct. This will be fixed upstream in 5.4
-set nottybuiltin term=$TERM
 
 " We know xterm is a color terminal
 if &term =~ "xterm*"
@@ -60,7 +62,6 @@ augroup END
 augroup cprog
   " Remove all cprog autocommands
   au!
-
   " When starting to edit a file:
   "   For *.c and *.h files set formatting of comments and set C-indenting on.
   "   For other files switch it off.
@@ -74,7 +75,6 @@ augroup END
 augroup gzip
   " Remove all gzip autocommands
   au!
-
   " Enable editing of gzipped files
   "	  read:	set binary mode before reading the file
   "		uncompress text in buffer after reading
@@ -99,7 +99,6 @@ augroup END
 augroup bzip2
   " Remove all bzip2 autocommands
   au!
-
   " Enable editing of bzipped files
   "       read: set binary mode before reading the file
   "             uncompress text in buffer after reading
@@ -121,12 +120,3 @@ augroup bzip2
 augroup END
 
 endif " has ("autocmd")
-
-" The following are commented out as they cause vim to behave a lot
-" different from regular vi. They are highly recommended though.
-set showcmd		" Show (partial) command in status line.
-set showmatch		" Show matching brackets.
-set ruler		" Show the line and column numbers of the cursor 
-set ignorecase		" Do case insensitive matching
-set incsearch		" Incremental search
-set autowrite		" Automatically save before commands like :next and :make
