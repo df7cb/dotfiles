@@ -105,9 +105,11 @@ set xterm_set_titles
 color normal    default default
 color attachment brightyellow default
 color bold	brightdefault default
+color error	cyan default
 color hdrdefault cyan default
 color indicator default cyan
 color markers   green default
+color message	cyan default
 color quoted    green default
 color signature cyan default
 color status    brightgreen blue
