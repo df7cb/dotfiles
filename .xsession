@@ -22,6 +22,7 @@ xsetroot -solid navy
 ( sleep 10 ; xroot ) &
 xclock -g 116x12+0+0 &
 type -p pland > /dev/null && pland -k &
+[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
 type -p esd > /dev/null && esd -nobeeps -tcp -as 5 &
 
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
