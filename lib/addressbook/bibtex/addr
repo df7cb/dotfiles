@@ -84,7 +84,7 @@ print A '\documentclass['. $twocolumn. '12pt]{article}
 close A;
 
 if ($opt_a) {
-	system("make alias");
+	system("make aliases");
 } else {
 	system("make");
 }
