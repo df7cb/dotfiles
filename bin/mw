@@ -31,9 +31,11 @@ sub lookup {
 		$data =~ s/.*? found for //s;
 		$data =~ s/<table bgcolor.*//s;
 
-		open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
-		print F "$word\n";
-		close F;
+		if($ENV{'USER'} eq 'cb') {
+			open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
+			print F "$word\n";
+			close F;
+		}
 	} else {
 		# Entry not found
 		$data =~ s/.*?The word you/The word you/s; # dict
