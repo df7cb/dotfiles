@@ -12,6 +12,7 @@ bind pager <down> next-line
 bind index \# delete-message
 bind pager \# delete-message
 macro generic d s=deleted\cM 'Move message to trash folder'
+macro index d s=deleted\cM 'Move message to trash folder'
 macro pager d s=deleted\cM 'Move message to trash folder'
 bind index G last-entry
 
