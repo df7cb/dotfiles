@@ -60,7 +60,7 @@ incoming-archive-folders=
 
 # List of context and folder pairs, delimited by a space, to be offered for
 # pruning each month.  For example: {host1}mail/[] mumble
-pruned-folders=d
+pruned-folders=deleted
 
 # Over-rides default path for sent-mail folder, e.g. =old-mail (using first
 # folder collection dir) or ={host2}sent-mail or ="" (to suppress saving).
