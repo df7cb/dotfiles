@@ -4,6 +4,7 @@
 case "`uname -srm`" in
 	Linux*86)	echo "linux-intel" ;;
 	Linux*alpha)	echo "linux-alpha" ;;
+	Linux*sparc)	echo "linux-sparc" ;;
 	SunOS*4.*sun*)	echo "sunos4-sparc" ;;
 	SunOS*5.*sun*)	echo "solaris-sparc" ;;
 	SunOS*5.*86*)	echo "solaris-intel" ;;
