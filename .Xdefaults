@@ -10,6 +10,7 @@ XDvi.keepPosition:	true
 Fig*inches:		false
 Fig*PaperSize:		A4
 Netscape*blinkingEnabled: false
+Netscape*installColormap: true
 XTerm*cursorColor:	Brown
 XTerm*font:		fixed
 XTerm*scrollBar:	True
