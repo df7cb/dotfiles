@@ -159,7 +159,7 @@ customized-hdrs=From:,
 	Lcc:,
 	Newsgroups:,
 	Approved:,
-	Organization: ifdef(`_ORGANIZATION_', `_ORGANIZATION_', `errprint(`_ORGANIZATION_ undefined.')'),
+	Organization: "ifdef(`_ORGANIZATION_', `_ORGANIZATION_', `errprint(`_ORGANIZATION_ undefined.')')",
 	Attchmnt:,
 	Subject:
 
