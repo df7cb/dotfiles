@@ -4224,6 +4224,85 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>*.debian.org</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1068133157</time_modified>
+            <time_added>1068133153</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://db.debian.org/">
+          <title>db.debian.org</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <nick>db.d.o</nick>
+              <time_modified>1068133183</time_modified>
+              <time_added>1059820831</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://people.debian.org/">
+          <title>people.debian.org</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <nick>p.d.o</nick>
+              <time_modified>1068133208</time_modified>
+              <time_added>1059820831</time_added>
+              <smarturl>http://people.debian.org/~%s</smarturl>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>#debian.de</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1068132989</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.youam.net/maps/%2523debian.de.html">
+          <title>~youam/maps/#debian.de.png</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1068133057</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.youam.net/maps/debian.de.XXL.jpg">
+          <title>debian.de.XXL.jpg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1068133000</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Postings</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1061032640</time_modified>
+            <time_added>1061032636</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://groups.google.com/groups?selm=CBusDD.MIK%2540unix.portal.com%26output=gplain">
+          <title>New release under development; suggestions requested</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061032332</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://lists.debian.org/debian-legal/2000/debian-legal-200012/msg00058.html">
+          <title>Re: plain language disclaimer</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060082018</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
       <bookmark href="http://www.linuxgazette.com/issue89/gonzales.html">
         <title>Security Administration with Debian GNU/Linux LG #89</title>
         <info>
@@ -4264,14 +4343,6 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://db.debian.org/">
-        <title>db.debian.org</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1059820831</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://nm.debian.org/index.php">
         <title>Debian GNU/Linux -- Debian New Maintainer</title>
         <info>
@@ -4280,31 +4351,6 @@
           </metadata>
         </info>
       </bookmark>
-      <folder folded="yes">
-        <title>Postings</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1061032640</time_modified>
-            <time_added>1061032636</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://groups.google.com/groups?selm=CBusDD.MIK%2540unix.portal.com%26output=gplain">
-          <title>New release under development; suggestions requested</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1061032332</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://lists.debian.org/debian-legal/2000/debian-legal-200012/msg00058.html">
-          <title>Re: plain language disclaimer</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1060082018</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
       <bookmark href="http://bugs.debian.org/cgi-bin/claims.cgi">
         <title>Debian Bug report logs: selected bugs</title>
         <info>
@@ -4334,14 +4380,6 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1063886092</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=207624">
-        <title>Debian Bug report logs - #207624 - ITP: tetrinet -- client and server for tetrinet, a networked tetris version</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1062618085</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -6133,8 +6171,8 @@
         <desc>Enter word to look up</desc>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <nick>dict</nick>
-            <time_modified>1052227605</time_modified>
+            <nick>th</nick>
+            <time_modified>1068906549</time_modified>
             <smarturl>http://www.m-w.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=%s</smarturl>
           </metadata>
         </info>
@@ -6228,9 +6266,9 @@
       <desc>Enter web search term</desc>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <nick>google</nick>
+          <nick>g</nick>
           <pixmap>.galeon/favicons/www.google.de_favicon.ico</pixmap>
-          <time_modified>1059819435</time_modified>
+          <time_modified>1068737036</time_modified>
           <smarturl>http://www.google.de/search?q=%s</smarturl>
         </metadata>
       </info>
@@ -6240,7 +6278,8 @@
       <desc>Enter film title</desc>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1041861693</time_modified>
+          <nick>imdb</nick>
+          <time_modified>1068906586</time_modified>
           <time_added>1041861029</time_added>
           <smarturl>http://german.imdb.com/Find?for=%s</smarturl>
         </metadata>
@@ -6250,7 +6289,8 @@
       <title></title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1042548640</time_modified>
+          <nick>nec</nick>
+          <time_modified>1068906571</time_modified>
           <time_added>1042548584</time_added>
           <smarturl>http://citeseer.nj.nec.com/cs?q=%s</smarturl>
         </metadata>
@@ -6260,7 +6300,8 @@
       <title></title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1062068040</time_modified>
+          <nick>pgp</nick>
+          <time_modified>1068906574</time_modified>
           <time_added>1048681211</time_added>
           <smarturl>http://blackhole.pca.dfn.de:11371/pks/lookup?op=index&amp;search=%s</smarturl>
         </metadata>
