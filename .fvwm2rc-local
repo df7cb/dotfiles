@@ -1,6 +1,0 @@
-# $Id$
-# fvwm2rc local stuff ####################################################
-
-#AddToFunc Netscape	"I"	Exec netscape -geometry 1142x774+0+900
-#+	"Netscape"	Exec netscape -geometry 1270x852+0+1024
-#+	"Netscape"	Exec netscape -geometry 1142x774+0+900
