@@ -49,8 +49,8 @@ MenuStyle Black Grey LightGrey \
 
 # Now the common fonts - one for window titles, another for icons
 #WindowFont	-misc-fixed-bold-r-normal-*-13-*-75-75-c-80-iso8859-1
-WindowFont	-*-lucida-bold-r-*-*-14-*-*-*-*-*-iso8859-*
-IconFont	-misc-fixed-medium-r-normal-*-10-*-75-75-c-60-iso8859-1
+WindowFont	-*-lucida-bold-r-*-*-14-*-*-*-*-*-*-*
+IconFont	-misc-fixed-medium-r-normal-*-10-*-*-*-c-60-*-*
 
 
 ###############################################################################

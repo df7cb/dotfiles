@@ -10,7 +10,7 @@
 *FvwmPagerColumns 	1
 *FvwmPagerGeometry	108x85+0-0
 *FvwmPagerFont		none
-*FvwmPagerSmallFont	-misc-fixed-medium-r-normal--7-70-75-75-c-50-iso8859-1
+*FvwmPagerSmallFont	-misc-fixed-medium-r-normal--7-70-75-75-c-50-*-*
 
 #*FvwmPagerFore		Black
 #*FvwmPagerBack		grey67
