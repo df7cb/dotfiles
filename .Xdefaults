@@ -57,4 +57,5 @@ xv.*.ggraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 xv.*.bgraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 
 pvs.activedisplayforeground: red
-pvs.geometry:		87x63+0+0
+pvs.font:		9x15
+pvs.geometry:		87x60+0+0
