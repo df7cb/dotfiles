@@ -16,15 +16,7 @@ mail/IN/debian
 mail/IN/fsinfo
 
 :0:
-* ^X-BeenThere: aspell
-mail/IN/lists
-
-:0:
-* ^List-Id: <irssi-users.dragoncat.net>
-mail/IN/lists
-
-:0:
-* ^Subject: .*\[Linux-sony\]
+* ^(Subject: .*\[Linux-sony\]|Sender: owner-mutt-.*@mutt.org|Mailing-List: .*vim-.*@vim.org|List-Id: <irssi-users.dragoncat.net>|X-BeenThere: aspell)
 mail/IN/lists
 
 :0:
