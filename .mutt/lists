@@ -9,7 +9,7 @@ subscribe debian-mentors@lists.debian.org
 subscribe debian-project@lists.debian.org
 subscribe debian-newmaint@lists.debian.org
 subscribe debian-news@lists.debian.org
-#lists submit@bugs.debian.org
+lists @bugs.debian.org
 #subscribe *@bugs.debian.org
 # FS
 subscribe fsr@fsinfo.cs.uni-sb.de
@@ -32,6 +32,7 @@ subscribe hauptaus@asta.uni-saarland.de
 subscribe haufi@asta.uni-saarland.de
 subscribe resa@asta.uni-saarland.de
 subscribe aerat-ml@asta.uni-saarland.de
+lists asta@asta.uni-saarland.de
 # Uni
 subscribe gk@cs.uni-sb.de
 subscribe labor@wjpserver.cs.uni-sb.de
@@ -49,6 +50,7 @@ subscribe mutt-po@mutt.org
 subscribe mutt-users@mutt.org
 subscribe mutt-users-fr@mutt.org
 subscribe muttpatches@ml.free.fr
+lists @bugs.guug.de
 subscribe pisg-general@lists.sourceforge.net
 subscribe procmail@lists.rwth-aachen.de
 subscribe transcode-users@theorie.physik.uni-goettingen.de
