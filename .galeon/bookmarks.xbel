@@ -1553,6 +1553,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.ganssle.com/">
+        <title>Embedded Systems Page</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1047981459</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>B&#195;&#182;rse</title>
@@ -4676,6 +4684,70 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>Digicams</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1048084370</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.dpreview.com/reviews/canondigitalixus300/page13.asp">
+          <title>Canon Digital IXUS 300 (S300 ELPH) review: Page 13. Conclusion [Digital Photography Review]</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048084378</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dpreview.com/reviews/canons40/page16.asp">
+          <title>Canon PowerShot S40 review: Page 16. Conclusion [Digital Photography Review]</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048086581</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dpreview.com/reviews/">
+          <title>Digital Camera Product Reviews: Digital Photography Review</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048088047</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dpreview.com/reviews/minoltadimagef100/">
+          <title>Minolta DiMAGE F100 review: Page 1. Introduction [Digital Photography Review]</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048159219</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dimage.minolta.com/f100/">
+          <title>DiMAGE F100</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048161665</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.teaser.fr/~hfiguiere/linux/digicam.html">
+          <title>Digital Camera Support for UN*X</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048162550</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.linuxfocus.org/English/May2002/article240.shtml">
+          <title>lf240, SystemAdministration: Using a Minolta Dimage 5 camera under Linux</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048162703</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Search</title>
