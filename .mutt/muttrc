@@ -74,7 +74,9 @@ ignore Old-Return-Path Resent-Message-ID Resent-From X-Mailing-List Resent-Sende
 ignore Original-Sender Resent-To Resent-Cc # bugs.debian.org
 #unignore X-Debian-PR-Message
 ignore X-PTS- X-Unsubscribe # packages.qa.debian.org
-ignore X-Cookie X-Operating X-Sheldon X-Url X-Habeas-SWE- # various induhviduals
+ignore X-Authenticated X-Flags # GMX
+ignore X-Cookie X-Operating X-Sheldon X-Url X-Habeas-SWE- X-GPG- X-Geek- # various induhviduals
+ignore X-From-Note X-Mutt-Ignore X-Revised- X-Message-Flag X-Virus
 
 unignore Date
 unhdr_order *
@@ -120,6 +122,8 @@ set query_command="muttquery '%s'"
 set quit=ask-yes
 set quote_regexp="^([ 	]*[|>:}%])+|^[a-zA-Z]{,9}>"
 set record="=sent-mail"
+set reverse_name
+unset reverse_realname
 set rfc2047_parameters
 #unset save_empty
 set sendmail_wait=5
@@ -156,7 +160,7 @@ color index	cyan default ~v
 color index	brightdefault default ~T
 color index	brightdefault default ~F
 color index	magenta default "~t debian-news"
-color index	default red "~t debian-security-announce"
+color index	red default "~t debian-security-announce"
 
 color header    brightdefault default ^From:
 color header    blue default ^(Date|To|Reply-To|Cc):
