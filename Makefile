@@ -5,6 +5,8 @@ UNDEFINE = -Uformat -Uindex -Uunix
 
 all: .pinerc .ytalkrc .xinitrc mail/d .configrc bin/$(OS)/xkbd
 
+## targets ##
+
 .pinerc: .pinerc.m4 $(DEPS)
 	m4 $(UNDEFINE) .configrc .pinerc.m4 > .pinerc
 
@@ -25,21 +27,35 @@ bin/$(OS)/xkbd: bin/src/xkbd.c
 diff:
 	diff -u .pinerc.m4 .pinerc || true
 
+## update stuff ##
+
+export CVSIGNORE=*
+export CVS_RSH=ssh
+
 up: update
 update: bookmark-clean
-	cvs update -I "*"
+	cvs -q update
+
+safe: bookmark-clean conflict
+	for file in `cvs -q -n update | grep '^[MPU] ' | cut -c 3-` ; do \
+		cvs update $$file ; done
+
+conflict:
+	-cvs -q -n update | grep '^C '
 
 com: commit
 commit: bookmark-clean
-	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html \
-		.ssh/known_hosts .ncftp/bookmarks
+	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts .ncftp/bookmarks
 
 bookmark-clean:
-	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' \
-		.netscape/bookmarks.html
+	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
+
+## installation stuff ##
 
 install:
 	@case "$(PWD)" in *conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
+	-rm ../.ssh/known_hosts
+	-rmdir ../.ssh
 	mv * .[a-z]* .[A-Z]* ..
 	@cd .. && rmdir conf && $(MAKE)
 	@echo "Fertig. cd .."
@@ -54,3 +70,5 @@ install:
 	echo "" >> .configrc
 	echo "divert(0)dnl" >> .configrc
 	vim .configrc || vi .configrc
+
+##
