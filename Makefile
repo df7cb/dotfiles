@@ -50,7 +50,7 @@ conflict:
 
 com: commit
 commit: bookmark-clean known_hosts-sort
-	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts .ncftp/bookmarks
+	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan
 
 bookmark-clean:
 	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
