@@ -1,3 +1,7 @@
+"^AcroRead"
+None,	Up,	Page_Up
+None,	Down,	Page_Down
+
 "^xterm$"
 @Priority=-1
 None,	Up,	Shift_R|Page_Up

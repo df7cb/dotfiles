@@ -2,6 +2,7 @@ application/excel;/home/cb/.openoffice/1.1.1/soffice %s
 application/msexcel;/home/cb/.openoffice/1.1.1/soffice %s
 application/mspowerpoint;/home/cb/.openoffice/1.1.1/soffice %s
 application/msword;/home/cb/.openoffice/1.1.1/soffice %s
+application/pdf; acroread5 '%s'
 application/pdf; acroread '%s'
 application/postscript; gv '%s'
 application/powerpoint;/home/cb/.openoffice/1.1.1/soffice %s
