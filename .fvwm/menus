@@ -35,6 +35,7 @@ AddToMenu Apps	"Apps"		Title
 +		"x&mms"		Exec xmms
 +		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 #+		"tet"		Exec ssh -f tante@goedel tet
++		"&xvncviewer"	Exec xvncviewer
 
 
 DestroyMenu Init
