@@ -1,0 +1,67 @@
+# .procmail/listarchive
+# cb 2004-10-05
+
+:0c
+* ^Sender: (.*@mutt.org|mutt-newbie-list-admin@lists.sourceforge.net|muttpatches-owner@ml.free.fr|procmail.*@lists.RWTH-Aachen.DE|owner-(ai|fs-oldies|fs-nulldevice)@(fsinfo.cs.uni-sb.de|lists.lithe.de))|^Delivered-To: .* mutt-rpm@mutt.justpickone.org
+#* ^Date: *\/.*
+{
+	LOGFILE=$LOGDIR/archive-$MONTH.log
+	#DATE=`date -d "$MATCH" "+%Y-%m"`
+	DATE=`date -u "+%Y-%m"`
+	UMASK=033
+
+	:0
+	* ^(X-)No-Archive: (yes|true)
+	{ NOARCHIVE=.no-archive }
+
+	:0:
+	* ^Sender: owner-mutt-announce@mutt.org
+	public_html/mutt/archive/mutt-announce/mutt-announce-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: owner-mutt-dev@mutt.org
+	public_html/mutt/archive/mutt-dev/mutt-dev-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: owner-mutt-po@mutt.org
+	public_html/mutt/archive/mutt-po/mutt-po-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: owner-mutt-users@mutt.org
+	public_html/mutt/archive/mutt-users/mutt-users-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: owner-mutt-users-fr@mutt.org
+	public_html/mutt/archive/mutt-users-fr/mutt-users-fr-$DATE$NOARCHIVE
+	:0:
+	* ^Delivered-To: mailing list mutt-rpm@mutt.justpickone.org
+	public_html/mutt/archive/mutt-rpm/mutt-rpm-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: mutt-newbie-list-admin@lists.sourceforge.net
+	public_html/mutt/archive/mutt-newbie-list/mutt-newbie-list-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: muttpatches-owner@ml.free.fr
+	public_html/mutt/archive/muttpatches/muttpatches-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: procmail-bounces@lists.RWTH-Aachen.DE
+	public_html/mutt/archive/procmail/procmail-$DATE$NOARCHIVE
+	:0:
+	* ^Sender: owner-ai@
+	www.df7cb.de/mail/ai/ai-$DATE$NOARCHIVE
+
+	:0c: lib/mail/.lurker.lock
+	* ^Sender: owner-fs-oldies@
+	* !^(X-)No-Archive: (yes|true)
+	| /home/cb/www.df7cb.de/fs-lurker/bin/fs-lurker-index -l fs-oldies -m
+	:0:
+	* ^Sender: owner-fs-oldies@
+	www.df7cb.de/mail/fs-oldies/fs-oldies-$DATE$NOARCHIVE
+
+	:0c: lib/mail/.lurker.lock
+	* ^Sender: owner-fs-nulldevice@
+	* !^(X-)No-Archive: (yes|true)
+	| /home/cb/www.df7cb.de/fs-lurker/bin/fs-lurker-index -l fs-nulldevice -m
+	:0:
+	* ^Sender: owner-fs-nulldevice@
+	www.df7cb.de/mail/fs-nulldevice/fs-nulldevice-$DATE$NOARCHIVE
+
+	:0:
+	www.df7cb.de/mail/unknown-list-$DATE$NOARCHIVE
+}
+

@@ -1,0 +1,29 @@
+# .procmail/listarchive
+# cb 2004-10-05
+
+:0
+* ^Received:.*by auspex.cs.uni-sb.de.*for.*berg.*@studcs.uni-sb.de
+* !^FROM_DAEMON
+{
+	:0:
+	* ^X-Spam-Level: \*\*
+	lib/mail/spam/studcs
+	:0c: lib/mail/.vacation.lock
+	| vacation -a berg -m lib/mail/vacation.studcs cb
+	:0:
+	lib/mail/studcs
+}
+
+#:0
+#* ^Received:.*by fsinfo.cs.uni-sb.de.*for.*cb.*@fsinfo.cs.uni-sb.de
+#* !^FROM_DAEMON
+#{
+#	:0:
+#	* ^X-Spam-Level: \*\*
+#	lib/mail/spam/fsinfo
+#	:0c: lib/mail/.vacation.lock
+#	| vacation -a berg -m lib/mail/vacation.fsinfo cb
+#	:0:
+#	lib/mail/fsinfo
+#}
+
