@@ -3,5 +3,5 @@
 
 . ~/.bashrc
 
-finger
 mesg y
+finger
