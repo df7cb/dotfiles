@@ -1,13 +1,14 @@
-#!/usr/bin/perl -w
+#!/bin/sh
 # $Id$
 
-while(<>) {
-	s/"a/ä/g;
-	s/"A/Ä/g;
-	s/"o/ö/g;
-	s/"O/Ö/g;
-	s/"u/ü/g;
-	s/"U/Ü/g;
-	s/"s/ß/g;
-	print;
-}
+exec perl -x $0
+
+#! perl -p
+
+s/"a/ä/g;
+s/"A/Ä/g;
+s/"o/ö/g;
+s/"O/Ö/g;
+s/"u/ü/g;
+s/"U/Ü/g;
+s/"s/ß/g;
