@@ -21,7 +21,7 @@ links:	autorun/friends.pl \
 	autorun/keepnick.pl \
 	autorun/len.pl \
 	autorun/nickcolor.pl \
-	autorun/nickserv.pl \
+	autorun/nickident.pl \
 	autorun/recode.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl
