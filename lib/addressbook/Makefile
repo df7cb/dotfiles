@@ -23,5 +23,5 @@ bibtex/cb.bib: address2bib $(DEPS)
 	./address2bib $(DAT) > $@
 
 .PHONY: bibtex
-bibtex: do-check bibtex/cb.bib
+bibtex: check bibtex/cb.bib
 	make -C bibtex
