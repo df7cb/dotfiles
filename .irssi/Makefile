@@ -24,9 +24,11 @@ links:	autorun/friends.pl \
 	autorun/nickcolor.pl \
 	autorun/nickident.pl \
 	autorun/recode.pl \
+	autorun/screen_away.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \
+	autorun/topics.pl \
 	autorun/trackbar.pl
 
 autorun/%.pl: %.pl
