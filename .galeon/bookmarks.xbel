@@ -4044,6 +4044,14 @@
             </info>
           </bookmark>
         </folder>
+        <bookmark href="http://www.rachinsky.de/nicolas/mutt.html">
+          <title>threadcomplete patch (rachinsky.de)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1069873671</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>tnt</title>
@@ -4341,9 +4349,10 @@
           </metadata>
         </info>
         <bookmark href="http://www.youam.net/maps/%2523debian.de.html">
-          <title>~youam/maps/#debian.de.png</title>
+          <title>~youam/maps/#debian.de</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1070307512</time_modified>
               <time_added>1068133057</time_added>
             </metadata>
           </info>
@@ -5813,6 +5822,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1063457818</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://articles.linmagau.org/modules.php?op=modload%26name=Sections%26file=index%26req=viewarticle%26artid=324%26page=1">
+        <title>linmagau.org :: Australian Linux/OpenSource Magazine -- Local Content - Local People - Australia</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1070233636</time_added>
           </metadata>
         </info>
       </bookmark>
