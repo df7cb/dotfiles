@@ -498,14 +498,6 @@
             <time_added>976822967</time_added>
           </metadata>
         </info>
-        <bookmark href="http://infobib.cs.uni-sb.de/">
-          <title>Fachbereichsbibliothek Informatik</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>985790251</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/">
           <title>Graduiertenkolleg &quot;Leistungsgarantien f&#239;&#191;&#189;r Rechnersysteme&quot;</title>
           <info>
@@ -538,10 +530,19 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www.mpi-sb.mpg.de/">
-          <title>Max-Planck-Institut f&#239;&#191;&#189;r Informatik: Home Page</title>
+        <bookmark href="http://www.rz.uni-saarland.de/dienste/beschaffung/software/software.html">
+          <title>Software-Portal - Startseite</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1013008301</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/">
+          <title>Max-Planck-Institut f&#195;&#188;r Informatik</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1046016638</time_modified>
               <time_added>973726868</time_added>
             </metadata>
           </info>
@@ -589,11 +590,20 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www.rz.uni-saarland.de/dienste/beschaffung/software/software.html">
-          <title>Software-Portal - Startseite</title>
+      </folder>
+      <folder folded="yes">
+        <title>Bibliotheken</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1046016567</time_modified>
+            <time_added>1046016559</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://infobib.cs.uni-sb.de/">
+          <title>Fachbereichsbibliothek Informatik</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1013008301</time_added>
+              <time_added>985790251</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -602,6 +612,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1043248283</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rzblx1.uni-regensburg.de/ezeit/search.phtml?bibid=SULB">
+          <title>Elektronische Zeitschriftenbibliothek</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1046016455</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -2528,14 +2546,6 @@
               </metadata>
             </info>
           </bookmark>
-          <bookmark href="http://www.dagstuhl.de/selfhtml/tn.htm">
-            <title>SELFHTML: Befehlsverzeichnis</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>955476199</time_added>
-              </metadata>
-            </info>
-          </bookmark>
           <bookmark href="http://help.netscape.com/products/client/communicator/manual_roaming2.html">
             <title>Manually Implementing Roaming Access</title>
             <info>
@@ -4199,6 +4209,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://schippke.tripod.com/ELF/Sferic2.htm">
+          <title>Der Einflu&#195;&#159; von Sferics auf den Organismus</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1046015967</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <separator/>
       <folder folded="yes">
@@ -4984,6 +5002,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1037894197</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://lgrb1.lgrb.uni-freiburg.de/d/fach/led/led_2_1.htm">
+        <title>LGRB - Arbeitsbereich Erdbebendienst</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1046012697</time_added>
           </metadata>
         </info>
       </bookmark>
