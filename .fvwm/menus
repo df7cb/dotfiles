@@ -10,6 +10,7 @@ AddToMenu Main	"netscape"	Exec netscape
 +		"xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 +		"gv"		Exec gv
 +		"mw"		Exec mw
++		"tet"		Exec ssh -f tante@goedel tet
 +		""		Nop
 +		"dpmsoff"	Exec dpmsoff
 +		"xlock"		Exec dpmsoff blank
