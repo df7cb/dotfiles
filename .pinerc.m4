@@ -125,6 +125,7 @@ feature-list=enable-suspend,
 	enable-goto-in-file-browser,
 	enable-jump-shortcut,
 	enable-mail-check-cue,
+	enable-msg-view-addresses,
 	enable-msg-view-attachments,
 	enable-msg-view-urls,
 	enable-msg-view-web-hostnames,
@@ -151,7 +152,7 @@ feature-list=enable-suspend,
 	fcc-without-attachments
 
 # Pine executes these keys upon startup (e.g. to view msg 13: i,j,1,3,CR,v)
-initial-keystroke-list=i
+initial-keystroke-list=""
 
 # Only show these headers (by default) when composing messages
 default-composer-hdrs=To:,
