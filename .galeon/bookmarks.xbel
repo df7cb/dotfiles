@@ -823,6 +823,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.math.uni-sb.de/~ag-albrecht/ws02_03/ana1/ana1.html">
+          <title>Analysis I WS 02/03</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1041780943</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Informatik</title>
@@ -4212,6 +4220,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1040230904</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.plan-deutschland.de/">
+        <title>Plan Deutschland - Hilfsorganisation f</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1041643482</time_added>
           </metadata>
         </info>
       </bookmark>
