@@ -16,11 +16,6 @@ servers = (
     autoconnect = "yes";
   },
   {
-    address = "vinge.freenode.net";
-    chatnet = "freenode";
-    port = "6667";
-  },
-  {
     address = "irc.de.freenode.net";
     chatnet = "freenode";
     port = "6667";
@@ -29,6 +24,14 @@ servers = (
   {
     address = "irc.de.oftc.net";
     chatnet = "oftc";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.de.quakenet.org";
+    chatnet = "quakenet";
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
@@ -78,6 +81,7 @@ chatnets = {
   SILC = { type = "SILC"; };
   freenode = { type = "IRC"; };
   oftc = { type = "IRC"; };
+  quakenet = { type = "IRC"; };
 };
 
 channels = (
@@ -89,10 +93,12 @@ channels = (
   { name = "#mutt"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#procmail"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#debian.de"; chatnet = "oftc"; autojoin = "yes"; },
-  { name = "#xskat"; chatnet = "ircnet"; autojoin = "yes"; },
-  { name = "#xskat"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#debian"; chatnet = "oftc"; autojoin = "yes"; }
+  { name = "#xskat"; chatnet = "ircnet"; },
+  { name = "#xskat"; chatnet = "freenode"; },
+  { name = "#debian"; chatnet = "freenode"; },
+  { name = "#debian"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#pisg"; chatnet = "quakenet"; autojoin = "yes"; },
+  { name = "#ircmarkers"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -129,7 +135,6 @@ aliases = {
   UMODE = "mode $N";
   WC = "window close";
   WN = "window new hide";
-  SV = "say Irssi $J ($V) - http://irssi.org/";
   GOTO = "sb goto";
   CHAT = "dcc chat";
   RUN = "SCRIPT LOAD";
@@ -141,7 +146,6 @@ aliases = {
   identify = "/quote nickserv identify";
   memoserv = "/quote memoserv";
   think = "say .oO($0-)";
-  heim = "msg heimgeist";
   plonk = "ignore -time 600";
   realname = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen (VN NN) ein, danke";
   cs = "chanserv";
@@ -150,6 +154,8 @@ aliases = {
   csvoice = "quote cs op $C $N ; /wait 2000 ; /mode +v-o $* $N";
   WI = "whois";
   fuckinggoogleit = "say http://www.fuckinggoogleit.com/?q=$0-";
+  slap = "/me slaps $0 around a bit with a large $1-";
+  hide = "color set $0 15 ; color save";
 };
 
 statusbar = {
@@ -277,6 +283,8 @@ settings = {
     chanact_header = "\\";
     chanact_abbreviate_names = "3";
     chanact_display = "$H$N$C$S";
+    trackbar_string = "-";
+    chanact_remove_prefix = "debian.";
   };
   "fe-text" = {
     scroll_page_count = "/1";
@@ -290,7 +298,7 @@ settings = {
     hilight_nick_matches = "no";
     show_nickmode = "yes";
     activity_hide_targets = "";
-    activity_hide_level = " actions";
+    activity_hide_level = "ACTIONS JOINS PARTS QUITS NICKS";
     autoclose_windows = "yes";
     reuse_unused_windows = "yes";
     show_nickmode_empty = "no";
@@ -505,3 +513,4 @@ windows = {
   };
 };
 mainwindows = { 1 = { first_line = "1"; lines = "32"; }; };
+notifies = { };

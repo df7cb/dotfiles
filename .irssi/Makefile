@@ -20,11 +20,14 @@ links:	autorun/friends.pl \
 	autorun/chanshare.pl \
 	autorun/keepnick.pl \
 	autorun/len.pl \
+	autorun/muttwiki.pl \
 	autorun/nickcolor.pl \
 	autorun/nickident.pl \
 	autorun/recode.pl \
+	autorun/timer.pl \
 	autorun/title.pl \
-	autorun/topic-diff.pl
+	autorun/topic-diff.pl \
+	autorun/trackbar.pl
 
 autorun/%.pl: %.pl
 	ln -s ../$< $@
