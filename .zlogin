@@ -1,7 +1,5 @@
 # $Id$
 
-[ "$TERM" = unknown ] && [ "$HOST" = fsinfo ] && who am i | grep io > /dev/null && TERM=97801
-
 mesg y
 finger
 
