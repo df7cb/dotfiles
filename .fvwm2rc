@@ -5,7 +5,7 @@
 ###############################################################################
 # n.b. These paths must NOT be longer than 255 chars
 
-ModulePath /usr/X11R6/lib/X11/fvwm2:/usr/X11R6/lib/X11/fvwm2/2.2
+ModulePath /usr/X11R6/lib/X11/fvwm2:/usr/X11R6/lib/X11/fvwm2/2.2:/usr/X11R6/libexec/fvwm/2.2.2
 
 PixmapPath /usr/include/X11/3dpixmaps/small:\
 	/usr/include/X11/3dpixmaps/normal:\
