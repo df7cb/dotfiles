@@ -26,13 +26,20 @@ sub addr_get_line {
 		www			=> $line[12],
 		kategorie	=> $line[13],
 		bemerkung	=> $line[14],
+		koordinaten	=> $line[15],
 	};
 
 	if($fields->{geburtstag}) {
-		$fields->{geburtstag} =~ /^(?:(\d+)\.(\d+)\.)?(\d*)$/;
+		$fields->{geburtstag} =~ /^(?:(\d+)\.(\d+)\.)?(\d*)$/ or warn "line $.: $fields->{nachname}: parse errror $fields->{geburtstag}\n";
 		$fields->{geb_tag} = $1;
 		$fields->{geb_mon} = $2;
 		$fields->{geb_jahr} = $3;
+	}
+	if($fields->{koordinaten}) {
+		$fields->{koordinaten} =~ s/,/./g;
+		$fields->{koordinaten} =~ /^([\d.]+)\/([\d.]+)$/ or warn "line $.: $fields->{nachname}: parse errror $fields->{koordinaten}\n";
+		$fields->{koord_lat} = $1;
+		$fields->{koord_long} = $2;
 	}
 
 	bless $fields;

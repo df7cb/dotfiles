@@ -25,9 +25,9 @@
 13 category
 14 remark
 # If you want to add own fields, like this:
-# 15 other1
+15 other1
 # 16 other2
-# label1	"Last Mail"
+label1	"Koordinaten"
 # label2	"Know him since"
 
 #########################################################################

@@ -1,0 +1,13 @@
+#!/usr/bin/perl -w
+# $Id$
+
+use strict;
+use lib '.';
+use addressbook;
+
+while(<>) {
+	my $f = addressbook::addr_get_line($_);
+	next unless $f->{koordinaten};
+	my $tag = $f->{zusatz} || ($f->{vorname}.$f->{nachname});
+	print "$f->{koord_lat} $f->{koord_long} \"$tag\"\n";
+}
