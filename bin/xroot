@@ -1,5 +1,6 @@
 #!/bin/sh
 # $Id$
 
-wget -q -O - http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic | 
-	xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy -
+URL=${1:-http://www.heim-d.uni-sb.de/cgi-bin/cb/randompic}
+
+wget -q -O - $URL | xv -root -quit -ncols 12 +noresetroot -rmode 5 -rbg navy -
