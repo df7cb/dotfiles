@@ -116,6 +116,7 @@
 /on ^action "* *" echo 4* $0 $2-
 /on ^join "* *" whois $0;ts 6*** $0 joined $1
 /on ^leave "* * *" whois $0;ts 6*** $0 left $1: $2-
+/on ^mail * ts 7*** new mail
 /on ^mode "* * *" echo 11*** Mode change "$2-" on $1 by $0
 /on ^msg "* *" ts 3*$0* $1-
 /on ^nick "* *" echo 6*** $0 -> $1
