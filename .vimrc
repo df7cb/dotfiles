@@ -39,7 +39,10 @@ imap <c-z> <esc><c-z>
 nmap <space> <c-f>
 nmap - <c-b>
 nmap M :make!<cr><cr>
+nmap <f11> :set invpaste<cr>
 set pastetoggle=<f11> " turn on/off paste in insert mode
+nmap <f12> :set invlist<cr>
+imap <f12> <c-o>:set invlist<cr>
 
 nmap <f1>	:b1<cr>
 nmap <f2>	:b2<cr>
@@ -51,20 +54,16 @@ nmap <f7>	:b7<cr>
 nmap <f8>	:b8<cr>
 nmap <f9>	:b9<cr>
 nmap <f10>	:b10<cr>
-nmap <f11>	:b11<cr>
-nmap <f12>	:b12<cr>
-nmap <s-f1>	:b13<cr>
-nmap <s-f2>	:b14<cr>
-nmap <s-f3>	:b15<cr>
-nmap <s-f4>	:b16<cr>
-nmap <s-f5>	:b17<cr>
-nmap <s-f6>	:b18<cr>
-nmap <s-f7>	:b19<cr>
-nmap <s-f8>	:b20<cr>
-nmap <s-f9>	:b21<cr>
-nmap <s-f10>	:b22<cr>
-nmap <s-f11>	:b23<cr>
-nmap <s-f12>	:b24<cr>
+nmap <s-f1>	:b11<cr>
+nmap <s-f2>	:b12<cr>
+nmap <s-f3>	:b13<cr>
+nmap <s-f4>	:b14<cr>
+nmap <s-f5>	:b15<cr>
+nmap <s-f6>	:b16<cr>
+nmap <s-f7>	:b17<cr>
+nmap <s-f8>	:b18<cr>
+nmap <s-f9>	:b19<cr>
+nmap <s-f10>	:b20<cr>
 
 " swap C arguments
 nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
