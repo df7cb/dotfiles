@@ -215,7 +215,7 @@
         </bookmark>
       </folder>
       <separator/>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser">
+      <bookmark href="http://www.heim-d.uni-sb.de/netzwart/netzuser.cgi">
         <title>Datenbank bearbeiten</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -223,7 +223,7 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser?table=bewohner%26order=raum">
+      <bookmark href="http://www.heim-d.uni-sb.de/netzwart/netzuser.cgi?table=bewohner%26order=raum">
         <title>Bewohnerliste</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
@@ -1880,14 +1880,6 @@
         </info>
       </bookmark>
       <separator/>
-      <bookmark href="https://www.hypovereinsbank.de/pub/home/home.jsp">
-        <title>HypoVereinsbank Startseite</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1018264014</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="https://my.hypovereinsbank.de/prot/templates/login_frame.jsp">
         <title>HypoVereinsbank</title>
         <info>
@@ -4575,6 +4567,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1052232179</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.baravalle.it/phpGrabComics/index.php?comic_array[]=calvinandhobbes">
+          <title>phpGrabComics</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1064770002</time_added>
             </metadata>
           </info>
         </bookmark>
