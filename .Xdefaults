@@ -1,5 +1,6 @@
 ! $Id$
 *background:		white
+*foreground:		black
 XClock*analog:		false
 XClock*background:	LightSkyBlue
 XClock*padding:		0
@@ -21,6 +22,13 @@ XTerm*saveLines:	500
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
 XTerm*thickness:	8
+xv.preset1.igraf: S 3 : 0,0 : 127,137 : 255,255
+xv.preset2.igraf: S 3 : 0,0 : 127,147 : 255,255
+xv.preset3.igraf: S 3 : 0,0 : 127,157 : 255,255
+xv.preset4.igraf: S 3 : 0,0 : 127,167 : 255,255
+xv.*.rgraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
+xv.*.ggraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
+xv.*.bgraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 
 pvs.activedisplayforeground: red
 pvs.geometry:		87x63+0+0
