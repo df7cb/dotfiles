@@ -1,8 +1,7 @@
 #!/bin/sh
 # $Id$
-# .xsession cb 990804
 
-PATH=~/bin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+PATH=~/bin:/bin:/usr/bin:/usr/local/bin:/usr/openwin/bin:/usr/X11R6/bin:/usr/X11/bin
 export PATH
 test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
 
@@ -10,7 +9,7 @@ test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
 xhost - >/dev/null
 [ -f ~/.xmodmap ] && xmodmap ~/.xmodmap
 xset s off
-xset dpms 0 0 1800
+xset dpms 0 0 1800 2> /dev/null
 xrdb -merge .Xdefaults
 
 xsetroot -solid navy
