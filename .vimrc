@@ -41,6 +41,19 @@ nmap - <c-b>
 nmap M :make!<cr><cr>
 nmap b <c-b>
 
+nmap <f1> :b1<cr>
+nmap <f2> :b2<cr>
+nmap <f3> :b3<cr>
+nmap <f4> :b4<cr>
+nmap <f5> :b5<cr>
+nmap <f6> :b6<cr>
+nmap <f7> :b7<cr>
+nmap <f8> :b8<cr>
+nmap <f9> :b9<cr>
+nmap <f10> :b10<cr>
+nmap <f11> :b11<cr>
+nmap <f12> :b12<cr>
+
 " highlights
 hi NonText cterm=NONE
 
