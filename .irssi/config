@@ -263,12 +263,13 @@ settings = {
     title_string = "irssi $winname$C@$tag";
   };
   "fe-text" = { scroll_page_count = "/1"; };
+  "fe-common/core" = {
+    autolog_path = "~/irc/log/${tag}_$0/${0}-%Y-%m-%d";
+    autolog = "yes";
+  };
 };
-hilights = ( { text = "Myon"; nick = "yes"; word = "yes"; } );
-ignores = (
-  { mask = "*!pitbul@*"; level = "CRAP ACTIONS"; },
-  { mask = "*!testshell@*"; level = "CRAP ACTIONS"; }
-);
+hilights = ( { text = "Myon"; nick = "no"; word = "yes"; } );
+ignores = ( );
 logs = {
   "~/irc/log/heim-d/heim-d-%Y-%m-%d" = {
     level = "ALL";
@@ -309,6 +310,11 @@ logs = {
     items = (
       { type = "target"; name = "#procmail"; server = "freenode"; }
     );
+  };
+  "~/irc/log/unixagsb/unixagsb-%Y-%m-%d" = {
+    auto_open = "yes";
+    level = "ALL";
+    items = ( { type = "target"; name = "#unixagsb"; } );
   };
 };
 keyboard = (
