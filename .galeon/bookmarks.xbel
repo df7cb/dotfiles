@@ -2145,15 +2145,6 @@
             </info>
           </bookmark>
         </folder>
-        <bookmark href="http://fsinfo.cs.uni-sb.de/~abe/Links/Hardware.html#dealer">
-          <title>Hardware-Links</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1036424205</time_modified>
-              <time_added>993818564</time_added>
-            </metadata>
-          </info>
-        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Software</title>
@@ -2302,54 +2293,6 @@
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
                 <time_added>930614950</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-        </folder>
-        <folder folded="yes">
-          <title>zsh</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>947101127</time_added>
-            </metadata>
-          </info>
-          <bookmark href="http://sunsite.auc.dk/zsh/">
-            <title>ZSH - THE Z SHELL</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>946391535</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-          <bookmark href="ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/">
-            <title>Directory of /pub/unix/shells/zsh</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>946840155</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-          <bookmark href="http://sourceforge.net/project/?group_id=4068">
-            <title>SourceForge: Project Info - zsh</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>955472802</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-          <bookmark href="http://www.zsh.org/">
-            <title>Zsh</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>955474706</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-          <bookmark href="http://sourceforge.net/patch/index.php?group_id=4068%26set=custom%26_assigned_to=0%26_status=100%26_category=100%26SUBMIT=Browse">
-            <title>SourceForge: Browse Patches</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>964196556</time_added>
               </metadata>
             </info>
           </bookmark>
@@ -2675,39 +2618,6 @@
             </info>
           </bookmark>
         </folder>
-        <bookmark href="http://vim.sourceforge.net/">
-          <title>welcome : vim online</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1031429291</time_modified>
-              <time_added>991699015</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://rzstud1.rz.uni-karlsruhe.de/~uno4/linux/descr_sirobot.html">
-          <title>Linux // What is Sirobot?</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>991830565</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.bitrot.de/plan.html">
-          <title>plan - calendar and day planner</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1011352772</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.debian.org/doc/manuals/debian-euro-support/">
-          <title>Debian Euro HOWTO</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1015582696</time_added>
-            </metadata>
-          </info>
-        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Linux-Dist</title>
@@ -3246,19 +3156,129 @@
           </info>
         </bookmark>
       </folder>
-      <bookmark href="http://www.computeruniverse.net/hardware.asp">
-        <title>computeruniverse.net</title>
+      <folder folded="yes">
+        <title>Open Source</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1036424231</time_modified>
-            <time_added>998929899</time_added>
+            <time_modified>1044356979</time_modified>
+            <time_added>1044356969</time_added>
           </metadata>
         </info>
-      </bookmark>
+        <folder folded="yes">
+          <title>bash</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1044356985</time_modified>
+              <time_added>1044356983</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.caliban.org/bash/index.shtml#completion">
+            <title>Working more productively with bash 2.x</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1044357002</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="yes">
+          <title>zsh</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>947101127</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://sunsite.auc.dk/zsh/">
+            <title>ZSH - THE Z SHELL</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>946391535</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/">
+            <title>Directory of /pub/unix/shells/zsh</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>946840155</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sourceforge.net/project/?group_id=4068">
+            <title>SourceForge: Project Info - zsh</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>955472802</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.zsh.org/">
+            <title>Zsh</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>955474706</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sourceforge.net/patch/index.php?group_id=4068%26set=custom%26_assigned_to=0%26_status=100%26_category=100%26SUBMIT=Browse">
+            <title>SourceForge: Browse Patches</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>964196556</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://www.bitrot.de/plan.html">
+          <title>plan - calendar and day planner</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1011352772</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://vim.sourceforge.net/">
+          <title>welcome : vim online</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1031429291</time_modified>
+              <time_added>991699015</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
       <folder folded="yes">
-        <title>Linux</title>
+        <title>Hardware kaufen</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1044357108</time_modified>
+            <time_added>1044357104</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/~abe/Links/Hardware.html#dealer">
+          <title>Hardware-Links</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1036424205</time_modified>
+              <time_added>993818564</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.computeruniverse.net/hardware.asp">
+          <title>computeruniverse.net</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1036424231</time_modified>
+              <time_added>998929899</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Linux Kernel</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1044356960</time_modified>
             <time_added>1042019524</time_added>
           </metadata>
         </info>
@@ -3270,11 +3290,20 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www.cl.cam.ac.uk/~mgk25/unicode.html">
-          <title>UTF-8 and Unicode FAQ</title>
+      </folder>
+      <folder folded="yes">
+        <title>Unicode / Charsets</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1044357152</time_modified>
+            <time_added>1044029448</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.debian.org/doc/manuals/debian-euro-support/">
+          <title>Debian Euro HOWTO</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1042817963</time_added>
+              <time_added>1015582696</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -3286,14 +3315,6 @@
             </metadata>
           </info>
         </bookmark>
-      </folder>
-      <folder folded="yes">
-        <title>Unicode</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1044029448</time_added>
-          </metadata>
-        </info>
         <bookmark href="http://www.unicode.org/charts/">
           <title>Code Charts (PDF Version)</title>
           <info>
@@ -3331,6 +3352,63 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1044033249</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>IRC</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1044267829</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://rzstud1.rz.uni-karlsruhe.de/~uno4/linux/descr_sirobot.html">
+          <title>Linux // What is Sirobot?</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991830565</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://irssi.org/index.php?page=docs%26doc=faq">
+          <title>irssi FAQ</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1040230904</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://wouter.coekaerts.be/irssi/">
+          <title>Wouter Coekaerts - irssi</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044267835</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://users.dal.net/cgi-bin/login.cgi">
+          <title>The DALnet IRC Network</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1037792749</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://freenode.net/">
+          <title>freenode.net</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1040230894</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.funet.fi/~irc/restricted.html">
+          <title>Restricted IRC client access</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044366243</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -4336,35 +4414,11 @@
           </info>
         </bookmark>
       </folder>
-      <bookmark href="http://users.dal.net/cgi-bin/login.cgi">
-        <title>The DALnet IRC Network</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1037792749</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://www.mathematikum.de/">
         <title>Mathematikum Giessen</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1037898897</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://freenode.net/">
-        <title>freenode.net</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1040230894</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://irssi.org/index.php?page=docs%26doc=faq">
-        <title>irssi FAQ</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1040230904</time_added>
           </metadata>
         </info>
       </bookmark>
