@@ -3891,6 +3891,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://bugs.guug.de/db/pa/lmutt.html">
+          <title>GUUG bug reports: package mutt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061838869</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://cedricduval.free.fr/mutt/">
           <title>Mutt Patches</title>
           <info>
@@ -3920,14 +3928,6 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1060593500</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://bugs.guug.de/db/pa/lmutt.html">
-          <title>GUUG bug reports: package mutt</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1061838869</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -4414,14 +4414,6 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1068133000</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://channel.debian.de/">
-          <title>#debian.de</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1071955620</time_added>
             </metadata>
           </info>
         </bookmark>
