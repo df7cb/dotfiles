@@ -288,7 +288,7 @@ settings = {
     chanact_display = "$H$N$C$S";
     trackbar_string = "-";
     chanact_remove_prefix = "debian.";
-    screen_away_repeat = "30";
+    screen_away_repeat = "10";
     screen_away_message = "screen detached";
   };
   "fe-text" = {
@@ -310,7 +310,7 @@ settings = {
   };
   proxy = {
     irssiproxy_password = "wb0Biz";
-    irssiproxy_ports = "ircnet=13331 freenode=13332 oftc=13333";
+    irssiproxy_ports = "ircnet=13331 freenode=13332 oftc=13333 quakenet=13334";
     irssiproxy_bind = "127.0.0.1";
   };
 };
