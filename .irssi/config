@@ -269,7 +269,7 @@ settings = {
     paste_verify_line_count = "10";
   };
   "fe-common/core" = {
-    autolog_path = "~/irc/autolog/${tag}_$0/${0}-%Y-%m-%d";
+    autolog_path = "~/irc/autolog/%Y-%m/${0}_$tag/${0}-%Y-%m-%d";
     autolog = "yes";
     hilight_nick_matches = "no";
     show_nickmode = "no";
@@ -277,7 +277,10 @@ settings = {
     activity_hide_level = " actions";
   };
 };
-hilights = ( { text = "Myon"; nick = "no"; word = "yes"; } );
+hilights = (
+  { text = "Myon"; nick = "no"; word = "yes"; },
+  { text = "df7cb"; nick = "no"; word = "yes"; }
+);
 ignores = ( );
 logs = {
   "~/irc/log/heim-d/heim-d-%Y-%m-%d" = {
