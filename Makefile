@@ -4,7 +4,7 @@ DEPS = Makefile .configrc
 UNDEFINE = -Uformat -Uindex -Uunix
 
 all: .mutt/aliases.new .mutt/muttrc.local \
-	.less .pinerc .ytalkrc .xinitrc .configrc
+	.less .pinerc .ytalkrc .xinitrc .configrc bin/ctar
 
 ## targets ##
 
@@ -40,6 +40,9 @@ mail/d:
 	touch mail/deleted
 	ln -s deleted mail/d
 
+bin/ctar:
+	ln -s ttar bin/ctar
+
 ## update stuff ##
 
 # this needs GNU make
@@ -50,7 +53,7 @@ up: update
 update: cleanup
 	cvs -q update
 
-safe: cleanup conflict
+safe: cleanup # conflict
 	for file in `cvs -q -n update | grep '^[MPU] ' | cut -c 3-` ; do \
 		cvs update $$file ; done
 
@@ -59,24 +62,27 @@ conflict:
 
 com: commit
 commit: cleanup
-	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan
+	cvs commit -m "make commit by $(USER)@$(HOST)" .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .ncftp/bookmarks .plan.dir/dayplan lib/addressbook/cb.dat lib/todo/todo
 
 ## cleanup stuff ##
 
 cleanup: bookmark-clean galeon-clean known_hosts-sort
 
 bookmark-clean:
-	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
+	# Cleaning .netscape/bookmarks.html
+	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
 
 galeon-clean:
-	-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
+	# Cleaning .galeon/bookmarks.xbel
+	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
 
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
-known_hosts-sort: known_hosts-uniq
+known_hosts-sort: # known_hosts-uniq
+	# Cleaning .ssh/known_hosts
 	@grep -qv '<<<<' .ssh/known_hosts
-	mv .ssh/known_hosts .ssh/known_hosts-
-	sort -u .ssh/known_hosts- > .ssh/known_hosts
+	@mv .ssh/known_hosts .ssh/known_hosts-
+	@LC_ALL=C sort -u .ssh/known_hosts- > .ssh/known_hosts
 	@rm .ssh/known_hosts-
 
 ## installation stuff ##

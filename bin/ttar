@@ -1,10 +1,23 @@
 #!/bin/sh
 # $Id$
 
+case "$0" in
+	*ttar) TAR='tar tvf' ZIP='unzip -l' ;;
+	*ctar) TAR='tar cvf' ZIP='zip' ;;
+	*)	echo "$0 error: called with unknown name" 1>&2
+		exit 1 ;;
+esac
+
+if [ -z "$1" ] ; then
+	echo "usage: {ttar|ctar} archive{.tar|.tgz|.bz2|.zip} [filenames...]" 1>&2
+	exit 1
+fi
+
 case "$1" in
-	*.tar)	tar tfv "$@" ;;
-	*.tgz|*.gz|*.tar.Z)	tar tfvz "$@" ;;
-	*.bz2)	tar tfvj "$@" ;;
-	*.zip)	unzip -l "$@" ;;
-	*)	echo "$0 error: suffix not recognized: $1" 1>&2 ;;
+	*.tar)	${TAR} "$@" ;;
+	*.tgz|*.gz|*.tar.Z)	${TAR}z "$@" ;;
+	*.bz2)	${TAR}j "$@" ;;
+	*.zip)	${ZIP} "$@" ;;
+	*)	echo "$0 error: suffix not recognized: $1" 1>&2
+		exit 1 ;;
 esac
