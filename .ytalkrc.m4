@@ -5,6 +5,6 @@ turn auto-import on
 turn auto-invite off
 turn X off
 ifelse( _YTALK_, `3.0', `turn auto-rering on',
-	_YTALK_, `3.1', `turn prompt-rering off (new syntax)',
+	_YTALK_, `3.1', `turn prompt-rering off',
 	`errprint(`ERROR: _YTALK_ undefined in .configrc')'
 	)
