@@ -96,10 +96,6 @@
       </bookmark>
       <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
         <title>Translate to English</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
     </folder>
   </folder>
@@ -128,11 +124,11 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/forum">
+      <bookmark href="http://www.heim-d.uni-sb.de/forum/">
         <title>Forum</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>968160699</time_added>
+            <time_added>1064410678</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -418,14 +414,6 @@
         </bookmark>
       </folder>
       <separator/>
-      <bookmark href="http://home.tu-clausthal.de/student/wohnheime/AK-WaN.html">
-        <title>Andere &quot;Wohnheime ans Netz&quot;-Projekte</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>950542167</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://www.inf.ethz.ch/personal/meierl/immagini/jpg/">
         <title>Lennarts Photos</title>
         <info>
