@@ -7,6 +7,7 @@ alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
 alias ai Aktive Idealisten <ai@fsinfo.cs.uni-sb.de>
 alias altpraesis Alt-Präsis <altpraesis@heim-d.uni-sb.de>
 alias andrewmort Andrew Morton <andrewmort@yahoo.com>
+alias andsi Andreas Sicken <andsi@heim-d.uni-sb.de>
 alias champagnnia Verena Bürger <champagnnia@yahoo.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
@@ -34,6 +35,7 @@ alias hp Heimpräsidenten D <hp@heim-d.uni-sb.de>
 alias jakob Jakob Engblom <jakob@virtutech.com>
 alias kassenwart Kassenwart D <kassenwart@heim-d.uni-sb.de>
 alias kempe Benjamin Kempe <kempe@studcs.uni-sb.de>
+alias krieger Hans-Ulrich Krieger <krieger@dfki.de>
 alias labor Labor <labor@wjpserver.cs.uni-sb.de>
 alias m Majordomo List Manager <majordomo@heim-d.uni-sb.de>
 alias marechal Marechal Nadege <marechal@cs.uni-sb.de>
@@ -48,4 +50,5 @@ alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
 alias vdl-abi96 Abi 96 <vdl-abi96@heim-d.uni-sb.de>
 alias video4linux-list Video4Linux <video4linux-list@redhat.com>
+alias wspark Wooseok Park <wspark@cs.uni-sb.de>
 source ~/.mutt/aliases.addressbook

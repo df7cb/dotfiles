@@ -133,99 +133,6 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser">
-        <title>Datenbank bearbeiten</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>960660355</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser?table=bewohner%26order=raum">
-        <title>Bewohnerliste</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>964390609</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <folder folded="yes">
-        <title>Admin</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>963968795</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www.heim-d.uni-sb.de/server-status/">
-          <title>Apache Status</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>963968819</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic.php">
-          <title>traffic heim-d</title>
-        </bookmark>
-        <separator/>
-        <bookmark href="http://www.heim-d.uni-sb.de/doc/">
-          <title>Wohnheim D - Dokumentationen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>938088302</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.heim-d.uni-sb.de/doc/apache/manual/">
-          <title>Apache manual</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1047746935</time_modified>
-              <time_added>1016552156</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/samba/smb2www.pl">
-          <title>Welcome to the SMB to WWW gateway !</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>975088175</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.heim-d.uni-sb.de/doc/postgresql-doc/html/">
-          <title>PostgreSQL 7.1.3 Documentation</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1018810625</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.cert.org/tech_tips/home_networks.html">
-          <title>Home Network Security</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995715586</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/listargate.cgi">
-          <title>LSG/2: Mailing List Interface</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1048773237</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <bookmark href="http://www.rz.uni-saarland.de/services/netz/wohnheime/">
-        <title>RZ: Wohnheime</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1042026310</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/forum">
         <title>Forum</title>
         <info>
@@ -242,30 +149,223 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/terminal">
-        <title>Terminal</title>
+      <folder folded="yes">
+        <title>Heim D</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>907464661</time_added>
+            <time_modified>1051437403</time_modified>
+            <time_added>1051437394</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/terminal">
+          <title>Terminal</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>907464661</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>cb</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1049726149</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.heim-d.uni-sb.de/~cb/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051437268</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/cb/bilder/bilder">
+          <title>Bilder</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1049726161</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://df7cb.dyndns.info/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051463660</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Heimgeist</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1051437040</time_modified>
+            <time_added>1051437036</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/heimgeist/logs">
+          <title>HeimGeist-Logs</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>966364381</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/heimgeist/stats">
+          <title>HeimGeist-Stats</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>966364432</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <separator/>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser">
+        <title>Datenbank bearbeiten</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>960660355</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/heimgeist/logs">
-        <title>HeimGeist-Logs</title>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser?table=bewohner%26order=raum">
+        <title>Bewohnerliste</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>966364381</time_added>
+            <time_added>964390609</time_added>
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/heimgeist/stats">
-        <title>HeimGeist-Stats</title>
+      <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic/netzwart-statistik.shtml">
+        <title>Gesamt-Statistik</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>966364432</time_added>
+            <time_added>1048672643</time_added>
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>Admin</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>963968795</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic/">
+          <title>Wohnheim D - Netzwerk-Verkehr</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1047778465</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://134.96.49.112/cr/cgi/Statistik/statistik.cgi?sort=d">
+          <title>Waldhaus: T&#195;&#164;glicher Traffic</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1051437344</time_modified>
+              <time_added>1045044393</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://www.rz.uni-saarland.de/services/netz/wohnheime/">
+          <title>RZ: Wohnheime</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1042026310</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/doc/">
+          <title>Wohnheim D - Dokumentationen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>938088302</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/samba/smb2www.pl">
+          <title>Welcome to the SMB to WWW gateway !</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>975088175</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/doc/postgresql-doc/html/">
+          <title>PostgreSQL Documentation</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1051437214</time_modified>
+              <time_added>1018810625</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/listargate.cgi">
+          <title>LSG/2: Mailing List Interface</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1048773237</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cert.org/tech_tips/home_networks.html">
+          <title>Home Network Security</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995715586</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Apache</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1051437985</time_modified>
+            <time_added>1051437981</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.heim-d.uni-sb.de/doc/apache/manual/">
+          <title>Apache manual</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1047746935</time_modified>
+              <time_added>1016552156</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/doc/apache/manual/mod/index.html">
+          <title>Apache modules</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051438015</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/server-status/">
+          <title>Apache Status</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>963968819</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.heim-d.uni-sb.de/doc/libapache-mod-ssl-doc/html/ssl_overview.html">
+          <title>mod_ssl: Preface</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051455847</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <separator/>
       <bookmark href="http://home.tu-clausthal.de/student/wohnheime/AK-WaN.html">
         <title>Andere &quot;Wohnheime ans Netz&quot;-Projekte</title>
         <info>
@@ -283,9 +383,10 @@
         </info>
       </bookmark>
       <bookmark href="http://www.geocities.com/d_band_2000/index.htm">
-        <title>Home Page</title>
+        <title>Heim-D-Band</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1051437314</time_modified>
             <time_added>977177639</time_added>
           </metadata>
         </info>
@@ -298,46 +399,6 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://134.96.49.112/cr/cgi/Statistik/statistik.cgi?sort=d">
-        <title>T&#195;&#164;glicher Traffic</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1045044393</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic/">
-        <title>Wohnheim D - Netzwerk-Verkehr</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1047778465</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic/netzwart-statistik.shtml">
-        <title>Gesamt-Statistik</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1048672643</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <folder folded="yes">
-        <title>cb</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1049726149</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/cb/bilder/bilder">
-          <title>Bilder</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1049726161</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
     </folder>
     <folder folded="yes">
       <title>Uni</title>
@@ -3749,58 +3810,73 @@
             <time_added>888077167</time_added>
           </metadata>
         </info>
-        <bookmark href="http://www.handshake.de/user/g.berg/df7cb/">
-          <title>DF7CB - Die Amateurfunk-Seite</title>
+        <bookmark href="http://www.heim-d.uni-sb.de/~cb/">
+          <title>Christoph Berg @ heim-d</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675833</time_modified>
+              <time_added>1050675373</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://user.it.uu.se/~cberg/">
+          <title>user.it.uu.se/~cberg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1050059747</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.handshake.de/user/g.berg/df7cb/">
+          <title>DF7CB @ handshake</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675922</time_modified>
               <time_added>877524801</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://www.qsl.net/df7cb/">
-          <title>DF7CB umgezogen</title>
+          <title>DF7CB @ qsl.net</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675914</time_modified>
               <time_added>887329625</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://stud.uni-sb.de/~chbe0025/">
-          <title>Homepage Christoph Berg</title>
+          <title>Christoph Berg @ stud</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675879</time_modified>
               <time_added>893412212</time_added>
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/">
-          <title>Christoph Berg</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>978958824</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://fsinfo.cs.uni-sb.de/~cb/">
-          <title>Christoph Berg online &#239;&#191;&#189;</title>
+          <title>Christoph Berg @ fsinfo</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675903</time_modified>
               <time_added>981152246</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://www.uni-saarland.de/~chbe002/">
-          <title>Christoph Berg</title>
+          <title>Christoph Berg @ uni-saarland</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675855</time_modified>
               <time_added>1015516795</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://www.phil.uni-sb.de/~cb/">
-          <title>Christoph Berg</title>
+          <title>Christoph Berg @ phil</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1050675847</time_modified>
               <time_added>1015516899</time_added>
             </metadata>
           </info>
@@ -3835,14 +3911,6 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1048014675</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://user.it.uu.se/~cberg/">
-          <title>user.it.uu.se/~cberg</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1050059747</time_added>
             </metadata>
           </info>
         </bookmark>
