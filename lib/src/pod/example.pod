@@ -1,0 +1,37 @@
+# $Id$
+
+=head1 NAME
+
+pod file - template to show how to use pod
+
+=head1 SYNOPSIS
+
+B<pod file>
+
+=head1 DESCRIPTION
+
+B<pod file> includes plain old documentation.
+
+You can use the following Makefile snippet:
+
+   POD2MAN = pod2man
+   PODOPTS = -c "Utf8Term Documentation" -r "0.1"
+
+   %.1: %.pod
+   	$(POD2MAN) $(PODOPTS) $< $@
+
+=head1 OPTIONS
+
+There are no options for B<pod file>.
+
+=head1 RETURN VALUE
+
+B<pod file> returns with an exit code of 0 if piped through B<cat>.
+
+=head1 BUGS
+
+The template could be even more funny.
+
+=head1 AUTHOR
+
+Christoph Berg <cb@cs.uni-sb.de>
