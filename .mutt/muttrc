@@ -43,12 +43,16 @@ bind	compose	<return> send-message	# <enter> = numeric keypad
 macro	compose	=	f=		'Fcc to ~/mail/'
 bind	compose	v	view-attach
 
+# purge duplicates
+macro	index	,=	"<delete-pattern>~=<enter>"
 # index format with mailing list name
-macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10B %s'\n"
+macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s'\n"
+# delete messages older > 1m
+macro	index	,d	"<delete-pattern>~R !~F ~d>1m<enter>"
 # index format with year included
 macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.15F %s'\n"
 macro	index	,R	"l!~R\n"	# limit to unread meassages
-macro	index	,r	"T!~D(~F|!~R)\nl~a\n\ct.\n<esc>V"	# limit to threads with unread meassages
+macro	index	,r	"l.\nT!~D(!~R|~F|~P)\nl~a\n\ct.\n<esc>V"	# limit to threads with unread meassages
 
 # headers
 ignore Importance # M$
@@ -61,6 +65,7 @@ ignore X-Bulkmail # tagesschau.de
 ignore X-Cron-Env # cron
 ignore X-MIME-Autoconverted Auto-Submitted # sendmail
 ignore X-Spam-Level X-Keywords X-UID X-Spam-Checker-Version X-Spam-Status # spamassassin
+ignore X-Label # procmail/formail/%Y
 ignore X-Virus-Scanned X-Scanned-By X-AntiVirus X-DCC- # scanners
 ignore X-Mailer X-Accept-Language # Mozilla
 ignore User-Agent # slrn
@@ -69,7 +74,7 @@ ignore Old-Return-Path Resent-Message-ID Resent-From X-Mailing-List Resent-Sende
 ignore Original-Sender Resent-To Resent-Cc # bugs.debian.org
 #unignore X-Debian-PR-Message
 ignore X-PTS- X-Unsubscribe # packages.qa.debian.org
-ignore X-Cookie X-Operating X-Sheldon X-Url # various induhviduals
+ignore X-Cookie X-Operating X-Sheldon X-Url X-Habeas-SWE- # various induhviduals
 
 unignore Date
 unhdr_order *
@@ -79,8 +84,8 @@ hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
 #set abort_nosubject
 set abort_unmodified=ask-yes
 set alias_file=~/.mutt/aliases
-set alternates="^cb@((heim-d|cs).uni-sb|df7cb).de$"
-set attribution="Re: %s [%f, %d, %i]"
+set alternates="^cb@((heim-d|cs|asta).uni-s(b|aarland)|df7cb).de$"
+set attribution="Re: %F in %i"
 set auto_tag
 unset beep
 #set beep_new
@@ -96,7 +101,8 @@ set folder="~/mail"
 set forward_format="%s (fwd)"
 unset help
 set hidden_host
-#set index_format="%3C %Z %4c %[%b %e %k:%M] %-15.15F %s"
+set index_context=3
+set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
 set ispell="aspell --lang=de check"
 #set locale="de_DE.ISO-8859-1"
 unset markers
@@ -123,7 +129,7 @@ set status_on_top
 set sort=threads
 set tilde
 set timeout=30
-set trash="=trash"
+set trash="=trash/trash"
 set use_domain
 set use_from
 unset write_bcc
@@ -149,7 +155,7 @@ color index	green default ~P
 color index	cyan default ~v
 color index	brightdefault default ~T
 color index	brightdefault default ~F
-color index	green default "~t debian-news"
+color index	magenta default "~t debian-news"
 color index	default red "~t debian-security-announce"
 
 color header    brightdefault default ^From:
