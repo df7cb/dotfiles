@@ -35,7 +35,7 @@ set pager_index_lines=5
 set pager_stop
 set pgp_autosign
 set pgp_sign_as="0x6D8ABE71"
-set record="sent-mail"
+set record="=sent-mail"
 unset sig_dashes
 set sort=threads
 set tilde
