@@ -12,7 +12,7 @@ $y = (localtime)[5] + 1900;
 while(<>) {
 	addr_get_line($_);
 	next unless $geb_tag;
-	$geb_jahr = " ($geb_jahr)" if $geb_jahr;
+	$geb_jahr = " *". ($geb_jahr % 100) if $geb_jahr;
 	$z = $zusatz ? "$zusatz " : "";
 
 	print "$geb_mon/$geb_tag/$y  99:99:99  0:0:0  0:0:0  0:0:0  ---------- 0 0\n";
