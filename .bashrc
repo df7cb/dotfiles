@@ -1,16 +1,16 @@
-# $Id$ <cb@heim-d.uni-sb.de>
+# $Id$ Christoph Berg <cb@df7cb.de>
 # login shells: /etc/profile, then ~/.[bash_]profile; interactive: ~/.bashrc
 #echo .bashrc
+
+# general stuff
+shopt -s extglob
+ulimit -Sc 0	# disable core dumps
+if [ $UID -gt 0 ] && [ $UID -eq $GROUPS ] ; then umask 002 ; else umask 022 ; fi
 
 # Environment
 [ -f ~/bin/os ] && . ~/bin/os > /dev/null
 [ -f ~/.path ] && . ~/.path
 [ -f ~/.env ] && . ~/.env
-
-# general stuff
-shopt -s extglob
-ulimit -Sc 0	# disable core dumps
-umask 022
 
 # check whether we run interactively
 [ "$PS1" ] || return
@@ -45,7 +45,7 @@ case $TERM in # update $DISPLAY in screen shells
 esac
 
 # internal shell settings
-auto_resume=substring
+auto_resume=
 #FIGNORE='~'
 HISTCONTROL=ignoredups
 #histchars='!^#'
@@ -54,10 +54,10 @@ HISTIGNORE="..:[bf]g:cd:l:ls"
 HISTSIZE=500
 unset ignoreeof
 shopt -s no_empty_cmd_completion
-#[ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
-#[ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
 [ -t 0 ] && stty erase ^H &> /dev/null
 #unset noclobber
 
 [ -f ~/.bashrc-local ] && . ~/.bashrc-local
 true
+
+# vim:ts=4:sw=4:
