@@ -16,7 +16,7 @@ host fermi.df7cb.de fermi
 host planck.df7cb.de planck
  hostname planck.df7cb.de
  forwardagent yes
- ifndomain(df7cb.de, proxyCommand ssh -t fermi.df7cb.de nc -q0 %h 22
+ ifndomain(df7cb.de, proxyCommand ssh fermi.df7cb.de nc -q0 %h 22
  checkHostIP no)
  #localForward 5901 localhost:5901
  #remoteForward 16001 localhost:16001
