@@ -1,11 +1,14 @@
 # $Id$
 
-all: .configrc .less .plan.dir/dayplan .ssh/cb@fermi .ssh/config .ytalkrc .xinitrc bin/ctar
+all: .configrc .irssi/nickserv.users .less .plan.dir/dayplan .ssh/cb@fermi .ssh/config .ytalkrc .xinitrc bin/ctar
 
 ## targets ##
 
 #.firefox/cb/cbcbcbcb.slt/bookmarks.html:
 #	[ -f .priv/bookmarks.html ] && ln -s ../../../.priv/bookmarks.html $@
+
+.irssi/nickserv.users:
+	[ -f .priv/nickserv.users ] && ln -s ../.priv/nickserv.users $@
 
 .less: .lesskey
 	lesskey
