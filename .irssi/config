@@ -11,7 +11,7 @@ servers = (
   { address = "silc.pspt.fi"; chatnet = "SILC"; port = "706"; },
   {
     address = "random.ircd.de";
-    chatnet = "IRCNet";
+    chatnet = "ircnet";
     port = "6667";
     autoconnect = "yes";
   },
@@ -42,7 +42,7 @@ servers = (
 );
 
 chatnets = {
-  IRCNet = {
+  ircnet = {
     type = "IRC";
     max_kicks = "4";
     max_modes = "3";
@@ -147,9 +147,11 @@ aliases = {
   think = "say .oO($0-)";
   heim = "msg heimgeist";
   plonk = "ignore -time 600";
-  rn = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen ein.";
+  rn = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen (VN NN) ein, danke";
   cs = "chanserv";
   ns = "quote nickserv";
+  cskick = "quote cs op $C $N ; /wait 2000; /k $*; /mode -o $N";
+  csvoice = "quote cs op $C $N ; /wait 2000 ; /mode +v-o $* $N";
 };
 
 statusbar = {
@@ -316,6 +318,27 @@ hilights = (
     act_color = "%g";
     nick = "yes";
     word = "yes";
+  },
+  {
+    text = "coverviewer";
+    color = "%b";
+    act_color = "%b";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "usemod";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "gpgmailsign";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
   }
 );
 ignores = ( { level = "NOTICES"; channels = ( "#xskat1" ); } );
@@ -324,22 +347,22 @@ logs = {
     level = "ALL";
     auto_open = "yes";
     items = ( 
-      { type = "target"; name = "#heim-d"; server = "IRCNet"; }
+      { type = "target"; name = "#heim-d"; server = "ircnet"; }
     );
   };
   "~/irc/log/plant/plant-%Y-%m-%d" = {
     level = "ALL";
     auto_open = "yes";
-    items = ( { type = "target"; name = "#plant"; server = "IRCNet"; } );
+    items = ( { type = "target"; name = "#plant"; server = "ircnet"; } );
   };
-  "~/irc/log/debian.de@ircnet/debian.de-%Y-%m-%d" = {
+  "~/irc/log/debian.de_ircnet/debian.de-%Y-%m-%d" = {
     auto_open = "yes";
     level = "ALL";
     items = (
-      { type = "target"; name = "#debian.de"; server = "IRCNet"; }
+      { type = "target"; name = "#debian.de"; server = "ircnet"; }
     );
   };
-  "~/irc/log/debian.de@freenode/debian.de-%Y-%m-%d" = {
+  "~/irc/log/debian.de_freenode/debian.de-%Y-%m-%d" = {
     auto_open = "yes";
     level = "ALL";
     items = (
@@ -385,7 +408,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#heim-d";
-        tag = "IRCNet";
+        tag = "ircnet";
       }
     );
   };
@@ -436,7 +459,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#debian.de";
-        tag = "IRCNet";
+        tag = "ircnet";
       }
     );
   };
@@ -446,7 +469,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#plant";
-        tag = "IRCNet";
+        tag = "ircnet";
       }
     );
   };
@@ -466,7 +489,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#xskat";
-        tag = "IRCNet";
+        tag = "ircnet";
       }
     );
   };
