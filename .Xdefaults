@@ -18,6 +18,8 @@ XClock*background:	RoyalBlue
 XClock*foreground:	Yellow
 XClock*padding:		0
 XClock*update:		1
+! XFree 4.3: face
+XClock*face:		fixed-8
 XClock*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
 XDvi.expert:		true
 XDvi.highlight:		blue
