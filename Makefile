@@ -87,6 +87,7 @@ cleanup: $(RUN) $(STAMPS)
 
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
+	@perl -e 'while(<>){ foreach(/^(\w+)\b/) { print "repeated: $$_\n" if $$1 eq $$l; $$l = $$1; }}' .ssh/known_hosts
 .ssh/.known_hosts: .ssh/known_hosts
 	# Sorting $<
 	@grep -qv '<<<<' $<
