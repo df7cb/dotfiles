@@ -12,12 +12,13 @@ fi
 #set up X server
 xhost - >/dev/null
 XKBD=`xkbd` && xmodmap .xmodmap-$XKBD
-xrdb -merge .Xdefaults
+xrdb .Xdefaults
 dpmsoff init
 
 xsetroot -solid navy
 ( sleep 10 ; xroot ) &
-xclock -g 116x12+41+0 &
+xclock -g 116x12+0+0 &
+which pland > /dev/null && pland -k &
 
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
 SHLVL=-1
