@@ -67,7 +67,7 @@ cycle: update commit
 ## cleanup stuff ##
 
 cleanup: .netscape/.bookmarks.html .galeon/.bookmarks.xbel .ssh/.known_hosts \
-	.mutt/.aliases plan-run addressbook-run
+	.mutt/.aliases netscape-run plan-run addressbook-run
 
 .netscape/.bookmarks.html: .netscape/bookmarks.html
 	# Cleaning $<
@@ -99,6 +99,9 @@ known_hosts-uniq:
 	@touch $@
 # find duplicate aliases
 	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
+
+netscape-run:
+	@[ ! -L .netscape/lock ]
 
 plan-run:
 	@[ ! -f .plan.dir/lock.plan ]
