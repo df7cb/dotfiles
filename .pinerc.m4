@@ -25,7 +25,7 @@
 personal-name=
 
 # Sets domain part of From: and local addresses in outgoing mail.
-user-domain=ifdef(`_MAILDOMAIN_', `_MAILDOMAIN_', `errprint(`_MAILDOMAIN_ undefined.')')
+user-domain=_MAILDOMAIN_
 
 # List of SMTP servers for sending mail. If blank: Unix Pine uses sendmail.
 smtp-server=""
@@ -149,7 +149,11 @@ feature-list=enable-suspend,
 	disable-keymenu,
 	enable-fast-recent-test,
 	quell-status-message-beeping,
-	fcc-without-attachments
+	fcc-without-attachments,
+	alternate-compose-menu,
+	mark-for-cc,
+	enable-msg-view-forced-arrows,
+	expose-hidden-config
 
 # Pine executes these keys upon startup (e.g. to view msg 13: i,j,1,3,CR,v)
 initial-keystroke-list=""
@@ -170,7 +174,7 @@ customized-hdrs=From:,
 	Lcc:,
 	Newsgroups:,
 	Approved:,
-	Organization: "ifdef(`_ORGANIZATION_', `_ORGANIZATION_', `errprint(`_ORGANIZATION_ undefined.')')",
+	Organization: "Wohnheim D, Universitaet des Saarlandes",
 	Attchmnt:,
 	Subject:
 
@@ -237,7 +241,7 @@ personal-print-command=
 personal-print-category=2
 
 # Set by Pine; controls display of "new version" message.
-last-version-used=4.21
+last-version-used=4.30
 
 # This names the path to an alternative program, and any necessary arguments,
 # to be used in posting mail messages.  Example:
@@ -369,7 +373,7 @@ incoming-startup-rule=
 # If no user input for this many hours, Pine will exit if in an idle loop
 # waiting for a new command.  If set to zero (the default), then there will
 # be no timeout.
-user-input-timeout=
+user-input-timeout=36
 
 # Sets the name of the command used to open a UNIX remote shell connection.
 # The default is tyically /usr/ucb/rsh.
@@ -471,6 +475,39 @@ index-unseen-background-color=
 viewer-hdr-colors=/HDR=Subject/FG=yellow/BG=black,
 	/HDR=From/FG=green/BG=black,
 	/HDR=to/FG=green/BG=black
+
+# Contains the actual signature contents as opposed to the signature filename.
+# If defined, this overrides the signature-file. Default is undefined.
+literal-signature=
+
+# Allows a default answer for the prune folder questions. Choices: yes-ask,
+# yes-no, no-ask, no-no, ask-ask, ask-no. Default: "ask-ask".
+pruning-rule=ask-no
+
+# Network read warning timeout. The default is 15, the minimum is 5, and the
+# maximum is 1000.
+tcp-read-warning-timeout=
+
+# Network write warning timeout. The default is 0 (unset), the minimum
+# is 5 (if not 0), and the maximum is 1000.
+tcp-write-warning-timeout=
+
+# If this much time has elapsed at the time of a tcp read or write
+# timeout, pine will ask if you want to break the connection.
+# Default is 60 seconds, minimum is 5, maximum is 1000.
+tcp-query-timeout=
+
+# Patterns and their actions are stored here.
+patterns-roles=
+
+# Patterns and their actions are stored here.
+patterns-filters=
+
+# Patterns and their actions are stored here.
+patterns-scores=
+
+# Patterns and their actions are stored here.
+patterns-indexcolors=LIT:pattern="/NICK=Index Color Rule/FROM=cb@/FLDTYPE=EMAIL" action="/ISINCOL=1/INCOL=\/FG=cyan\/BG=black"
 
 # Set by Pine; controls beginning-of-month sent-mail pruning.
 last-time-prune-questioned=
