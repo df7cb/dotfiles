@@ -22,6 +22,7 @@ export PS1
 . ~/.env
 
 # internal shell settings
+auto_resume=substring
 #FIGNORE='~'
 HISTCONTROL=ignoredups
 #histchars='!^#'
