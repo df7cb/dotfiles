@@ -1,0 +1,13 @@
+# .procmail/backup vim:ft=procmail:
+# cb 2004-10-05
+
+:0c
+{
+        :0: $BACKUPDIR/.big.lock
+        * >15000
+        | gzip -9 >> $BACKUPDIR/backup-$WEEK.big.gz
+
+        :0: $BACKUPDIR/.lock
+        | gzip -9 >> $BACKUPDIR/backup-$WEEK.gz
+}
+
