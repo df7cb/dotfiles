@@ -11,4 +11,4 @@ shift
 : ${HOSTDISPLAY:=$DISPLAY}
 xkey=`xauth list $HOSTDISPLAY`
 
-ssh -xf $hostname "xauth add $xkey; DISPLAY=$HOSTDISPLAY $* &"
+ssh -x -f $hostname "xauth add $xkey; DISPLAY=$HOSTDISPLAY $* &"
