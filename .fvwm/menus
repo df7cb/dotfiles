@@ -7,6 +7,7 @@ DestroyMenu Main
 AddToMenu Main	"fvwm2"		Title
 +		"&xterm"	Popup xterm
 +		"&Apps"		Popup Apps
++		"&Debian"	Popup "/Debian"
 +		"&Init"		Popup Init
 +		"&Fvwm"		Popup FvwmMenu
 +		"&Keymaps"	Popup KeymapMenu
@@ -22,11 +23,14 @@ AddToMenu Main	"fvwm2"		Title
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
 +		"g&aleon"	Exec galeon
-+		"&netscape"	Exec netscape
-+		"&opera"	Exec opera
-+		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
++		"&grip"		Exec grip
 +		"gv"		Exec gv
-+		"mw"		Exec mw
++		"m&w"		Exec mw
++		"&netscape"	Exec netscape
++		"oo&ffice"	Exec ooffice
++		"&opera"	Exec opera
++		"x&mms"		Exec xmms
++		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 #+		"tet"		Exec ssh -f tante@goedel tet
 
 
