@@ -1,0 +1,6 @@
+# .vimrc for mutt
+# $Id$
+
+source ~/.vimrc
+
+set nohlsearch

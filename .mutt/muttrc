@@ -1,0 +1,41 @@
+# $Id$
+
+# external files
+source ~/.mutt/aliases
+source ~/.mutt/pgp5
+
+# key bindings
+bind index <space> next-page
+#bind pager <space> next-page
+bind pager <up> previous-line
+bind pager <down> next-line
+bind index \# delete-message
+bind pager \# delete-message
+macro generic d s=deleted\cM 'Move message to trash folder'
+macro pager d s=deleted\cM 'Move message to trash folder'
+bind index G last-entry
+
+# options
+set abort_nosubject
+set alias_file=~/.mutt/aliases
+set alternates=^cb@.*uni-sb.de$
+unset beep
+unset bounce_delivered
+unset confirmappend
+set edit_headers
+set editor="vim -u ~/.mutt/vimrc -c '/^$'"
+unset fcc_attach
+set hidden_host
+set index_format="%4C %Z %[%b %e %k:%M] %15.15L (%4l) %s"
+unset move
+set pager_index_lines=5
+set pager_stop
+set pgp_autosign
+set pgp_sign_as="0x6D8ABE71"
+set record="sent-mail"
+unset sig_dashes
+set sort=threads
+set tilde
+set use_domain
+set use_from
+unset write_bcc
