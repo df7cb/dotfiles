@@ -13,6 +13,8 @@
 # native ircII 4.4 syntax
 /set colour on
 /set eight_bit_characters on
+# I know what I'm doing
+/set exec_protection off
 /set full_status_line on
 /set help_pager on
 /set help_prompt on
@@ -87,12 +89,12 @@
 /alias q /query
 /alias quit /exit
 /alias sb /who *-sb.*
-/alias t /topic
+/alias t /topic *
 /alias umode /mode $N
 /alias unop /mode * -o
 /alias w /who *
 /alias wsb /who *-sb.*
-/alias wt /topic Wohlheim D.
+/alias wt /topic * Wohlheim D.
 /alias j /join
 #/alias j {
 #  /leave $C
@@ -115,13 +117,17 @@
 #/on who "#heim-d HeimGeist H *heimfee hal.heim-d.uni-sb.de" mode * +o HeimGeist
 /alias ts echo $0- \($Z)
 /on ^action "* *" echo 4* $0 $2-
+/on ^action "rosine *" echo 4* $0 4$2- \($1)
 /on ^join "* *" whois $0;ts 6*** $0 joined $1
 /on ^leave "* * *" whois $0;ts 6*** $0 left $1: $2-
 /on ^mail * ts 7*** new mail
 /on ^mode "* * *" echo 11*** Mode change "$2-" on $1 by $0
 /on ^msg "* *" ts 3*$0* $1-
+#/on ^msg "rosine *" ts 3*$03* $1-
+/on -msg "* *troet*" exec nc d056 ttylink
 /on ^nick "* *" echo 6*** $0 -> $1
 /on ^public "* * *" echo <2$0> $2-
+/on ^public "rosine * *" echo <2$0> $2-
 /on ^public "* * *cb*" echo <2$0> $2-
 /on ^public "* * *myon*" echo <2$0> $2-
 /on ^topic "* * *" ts 7*** Topic on $1 by $0: $2-
@@ -129,6 +135,7 @@
 /on ^send_action "*" echo 4* $N $1-
 /on ^send_msg "* *" echo ->3 *$0* $1-
 /on ^send_public "*" echo 4> $1-
+#/on -send_public "*" echo 4> $1-
 
 #autoop
 /load .irc.op
@@ -142,5 +149,5 @@
 # /ignore heimgeist public msgs
 /ignore opaunger public msgs
 /ignore profhase public msgs
-/ignore zelith all
+/ignore *zelith* all
 #/ignore
