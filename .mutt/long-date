@@ -1,0 +1,2 @@
+# $Id$
+set index_format="%3C %Z %4c %[%b %e %y %k:%M] %-15.15L %s"
