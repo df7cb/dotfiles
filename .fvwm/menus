@@ -17,7 +17,7 @@ AddToMenu Main	"fvwm2"		Title
 +		"&Window"	Popup WindowOps
 +		""		Nop
 #+		"Quit FVWM"	Quit
-+		"&Quit X"	Exec killall xterm
++		"&Quit X"	Exec killall xterm xterm.real
 +		"&Poweroff"	Exec super poweroff
 
 
