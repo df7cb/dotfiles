@@ -3,15 +3,15 @@
 
 . $HOME/.path
 if [ "$SHELL" = /bin/sh ] ; then
-  SHELL=`which zsh` || SHELL=`which bash` || SHELL=`which tcsh` || SHELL=/bin/sh
+  #SHELL=`which zsh` || SHELL=`which bash` || SHELL=`which tcsh` || SHELL=/bin/sh
+  SHELL=`which bash` || SHELL=`which tcsh` || SHELL=/bin/sh
 fi
 
 #set up X server
 xhost - >/dev/null
 XKBD=`xkbd` && xmodmap .xmodmap-$XKBD
-xset s 900
-xset dpms 0 0 960 2> /dev/null
 xrdb -merge .Xdefaults
+dpmsoff init
 
 xsetroot -solid navy
 ( sleep 10 ; xroot ) &
