@@ -68,25 +68,29 @@ cycle: update commit
 
 ## cleanup stuff ##
 
-cleanup: bookmark-clean galeon-clean known_hosts-sort plan-run addressbook-run
+cleanup: .netscape/.bookmarks.html .galeon/.bookmarks.xbel .ssh/.known_hosts \
+	plan-run addressbook-run
 
-bookmark-clean:
+.netscape/.bookmarks.html: .netscape/bookmarks.html
 	# Cleaning .netscape/bookmarks.html
 	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
+	@touch $@
 
-galeon-clean:
+.galeon/.bookmarks.xbel: .galeon/bookmarks.xbel
 	# Cleaning .galeon/bookmarks.xbel
 	@if pidof galeon-bin > /dev/null ; then echo "Galeon is running " ; false ; else true ; fi
 	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
+	@touch $@
 
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
-known_hosts-sort: # known_hosts-uniq
+.ssh/.known_hosts: .ssh/known_hosts
 	# Cleaning .ssh/known_hosts
 	@grep -qv '<<<<' .ssh/known_hosts
 	@mv .ssh/known_hosts .ssh/known_hosts-
 	@LC_ALL=C sort -u .ssh/known_hosts- > .ssh/known_hosts
-	@rm .ssh/known_hosts-
+	@rm -f .ssh/known_hosts-
+	@touch $@
 
 plan-run:
 	@[ ! -f .plan.dir/lock.plan ]
