@@ -189,4 +189,4 @@ source ~/.mutt/hooks
 source ~/.mutt/lists
 
 # local configuration options
-source ~/.mutt/muttrc.local
+source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`

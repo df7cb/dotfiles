@@ -1,14 +1,11 @@
 # $Id$
 
-all: .configrc .less .mutt/muttrc.local .ssh/config .ytalkrc .xinitrc bin/ctar
+all: .configrc .less .ssh/config .ytalkrc .xinitrc bin/ctar
 
 ## targets ##
 
 .less: .lesskey
 	lesskey
-
-.mutt/muttrc.local:
-	touch .mutt/muttrc.local
 
 .ssh/config: .ssh/config.m4
 	@rm -f $@
