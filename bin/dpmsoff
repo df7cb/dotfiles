@@ -5,8 +5,8 @@ if [ -z "$1" ] ; then  # no argument
 	xset dpms 0 0 1
 	sleep 1
 else		# with argument
-	xset dpms 0 0 30
-	xlock -resetsaver
+	xset dpms 0 0 60
+	xlock -resetsaver -mode $1
 fi
 
-xset dpms 0 0 600
+xset dpms 0 0 900
