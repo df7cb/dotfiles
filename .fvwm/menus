@@ -18,10 +18,12 @@ AddToMenu Main	"fvwm2"		Title
 +		""		Nop
 #+		"Quit FVWM"	Quit
 +		"&Quit X"	Exec killall xterm
++		"&Poweroff"	Exec super poweroff
 
 
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
++		"f&irefox"	Exec mozilla-firefox
 +		"g&aleon"	Exec galeon
 +		"address&book"	Exec addressbook
 +		"&grip"		Exec grip
