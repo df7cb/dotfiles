@@ -2,6 +2,9 @@
 # .bashrc: cb 990719 Christoph Berg <cb@heim-d.uni-sb.de>
 #echo .bashrc
 
+# login shells: /etc/profile, then ~/.[bash_]profile
+# interactive shells: ~/.bashrc
+
 # Environment
 
 export PATH_SYS=$PATH
@@ -91,6 +94,7 @@ alias pine='pine -d0'
 alias pwd='builtin pwd ; /bin/pwd'
 alias q=exit
 alias rd=rmdir
+alias y='echo Sind wir schon wieder auf der yes-Taste eingeschlafen?'
 which ytalk > /dev/null && alias talk='ytalk -x'
 alias ttar='tar tvfz'
 alias xtar='tar xvfz'
