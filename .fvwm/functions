@@ -21,16 +21,31 @@ AddToFunc RestartFunction
 #+	"I"	Exec xsetroot
 #+	"I"	Exec killall -9 xosview.bin
 
+# WindowList function executed when window is selected
+DestroyMenu WindowListFunc
+AddToFunc WindowListFunc "I"	WindowId $0 Iconify -1
++			"I"	WindowId $0 WarpToWindow 14p 14p
 
-# window functions #########################################################
+# cursor movements #########################################################
 
+# absolute pointer positioning relative to xclock
 AddToFunc JumpWindow	"I"	Next [xclock] WarpToWindow 14p 14p
 +			"I"	CursorMove $0 $1
 
+# select an xterm
 AddToFunc JumpWindowLO	"I"	JumpWindow 124p 0
 AddToFunc JumpWindowRO	"I"	JumpWindow  50  0
 AddToFunc JumpWindowLU	"I"	JumpWindow   0 45
 AddToFunc JumpWindowRU	"I"	JumpWindow  50 45
+
+
+AddToFunc PrevPrevWarp	"I"	Prev [*] Focus NoWarp
++			"I"	Prev [*] FlipFocus NoWarp
++			"I"	Next [*] Focus NoWarp
++			"I"	Next [*] Focus NoWarp
++			"I"	Prev [*] WarpToWindow 14p 14p
+
+# window functions #########################################################
 
 AddToFunc ShadeRaise	"I"	WindowShade
 +			"I"	Raise
@@ -76,9 +91,3 @@ AddToFunc MenuOrClose	"Click"	Menu WindowOps
 
 AddToFunc DeleteOrClose	"Click"	Delete
 +	"DoubleClick"	Close
-
-AddToFunc PrevPrevWarp	"I"	Prev [*] Focus NoWarp
-+			"I"	Prev [*] FlipFocus NoWarp
-+			"I"	Next [*] Focus NoWarp
-+			"I"	Next [*] Focus NoWarp
-+			"I"	Prev [*] WarpToWindow 11p 11p

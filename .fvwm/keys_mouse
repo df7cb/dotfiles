@@ -5,8 +5,8 @@
 ###############################################################################
 
 Key	Space	A	M	Popup WindowOps
-Key	Print	A	C	Prev [*] WarpToWindow 11p 11p
-Key	Select	A	N	Prev [*] WarpToWindow 11p 11p
+Key	Print	A	C	Prev [*] WarpToWindow 14p 14p
+Key	Select	A	N	Prev [*] WarpToWindow 14p 14p
 Key	Print	A	S	PrevPrevWarp
 Key	Pause	A	N	Exec xscreensaver-command -activate
 Key	Pause	A	S	Exec dpmsoff blank
@@ -108,7 +108,7 @@ Key	Tab	A	S4	Prev [*] focus
 Key	F1	A	N	Menu Main
 Key	F1	A	S	Module FvwmIdent
 Key	F2	A	N	Menu WindowOps
-Key	F3	A	N	WindowList
+Key	F3	A	N	WindowList "Prev [*] WarpToWindow 14p 14p"
 Key	F4	A	N	Iconify
 Key	F4	A	S	RefreshWindow
 Key	F4	A	M	Close
