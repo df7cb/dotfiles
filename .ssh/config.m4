@@ -9,6 +9,13 @@ define([ifndomain], [ifelse(regexp(HOSTNAME, [$1$]), -1, [$2], [$3])])dnl
 ForwardX11 yes
 NumberOfPasswordPrompts 3
 
+ifdomain(intertalk.cs.uni-sb.de,
+ Host knecht.cs.uni-sb.de knecht
+  ProxyCommand none
+ Host *
+  ProxyCommand ssh knecht /RW/users/cb/bin/linux-intel/nc -q0 %h %p
+)
+
 host fermi.df7cb.de fermi
  hostname fermi.df7cb.de
  forwardagent yes
@@ -38,9 +45,6 @@ ifdomain(planck.df7cb.de,host irssi
  localForward 13331 localhost:13331
  localForward 13332 localhost:13332
  localForward 13333 localhost:13333)
-#ifndomain(.uni-sb.de,host hal.cs
-# ProxyCommand ssh -C milhouse bin/linux-intel/nc -q0 hal.heim-d.uni-sb.de 22
-# HostKeyAlias d096.stw.stud.uni-saarland.de)
 
 host maggie.cs.uni-sb.de maggie
  hostname maggie.cs.uni-sb.de
@@ -48,6 +52,8 @@ host maggie.cs.uni-sb.de maggie
 host milhouse.cs.uni-sb.de milhouse
  hostname milhouse.cs.uni-sb.de
  forwardagent yes
+host knecht.cs.uni-sb.de knecht
+ hostname knecht.cs.uni-sb.de
 
 host server.asta.uni-saarland.de
  hostname server.asta.uni-saarland.de
