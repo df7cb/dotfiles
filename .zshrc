@@ -88,10 +88,10 @@ alias quit=exit
 alias rd=rmdir
 alias ttar='tar tvfz'
 type -p ytalk > /dev/null && alias talk='ytalk -x'
-alias which='type -path'
+#alias which='type -path'
 alias xtar='tar xvfz'
 alias X='mesg n;exec startx'
-alias y='echo Sind wir schon wieder auf der yes-Taste eingeschlafen?'
+alias y='echo "Sind wir schon wieder auf der yes-Taste eingeschlafen?"'
 
 # Functions
 
