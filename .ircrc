@@ -52,8 +52,7 @@
 /set suppress_server_motd on
 /set tab on
 /set tab_max 0
-# NONE muß man erst installieren :-(
-/set translation NONE
+/set translation LATIN_1
 /set underline_video on
 /set use_old_msg off
 /set user_information Student of Computer Science
@@ -112,7 +111,21 @@
 # /on stuff
 #/on join "heimgeist" who $0
 #/on who "#heim-d HeimGeist H *heimfee hal.heim-d.uni-sb.de" mode * +o HeimGeist
-/on -msg "*" echo $Z
+/alias ts echo $0- \($Z)
+/on ^action "* *" echo 4* $0 $2-
+/on ^join "* *" who $0;ts 6*** $0 joined $1
+/on ^leave "* * *" ts 6*** $0 left $1: $2-
+/on ^mode "* * *" echo 11*** Mode change "$2-" on $1 by $0
+/on ^msg "* *" ts 3*$0* $1-
+/on ^nick "* *" echo 6*** $0 -> $1
+/on ^public "* * *" echo <2$0> $2-
+/on ^public "* * *cb*" echo <2$0> $2-
+/on ^public "* * *myon*" echo <2$0> $2-
+/on ^topic "* * *" ts 7*** Topic on $1 by $0: $2-
+/on ^signoff "* *" ts 6*** $0 signed off: $1-
+/on ^send_action "*" echo 4* $N $1-
+/on ^send_msg "* *" echo 3-> *$0* $1-
+/on ^send_public "*" echo 4> $1-
 
 #autoop
 /load autoop
@@ -140,12 +153,13 @@
 /addop *!^nexus@hspc01.cs.uni-sb.de
 /addop *!~mah@wjpserver.cs.uni-sb.de
 /addop *!~schuerge@wjpserver.cs.uni-sb.de
+/addop *!meierl@inferno.inf.ethz.ch
 #/showop
 
 # 'login'-Anzeige
 #/who *-sb.*
 #/who #heim-d
-/notify mah schnueff df7cb cb cb7 alfons alfonz myon heimgeist
+#/notify mah schnueff df7cb cb cb7 alfons alfonz myon heimgeist
 #/notify
 
 # /ignore heimgeist public msgs
