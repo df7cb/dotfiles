@@ -280,7 +280,7 @@ addressbook-formats=
 index-format=
 
 # The number of lines of overlap when scrolling through message text
-viewer-overlap=1
+viewer-overlap=0
 
 # Number of lines from top and bottom of screen where single
 # line scrolling occurs.
@@ -290,7 +290,7 @@ scroll-margin=2
 status-message-delay=
 
 # The approximate number of seconds between checks for new mail
-mail-check-interval=300
+mail-check-interval=60
 
 # Full path and name of NEWSRC file
 newsrc-path=
