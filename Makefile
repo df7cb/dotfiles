@@ -48,7 +48,6 @@ conflict:
 STAMPS = .netscape/.bookmarks.html .galeon/.bookmarks.xbel .ssh/.known_hosts .mutt/.aliases
 CLEANS = .netscape/bookmarks.html .galeon/bookmarks.xbel .ssh/known_hosts .mutt/aliases
 COMMITS = $(CLEANS) .ncftp/bookmarks .plan.dir/dayplan lib/addressbook/cb.dat lib/todo/todo
-RUNS = plan-run addressbook-run
 
 com: commit
 commit: cleanup
@@ -58,7 +57,7 @@ cycle: update commit
 
 ## cleanup stuff ##
 
-cleanup: $(RUN) $(STAMPS)
+cleanup: abort-if-running $(STAMPS)
 
 .netscape/.bookmarks.html: .netscape/bookmarks.html
 	# Cleaning $<
@@ -93,11 +92,9 @@ known_hosts-uniq:
 # find duplicate aliases
 	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
 
-plan-run:
-	@[ ! -f .plan.dir/lock.plan ]
-
-addressbook-run:
-	@if ps x | grep -q "[a]ddressbook" ; then echo "Addressbook is running " ; false ; else true ; fi
+abort-if-running:
+	@[ ! -d .plan.dir ] || [ ! -f .plan.dir/lock.plan ]
+	@[ ! -d lib/addressbook ] || [ ! -f lib/addressbook/cb.dat.lock ]
 
 ## installation stuff ##
 
