@@ -14,7 +14,10 @@ all: .configrc .irssi/nickserv.users .less .plan.dir/dayplan .ssh/cb@fermi .ssh/
 	lesskey
 
 .plan.dir/dayplan:
-	[ -f .priv/dayplan ] && ln -s ../.priv/dayplan $@
+	if [ -f .priv/dayplan ] ; then \
+		mkdir .plan.dir ; \
+		ln -s ../.priv/dayplan $@ ; \
+	fi
 
 .ssh/cb@fermi:
 	[ -f .priv/cb@fermi ] && cd .ssh && ln -s ../.priv/cb@fermi* .
