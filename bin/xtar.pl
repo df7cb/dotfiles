@@ -5,8 +5,10 @@ my $cmd = "";
 $cmd = "tar xfv"  if $ARGV[0] =~ /\.tar$/;
 $cmd = "tar xfvz" if $ARGV[0] =~ /\.(tgz|tar\.gz|tar\.Z)$/;
 $cmd = "tar xfvj" if $ARGV[0] =~ /\.tar\.bz2$/;
-$cmd = "unzip" if $ARGV[0] =~ /\.zip$/;
+$cmd = "ar xv" if $ARGV[0] =~ /\.(ar|deb)$/;
 $cmd = "unarj x" if $ARGV[0] =~ /\.arj$/;
+$cmd = "unrar x" if $ARGV[0] =~ /\.rar$/;
+$cmd = "unzip" if $ARGV[0] =~ /\.zip$/;
 
 if ($cmd eq "") {
 	print STDERR "$0 error: suffix not recognized: $ARGV[0]\n";

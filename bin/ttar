@@ -1,24 +1,26 @@
 #!/bin/sh
 # $Id$
 
-case "$0" in
-	*ttar) TAR='tar tvf' ZIP='unzip -l' ARJ='unarj t' ;;
-	*ctar) TAR='tar cvf' ZIP='zip'      ARJ='echo arj not supported:' ;;
-	*)	echo "$0 error: called with unknown name" 1>&2
-		exit 1 ;;
-esac
-
 if [ -z "$1" ] ; then
-	echo "usage: {ttar|ctar} archive{.tar|.tgz|.bz2|.zip} [filenames...]" 1>&2
+	echo "usage: {ttar|ctar} archive.{tar|tgz|bz2|zip|rar} [filenames...]" 1>&2
 	exit 1
 fi
 
 case "$1" in
-	*.tar)	${TAR} "$@" ;;
-	*.tgz|*.gz|*.tar.Z)	${TAR}z "$@" ;;
-	*.bz2)	${TAR}j "$@" ;;
-	*.zip)	${ZIP} "$@" ;;
-	*.arj)	${ARJ} "$@" ;;
+	*.tar)			T="tar tvf"	C="tar cvf" ;;
+	*.tgz|*.tar.gz|*.tar.Z)	T="tar tvfz"	C="tar cvfz" ;;
+	*.tar.bz2)		T="tar tvfj"	C="tar cvfj" ;;
+	*.ar|*.deb)		T="ar tv"	C="echo ar not supported:" ;;
+	*.arj)			T="unarj t"	C="echo arj not supported:" ;;
+	*.rar)			T="unrar v"	C="echo rar not supported:" ;;
+	*.zip)			T="unzip -l"	C="zip" ;;
 	*)	echo "$0 error: suffix not recognized: $1" 1>&2
+		exit 1 ;;
+esac
+
+case "$0" in
+	*ttar) $T "$@" ;;
+	*ctar) $C "$@" ;;
+	*)	echo "$0 error: called with unknown name" 1>&2
 		exit 1 ;;
 esac
