@@ -2,9 +2,10 @@
 # $Id$
 
 case "$1" in
-	*tar)	tar tfv "$@" ;;
-	*gz|*tar.Z)	tar tfvz "$@" ;;
-	*bz2)	tar tfvj "$@" ;;
+	*.tar)	tar tfv "$@" ;;
+	*.tgz|*.gz|*.tar.Z)	tar tfvz "$@" ;;
+	*.bz2)	tar tfvj "$@" ;;
+	*.zip)	unzip -l "$@" ;;
 	*)	echo "$0 warning: suffix not recognized" 1>&2
 		tar tfv "$@" ;;
 esac
