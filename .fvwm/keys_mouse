@@ -133,6 +133,9 @@ Key	r	A	M4	Exec xmms -r
 Key	s	A	M4	Exec xmms -s
 Key	p	A	M4	Exec xmms -t
 Key	f	A	M4	Exec xmms -f
+Key	minus	A	M4	Exec aumix -v -5
+Key	equal	A	M4	Exec aumix -v +5
+Key	0	A	M4	Exec aumix-mute
 
 
 ###############################################################################
