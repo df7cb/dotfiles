@@ -5,49 +5,85 @@
 #echo MANPATH=$MANPATH
 #echo INFOPATH=$INFOPATH
 
-. $HOME/bin/os > /dev/null
+IFS_SAVE=$IFS
+IFS=":"
 
+save=$PATH
+unset PATH
 for dir in \
-	/usr/openwin/bin /usr/X11R6/bin \
-	/usr/games/bin /usr/games \
-	/usr/ucb /usr/5bin /usr/pkg/bin \
-	/usr/ccs/bin \
-	/shared/bin /shared/games/bin \
-	/usr/compat/linux/bin \
-	/usr/local/pgsql/bin \
-	/usr/local/bin \
-	/usr/local/sbin /sbin /usr/sbin \
+	/local/atools/cb/bin \
+	/local/atools/bin \
+	$HOME/bin/${OS:-OSDIR} \
+	$HOME/bin \
 	$HOME/bin/misc-bin \
-	$HOME/bin $HOME/bin/${OS:-OSDIR} \
-	/local/atools/bin /local/atools/cb/bin
+	/usr/local/sbin \
+	/usr/local/bin \
+	/usr/sbin \
+	/usr/bin \
+	/sbin \
+	/bin \
+	/usr/X11R6/bin \
+	/installer/arch/bin \
+	/usr/local/samba/bin \
+	/usr/local/pgsql/bin \
+	/usr/openwin/bin \
+	/usr/compat/linux/bin \
+	/usr/ucb /usr/5bin /usr/pkg/bin \
+	/usr/games \
+	/usr/games/bin \
+	$save
 	do case :$PATH: in
 		*:$dir:*) ;;
-		*) [ -d $dir ] && PATH=$dir:$PATH ;;
+		*) [ -d $dir ] && PATH="$PATH${PATH:+:}$dir" ;;
 	esac
 done
 
+save=$MANPATH
+unset MANPATH
 for dir in \
-	/usr/local/man \
+	/local/atools/cb/man \
+	/local/atools/man \
 	$HOME/man \
-	/local/atools/man /local/atools/cb/man
+	/usr/local/man \
+	`manpath 2> /dev/null` \
+	$save
 	do case :$MANPATH: in
 		*:$dir:*) ;;
-		*) [ -d $dir ] && MANPATH=$dir:$MANPATH ;;
+		*) [ -d $dir ] && MANPATH="$MANPATH${MANPATH:+:}$dir" ;;
 	esac
 done
 
+save=$INFOPATH
+unset INFOPATH
 for dir in \
-	/usr/local/info \
+	/local/atools/cb/info \
+	/local/atools/info \
 	$HOME/info \
-	/local/atools/info /local/atools/cb/info
+	/usr/local/share/info \
+	/usr/local/info \
+	/usr/share/info \
+	$save
 	do case :$INFOPATH: in
 		*:$dir:*) ;;
-		*) [ -d $dir ] && INFOPATH=$dir:$INFOPATH ;;
+		*) [ -d $dir ] && INFOPATH="$INFOPATH${INFOPATH:+:}$dir" ;;
 	esac
 done
+
+unset TEXINPUTS
+for dir in \
+	$HOME/lib/latex $HOME/lib/latex/*
+	do case $dir in
+		*CVS) ;;
+		*) [ -d $dir ] && TEXINPUTS=${TEXINPUTS}$dir: ;;
+	esac
+done
+
+[ -f $HOME/lib/make/Makefile ] && export MAKEFILES=$HOME/lib/make/Makefile
+
+IFS=$IFS_SAVE
+unset dir save IFS_SAVE
+export PATH MANPATH INFOPATH TEXINPUTS
 
 #echo PATH=$PATH
 #echo MANPATH=$MANPATH
 #echo INFOPATH=$INFOPATH
-
-export PATH MANPATH INFOPATH
