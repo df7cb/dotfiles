@@ -5,7 +5,8 @@
 ## latex
 TEX = latex
 
-%.tex: %.bib
+# bibtex
+%.bbl: %.bib %.tex
 	bibtex $(basename $<)
 
 # dvi -> ps
