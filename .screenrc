@@ -6,8 +6,9 @@ escape ^Wa
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
 
-# no annoying audible bell, please
-vbell on
+# no annoying visible bell, please
+bell_msg ""
+vbell off
 
 # detach on hangup
 autodetach on
