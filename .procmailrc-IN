@@ -2,6 +2,11 @@
 #.mail-backup
 
 :0:
+* ^X-Mailing-List: .*debian-user-german
+#* ^To: .*debian
+mail/IN/debian-user-german
+
+:0:
 * ^X-Mailing-List: .*debian
 #* ^To: .*debian
 mail/IN/debian
