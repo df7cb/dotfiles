@@ -274,7 +274,7 @@ abstracts = {
   sb = " %c[%n$*%c]%n";
   sbmode = "(%c+%n$*)";
   sbaway = " (%GzZzZ%n)";
-  sbservertag = ":$0 (change with ^X)";
+  sbservertag = ":$0";
 
   # activity in statusbar
 
@@ -290,5 +290,5 @@ abstracts = {
   sb_act_hilight_color = "$0$1-%n";
 };
 formats = {
-  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00311$0}}$1"; };
+  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00309$0}}$1"; };
 };

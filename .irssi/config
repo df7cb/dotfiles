@@ -190,7 +190,6 @@ statusbar = {
       # list of items in statusbar in the display order
       items = {
         barstart = { priority = "100"; };
-        time = { };
         user = { };
         window = { };
         window_empty = { };
@@ -245,6 +244,7 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+    time = { disabled = "yes"; };
   };
 };
 settings = {
@@ -261,10 +261,14 @@ settings = {
     friends_show_flags_on_join = "yes";
     friends_autosave = "yes";
     title_string = "irssi $winname$C@$tag";
+    chanact_header = "\\";
   };
-  "fe-text" = { scroll_page_count = "/1"; };
+  "fe-text" = { 
+    scroll_page_count = "/1";
+    paste_verify_line_count = "10";
+  };
   "fe-common/core" = {
-    autolog_path = "~/irc/log/${tag}_$0/${0}-%Y-%m-%d";
+    autolog_path = "~/irc/autolog/${tag}_$0/${0}-%Y-%m-%d";
     autolog = "yes";
   };
 };
@@ -310,11 +314,6 @@ logs = {
     items = (
       { type = "target"; name = "#procmail"; server = "freenode"; }
     );
-  };
-  "~/irc/log/unixagsb/unixagsb-%Y-%m-%d" = {
-    auto_open = "yes";
-    level = "ALL";
-    items = ( { type = "target"; name = "#unixagsb"; } );
   };
 };
 keyboard = (
