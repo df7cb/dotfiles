@@ -284,7 +284,7 @@ accept_all_cookies=FALSE
 
 # cookie_file specifies the file in which to store persistent cookies.
 # The default is ~/.lynx_cookies.
-cookie_file=/home/cb/.lynx_cookies
+cookie_file=/dev/null
 
 # If run_all_execution_links is set "on" then all local execution links
 # will be executed when they are selected.

@@ -1,36 +1,33 @@
 # $Id$
-# .bashrc: Christoph Berg <cb@heim-d.uni-sb.de>
-#echo .bashrc
+# .zshenv -> .zprofile (login) -> .zshrc (interactive) -> .zlogin (login)
 
-# login shells: /etc/profile, then ~/.[bash_]profile
-# interactive shells: ~/.bashrc
+# echo ".zshrc"
 
-# Environment
-
-. ~/.path
+source ~/.zshkeys
 
 case $TERM in
 linux*|*vt100*|screen*|cons25)
-	PS1='\n[\[\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\] \$' 
+	prompt="
+[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%40<..<%B%{[34m%}%/%{[0m%}%b %#"
 	LSCOLOR='--color=auto' ;;
 xterm*|rxvt)
-	PS1='\n[\[\033]0;\u@\h:\w\007\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\] \$' 
-	[ "$console" ] && PS1='[\[\033]0;console@\h:\w\007\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\] \$'
+	prompt="%{]0;%n@%m:%/%}
+[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%40<..<%B%{[34m%}%/%{[0m%}%b %#"
+	[ "$console" ] && prompt="%{]0;console@%m:%/%}[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%30<..<%B%{[34m%}%/%{[0m%}%b %#"
 	LSCOLOR='--color=auto' ;;
-97801)	PS1='\n\[\033[2m\][\[\033[m\]$?\[\033[2m\]] \u@\h:\[\033[4m\]\w\[\033[2m\] \$\[\033[m\]' ;;
 *)
-	PS1='\n[$?] \u@\h:\w \$' ;;
+	prompt="
+[%B%?%b] %U%n@%m%u:%40<..<%B%/%b %#" ;;
 esac
-export PS1
 
 [ -z "$USER" ] && if [ "$LOGNAME" ] ; then export USER=$LOGNAME
 		else export USER=`logname` ; fi
 export EDITOR=vim
 #export HOSTNAME=`/bin/hostname`
-export HISTSIZE=500
+#export HISTSIZE=500
 #export LANG=de
-[ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
-[ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
+#[ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
+#[ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
 #export IRCSERVER="irc.uni-stuttgart.de irc.rz.uni-karlsruhe.de"
 export LESS=-aiMq
 export LESSCHARSET=latin1
@@ -49,10 +46,10 @@ export TZ=CET
 # internal shell settings
 
 #FIGNORE='~'
-HISTCONTROL=ignoredups
+#HISTCONTROL=ignoredups
 #histchars='!^#'
-HISTFILESIZE=100
-unset ignoreeof
+#HISTFILESIZE=100
+#unset ignoreeof
 #unset noclobber
 
 # Aliases
@@ -103,7 +100,7 @@ nd() { mkdir $1 && cd $1 ; }
 
 # General stuff
 
-ulimit -Sc 0	# disable core dumps
-umask 022
+#ulimit -Sc 0	# disable core dumps
+#umask 022
 
-[ -f ~/.bashrc-local ] && . ~/.bashrc-local || true
+#[ -f ~/.bashrc-local ] && . ~/.bashrc-local || true

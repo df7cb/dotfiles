@@ -1,8 +1,7 @@
 #!/bin/sh
 # $Id$
 
-PATH=~/bin:/bin:/usr/bin:/usr/local/bin:/usr/openwin/bin:/usr/X11R6/bin:/usr/X11/bin
-export PATH
+. ~/.path
 test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
 
 #set up X server
@@ -18,7 +17,7 @@ xclock -g +41+0 &
 
 fvwm2 &
 
-#procmeter -geometry 499x85-0-0 -horizontal cpu-user load disk mem-used fpkt-rx fpkt-tx &
+[ -f ~/.xsession-local ] && . ~/.xsession-local
 
 console=yes
 export console

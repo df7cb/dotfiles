@@ -1,22 +1,21 @@
 NcFTP bookmark-file version: 8
-Number of bookmarks: ??
-debian,ftp.de.debian.org,,,,pub/debian/dists,I,21,39208362630,-1,-1,1,1,141.76.20.99,,,,,,S,-1,
-kernel,ftp.de.kernel.org,,,,pub/linux/kernel/v2.2,I,21,39282032960,1,1,1,1,132.230.1.90,,,,,,S,-1,
-debian-slink,ftp.mpi-sb.mpg.de,,,,/pub/linux/mirror/ftp.debian.org/debian/dists/slink/main,I,21,918260283,1,1,0,1,139.19.1.150,,,,,,S,-1,
-suse (gwdg),ftp.gwdg.de,,,,pub/linux/suse,I,21,928103768,-1,-1,1,1,134.76.11.100,,,,,,S,-1,
-cs,ftp.cs,,,,/pub/mail,I,,36f2b69f,1,1,0,1,134.96.254.254,,2761,632,1,0,S
-debian,ftp.de.debian.org,,,,/pub/debian-non-US/dists/slink/non-US,I,,378a1618,1,1,0,1,141.76.1.59,,0,0,2,0,S
-freebsd-3.2,ftp.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE,I,0,0,1,1,0,1,,,0,0,0,1,S
-ftp2,ftp2.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE/floppies,I,,37aae983,1,1,0,1,195.185.195.14,,2880,1872,1,0,S
-ftp4,ftp4.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha,I,,37aae9a0,1,1,0,1,131.159.72.3,,0,0,1,0,S
-ftp6,ftp6.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE/floppies,I,,37aae9e7,1,1,0,1,130.149.17.12,,2880,959,1,0,S
-micq,ftp.micq.org,,,,/pub/micq,I,0,0,1,1,0,1,,,0,0,0,1,S
-redhat-6.0,ftp.mpi-sb.mpg.de,,,,/pub/linux/mirror/ftp.redhat.com/redhat/redhat-6.0/i386/RedHat,I,,37977de4,1,1,0,1,139.19.1.150,,0,0,3,0,S
-vk5abn,ftp.ping.net.au,,,,/pub/unix/ham,I,,37b9c106,1,1,0,1,203.30.126.1,,632,125265,1,0,S
-rz,ftp.rz.uni-karlsruhe.de,,,,/pub/linux/ftp.de.debian.org/debian/dists/slink,I,,36cebeb5,1,1,0,1,129.13.96.4,,2123,255,1,0,S
-Wordperfect8,ftp.mpi-sb.mpg.de,,,,pub/misc/mirror/ftp.simtel.net/cnet/win95/business,I,21,920302280,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
-opensound,www.se.opensound.com,,,,pub/oss,I,21,933791060,-1,-1,1,1,193.13.151.45,,,,,,S,-1,
-tnt,excelsior.kullen.rwth-aachen.de,,,,pub/packet_radio/tnt,I,21,936277970,-1,-1,1,1,137.226.79.66,,,,,,S,-1,
-netbsd-1.4.1,ftp.de.netbsd.org,,,,pub/unix/systems/BSD/NetBSD/NetBSD-1.4.1/alpha,I,21,936901870,1,-1,1,1,136.199.8.81,,,,,,S,-1,
-stampede,ftp.baw.uni-bremen.de,,,,pub/mirrors/ftp.stampede.org/stable,I,21,937496538,-1,-1,1,1,134.102.44.120,,,,,,S,-1,
-mpi-sb,ftp.mpi-sb.mpg.de,,,,pub,I,21,937694809,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
+Number of bookmarks: 19
+cs,ftp.cs,,,,/pub/mail,I,21,921876127,1,1,0,1,134.96.254.254,,,,,,S,-1,
+debian,ftp.de.debian.org,,,,pub/debian/dists,I,21,3925737874992,-1,-1,1,1,141.76.20.99,,,,,,S,-1,
+debian-slink,ftp.mpi-sb.mpg.de,,,,/pub/linux/mirror/ftp.debian.org/debian/dists/slink/main,I,21,39059849859,1,1,0,1,139.19.1.150,,,,,,S,-1,
+freebsd-3.2,ftp.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE,I,0,0,1,1,0,1,,,,,,,S,-1,
+ftp2,ftp2.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE/floppies,I,21,933947779,1,1,0,1,195.185.195.14,,,,,,S,-1,
+ftp4,ftp4.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha,I,21,933947808,1,1,0,1,131.159.72.3,,,,,,S,-1,
+ftp6,ftp6.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE/floppies,I,21,933947879,1,1,0,1,130.149.17.12,,,,,,S,-1,
+kernel,ftp.de.kernel.org,,,,pub/linux/kernel/v2.2,I,21,3927781353824,1,1,1,1,132.230.1.90,,,,,,S,-1,
+micq,ftp.micq.org,,,,/pub/micq,I,0,0,1,1,0,1,,,,,,,S,-1,
+mpi-sb,ftp.mpi-sb.mpg.de,,,,pub,I,21,39584352265,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
+netbsd-1.4.1,ftp.de.netbsd.org,,,,pub/unix/systems/BSD/NetBSD/NetBSD-1.4.1/alpha,I,21,39570118768,1,-1,1,1,136.199.8.81,,,,,,S,-1,
+opensound,www.se.opensound.com,,,,pub/oss,I,21,39518277728,-1,-1,1,1,193.13.151.45,,,,,,S,-1,
+redhat-6.0,ftp.mpi-sb.mpg.de,,,,/pub/linux/mirror/ftp.redhat.com/redhat/redhat-6.0/i386/RedHat,I,21,932675044,1,1,0,1,139.19.1.150,,,,,,S,-1,
+rz,ftp.rz.uni-karlsruhe.de,,,,/pub/linux/ftp.de.debian.org/debian/dists/slink,I,21,919518901,1,1,0,1,129.13.96.4,,,,,,S,-1,
+stampede,ftp.baw.uni-bremen.de,,,,pub/mirrors/ftp.stampede.org/stable,I,21,39582262584,-1,-1,1,1,134.102.44.120,,,,,,S,-1,
+suse (gwdg),ftp.gwdg.de,,,,pub/linux/suse,I,21,39326857064,-1,-1,1,1,134.76.11.100,,,,,,S,-1,
+tnt,excelsior.kullen.rwth-aachen.de,,,,pub/packet_radio/tnt,I,21,39563262320,-1,-1,1,1,137.226.79.66,,,,,,S,-1,
+vk5abn,ftp.ping.net.au,,,,/pub/unix/ham,I,21,934920454,1,1,0,1,203.30.126.1,,,,,,S,-1,
+Wordperfect8,ftp.mpi-sb.mpg.de,,,,pub/misc/mirror/ftp.simtel.net/cnet/win95/business,I,21,39194731136,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
