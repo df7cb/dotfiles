@@ -233,19 +233,19 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.rz.uni-saarland.de/netzdienste/studentenheime/">
-        <title>Studentenheime</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1019045884</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://www.dfn.de/win/gwin/dienste/internet.html">
         <title>WiN - G-WiN - Dienste - Internet</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1019045979</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.rz.uni-saarland.de/services/netz/wohnheime/">
+        <title>RZ: Wohnheime</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1042026310</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -3167,6 +3167,22 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>Linux</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1042019524</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.xenotime.net/linux/linux-fs.html">
+          <title>linux-fs.html</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1042019536</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Zeug</title>
