@@ -15,3 +15,5 @@ map W :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote
 
 map _i i\begin{itemize}<cr>\item <esc>mi}O\end{itemize}<esc>`i
 nmap L MW
+
+set keymap=tex
