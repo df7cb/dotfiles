@@ -1,9 +1,6 @@
 # $Id$
 # mutt aliases
-alias 'martin@absint.com' Florian Martin <martin@absint.com>
-alias AlfonTZ Michael Sauer <AlfonTZ@web.de>
 alias DVABernd Bernd Dörr <DVABernd@aol.com>
-alias Joern.Schneider Jörn Schneider <Joern.Schneider@de.bosch.com>
 alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
 alias aerat-ml Ältestenrat <aerat-ml@asta.uni-saarland.de>
 alias ai Aktive Idealisten <ai@fsinfo.cs.uni-sb.de>
@@ -11,6 +8,7 @@ alias altpraesis Alt-Präsis <altpraesis@heim-d.uni-sb.de>
 alias andrewmort Andrew Morton <andrewmort@yahoo.com>
 alias andsi Andreas Sicken <andsi@heim-d.uni-sb.de>
 alias arnaud.fietzke Arnaud Fietzke <arnaud.fietzke@gmx.net>
+alias asta AStA Saarbrücken <asta@asta.uni-saarland.de>
 alias asta_rso_gewinnspiel AStA-RSO-Gewinnspiel <asta_rso_gewinnspiel@web.de>
 alias cargo Carsten Görg <cargo@cs.uni-sb.de>
 alias cbieg Claudia Bieg <cbieg@cs.uni-sb.de>
@@ -20,8 +18,6 @@ alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
 alias daniel Daniel Schröter <daniel@asta.uni-sb.de>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
-alias dowe0009 Dominik Weber <dowe0009@stud.uni-sb.de>
-alias edith.klee Edith Klee <edith@familieklee.de>
 alias engblom Jakob Engblom <jakob@acm.org>
 alias ferdinand Christian Ferdinand <ferdinand@absint.com>
 alias ff Frank Fontaine <ff@absint.com>
@@ -46,6 +42,7 @@ alias herve Herve Peuengueu <herve@heim-d.uni-sb.de>
 alias hp Heimpräsidenten D <hp@heim-d.uni-sb.de>
 alias huhse Jutta Huhse <huhse@dagstuhl.de>
 alias jakob Jakob Engblom <jakob@virtutech.com>
+alias joern.schneider Jörn Schneider <Joern.Schneider@de.bosch.com>
 alias kassenwart Kassenwart D <kassenwart@heim-d.uni-sb.de>
 alias kempe Benjamin Kempe <kempe@studcs.uni-sb.de>
 alias krieger Hans-Ulrich Krieger <krieger@dfki.de>
@@ -54,20 +51,21 @@ alias liste Aktive Idealisten <liste@aktive-idealisten.de>
 alias m Majordomo List Manager <majordomo@heim-d.uni-sb.de>
 alias majordomo Lithe-Majordomo <majordomo@lists.lithe.de>
 alias marechal Marechal Nadege <marechal@cs.uni-sb.de>
-alias martin.sand Martin Sand <Martin.Sand@web.de>
 alias matuschewski Peter Matuschewski <matuschewski@rz.uni-saarland.de>
 alias mschmidt Michael Schmidt <mschmidt@absint.com>
 alias mutt-dev Mutt Developers <mutt-dev@mutt.org>
 alias mutt-users Mutt Users <mutt-users@mutt.org>
 alias neli Neli Busch <cb@labastide.net>
 alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
-alias philip Philip Benning <philip@asta.uni-saarland.de>
 alias pilzecker Markus Pilzecker <pilzecker@free.fr>
 alias pisg-general Pisg <pisg-general@lists.sourceforge.net>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
 alias preiss Jochen Preiss <preiss@de.ibm.com>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias reinhold.heckmann Reinhold Heckmann <Reinhold.Heckmann@absint.com>
+alias resa ReSa <resa@asta.uni-saarland.de>
+alias stupisten \"51. Stupa\" <stupisten@asta.uni-saarland.de>
+alias submit Debian Bugs Submit <submit@bugs.debian.org>
 alias timovoe Timo von Oertzen <timovoe@studcs.uni-sb.de>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>

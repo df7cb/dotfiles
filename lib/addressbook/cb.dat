@@ -1,8 +1,7 @@
-;;rossinie;;;;;13.8.;;;;;;;
 Alex;;DL4PQ;;;;Bischmisheim;22.4.1963;;;;;;;
 Claus;;DB7WD;;;;;;06898/83848;;;;;;
-Dirk;;DL2GRD;;;;;5.1.1970;;;;;;;
 Guiliana;;;;;;;6.10.1977;;;;;;;
+Hanna;;;;;;;;0681/3014161, 0178/4728513;;;;;;
 Lothar;;DC6KO;Jahnstr. 10;;;Dudweiler;;;;;;;;
 Tuija;;;;;;;5.10.1977;;;;;;;
 Uni KL;AFG;DL0XK;Bau 24;;;;;0631/205-3130;;;;;;
@@ -21,7 +20,7 @@ Michaela;Beck;;Geistkircher Hof 2;;66386;St. Ingbert;20.8.;06894/956787, 0179/76
 Rainer;Becker;;;;;;;;;;rainer-becker@web.de;;;
 Axel;Beckert;;Sachsenring 59a, 67583 Guntersblum;;;;21.6.1975;06249 / 80 45 72, 0177/685 16 16;;;abe@deuxchevaux.org;;;Ecos GmbH, 06133 / 925 152 (Fax)
 Matthias;Bender;;;;;;;;;;matthias.bender@gmx.de;;;
-Philip;Benning;;;;;;;0177/7884258;;;pib@gmx.net;;;
+Philip;Benning;;;;;;;0177/7884258;;;pib@gmx.net, philip@asta.uni-saarland.de;;;
 Adolf;Berg;;Orendelstr. 8, Trier;;;;08.03.1918;0651/31453;;;;;;
 Christoph;Berg;DF7CB;Uni 18, 2405;D;66123;Saarbrücken;9.3.1977;0681/9657944, 0179/4530792;5573;3065;cb@df7cb.de, cb@heim-d.uni-sb.de, cb@cs.uni-sb.de;www.df7cb.de;vdl;
 Elke;Berg;;Eichenweg 18;;66440;Blieskastel;13.1.1950;06842/5818, 0175/5465429;;;berg.elke@web.de;;;
@@ -34,6 +33,7 @@ Benedikt;Betz;;;;;;;;;;benedikt@math.uni-sb.de;;;
 Sven;Beyer;;;;;;;06897/765306;5558;;sbeyer@wjpserver.cs.uni-sb.de;;;
 Oliver;Bieg;;Hans Böckler-Str. 8;;;;21.8.1976;06842/6620;;;olbi0004@stud.uni-sb.de;;vdl;
 Martin;Biet;;;;;;;;;;;;vdl;
+Silja und Nadja;Billig;;Max-Braun-Strasse 17;;;66123 Saarbrücken;08.02.1979;0681/66 67 1, 0177/84 53 96 4 bzw. 0177/ 84 53 70 8;;;;;;
 Franz;Blees;DL8HA;Kaiserstr. 330, 66386 St. Ingbert;;;;;06894/2887;;;Franz.Blees@t-online.de;;;
 Michael;Bloch;DF2VO;Hegelstr. 64, 55122 Mainz;;;;25.10.1955;06131/373168;;;;;;Karl Leibrock-Str., Einöd
 Katrin;Blumenauer;;;;;;26.9.1976;0178/5496772;;;blka@gmx.de;;vdl;Auf der Agt 1, 66440 Blieskastel, 06842/51632
@@ -46,6 +46,7 @@ Dagmar;Bubel;;;;;;20.1.1977;;;;dagmar.bubel@web.de;;vdl;Würzbacher Str. 5, 66440
 Claas;Buchterkirche;;Merklingerstr. 20, 71063 Sindelfingen;;;;28.11.1972;07031 / 80 71 01;;;questor@fsinfo.cs.uni-sb.de;;;
 Christina;Burda;;;;;;;;;;;;;
 Elise;Busch;;;;;;27.11.1925;;;;;;;
+Johannes;Büchs;;Bruchwiesenstrasse 8;;;66111 Saarbrücken;28.12.1979;0681/96 57 47 2, 0179/47 53 96 0;;;;;;
 Ludger;Bünger;;;;;;13.3.1973;0681/842331;;;ludger@buenger.de;;;
 Sara;Bürkle;;Buchenstr. 41, 85716 Unterschleißheim;;;;10.8.1977;089/370 65 730, 0178 - 33 96 966;;;sara@fsinfo.cs.uni-sb.de;;;
 Rosine;Caplot;;;;;;19.1.1979;0681/9384494, 0160/99221761;;;roca0004@stud.uni-sb.de, rosine@cip.physik.uni-saarland.de;;;
@@ -61,6 +62,7 @@ Holger;Dewes;;;;;;1.9.1973;;;;dewes@fsinfo.cs.uni-sb.de;;;
 Andrea;Didion;;Zum Rosenhof 36, 66440 Blickweiler;;;;15.11.1976;06842/3972;;;;;vdl;geb. Nagel
 Hendrik;Dietrich;DG3HDA;Wahlschiederstr. 87;;66265;Heusweiler;20.9.1978;0171/6893555;;;dg3hda@web.de;;;
 Hartmut;Dietrichs;DF4WM;Adolf Kolping-Str. 6, 54329 Konz;;;;;06501/3209;;;;;;
+Immo;Doepel;;Richard-Wagner-Strasse 91;;;66125 Dudweiler;03.07.1980;06897/91 71 78, 0179/32 93 68 0;;;;;;
 Patrick;Dreker;;;;;;;0681/9600026, 0177/5287919;;;patrick@dreker.de;;;
 Nina;Dziuk;;;;;;07.07.;;;;nidz0000@stud.uni-saarland.de;;;
 Steffen;Ecker;;Heim D, 2418, 66123 Saarbrücken;;;;26.1.1977;06897/918088, 0179/4717550, 06841/73174;;;stec0000@stud.uni-sb.de;;;66424 Erbach
@@ -80,13 +82,13 @@ Nico;Fritz;;;;;;6.12.1976;;;;cage@cs.uni-sb.de;;rw;
 Martin;Fuchs;DG4FMA;Robert Koch-Str. 29, 66386 St. Ingbert;;;;;06894/2492;;;;;;
 Stefan;Fuchs;DL4VCK;Luftbahnweg 11, 66450 Bexbach;;;;;06826/3588;;;dl4vck@darc.de;;;
 Birgit;Futterer;;Dammstraße 34, 09599 Freiberg;;;;18.5.1977;03731/217559, 0160/7924440;;;Birgit.Futterer@web.de;;vdl;Hasental 3, 66440 Lautzkirchen, 06842/53195
-Simone;Gajek;;;;;;14.1.;;;;;;;
+Simone;Gajek;;Uhlandstrasse 5;;;66121 Saarbrücken;14.1.1982;0681/39 61 07 1, 0179/97 06 44 1;;;;;;
 Carsten;Geber;;3 Rue Principale, F-57460 Etzling;;;;19.2.1976;+33/87872995;;;;;vdl;Alleestr. 8, 66346 Püttlingen, 06898/65364
 Akif-Mehmet;Gerger;;Biesinger Str. 92, 66440 Ballweiler;;;;;06842/1538;;;;;vdl;
 Ellen;Gieringer;;Rastatter Str. 126, 76199 Karlsruhe;;;;29.1.1976;0721-6236237;;;ellen.gieringer@web.de;;vdl;Blieskasteler Str. 32, 06804/6069, geb. Bischof
 Martin;Gisch;;Am Homburg 65;;66123;Saarbrücken;1.9.1977;0681/3906380, Genion: 0681/9659 030, 0179-66 16 394;3096-115;;roquas@fsinfo.cs.uni-sb.de;;;
 Andreas;Gutapfel;;Landstuhler Str 34, 66482 Zweibrücken;;;;17.11.1975;06332/869245;;;andreas@gutapfel.de;;vdl;Kahlheckerweg 31, 66440 Blieskastel, 06842/2977
-Hassan;Guy;;;;;;19.5.1978;;;;hassanguy@yahoo.fr;;;
+Hassan;Guy;;;;;;19.5.1978;0681/67 74 88 5, 0179/86 08 39 1;;;hassanguy@yahoo.fr;;;
 Thomas;Gütinger;;;;;;15.7.;;;;thgu0000@stud.uni-sb.de;;;
 Bastiaan;Hageman;;Alter Weg 1, 66440 Lautzkirchen;;;;26.5.1975;06842/2805, 0173/6682611;;;BastiaanHageman@aol.com, b.hageman@hbks.uni-sb.de;;vdl;
 Christoph;Hammer;;Bliesgaustr. 102, 66440 Lautzkirchen;;;;14.6.1976;06842/3189, 0177/5538442;;;christoph_hammer@web.de;;vdl;
@@ -109,6 +111,7 @@ Claus;Hoffmann;;;;;;;0177/4237607;;;;;;
 Markus;Horn;;;;;;;;;;maho5008@stud.uni-saarland.de;;;
 Xiang;Hui;;;;;;;;;;xianghui722@hotmail.com;;;
 Christiane;Humbert;;;;;;19.3.1973;;;;c.humbert@web.de;;;
+Carlo;Höhne;;Johannisstrasse 3;;;66111 Saarbrücken;27.11.1980;0177/26 88 31 2;;;;;;
 Silke;Hüttig;;;;;;;;;;shuettig@web.de;;;
 Thomas;In der Rieden;;;;;;7.11.1973;0163/3150191;;;tom@cs.uni-sb.de;;;
 Fachschaftsrat;Informatik;;Postfach 15 11 50, 66041 Saarbrücken;;;;14.6.1991;0681/302-4389;;0681/302-4389;fsinfo@fsinfo.cs.uni-sb.de;http://fsinfo.cs.uni-sb.de/;;Universität, Bau 45, Raum 107, 66123 Saarbrücken
@@ -126,18 +129,19 @@ Christiane;Karow;;;;;;;;;;chka0015@stud.uni-sb.de;;;
 Paul;Keller;;;;;;;;;;pk@cs.uni-sb.de;;;
 Benjamin;Kempe;;;;;;;;;;beke5001@stud.uni-saarland.de;;;
 Tibor;Keri;;;;;;;;;;tk@heim-d.uni-sb.de;;;
-Edith;Klee;;Blumenstrasse 49, 66111 Saarbrücken;;;;4.4.1980;0681/9381185;;;edith@coli.uni-sb.de;;;
+Edith;Klee;;Blumenstrasse 49, 66111 Saarbrücken;;;;4.4.1980;0681/9381185;;;edith@familieklee.de, edith@coli.uni-sb.de;;;
 Hans-Joachim;Klein;;Bahnhofstr. 6a, 63543 Neuberg-Ravolzhausen;;;;;06183/807576, 0173/9208763;;;Joachim.Klein@schwab.de;;;
 Michael;Klein;;Scheidter Straße 39, 66123 Saarbrücken;;;;24.9.1974;0681/9385628, 0681 - 9655558, 0179 - 7766222, 06876/1327;0681/302-5537;;ogrim@cs.uni-sb.de;;;
 Stephan;Kohl;DK9VS;Tannenweg 8, Bildstock;;;;10.6.1962;06897/841532 (Peter Jung);0681/7099-231;;;;;
 Werner;Konter;DH6VK;Prälat Schütz-Str. 14, 66450 Neunkirchen;;;;;;;;;;;
 Alexander;Kraft;;;;;;;;;;berlinbboy21@web.de, alkr5002@stud.uni-saarland.de;;;
-Harald;Kreutzer;;;;;;2.5.1978;;;;harald@asta.uni-saarland.de hakr0003@stud.uni-sb.de;;;An den Eichen 15, 26901 Lorup
+Harald;Kreutzer;;;;;;2.5.1978;0681/96 57 49 9, 0179/13 50 34 7;;;harald@asta.uni-saarland.de hakr0003@stud.uni-sb.de;;;An den Eichen 15, 26901 Lorup
 Eva;Krämer;DD2EK;;;50931 Köln;;30.12.1974;06842/930267;;;ekraemer@smail.rrz.uni-koeln.de;;;Blieskasteler Str. 44, 66440 Blickweiler
 Daniel;Kröning;;;;;;;;;;kroening@cs.uni-sb.de;;;
 Stefan;Kunde;;Neunkircher Straße 144, 66113 Saarbrücken;;;;17.2.1976;0681/43416, 0178/8833095;;;kempest@cs.uni-sb.de;;;
 Klaus;Kursawe;;;;;;2.3.1973;;;;kku@zurich.ibm.com;;;
 Stefan;Kutsche;DC8WP;Donnersbergstr. 53;;67657 Kaiserslautern;;16.2.1977;0631/49496;;;kutsche@student.uni-kl.de;;;
+Tilmann;Lahann;;Mozartstrasse 19;;;66111 Saarbrücken;26.02.1981;0681/87 64 67 5, 0179/12 33 06 1;;;;;;
 Gerhard;Lang;DK4XB;Im Dorf 62, 66440 Biesingen;;;;23.4.1940;;;;;;;
 Helga;Lang;;Im Dorf 62, 66440 Biesingen;;;;10.5.;;;;;;;
 Martin;Lang;;Friedrich Ebert-Str. 14, 66440 Niederwürzbach;;;;25.7.1976;06842/6303;;;senseilang@web.de;;vdl;
@@ -159,7 +163,7 @@ Ulrike;Luck;DL8ULY;Hirschbergstr. 14, 66459 Kirkel;;;;6.3.1958;06849/1489;;;;;;
 Frank;Luithle;;Hellwigstrasse 5;;;;13.9.1977;0681/9658067 (G), 0179/2423872;;;sigi@fsinfo.cs.uni-sb.de;;;Josefstr. 116a, 66809 Nalbach, 06838-9 23 87
 Olaf;Maennel;;;;;;14.9.1973;;;;olafm@fsinfo.cs.uni-sb.de;;;
 Daniel;Marthaler;;Dekan Albrecht-Str. 3, 66440 Blieskastel;;;;7.1.1976;06842/2891;;;dama0008@stud.uni-sb.de;;vdl;
-Florian;Martin;;;;;;;;;;martin@cs.uni-sb.de;;rw;
+Florian;Martin;;;;;;;;;;martin@absint.com;;rw;
 Niklas;Matthies;;Meerwiesertalweg 14, 66123 Saarbrücken;;;;13.6.1974;0681/3 90 42 39;;;matthies@fsinfo.cs.uni-sb.de;;;
 Anne;Matysiak;;Kahlheckerweg 2, 66440 Blieskastel;;;;16.5.1977;06842/51750;;;annematysiak@gmx.de;;vdl;
 Herbert;Mayer;;;;;;1.9.1921;;;;;;;
@@ -175,7 +179,9 @@ Silvia;Müller;;;;;;;;;;SMM@de.ibm.com;;;
 Klaus;Neumann;DL8FR;;;;;;06894/6159;;;KNeuDL8FR@aol.com;;;
 Ulrike;Neumüller;;Gersheimer Str. 28, 66453 Walsheim;;;;1.6.1977;06843/91212;;;uneumuller@hotmail.com, oneumueller@t-online.de, ulne0001@stud.uni-sb.de;;vdl;
 Alfons;Neyheusel;DL8GF;Ludwigstr. 46, 66386 St. Ingbert;;;;;06894/2542;;;;;;
+Annie-Colette;Ngoum;;Kaiserslauterer Strasse 30;;;66123 Saarbrücken;20.01.1975;0681/93 85 22 6, 0173/32 71 39 9;;;;;;
 Johannes;Niklas;;;;;;;;;;johannesniklas@altavista.net;;;
+Ines;Oberhofer;;Waldhausweg 17, 720103;;;66123 Saarbrücken;07.03.1980;0681/95 81 02 4, 0177/20 06 85 1;;;;;;
 Sascha;Pallasch;;;;;;;;;;;;vdl;
 Arndt;Paschke;;;;;;4.10.1976;;;;arndtpas@gmx.de, arpa0002@stud.uni-sb.de;;;
 Andreas;Paul;;;;;;;;;;andreas.paul@sap.com;;;
@@ -201,14 +207,17 @@ Torben;Reuter;;Heim D, 2227, 66123 Saarbrücken;;;;20.8.1976;0681/817757, 0174/54
 Katharina;Rinderele;;;;;;;;;;krin0117@rz.uni-hildesheim.de;;;
 Konstantin;Rinderle;;Merketalstr., Weimar;;;;15.6.1977;0364/804683, 06842/1251;;;konstantinrinderle@web.de;;vdl;Prälat Lauer-Str. 4, 66440 Lautzkirchen
 Bettina;Rinsche;;;;;;;06842/3605;;;premier.cru@t-online.de;;vdl;geb. Theissen
+Vincenzo;Rizzo;;Hauptstrasse 15;;;66424 Homburg;26.05.1977;0173/92 84 15 4;;;;;;
 Emmanuel;Rondeau;;;;;;14.6.;;;;;;;
+Manuel;Rosinus;rossinie;;;;;13.8.;;;;;;;
 Jan;Ruffing;;;;;;26.7.1980;0175/4988295;;;naga@uni.de;;;
 Peter;Rullmann;;Im Stadtwald, Geb. 42, Zimmer 3008, 66123 Saarbrücken;;;;;0681/9388281;;;peterpan@fsinfo.cs.uni-sb.de;;;
 Jochen;Röhrig;;;;;;14.06.;07031/162698;;;roehrig@de.ibm.com;;;
 Isabel;Sand;;Wecklinger Str. 27a, 66440 Blickweiler;;;;19.2.1977;06842/3127;;;isabel.sand@gmx.de;;vdl;
-Martin;Sand;;;;;;25.1.;;;;;;;
-Michael;Sauer;;;;66346;Püttlingen;8.10.1974;06898/61350;;;sauer@studcs.uni-sb.de;;;
+Martin;Sand;;;;;;25.1.;;;;Martin.Sand@web.de;;;
+Michael;Sauer;;;;66346;Püttlingen;8.10.1974;06898/61350;;;sauer@studcs.uni-sb.de, AlfonTZ@web.de;;;
 Patrick;Schiel;;;;;;;0170/7169989;;;;;;
+Marion;Schmelzer-Darani;;Birkenweg 40;;;66127 SB-Klarenthal;10.03.1975;06898/93 55 04, 0179/79 33 32 4;;;;;;
 Wolfgang;Schmenger;DB6WY;;;;Pirmasens;09.04.;06331/79898;;;;;;
 Rainer Michael;Schmid;;Sulzbachstraße 27;;66111;Saarbrücken;25.8.1974;0681/938 35 27;;;rms@outside-of-the-asylum.de;;;
 Markus;Schmidt;DJ5PS;Reichenbacher Str. 89, 66879 Kottweiler-Schwanden;;;;;0170/5523857;;;;;;
@@ -219,6 +228,8 @@ Jörg;Schmittler;;Lebacherstrasse 131, 66113 Saarbrücken;;;;07.09.;0179/2271151, 
 Jörn;Schneider;;;;;;;;;;js@cs.uni-sb.de;;;
 Thorsten;Schneider;;Robert-Schuman-Straße 35, 66740 Saarlouis;;;;;06831-988 708, 0179-454 91 35, 0681/965 78 47 [Genion];;;netstorm@fsinfo.cs.uni-sb.de;;;
 Sabine;Schnur;;Bierenfeld 39, 66787 Wadgassen;;;;15.4.1977;06834/697024;;;mouseschnur@aol.com, sabine.schnur@saarbruecken.de;;vdl;Ballweiler Str. 22a, 66399 Erfweiler-Ehlingen, 06803/2624
+Sandra;Schopper;;Willi-Graf-Strasse 29;;;66123 Saarbrücken;05.07.1974;0681/93 83 91 6;;;;;;
+Miriam;Schreiber;;;;;;;0681/9104837, 0172/6858589;;;;;;
 Bertram;Schuck;;Rubenheimer Str. 40, 66399 Erfweiler-Ehlingen;;;;23.8.1976;06803/1034;;;bertramschuck@web.de;;vdl;
 Sieglinde;Schumann;DB3VV;;;;Frankenholz;;06826/8655;;;;;;
 Volker;Schumann;DF5VO;;;;Frankenholz;;0171/7204399;;;;;;
@@ -250,12 +261,14 @@ Christine;Tuth;;;;;;2.6.1977;0681/8317911, 0174/6387232, 0721/74324;;;chtu0000@s
 Gerhard;Uhrig;DL5VT;Kirchstr. 9, 66440 Blieskastel;;;;14.10.1947;06842/3849;;;;;;
 Igna;Uhrig;;Kirchstr. 9, 66440 Blieskastel;;;;3.6.1977;06842/3849;;;igna111@yahoo.de;;vdl;
 Michaela;Ungar;;;;;;3.9.;;;;;;;
+Doris;Vogt;;;;;;;0681/70 01 43, 0178/69 70 65 5;;;;;;
 Dirk;Vollmar;;;;;;;;;;dvollmar@studcs.uni-sb.de;;;
 Marco;Vujevic;;Kaiserstr. 1, 66111 Saarbrücken;;;;17.7.1976;0681/3907607, 0177-46 56 812;;;marco@mars.saar.de;;;
 Matthias;Wagner;;Amselweg 12, 66453 Rubenheim;;;;30.11.1976;06843/8210;;;;;vdl;
 Martin;Wanke;;Albertstraße 7, 66125 Dudweiler;;;;1.9.1973;06897/764222, 06897/918176 (G), 0179/4537052;;;mawan@cs.uni-sb.de;;;
 Karin;Warken;;;;;;3.9.1975;;;;;;;
-Dominik;Weber;;;;;;;0681/938 1185;;;dweber@bigfoot.de;;;Baldenaustr. 10, 76437 Rastatt, 07222/20330
+Bernd;Weber;;Hauptstraße 6;;;66128 Saarbrücken;01.09.1979;0681/93 56 78 3, 0177/41 02 89 8;;;;;;
+Dominik;Weber;;;;;;;0681/938 1185;;;dowe0009@stud.uni-sb.de, dweber@bigfoot.de;;;Baldenaustr. 10, 76437 Rastatt, 07222/20330
 Sophie;Weggler;;;;;;;;;;sophie.weggler@epost.de;;;
 Enrico;Weide;;;;;;20.1.1980;;;;weidi2000@gmx.de;;;
 Hendrik;Weitzmann;;;;;;13.3.1976;0179/4865537;;;jowe0017@stud.uni-saarland.de;;;John Hendrik Weitzmann
@@ -269,7 +282,9 @@ Sebastian;Winkel;;;;;;;;;;sewi@cs.uni-sb.de;;rw;
 Christine;Wolf;;Wolfharistr. 104, 66440 Wolfersheim;;;;8.1.1977;06842/4984;;;;;vdl;geb. Jesel
 Katrin;Wolf;;Ziegelhütterweg 11b, 66440 Blieskastel;;;;6.9.1976;06842/2535;;;;;vdl;
 Heiko;Wundram;;;;;;27.2.1982;;;;heikowu@heim-d.uni-sb.de;;;
+Heiko;Wundram;;;;;;;0179/83 77 79 3;;;;;;
 Levent;Yigit;;;;;;24.11.1976;;;;levis517@gmx.de;;;
+Stephanie;Youssef;;Rosenstrasse 24;;;66111 Saarbrücken;15.04.1976;0681/83 19 02 2, 0162/67 52 19 8;;;;;;
 Thomas;Zasowski;;;;;;;0177/2886456;;;;;;
 Stefan;Zeiger;;Obere Kaiserstr. 41, 66386 Rohrbach;;;;8.12.1975;06894/53884;;;;;vdl;
 Frank;Zeman;;Beethovenstr. 3, 66399 Ormesheim;;;;5.11.1976;06803/3598;;;;;vdl;
