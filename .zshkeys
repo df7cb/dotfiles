@@ -4,7 +4,9 @@
 #
 : ${ZSHEDIT:="emacs"}
 #: ${TERM:=linux}
-#
+
+[[ -t 0 ]] && stty erase 
+
 if [[ "$ZSHEDIT" == "vi" ]] then
     bindkey    -v
 else
