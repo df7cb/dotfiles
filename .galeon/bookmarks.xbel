@@ -166,6 +166,14 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://www.df7cb.de/">
+        <title>Christoph Berg</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1055059464</time_added>
+          </metadata>
+        </info>
+      </bookmark>
       <folder folded="yes">
         <title>cb</title>
         <info>
@@ -173,27 +181,11 @@
             <time_added>1049726149</time_added>
           </metadata>
         </info>
-        <bookmark href="http://www.heim-d.uni-sb.de/~cb/">
-          <title>Christoph Berg</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1051437268</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/cb/bilder/bilder">
           <title>Bilder</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1049726161</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://df7cb.dyndns.info/">
-          <title>Christoph Berg</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1051463660</time_added>
             </metadata>
           </info>
         </bookmark>
