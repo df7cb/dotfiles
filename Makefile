@@ -4,7 +4,7 @@ DEPS = Makefile .configrc
 UNDEFINE = -Uformat -Uindex -Uunix
 
 all: .mutt/aliases.new .mutt/muttrc.local \
-	.pinerc .ytalkrc .xinitrc mail/d .configrc
+	.pinerc .ytalkrc .xinitrc .configrc
 
 ## targets ##
 
