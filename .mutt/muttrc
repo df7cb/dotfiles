@@ -102,6 +102,7 @@ set xterm_set_titles
 # colors
 color normal    default default
 color attachment brightyellow default
+color bold	brightdefault default
 color hdrdefault cyan default
 color indicator default cyan
 color markers   green default
@@ -110,6 +111,11 @@ color signature cyan default
 color status    brightgreen blue
 color tilde     blue default
 color tree      red default
+color underline	brightdefault default
+
+color index	blue default ~p
+color index	brightdefault default ~T
+color index	brightdefault default ~F
 
 color header    brightgreen default ^From:
 color header    brightcyan default ^To:
