@@ -73,10 +73,6 @@
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,10)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (very fast)</title>
@@ -190,6 +186,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1049726161</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://planck.df7cb.de/">
+          <title>planck.df7cb.de (d123.stw.stud.uni-saarland.de)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1059568843</time_added>
             </metadata>
           </info>
         </bookmark>
