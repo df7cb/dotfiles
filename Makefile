@@ -20,7 +20,7 @@ mail/d:
 	ln -s deleted mail/d
 
 bin/$(OS)/xkbd: bin/src/xkbd.c
-	make -C bin/src install
+	$(MAKE) -C bin/src install
 
 diff:
 	diff -u .pinerc.m4 .pinerc || true
@@ -37,7 +37,7 @@ commit:
 install:
 	@case "$(PWD)" in *conf) ;; *) echo "Error: already installed?" ; exit 1 ;; esac
 	mv * .[a-z]* .[A-Z]* ..
-	@cd .. && rmdir conf && make
+	@cd .. && rmdir conf && $(MAKE)
 	@echo "Fertig. cd .."
 
 .configrc:
