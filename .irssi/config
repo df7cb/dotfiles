@@ -1,5 +1,4 @@
 servers = (
-  { address = "irc.stealth.net"; chatnet = "IRCNet"; port = "6668"; },
   { address = "irc.efnet.net"; chatnet = "EFNet"; port = "6667"; },
   { 
     address = "irc.undernet.org";
@@ -10,7 +9,8 @@ servers = (
   { address = "irc.openprojects.net"; chatnet = "OPN"; port = "6667"; },
   { address = "irc.gnome.org"; chatnet = "GIMPNet"; port = "6667"; },
   { address = "irc.ptlink.net"; chatnet = "PTlink"; port = "6667"; },
-  { address = "silc.pspt.fi"; chatnet = "SILC"; port = "706"; }
+  { address = "silc.pspt.fi"; chatnet = "SILC"; port = "706"; },
+  { address = "random.ircd.de"; chatnet = "IRCNet"; port = "6667"; }
 );
 
 chatnets = {
@@ -221,10 +221,11 @@ statusbar = {
   };
 };
 settings = {
-  core = { 
+  core = {
     real_name = "Christoph Berg";
     user_name = "cb";
     nick = "Myon";
+    override_coredump_limit = "no";
   };
   "irc/core" = { alternate_nick = "Tauon"; };
 };
@@ -238,5 +239,10 @@ hilights = (
   { text = "cb"; nick = "yes"; word = "yes"; },
   { text = "Myon"; nick = "yes"; word = "yes"; }
 );
-ignores = ( );
+ignores = (
+  { 
+    mask = "*!testshell@using.ircplus.info";
+    level = "CRAP PUBLICS";
+  }
+);
 logs = { };
