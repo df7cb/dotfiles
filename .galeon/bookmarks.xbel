@@ -1,0 +1,4256 @@
+<?xml version="1.0"?>
+<!DOCTYPE xbel PUBLIC "+//IDN python.org//DTD XML Bookmark Exchange Language 1.0//EN//XML" "http://www.python.org/topics/xml/dtds/xbel-1.0.dtd">
+<xbel version="1.0">
+  <info>
+    <metadata owner="http://galeon.sourceforge.net/">
+      <default_folder>yes</default_folder>
+    </metadata>
+  </info>
+  <title>Bookmarks</title>
+  <folder folded="no">
+    <title>Smart Bookmarks Toolbar</title>
+    <info>
+      <metadata owner="http://galeon.sourceforge.net/">
+        <create_toolbar>yes</create_toolbar>
+      </metadata>
+    </info>
+    <bookmark href="http://www.google.com">
+      <title>Google</title>
+      <desc>Enter web search term</desc>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <nick>google</nick>
+          <pixmap>/usr/share/galeon/google.png</pixmap>
+          <time_visited>1028460455</time_visited>
+          <smarturl>http://www.google.com/search?q=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://groups.google.com">
+      <title>Usenet</title>
+      <desc>Enter usenet search term</desc>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <nick>news</nick>
+          <pixmap>/usr/share/galeon/google_groups.png</pixmap>
+          <time_visited>1028225863</time_visited>
+          <smarturl>http://groups.google.com/groups?q=%s&amp;meta=site%3Dgroups</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://images.google.com">
+      <title>Images</title>
+      <desc>Enter image search term</desc>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <nick>img</nick>
+          <pixmap>/usr/share/galeon/google_images.png</pixmap>
+          <smarturl>http://images.google.com/images?q=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://www.m-w.com">
+      <title>Dictionary</title>
+      <desc>Enter word to look up</desc>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <nick>dict</nick>
+          <pixmap>/usr/share/galeon/dictionary.png</pixmap>
+          <time_visited>1028460493</time_visited>
+          <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://www.linuxpackages.net">
+      <title>LinuxPackages</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <nick>linuxpackages</nick>
+          <pixmap>/usr/share/galeon/slack.png</pixmap>
+          <smarturl>http://www.linuxpackages.net/search_view.php?by=name&amp;what_cat=&amp;subcat=&amp;ver=8&amp;name=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <folder folded="yes">
+      <title>Bookmarklets</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <create_context>yes</create_context>
+        </metadata>
+      </info>
+      <bookmark href="http://www.bookmarklets.com/">
+        <title>More Bookmarklets</title>
+      </bookmark>
+      <separator/>
+      <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
+        <title>Old versions of this page</title>
+      </bookmark>
+      <bookmark href="javascript:if(frames.length%3E0){F=' (Open frame in new window first.)'}else{F=''}Q=document.getSelection();if(!Q){void(Q=prompt('No text selected on page.'+F+'\n\nKeywords...?',''))};if(Q)location.href='http://bookmarklets.com/moreinfo.phtml?q='+escape(Q)">
+        <title>More Info About...</title>
+      </bookmark>
+      <separator/>
+      <bookmark href="javascript:if(document.images.length%3C1){alert('No image!')}else{D0iB=document.images[0];sZ2T=prompt('Resize by..','1.5');if(sZ2T){with(document){write('%3Cimg src='+D0iB.src+' width='+sZ2T*D0iB.width+' height='+sZ2T*D0iB.height+'%3E');close()}}}void(null)">
+        <title>Zoom on First Image...</title>
+      </bookmark>
+      <bookmark href="javascript:if(frames.length%3C1){var c0l=prompt('Change to which background color?','');if (c0l != null) void(document.bgColor=c0l)}else{alert('Page has frames. Use the version of this bookmarklet for frames. (bookmarklets.com)')}">
+        <title>Page Color...</title>
+      </bookmark>
+      <separator/>
+      <bookmark href="javascript:var wN2sc8Rl;Sa5gNA9k=new Function('clearTimeout(wN2sc8Rl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2sc8Rl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',150))">
+        <title>Scroll Page (very slow)</title>
+      </bookmark>
+      <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',50))">
+        <title>Scroll Page (slow)</title>
+      </bookmark>
+      <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
+        <title>Scroll Page (fast)</title>
+      </bookmark>
+      <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,10)}else{Sa5gNA9k()}',50))">
+        <title>Scroll Page (very fast)</title>
+      </bookmark>
+      <bookmark href="javascript:var wN2scRl;S3g=new Function('clearTimeout(wN2scRl)');document.onkeydown=S3g;a7T=prompt('Rate...','');if(a7T!=null){S3g();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){scrollBy(0,a7T)}else{S3g()}',50))}else{void(null)}">
+        <title>Scroll Page... (variable)</title>
+      </bookmark>
+      <separator/>
+      <bookmark href="javascript:if(frames.length%3C1){alert('The server indicates that the page was last modified: ' + window.document.lastModified)}else{alert('Page is framed. Use version of bookmarklet for frames. (bookmarklets.com)')}">
+        <title>Page Freshness?</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027174485</time_visited>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="javascript:if(frames.length%3E0){alert('Frames!')}else{ulBV3pQy=document.getSelection();if(ulBV3pQy!=''){location.href=ulBV3pQy.replace(/\042/g,'').replace(/\047/g,'').replace(/\s/g,'')}else{alert('Select text on page like:\n   http://www.domain.com...')}}">
+        <title>Go To Selected URL</title>
+      </bookmark>
+      <bookmark href="javascript:dT30FfN3b=new Date();void(window.open(location.href,'w'+dT30FfN3b.getTime()))">
+        <title>Duplicate Page</title>
+      </bookmark>
+      <bookmark href="javascript:void(InPageBookmark=pageYOffset)">
+        <title>Set In-Page Bookmark</title>
+      </bookmark>
+      <bookmark href="javascript:if (typeof InPageBookmark=='undefined'){alert('No in-page bookmark. Use Set In-Page Bookmark tool. (bookmarklets.com)')}else{scrollBy(0,InPageBookmark-pageYOffset)}">
+        <title>Go To In-Page Bookmark</title>
+      </bookmark>
+      <separator/>
+      <bookmark href="javascript:if(document.cookie.length%3C1){alert('No cookie for this site.')}else{alert('Cookie for this site: '+document.cookie)}">
+        <title>Read Cookie for Site</title>
+      </bookmark>
+      <bookmark href="javascript:function ROIoiW(){var i=0,j,A='anonymous',D,E,F=document.forms;while(i%3CF.length){E=F[i].elements;for(j=0;j%3CE.length;j++){D=E[j];if(D.type=='text'){D.value=(D.name.toUpperCase().indexOf('MAIL')!=-1)?A+'@example.com':A}}i++}}ROIoiW();void(null)">
+        <title>AutoFill Anonymous</title>
+      </bookmark>
+      <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
+        <title>Translate to English</title>
+      </bookmark>
+    </folder>
+  </folder>
+  <folder folded="no">
+    <title>bookmarks</title>
+    <info>
+      <metadata owner="http://galeon.sourceforge.net/">
+        <create_toolbar>yes</create_toolbar>
+        <time_added>978612597</time_added>
+      </metadata>
+    </info>
+    <folder folded="yes">
+      <title>Heim D</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <pixmap>/home/cb/HEIM-D/logo/16x16.ppm</pixmap>
+          <time_modified>1027259971</time_modified>
+          <time_added>934990422</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://www.heim-d.uni-sb.de/">
+        <title>Heim D</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027542143</time_visited>
+            <time_added>907234230</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/forum">
+        <title>Forum</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027174723</time_visited>
+            <time_added>968160699</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/bilder/bilder">
+        <title>Bilder</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027252244</time_visited>
+            <time_added>976830278</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/terminal">
+        <title>Terminal</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>907464661</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/heimgeist/logs">
+        <title>HeimGeist-Logs</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>966364381</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/heimgeist/stats">
+        <title>HeimGeist-Stats</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>966364432</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.rz/netzdienste/netzdok/geb/geb18.htm">
+        <title>Horus-Dokumentation-Geb&#239;&#191;&#189;ude 18</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>939070600</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.idbsu.edu/isa/SB/">
+        <title>Saarbr&#239;&#191;&#189;cken - Germany</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934989653</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://home.tu-clausthal.de/student/wohnheime/AK-WaN.html">
+        <title>Andere &quot;Wohnheime ans Netz&quot;-Projekte</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>950542167</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.inf.ethz.ch/personal/meierl/immagini/jpg/">
+        <title>Lennarts Photos</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>969627258</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.geocities.com/d_band_2000/index.htm">
+        <title>Home Page</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>977177639</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.big-billards.de/">
+        <title>BIG Billard&#239;&#191;&#189;s</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>977177693</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.cert.org/tech_tips/home_networks.html">
+        <title>Home Network Security</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>995715586</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/~ps/traffic.php">
+        <title>traffic heim-d</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>996828018</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.rz.uni-saarland.de/netzdienste/studentenheime/">
+        <title>Studentenheime</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1019045884</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.dfn.de/win/gwin/dienste/internet.html">
+        <title>WiN - G-WiN - Dienste - Internet</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1019045979</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="yes">
+      <title>Uni</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>934990382</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://www-wjp.cs.uni-sb.de/">
+        <title>WJP</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027174630</time_visited>
+            <time_added>934039328</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.uni-sb.de/">
+        <title>www.uni-sb.de</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027183939</time_visited>
+            <time_added>953821724</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.cs.uni-sb.de/">
+        <title>www.cs.uni-sb.de</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>953821338</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <folder folded="yes">
+        <title>Weitere Institute</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>976822967</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://infobib.cs.uni-sb.de/">
+          <title>Fachbereichsbibliothek Informatik</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>985790251</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/">
+          <title>Graduiertenkolleg &quot;Leistungsgarantien f&#239;&#191;&#189;r Rechnersysteme&quot;</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>988284136</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-dbs.cs.uni-sb.de/gradkoll/berichte-15januar-imjahre-2002/">
+          <title>Index of /gradkoll/berichte-15januar-imjahre-2002</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1011176183</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/">
+          <title>Rechenzentrum</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1004630977</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/">
+          <title>Max-Planck-Institut f&#239;&#191;&#189;r Informatik: Home Page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>973726868</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.zbi.uni-saarland.de/">
+          <title>Zentrum f&#239;&#191;&#189;r Bioinformatik Saar</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>993320976</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.szsb.uni-sb.de/frameset.html">
+          <title>Sprachenzentrum Saarbr&#239;&#191;&#189;cken (SZSB)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1005495448</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://www.canossa.de/">
+          <title>Canossa</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1011176224</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ac.innoserv.de/">
+          <title>Ausl&#239;&#191;&#189;ndercaf&amp;eacute;</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>897770146</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/query/WebPh.html">
+          <title>Telefon/Email-Recherche</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_visited>1028228390</time_visited>
+              <time_added>961266741</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/rzinfo/eulen/">
+          <title>Eulen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>986472836</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/~tante/tebank.html">
+          <title>Tante Emma Online Banking</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>987593978</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/dienste/beschaffung/software/software.html">
+          <title>Software-Portal - Startseite</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1013008301</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Fachschaft</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934990412</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/index.html">
+          <title>Die Fachschaft Informatik</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_visited>1027174586</time_visited>
+              <time_added>877508777</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/kvv/">
+          <title>Die KVV`s der FS Info</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>953821842</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.hochschulkompass.hrk.de/">
+          <title>HRK - Hochschulkompass</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>932381309</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.fachschaft.informatik.uni-kl.de/links/informatik-fachschaften.html">
+          <title>Deutschsprachige Informatik-Fachschaften im Web - Fachschaft Informatik Uni KL</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983973441</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.fachschaft.informatik.uni-kl.de/einsteiger/hitchhiker/main.html">
+          <title>HitchHiker 99</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983973572</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://www.fachschaft.informatik.uni-kl.de/kif/">
+          <title>KIF - Fachschaft Informatik Uni KL</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983973482</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.fachschaften.tu-muenchen.de/~steink/KIF/">
+          <title>http://www.fachschaften.tu-muenchen.de/~steink/KIF/</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>898001923</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/i9x/i98/">
+          <title>i98 - Studienf&#239;&#191;&#189;hrer der Informatik-Fachschaften</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>902243768</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Vorlesungen</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>946927892</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.uni-sb.de/~r.siems/vorlesungsverzeichnis.htm">
+          <title>http://www.uni-sb.de/~r.siems/vorlesungsverzeichnis.htm</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>940316126</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <folder folded="yes">
+          <title>Verifikation</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>938087985</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.lim.com/~ruben/research/papers/sqrt.html">
+            <title>Square Roots in ACL2: A Study in Sonata Form</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>938101890</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="file:/home/cb/src/acl2-sources/doc/HTML/acl2-doc.html">
+            <title>ACL2 doku (file:)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>938087867</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://pf5.phil.uni-sb.de/acl2/acl2-doc.html">
+            <title>ACL2 doku (pf5)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>938617206</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.onr.com/user/russ/david/fsqrt.html">
+            <title>FSQRT</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>935770387</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.onr.com/user/russ/david/k7-div-sqrt.html">
+            <title>FSQRT</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>937923032</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.cs.utexas.edu/users/moore/acl2/acl2-doc.html">
+            <title>ACL2 Version 2.4</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>935771304</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.lms.ac.uk/jcm/1/lms98001/">
+            <title>LMS JCM (1) 148-200</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>936990754</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ddj.com/articles/1997/9708/9708f/9708f.htm">
+            <title>Dr. Dobb's Journal August 1997: Inside the Pentium II Math Bug</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>976822312</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="yes">
+          <title>IR</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>946927903</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.darmstadt.gmd.de/~ferber/dm-ir/vl-neu/frame.html">
+            <title>TUD: DATA MINING &amp; INFORMATION RETRIEVAL</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>946927923</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/info/teaching/vorlesung/info2/">
+          <title>Informatik II, Sommersemester 2000</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>956665361</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/i2.html">
+          <title>http://www-wjp.cs.uni-sb.de/~cb/i2.html</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>957574383</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cert.org/research/JHThesis/Start.html">
+          <title>CERT&#239;&#191;&#189; Coordination Center Research</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>959442920</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cs.cmu.edu/~alma/index.html">
+          <title>Alma Whitten</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>959443135</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/~cb/ecommerce.html">
+          <title>Erics E-Commerce-Bookmarks (Proseminar SS00)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>959443152</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-tcs.cs.uni-sb.de/Veranstaltungen/WS99/DSAlg/index.html">
+          <title>Lehrstuhl Seidel: Datenstrukturen und Algorithmen, WS99</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>973726841</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/~maier/logik.html">
+          <title>&#239;&#191;&#189;bungen zur Vorlesung Logik f&#239;&#191;&#189;r Informatiker (WS 99/00)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>973727030</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/~jaeger/LFI0001.html">
+          <title>&#239;&#191;&#189;bungen zur Vorlesung Logik f&#239;&#191;&#189;r Informatiker (WS 00/01)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>977176475</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://krypt.cs.uni-sb.de/studiendekanin/VV_u_Stundenplaene/01SS/veranstaltungen01SS.pdf">
+          <title>SS01</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>984406425</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/~unix-ag/">
+          <title>Unix-AG SB: Vortragsreihe Unix (aka Unix-Nutzer-Selbsthilfegruppe Saarbr&#239;&#191;&#189;cken :-)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>986919101</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://krypt.cs.uni-sb.de/studiendekanin/veranstaltungen_ws2001.html">
+          <title>Untitled</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>987726571</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ags.uni-sb.de/~kohlhase/lehre/formath/">
+          <title>Vorlesung: Formale Mathematik f&#239;&#191;&#189;r den Computer</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>989845134</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Informatik</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>976822824</time_added>
+          </metadata>
+        </info>
+        <folder folded="yes">
+          <title>Rechnerarchitektur</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>977178140</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://modgen.fysel.ntnu.no/">
+            <title>Arithmetic Module Generator for High Performance VLSI Designs</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>977178165</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ddj.com/articles/1997/9708/9708f/9708f.htm">
+            <title>Dr. Dobb's Journal August 1997: Inside the Pentium II Math Bug</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>977178245</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://hpsearch.uni-trier.de/">
+          <title>HomePageSearch</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>993648327</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.bibliothek.uni-regensburg.de/ezeit/search.phtml?bibid=SULB%26colors=7">
+          <title>EZB / Suche</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1001590506</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/misc/searchform.html">
+          <title>IBIS Recherche der Fachbibliothek Informatik</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1002014410</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.informatik.uni-trier.de/~ley/db/">
+          <title>DBLP Bibliography</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1019064909</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Mathematik</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>941661463</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.utm.edu/research/primes/">
+          <title>The Prime Page (prime number lists, records, news, definitions...)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>941661480</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Physik</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>957103465</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.nes.ruhr-uni-bochum.de/CoN/">
+          <title>Lehrstuhl f&#239;&#191;&#189;r Nukleare und Neue Energiesysteme - Ruhr-Universit&#239;&#191;&#189;t Bochum</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>957103672</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.fzk.de/FZK2/aktuelles/presse/99/PI09_99.html">
+          <title>PI 09/99 - Karlsruher Nuklidkarte aktualisiert</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>968872407</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.uni-saarland.de/fak7/physik/Vorlesungsverzeichnis/vorlesungsverzeichnis.htm">
+          <title>vorlesungNeu</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1001590705</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Linguistik</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>976822552</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.wortschatz.uni-leipzig.de/index_js.html">
+          <title>Wortschatz Deutsch</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>976822541</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.sprachkritik.de/">
+          <title>sprachkritik.de - Kritik der Sprache hei&#239;&#191;&#189;t Kritik des Denkens</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>984920526</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://itb.biologie.hu-berlin.de/~wiskott/Services/DeutscheAphorismen/index.html">
+          <title>382 deutsche Aphorismen, 382 german aphorisms</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>984921422</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://gutenberg.aol.de/">
+          <title>Projekt Gutenberg - DE</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>984922464</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://info.pitt.edu/~kafka/intro.html">
+          <title>Constructing Franz Kafka</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>984922492</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.eat.com/learn-italian/index.html">
+          <title>Mama's Learn to Speak Italian</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>985739019</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.italicon.it/index.asp?MNUCORSILINGUA=02%26P=corsoprincipianti">
+          <title>ICON - Italian Culture on the Net - Home Page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>985739835</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://WEB.ARTS.UBC.CA/italian/">
+          <title>Italiano a UBC</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>985740046</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <separator/>
+      <bookmark href="http://fsinfo.cs.uni-sb.de/~cb/plan/plan_ws0102.html">
+        <title>Christophs Stundenplan</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1003762374</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.cvtips.com/">
+        <title>CV Tips.com</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>981464279</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://fsinfo.cs.uni-sb.de/~ai/frames.html">
+        <title>Aktive Idealisten</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027541675</time_visited>
+            <time_added>1023440985</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="yes">
+      <title>Conferences</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>961116962</time_added>
+        </metadata>
+      </info>
+      <folder folded="yes">
+        <title>2000</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1017156234</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www-cse.ucsd.edu/groups/hldvt/00/">
+          <title>IEEE International High Level Design Validation and Test Workshop</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>961116985</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dagstuhl.de/10Years/">
+          <title>IBFI - &quot;Informatics - 10 Years Back, 10 Years Ahead&quot;</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1015580592</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>2001</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1017156245</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.iasted.com/conferences/2001/austria/ai.htm">
+          <title>IASTED Applied Informatics Conference</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>977177758</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.iwls.org/">
+          <title>IWLS 2001</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>977177796</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dcs.gla.ac.uk/CHARME2001/">
+          <title>CHARME 2001</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>981040730</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dcs.gla.ac.uk/TPHOLs2001/">
+          <title>TPHOLs 2001</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>985999713</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ee.rochester.edu:8080/~albonesi/wced01/">
+          <title>Workshop on Complexity-Effective Design</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>988631695</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ee.princeton.edu/~isca2001/">
+          <title>ISCA2001</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>988631800</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dii.unisi.it/~ijcar/">
+          <title>IJCAR 2001 - International Joint Conference on Automated Reasoning</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>986895535</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.iccd-conference.org/index2.html">
+          <title>ICCD 2001</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991389403</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>2002</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1017156258</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://ece.tamu.edu/MTV/">
+          <title>MTV'02</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>994780894</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cs.chalmers.se/~ms/DCC02/">
+          <title>Designing Correct Circuits 2002</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1004520237</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mpi-sb.mpg.de/conferences/elics02/">
+          <title>Symposium on the Effectiveness of Logic in Computer Science (ELICS02)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1011802573</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <bookmark href="http://research.microsoft.com/specncheck/">
+        <title>UW/MSR 2001 Institute on Specifying and Checking Properties of Software</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1004540003</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www-etaps.imag.fr/">
+        <title>ETAPS 2002</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1013763340</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.computer.org/micro/articles/CFP/mi0502cfp.htm">
+        <title>mi0502cfp</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1017156158</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.kluweronline.com/issn/0925-9856">
+        <title>Kluwer Academic Publishers - Formal Methods in System Design</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1019666430</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="no">
+      <title>Internet</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>976822711</time_added>
+        </metadata>
+      </info>
+      <folder folded="yes">
+        <title>Sites</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>976823032</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.assoziations-blaster.de/">
+          <title>Der Assoziations-Blaster -- ein interaktives Textnetzwerk</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>953569773</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.debatte.zeit.de/cgi-bin/ubb/forumdisplay.cgi?action=topics%26forum=Stimmt|APO|s|QUS|%26number=13%26DaysPrune=20%26LastLogin=">
+          <title>DIE ZEIT Debatte</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_visited>1028060955</time_visited>
+              <time_added>955234604</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.generationenprojekt.de/Start.php3">
+          <title>Das GenerationenProjekt: Willkommen im GenerationenProjekt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983572075</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.encyclopedia.com:80/">
+          <title>Encyclopedia.com</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983572437</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.britannica.com/">
+          <title>Britannica.com</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983572638</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.m-w.com/">
+          <title>Merriam-Webster OnLine - Dictionary - Thesaurus - Word of the Day - Word Games - Word for the Wise</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983572662</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mathematik.uni-marburg.de/~glubsch/blobber/">
+          <title>BLOBBER</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>986919943</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>Internet: Services, Keyserver</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>953407032</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.waldherr.org/junkbuster/update.shtml">
+          <title>waldherr.org|Junkbuster|Update</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>950462399</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.pca.dfn.de/dfnpca/pgpkserv/">
+          <title>PGP Public Key Server Befehle</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>938888184</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.traceroute.org/">
+          <title>Traceroute.org</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>924208419</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cert.org/nav/alerts.html">
+          <title>CERT&#239;&#191;&#189; Coordination Center Alerts</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>959442555</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>RC5, Seti@home</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934990602</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://rc5stats.distributed.net/">
+          <title>RC5-64 - Main Stats Page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>907721951</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.distributed.net/">
+          <title>distributed.net - Node Zero</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934989653</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rc5stats.distributed.net/cgi/emsummary.idc?EM=cb@fsinfo.cs.uni-sb.de">
+          <title>RC5-64 - Participant Summary for cb@fsinfo.cs.uni-sb.de</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>908104423</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rc5stats.distributed.net/rc5-64/tmsummary.php3?team=8691">
+          <title>stats.distributed.net - RC5-64 Team #8691 Summary</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>936658982</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi?email=cb%2540wurzelausix.cs.uni-sb.de%26cmd=user_stats_new">
+          <title>cb@wurzelausix.cs.uni-sb.de</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>963918181</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://setiathome.ssl.berkeley.edu/cgi-bin/cgi?email_addr=cb%2540wurzelausix.cs.uni-sb.de%26passwd=1230648100%26cmd=get_profile">
+          <title>Change Your Account Information</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>957884646</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://setiathome.ssl.berkeley.edu/stats/team/team_23493.html">
+          <title>Wohnheim D, Universitaet des Saarlandes, Germany</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>958159497</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://setiathome.ssl.berkeley.edu/stats/team/team_19287.html">
+          <title>University of the Saarland</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>968160576</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+    </folder>
+    <folder folded="no">
+      <title>Technik</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>976823126</time_added>
+        </metadata>
+      </info>
+      <folder folded="yes">
+        <title>Fernsehen</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>948075603</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.pro-sieben.de/tvspy/">
+          <title>TV-Spy</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>937307624</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www2.pro-sieben.de/tvinfo/listing.cgi">
+          <title>TV INFO einzelne Sender</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>948075659</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www2.pro-sieben.de/tvinfo/schedule.cgi">
+          <title>TV INFO Tages&#239;&#191;&#189;bersicht</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>948075677</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.tele.at/tele/">
+          <title>TELE Online Rubrik</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>953407662</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>H&#239;&#191;&#189;ndy: E-Plus...</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>948022717</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.VLF.net/sms2/eplus.htm">
+          <title>VLF.net - Die Kommunikations-Zentrale</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>948022739</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.VLF.net/sms2/main.htm">
+          <title>vlf: sms</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>948028119</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://beli.vet.auth.gr/sms/quick.html">
+          <title>Quick Information</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>952709701</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.zorg.org/sms.htm">
+          <title>http://www.zorg.org/sms.htm</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>952710196</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.mtnsms.com/sms/ssms.asp">
+          <title>mtnsms.com</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>952710948</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.excell.to/index.cgi?action=begin">
+          <title>eXcell - The World's FREE SMS-Based Email</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>952711755</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.aa.nu/faxtext/">
+          <title>Andrews &amp; Arnold Ltd Fax-Text</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>952711991</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://sms-kostenlos.btn.de/">
+          <title>SMS-Kostenlos</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>925078120</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Hardware</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934992089</time_added>
+          </metadata>
+        </info>
+        <folder folded="no">
+          <title>Alpha</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934990463</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.home.unix-ag.org/nils/Alpha/">
+            <title>Linux Alpha (Unix-AG)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>933338348</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.home.unix-ag.org/nils/Alpha/Architectures/Noname.html">
+            <title>Linux Alpha - UDB (Unix-AG)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>933338139</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.alphalinux.org/docs/udb-multia.shtml">
+            <title>AlphaLinux - Documentation</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>933339815</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://box1.staller.sunysb.edu/linux/alpha/udb-sound.html">
+            <title>linux kernel 2.0.x UDB/Multia sound fix</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>933340267</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://llsgg.rug.ac.be/udb/">
+            <title>Universal Desktop Box</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>933340516</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.azstarnet.com/~axplinux/">
+            <title>Linux/Alpha Home Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907773396</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.azstarnet.com/pub/linux/axp">
+            <title>ftp.azstarnet.com/pub/linux/axp directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.digital.de/pub/DEC/Linux-Alpha/">
+            <title>Directory of /pub/DEC/Linux-Alpha</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907780714</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://archive.redhat.com/axp-list/">
+            <title>RedHat-AXP-List</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907441992</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ssc.com/lj/issue30/decalpha.html">
+            <title>LJ #30, October 1996: My Next Pentium is a DEC Alpha</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907442175</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.hex.net/~cbbrowne/alpha.html">
+            <title>Running Linux on Digital Alpha Systems</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907445991</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.redhat.com/support/docs/rhl/alpha/rh51-hardware-alpha.html">
+            <title>Red Hat Linux Hardware Compatibility List for Alpha/5.1</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907447059</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://ftp.digital.com/pub/Digital/Alpha/firmware/interim/udb/">
+            <title>Firmware-Updates</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907448049</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.brouhaha.com/~eric/computers/udb.html">
+            <title>Digital UDB Information</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907448587</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.bart.nl/~geerten/patches.txt">
+            <title>http://www.bart.nl/~geerten/patches.txt</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907778949</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.nllgg.nl/linux/Alpha/RHL5kernel.html">
+            <title>http://www.nllgg.nl/linux/Alpha/RHL5kernel.html</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907778953</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://miles.winlink.no/~tom/hwb/hwb.html">
+            <title>HwB: The Hardware Book (Offline)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>909318588</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.nw.mdx.ac.uk/decalpha.htm">
+            <title>DEC Alpha Documentation</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>C1VE</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>998929957</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.internettrash.com/users/pcgc1/index2.html">
+            <title>Gator's Picturebook (PCG-C1) Help Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>992378968</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.bastille-linux.org/jay/vaio.html">
+            <title>Jay's Picturebook Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>992380105</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://dlam.org/vaio.html">
+            <title>David's page on Sony Vaio Picturebook</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>992380198</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://frijoles.com/c1-info/index.html">
+            <title>Sony Vaio C1 Laptop Info</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>996357776</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.psc-sb.de/psc-sb/sonymain.html">
+            <title>Sony Center</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>996692825</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.stevebarr.com/cgi-bin/cgiwrap/barrst/goto.pl?c1vn">
+            <title>SteveBarr.com - Sony VAIO PCG-C1VN PictureBook</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>998998366</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.farstand.com/cgi-bin/pcg-c1/Forum.exe">
+            <title>PCG-C1 Web Forum</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>998998453</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.psc-sb.de/psc-sb/indexpsc.html">
+            <title>PSC - Portable System Center</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>999096445</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.alcove-labs.org/en/software/meye/">
+            <title>Sony Vaio PictureBook Motion Eye Camera Driver</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1004395124</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.alcove-labs.org/en/software/sonypi/">
+            <title>Sony Programmable I/O Control Device Driver</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1004889332</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://returntonature.com/pipermail/linux-sony/">
+            <title>The Linux-sony Archives</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1012144034</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sjog.sourceforge.net/">
+            <title>S-Jog - Homepage</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1013519260</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.linux-on-laptops.com/sony.html">
+            <title>Linux on Laptops</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1014580828</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.stevebarr.com/cgi-bin/cgiwrap/barrst/goto.pl?c1vnsol">
+            <title>SteveBarr.com - Sony VAIO PCG-C1VN PictureBook Solutions</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1019679695</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.xig.com/Pages/DemosBoxProduct.html">
+            <title>Accelerated-X Products</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1019760887</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.shallowsky.com/vaiotricks.html">
+            <title>Stupid Vaio Tricks (on Linux)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1024940959</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>X-NCD</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>907762804</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.ncd.com/support/docs.html">
+            <title>NCD Support - Documentation</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>921237358</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://wsspinfo.cern.ch/file/NCD-Articles/NCD_X_Terminals/Memory_specs/memory_specs_all_models">
+            <title>http://wsspinfo.cern.ch/file/NCD-Articles/NCD_X_Terminals/Memory_specs/memory_specs_all_models</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907530558</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://philo.bnl.gov/xterminal/booting.html">
+            <title>How to Boot an NCD or Tektronix X Terminal</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907530757</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://fnpspa.fnal.gov/xspt/NCDBasic.html">
+            <title>NCD Boot Service</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907548138</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.ncd.com/pub/ncd/Archive/NCD-Articles/Frequently-asked_Questions/">
+            <title>Directory of /pub/ncd/Archive/NCD-Articles/Frequently-asked_Questions</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907548174</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.appl-opt.physik.uni-essen.de/linux/LDP/HOWTO/mini/NCD-X-Terminal.html#toc7">
+            <title>NCD X terminal mini HOWTO</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>907762725</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Keyboard</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>953407064</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.pfuca.com/products/hhkb/hhkbindex.html">
+            <title>Happy Hacking Index</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>930092902</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.speech.cs.cmu.edu/~sburke/pub/stupid_keyboard_tricks.html">
+            <title>Stupid Keyboard Tricks: QWERTY and Dvorak</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>929120780</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.odpo.de/">
+            <title>Happy Hacking Keyboards</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>963534031</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Scanner</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>993044294</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www4.tpg.com.au/users/rita_tim/snapscan-ava1505-howto.txt">
+            <title>http://www4.tpg.com.au/users/rita_tim/snapscan-ava1505-howto.txt</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>993044260</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Wireless</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1012928036</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.cisco.com/univercd/cc/td/doc/product/wireless/airo_350/350cards/linux/index.htm">
+            <title>Wireless LAN Adapter Documents for Linux</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1012928055</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.cisco.com/pcgi-bin/Support/PSP/psp_view.pl?p=Hardware:Cisco_Aironet_350">
+            <title>Product Support Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1012928139</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+      </folder>
+      <folder folded="no">
+        <title>Software</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934990448</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/doc/">
+          <title>fsinfo: Diverse Dokus</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>938088284</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <folder folded="no">
+          <title>Networking</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983996333</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/">
+            <title>MRTG: The Multi Router Traffic Grapher</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>980206847</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://graphics.cs.uiuc.edu/forum/message.php?msg_id=102">
+            <title>DCS Graphics</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1012580914</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.cisco.com/univercd/cc/td/doc/product/vpn/client/nonwin35/index.htm">
+            <title>VPN Client for Linux, Solaris, and Mac OS X, Release 3.5</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1012562116</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Latex</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983996324</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.lri.fr/~filliatr/bibtex2html/">
+            <title>bibtex2html: BibTeX to HTML converter</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>983530799</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.astro.gla.ac.uk/users/norman/distrib/bibhtml.html#example">
+            <title>Bibhtml documentation</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>983530964</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.mpi-sb.mpg.de/pub/tex/mirror/ftp.dante.de/tex-archive/help/Catalogue/brief.html">
+            <title>The TeX Catalogue OnLine, Brief CTAN Edition</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>990532014</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.vorlesungen.uni-osnabrueck.de/informatik/shellscript/Html/Man/_Man_NeXT_html/html1/bibtex.1.html">
+            <title>./_Man_NeXT_html/html1/bibtex.1.html</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1011923107</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Print</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983996152</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.cs.wisc.edu/~ghost/aladdin/get550.html">
+            <title>Obtaining Aladdin Ghostscript 5.50</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>937692493</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.rvs.uni-hannover.de/arbeiten/studien/sa-bboeker/las.html">
+            <title>LAS - Laserprinter Accounting System</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>937697968</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>BSD</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>930615013</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.freebsd.de/">
+            <title>The FreeBSD Project</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>930614959</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.netbsd.de/">
+            <title>The NetBSD Foundation, Inc.</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>930614973</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.uk.openbsd.org/">
+            <title>OpenBSD</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>930614950</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>zsh</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>947101127</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://sunsite.auc.dk/zsh/">
+            <title>ZSH - THE Z SHELL</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>946391535</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/">
+            <title>Directory of /pub/unix/shells/zsh</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>946840155</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sourceforge.net/project/?group_id=4068">
+            <title>SourceForge: Project Info - zsh</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>955472802</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.zsh.org/">
+            <title>Zsh</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>955474706</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sourceforge.net/patch/index.php?group_id=4068%26set=custom%26_assigned_to=0%26_status=100%26_category=100%26SUBMIT=Browse">
+            <title>SourceForge: Browse Patches</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>964196556</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Chat (ICQ etc.)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>947101156</time_added>
+            </metadata>
+          </info>
+          <bookmark href="ftp://micq.chatzone.org/pub/micq">
+            <title>micq.chatzone.org/pub/micq directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.student.nada.kth.se/~d95-mih/icq/">
+            <title>The ICQ Protocol Site</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.members.tripod.com/~ladsoft/icq.htm">
+            <title>LADsoft ICQ page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.fourmilab.ch/speakfree/unix/">
+            <title>Speak Freely for Unix</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>938886797</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.germane-software.com/SpeakFreely/">
+            <title>http://www.germane-software.com/SpeakFreely/</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>938886869</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>X11</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>958867288</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.troll.no/qt/">
+            <title>Qt Documentation</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>897594607</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.simplesystems.org/ImageMagick/www/perl.html">
+            <title>ImageMagick - Image Processing and Display Package</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>978571451</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://private.addcom.de/g/xskat/">
+            <title>Die XSkat Home Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>972943317</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.infa.abo.fi/~chakie/xremote/">
+            <title>xremote</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>956310626</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.uk.research.att.com/vnc/">
+            <title>VNC - Virtual Network Computing from AT&amp;T Laboratories Cambridge</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>956422930</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>SQL</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>958867339</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://w3.one.net/~jhoffman/sqltut.htm">
+            <title>SQL Tutorial</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>958867382</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.postgresql.org/">
+            <title>PostgreSQL</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>958867538</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://web.mysql.com/">
+            <title>MySQL</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>958867652</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.heim-d.uni-sb.de/doc/postgresql-doc/indexpage.html">
+            <title>PostgreSQL Documentation</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>961528696</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Compiler</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>983996183</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.sgi.com/Technology/STL/">
+            <title>Standard Template Library Programmer's Guide</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>897598146</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.cs.virginia.edu/~lcc-win32/">
+            <title>LCC-Win32: a compiler system for Windows 95 - NT by Jacob Navia</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>930773669</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>HTML</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934992757</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.dagstuhl.de/selfhtml/">
+            <title>SELFHTML (HTML-Dateien selbst erstellen)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>938641668</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.karzauninkat.com/Goldhtml/goldhtml.htm">
+            <title>Die Goldenen Regeln fuer schlechtes HTML - Alle Regeln.</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>888067109</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.xml.com/xml/pub/w3j/s3.walsh.html">
+            <title>XML.COM - A Guide to XML</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>895619207</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.dagstuhl.de/selfhtml/tn.htm">
+            <title>SELFHTML: Befehlsverzeichnis</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>955476199</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://help.netscape.com/products/client/communicator/manual_roaming2.html">
+            <title>Manually Implementing Roaming Access</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>974305611</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.apacheweek.com/features/put">
+            <title>Apache Week. The essential free resource for users of the world's most popular web server.</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>974310163</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.netscape.com/newsref/std/x-remote.html">
+            <title>Remote Control of UNIX Netscape</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1012479595</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.linpro.no/lwp/lwpng-paper/">
+            <title>Gisle Aas: LWPng - Adding HTTP/1.1 support to libwww-perl</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1013533232</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>misc</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934992788</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.geek-girl.com/emacs/emacs.html">
+            <title>Emacs reference materials</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>896785292</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://wotsit.simsware.com/">
+            <title>Wotsit's File Format Collection</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>895618697</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.mud.de/se/jta/">
+            <title>The Java Telnet Application/Applet v2.0</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>964042168</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.gnupg.org/faq.html">
+            <title>GnuPG FAQ</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>983996125</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://w4.lns.cornell.edu/~pvhp/ptk/ptkFAQ.html">
+            <title>comp.lang.perl.tk FAQ</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>978574394</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://vim.sourceforge.net/">
+          <title>welcome : vim online</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991699015</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rzstud1.rz.uni-karlsruhe.de/~uno4/linux/descr_sirobot.html">
+          <title>Linux // What is Sirobot?</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991830565</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.bitrot.de/plan.html">
+          <title>plan - calendar and day planner</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1011352772</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.debian.org/doc/manuals/debian-euro-support/">
+          <title>Debian Euro HOWTO</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1015582696</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Unix-Doku/Ressourcen</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>947101278</time_added>
+          </metadata>
+        </info>
+        <folder folded="no">
+          <title>Linux-Dist</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934990584</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.debian.de/">
+            <title>Debian GNU/Linux -- The Universal Operating System</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>920500265</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.mpi-sb.mpg.de/pub/linux/mirror/ftp.redhat.com/redhat/redhat-5.2/alpha/RedHat/RPMS">
+            <title>/pub/linux/mirror/ftp.redhat.com/redhat/redhat-5.2/alpha/RedHat/RPMS directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.gwdg.de/linux/install/redhat/redhat-5.1">
+            <title>/linux/install/redhat/redhat-5.1 directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sunsite.unc.edu/pub/Linux/">
+            <title>sunsite: Linux</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>878564284</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.gwdg.de/pub/linux/install">
+            <title>ftp.gwdg.de /pub/linux/install directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.uni-hohenheim.de/sw/i386_lnx2/kde-1.0/include">
+            <title>KDE-includes /sw/i386_lnx2/kde-1.0/include directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.rz.hu-berlin.de/pub/mirrors/ftp.suse.com/pub/SuSE-Linux/5.3">
+            <title>/pub/mirrors/ftp.suse.com/pub/SuSE-Linux/5.3 directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.go.dlr.de/fresh/">
+            <title>The DLR PD/Freeware/Shareware Software Archive</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.uni-bayreuth.de/pub/Digital/Linux-Alpha/Kernels">
+            <title>/pub/Digital/Linux-Alpha/Kernels directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.mpi-sb.mpg.de/pub">
+            <title>MPI ftp</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.rz.uni-karlsruhe.de/pub/linux/mirror.redhat/redhat-5.2">
+            <title>Karlsruhe: /pub/linux/mirror.redhat/redhat-5.2 directory</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>934989653</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://vieta.math.uni-sb.de/groups/lugs/oframes.html">
+          <title>LUGS</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>896949719</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.uni-passau.de/~ramsch/iso8859-1.html">
+          <title>iso8859-1 table</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>894020685</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.CS.Uni-SB.DE/~tgr/unix/unixkurs.html">
+          <title>Unix-Kurs der Universit&#239;&#191;&#189;t des Saarlandes</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>884877561</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.itconsult.co.uk/stamper.htm">
+          <title>PGP Digital Timestamping Service</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>895617390</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www3.mirc.net/docs/color.txt">
+          <title>http://www3.mirc.net/docs/color.txt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>976469907</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <bookmark href="http://fsinfo.cs.uni-sb.de/~abe/Links/Hardware.html#dealer">
+        <title>H&#239;&#191;&#189;ufig genutzte Links: Hardware</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>993818564</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.computeruniverse.net/hardware.asp">
+        <title>computeruniverse.net - Ihr Computer und Multimedia-Shop</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>998929899</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="no">
+      <title>Boerse</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1028059456</time_modified>
+          <time_added>987594497</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://deutsche-boerse.com/parkett/parkett2.jpg">
+        <title>DAX Webcam</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>984059991</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://kurse.hypovereinsbank.de/hypo/charts/chart.html?symm=DAX.ETR">
+        <title>DAX</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>987594376</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://kurse.hypovereinsbank.de/hypo/charts/chart.html?symm=LU0117599125.DFK">
+        <title>Activest Lux Globalchoice 1</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028059381</time_visited>
+            <time_added>983570335</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://kurse.hypovereinsbank.de/hypo/charts/chart.html?symbol=%26symm=LU0117599125.DFK%26sSearchComp=%26symbol=DAX.ETR">
+        <title>Activest Lux Globalchoice 1 / DAX</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>985305101</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://kurse.hypovereinsbank.de/hypo/charts/chart.html?symbol=%26symm=GB0001746154.DFK">
+        <title>Gartmore CSF-Contin.Europe</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028059393</time_visited>
+            <time_added>1015861435</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://kurse.hypovereinsbank.de/hypo/charts/chart.html?symbol=%26symm=GB0001746154.DFK%26sSearchComp=%26symbol=DAX.ETR">
+        <title>Gartmore CSF-Contin.Europe / DAX</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1016127006</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <separator/>
+      <bookmark href="https://www.hypovereinsbank.de/pub/home/home.jsp">
+        <title>HypoVereinsbank Startseite</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028062101</time_visited>
+            <time_added>1018264014</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="no">
+      <title>Zeug</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>976823097</time_added>
+        </metadata>
+      </info>
+      <folder folded="no">
+        <title>Meine Homepages</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>888077167</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.handshake.de/user/g.berg/df7cb/">
+          <title>DF7CB - Die Amateurfunk-Seite</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>877524801</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.qsl.net/df7cb/">
+          <title>DF7CB umgezogen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>887329625</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://stud.uni-sb.de/~chbe0025/">
+          <title>Homepage Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>893412212</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>978958824</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/~cb/">
+          <title>Christoph Berg online &#239;&#191;&#189;</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>981152246</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.uni-saarland.de/~chbe002/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1015516795</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.phil.uni-sb.de/~cb/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1015516899</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.gtz.de/drogen/deutsch/kontakt.htm">
+          <title>Aktionsprogramm Drogen und Entwicklung - Kontakt</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1021303816</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://home.t-online.de/home/christoph.berg/">
+          <title>Reisef&#239;&#191;&#189;hrer f&#239;&#191;&#189;r Motorradtouren in Korsika</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1021303910</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Comics</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>904506499</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.nichtlustig.de/">
+          <title>NICHTLUSTIG - jeden Tag ein neuer Cartoon</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>990792558</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.kevinandkell.com/">
+          <title>Kevin &amp; Kell by Bill Holbrook</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>937932441</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/~berg/comics/">
+          <title>Comics</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>900495209</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://www.uexpress.com/ups/comics/ch/strips/85/11/ch851117.html">
+          <title>Calvin and Hobbes lastread</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>891893817</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.uexpress.com/ups/comics/ch/strips/87/03/ch870321.html">
+          <title>Calvin and Hobbes nov87</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>891893732</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.uexpress.com/ups/comics/ch/">
+          <title>Calvin and Hobbes</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>891892316</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.unitedmedia.com/comics/dilbert/archive/">
+          <title>Dilbert Archive</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>897383140</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.kingfeatures.com/comics/hagar/index.htm">
+          <title>Hagar The Horrible</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>904505728</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.garfield.com/comics/pages/index.html">
+          <title>Garfield</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>904505599</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.unitedmedia.com/comics/peanuts/a_striplib/index.html">
+          <title>Peanuts Archive</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>897820319</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.unitedmedia.com/comics/robotman/ab.html">
+          <title>Today's Robotman&#239;&#191;&#189;</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>900351949</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.userfriendly.org/">
+          <title>User Friendly the Comic Strip: Main Page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>904732361</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://phd.stanford.edu/comics.cfm">
+          <title>Piled Higher and Deeper Comic Strip</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>988115505</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://rigby-jones.net/ericschwartz/sabrina/">
+          <title>Sabrina Online Comic Strips</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991835431</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Computer/Informatiker-Humor</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934990528</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www3.mcps.k12.md.us/users/rsfay/magic/index.html">
+          <title>Welcome to my Cave!!!</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>936360195</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://pauillac.inria.fr/~xleroy/stuff/california-prog.html">
+          <title>California codin'</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>936025101</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <folder folded="no">
+          <title>Un*x-Humor</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>887714138</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://earthspace.net/~esr/faqs/hacker-howto.html">
+            <title>How To Become A Hacker</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>904821051</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.wins.uva.nl/~mes/jargon/t/TheJargonLexicon.html">
+            <title>jargon, node: The Jargon Lexicon</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>887646265</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://sagan.earthspace.net/jargon/">
+            <title>Jargon File Resources</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>896789705</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://olymp.org/~orakel/">
+            <title>Das Internet Orakel (deutschsprachig)</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>888596304</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.sics.se/~psm/geek_code.html">
+            <title>Geek Code v2.1</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>888418330</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.cosy.sbg.ac.at/rec/geek/geek31.html">
+            <title>Geek Code Calculator for 3.0</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>888076599</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.geekcode.com/">
+            <title>The Code of the Geeks v3.12</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>888595795</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.contrib.andrew.cmu.edu/~moose/sysadmin/pricelist.html">
+            <title>Sysadmin Price List</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>941033180</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ludat.lth.se/text/languages/c/iocc">
+            <title>Index of /text/languages/c/iocc</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>899581149</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.ioccc.org/">
+            <title>The International Obfuscated C Code Contest</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>941740554</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://orwant.www.media.mit.edu/tpj/contest/">
+            <title>The Obfuscated Perl Contest</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>941742146</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://home.ins.de/~m.hussmann/man/">
+            <title>Important unix manpages</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>984505868</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://ftp.informatik.rwth-aachen.de/jargon300/TheDevil_sDPDictionary.html">
+          <title>The Devil's DP Dictionary</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>947101052</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://fsinfo.cs.uni-sb.de/~ramsch/Nomic/">
+          <title>Nomic</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>900616428</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="ftp://fsinfo.cs.uni-sb.de/pub/mawan/Hitchhiker/">
+          <title>Hitchhiker's Guide</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>895328957</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="ftp://ftp.cs.uni-sb.de/pub/misc/doc/misc/BOFH/">
+          <title>BOFH</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>895327742</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.nef.wh.uni-dortmund.de/~eike/mathe1.html">
+          <title>Alles, was mit Mathe und Humor zu tun hat.</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>887897009</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.zocken.net/microtast.jpg">
+          <title>JPEG image 756x504 pixels</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>942798160</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.h2g2.com/">
+          <title>h2g2</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>957830307</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://totl.net/Eunuch/index.html">
+          <title>Project E.U.N.U.C.H.</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>959123719</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://pigdog.org/auto/mr_bads_list/shortcolumn/1914.html">
+          <title>Pigdog Journal (Mr. Bad's List) -- Things to Say When You're Losing a Technical Argument</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>989230386</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://draco.mit.edu/teddyborg/index.html">
+          <title>Teddy Borg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1019477629</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dansdata.com/sbs3.htm">
+          <title>Step By Step 3 - How to destroy your computer!</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1026748459</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Musik</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>962847179</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.rareexception.com/Garden/AmLyrics.html">
+          <title>American Pie Lyrics</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>962847198</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.chez.com/lynx57/spindoctors/twoprinces.htm">
+          <title>Spin Doctors - Two Princes</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>962847353</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.bayou.com/~jebsr/alabama.html">
+          <title>Sweet Home Alabama --- Lynyrd Skynyrd</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>962847695</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://redhotchilipeppers.com/disco/lyrics/cal_lyrics.html#Californication">
+          <title>Californication</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>962847834</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://beatleslyrics.tripod.com/sgtpepper.htm">
+          <title>Sgt. Pepper's Lonely Hearts Club Band Lyrics</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>977178308</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Leute</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>964027110</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.geocities.com/Zelith2/">
+          <title>Daniela</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>968274809</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.geocities.com/saragesson/private/index.html">
+          <title>Utopia Information</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>969313141</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.inf.ethz.ch/personal/meierl/photo/jpg/">
+          <title>Photos</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>975790968</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.familieklee.de/edith/">
+          <title>index</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995544305</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.aktex-files.de/schlumpf/">
+          <title>Schlumpf 32er Geburtstag</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1014213818</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.nari.ee.ethz.ch/~zasowski/boeblingen.html">
+          <title>Homepage von Thomas Zasowski</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1023101657</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>AFu</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>877524288</time_added>
+          </metadata>
+        </info>
+        <folder folded="no">
+          <title>TNT</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>969120724</time_added>
+            </metadata>
+          </info>
+          <bookmark href="ftp://excelsior.kullen.rwth-aachen.de/pub/packet_radio/tnt/">
+            <title>Directory of /pub/packet_radio/tnt</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>933179997</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://excelsior.kullen.rwth-aachen.de/WSPse/Packet.php3?lang=de">
+            <title>WSPse: Packet-Radio</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>969120754</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>ampr.org</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>965680417</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.ampr.org/">
+            <title>Amateur Packet Radio, net 44, and AMPR.ORG</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>965680440</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="ftp://ftp.ucsd.edu/hamradio/">
+            <title>Directory of /hamradio</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>965681697</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.qsl.net/do2ksm/txt/koord.html">
+            <title>koord.html</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>965684720</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Software</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>965680449</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://aab.42.org/baybox/">
+            <title>The BayCom-Mailbox</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>884613174</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.algonet.se/~jonit/toec/rufz.htm">
+            <title>RUFZ</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>896037981</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.qc.ee.es.osaka-u.ac.jp/radio/">
+            <title>PED</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>896038146</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="file:///extern/mpii/linux/mirror/sunsite/apps/ham/tnos/">
+            <title>Directory listing of /extern/mpii/linux/mirror/sunsite/apps/ham/tnos</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>897599135</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://dl0td.afthd.tu-darmstadt.de/~flexnet/index.html">
+            <title>FlexNet Homepage</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>965683514</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="no">
+          <title>Homepages</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>965680552</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.ee.uni-sb.de/hamradio/public/">
+            <title>DL0UDS - Amateurfunkstation Uni Saarbruecken</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>880981509</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.qsl.net/dc8wp/">
+            <title>Homepage of DC8WP</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>879856646</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.baycom.de/">
+            <title>Bavarian Packet-Radio Group</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>884613163</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://cssun.rrze.uni-erlangen.de:81/~unrz45/bcc/">
+            <title>The Bavarian Contest Club's WWW Home Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>903495844</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://aab.42.org/">
+            <title>Fachhochschule M&#239;&#191;&#189;nchen, Fachbereich 04 Elektrotechnik, Labor f&#239;&#191;&#189;r Funktechnik</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>903461705</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www.adacom.org/">
+            <title>Homepage ADACOM e.V.</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>965683051</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://oh2aq.kolumbus.com/dxs/oldlook.html">
+          <title>DX Summit</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>897598845</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.amsat.org/amsat/toys/gridconv.html">
+          <title>GridSquare Conversion</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>893098530</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://solar.uleth.ca/solar/www/realtime.html">
+          <title>Near-Real-Time MUF Map</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>877524226</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dkrz.de/mirror/tnp/nineplanets.html">
+          <title>The Nine Planets</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>898901342</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://lasco2.mpae.gwdg.de/solar/eng/homepage.htm">
+          <title>Views of the Solar System</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>898901326</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.systemtechnik.tu-ilmenau.de/ham/hamitupx.html">
+          <title>DK0TUI: ITU-Callsign prefix list</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>904064451</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.qslinfo.de/">
+          <title>www.qslinfo.de</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>956175632</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.shindengen.de/dlcj/">
+          <title>DL-CJ Contest in DL</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>967723728</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.qsl.net/dl8qs/qw.htm">
+          <title>QW-DATEN</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1025627651</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Zeitungen, Nachrichten, Wetter</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>894974902</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.ct.heise.de/ct/">
+          <title>c't - magazin f&#239;&#191;&#189;r computertechnik</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>890738632</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ct.heise.de/tp/">
+          <title>Telepolis</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>894928729</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.sz-newsline.de/umfrage.htm">
+          <title>Saarbr&#239;&#191;&#189;cker Zeitung - HochschulJournal</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>899294147</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.sueddeutsche.de/aktuell/streifl.htm">
+          <title>SZ / Streiflicht</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>936790148</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://www.dwd.de/forecasts/forecasts.html">
+          <title>Wettervorhersage</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>894227321</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.nottingham.ac.uk/pub/sat-images/D2.JPG">
+          <title>Wetterbild D2</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>894050510</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.skyview.de/uebersicht.htm">
+          <title>SkyView &#239;&#191;&#189;bersicht</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>894050601</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.wetter.net/cgi-bin/wetter-net/wetter_stadt.pl?ID=334">
+          <title>Wetter in 5000 St&#239;&#191;&#189;dte weltweit - wetter.net: weltweite Wettervorhersagen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>988718268</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.sueddeutsche.de/aktuell/index.php3?section=streifl">
+          <title>S&#239;&#191;&#189;ddeutsche Zeitung online - Aktuelle Ausgabe : Streiflicht</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>953985288</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Landkarten</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>953407843</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.fourmilab.ch/cgi-bin/uncgi/Earth">
+          <title>Earth View</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>888597312</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.falk-online.de/routing/index.html">
+          <title>FALK ROUTING</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>902157626</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.expediamaps.com/">
+          <title>Microsoft Expedia Maps - Home</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>895618457</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.terraserver.microsoft.com/CoverageSearch.asp?PPD=8%26R=14%26C=32%26DSize=0%26ClickAt=?0,0">
+          <title>Microsoft TerraServer Search Page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>902156963</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.map24.com/en/">
+          <title>Map24 - Home</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>997179615</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <bookmark href="http://www.med-rz.uni-sb.de/med_fak/sport-praev/Aktuelles/Probandengesuch.html">
+        <title>Aktuelles am Institut f&#239;&#191;&#189;r Sport- und Pr&#239;&#191;&#189;ventivmedizin&lt;/a&gt;</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>989849173</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.kogakure.de/1head2.htm">
+        <title>Die Kunst des Krieges-Head</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>990197574</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.douglasadams.com/creations/infocomjava.html">
+        <title>DNA/HHGG Infocom Adventure</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>990443132</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.ard.de/radio/streams/liste.phtml?rubrik=alle">
+        <title>ARD.de Radio Streams</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>994061681</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.nimblefingers.com/b_exer.htm">
+        <title>Exercises to reduce stress and improve typing dexterity.</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>994244857</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.ap.univie.ac.at/users/Anton.Zeilinger/philosop.html">
+        <title>Interpretation and Philosophical Foundation of Quantum Mechanics</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>994506491</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.loeblein.com/satfind.htm">
+        <title>satfinder</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>994695069</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www-wjp.cs.uni-sb.de/~cb/abi96/">
+        <title>Abi 96, Von der Leyen-Gymnasium Blieskastel</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1006351792</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="https://members.dyndns.org/nic/dyndns">
+        <title>NIC -- Dynamic DNS</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1008185714</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://spamassassin.taint.org/">
+        <title>SpamAssassin: Welcome to SpamAssassin</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1008947412</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.jpl.nasa.gov/srtm/">
+        <title>Shuttle Radar Topography Mission</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1011799000</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.sueddeutsche.de/sz/kultur/bundesdance2/frameset.html">
+        <title>Bundesdance</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028374159</time_visited>
+            <time_added>1014154094</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.dtfb.de/bundesliga/spielordnung.html#para6">
+        <title>DTFB - Bundesliga-Spielordnung</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1014200662</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://gatos.sourceforge.net/">
+        <title>GATOS</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1015961875</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.linuxtel.com/EPHONE/ephone.html">
+        <title>Ethernet Phone 1.01 for Linux</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1015965667</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.speakfreely.org/">
+        <title>Speak Freely</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1015966036</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.xfree86.org/current/DRI.html">
+        <title>DRI User Guide</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1015968330</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.mbsi.ca/hsflinux/">
+        <title>Linux drivers for Conexant HSF modems - MBSI</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1015584265</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://grusskarten.web.de/GewaehlteKarte/Ansichtkarte.htm?card_key=jgNHzuSnPx8gm9j">
+        <title>Ihre Karte</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1016907247</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://ChristophBerg@ikk.eric.lu/">
+        <title>Discothek</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1016728190</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.die-tour-im-saarland.de/">
+        <title>Tour de France: Tour-im-Saarland 2002</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1021127893</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <bookmark href="http://citeseer.nj.nec.com/cs">
+      <title>Citeseer</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_visited>1027975006</time_visited>
+          <time_added>968412623</time_added>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://www.google.com/">
+      <title>Google</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_visited>1027260013</time_visited>
+          <time_added>941661503</time_added>
+        </metadata>
+      </info>
+    </bookmark>
+    <folder folded="no">
+      <title>Search</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>938087953</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://wordreference.com/de/Translation.asp">
+        <title>English - German</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1006260135</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wordreference.com/fr/Translation.asp">
+        <title>French - English</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027975073</time_visited>
+            <time_added>1006260178</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <separator/>
+      <folder folded="no">
+        <title>Dictionaries</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>953407479</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.yourdictionary.com/">
+          <title>yourDictionary.com * Home Page</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1004973635</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dict.org/">
+          <title>The DICT Online Dictionary</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934989653</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.lib.uchicago.edu/efts/ARTFL/projects/dicos/">
+          <title>ARTFL dictionary collection</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>946840437</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.francophonie.hachette-livre.fr/">
+          <title>Dictionnaire Universel Francophone En Ligne</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>946840625</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.babelfish.com/Languages/English/EnglishMachine.shtml">
+          <title>The Babel Fish Corporation's - Language Locator</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>972598721</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://members.aol.com/EUNobsy/woerterb.htm">
+          <title>woerterbuch</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1007124811</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <bookmark href="http://www.altavista.com/cgi-bin/query?text">
+        <title>AltaVista</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027975033</time_visited>
+            <time_added>907234917</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.alltheweb.com/">
+        <title>alltheweb.com</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027975051</time_visited>
+            <time_added>938615738</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://ftpsearch.lycos.com/?form=advanced%26type=Regular+expression+match%26hits=150%26hidepackages=on%26hidedistfiles=on%26hidefreebsd=on%26hideopenbsd=on%26hidenetbsd=on%26f5=-%26header=host">
+        <title>FTP Search</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934989653</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <folder folded="no">
+        <title>Search Engines</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934990546</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://babelfish.altavista.digital.com/cgi-bin/translate?">
+          <title>AltaVista: Translations</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>885835962</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://hotbot.com/text/">
+          <title>HotBot</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>901821119</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ask.uni-karlsruhe.de/asksina2/forms/WWW_Sina.html">
+          <title>ASK - SINA</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934989653</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://archie.th-darmstadt.de/">
+          <title>Search in Archie</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>880469075</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <bookmark href="http://www-wjp.cs.uni-sb.de/~jochen/search/">
+        <title>Jochens noch viel tollere Suchseite</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>977178634</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.teleauskunft.de/">
+        <title>Teleauskunft</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1004955828</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://dict.leo.org/">
+        <title>LEO English/German Dictionary</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027975060</time_visited>
+            <time_added>1022667050</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="no">
+      <title>busserver</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>935086944</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Campus%26n=%26z=%26d=%26tr=v">
+        <title>Campus -&gt; ?</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934992344</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Saarbr%FCcken+Rathaus%26n=%26z=%26d=%26tr=v%26ao=Suchen">
+        <title>Campus -&gt; Rathaus</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>938875840</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Scheidt+Im+Fl%25FCrchen%26n=%26z=%26d=%26tr=v%26ao=Suchen">
+        <title>Campus -&gt; Scheidt</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>938875840</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=campus%26n=sb+hbf%26z=%26d=%26tr=v%26ao=Suchen">
+        <title>Campus -&gt; HBF</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>935086923</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Campus%26n=Schneidershof%26z=%26d=%26tr=v%26ao=Suchen">
+        <title>Campus -&gt; Saarbasar</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>935531953</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Mensa%26n=%26z=%26d=%26tr=v">
+        <title>Mensa -&gt; ?</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>934992344</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <bookmark href="http://fsinfo.cs.uni-sb.de/~cb/mensa/#heute">
+      <title>Speiseplan</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>942277185</time_added>
+        </metadata>
+      </info>
+    </bookmark>
+    <folder folded="no">
+      <title>PVS</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>953734127</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://pvs.csl.sri.com/">
+        <title>PVS</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>953734137</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <folder folded="no">
+        <title>PVS Resources</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1003761769</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.csl.sri.com/~rushby/pvs-bib.bib.txt">
+          <title>PVS Bibliography</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>979645283</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://pvs.csl.sri.com/experimental/">
+          <title>PVS 2.3 Experimental Features</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>958161945</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.csl.sri.com/programs/formalmethods/links.html">
+          <title>SRI - Formal Methods</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995020050</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.informatik.uni-ulm.de/ki/pvs.html">
+          <title>PVS @ Ulm</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>954164440</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="ftp://ftp.informatik.uni-ulm.de/pub/KI/pvs/">
+          <title>Directory of /pub/KI/pvs</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>956615855</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://mcs.une.edu.au/~pvs/">
+          <title>UNE PVS Research Group</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>988903019</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://shemesh.larc.nasa.gov/fm/ftp/larc/PVS-library/pvslib.html">
+          <title>NASA Langley PVS Libraries</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_visited>1028299058</time_visited>
+              <time_added>990523894</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://shemesh.larc.nasa.gov/fm/fm-humor.html">
+          <title>NASA LaRC Formal Methods Humor</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995035655</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>PVS People</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1003761384</time_added>
+          </metadata>
+        </info>
+        <bookmark href="ftp://ftp.csl.sri.com/pub/users/owre/">
+          <title>Sam Owre (PVS patches)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>989406142</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.icase.edu./~munoz/sources.html">
+          <title>Cesar Munoz</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995035491</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://wwwtcs.inf.tu-dresden.de/~tews/">
+          <title>Hendrik Tews</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991748297</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.ittc.ku.edu/~james/research/pvs.html">
+          <title>Jerry James (sets)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1006352349</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Other Theorem Provers</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1003761514</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://lal.cs.byu.edu/lal/hol-desc.html">
+          <title>Description of the HOL Theorem Proving System</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995962223</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.dcs.gla.ac.uk/~tfm/fmt/hol.html">
+          <title>The HOL Theorem Prover</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995962803</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cs.indiana.edu/formal-methods-education/">
+          <title>Formal Methods Educational Resources</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1006377486</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www-2.cs.cmu.edu/~modelcheck/">
+          <title>Model Checking at CMU</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1019571114</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <separator/>
+      <folder folded="no">
+        <title>L4</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1003761393</time_added>
+          </metadata>
+        </info>
+        <folder folded="no">
+          <title>Other Microkernels</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1003761435</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://www.hightec-rt.com/">
+            <title>HighTec EDV-Systeme GmbH - Realtime Technology</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>994345135</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <bookmark href="http://i30www.ira.uka.de/">
+          <title>System Architecture Group</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>993648530</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cse.unsw.edu.au/~disy/L4/">
+          <title>L4 microkernel</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1003761367</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="no">
+        <title>Software Verification</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1003761487</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.cli.com/software/os/index.html">
+          <title>http://www.cli.com/software/os/index.html</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991750511</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cli.com/reports/index.html">
+          <title>http://www.cli.com/reports/index.html</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>991750540</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.eecs.umich.edu/gasm/">
+          <title>Abstract State Machines</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995978952</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.sics.se/fdt/VeriCode/evt.html">
+          <title>Erlang Verification Tool</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>995296093</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www4.informatik.tu-muenchen.de/~isabelle/bali/papers/Springer98.html">
+          <title>Machine-checking the Java Specification: Proving Type-Safety</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1019046570</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://i12www.ira.uka.de/~key/">
+          <title>KeY Project</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1019571195</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.edg.com/">
+          <title>Edison Design Group</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1021303221</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <separator/>
+      <bookmark href="http://www.ictp.trieste.it/~manuals/programming/sun/common-tools/numerical_comp_guide/index.html">
+        <title>Numerical Computation Guide: Contents</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>992003091</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wwwipr.ira.uka.de/~asfour/Goerke/">
+        <title>Festkomma-Arithmetik in Java</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>995567276</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www-cad.eecs.berkeley.edu/~tah/HyTech/">
+        <title>HyTech Home Page</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>995292553</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://goedel/cgi-bin/viewcvs.cgi/">
+        <title>CVS Repository</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1021981640</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+    <folder folded="no">
+      <title>Admin</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_added>963968795</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser">
+        <title>Datenbank bearbeiten</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1028230733</time_visited>
+            <time_added>960660355</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/server-status/">
+        <title>Apache Status</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>963968819</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/netzwart/pgnetzuser?table=bewohner%26order=raum">
+        <title>Bewohnerliste</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_visited>1027972821</time_visited>
+            <time_added>964390609</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <separator/>
+      <bookmark href="http://www.heim-d.uni-sb.de/doc/">
+        <title>Wohnheim D - Dokumentationen</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>938088302</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/doc/share/apache/manual/">
+        <title>Apache manual</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1016552156</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/cgi-bin/samba/smb2www.pl">
+        <title>Welcome to the SMB to WWW gateway !</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>975088175</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/doc/postgresql-doc/html/">
+        <title>PostgreSQL 7.1.3 Documentation</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1018810625</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
+  </folder>
+</xbel>
