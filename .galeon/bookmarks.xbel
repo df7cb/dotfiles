@@ -4604,8 +4604,8 @@
       <title>en&gt;de</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>/RW/users/cb/.galeon/favicons/en.gif</pixmap>
-          <time_modified>1037114800</time_modified>
+          <pixmap>.galeon/favicons/en.gif</pixmap>
+          <time_modified>1037181391</time_modified>
           <time_added>1006260135</time_added>
           <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
         </metadata>
@@ -4615,8 +4615,8 @@
       <title>fr&gt;en</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>/RW/users/cb/.galeon/favicons/fr.gif</pixmap>
-          <time_modified>1037114816</time_modified>
+          <pixmap>.galeon/favicons/fr.gif</pixmap>
+          <time_modified>1037181398</time_modified>
           <time_added>1006260178</time_added>
           <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
         </metadata>
