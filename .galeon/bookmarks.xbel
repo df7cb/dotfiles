@@ -4203,14 +4203,6 @@
         </info>
       </bookmark>
     </folder>
-    <bookmark href="http://citeseer.nj.nec.com/cs">
-      <title>Citeseer</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_added>968412623</time_added>
-        </metadata>
-      </info>
-    </bookmark>
     <folder folded="yes">
       <title>Search</title>
       <info>
@@ -4384,17 +4376,20 @@
       </bookmark>
     </folder>
     <folder folded="yes">
-      <title>busserver</title>
+      <title>Saarbahn</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1042736678</time_modified>
           <time_added>935086944</time_added>
         </metadata>
       </info>
       <bookmark href="http://www.saarbahn.de/fahrplan/von_a_nach_b/index.php">
-        <title>Saarbahn-Fahrplan</title>
+        <title>Saarbahn</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1042736656</time_modified>
             <time_added>1038306815</time_added>
+            <smarturl>http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=%s&amp;n=%s&amp;z=&amp;d=&amp;tr=v&amp;ao=Suchen</smarturl>
           </metadata>
         </info>
       </bookmark>
@@ -4402,8 +4397,9 @@
         <title>Campus -&gt; ?</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310115</time_modified>
+            <time_modified>1042736647</time_modified>
             <time_added>934992344</time_added>
+            <smarturl>http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Campus&amp;n=%s&amp;z=&amp;d=&amp;tr=v&amp;ao=Suchen</smarturl>
           </metadata>
         </info>
       </bookmark>
@@ -4447,15 +4443,18 @@
         <title>Mensa -&gt; ?</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1038310144</time_modified>
+            <time_modified>1042736558</time_modified>
             <time_added>934992344</time_added>
+            <smarturl>http://fahrtfinder.saarbahn.de:8666/cgi-bin/fndroute?v=Mensa&amp;n=%s&amp;z=&amp;d=&amp;tr=v&amp;ao=Suchen</smarturl>
           </metadata>
         </info>
       </bookmark>
+      <separator/>
       <bookmark href="http://www.bahn.de/">
-        <title>Die Bahn - Homepage</title>
+        <title>Die Bahn</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1042736712</time_modified>
             <time_added>1033752950</time_added>
           </metadata>
         </info>
@@ -4679,8 +4678,8 @@
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>dict</nick>
-          <pixmap>/usr/share/galeon/dictionary.png</pixmap>
-          <time_modified>1037113854</time_modified>
+          <pixmap>.galeon/favicons/dictionary.png</pixmap>
+          <time_modified>1042735924</time_modified>
           <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
         </metadata>
       </info>
@@ -4737,6 +4736,16 @@
           <time_modified>1042548640</time_modified>
           <time_added>1042548584</time_added>
           <smarturl>http://citeseer.nj.nec.com/cs?q=%s</smarturl>
+        </metadata>
+      </info>
+    </bookmark>
+    <bookmark href="http://www.debian.org">
+      <title></title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <time_modified>1042735951</time_modified>
+          <time_added>1042724966</time_added>
+          <smarturl>http://packages.debian.org/cgi-bin/search_packages.pl?keywords=%s&amp;searchon=names&amp;version=all&amp;release=all</smarturl>
         </metadata>
       </info>
     </bookmark>
