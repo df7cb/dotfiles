@@ -76,8 +76,11 @@ XLock.foreground:	red
 XLock.echokeys:		true
 XTerm*boldMode:		false
 XTerm*color3:		orange
-XTerm*color5:		maroon
 XTerm*color11:		orange
+! XFree > 4.3 redefines blue:
+XTerm*color4:		blue
+XTerm*color12:		blue
+XTerm*color5:		maroon
 XTerm*color13:		maroon
 XTerm*cursorColor:	RoyalBlue
 XTerm*font:		fixed
