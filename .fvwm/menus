@@ -10,7 +10,12 @@ AddToMenu Main	"fvwm2"		Title
 +		"xterm RU"	Function XTermRU
 +		"4 xterms"	Function 4XTerm
 +		""		Nop
-+		"Programs"	Popup ProgMenu
++		"netscape"		Exec netscape
++		" @hal"		Exec ssh -f hal netscape
++		" @goedel"	Exec ssh -f goedel netscape
++		" @wjpserver"	Exec ssh -f wjpserver netscape
++		"xtnt"			Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
++		"gv"			Exec gv
 +		""		Nop
 +		"dpmsoff"	Exec dpmsoff
 +		"xlock"		Exec dpmsoff blank
@@ -21,16 +26,6 @@ AddToMenu Main	"fvwm2"		Title
 +		""		Nop
 +		"Quit FVWM"	Quit
 +		"Quit X"	Exec killall xterm
-
-
-DestroyMenu ProgMenu
-AddToMenu ProgMenu	"Programs"	Title
-+		"netscape"		Exec netscape
-+		"netscape@wjpserver"	Exec ssh -f wjpserver netscape
-+		"netscape@goedel"	Exec ssh -f goedel netscape
-+		"netscape@zuse"		Exec ssh -f zuse netscape
-+		"xtnt"			Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
-+		"gv"			Exec gv
 
 
 DestroyMenu FvwmMenu
