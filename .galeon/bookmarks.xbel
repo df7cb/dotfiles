@@ -1698,6 +1698,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://rtss2003.ece.cmu.edu/">
+        <title>RTSS 2003</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1051546704</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>B&#195;&#182;rse</title>
@@ -5532,6 +5540,16 @@
             <time_modified>1050410477</time_modified>
             <time_added>1006260178</time_added>
             <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.britannica.com/">
+        <title>Britannica</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1051542096</time_modified>
+            <time_added>1051542053</time_added>
+            <smarturl>http://www.britannica.com/search?query=%s&amp;submit=Find</smarturl>
           </metadata>
         </info>
       </bookmark>
