@@ -292,7 +292,7 @@ addressbook-formats=
 # This gives a format for displaying the index.  It is made
 # up of space-delimited tokens telling which fields are displayed and in
 # which order.  See help text
-index-format=
+index-format=msgno date time24 status fromorto subject size
 
 # The number of lines of overlap when scrolling through message text
 viewer-overlap=0
