@@ -100,7 +100,8 @@ alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias hessemer Dominic Hessemer <hessemer@fsinfo.cs.uni-sb.de>
 alias jennifer.hille Jennifer Hille <jehi0003@stud.uni-sb.de>
 alias mah Mark Anton Hillebrand <mah@wjpserver.cs.uni-sb.de>
-alias martina.hinsberger Martina Hinsberger <mhinsberger@intercon-engineering.de>
+alias martina.hinsberger Martina Hinsberger
+  <mhinsberger@intercon-engineering.de>
 alias kurt.hock Kurt Hock <kurthock@aol.com>
 alias hausmeister Hoffmann <hausmeister@cs.uni-sb.de>
 alias speedy Dominique Hoffmann <doho0002@stud.uni-sb.de>
@@ -191,7 +192,7 @@ alias sokoll Thorsten Sokoll <sokoll@fsinfo.cs.uni-sb.de>
 alias stefan.sommer Stefan Sommer <stefan.sommer@uni.de>
 alias stilian.stanev Stilian Stanev <tanko_d@hotmail.com>
 alias stilian.stanev.w Stilian Stanev <stst0001@studcs.uni-sb.de>
-alias sandra Sandra Steinbrecher <sandra@fsinfo.cs.uni-sb.de>
+alias sandra Sandra Steinbrecher <ssteinbrecher@web.de>
 alias schlumpf Christian Stöhr <schlumpf@fsinfo.cs.uni-sb.de>
 alias struwe Martin Struwe <mstruwe@studcs.uni-sb.de>
 alias taffin Dominique Taffin <taffin@wjpserver.cs.uni-sb.de>
@@ -200,6 +201,7 @@ alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias stefan.toussaint Stefan Toussaint <stefantoussaint@gmx.de>
 alias swen.troester Swen Tröster <mail@digital-bandits.de>
 alias andreas.trunkenbolz Andreas Trunkenbolz <trunkenbolz@gmx.de>
+alias andreas.trunkenbolz.r Andreas Trunkenbolz <atrunkenbolz@aol.com>
 alias tine Christine Tuth <chtu0000@stud.uni-sb.de>
 alias igna.uhrig Igna Uhrig <igna111@yahoo.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
