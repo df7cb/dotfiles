@@ -32,7 +32,6 @@ bind	pager	G	bottom
 bind	generic	N	search-opposite
 bind	index	N	search-opposite
 bind	pager	N	search-opposite
-#macro	index	S	|sa-spam<enter>\#	'Nachricht an sa-spam schicken'
 bind	browser	v	view-file
 bind	index	x	sync-mailbox
 bind	pager	x	sync-mailbox
@@ -55,8 +54,9 @@ macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.1
 macro	index	,R	"l.\nT!~D(!~R|~F|~P)\nl~a\n\ct.\n<esc>V"	# limit to threads with unread meassages
 macro	index	,r	"l<!~D(!~R|~F|~P)>\n<esc>V"	# limit to threads with unread meassages
 
-macro	index	S	"<save-message>=spam-queue<enter>" "Save spam for processing with SA"
-macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=ham-queue<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
+macro	pager	S	"<exit>S"
+macro	index	S	"<save-message>=spam-queue/spam<enter>" "Save spam for processing with SA"
+macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=spam-queue/ham<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
 
 # headers
 ignore Importance # M$
@@ -90,7 +90,7 @@ hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
 #set abort_nosubject
 set abort_unmodified=ask-yes
 set alias_file=~/.mutt/aliases
-set alternates="^cb@((heim-d|cs|asta).uni-s(b|aarland)|df7cb).de$"
+alternates ^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$
 set attribution="Re: %F in %i"
 set auto_tag
 unset beep
@@ -112,6 +112,7 @@ set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
 set ispell="aspell --lang=de check"
 #set locale="de_DE.ISO-8859-1"
 unset markers
+set mbox_type=mbox
 set menu_context=3
 unset menu_move_off
 set menu_scroll
@@ -120,8 +121,8 @@ unset move
 set pager_index_lines=5
 set pager_stop
 unset pipe_decode
-set pipe_sep
-set pgp_auto_decode
+set pipe_split
+#set pgp_auto_decode
 set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x6D8ABE71"
@@ -129,13 +130,13 @@ set pgp_timeout=14400
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set quit=ask-yes
-set quote_regexp="^([ 	]*[|>:}%])+|^[a-zA-Z]{,9}>"
+set quote_regexp="^([ \t]*[|>:}%])+|^[a-zA-Z]{,9}>"
 set record="=sent-mail"
 set reverse_name
 unset reverse_realname
 set rfc2047_parameters
 #unset save_empty
-set sendmail_wait=5
+set sendmail_wait=15
 unset sig_dashes
 set status_format="-%r-Mutt: %f%?V?[%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
 set status_on_top
@@ -145,6 +146,7 @@ set timeout=30
 set trash="=trash/trash"
 set use_domain
 set use_from
+unset wait_key
 unset write_bcc
 set xterm_set_titles
 
@@ -174,6 +176,7 @@ color index	red default "~t debian-security-announce"
 color header    brightdefault default ^From:
 color header    blue default ^(Date|To|Reply-To|Cc):
 color header    brightred default ^Subject:
+color header    red default ^User-Agent:
 color quoted	green default
 color quoted1	cyan default
 color quoted2	blue default
