@@ -1,19 +1,12 @@
 # $Id$
 
-# main menus
+# This file is read by .fvwm2rc-xterm.m4
+# otherwise, the menu entry order is screwed up
 
-DestroyMenu Main
-AddToMenu Main	"fvwm2"		Title
-+		"xterm LO"	Function XTermLO
-+		"xterm RO"	Function XTermRO
-+		"xterm LU"	Function XTermLU
-+		"xterm RU"	Function XTermRU
-+		"4 xterms"	Function 4XTerm
-+		""		Nop
-+		"netscape"	Exec netscape
+AddToMenu Main	"netscape"	Exec netscape
 +		" @hal"		Exec ssh -f -c none hal netscape
 +		" @goedel"	Exec ssh -f goedel netscape
-+		" @wjpserver"	Exec ssh -f wjpserver netscape
++		"opera"		Exec opera
 +		"xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 +		"gv"		Exec gv
 +		"mw"		Exec mw

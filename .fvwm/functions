@@ -7,7 +7,7 @@ AddToFunc InitFunction
 #+	"I"	Module FvwmBanner
 +	"I"	Module FvwmPager 0 0
 +	"I"	Wait FvwmPager
-+	"I"	Function 4XTerm
++	"I"	Function XTerms
 #+	"I"	Module FvwmButtons
 #+	"I"	Exec xterm -ls -geometry +150+85
 #+	"I"	Exec xosview -geometry 175x135-10-10
@@ -41,12 +41,12 @@ AddToFunc MoveOrRaise	"Click"	RaiseLower
 +	"Motion"	Move 
 +	"DoubleClick"	Function ShadeRaise
 
-AddToFunc ResizeOrRaise	"Click"		Raise 
+AddToFunc ResizeOrRaise	"Click"	Raise 
 #+	"Motion"	Raise 
 +	"Motion"	Resize 
 +	"DoubleClick"	Lower 
 
-AddToFunc MaximizeFunc	"Click"		Maximize 0 100
+AddToFunc MaximizeFunc	"Click"	Maximize 0 100
 +	"DoubleClick"	Maximize 100 100
 
 AddToFunc Maximize0100 "I" Raise
@@ -63,12 +63,9 @@ AddToFunc MoveOrIconify	"Immediate"	Raise
 +	"Motion"	Move 
 +	"DoubleClick"	Iconify 
 
-AddToFunc MenuOrClose	"Click"		Menu WindowOps
+AddToFunc MenuOrClose	"Click"	Menu WindowOps
 +	"Motion"	Popup WindowOps
 +	"DoubleClick"	Close
 
-AddToFunc DeleteOrClose	"Click"		Delete
+AddToFunc DeleteOrClose	"Click"	Delete
 +	"DoubleClick"	Close
-
-#AddToFunc Quit	"I"	Exec sh -c "kill -HUP `cat ~/.consolepid`"
-AddToFunc FvwmQuit	"I"	Exec killall xterm

@@ -22,10 +22,10 @@ IconPath /usr/X11R6/include/X11/bitmaps
 # Import other files ######################################################
 
 Read .fvwm2rc-local
-FvwmM4 .fvwm2rc-xterm.m4 
+# this file includes .fvwm2rc-menus
+FvwmM4 .fvwm2rc-xterm.m4
 Read .fvwm2rc-functions
 Read .fvwm2rc-modules
-Read .fvwm2rc-menus
 
 
 ###############################################################################
