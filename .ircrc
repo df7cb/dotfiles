@@ -127,7 +127,7 @@
 /on -msg "* *troet*" exec nc d056 ttylink
 /on ^nick "* *" echo 6*** $0 -> $1
 /on ^public "* * *" echo <2$0> $2-
-/on ^public "rosine * *" echo <2$0> $2-
+/on ^public "*rosine* * *" echo <2$0> $2-
 /on ^public "* * *cb*" echo <2$0> $2-
 /on ^public "* * *myon*" echo <2$0> $2-
 /on ^topic "* * *" ts 7*** Topic on $1 by $0: $2-
