@@ -12,7 +12,7 @@ fi
 
 #set up X server
 xhost - >/dev/null
-XKBD=`xkbd` && xmodmap .xmodmap-$XKBD
+xkbd load
 xrdb .Xdefaults
 dpmsoff init
 xset b 0 0  # xset b off does not work
@@ -26,6 +26,12 @@ which pland > /dev/null && pland -k &
 SHLVL=-1
 
 [ -f ~/.xsession-local ] && . ~/.xsession-local
+
+# write ssh-agent info to file
+if [ $SSH_AUTH_SOCK ] ; then
+	echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK; export SSH_AUTH_SOCK;" > .ssh/agent.sh
+	echo "SSH_AGENT_PID=$SSH_AGENT_PID; export SSH_AGENT_PID;" >> .ssh/agent.sh
+fi
 
 fvwm2 -s &
 
