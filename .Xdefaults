@@ -9,7 +9,7 @@ XApm*background:	LightSkyBlue
 XApm*delay:		5
 XApm*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
 XApm*height:		12
-#XApm*highColor:		MediumSpringGreen
+!XApm*highColor:		MediumSpringGreen
 XApm.Form.Scrollbar.width:	30
 Xawtv*basename:		snap
 Xawtv.geometry:		320x240
@@ -26,6 +26,7 @@ Fig*inches:		false
 Fig*library_dir:	~/lib/xfig
 Fig*PaperSize:		A4
 Fig*specialtext:	true
+Fig*splash:		false
 Netscape*blinkingEnabled: false
 ! From http://kaluta.ilog.fr/colas/mouse-wheel-scroll/
 Netscape*drawingArea.translations:  #replace    \
@@ -70,6 +71,7 @@ XLock.logoutButton:	-1
 XLock.background:	black
 XLock.foreground:	red
 XLock.echokeys:		true
+XTerm*boldMode:		false
 XTerm*color3:		orange
 XTerm*color5:		maroon
 XTerm*color11:		orange
