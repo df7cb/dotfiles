@@ -1,0 +1,14 @@
+#!/bin/sh
+# $Id$
+
+# Looks for unknown signatures on a key and fetches keys from a keyserver.
+# With -a, checks all signatures.
+
+if [ "$1" = "-a" ] ; then
+	shift
+	gpg --list-sig "$1" | cut -c 12-19 | sort -u | xargs gpg --recv
+	exit $?
+fi
+
+gpg --list-sig "$1" | grep 'User id not found' | cut -c 12-19 | sort -u | xargs gpg --recv
+
