@@ -79,7 +79,7 @@ complete -o default -c strace sudo type xargs
 complete -v unset vared
 
 # generic filetype rules
-complete -o default -f -X '!*.pdf' acroread
+complete -o default -f -X '!*.pdf' acroread xpdf
 complete -o default -f -X '!*.?(e)ps*(.gz)' gv
 complete -o default -f -X '!*.tex' latex
 complete -o default -f -X '!*.dvi' xdvi
@@ -95,4 +95,5 @@ complete -X '!&*' -C completer complete mailsync
 complete -W "install remove" -C completer apt-get
 complete -o default -d -X '!&*' -C completer cvs
 complete -o default -X '!&*' -C completer ssh
+complete -o default -f -d -X '!&*' -C completer scp
 #complete -o default -f -W Makefile vim
