@@ -1,0 +1,121 @@
+#!/usr/bin/perl -w
+
+use LWP::UserAgent;
+use HTML::Entities;
+
+use Tk;
+
+$ua = new LWP::UserAgent;
+$ua->agent('mw-bot $Id$');
+
+#die "wortlos?!" unless $ARGV[0];
+
+dict() if $word = $ARGV[0];
+
+sub lookup {
+	my $req = new HTTP::Request GET => $url;
+
+	$req->content_type('application/x-www-form-urlencoded');
+
+	my $res = $ua->request($req);
+
+	unless ($res->is_success) {
+		print "mw error: $res->status_line\n";
+		exit;
+	}
+
+	$data = $res->content;
+
+	if($data =~ / found for /) {
+		# Entry found
+		$data =~ s/.*? found for //s;
+		$data =~ s/<table bgcolor.*//s;
+
+		open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
+		print F "$word\n";
+		close F;
+	} else {
+		# Entry not found
+		$data =~ s/.*?The word you/The word you/s;
+		$data =~ s/<\/PRE>.*//s;
+	}
+
+	$data =~ s/<br>/\n/gs;
+	$data =~ s/<.*?>/ /gs;
+	decode_entities($data);
+	$data =~ s/ +/ /g;
+	$data =~ s/ :/:/g;
+	$data =~ s/ \./\./g;
+	$data =~ s/^ //gm;
+	$data =~ s/\n+/\n/gm;
+
+	$output = $data;
+}
+
+sub dict {
+	$url = "http://www.m-w.com/cgi-bin/dictionary?va=$word";
+	lookup();
+}
+
+sub thesaurus {
+	$url = "http://www.m-w.com/cgi-bin/thesaurus?book=Thesaurus\&va=$word";
+	lookup();
+}
+
+sub leo {
+	$url = "http://dict.leo.org/?lang=de\&where=0\&search=$word";
+	my $req = new HTTP::Request GET => $url;
+
+	$req->content_type('application/x-www-form-urlencoded');
+
+	my $res = $ua->request($req);
+
+	unless ($res->is_success) {
+		print "mw error: $res->status_line\n";
+		exit;
+	}
+
+	$data = $res->content;
+
+	if($data =~ / Treffer /) {
+		# Entry found
+		$data =~ s/.*?<STRONG>//s;
+		$data =~ s/<td VALIGN.*//s;
+
+		open F, ">> $ENV{HOME}/.de" or die "$ENV{HOME}/.de: $!";
+		print F "$word\n";
+		close F;
+	} else {
+		# Entry not found
+		$data =~ s/.*?Die Suche nach/Die Suche nach/s;
+		$data =~ s/<td VALIGN.*//s;
+	}
+
+	$data =~ s/<\/TD><TD>/ - /g;
+	$data =~ s/<\/TR>/\n/g;
+	$data =~ s/<.*?>/ /gs;
+	decode_entities($data);
+	$data =~ s/ +/ /g;
+#	$data =~ s/ :/:/g;
+#	$data =~ s/ \./\./g;
+	$data =~ s/^ //gm;
+	$data =~ s/\n+/\n/gm;
+
+	$output = $data;
+}
+
+$win = MainWindow->new;
+$win->title("Merriam Webster");
+$topframe = $win->Frame->pack(-side => 'top');
+$topframe->Entry(-textvariable => \$word)->pack(-side => 'left');
+$topframe->Button(-text => 'Dictionary',
+	-command => \&dict) -> pack(-side => 'left');
+$topframe->Button(-text => 'Thesaurus',
+	-command => \&thesaurus) -> pack(-side => 'left');
+$topframe->Button(-text => 'Leo',
+	-command => \&leo) -> pack(-side => 'left');
+$win->Label(-textvariable => \$output,
+	-justify => 'left',
+	-wraplength => 800)->pack;
+
+MainLoop;
