@@ -3212,6 +3212,14 @@
               </metadata>
             </info>
           </bookmark>
+          <bookmark href="http://en.tldp.org/LDP/abs/html/">
+            <title>Advanced Bash-Scripting Guide</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1045559176</time_added>
+              </metadata>
+            </info>
+          </bookmark>
         </folder>
         <folder folded="yes">
           <title>zsh</title>
