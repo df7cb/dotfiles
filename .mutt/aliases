@@ -5,6 +5,7 @@ alias christian.albrecht Christian Albrecht <chal0007@stud.uni-sb.de>
 alias arend Anne Arend <a.arend@stw.uni-sb.de>
 alias pb Peter Bach <peter.bach@nettmail.de>
 alias pb.w Peter Bach <peter.bach@etas.de>
+alias mbackes Michael Backes <mbackes@cs.uni-sb.de>
 alias backes.w Werner Backes <backes@mpi-sb.mpg.de>
 alias caroline Caroline Barth <caroline@fsinfo.cs.uni-sb.de>
 alias anne.bauer Anne Katrin Bauer <Anka.Bauer@t-online.de>
@@ -18,7 +19,7 @@ alias cb Christoph Berg <cb@heim-d.uni-sb.de>
 alias cb.w Christoph Berg <cb@cs.uni-sb.de>
 alias elke.berg Elke Berg <berg.elke@web.de>
 alias gregor.berg Gregor Berg <gregor.berg@web.de>
-alias hannes Johannes Berg <johannes.berg@hadiko.de>
+alias hannes Johannes Berg <hannes.berg@gmx.de>
 alias matthias Matthias Berg <matber@studcs.uni-sb.de>
 alias matthias.r Matthias Berg <bergm@web.de>
 alias sbeyer Sven Beyer <sbeyer@wjpserver.cs.uni-sb.de>
@@ -36,11 +37,13 @@ alias dagmar Dagmar Bubel <dagmar.bubel@web.de>
 alias dagmar.w Dagmar Bubel <uily@rz.uni-karlsruhe.de>
 alias questor Claas Buchterkirche <questor@fsinfo.cs.uni-sb.de>
 alias christina Christina Burda <chbu0011@stud.uni-sb.de>
+alias rosine.caplot Rosine Caplot <roca0004@stud.uni-sb.de>
 alias nico.cibis Nicolaus Cibis <Nicolaus.Cibis@t-online.de>
 alias chcl Christoph Clodo <chcl@mpi-sb.mpg.de>
 alias coruh.w Ülkü Coruh <coruh@cs.uni-sb.de>
 alias marwin Nils Crefeld <marwin@fsinfo.cs.uni-sb.de>
 alias hp Heimpräsidenten D <hp@heim-d.uni-sb.de>
+alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
 alias kassenwart Kassenwart D <kassenwart@heim-d.uni-sb.de>
 alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
 alias marc.dawo Marc Alexander Dawo <marc.dawo@web.de>
@@ -85,6 +88,7 @@ alias christoph.hammer Christoph Hammer <christoph_hammer@web.de>
 alias eva.hartz Eva Hartz <evha0005@stud.uni-sb.de>
 alias nicole.hasselmeier Nicole Hasselmeier <nicole.hasselmeier@orbis.de>
 alias gph Goran P. Hastenteufel <goha0001@stud.uni-sb.de>
+alias heimfee Heimgeist <heimfee@heim-d.uni-sb.de>
 alias heimlich Heimlich <heimlich@heim-d.uni-sb.de>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias hessemer Dominic Hessemer <hessemer@fsinfo.cs.uni-sb.de>
@@ -97,12 +101,14 @@ alias hausmeister Hoffmann <hausmeister@cs.uni-sb.de>
 alias speedy Dominique Hoffmann <doho0002@stud.uni-sb.de>
 alias silke.huettig Silke Hüttig <shuettig@web.de>
 alias rearch Computer Architecture I <rearch@wjpserver.cs.uni-sb.de>
+alias ai Aktive Idealisten <ai@fsinfo.cs.uni-sb.de>
 alias tom Thomas In der Rieden <tom@myndforge.com>
 alias cj Christian Jacobi <cj@cs.uni-sb.de>
 alias wiebke.janssen Wiebke Janßen <wija0000@stud.uni-sb.de>
 alias janocha Stefan Janocha <cs.j@nocha.de>
 alias tanja.jansen Tanja Jansen <tanja.jansen@ukv.de>
 alias sabine.john Sabine John <sabinejohn@gmx.de>
+alias mjung Marko Jung <mjung@mpi-sb.mpg.de>
 alias hirvi Nils Kammenhuber <hirvi@fsinfo.cs.uni-sb.de>
 alias edith Edith Klee <edith@coli.uni-sb.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
@@ -134,10 +140,13 @@ alias bianca.mokwa Bianca Mokwa <bimo0001@stud.uni-sb.de>
 alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
 alias ulli Ulrike Neumüller <oneumueller@t-online.de>
 alias ulli.w Ulrike Neumüller <ulne0001@stud.uni-sb.de>
+alias johannes.niklas Johannes Niklas <johannesniklas@altavista.net>
 alias markus.olk Markus Olk <olma0000@studcs.uni-sb.de>
 alias markus.olk.r Markus Olk <cs-uni-sb@web.de>
 alias arndt Arndt Paschke <arndtpas@gmx.de>
 alias ap Andreas Paul <andreas.paul@sap.com>
+alias all LS Paul <all@wjpserver.cs.uni-sb.de>
+alias wjp Wolfgang Paul <wjp@wjpserver.cs.uni-sb.de>
 alias pessi Jan Pessenlehner <pessi@gmx.net>
 alias maddin Martin Porr <martin.porr@t-online.de>
 alias maddin.w Martin Porr <mporr@htw.uni-sb.de>
