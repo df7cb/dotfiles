@@ -12,7 +12,7 @@ xterm*|rxvt|screen*)	# colored prompt, X window titlebar
 	prompt="%{]0;%n@%m:%~%}
 [%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%B%{[34m%}%40<..<%~%{[0m%}%b %#"
 	[ "$console" ] && prompt="%{]0;console@%m:%~%}[%B%{[31m%}%?%{[0m%}%b] %U%n@%m%u:%B%{[34m%}%30<..<%~%{[0m%}%b %#"
-	preexec() { echo -n "\e]0;$argv\a" }
+	preexec() { echo -n "\e]0;$USER@$HOST:$argv\a" }
 	LSCOLOR='--color=auto'
 	unset console ;;
 *)			# use only terminal stuff
