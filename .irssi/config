@@ -105,6 +105,10 @@ aliases = {
   CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
   SBAR = "STATUSBAR";
   INVITELIST = "mode $C +I";
+  chandserv = "/quote chanserv $0 #heim-d $1-";
+  chanserv = "/quote chanserv";
+  identify = "/quote nickserv identify";
+  nickserv = "/quote nickserv";
 };
 
 statusbar = {
