@@ -8,11 +8,11 @@ test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
 xhost - >/dev/null
 [ -f ~/.xmodmap ] && xmodmap ~/.xmodmap
 xset s off
-xset dpms 0 0 1800 2> /dev/null
+xset dpms 0 0 600 2> /dev/null
 xrdb -merge .Xdefaults
 
 xsetroot -solid navy
-xroot
+( sleep 10 ; xroot ) &
 xclock -g +41+0 &
 
 fvwm2 -s &
@@ -21,4 +21,4 @@ fvwm2 -s &
 
 console=yes
 export console
-exec xterm +ut -vb -C -geometry 61x5+120-0 -T console
+exec xterm +ut -vb -C -geometry 62x5+120-0 -T console

@@ -2,11 +2,11 @@
 # $Id$
 
 if [ -z "$1" ] ; then  # no argument
-	xset dpms 0 0 2
-	sleep 2
+	xset dpms 0 0 1
+	sleep 1
 else		# with argument
-	xset dpms 0 0 60
+	xset dpms 0 0 30
 	xlock -resetsaver
 fi
 
-xset dpms 0 0 1800
+xset dpms 0 0 600
