@@ -3701,6 +3701,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://people.debian.org/~apenwarr/popcon/">
+        <title>Debian Popularity Contest Results</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1050435377</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Zeug</title>

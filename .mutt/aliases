@@ -22,6 +22,7 @@ alias fsi FS Intern <fsi@fsinfo.cs.uni-sb.de>
 alias fsm fsm@fsinfo.cs.uni-sb.de
 alias fsn /dev/null <fs-nulldevice@fsinfo.cs.uni-sb.de>
 alias fsr Fachschaftsrat Informatik <fsr@fsinfo.cs.uni-sb.de>
+alias gz Geschäftszimmer <gz@cs.uni-sb.de>
 alias h.becker Hendrik Becker <h.becker@internett.de>
 alias h.schuh Hans Joachim Schuh <h.schuh@rz.uni-sb.de>
 alias hausmeister Hoffmann <hausmeister@cs.uni-sb.de>
