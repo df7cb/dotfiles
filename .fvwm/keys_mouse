@@ -12,9 +12,9 @@ Key	Pause	A	N	Exec xscreensaver-command -activate
 Key	Pause	A	S	Exec dpmsoff blank
 Key	Pause	A	C	Exec dpmsoff
 
-Key	minus	A	4	Exec xvidtune -prev
-Key	equal	A	4	Exec xvidtune -next
-Key	plus	A	4	Exec xvidtune -next
+Key	minus	A	4	Exec fvwm-toolbox xvidtune prev
+Key	equal	A	4	Exec fvwm-toolbox xvidtune next
+Key	plus	A	4	Exec fvwm-toolbox xvidtune next
 
 # "3rd" windows key
 Key	Menu	A	N	RaiseLower
@@ -133,9 +133,9 @@ Key	r	A	M4	Exec xmms -r
 Key	s	A	M4	Exec xmms -s
 Key	p	A	M4	Exec xmms -t
 Key	f	A	M4	Exec xmms -f
-Key	minus	A	M4	Exec aumix -v -5
-Key	equal	A	M4	Exec aumix -v +5
-Key	0	A	M4	Exec aumix-mute
+Key	minus	A	M4	Exec fvwm-toolbox aumix -v -5
+Key	equal	A	M4	Exec fvwm-toolbox aumix -v +5
+Key	0	A	M4	Exec fvwm-toolbox aumix mute
 
 
 ###############################################################################
@@ -160,6 +160,8 @@ Mouse	1	R	A	Menu Main
 Mouse	2	R	A	Menu Apps
 Mouse	3	R	A	WindowList
 				#FvwmWinList Transient
+Mouse	4	R	A	Exec fvwm-toolbox aumix -v +5
+Mouse	5	R	A	Exec fvwm-toolbox aumix -v -5
 
 Mouse	1	TW	CM	RaiseLower
 Mouse	2	A	CM	Move
