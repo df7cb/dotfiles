@@ -20,30 +20,39 @@ host planck.df7cb.de planck
  checkHostIP no)
  #localForward 5901 localhost:5901
  #remoteForward 16001 localhost:16001
-host d096.stw.stud.uni-saarland.de d096 hal.heim-d.uni-sb.de hal
+
+ifdomain(planck.df7cb.de, # woody chroot planck:/data/debian/woody-root
+host woody
+ proxycommand super woody.sshd
+ HostKeyAlias woody.planck.df7cb.de
+host sid
+ proxycommand super sid.sshd
+ HostKeyAlias woody.planck.df7cb.de)
+
+host d096.stw.stud.uni-saarland.de d096 hal.heim-d.uni-sb.de hal hal.cs
  hostname d096.stw.stud.uni-saarland.de
  forwardagent yes
-host d139.stw.stud.uni-saarland.de d139
- hostname d139.stw.stud.uni-saarland.de
- ifndomain(stw.stud.uni-saarland.de, proxyCommand ssh -t hal nc -q0 d139 22)
+ifdomain(planck.df7cb.de,host irssi
+ hostname d096.stw.stud.uni-saarland.de
+ forwardagent yes
+ localForward 13331 localhost:13331
+ localForward 13332 localhost:13332
+ localForward 13333 localhost:13333)
+#ifndomain(.uni-sb.de,host hal.cs
+# ProxyCommand ssh -C milhouse bin/linux-intel/nc -q0 hal.heim-d.uni-sb.de 22
+# HostKeyAlias d096.stw.stud.uni-saarland.de)
 
-host liilia.cs.uni-sb.de liilia
- hostname liilia.cs.uni-sb.de
+host maggie.cs.uni-sb.de maggie
+ hostname maggie.cs.uni-sb.de
  forwardagent yes
 host milhouse.cs.uni-sb.de milhouse
  hostname milhouse.cs.uni-sb.de
- forwardagent yes
-host millikan.milhouse.cs.uni-sb.de millikan
- ifdomain(milhouse.cs.uni-sb.de,
- hostname 172.16.170.2
- hostkeyalias millikan.milhouse.cs.uni-sb.de,
- hostname millikan.milhouse.cs.uni-sb.de
- proxycommand ssh milhouse.cs.uni-sb.de bin/linux-intel/nc -q0 172.16.170.2 22)
  forwardagent yes
 
 host server.asta.uni-saarland.de
  hostname server.asta.uni-saarland.de
  forwardagent yes
+ ifndomain(uni-sb.de, Port 44)
 
 host kap?? cip???.studcs.uni-sb.de cip??? xcip?
  user berg
