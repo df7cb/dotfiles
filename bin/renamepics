@@ -57,7 +57,7 @@ print "$count pictures ";
 # rename each file
 for(my $i = 0; $i < $count; $i++) {
 	my $file = $ARGV[$i];
-	unless($file =~ /(\d+)-?(.*)\.jpg$/) {
+	unless($file =~ /(\d+)-?(.*)\.jpg$/i) {
 		print "error: $file contains no number.\n";
 		next;
 	}
