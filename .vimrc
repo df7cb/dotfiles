@@ -16,6 +16,7 @@ set nojoinspaces	" \frenchspacing
 set ruler		" Show the line and column numbers of the cursor 
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
+set smartcase		" Do case-sensitive case sensitive matching
 set textwidth=0		" Don't wrap words by default
 set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
 set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
@@ -28,6 +29,9 @@ nmap <c-h> i<c-h>
 nmap <tab> :bn<cr>
 nmap b <c-b>
 nmap - <c-b>
+
+" xdvi source specials integration by mah@wjpserver.cs.uni-sb.de
+map _g :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote +\%l \%f" -sourceposition ' . line (".") . expand("%") . " " . expand("%:r") . ".dvi &" \| redraw!<cr>
 
 " highlights
 hi NonText cterm=NONE
@@ -77,55 +81,6 @@ augroup cprog
   "   Don't change the order, it's important that the line with * comes first.
   autocmd BufRead *       set formatoptions=tcql nocindent comments&
   autocmd BufRead *.c,*.h set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
-augroup END
-
-" Also, support editing of gzip-compressed files. DO NOT REMOVE THIS!
-" This is also used when loading the compressed helpfiles.
-augroup gzip
-  " Remove all gzip autocommands
-  au!
-  " Enable editing of gzipped files
-  "	  read:	set binary mode before reading the file
-  "		uncompress text in buffer after reading
-  "	 write:	compress file after writing
-  "	append:	uncompress file, append, compress file
-  autocmd BufReadPre,FileReadPre	*.gz set bin
-  autocmd BufReadPre,FileReadPre	*.gz let ch_save = &ch|set ch=2
-  autocmd BufReadPost,FileReadPost	*.gz '[,']!gunzip
-  autocmd BufReadPost,FileReadPost	*.gz set nobin
-  autocmd BufReadPost,FileReadPost	*.gz let &ch = ch_save|unlet ch_save
-  autocmd BufReadPost,FileReadPost	*.gz execute ":doautocmd BufReadPost " . %:r
-
-  autocmd BufWritePost,FileWritePost	*.gz !mv <afile> <afile>:r
-  autocmd BufWritePost,FileWritePost	*.gz !gzip <afile>:r
-
-  autocmd FileAppendPre			*.gz !gunzip <afile>
-  autocmd FileAppendPre			*.gz !mv <afile>:r <afile>
-  autocmd FileAppendPost		*.gz !mv <afile> <afile>:r
-  autocmd FileAppendPost		*.gz !gzip <afile>:r
-augroup END
-
-augroup bzip2
-  " Remove all bzip2 autocommands
-  au!
-  " Enable editing of bzipped files
-  "       read: set binary mode before reading the file
-  "             uncompress text in buffer after reading
-  "      write: compress file after writing
-  "     append: uncompress file, append, compress file
-  autocmd BufReadPre,FileReadPre        *.bz2 set bin
-  autocmd BufReadPre,FileReadPre        *.bz2 let ch_save = &ch|set ch=2
-  autocmd BufReadPost,FileReadPost      *.bz2 set cmdheight=2|'[,']!bunzip2
-  autocmd BufReadPost,FileReadPost      *.bz2 set cmdheight=1 nobin|execute ":doautocmd BufReadPost " . %:r
-  autocmd BufReadPost,FileReadPost      *.bz2 let &ch = ch_save|unlet ch_save
-
-  autocmd BufWritePost,FileWritePost    *.bz2 !mv <afile> <afile>:r
-  autocmd BufWritePost,FileWritePost    *.bz2 !bzip2 <afile>:r
-
-  autocmd FileAppendPre                 *.bz2 !bunzip2 <afile>
-  autocmd FileAppendPre                 *.bz2 !mv <afile>:r <afile>
-  autocmd FileAppendPost                *.bz2 !mv <afile> <afile>:r
-  autocmd FileAppendPost                *.bz2 !bzip2 -9 --repetitive-best <afile>:r
 augroup END
 
 endif " has ("autocmd")
