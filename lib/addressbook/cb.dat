@@ -24,7 +24,7 @@ Regine;Bartels;;Lilienstr. 8;;66386 St. Ingbert;;;06894/966486, 06894/966499, 01
 Caroline;Barth;;Robert-Koch-Straße 27, 66125 Saarbrücken;;;;13.09.;06897 - 778 796, 0173 - 59 48 995;;;caroline@fsinfo.cs.uni-sb.de;;fsinfo;
 Anne-Katrin;Bauer;;;;;;2.3.1977;06842/2562;;;;;vdl;Richard Wagner Str. 23, 66440 Mimbach;
 Jörg;Bauer;;Richard-Wagner-Str. 5;;;;22.9.1976;;;;joba@cs.uni-sb.de;;rw;
-Daniel;Baumann;;;;;;5.7.1982;;;;;;debian;;
+Daniel;Baumann;panthera;;;;;5.7.1982;;;;;;debian;;
 Andreas;Baus;;;;;;19.4.1974;;;;anba@fsinfo.cs.uni-sb.de;;fsinfo;
 Mechthild und Burkhard;Bayer;;;;;Sachsenheim;;07147/12545;;;;;berg;;
 Michaela;Beck;;Geistkircher Hof 2;;66386;St. Ingbert;20.8.1983;06894/956787, 0179/7650371;;;beck_michaela@web.de;;berg;;
@@ -33,7 +33,7 @@ Axel;Beckert;XTaran;Sachsenring 59a, 67583 Guntersblum;;;;21.6.1975;06249 / 80 4
 Matthias;Bender;;;;;;;;;;matthias.bender@gmx.de;;fsinfo;
 Philip;Benning;;;;;;4.4.1977;0177/7884258;;;pib@gmx.net, philip@asta.uni-saarland.de;;asta, ai;
 Adolf;Berg;;Orendelstr. 8, Trier;;;;08.03.1918;0651/31453;;;;;berg;
-Christoph;Berg;DF7CB;Dudweilerstr. 77;D;66123;Saarbrücken;9.3.1977;0681/9657944, 0179/4530792;5573;3065;cb@df7cb.de, cb@heim-d.uni-sb.de, cb@cs.uni-sb.de;www.df7cb.de;vdl, berg, afu, fsinfo, heim-d, rw, wjp, plant, bridge, klettern;;49.2394/6.9992
+Christoph;Berg;DF7CB;Dudweilerstr. 77;D;66123;Saarbrücken;9.3.1977;0681/9657944, 0179/4530792;5573;3065;cb@df7cb.de, cb@heim-d.uni-sb.de, cb@cs.uni-sb.de;www.df7cb.de;vdl, berg, afu, fsinfo, heim-d, rw, wjp, plant, bridge, klettern, debian;;49.2394/6.9992
 Elke;Berg;;Eichenweg 18;;66440;Blieskastel;13.1.1950;06842/5818, 0175/5465429;;;berg.elke@web.de;;berg;
 Erika;Berg;;Orendelstr. 8, Trier;;;;19.8.;0651/31453;;;;;berg;
 Gregor;Berg;;Eichenweg 18;;66440;Blieskastel;23.10.1950;06842/5818, 0175/4890354;;;gregor.berg@web.de;;berg;
@@ -66,7 +66,7 @@ Sara;Bürkle;;Buchenstr. 41, 85716 Unterschleißheim;;;;10.8.1977;089/370 65 730
 Rosine;Caplot;;;;;;19.1.1979;0681/9384494, 0681/9656977 (G), 0176/23255806;;;roca0004@stud.uni-sb.de, rosine@cip.physik.uni-saarland.de;;heim-d;;
 Geraldine;Caplot-Busch;;;;;;;;;;geraldine.caplot-busch@gmx.net;;;
 Nicolaus;Cibis;;Dr. Ernst Kilb-Weg 7;;67551 Worms;;3.6.1948;;;;Nicolaus.Cibis@t-online.de;;berg;
-Christoph;Clodo;chris101;;;;;;;;;chcl@mpi-sb.mpg.de;;plant;;49.29/7.04
+Christoph;Clodo;chris101;;;;;;;;;chcl@mpi-sb.mpg.de;;plant, bridge;;49.29/7.04
 Tom;Crecelius;;;;;;23.9.;;;;nexus@studcs.uni-sb.de;;heim-d;
 Jakov;Dalinger;;;;;;;;;;dalinger@wjpserver.cs.uni-sb.de;;wjp;
 Marc Alexander;Dawo;;Kirchheimer Hof, 66440 Breitfurt;;;;12.3.1977;06842/51244;+49 (6 81) 9 09-32 54;;marc.dawo@web.de, marc.dawo@t-systems.de, marc.dawo@telekom.de;;vdl;;
@@ -264,7 +264,7 @@ Michael;Sauer;;;;66346;Püttlingen;8.10.1974;06898/61350;501 5887;;sauer@okolni.
 Gregor;Schaffrath;kodomo;;;;;;;;;grsch@net.in.tum.de;;plant;;48.25/11.57
 Marc;Schickling;;;;;;29.6.;;;;scma0002@cs.uni-sb.de;;;;
 Patrick;Schiel;;;;;;;0170/7169989;;;;;heim-d;
-Alexander;Schmehl;Tolimar;;;;;;0172-6647370;;;;;;;
+Alexander;Schmehl;Tolimar;;;;;;0172-6647370;;;;;debian;;
 Marion;Schmelzer-Darani;;Birkenweg 40;;;66127 SB-Klarenthal;10.03.1975;06898/93 55 04, 0179/79 33 32 4;;;;;asta;
 Wolfgang;Schmenger;DB6WY;;;;Pirmasens;09.04.;06331/79898;;;;;afu;
 Rainer Michael;Schmid;;Sulzbachstraße 27;;66111;Saarbrücken;25.8.1974;0681/938 35 27;;;rms@outside-of-the-asylum.de;;fsinfo, ai;
@@ -298,7 +298,7 @@ Raimund;Seidel;;;;;;5.12.;;;;;;cs;
 Tobias;Seidl;;;;;;8.10.1975;;;;;;heim-d;
 Patrick;Sesseler;DF3VI;;;;St. Tönis;24.9.1966;06841/3978;;;patrick.sesseler@voith.de;;afu;Siebenbürgenstr. 26, Schwarzenbach
 Andreas;Sicken;;;;;;4.10.;0178/2964840;;;a-sicken@web.de, andsi@heim-d.uni-sb.de;;heim-d;
-Adeodato;Simó;dato;;;;;27.11.1982;;;;;;;;
+Adeodato;Simó;dato;;;;;27.11.1982;;;;;;debian;;
 Catrin;Smudel;;;;;;;;;;catsmu@web.de;;;
 Rosemarie;Sofaru;x11y;;;;;;;;;r.sofaru@freenet.de;;plant;;44.4152/26.0511
 Stefan;Sommer;;Marxstr. 39, 66440 Niederwürzbach;;;;10.6.1977;06842/6059;;;stefan.sommer@uni.de;;vdl;
@@ -343,6 +343,7 @@ Reinhard;Wilhelm;;Pirmasenser Str. 8;;;;5.6.1946;0179/2943439;;;wilhelm@cs.uni-s
 Stephan;Wilhelm;;Karcherstr. 15, 66111 Saarbrücken;;;;24.2.;;;;step@cs.uni-sb.de;;rw;
 Sebastian;Winkel;;;;;;27.8.;;;;sewi@cs.uni-sb.de;;rw;;
 Alexandra;Wipper;;Stengelstr. 30;;;;;0176/24131143;;;;;bridge;;
+Alexander;Wirt;formorer;;;;;22.12.1978;;;;formorer@debian.org;;debian;;
 Christine;Wolf;;Wolfharistr. 104, 66440 Wolfersheim;;;;8.1.1977;06842/4984;;;;;vdl;geb. Jesel
 Katrin;Wolf;;Ziegelhütterweg 11b, 66440 Blieskastel;;;;6.9.1976;06842/2535;;;;;vdl;
 Monika;Wolff;schnepfe;;;;;;;;;;;plant;;52.5419/13.4208
