@@ -1,0 +1,62 @@
+# .procmail/spam
+# cb 2004-10-05
+
+:0:
+* ^From: .*<(fminfos|neu)@web.de>
+$SPAMDIR/crap
+
+:0:
+* ^Subject: .*Benachrichtigung.*das.automatische.Verwerfen
+* ^From: asta-bounces@asta.uni-saarland.de
+/dev/null
+
+:0:
+* ^To: .*heim-.*-request@stud.uni-saarland.de
+/dev/null
+
+:0D:
+* ^(SUBJECT: |FROM: |(To|From):.*Microsoft|(To|From): MS|Subject: \[MS\] )
+$SPAMDIR/SUBJECT
+
+:0:
+* ^From:.*AntiVir@rz.uni-saarland.de
+/dev/null
+
+#:0:
+#* ^Delivered-To: df7cbdbe-df7cb.de
+#* !^Delivered-To: df7cbdbe-df7cb.de-cb@df7cb.de
+#$SPAMDIR/df7cb.de
+
+:0:
+* ^X-Spam-Status: Yes
+$SPAMDIR/prefiltered
+
+:0fw: $SPAMDIR/.spamassassin.lock
+## do not re-filter through spamassassin
+#* !^X-Spam-Status: 
+| /usr/bin/spamassassin
+#| /usr/bin/spamassassin -P -l /home/cb/.spamassassin/log
+#| /usr/bin/spamc
+:0e
+{
+	EXITCODE=$?
+}
+:0
+* ^X-Spam-Status: Yes
+{
+	:0:
+	* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org)
+	$SPAMDIR/debian
+	:0:
+	* ^X-Spam-Level: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+	$SPAMDIR/spam15
+	:0:
+	* ^X-Spam-Level: \*\*\*\*\*\*\*\*\*\*
+	$SPAMDIR/spam10-15
+	:0:
+	* ^X-Spam-Level: \*\*\*\*\*
+	$SPAMDIR/spam05-10
+	:0:
+	$SPAMDIR/spam03-05
+}
+
