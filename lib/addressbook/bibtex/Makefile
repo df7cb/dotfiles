@@ -1,9 +1,13 @@
+BIB = *.bib
+BST = address.bst
+STY = directory.sty
+
 all: addr.ps
 
 addr.ps: addr.dvi
 	dvips addr
 
-addr.dvi: addr.tex *.bib
+addr.dvi: addr.tex $(BIB) $(BST) $(STY)
 	@-rm addr.aux addr.bbl
 	latex addr
 	bibtex addr
