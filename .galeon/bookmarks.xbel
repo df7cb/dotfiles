@@ -60,10 +60,6 @@
       <separator/>
       <bookmark href="javascript:if(document.images.length%3C1){alert('No image!')}else{D0iB=document.images[0];sZ2T=prompt('Resize by..','1.5');if(sZ2T){with(document){write('%3Cimg src='+D0iB.src+' width='+sZ2T*D0iB.width+' height='+sZ2T*D0iB.height+'%3E');close()}}}void(null)">
         <title>Zoom on First Image...</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3C1){var c0l=prompt('Change to which background color?','');if (c0l != null) void(document.bgColor=c0l)}else{alert('Page has frames. Use the version of this bookmarklet for frames. (bookmarklets.com)')}">
         <title>Page Color...</title>
@@ -93,24 +89,12 @@
       </bookmark>
       <bookmark href="javascript:dT30FfN3b=new Date();void(window.open(location.href,'w'+dT30FfN3b.getTime()))">
         <title>Duplicate Page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:void(InPageBookmark=pageYOffset)">
         <title>Set In-Page Bookmark</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if (typeof InPageBookmark=='undefined'){alert('No in-page bookmark. Use Set In-Page Bookmark tool. (bookmarklets.com)')}else{scrollBy(0,InPageBookmark-pageYOffset)}">
         <title>Go To In-Page Bookmark</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:if(document.cookie.length%3C1){alert('No cookie for this site.')}else{alert('Cookie for this site: '+document.cookie)}">
@@ -4766,6 +4750,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.saarbruecken.de/sbnet/04/bad_anf.htm">
+          <title>B&#195;&#164;der und Sportst&#195;&#164;tten</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1050404144</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <bookmark href="http://www.mathematikum.de/">
         <title>Mathematikum Giessen</title>
@@ -5339,6 +5331,16 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.tagesschau.de/">
+        <title>tagesschau Suche</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1050410557</time_modified>
+            <time_added>1042548001</time_added>
+            <smarturl>http://www.tagesschau.de/search/?searchText=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
       <bookmark href="http://www.spiegel.de/">
         <title>SPIEGEL ONLINE</title>
         <info>
@@ -5364,6 +5366,76 @@
         </info>
       </bookmark>
     </folder>
+    <folder folded="yes">
+      <title>Dict</title>
+      <info>
+        <metadata owner="http://galeon.sourceforge.net/">
+          <pixmap>.galeon/favicons/dictionary.png</pixmap>
+          <time_modified>1050409508</time_modified>
+          <time_added>1050409446</time_added>
+        </metadata>
+      </info>
+      <bookmark href="http://www.m-w.com">
+        <title>MW</title>
+        <desc>Enter word to look up</desc>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <nick>dict</nick>
+            <pixmap>.galeon/favicons/dictionary.png</pixmap>
+            <time_modified>1046777920</time_modified>
+            <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wordreference.com/de/Translation.asp">
+        <title>en&gt;de</title>
+        <desc>Enter English term</desc>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <pixmap>.galeon/favicons/ende.gif</pixmap>
+            <time_modified>1050410309</time_modified>
+            <time_added>1006260135</time_added>
+            <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wordreference.com/de/en/translation.asp">
+        <title>de&gt;en</title>
+        <desc>Enter English term</desc>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <pixmap>.galeon/favicons/deen.gif</pixmap>
+            <time_modified>1050410314</time_modified>
+            <time_added>1006260135</time_added>
+            <smarturl>http://wordreference.com/de/en/translation.asp?deen=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wordreference.com/fr/Translation.asp">
+        <title>en&gt;fr</title>
+        <desc>Tapez mot francais</desc>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <pixmap>.galeon/favicons/enfr.gif</pixmap>
+            <time_modified>1050410321</time_modified>
+            <time_added>1006260178</time_added>
+            <smarturl>http://wordreference.com/fr/Translation.asp?enfr=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://wordreference.com/fr/en/translation.asp">
+        <title>fr&gt;en</title>
+        <desc>Tapez mot francais</desc>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <pixmap>.galeon/favicons/fren.gif</pixmap>
+            <time_modified>1050410477</time_modified>
+            <time_added>1006260178</time_added>
+            <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
+          </metadata>
+        </info>
+      </bookmark>
+    </folder>
     <bookmark href="http://www.google.com">
       <title>Google</title>
       <desc>Enter web search term</desc>
@@ -5376,42 +5448,6 @@
         </metadata>
       </info>
     </bookmark>
-    <bookmark href="http://www.m-w.com">
-      <title>MW</title>
-      <desc>Enter word to look up</desc>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <nick>dict</nick>
-          <pixmap>.galeon/favicons/dictionary.png</pixmap>
-          <time_modified>1046777920</time_modified>
-          <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="http://wordreference.com/de/Translation.asp">
-      <title>en&gt;de</title>
-      <desc>Enter English term</desc>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>.galeon/favicons/en.gif</pixmap>
-          <time_modified>1041861728</time_modified>
-          <time_added>1006260135</time_added>
-          <smarturl>http://wordreference.com/de/Translation.asp?ende=%s</smarturl>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="http://wordreference.com/fr/Translation.asp">
-      <title>fr&gt;en</title>
-      <desc>Tapez mot francais</desc>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>.galeon/favicons/fr.gif</pixmap>
-          <time_modified>1041861759</time_modified>
-          <time_added>1006260178</time_added>
-          <smarturl>http://wordreference.com/fr/en/translation.asp?fren=%s</smarturl>
-        </metadata>
-      </info>
-    </bookmark>
     <bookmark href="http://german.imdb.com">
       <title></title>
       <desc>Enter film title</desc>
@@ -5420,16 +5456,6 @@
           <time_modified>1041861693</time_modified>
           <time_added>1041861029</time_added>
           <smarturl>http://german.imdb.com/Find?for=%s</smarturl>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="http://www.tagesschau.de/">
-      <title></title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1042548027</time_modified>
-          <time_added>1042548001</time_added>
-          <smarturl>http://www.tagesschau.de/search/?searchText=%s</smarturl>
         </metadata>
       </info>
     </bookmark>
