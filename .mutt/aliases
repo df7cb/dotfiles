@@ -17,6 +17,7 @@ alias control Debian Bugs Control <control@bugs.debian.org>
 alias control@bugs.guug.de Mutt Bugs Control <control@bugs.guug.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
+alias desc Debian Description Translation Project <desc@ddtp.debian.org>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
 alias engblom Jakob Engblom <jakob@acm.org>
 alias fassbender Rosy Fassbender <fassbender@cs.uni-sb.de>
@@ -59,6 +60,7 @@ alias mutt-users Mutt Users <mutt-users@mutt.org>
 alias neli Neli Busch <cb@labastide.net>
 alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
 alias nkuttler Jean-Nicolas Kuttler <nkuttler@asta.uni-saarland.de>
+alias pdesc DDTP Package Descriptions <pdesc@ddtp.debian.org>
 alias pilzecker Markus Pilzecker <pilzecker@free.fr>
 alias pisg-general Pisg <pisg-general@lists.sourceforge.net>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
