@@ -10,7 +10,7 @@ freebsd-4-packa,ftp4.de.freebsd.org,,,,pub/FreeBSD/releases/i386/4.0-RELEASE/pac
 ftp2,ftp2.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE/floppies,I,21,18446744073709551615,1,1,0,1,195.185.195.14,,,,,,S,-1,
 ftp4,ftp4.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha,I,21,18446744073709551615,1,1,0,1,131.159.72.3,,,,,,S,-1,
 ftp6,ftp6.de.freebsd.org,,,,/pub/FreeBSD/releases/alpha/3.2-RELEASE/floppies,I,21,18446744073709551615,1,1,0,1,130.149.17.12,,,,,,S,-1,
-kernel,ftp.de.kernel.org,,,,pub/linux/kernel/v2.2,I,21,18446744073709551615,1,1,1,1,132.230.1.90,,,,,,S,-1,
+kernel,ftp.de.kernel.org,,,,pub/linux/kernel/v2.4,I,21,1022325849,1,1,1,1,131.159.72.23,,,,,,S,-1,
 micq,ftp.micq.org,,,,/pub/micq,I,0,0,1,1,0,1,,,,,,,S,-1,
 mpi-sb,ftp.mpi-sb.mpg.de,,,,pub,I,21,39584352265,-1,-1,1,1,139.19.1.150,,,,,,S,-1,
 netbsd-1.4.2,ftp.de.netbsd.org,,,,pub/unix/BSD/NetBSD/NetBSD-1.4.2/sparc,I,21,974932051,1,-1,1,1,195.211.161.101,,,,,,S,-1,
