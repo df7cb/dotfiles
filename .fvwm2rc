@@ -256,6 +256,9 @@ Key	SunFront A	A	Raise
 Key	r	A	4	RaiseLower
 Key	x	A	S4	Close
 Key	m	A	4	Move
+Key	f	A	4	Function Maximize0100
+Key	f	A	S4	Function Maximize100100
+Key	f	A	C4	Function Maximize1000
 
 #Key	Tab	A	4	Next [*] focus
 #Key	Tab	A	S4	Prev [*] focus
