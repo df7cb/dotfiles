@@ -12,6 +12,7 @@ case "$1" in
 	*.tar.bz2)		T="tar tvfj"	C="tar cvfj" ;;
 	*.ar|*.deb)		T="ar tv"	C="echo ar not supported:" ;;
 	*.arj)			T="unarj t"	C="echo arj not supported:" ;;
+	*.lzh)			T="lha v"	C="lha a" ;;
 	*.rar)			T="unrar v"	C="echo rar not supported:" ;;
 	*.zip)			T="unzip -l"	C="zip" ;;
 	*)	echo "$0 error: suffix not recognized: $1" 1>&2
