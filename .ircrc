@@ -91,6 +91,7 @@
 /alias unop /mode * -o
 /alias w /who *
 /alias wsb /who *-sb.*
+/alias wt /topic Wohlheim D.
 /alias j /join
 #/alias j {
 #  /leave $C
