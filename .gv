@@ -13,7 +13,7 @@ GV.fallbackPageMedia:   A4
 GV.pageMedia:		Automatic
 GV.swapLandscape:       True
 GV.autoResize:		True
-GV.antialias:		False
+GV.antialias:		True
 GV.watchFile:		False
 GV.ignoreEOF:		True
 GV.respectDSC:		True
