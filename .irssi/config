@@ -238,5 +238,5 @@ hilights = (
   { text = "cb"; nick = "yes"; word = "yes"; },
   { text = "Myon"; nick = "yes"; word = "yes"; }
 );
-ignores = ( { mask = "[morrigu]"; level = "PUBLICS"; } );
+ignores = ( );
 logs = { };
