@@ -19,7 +19,9 @@ macro index d s=deleted\cM 'Move message to trash folder'
 macro pager d s=deleted\cM 'Move message to trash folder'
 bind index G last-entry
 bind pager G bottom
+macro compose = f=
 macro index = s=
+macro pager = s=
 
 # headers
 #my_hdr fcc: bla
