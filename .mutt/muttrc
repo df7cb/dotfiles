@@ -55,6 +55,9 @@ macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.1
 macro	index	,R	"l.\nT!~D(!~R|~F|~P)\nl~a\n\ct.\n<esc>V"	# limit to threads with unread meassages
 macro	index	,r	"l<!~D(!~R|~F|~P)>\n<esc>V"	# limit to threads with unread meassages
 
+macro	index	S	"<save-message>=spam-queue<enter>" "Save spam for processing with SA"
+macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=ham-queue<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
+
 # headers
 ignore Importance # M$
 ignore Organisation Organization # stuff
@@ -95,6 +98,7 @@ unset beep
 unset bounce_delivered
 unset collapse_unread
 unset confirmappend
+unset confirmcreate
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c '/^$'"
 set delete=yes
@@ -115,6 +119,8 @@ set mime_forward=ask-yes
 unset move
 set pager_index_lines=5
 set pager_stop
+unset pipe_decode
+set pipe_sep
 set pgp_auto_decode
 set pgp_autosign
 set pgp_replyencrypt
