@@ -3,7 +3,8 @@
 
 cd $HOME
 
-. $HOME/.path
+. .path
+
 if [ "$SHELL" = /bin/sh ] ; then
   #SHELL=`which zsh` || SHELL=`which bash` || SHELL=`which tcsh` || SHELL=/bin/sh
   SHELL=`which bash` || SHELL=`which tcsh` || SHELL=/bin/sh
@@ -14,6 +15,7 @@ xhost - >/dev/null
 XKBD=`xkbd` && xmodmap .xmodmap-$XKBD
 xrdb .Xdefaults
 dpmsoff init
+xset b 0 0  # xset b off does not work
 
 xsetroot -solid navy
 ( sleep 10 ; xroot ) &

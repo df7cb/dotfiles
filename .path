@@ -1,24 +1,53 @@
 #!/bin/sh
 # $Id$
 
-: ${PATH_OLD:=$PATH} ${ZDOTDIR:=$HOME}
-[ -z "$OS" ] && . $ZDOTDIR/bin/os quiet
+#echo PATH=$PATH
+#echo MANPATH=$MANPATH
+#echo INFOPATH=$INFOPATH
 
-PATH=/usr/local/bin:/usr/bin:/bin
+. $HOME/bin/os > /dev/null
 
-for dir in $HOME/bin $HOME/bin/$OS ; do
-	[ -d $dir ] && PATH=$dir:$PATH
-done
-for dir in /usr/local/sbin /sbin /usr/sbin \
-	$HOME/bin/misc-bin \
+for dir in \
 	/usr/openwin/bin /usr/X11R6/bin \
 	/usr/games/bin /usr/games \
-	/usr/ucb /usr/5bin /usr/etc /usr/pkg/bin \
+	/usr/ucb /usr/5bin /usr/pkg/bin \
 	/usr/ccs/bin \
 	/shared/bin /shared/games/bin \
 	/usr/compat/linux/bin \
 	/usr/local/pgsql/bin \
-	/usr/local/teTeX/bin/sparc-solaris2.4 \
-	/usr/local/teTeX/bin/i386-pc-solaris2.7 ; do
-	[ -d $dir ] && PATH=$PATH:$dir
+	/usr/local/bin \
+	/usr/local/sbin /sbin /usr/sbin \
+	$HOME/bin/misc-bin \
+	$HOME/bin $HOME/bin/${OS:-OSDIR} \
+	/local/atools/bin /local/atools/cb/bin
+	do case :$PATH: in
+		*:$dir:*) ;;
+		*) [ -d $dir ] && PATH=$dir:$PATH ;;
+	esac
 done
+
+for dir in \
+	/usr/local/man \
+	$HOME/man \
+	/local/atools/man /local/atools/cb/man
+	do case :$MANPATH: in
+		*:$dir:*) ;;
+		*) [ -d $dir ] && MANPATH=$dir:$MANPATH ;;
+	esac
+done
+
+for dir in \
+	/usr/local/info \
+	$HOME/info \
+	/local/atools/info /local/atools/cb/info
+	do case :$INFOPATH: in
+		*:$dir:*) ;;
+		*) [ -d $dir ] && INFOPATH=$dir:$INFOPATH ;;
+	esac
+done
+
+#echo PATH=$PATH
+#echo MANPATH=$MANPATH
+#echo INFOPATH=$INFOPATH
+
+export PATH MANPATH INFOPATH

@@ -1,32 +1,20 @@
 #!/bin/sh
 # $Id$
 
-if [ -z "$OS" ] ; then
-	case "`uname -srm`" in
-		Linux*86)	OS="linux-intel" ;;
-		Linux*alpha)	OS="linux-alpha" ;;
-		Linux*sparc)	OS="linux-sparc" ;;
-		SunOS*4.*sun*)	OS="sunos4-sparc" ;;
-		SunOS*5.*sun*)	OS="solaris-sparc" ;;
-		SunOS*5.*86*)	OS="solaris-intel" ;;
-		FreeBSD*86)	OS="freebsd-intel" ;;
-		NetBSD*sparc)	OS="netbsd-sparc" ;;
-		IRIX*5*IP*)	OS="irix-sgi" ;;
-		CYGWIN*86)	OS="cygwin-intel" ;;
-		*)		OS="unknown" 
-				echo "os: warning: os type unknown" 1>&2 ;;
-	esac
-	export OS
-fi
-
-case $1 in
-	quiet)	;;
-	kbd)	case $OS in
-		*intel)	echo ".xmodmap-pc" ;;
-		*alpha)	echo ".xmodmap-pc" ;;
-		*sparc)	echo ".xmodmap-sun" ;;
-		*)	echo ".xmodmap" 
-			echo "os kbd: warning: keyboard type unknown" 1>&2 ;;
-		esac ;;
-	*)	echo $OS
+case "`uname -srm`" in
+	Linux*86)	OS="linux-intel" ;;
+	Linux*alpha)	OS="linux-alpha" ;;
+	Linux*sparc)	OS="linux-sparc" ;;
+	SunOS*4.*sun*)	OS="sunos4-sparc" ;;
+	SunOS*5.*sun*)	OS="solaris-sparc" ;;
+	SunOS*5.*86*)	OS="solaris-intel" ;;
+	FreeBSD*86)	OS="freebsd-intel" ;;
+	NetBSD*sparc)	OS="netbsd-sparc" ;;
+	IRIX*5*IP*)	OS="irix-sgi" ;;
+	CYGWIN*86)	OS="cygwin-intel" ;;
+	*)		OS="unknown"
+			echo "os: warning: os type unknown" 1>&2 ;;
 esac
+export OS
+
+echo $OS
