@@ -2,6 +2,7 @@
 
 " Options
 set autoindent		" always set autoindenting on
+set autoread		" Automatically read buffers if file changed on disk
 set autowrite		" Automatically save before commands like :next and :make
 set backspace=2		" allow backspacing over everything in insert mode
 set backup		" keep a backup file
@@ -15,11 +16,15 @@ set lcs=tab:·\ ,trail:·	" how to show tabs
 set nojoinspaces	" \frenchspacing
 set nrformats=hex	" drop octal number format
 set ruler		" Show the line and column numbers of the cursor 
+set rulerformat=%22(%n:%l/%L,%c%V%=%P%)
+set scrolloff=3		" always show n lines before and after current linE
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set smartcase		" Do case-sensitive case sensitive matching
+"set statusline=\ %n:%<%f%M%R%W\ %y%a%=%l/%L,%c%V\ %P\ 
 set nostartofline	" Do not move to start of line on buffer change etc.
 set textwidth=0		" Don't wrap words by default
+set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y
 set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
 set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
