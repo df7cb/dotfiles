@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# This little script can be used to run ispell on stdin, returning the result
+# through stdout.
+# It can be used from VI like this (or map it to a key sequence):
+# :%! ~/bin/ispell-filter
+#
+t=/tmp/is-$$
+
+cat > $t
+ispell "$@" $t < /dev/tty > /dev/tty
+cat $t
+
+rm $t
+[ -f $t.bak ] && rm $t.bak
+
+exit 0
