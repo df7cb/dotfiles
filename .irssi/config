@@ -139,7 +139,6 @@ aliases = {
   CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
   SBAR = "STATUSBAR";
   INVITELIST = "mode $C +I";
-  chandserv = "/quote chanserv $0 #heim-d $1-";
   chanserv = "/quote chanserv";
   identify = "/quote nickserv identify";
   memoserv = "/quote memoserv";
@@ -148,6 +147,7 @@ aliases = {
   heim = "msg heimgeist";
   plonk = "ignore -time 600";
   rn = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen ein.";
+  cs = "chanserv";
 };
 
 statusbar = {
@@ -273,10 +273,13 @@ settings = {
     friends_autosave = "yes";
     title_string = "irssi $winname$C@$tag";
     chanact_header = "\\";
+    chanact_abbreviate_names = "3";
+    chanact_display = "$H$N$C$S";
   };
-  "fe-text" = { 
+  "fe-text" = {
     scroll_page_count = "/1";
     paste_verify_line_count = "10";
+    autostick_split_windows = "no";
   };
   "fe-common/core" = {
     autolog_path = "~/irc/autolog/%Y-%m/${0}_$tag/${0}-%Y-%m-%d";
@@ -285,6 +288,8 @@ settings = {
     show_nickmode = "no";
     activity_hide_targets = "";
     activity_hide_level = " actions";
+    autoclose_windows = "yes";
+    reuse_unused_windows = "yes";
   };
   proxy = {
     irssiproxy_password = "wb0Biz";
@@ -351,7 +356,9 @@ keyboard = (
   { key = "meta-[20~"; id = "change_window"; data = "9"; },
   { key = "meta-[21~"; id = "change_window"; data = "10"; },
   { key = "meta-[23~"; id = "change_window"; data = "11"; },
-  { key = "meta-[24~"; id = "change_window"; data = "12"; }
+  { key = "meta-[24~"; id = "change_window"; data = "12"; },
+  { key = "meta--"; id = "command"; data = "window shrink"; },
+  { key = "meta-="; id = "command"; data = "window grow"; }
 );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
