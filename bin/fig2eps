@@ -1,0 +1,93 @@
+#!/usr/bin/perl
+##############################################################################
+# $Id$
+# TODO	error detection for LaTeX run and other commands
+# TODO	pass latex texts through text filter
+# TODO	filter support is rudimentary...
+#
+# 20000511 mah	started work.
+# 20000522 mah	added filter and macro input support. RUDIMENTARY
+##############################################################################
+# Match Edit
+#
+# invocation:	
+#               fig2eps.pl [-tff LATEXFIGUREFILTER] [-i LATEXINPUT] SOURCE.fig DEST.fig
+#
+# description:
+#		just a short-cut to convert .fig with LaTeX strings in
+#		.eps files. I had this hardcoded in a Makefile once,
+#		but it's better with command.
+#
+# procedure:
+#		1) convert .fig in .eps with special text hidden
+#		   (language pstex from fig2dev)
+#		2) convert .fig to .tex only with special text and
+#		   including .eps from 1)
+#		3) latex .tex from 2) to produce .dvi
+#		4) invoke .dvi to produce .eps
+#		This procedure is needed to provide scalability for
+#		the figures.
+#
+# important note:
+#		OLD DVIPS VERSIONS MAY NOT WORK APPRORIATELY TO
+#		PRODUCE EPS-FILES! 5.76 AT LEAST WORKS.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+##############################################################################
+
+$USAGE =
+  "\n\nUsage:	fig2eps.pl [-lffLATEXFIGUREFILTER] SOURCE.fig DEST.fig";
+
+$tff = "cat";
+$inputs = "";
+if( $ARGV[0] =~ /^-lff(.*)/ ) {
+  $tff = $1;
+  shift @ARGV;
+}
+
+if( $ARGV[0] =~ /^-i(.*)/ ) {
+  $inputs .= $1;
+  shift @ARGV;
+}
+
+$src = quotemeta( @ARGV[0] ) || die "?source file must be supplied$USAGE";
+$dest = quotemeta( @ARGV[1] ) || die "?destination file must be supplied$USAGE";
+
+$tmp = "fig2eps-$$";	# worked on AIX, problems elsewhere (if I remember correctly)
+
+if( $src eq '\-' ) {	# source is stdin, cp to some location and rename it (crappy, isn't it?)
+	# above backslash because of quotemeta
+	{ local $/ = ''; open TMP, ">$tmp.stdin"; print TMP <STDIN>; close TMP; $src = "$tmp.stdin"; }
+}
+
+system( "$tff < $src > $tmp.flt.fig" );
+system( "fig2dev -L pstex $tmp.flt.fig $tmp.eps 1> /dev/null 2> /dev/null" );
+system( "fig2dev -L pstex_t -p $tmp.eps $tmp.flt.fig $tmp.tex 1> /dev/null 2> /dev/null" );
+
+open( TMP, ">$tmp.frame.tex" );
+print TMP 
+	"\\documentclass{book}\n"
+	. "\\usepackage{rotating,amsmath,epsfig}\n"
+	. "\\usepackage{color,times}\n"
+	. "\\setlength{\\textwidth}{100cm}\n"
+	. "\\setlength{\\textheight}{100cm}\n"
+	. "\\pagestyle{empty}\n"
+	. ($inputs ne "" ? "\\input{$inputs}" : "" )
+	. "\\begin{document}\n"
+	. "\\input{$tmp.tex}\n"
+	. "\\end{document}\n";
+close TMP;
+
+system( "latex $tmp.frame.tex" );
+system( "dvips -E $tmp.frame.dvi -o $dest 1> /dev/null 2> /dev/null");
+system( "rm $tmp.* 1> /dev/null 2> /dev/null" );
