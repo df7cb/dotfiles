@@ -15,8 +15,12 @@ autorun:
 	mkdir $@
 
 links:	autorun/friends.pl \
+	autorun/autorealname.pl \
 	autorun/chanact.pl \
+	autorun/chanshare.pl \
 	autorun/keepnick.pl \
+	autorun/len.pl \
+	autorun/nickcolor.pl \
 	autorun/title.pl
 
 autorun/%.pl: %.pl
