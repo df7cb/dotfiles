@@ -51,8 +51,9 @@ macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F 
 macro	index	,d	"<delete-pattern>~R !~F ~d>1m<enter>"
 # index format with year included
 macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.15F %s'\n"
-macro	index	,R	"l!~R\n"	# limit to unread meassages
-macro	index	,r	"l.\nT!~D(!~R|~F|~P)\nl~a\n\ct.\n<esc>V"	# limit to threads with unread meassages
+#macro	index	,R	"l!~R\n"	# limit to unread meassages
+macro	index	,R	"l.\nT!~D(!~R|~F|~P)\nl~a\n\ct.\n<esc>V"	# limit to threads with unread meassages
+macro	index	,r	"l<!~D(!~R|~F|~P)>\n<esc>V"	# limit to threads with unread meassages
 
 # headers
 ignore Importance # M$
@@ -103,16 +104,18 @@ set folder="~/mail"
 set forward_format="%s (fwd)"
 unset help
 set hidden_host
-set index_context=3
 set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
 set ispell="aspell --lang=de check"
 #set locale="de_DE.ISO-8859-1"
 unset markers
+set menu_context=3
+unset menu_move_off
 set menu_scroll
 set mime_forward=ask-yes
 unset move
 set pager_index_lines=5
 set pager_stop
+set pgp_auto_decode
 set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x6D8ABE71"
