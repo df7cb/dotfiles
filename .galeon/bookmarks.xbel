@@ -3271,6 +3271,54 @@
           </info>
         </bookmark>
       </folder>
+      <folder folded="yes">
+        <title>Unicode</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1044029448</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.unicode.org/charts/">
+          <title>Code Charts (PDF Version)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044029461</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://home.att.net/~jameskass/scriptlinks.htm">
+          <title>Script Links and Test Pages</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044029551</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.alanwood.net/unicode/">
+          <title>Unicode and multilingual support in HTML, fonts, Web browsers and other applications</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044029672</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.cl.cam.ac.uk/~mgk25/unicode.html">
+          <title>UTF-8 and Unicode FAQ</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044030034</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.unruh.de/DniQ/latex/unicode/">
+          <title>Unicode support for LaTeX</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1044033249</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Zeug</title>
