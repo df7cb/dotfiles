@@ -34,9 +34,9 @@ sub spawn {
 foreach (@ARGV) {
 	system "chmod 644 '". join("' '", @ARGV) ."'";
 }
-foreach (grep /JPG$/, @ARGV) {
-	system "mv '$_' '\L$_'";
-}
+#foreach (grep /JPG$/, @ARGV) {
+#	system "mv '$_' '\L$_'";
+#}
 
 print scalar(@ARGV) ." pictures ";
 print "(# will delete picture)\n";
@@ -44,7 +44,7 @@ print "(# will delete picture)\n";
 # rename each file
 #foreach $file (<[0-9]*.jpg>) {
 foreach $file (@ARGV) {
-	$file =~ /(\d+)\.jpg/;
+	$file =~ /(\d+)/;
 	my $number = $1;
 	if($number == 0) {
 		print "error: $file contains no number.\n";
@@ -55,7 +55,7 @@ foreach $file (@ARGV) {
 	kill "QUIT", $xv if $xv;
 	spawn() unless $xv;
 	$nr = $number + $offset;
-	printf "Enter new name for $file:\n";
+	printf "Enter new name for $file: (# delete < > rotate)\n";
 	my $prompt = sprintf "%02i-", $nr;
 	$new = $term->readline($prompt);
 	chomp ($new);
@@ -64,6 +64,13 @@ foreach $file (@ARGV) {
 		print "File $file will be deleted.\n";
 		unlink $file;
 		next;
+	}
+	if ($new =~ /^([<>])(.*)/) {
+		$new = $2;
+		my ($atime, $mtime) = (stat $file)[8, 9];
+		system "convert -verbose -rotate -90 $file $file" if $1 eq "<";
+		system "convert -verbose -rotate  90 $file $file" if $1 eq ">";
+		utime $atime, $mtime, $file;
 	}
 	if ($new) {
 		$new = sprintf "%02i-$new.jpg", $nr;
