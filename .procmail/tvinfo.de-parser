@@ -1,8 +1,16 @@
 #!/usr/bin/perl -w
+# vim:ft=perl:
+# (C) 2003, 2004 Christoph Berg <cb@df7cb.de> GNU GPL.
 
 use strict;
 
 my ($titel, $station, $datum, $zeit, $laenge);
+
+if($ARGV[0]) {
+	get_info($ARGV[0]);
+	print "v4l-record -s $station -t $zeit -l $laenge -o $titel-$datum-$zeit-$station.avi\n";
+	exit(0);
+}
 
 while(<>) {
 	print;
@@ -13,7 +21,7 @@ while(<>) {
 		print $headline;
 		next if $headline =~ /picket fences/i; # auch ein Tatort
 		get_info($1);
-		print "v4l-record -s $station -t $zeit -l $laenge -o $titel-$datum.avi\n";
+		print "v4l-record -s $station -t $zeit -l $laenge -o $titel-$datum-$zeit-$station.avi\n";
 	}
 }
 
@@ -21,7 +29,7 @@ sub get_info {
 	my $url = shift;
 	open W, "wget -q -O - '$url' |" or die "wget: $!";
 	while(<W>) {
-		last if /Hier kostenlos anmelden/;
+		last if /Merkzettel anzeigen|Jetzt kostenlos anmelden/;
 	}
 
 	print "\n";
@@ -33,6 +41,7 @@ sub get_info {
 		next if /&laquo; zurück|Eigene Auswahl aus Einzelsendungen|Sendungsinformation|mehr Bilder|SMS-Reminder/;
 		last if /Als TV-Tipp per E-Mail an Freunde verschicken/;
 		print "  $_" if $_ ne "\n";
+		#22:30 - 00:00&nbsp;Uhr
 		if(/(\d\d):(\d\d) - (\d\d):(\d\d) Uhr/) {
 			$zeit = "$1:$2";
 			$laenge = 25*60 * (60*$3 + $4 - 60*$1 - $2 + 5);
