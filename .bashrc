@@ -47,6 +47,7 @@ fi
 export PAGER=less
 export TZ=CET
 [ -f ~/.lynx_bookmarks.html ] && export WWW_HOME=~/.lynx_bookmarks.html
+[ -f ~/.netscape/bookmarks.html ] && export WWW_HOME=~/.netscape/bookmarks.html
 
 # internal shell settings
 
