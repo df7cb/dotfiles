@@ -4,25 +4,31 @@ alias christian.albrecht Christian Albrecht <chal0007@stud.uni-sb.de>
 alias arend Anne Arend <a.arend@stw.uni-sb.de>
 alias pb Peter Bach <peter.bach@nettmail.de>
 alias pb.w Peter Bach <peter.bach@etas.de>
+alias backes.w Werner Backes <backes@mpi-sb.mpg.de>
 alias caroline Caroline Barth <caroline@fsinfo.cs.uni-sb.de>
 alias anba Andreas Baus <anba@fsinfo.cs.uni-sb.de>
+alias h.becker Hendrik Becker <h.becker@internett.de>
 alias abe Axel Beckert <abe@cs.uni-sb.de>
+alias philip.benning Philip Benning <pib@gmx.net>
 alias cb Christoph Berg <cb@heim-d.uni-sb.de>
 alias cb.w Christoph Berg <cb@cs.uni-sb.de>
-alias berg Gregor Berg and Elke Berg <g.berg@handshake.de>
+alias berg Gregor Berg <g.berg@handshake.de>
 alias hannes Johannes Berg <johannes.berg@hadiko.de>
 alias matthias Matthias Berg <mberg81@gmx.de>
 alias oliver.bieg Oliver Bieg <olbi0004@stud.uni-sb.de>
 alias ellen Ellen Bischof <ut6y@rz.uni-karlsruhe.de>
+alias katrin Katrin Blumenauer <blka@gmx.de>
 alias ludger Ludger Bünger <ludger@buenger.de>
+alias petra.bormann Petra Bormann <peba0007@stud.uni-sb.de>
 alias hirbli Michael Bosch <Michael.Bosch@etas.de>
 alias sara Sara Bürkle <sara@fsinfo.cs.uni-sb.de>
 alias dom Dominik Bruch <dobr0002@stud.uni-sb.de>
 alias dagmar Dagmar Bubel <uily@rz.uni-karlsruhe.de>
 alias questor Claas Buchterkirche <questor@fsinfo.cs.uni-sb.de>
 alias christina Christina Burda <chbu0011@stud.uni-sb.de>
-alias cibis Nicolaus Cibis <Nicolaus.Cibis@t-online.de>
-alias coruh {Ülkü} Coruh <coruh@cs.uni-sb.de>
+alias nico.cibis Nicolaus Cibis <Nicolaus.Cibis@t-online.de>
+alias chcl Christoph Clodo <chcl@mpi-sb.mpg.de>
+alias coruh.w Ülkü Coruh <coruh@cs.uni-sb.de>
 alias marwin Nils Crefeld <marwin@fsinfo.cs.uni-sb.de>
 alias hp Heimpräsidenten D <hp@heim-d.uni-sb.de>
 alias kassenwart Kassenwart D <kassenwart@heim-d.uni-sb.de>
@@ -44,6 +50,7 @@ alias dl4vck Stefan Fuchs DL4VCK <dl4vck@darc.de>
 alias dl8fr Klaus Neumann DL8FR <KNeuDL8FR@aol.com>
 alias dreker Patrick Dreker <dreker@wjpserver.cs.uni-sb.de>
 alias steffen.ecker Steffen Ecker <stec0000@stud.uni-sb.de>
+alias fje Franz Josef Engel <fje@rz.uni-sb.de>
 alias f1ulq.w Jean Luc Missler F1ULQ <jeanluc.missler@schaller.de>
 alias fsinfo {Fachschaftsrat Informatik} <fsinfo@fsinfo.cs.uni-sb.de>
 alias fsinfo.r {Fachschaftsrat Informatik} <fsr@fsinfo.cs.uni-sb.de>
@@ -55,16 +62,22 @@ alias cage Nico Fritz <cage@studcs.uni-sb.de>
 alias fsg FS Gossip <fsg@fsinfo.cs.uni-sb.de>
 alias fsi FS Intern <fsi@fsinfo.cs.uni-sb.de>
 alias roquas Martin Gisch <roquas@fsinfo.cs.uni-sb.de>
-alias andreas Andreas Gutapfel <gutapf1@student-zw.fh-kl.de>
+alias andreas Andreas Gutapfel <andreas@gutapfel.de>
+alias andreas.w Andreas Gutapfel <gutapf1@student-zw.fh-kl.de>
 alias baschdel Bastiaan Hageman <baschdel01@aol.com>
+alias baschdel.w Bastiaan Hageman <b.hageman@hbks.uni-sb.de>
 alias christoph.hammer Christoph Hammer <chha0026@stud.uni-sb.de>
 alias eva.hartz Eva Hartz <evha0005@stud.uni-sb.de>
 alias gph Goran P. Hastenteufel <goha0001@stud.uni-sb.de>
+alias heimlich Heimlich <heimlich@heim-d.uni-sb.de>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias hessemer Dominic Hessemer <hessemer@fsinfo.cs.uni-sb.de>
+alias jennifer.hille Jennifer Hille <jehi0003@stud.uni-sb.de>
 alias mah Mark Anton Hillebrand <mah@wjpserver.cs.uni-sb.de>
-alias martina.hinsberger Martina Hinsberger <up0051@track.umwelt-campus.de>
-alias hock Kurt Hock and Hella Hock <kurthock@aol.com>
+alias martina.hinsberger Martina Hinsberger <hinsberger@umwelt-campus.de>
+alias kurt.hock Kurt Hock <kurthock@aol.com>
+alias speedy Dominique Hoffmann <doho0002@stud.uni-sb.de>
+alias silke.huettig Silke Hüttig <shuettig@web.de>
 alias tom Thomas In der Rieden <tom@myndforge.com>
 alias cj Christian Jacobi <cj@cs.uni-sb.de>
 alias wiebke.janssen Wiebke Janßen <wija0000@stud.uni-sb.de>
@@ -72,27 +85,40 @@ alias janocha Stefan Janocha <cs.j@nocha.de>
 alias sabine.john Sabine John <sajo0000@stud.uni-sb.de>
 alias hirvi Nils Kammenhuber <hirvi@fsinfo.cs.uni-sb.de>
 alias edith Edith Klee <edith@coli.uni-sb.de>
+alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias hajo.klein Hans Joachim Klein <Joachim.Klein@schwab.de>
 alias ogrim Michael Klein <ogrim@cs.uni-sb.de>
+alias kroening Daniel Kröning <kroening@cs.uni-sb.de>
 alias kempest Stefan Kunde <kempest@cs.uni-sb.de>
 alias dirkl Dirk Leinenbach <dirkl@wjpserver.cs.uni-sb.de>
+alias david.lemm David Lemm <dale0006@stud.uni-sb.de>
 alias cls Cédric Lichtenau <lichtenau@de.ibm.com>
 alias sigi Frank Luithle <sigi@fsinfo.cs.uni-sb.de>
+alias julia.luxenburger Julia Luxenburger <luju0000@studcs.uni-sb.de>
 alias olafm Olaf Maennel <olafm@fsinfo.cs.uni-sb.de>
+alias alexander.malkies Alexander Malkis <alexmalkis@yahoo.com>
 alias m Majordomo List Manager <majordomo@heim-d.uni-sb.de>
 alias matthies Niklas Matthies <matthies@fsinfo.cs.uni-sb.de>
+alias matuschewski Peter Matuschewski <matuschewski@rz.uni-saarland.de>
 alias tobiwan Tobias Maurer <tobiwan@fsinfo.cs.uni-sb.de>
 alias sven.mayer Sven Mayer <Sgt.Sven@t-online.de>
 alias orla.mccarthy Orla McCarthy <omccarthy@yahoo.com>
+alias carsten Carsten Meyer <carsten@wjpserver.cs.uni-sb.de>
 alias marian Marian Möhren <marian@beer.com>
 alias smueller Silvia Müller <SMM@de.ibm.com>
 alias bianca.mokwa Bianca Mokwa <bimo0001@stud.uni-sb.de>
+alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
 alias ulli Ulrike Neumüller <ulne0001@stud.uni-sb.de>
+alias markus.olk Markus Olk <cs-uni-sb@web.de>
 alias ap Andreas Paul <andreas.paul@sap.com>
 alias pessi Jan Pessenlehner <pessi@gmx.net>
+alias maddin Martin Porr <martin.porr@topmail.de>
+alias hermann.prediger Hermann Prediger <h.prediger@gmx.de>
 alias jochen Jochen Preiß <jochen@cs.uni-sb.de>
+alias amalia.pulido Amalia Pulido <amro0000@stud.uni-sb.de>
 alias mreckt Martin Recktenwald <mreckt@wjpserver.cs.uni-sb.de>
 alias shadow Jens Regenberg <shadow@fsinfo.cs.uni-sb.de>
+alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
 alias uwe Uwe Reitenbach <uwe@cs.uni-sb.de>
 alias torben Torben Reuter <tore0004@stud.uni-sb.de>
 alias bird Jochen Röhrig <roehrig@de.ibm.com>
@@ -104,12 +130,16 @@ alias rms.w Rainer Michael Schmid <rms@trolltech.de>
 alias max Jan Schmidt <max@fsinfo.cs.uni-sb.de>
 alias netstorm Thorsten Schneider <netstorm@fsinfo.cs.uni-sb.de>
 alias schoenenberger.w Helmut Schönenberger <h.schoenenberger@stw.uni-sb.de>
+alias schuerge Thomas Schürger <schuerge@wjpserver.cs.uni-sb.de>
 alias bertram.schuck Bertram Schuck <schu@uni-landau.de>
+alias h.schuh Hans Joachim Schuh <h.schuh@rz.uni-sb.de>
 alias schutz Alexander Schutz <schutz@coli.uni-sb.de>
 alias sokoll Thorsten Sokoll <sokoll@fsinfo.cs.uni-sb.de>
+alias stilian.stauer Stilian Stauer <stst0001@studcs.uni-sb.de>
 alias sandra Sandra Steinbrecher <sandra@fsinfo.cs.uni-sb.de>
 alias schlumpf Christian Stöhr <schlumpf@fsinfo.cs.uni-sb.de>
 alias struwe Martin Struwe <mstruwe@studcs.uni-sb.de>
+alias taffin Dominique Taffin <taffin@wjpserver.cs.uni-sb.de>
 alias tnt-devel {TNT developers} <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias andreas.trunkenbolz Andreas Trukenbolz <trunkenbolz@gmx.de>
 alias tine Christine Tuth <chtu0000@stud.uni-sb.de>
@@ -120,8 +150,9 @@ alias vuje Marco Vujevic <vuje@fsinfo.cs.uni-sb.de>
 alias mawan Martin Wanke <mawan@krypt.cs.uni-sb.de>
 alias dominik.weber Dominik Weber <dweber@bigfoot.de>
 alias kirstin Kirstin Weinand <kweinand@uni.de>
+alias aw Arne Wichmann <aw@net.uni-sb.de>
 alias lynx Stephan Wiehr <lynx@fsinfo.cs.uni-sb.de>
 alias step Stephan Wilhelm <step@fsinfo.cs.uni-sb.de>
-alias zasowski Thomas Zasowski <Thomas.Zasowski@ee.uni-sb.de>
+alias thomas.zasowski Thomas Zasowski <Thomas.Zasowski@ee.uni-sb.de>
 alias zille Daniel Zielinski <dazi0002@stud.uni-sb.de>
 alias caro Caroline Zunckel <cazu0000@stud.uni-sb.de>
