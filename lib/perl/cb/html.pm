@@ -156,4 +156,13 @@ sub useful_header {
 	return 1;
 }
 
+
+sub printenv {
+	print "<pre>\n";
+	foreach (sort keys %ENV) {
+		print "$_=$ENV{$_}\n";
+	}
+	print "</pre>\n";
+}
+
 1;
