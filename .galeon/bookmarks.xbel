@@ -2,15 +2,6 @@
 <!DOCTYPE xbel PUBLIC "+//IDN python.org//DTD XML Bookmark Exchange Language 1.0//EN//XML" "http://www.python.org/topics/xml/dtds/xbel-1.0.dtd">
 <xbel version="1.0">
   <title>Bookmarks</title>
-  <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
-    <title>Christoph Berg</title>
-    <info>
-      <metadata owner="http://galeon.sourceforge.net/">
-        <time_modified>1048014704</time_modified>
-        <time_added>1033992657</time_added>
-      </metadata>
-    </info>
-  </bookmark>
   <folder folded="yes">
     <title>Smart Bookmarks Toolbar</title>
     <info>
@@ -273,14 +264,6 @@
           </info>
         </bookmark>
         <separator/>
-        <bookmark href="http://www.rz.uni-saarland.de/services/netz/wohnheime/">
-          <title>RZ: Wohnheime</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1042026310</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www.heim-d.uni-sb.de/doc/">
           <title>Wohnheim D - Dokumentationen</title>
           <info>
@@ -369,6 +352,63 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1052391345</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>RZ</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1062067745</time_modified>
+            <time_added>1062067736</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.rz.uni-saarland.de/">
+          <title>Rechenzentrum</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1004630977</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/services/netz/wohnheime/">
+          <title>RZ: Wohnheime</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1042026310</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/organisation/mitarbeiter/start.htm">
+          <title>Die Mitarbeiter des RZ</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1062067587</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/query/WebPh.html">
+          <title>Telefon/Email-Recherche</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>961266741</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/dienste/beschaffung/software/software.html">
+          <title>Software-Portal - Startseite</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1013008301</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rz.uni-saarland.de/rzinfo/eulen/">
+          <title>Eulen</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>986472836</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -633,30 +673,6 @@
             <time_added>976822967</time_added>
           </metadata>
         </info>
-        <bookmark href="http://www-wjp.cs.uni-sb.de/">
-          <title>WJP</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>934039328</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.rz.uni-saarland.de/">
-          <title>Rechenzentrum</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1004630977</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.rz.uni-saarland.de/dienste/beschaffung/software/software.html">
-          <title>Software-Portal - Startseite</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1013008301</time_added>
-            </metadata>
-          </info>
-        </bookmark>
         <bookmark href="http://www.mpi-sb.mpg.de/">
           <title>Max-Planck-Institut f&#195;&#188;r Informatik</title>
           <info>
@@ -684,36 +700,19 @@
             </metadata>
           </info>
         </bookmark>
-        <separator/>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/">
+          <title>WJP</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934039328</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://www.canossa.de/">
           <title>Canossa</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1011176224</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.rz.uni-saarland.de/query/WebPh.html">
-          <title>Telefon/Email-Recherche</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>961266741</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.rz.uni-saarland.de/rzinfo/eulen/">
-          <title>Eulen</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>986472836</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://web.swi.uni-saarland.de/swi/root-t3/index.php?hssp">
-          <title>HSSP - Hochschulsport der Universit&#195;&#164;t des Saarlandes: Home</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1054733828</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -1573,11 +1572,12 @@
         </bookmark>
       </folder>
       <separator/>
-      <bookmark href="http://fsinfo.cs.uni-sb.de/~cb/plan/plan_ws0102.html">
-        <title>Christophs Stundenplan</title>
+      <bookmark href="http://www.aktive-idealisten.de/">
+        <title>Aktive Idealisten</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1003762374</time_added>
+            <time_modified>1055369258</time_modified>
+            <time_added>1055349352</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -1589,20 +1589,11 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.aktive-idealisten.de/">
-        <title>Aktive Idealisten</title>
+      <bookmark href="http://web.swi.uni-saarland.de/swi/root-t3/index.php?hssp">
+        <title>HSSP - Hochschulsport der Universit&#195;&#164;t des Saarlandes: Home</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1055369258</time_modified>
-            <time_added>1055349352</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.asta.uni-sb.de/wahl/wahlbeteiligung.html">
-        <title>Wahlen zum StuPa/Frauenreferat</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1057681306</time_added>
+            <time_added>1054733828</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -4004,6 +3995,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.fourmilab.ch/hackdiet/">
+          <title>The Hacker's Diet</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1062005273</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <bookmark href="http://www.qcc.ca/~charlesc/software/getmail-3.0/">
         <title>Charles Cazabon's getmail</title>
@@ -5519,6 +5518,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.darktown.com/main.php">
+        <title>Dark's Coverpage</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1062084710</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Search</title>
@@ -6098,10 +6105,10 @@
       </info>
     </bookmark>
     <bookmark href="http://www.dfn-pca.de/pgpkserv/">
-      <title>PGP</title>
+      <title></title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <time_modified>1048681430</time_modified>
+          <time_modified>1062068040</time_modified>
           <time_added>1048681211</time_added>
           <smarturl>http://blackhole.pca.dfn.de:11371/pks/lookup?op=index&amp;search=%s</smarturl>
         </metadata>
@@ -6199,22 +6206,6 @@
     </bookmark>
     <bookmark href="http://members.lycos.co.uk/pmscpc/links/sheetmusic.html">
       <title>Sheet Music</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_added>1026993172</time_added>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="https://my.hypovereinsbank.de/prot/templates/index.jsp">
-      <title>HypoVereinsbank</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_added>1026993172</time_added>
-        </metadata>
-      </info>
-    </bookmark>
-    <bookmark href="http://www-dbs.cs.uni-sb.de/~weikum/gk-posters-aug02/lohse.pdf">
-      <title>Untitled</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
           <time_added>1026993172</time_added>
