@@ -20,11 +20,13 @@ set abort_nosubject
 set alias_file=~/.mutt/aliases
 set alternates=^cb@.*uni-sb.de$
 unset beep
+set beep_new
 unset bounce_delivered
 unset confirmappend
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c '/^$'"
 unset fcc_attach
+set folder="~/mail"
 set hidden_host
 set index_format="%4C %Z %[%b %e %k:%M] %15.15L (%4l) %s"
 unset move
