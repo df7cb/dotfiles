@@ -1,5 +1,4 @@
 # $Id$
-# cb 990603 ###################################################################
 
 ###############################################################################
 #   paths specific to fvwm2                                                   #
@@ -58,8 +57,8 @@ ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
 # this describes how many rows and columns are displayed in the pager
 DeskTopSize 3x2
 
-#EdgeResistance 300 20
-EdgeResistance 0 20
+EdgeResistance 300 20
+#EdgeResistance 0 20
 EdgeScroll 100 100
 
 ClickTime 200
