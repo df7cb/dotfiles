@@ -1,7 +1,8 @@
 \documentclass[twocolumn,12pt]{article}
-\usepackage{times,isolatin1,german,marvosym}
+\usepackage{times,isolatin1,german}
 %\usepackage[split,break]{directory}
 \usepackage[split]{directory}
+%\usepackage{addr-marvo}
 
 \setlength{\hoffset}{-1in}
 \setlength{\voffset}{-1in}
@@ -14,13 +15,6 @@
 \setlength{\dirindent}{1em}
 
 \renewcommand{\dirand}{und}
-% flags
-\renewcommand{\diraddress}{\Letter\,}
-\renewcommand{\dirphone}{\Telefon{} }
-\renewcommand{\dircellular}{\Mobilefone{} }
-\renewcommand{\dirfax}{\FAX{} }
-\renewcommand{\diremail}{\Email{} }
-\renewcommand{\dirurl}{\Mundus{} }
 % formats
 \renewcommand{\Dirbirthday}[2]{#1.#2.}
 \renewcommand{\Dirbirthyear}[1]{#1}
@@ -52,6 +46,7 @@
 %\bibliographystyle{address-html}
 %\bibliographystyle{birthday}
 %\bibliographystyle{email}
+
 \directory{afu,berg,cb,fs,heim-d,ls,misc,vdl}
 
 \end{document}
