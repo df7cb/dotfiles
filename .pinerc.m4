@@ -401,7 +401,7 @@ remote-abook-metafile=
 remote-abook-history=
 
 # Specifies the introduction to insert when replying to a message.
-reply-leadin=
+reply-leadin=On _DAYDATE_ _TIME24_, _FROM_ wrote:
 
 # Patterns and their actions are stored here.
 #patterns=LIT:pattern="/NICK=DF7CB/TO=dl0uds,tnt" action="/ROLE=1/FROM=Christoph Berg DF7CB <df7cb@heim-d.uni-sb.de>/FCC=owner-tnt-devel/SIG=.signature-df7cb/RTYPE=NC/FTYPE=YES",
