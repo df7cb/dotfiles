@@ -97,9 +97,11 @@ _9	₉
 \\not\\equiv	≢
 "\\leq	≤
 \\le	≤
+\\lt	<
 "\\geq	≥
 \\ge	≥
 " le alternative names ?
+\\gt	>
 \\ll	≪
 \\gg	≫
 \\oplus	⊕
@@ -107,6 +109,8 @@ _9	₉
 \\star	⋆
 \\leadsto	↝
 \\nabla	∇
+\\bot	⊥
+\\top	⊤
 
 " brackets
 \\lceil	⌈
