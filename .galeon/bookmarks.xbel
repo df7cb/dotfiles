@@ -157,6 +157,10 @@
         </bookmark>
         <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic.php">
           <title>traffic heim-d</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+            </metadata>
+          </info>
         </bookmark>
         <separator/>
         <bookmark href="http://www.heim-d.uni-sb.de/doc/">
@@ -167,10 +171,11 @@
             </metadata>
           </info>
         </bookmark>
-        <bookmark href="http://www.heim-d.uni-sb.de/doc/share/apache/manual/">
+        <bookmark href="http://www.heim-d.uni-sb.de/doc/apache/manual/">
           <title>Apache manual</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1047746935</time_modified>
               <time_added>1016552156</time_added>
             </metadata>
           </info>
@@ -285,6 +290,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1045044393</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.heim-d.uni-sb.de/netz/traffic/">
+        <title>Wohnheim D - Netzwerk-Verkehr</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1047778465</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -1533,6 +1546,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1046078782</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
+        <title>Christoph Berg</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1047658502</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -5065,7 +5086,7 @@
         <metadata owner="http://galeon.sourceforge.net/">
           <nick>dict</nick>
           <pixmap>.galeon/favicons/dictionary.png</pixmap>
-          <time_modified>1042735924</time_modified>
+          <time_modified>1046777920</time_modified>
           <smarturl>http://www.m-w.com/cgi-bin/dictionary?va=%s</smarturl>
         </metadata>
       </info>
