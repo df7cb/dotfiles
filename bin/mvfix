@@ -6,6 +6,7 @@ fi
 
 for f in "$@" ; do
 	f2=`echo "$f" | tr ' ™ב„”' '_ִײÜßהצü'`
+	f2=`echo "$f2" | sed 's/%20/_/g'`
 	if [ "$f" = "$f2" ] ; then
 		#echo "$f: no change"
 		continue

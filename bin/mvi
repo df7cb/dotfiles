@@ -56,7 +56,7 @@ function mv () { [ "\$1" != "\$2" ] && /bin/mv -iv "\$@" || true; }
 EOT
 
 for (@ARGV) {
-	printf TMP "mv %-${len}s $_\n", $_ unless $seen{$_};
+	printf TMP "mv %-${len}s %s\n", $_, $_ unless $seen{$_};
 	$seen{$_} = 1; # print each filename at most once
 }
 
