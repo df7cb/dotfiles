@@ -1,5 +1,29 @@
 #!/bin/sh
 # $Id$
+# (c) 2000..2005, Christoph Berg <cb@df7cb.de>
+# This program is free software covered by the GNU GPL.
+# cb 2005-05-24: use PREFIXES, general cleanup
+
+# This sh script uses lots of -d test to find all strange places where binaries
+# and other stuff are located. ~/.path-local can be used to add local prefixes
+# and single directories.
+
+# some defaults
+PREFIXES="$HOME:/usr/local:/usr/pkg:/usr::/usr/X11R6:/usr/openwin"
+# :: is /, /usr/pkg NetBSD, /usr/openwin Solaris
+PATH_PRELOAD="$HOME/bin/${OS:-/not/found/}" # my arch-dependent binaries
+PATH="$PATH:/usr/ucb:/usr/5bin:/usr/games" # some strange locations
+# in theory, manpath should make this script mostly redundant, but this does
+# not work for $HOME/man etc.
+if which manpath > /dev/null ; then
+	save="$MANPATH"
+	unset MANPATH
+	MANPATH="$save:`manpath 2> /dev/null`"
+fi
+TMPDIRS="/tmp/$USER:$HOME/tmp" # where to find a better /tmp
+
+# file for local additions
+[ -f $HOME/.path-local ] && . $HOME/.path-local
 
 #echo PATH=$PATH
 #echo MANPATH=$MANPATH
@@ -8,83 +32,79 @@
 IFS_SAVE=$IFS
 IFS=":"
 
-save=$PATH
-unset PATH
-for dir in \
-	/local/atools/cb/bin \
-	/local/atools/bin \
-	/local/cb/bin \
-	/local/cb/absint/bin \
-	$HOME/bin/${OS:-OSDIR} \
-	$HOME/bin \
-	$HOME/bin/misc-bin \
-	/usr/local/sbin \
-	/usr/local/bin \
-	/usr/sbin \
-	/usr/bin \
-	/sbin \
-	/bin \
-	/usr/X11R6/bin \
-	/installer/arch/bin \
-	/usr/local/samba/bin \
-	/usr/local/pgsql/bin \
-	/usr/openwin/bin \
-	/usr/compat/linux/bin \
-	/usr/ucb /usr/5bin /usr/pkg/bin \
-	/usr/games \
-	/usr/games/bin \
-	$save
-	do case :$PATH: in
-		*:$dir:*) ;;
-		*) [ -d $dir ] && PATH="$PATH${PATH:+:}$dir" ;;
+# returns true if the directory exists and is not yet in the first argument
+test_dir () {
+	case :$1: in
+		*:$2:*) return 1 ;;
+		*) [ -d "$2" ] ; return $? ;;
 	esac
+}
+
+save=$PATH
+PATH="" # cannot unset PATH on SunOS 4
+for dir in $PATH_PRELOAD ; do
+	test_dir "$PATH" "$dir" && PATH="$PATH${PATH:+:}$dir"
 done
+for dir in $PREFIXES ; do
+	test_dir "$PATH" "$dir/bin" && PATH="$PATH${PATH:+:}$dir/bin"
+	test_dir "$PATH" "$dir/sbin" && PATH="$PATH${PATH:+:}$dir/sbin"
+done
+for dir in $save ; do
+	test_dir "$PATH" "$dir" && PATH="$PATH${PATH:+:}$dir"
+done
+unset PATH_PRELOAD
+export PATH
 
 save=$MANPATH
 unset MANPATH
-for dir in \
-	/local/atools/cb/man \
-	/local/atools/man \
-	$HOME/man \
-	/usr/local/man \
-	`manpath 2> /dev/null` \
-	$save
-	do case :$MANPATH: in
-		*:$dir:*) ;;
-		*) [ -d $dir ] && MANPATH="$MANPATH${MANPATH:+:}$dir" ;;
-	esac
+for dir in $PREFIXES ; do
+	test_dir "$MANPATH" "$dir/share/man" && MANPATH="$MANPATH${MANPATH:+:}$dir/share/man"
+	# test for /usr/man = /usr/share/man (BUG: fails for other symlinks)
+	[ -h "$dir/man" ] && continue # -h, because -L fails on SunOS 4
+	test_dir "$MANPATH" "$dir/man" && MANPATH="$MANPATH${MANPATH:+:}$dir/man"
 done
+for dir in $save ; do
+	[ -h "$dir" ] && continue
+	test_dir "$MANPATH" "$dir" && MANPATH="$MANPATH${MANPATH:+:}$dir"
+done
+export MANPATH
 
 save=$INFOPATH
 unset INFOPATH
-for dir in \
-	/local/atools/cb/info \
-	/local/atools/info \
-	$HOME/info \
-	/usr/local/share/info \
-	/usr/local/info \
-	/usr/share/info \
-	$save
-	do case :$INFOPATH: in
-		*:$dir:*) ;;
-		*) [ -d $dir ] && INFOPATH="$INFOPATH${INFOPATH:+:}$dir" ;;
-	esac
+for dir in $PREFIXES ; do
+	test_dir "$INFOPATH" "$dir/share/info" && INFOPATH="$INFOPATH${INFOPATH:+:}$dir/share/info"
+	test_dir "$INFOPATH" "$dir/info" && INFOPATH="$INFOPATH${INFOPATH:+:}$dir/info"
 done
-
-unset TEXINPUTS
-for dir in \
-	$HOME/lib/latex $HOME/lib/latex/*
-	do case $dir in
-		*CVS) ;;
-		*) [ -d $dir ] && TEXINPUTS="${TEXINPUTS}:$dir" ;;
-	esac	# $TEXINPUTS starts with ':'
+for dir in $save ; do
+	test_dir "$INFOPATH" "$dir" && INFOPATH="$INFOPATH${INFOPATH:+:}$dir"
 done
+export INFOPATH
 
-[ -f $HOME/lib/make/Makefile ] && export MAKEFILES=$HOME/lib/make/Makefile
+for dir in $TMPDIRS ; do
+	if [ -d $dir ] && /bin/test -O $dir ; then # work around Solaris sh without -O
+		export TEMP=$dir TMP=$dir TMPDIR=$dir
+		break
+	fi
+done
+unset TMPDIRS
+
+#unset TEXINPUTS
+#for dir in \
+#	$HOME/lib/latex $HOME/lib/latex/*
+#	do case $dir in
+#		*CVS) ;;
+#		*) [ -d $dir ] && TEXINPUTS="${TEXINPUTS}:$dir" ;;
+#	esac	# $TEXINPUTS must start with ':'
+#done
+#export TEXINPUTS
+
+if [ -f $HOME/lib/make/Makefile ] ; then
+	MAKEFILES=$HOME/lib/make/Makefile
+	export MAKEFILES
+fi
 
 IFS=$IFS_SAVE
-unset dir save IFS_SAVE
-export PATH MANPATH INFOPATH TEXINPUTS
+unset test_dir dir save IFS_SAVE PREFIXES
 
 #echo PATH=$PATH
 #echo MANPATH=$MANPATH
