@@ -45,6 +45,10 @@
       </info>
       <bookmark href="http://www.bookmarklets.com/">
         <title>More Bookmarklets</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <separator/>
       <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
@@ -63,9 +67,17 @@
       <separator/>
       <bookmark href="javascript:var wN2sc8Rl;Sa5gNA9k=new Function('clearTimeout(wN2sc8Rl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2sc8Rl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',150))">
         <title>Scroll Page (very slow)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,1)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (slow)</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:var wN2scRl;Sa5gNA9k=new Function('clearTimeout(wN2scRl)');document.onkeydown=Sa5gNA9k;Sa5gNA9k();void(wN2scRl=setInterval('if(pageYOffset%3Cdocument.height-innerHeight){window.scrollBy(0,2)}else{Sa5gNA9k()}',50))">
         <title>Scroll Page (fast)</title>
@@ -79,6 +91,10 @@
       <separator/>
       <bookmark href="javascript:if(frames.length%3C1){alert('The server indicates that the page was last modified: ' + window.document.lastModified)}else{alert('Page is framed. Use version of bookmarklet for frames. (bookmarklets.com)')}">
         <title>Page Freshness?</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){alert('Frames!')}else{ulBV3pQy=document.getSelection();if(ulBV3pQy!=''){location.href=ulBV3pQy.replace(/\042/g,'').replace(/\047/g,'').replace(/\s/g,'')}else{alert('Select text on page like:\n   http://www.domain.com...')}}">
         <title>Go To Selected URL</title>
@@ -95,12 +111,20 @@
       <separator/>
       <bookmark href="javascript:if(document.cookie.length%3C1){alert('No cookie for this site.')}else{alert('Cookie for this site: '+document.cookie)}">
         <title>Read Cookie for Site</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
       <bookmark href="javascript:function ROIoiW(){var i=0,j,A='anonymous',D,E,F=document.forms;while(i%3CF.length){E=F[i].elements;for(j=0;j%3CE.length;j++){D=E[j];if(D.type=='text'){D.value=(D.name.toUpperCase().indexOf('MAIL')!=-1)?A+'@example.com':A}}i++}}ROIoiW();void(null)">
         <title>AutoFill Anonymous</title>
       </bookmark>
       <bookmark href="javascript:void(location.href='http://translate.google.com/translate?hl=en%26u='+location.href)">
         <title>Translate to English</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+          </metadata>
+        </info>
       </bookmark>
     </folder>
   </folder>
@@ -116,8 +140,8 @@
       <title>Heim D</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
-          <pixmap>/home/cb/HEIM-D/logo/16x16.png</pixmap>
-          <time_modified>1028497721</time_modified>
+          <pixmap>/home/cb/.galeon/favicons/www.heim-d.uni-sb.de_d-icon.gif</pixmap>
+          <time_modified>1030658195</time_modified>
           <time_added>934990422</time_added>
         </metadata>
       </info>
@@ -257,19 +281,12 @@
           <time_added>934990382</time_added>
         </metadata>
       </info>
-      <bookmark href="http://www-wjp.cs.uni-sb.de/">
-        <title>WJP</title>
+      <bookmark href="http://www.uni-saarland.de/">
+        <title>www.uni-saarland.de</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>934039328</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.uni-sb.de/">
-        <title>www.uni-sb.de</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>953821724</time_added>
+            <time_modified>1029932238</time_modified>
+            <time_added>1029932187</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -456,6 +473,14 @@
             <time_added>976822967</time_added>
           </metadata>
         </info>
+        <bookmark href="http://www-wjp.cs.uni-sb.de/">
+          <title>WJP</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>934039328</time_added>
+            </metadata>
+          </info>
+        </bookmark>
         <bookmark href="http://infobib.cs.uni-sb.de/">
           <title>Fachbereichsbibliothek Informatik</title>
           <info>
@@ -518,14 +543,6 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1011176224</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.ac.innoserv.de/">
-          <title>Ausl&#239;&#191;&#189;ndercaf&amp;eacute;</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>897770146</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -946,6 +963,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://pdg.web.cern.ch/pdg/particleadventure/index.html">
+          <title>Welcome to the Particle Adventure</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1030661349</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Linguistik</title>
@@ -1310,7 +1335,7 @@
             <time_added>976823126</time_added>
           </metadata>
         </info>
-        <folder folded="no">
+        <folder folded="yes">
           <title>Fernsehen</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -1350,7 +1375,7 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>H&#239;&#191;&#189;ndy: E-Plus...</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -1422,14 +1447,14 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>Hardware</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>934992089</time_added>
             </metadata>
           </info>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Alpha</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1581,7 +1606,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>C1VE</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1717,7 +1742,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>X-NCD</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1773,7 +1798,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Keyboard</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1805,7 +1830,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Scanner</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1821,7 +1846,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Wireless</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1846,7 +1871,7 @@
             </bookmark>
           </folder>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>Software</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -1861,7 +1886,7 @@
               </metadata>
             </info>
           </bookmark>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Networking</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1893,7 +1918,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Latex</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1933,7 +1958,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Print</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1957,7 +1982,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>BSD</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -1989,7 +2014,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>zsh</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2037,7 +2062,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Chat (ICQ etc.)</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2085,7 +2110,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>X11</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2133,7 +2158,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>SQL</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2173,7 +2198,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Compiler</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2197,7 +2222,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>HTML</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2269,7 +2294,7 @@
               </info>
             </bookmark>
           </folder>
-          <folder folded="no">
+          <folder folded="yes">
             <title>misc</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -2317,10 +2342,28 @@
               </info>
             </bookmark>
           </folder>
+          <folder folded="yes">
+            <title>Backup</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_modified>1031429302</time_modified>
+                <time_added>1031429295</time_added>
+              </metadata>
+            </info>
+            <bookmark href="http://www.microwerks.net/~hugo/">
+              <title>Mondo Rescue</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1031428971</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+          </folder>
           <bookmark href="http://vim.sourceforge.net/">
             <title>welcome : vim online</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
+                <time_modified>1031429291</time_modified>
                 <time_added>991699015</time_added>
               </metadata>
             </info>
@@ -2350,14 +2393,14 @@
             </info>
           </bookmark>
         </folder>
-        <folder folded="no">
+        <folder folded="yes">
           <title>Unix-Doku/Ressourcen</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>947101278</time_added>
             </metadata>
           </info>
-          <folder folded="no">
+          <folder folded="yes">
             <title>Linux-Dist</title>
             <info>
               <metadata owner="http://galeon.sourceforge.net/">
@@ -3279,6 +3322,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.qsl.net/darc-q02/">
+          <title>DARC Ortsverband St.-Ingbert (Saar) OVV DL8HA</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1030547076</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Landkarten</title>
@@ -3610,6 +3661,87 @@
           </info>
         </bookmark>
       </folder>
+      <folder folded="yes">
+        <title>Digitalpianos</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1031179670</time_modified>
+            <time_added>1031179659</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.musicstore-koeln.de/german/index.htm">
+          <title>Musicstore</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1030963011</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/gruppe-KLEP-0.html">
+          <title>Musikhaus Thomann Cyberstore - Produktliste: Digital Pianos - Seite 1</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1030963295</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.rolandmusik.de/seiten/produkte/index.shtml">
+          <title>ROLAND Deutschland</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1030963380</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.harmony-central.com/Synth/Data/Yamaha/P120-01.html">
+          <title>Yamaha P120</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1031164364</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.harmony-central.com/Synth/Data/Yamaha/P80-01.html">
+          <title>Yamaha P80</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1031168060</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.netzmarkt.de/thomann/gruppe-SYEP-0.html">
+          <title>Musikhaus Thomann Cyberstore - Produktliste: Stage-Pianos - Seite 1</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1031174230</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.yamaha-europe.com/yamaha_europe/germany/10_musical_instruments/70_synthesizer/20_stage_pianos/10_stage_pianos/">
+          <title>Stage Pianos</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1031174268</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
+      <folder folded="yes">
+        <title>audio limiter</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1031179365</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.geist-electronic.de/Elektor-Projekte/Monatsliste_Elektor/Elektor_2002/Elektor_7-8_02/hauptteil_elektor_7-8_02.html">
+          <title>Elektor 7-8/02</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1031179371</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <bookmark href="http://citeseer.nj.nec.com/cs">
       <title>Citeseer</title>
@@ -3803,10 +3935,11 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Saarbr%FCcken+Rathaus%26n=%26z=%26d=%26tr=v%26ao=Suchen">
+      <bookmark href="http://fahrtfinder.saarbahn.de:8000/cgi-bin/fndroute?v=Saarbr%25FCcken+Universit%25E4t+Campus%26nh=Saarbr%25FCcken+Rathaus%26n=%26z=%26d=%26tr=v%26ao=Suchen">
         <title>Campus -&gt; Rathaus</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1032961757</time_modified>
             <time_added>938875840</time_added>
           </metadata>
         </info>
@@ -4231,7 +4364,7 @@
         </info>
       </bookmark>
     </folder>
-    <folder folded="no">
+    <folder folded="yes">
       <title>News</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
@@ -4333,6 +4466,14 @@
           </metadata>
         </info>
       </bookmark>
+      <bookmark href="http://www.tagesschau.de/">
+        <title>tagesschau.de</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1029930309</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <bookmark href="http://www.google.com">
       <title>Google</title>
@@ -4357,7 +4498,7 @@
       </info>
     </bookmark>
   </folder>
-  <folder folded="no">
+  <folder folded="yes">
     <title>URLs recovered on 2002-07-18 13:52:50</title>
     <info>
       <metadata owner="http://galeon.sourceforge.net/">
