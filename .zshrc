@@ -37,6 +37,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_NO_STORE
 #setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
+setopt noPROMPTCR
 #setopt SHARE_HISTORY
 
 [ -f $ZDOTDIR/.zshrc-local ] && source $ZDOTDIR/.zshrc-local || true
