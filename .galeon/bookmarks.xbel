@@ -7,7 +7,7 @@
     </metadata>
   </info>
   <title>Bookmarks</title>
-  <folder folded="no">
+  <folder folded="yes">
     <title>Smart Bookmarks Toolbar</title>
     <info>
       <metadata owner="http://galeon.sourceforge.net/">
@@ -876,6 +876,328 @@
           </metadata>
         </info>
         <folder folded="yes">
+          <title>PVS</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>953734127</time_added>
+            </metadata>
+          </info>
+          <bookmark href="http://pvs.csl.sri.com/">
+            <title>PVS</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>953734137</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <folder folded="no">
+            <title>PVS Resources</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1003761769</time_added>
+              </metadata>
+            </info>
+            <bookmark href="http://www.csl.sri.com/~rushby/pvs-bib.bib.txt">
+              <title>PVS Bibliography</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>979645283</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://pvs.csl.sri.com/experimental/">
+              <title>PVS 2.3 Experimental Features</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>958161945</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.csl.sri.com/programs/formalmethods/links.html">
+              <title>SRI - Formal Methods</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995020050</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.informatik.uni-ulm.de/ki/pvs.html">
+              <title>PVS @ Ulm</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>954164440</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="ftp://ftp.informatik.uni-ulm.de/pub/KI/pvs/">
+              <title>Directory of /pub/KI/pvs</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>956615855</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://mcs.une.edu.au/~pvs/">
+              <title>UNE PVS Research Group</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>988903019</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://shemesh.larc.nasa.gov/fm/ftp/larc/PVS-library/pvslib.html">
+              <title>NASA Langley PVS Libraries</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>990523894</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://shemesh.larc.nasa.gov/fm/fm-humor.html">
+              <title>NASA LaRC Formal Methods Humor</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995035655</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+          </folder>
+          <folder folded="no">
+            <title>PVS People</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1003761384</time_added>
+              </metadata>
+            </info>
+            <bookmark href="ftp://ftp.csl.sri.com/pub/users/owre/">
+              <title>Sam Owre (PVS patches)</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>989406142</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.icase.edu./~munoz/sources.html">
+              <title>Cesar Munoz</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995035491</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://wwwtcs.inf.tu-dresden.de/~tews/">
+              <title>Hendrik Tews</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>991748297</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.ittc.ku.edu/~james/research/pvs.html">
+              <title>Jerry James (sets)</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1006352349</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+          </folder>
+          <folder folded="no">
+            <title>Other Theorem Provers</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1003761514</time_added>
+              </metadata>
+            </info>
+            <bookmark href="http://lal.cs.byu.edu/lal/hol-desc.html">
+              <title>Description of the HOL Theorem Proving System</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995962223</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.dcs.gla.ac.uk/~tfm/fmt/hol.html">
+              <title>The HOL Theorem Prover</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995962803</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.cs.indiana.edu/formal-methods-education/">
+              <title>Formal Methods Educational Resources</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1006377486</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www-2.cs.cmu.edu/~modelcheck/">
+              <title>Model Checking at CMU</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1019571114</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://nusmv.irst.itc.it/">
+              <title>NuSMV home page</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1028746440</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+          </folder>
+          <separator/>
+          <folder folded="no">
+            <title>L4</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1003761393</time_added>
+              </metadata>
+            </info>
+            <folder folded="no">
+              <title>Other Microkernels</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1003761435</time_added>
+                </metadata>
+              </info>
+              <bookmark href="http://www.hightec-rt.com/">
+                <title>HighTec EDV-Systeme GmbH - Realtime Technology</title>
+                <info>
+                  <metadata owner="http://galeon.sourceforge.net/">
+                    <time_added>994345135</time_added>
+                  </metadata>
+                </info>
+              </bookmark>
+            </folder>
+            <bookmark href="http://i30www.ira.uka.de/">
+              <title>System Architecture Group</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>993648530</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.cse.unsw.edu.au/~disy/L4/">
+              <title>L4 microkernel</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1003761367</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+          </folder>
+          <folder folded="no">
+            <title>Software Verification</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1003761487</time_added>
+              </metadata>
+            </info>
+            <bookmark href="http://www.cli.com/software/os/index.html">
+              <title>http://www.cli.com/software/os/index.html</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>991750511</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.cli.com/reports/index.html">
+              <title>http://www.cli.com/reports/index.html</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>991750540</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.eecs.umich.edu/gasm/">
+              <title>Abstract State Machines</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995978952</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.sics.se/fdt/VeriCode/evt.html">
+              <title>Erlang Verification Tool</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>995296093</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www4.informatik.tu-muenchen.de/~isabelle/bali/papers/Springer98.html">
+              <title>Machine-checking the Java Specification: Proving Type-Safety</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1019046570</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://i12www.ira.uka.de/~key/">
+              <title>KeY Project</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1019571195</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="http://www.edg.com/">
+              <title>Edison Design Group</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1021303221</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+            <bookmark href="https://www.edg.com/download/">
+              <title>Edison Design Group, Download Page</title>
+              <info>
+                <metadata owner="http://galeon.sourceforge.net/">
+                  <time_added>1027520191</time_added>
+                </metadata>
+              </info>
+            </bookmark>
+          </folder>
+          <separator/>
+          <bookmark href="http://www.ictp.trieste.it/~manuals/programming/sun/common-tools/numerical_comp_guide/index.html">
+            <title>Numerical Computation Guide: Contents</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>992003091</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://wwwipr.ira.uka.de/~asfour/Goerke/">
+            <title>Festkomma-Arithmetik in Java</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>995567276</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://www-cad.eecs.berkeley.edu/~tah/HyTech/">
+            <title>HyTech Home Page</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>995292553</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+          <bookmark href="http://goedel/cgi-bin/viewcvs.cgi/">
+            <title>CVS Repository</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1021981640</time_added>
+              </metadata>
+            </info>
+          </bookmark>
+        </folder>
+        <folder folded="yes">
           <title>Rechnerarchitektur</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
@@ -1152,7 +1474,7 @@
         </info>
       </bookmark>
     </folder>
-    <folder folded="yes">
+    <folder folded="no">
       <title>Zeug</title>
       <info>
         <metadata owner="http://galeon.sourceforge.net/">
@@ -2649,6 +2971,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://rw4.cs.uni-sb.de/~cb/">
+          <title>Christoph Berg</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1033992657</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>Comics</title>
@@ -3758,6 +4088,33 @@
           </info>
         </bookmark>
       </folder>
+      <folder folded="no">
+        <title>Saabruecken</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1034163266</time_modified>
+            <time_added>1034163026</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.theater-saarbruecken.de/">
+          <title>Saarlaendisches Staatstheater</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1034163287</time_modified>
+              <time_added>1034163033</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.saarbruecken.de/">
+          <title>saarbruecken.de</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1034163277</time_modified>
+              <time_added>1034163246</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <bookmark href="http://citeseer.nj.nec.com/cs">
       <title>Citeseer</title>
@@ -3911,14 +4268,6 @@
           </info>
         </bookmark>
       </folder>
-      <bookmark href="http://www-wjp.cs.uni-sb.de/~jochen/search/">
-        <title>Jochens noch viel tollere Suchseite</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>977178634</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://www.teleauskunft.de/">
         <title>Teleauskunft</title>
         <info>
@@ -3932,6 +4281,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1022667050</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.google.de/intl/de/addurl.html">
+        <title>Google: F</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1033990460</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -3997,328 +4354,6 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1033752950</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-    </folder>
-    <folder folded="yes">
-      <title>PVS</title>
-      <info>
-        <metadata owner="http://galeon.sourceforge.net/">
-          <time_added>953734127</time_added>
-        </metadata>
-      </info>
-      <bookmark href="http://pvs.csl.sri.com/">
-        <title>PVS</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>953734137</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <folder folded="no">
-        <title>PVS Resources</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1003761769</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www.csl.sri.com/~rushby/pvs-bib.bib.txt">
-          <title>PVS Bibliography</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>979645283</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://pvs.csl.sri.com/experimental/">
-          <title>PVS 2.3 Experimental Features</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>958161945</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.csl.sri.com/programs/formalmethods/links.html">
-          <title>SRI - Formal Methods</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995020050</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.informatik.uni-ulm.de/ki/pvs.html">
-          <title>PVS @ Ulm</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>954164440</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="ftp://ftp.informatik.uni-ulm.de/pub/KI/pvs/">
-          <title>Directory of /pub/KI/pvs</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>956615855</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://mcs.une.edu.au/~pvs/">
-          <title>UNE PVS Research Group</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>988903019</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://shemesh.larc.nasa.gov/fm/ftp/larc/PVS-library/pvslib.html">
-          <title>NASA Langley PVS Libraries</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>990523894</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://shemesh.larc.nasa.gov/fm/fm-humor.html">
-          <title>NASA LaRC Formal Methods Humor</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995035655</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <folder folded="no">
-        <title>PVS People</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1003761384</time_added>
-          </metadata>
-        </info>
-        <bookmark href="ftp://ftp.csl.sri.com/pub/users/owre/">
-          <title>Sam Owre (PVS patches)</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>989406142</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.icase.edu./~munoz/sources.html">
-          <title>Cesar Munoz</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995035491</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://wwwtcs.inf.tu-dresden.de/~tews/">
-          <title>Hendrik Tews</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>991748297</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.ittc.ku.edu/~james/research/pvs.html">
-          <title>Jerry James (sets)</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1006352349</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <folder folded="no">
-        <title>Other Theorem Provers</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1003761514</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://lal.cs.byu.edu/lal/hol-desc.html">
-          <title>Description of the HOL Theorem Proving System</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995962223</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.dcs.gla.ac.uk/~tfm/fmt/hol.html">
-          <title>The HOL Theorem Prover</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995962803</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.cs.indiana.edu/formal-methods-education/">
-          <title>Formal Methods Educational Resources</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1006377486</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www-2.cs.cmu.edu/~modelcheck/">
-          <title>Model Checking at CMU</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1019571114</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://nusmv.irst.itc.it/">
-          <title>NuSMV home page</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1028746440</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <separator/>
-      <folder folded="no">
-        <title>L4</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1003761393</time_added>
-          </metadata>
-        </info>
-        <folder folded="no">
-          <title>Other Microkernels</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1003761435</time_added>
-            </metadata>
-          </info>
-          <bookmark href="http://www.hightec-rt.com/">
-            <title>HighTec EDV-Systeme GmbH - Realtime Technology</title>
-            <info>
-              <metadata owner="http://galeon.sourceforge.net/">
-                <time_added>994345135</time_added>
-              </metadata>
-            </info>
-          </bookmark>
-        </folder>
-        <bookmark href="http://i30www.ira.uka.de/">
-          <title>System Architecture Group</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>993648530</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.cse.unsw.edu.au/~disy/L4/">
-          <title>L4 microkernel</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1003761367</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <folder folded="no">
-        <title>Software Verification</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1003761487</time_added>
-          </metadata>
-        </info>
-        <bookmark href="http://www.cli.com/software/os/index.html">
-          <title>http://www.cli.com/software/os/index.html</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>991750511</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.cli.com/reports/index.html">
-          <title>http://www.cli.com/reports/index.html</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>991750540</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.eecs.umich.edu/gasm/">
-          <title>Abstract State Machines</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995978952</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.sics.se/fdt/VeriCode/evt.html">
-          <title>Erlang Verification Tool</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>995296093</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www4.informatik.tu-muenchen.de/~isabelle/bali/papers/Springer98.html">
-          <title>Machine-checking the Java Specification: Proving Type-Safety</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1019046570</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://i12www.ira.uka.de/~key/">
-          <title>KeY Project</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1019571195</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="http://www.edg.com/">
-          <title>Edison Design Group</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1021303221</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-        <bookmark href="https://www.edg.com/download/">
-          <title>Edison Design Group, Download Page</title>
-          <info>
-            <metadata owner="http://galeon.sourceforge.net/">
-              <time_added>1027520191</time_added>
-            </metadata>
-          </info>
-        </bookmark>
-      </folder>
-      <separator/>
-      <bookmark href="http://www.ictp.trieste.it/~manuals/programming/sun/common-tools/numerical_comp_guide/index.html">
-        <title>Numerical Computation Guide: Contents</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>992003091</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://wwwipr.ira.uka.de/~asfour/Goerke/">
-        <title>Festkomma-Arithmetik in Java</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>995567276</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www-cad.eecs.berkeley.edu/~tah/HyTech/">
-        <title>HyTech Home Page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>995292553</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://goedel/cgi-bin/viewcvs.cgi/">
-        <title>CVS Repository</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1021981640</time_added>
           </metadata>
         </info>
       </bookmark>
@@ -4503,6 +4538,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1029930309</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.spiegel.de/">
+        <title>SPIEGEL ONLINE</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1034082696</time_added>
           </metadata>
         </info>
       </bookmark>
