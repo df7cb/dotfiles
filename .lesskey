@@ -3,7 +3,9 @@
 #command
 -	back-screen
 =	toggle-option
+\t	next-file
+p	prev-file
 
 #env
-LESS=-aiMq
+LESS=-aiMq -PM\033]0;?f%f:stdin.\007?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :byte %bB?s/%s. .?e(END) ?x- Next\\: %x.:?pB%pB\\%..%t
 LESSCHARSET=latin1
