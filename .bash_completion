@@ -79,6 +79,7 @@ complete -v unset vared
 complete -o default -f -X '!*.pdf' acroread
 complete -o default -f -X '!*.ps*(.gz)' gv
 complete -o default -f -X '!*.tex' latex
+complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|zip)' ttar xtar
 
 # stuff that uses my completer
 complete -o default -C completer man
