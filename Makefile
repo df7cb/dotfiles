@@ -33,10 +33,10 @@ export CVSIGNORE=*
 export CVS_RSH=ssh
 
 up: update
-update: bookmark-clean
+update: bookmark-clean known_hosts-sort
 	cvs -q update
 
-safe: bookmark-clean conflict
+safe: bookmark-clean known_hosts-sort conflict
 	for file in `cvs -q -n update | grep '^[MPU] ' | cut -c 3-` ; do \
 		cvs update $$file ; done
 
@@ -44,11 +44,16 @@ conflict:
 	-cvs -q -n update | grep '^C '
 
 com: commit
-commit: bookmark-clean
+commit: bookmark-clean known_hosts-sort
 	cvs commit -m "(laufendes Update)" .netscape/bookmarks.html .ssh/known_hosts .ncftp/bookmarks
 
 bookmark-clean:
 	perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
+
+known_hosts-sort:
+	mv .ssh/known_hosts .ssh/known_hosts-
+	sort -u .ssh/known_hosts- > .ssh/known_hosts
+	@rm .ssh/known_hosts-
 
 ## installation stuff ##
 
