@@ -77,7 +77,7 @@ sub type {
 	my $type_oid = shift;
 	return $TYPE_CACHE{$type_oid} if exists $TYPE_CACHE{$type_oid};
 	my $result = do_query("select typname from pg_type where oid = $type_oid");
-	return "unknown" unless @row = $result->fetchrow;
+	die "unknown postgres type with oid $type_oid" unless @row = $result->fetchrow;
 	$TYPE_CACHE{$type_oid} = $row[0];
 	return $row[0];
 }
@@ -100,56 +100,55 @@ sub html_query {
 	# drucken
 	my $ntuples = $result->ntuples;
 	my $nfields = $result->nfields;
-	my @oid_prefix = ();
-	my @oid_suffix = ();
 	my $t;
+
+	my @fname;
+	my @ftype;
+	foreach my $f (0..$nfields-1) {
+		$fname[$f] = $result->fname($f);
+		$ftype[$f] = type($result->ftype($f));
+	}
 
 	print "<table border>\n<tr>";
 	# Titelzeile drucken
-	foreach (0..$nfields-1) {
-		my $cap = $result->fname($_);
+	foreach my $f (0..$nfields-1) {
+		my $oidnr = 0;
+		my $cap = $fname[$f];
 		if($PRINT_TIMESTAMPS == 0 and $cap =~ /^(created|updated)(_by)?$/) { next; }
 		print "<th>";
 		if ($cap eq "oid") {
-			print "<a href=$scriptname?command=new\&table=$tables[0]>Neu</a>";
+			print "<a href=$scriptname?command=new\&table=$tables[$oidnr++]>Neu</a>";
 		} else {
 			print "<a href=$scriptname?$command\&order=$cap>$cap</a>";
-		}
-
-		$oid_prefix[$_] = "";
-		$oid_suffix[$_] = "";
-		if($cap eq "oid") {
-			$t = shift @tables;
-			$oid_prefix[$_] = "<a href=$scriptname?command=edit\&table=$t\&oid=";
-			$oid_suffix[$_] = ">Edit</a>";
 		}
 	}
 	print "\n";
 	# Typen ausdrucken
 	print "<tr>";
-	foreach (0..$nfields-1) {
-		if($PRINT_TIMESTAMPS == 0 and $result->fname($_) =~ /^(created|updated)(_by)?$/) { next; }
-		print "<th>". type($result->ftype($_));
+	foreach my $f (0..$nfields-1) {
+		if($PRINT_TIMESTAMPS == 0 and $fname[$f] =~ /^(created|updated)(_by)?$/) { next; }
+		print "<th>$ftype[$f]</th>";
 	}
 	print "\n";
 
 	# Inhalt drucken
 	while (my @row = $result->fetchrow) {
 		my $fnr = 0;
-		print "\n<tr>";
-		foreach (0..$nfields-1) {
-			if($PRINT_TIMESTAMPS == 0 and $result->fname($_) =~ /^(created|updated)(_by)?$/) { next; }
-			$_ ||= '';
-			# print numbers ("0" isn't printed otherwise)
-			if(type($result->ftype($_)) eq "int4") {
-				printf "<td>%d", $row[$_];
+		my $oidnr = 0;
+		print "<tr>";
+		foreach my $f (0..$nfields-1) {
+			if($PRINT_TIMESTAMPS == 0 and $fname[$f] =~ /^(created|updated)(_by)?$/) { next; }
+			if($fname[$f] eq "oid" and $row[$f]) {
+				print "<td><a href=$scriptname?command=edit\&table=$tables[$oidnr++]\&oid=$row[$f]>Edit</a></td>";
 			} else {
-				# Hack: stud.uni-sb.de-hook einfügen
-				$row[$_] = "<a href=stud?mail=$1>$row[$_]</a>" if
-					/(\w+)\@stud/;
-				printf "<td>$oid_prefix[$_]". $row[$_] . $oid_suffix[$_];
+				# # Hack: stud.uni-sb.de-hook einfügen
+				# $row[$_] = "<a href=stud?mail=$1>$row[$_]</a>" if
+				# 	/(\w+)\@stud/;
+				my $v = $row[$f] || ($ftype[$f] eq "int4" ? 0 : "");
+				printf "<td>$v</td>";
 			}
 		}
+		print "</tr>\n";
 	}
 	print "\n</table>\n";
 
