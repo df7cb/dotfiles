@@ -1,4 +1,5 @@
 #!/bin/sh
+# $Id$
 # .xsession cb 990804
 
 PATH=~/bin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin

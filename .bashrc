@@ -1,3 +1,4 @@
+# $Id$
 # .bashrc: cb 990719 Christoph Berg <cb@heim-d.uni-sb.de>
 #echo .bashrc
 

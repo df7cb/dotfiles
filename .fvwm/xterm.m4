@@ -1,3 +1,4 @@
+# $Id$
 # .fvwm2rc-xterm.m4 cb 990804
 
 DestroyFunc XTermLO

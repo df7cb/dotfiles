@@ -1,3 +1,5 @@
+# $Id$
+
 DestroyMenu xlock
 DestroyMenu xlock1
 DestroyMenu xlock2

@@ -1,15 +1,6 @@
-################################################################################
-## /etc/inputrc
-##
-## Attempt to put different TERMs together in one readline init file.
-## Copyright (c) 1997 S.u.S.E. GmbH Fuerth, Germany.
-##
-## Author: Werner Fink,  <werner@suse.de>
-##
-################################################################################
+# $Id$
 #
 # Eight bit compatible: Umlaute
-#
 set input-meta on
 set output-meta on
 set convert-meta off
@@ -21,14 +12,12 @@ set show-all-if-ambiguous on
 set visible-stats on
 #
 # VI line editing
-#
 $if mode=vi
 set editing-mode vi
 set keymap vi
 $endif
 #
 # Common standard keypad and cursor
-#
 "\e[2~":	yank
 "\e[3~":	delete-char
 "\e[5~":	previous-history

@@ -1,4 +1,4 @@
-# cb 990725
+# $Id$
 #echo .bash_profile
 
 . ~/.bashrc
