@@ -14,3 +14,4 @@ endfu
 map W :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote +\%l \%f" -sourceposition ' . line (".") . expand("%") . " " . GetDVIName() . " &" \| redraw!<cr>
 
 map _i i\begin{itemize}<cr>\item <esc>mi}O\end{itemize}<esc>`i
+nmap L MW
