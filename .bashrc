@@ -1,5 +1,5 @@
 # $Id$
-# .bashrc: cb 990719 Christoph Berg <cb@heim-d.uni-sb.de>
+# .bashrc: Christoph Berg <cb@heim-d.uni-sb.de>
 #echo .bashrc
 
 # login shells: /etc/profile, then ~/.[bash_]profile
@@ -7,11 +7,22 @@
 
 # Environment
 
-export PATH_SYS=$PATH
-export PATH=/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin
-[ $UID = '0' ] && PATH=/usr/local/sbin:/sbin:/usr/sbin:$PATH
-#[ -d ~/bin/`os` ] && PATH="~/bin/`os`:$PATH"
-[ -d ~/bin ] && PATH=~/bin:$PATH
+for dir in ~/bin ~/bin/`~/bin/os` ; do
+	case :$PATH: in 
+		*:$dir:*) ;;
+		*) [ -d $dir ] && PATH=$dir:$PATH
+	esac
+done
+for dir in /usr/local/bin /bin /usr/bin \
+	/usr/local/sbin /sbin /usr/sbin \
+	/usr/openwin/bin /usr/X11R6/bin \
+	/usr/games/bin /usr/games /shared/bin /shared/games/bin \
+	/usr/ucb /usr/5bin /usr/pkg/bin /usr/compat/linux/bin ; do
+	case :$PATH: in 
+		*:$dir:*) ;;
+		*) [ -d $dir ] && PATH=$PATH:$dir
+	esac
+done
 
 case $TERM in
 linux*|*vt100*|screen*|cons25)
@@ -27,8 +38,6 @@ xterm*|rxvt)
 esac
 export PS1
 
-# "which" is needed later
-alias which='type -path'
 [ -z "$USER" ] && if [ "$LOGNAME" ] ; then export USER=$LOGNAME
 		else export USER=`logname` ; fi
 export EDITOR=vim
@@ -40,10 +49,10 @@ export HISTSIZE=500
 #export IRCSERVER="irc.uni-stuttgart.de irc.rz.uni-karlsruhe.de"
 export LESS=-aiMq
 export LESSCHARSET=latin1
-which lesspipe > /dev/null && export LESSOPEN='|lesspipe %s'
+type -p lesspipe > /dev/null && export LESSOPEN='|lesspipe %s'
 #export LOGNAME=$USER
 [ -z $MAIL ] && export MAIL="/var/spool/mail/$USER"
-if which manpath > /dev/null 
+if type -p manpath > /dev/null 
 	then unset MANPATH ; export MANPATH=`manpath -q`
 	else export MANPATH="/usr/man:/usr/X11R6/man:/usr/local/man"
 fi
@@ -58,12 +67,13 @@ export TZ=CET
 HISTCONTROL=ignoredups
 #histchars='!^#'
 HISTFILESIZE=100
-noclobber=
+unset ignoreeof
+#unset noclobber
 
 # Aliases
 
 #check for GNU utils
-if sleep --version >& /dev/null ; then
+if cp --version >& /dev/null ; then
 	alias cp='cp -iv'
 	alias mv='mv -iv'
 	alias rm='rm -iv'
@@ -79,26 +89,27 @@ alias +='pushd .'
 alias -- -=popd
 alias ..='cd ..'
 alias ...='cd ../..'
-alias /='cd /'
 alias ctar='tar cvfz'
 alias d=date
 alias e='$EDITOR'
 alias f=finger
 alias l='ls -al'
 alias ll='ls -l'
-which gmake > /dev/null && alias make=gmake
+type -p gmake > /dev/null && alias make=gmake
 alias md=mkdir
 alias o=less
 alias p=pine
 alias pine='pine -d0'
-alias pwd='builtin pwd ; /bin/pwd'
+alias pwd='/bin/pwd;builtin pwd'
 alias q=exit
+alias quit=exit
 alias rd=rmdir
-alias y='echo Sind wir schon wieder auf der yes-Taste eingeschlafen?'
-which ytalk > /dev/null && alias talk='ytalk -x'
 alias ttar='tar tvfz'
+type -p ytalk > /dev/null && alias talk='ytalk -x'
+alias which='type -path'
 alias xtar='tar xvfz'
 alias X='mesg n;exec startx'
+alias y='echo Sind wir schon wieder auf der yes-Taste eingeschlafen?'
 
 # Functions
 
@@ -107,8 +118,7 @@ nd() { mkdir $1 && cd $1 ; }
 
 # General stuff
 
-ulimit -Sc 0
+ulimit -Sc 0	# disable core dumps
 umask 022
-#if [ `id -gn` = `id -un` -a `id -u` -gt 14 ] && umask 002
 
 [ -f ~/.bashrc-local ] && . ~/.bashrc-local || true
