@@ -13,16 +13,25 @@
 \setlength{\textheight}{25.7cm}
 
 \renewcommand{\dirand}{und}
-\renewcommand{\dirphone}{\Telefon }
-\renewcommand{\diremail}{\Football }
+% flags
+\renewcommand{\diraddress}{\Letter\,}
+\renewcommand{\dirphone}{\Telefon{} }
+\renewcommand{\dircellular}{\Mobilefone{} }
+\renewcommand{\dirfax}{\FAX{} }
+\renewcommand{\diremail}{\Email{} }
+\renewcommand{\dirurl}{\Mundus{} }
+% formats
 \renewcommand{\Dirbirthday}[2]{#1.#2.}
 \renewcommand{\Dirbirthyear}[1]{#1}
+\renewcommand{\Diremail}[1]{#1}
+\renewcommand{\Dirurl}[1]{#1}
 %\renewcommand{\Dirheader}[1]{\item\hspace{-\dirindent}\textbf{\MakeUppercase{#1}}}
 %\renewcommand{\Dirheader}[1]{
 %  \item\hspace{-\dirindent}
 %  {\centerline{\textbf{\MakeUppercase{#1}}}}
 %}
 \renewcommand{\Dirheader}[1]{%
+  \vfill%\eject%
   \item\hspace{-\dirindent}%
   {\rule{3cm}{2pt} \MakeUppercase{\large #1} \rule{3cm}{2pt}}%
 }
