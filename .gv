@@ -1,7 +1,6 @@
 # $Id$
 
 GV.defaultSaveDir:      
-GV.scratchDir:		
 GV*dirs:		Home
 GV*filters:		None
 GV*filter:		no .*
