@@ -51,10 +51,11 @@ ignore X-Envelope-From X-Envelope-To Path Newsgroups NNTP-Posting-Host X-Trace #
 ignore X-Bulkmail # tagesschau.de
 ignore X-Cron-Env # cron
 ignore X-MIME-Autoconverted Auto-Submitted # sendmail
-ignore X-Spam-Level X-Keywords X-UID # spamassassin
+ignore X-Spam-Level X-Keywords X-UID X-Spam-Checker-Version X-Spam-Status # spamassassin
 ignore X-Mailer X-Accept-Language # Mozilla
 ignore User-Agent # slrn
 ignore X-Sender, X-X-Sender # t-dialin.net, crap
+unignore Date
 
 # options
 #set abort_nosubject
