@@ -27,13 +27,15 @@ _8	₈
 _9	₉
 
 " logical symbols
-\\iff	⇔
-\\Leftrightarrow	⇔
-\\implies	⇒
-\\Rightarrow	⇒
 \\forall	∀
 \\exists	∃
 \\nexists	∄
+\\lnot	¬
+\\neg	¬
+\\therefore	∴
+\\because	∵
+
+" binary logical relations/operators
 \\and	∧
 \\or	∨
 \\And	⋀
@@ -42,13 +44,19 @@ _9	₉
 \\vee	∨
 \\bigwedge	⋀
 \\bigvee	⋁
-\\lnot	¬
-\\neg	¬
-\\times	×
-\\to	→
-\\mapsto	↦
-\\therefore	∴
-\\because	∵
+\\iff	⇔
+\\Leftrightarrow	⇔
+\\implies	⇒
+\\Rightarrow	⇒
+\\sim	∼
+\\nsim	≁
+\\approx	≈
+\\cong	≅
+\\not\\approx	≉
+\\equiv	≡
+\\neq	≠
+\\not\\equiv	≢
+\\leadsto	↝
 
 " arrows and dots
 \\uparrow	↑
@@ -89,29 +97,30 @@ _9	₉
 \\circ	∘
 \\bullet	∙
 \\mid	∣
-\\sim	∼
-\\nsim	≁
-\\approx	≈
-\\not\\approx	≉
-\\equiv	≡
-\\neq	≠
-\\not\\equiv	≢
+\\oplus	⊕
+
+" functions
+\\times	×
+\\to	→
+\\mapsto	↦
+
+" binary relations on numbers
 "\\leq	≤
 \\le	≤
 \\lt	<
 "\\geq	≥
 \\ge	≥
-" le alternative names ?
 \\gt	>
 \\ll	≪
 \\gg	≫
-\\oplus	⊕
+
+" symbols
 \\diamond	⋄
 \\star	⋆
-\\leadsto	↝
 \\nabla	∇
 \\bot	⊥
 \\top	⊤
+\\infty	∞
 
 " brackets
 \\lceil	⌈
