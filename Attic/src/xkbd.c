@@ -26,6 +26,8 @@ int main() {
 		puts("pc");
 	} else if(VENDOR_IS("X Consortium")) {
 		puts("sun");
+	} else if(VENDOR_IS("Network Computing Devices Inc.")) {
+		puts("ncd");
 	} else {
 		fprintf(stderr, "unknown vendor: %s\n", vendor); return 1;
 	}
