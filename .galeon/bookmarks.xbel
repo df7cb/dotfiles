@@ -3753,6 +3753,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.research.att.com/~bs/3rd_code.html">
+          <title>Stroustrup: Code Examples</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060865248</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
     </folder>
     <folder folded="yes">
@@ -4141,6 +4149,22 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://bugs.debian.org/cgi-bin/claims.cgi">
+        <title>Debian Bug report logs: selected bugs</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1061287957</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://people.debian.org/~ajt/sarge_rc_policy.txt">
+        <title>Sarge RC Policy</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1061288028</time_added>
+          </metadata>
+        </info>
+      </bookmark>
     </folder>
     <folder folded="yes">
       <title>Zeug</title>
