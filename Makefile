@@ -8,4 +8,4 @@ all: .pinerc
 	m4 .configrc .pinerc.m4 > .pinerc
 
 diff:
-	diff -u .pinerc.m4 .pinerc
+	diff -u .pinerc.m4 .pinerc || true

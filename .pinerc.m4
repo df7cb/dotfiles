@@ -138,8 +138,11 @@ feature-list=enable-suspend,
 	print-index-enabled,
 	use-current-dir,
 	use-sender-not-x-sender,
-	enable-mouse-in-xterm,
-	quell-folder-internal-msg
+	quell-folder-internal-msg,
+	enable-arrow-navigation-relaxed,
+	show-plain-text-internally,
+	show-selected-in-boldface,
+	strip-from-sigdashes-on-reply
 
 # Pine executes these keys upon startup (e.g. to view msg 13: i,j,1,3,CR,v)
 initial-keystroke-list=i
@@ -156,7 +159,7 @@ customized-hdrs=From:,
 	Lcc:,
 	Newsgroups:,
 	Approved:,
-	Organization: "Wohnheim D, Universitaet des Saarlandes",
+	Organization: "_ORGANIZATION_",
 	Attchmnt:,
 	Subject:
 
@@ -222,9 +225,6 @@ personal-print-command=
 # Which category default print command is in
 personal-print-category=2
 
-# Set by Pine; controls beginning-of-month sent-mail pruning.
-last-time-prune-questioned=99.9
-
 # Set by Pine; controls display of "new version" message.
 last-version-used=4.10
 
@@ -255,19 +255,19 @@ display-filters=_LEADING("-----BEGIN PGP PUBLIC KEY")_ /usr/local/bin/pgp -kaf,
 # This defines a program that message text is piped into before MIME
 # encoding, prior to sending
 sending-filters=/home/cb/bin/detex,
-	/home/cb/bin/pgpsign,
+	/home/cb/bin/pgp_cb,
+	/home/cb/bin/pgp_df7cb,
 	/usr/local/bin/pgp -feast _RECIPIENTS_ -u cb@fsinfo
 
 # A list of alternate addresses the user is known by
-alt-addresses=df7cb@fsinfo.cs.uni-sb.de,
+alt-addresses=cb@fsinfo.cs.uni-sb.de,
+	df7cb@fsinfo.cs.uni-sb.de,
 	berg@studcs.uni-sb.de,
 	berg@fsinfo.cs.uni-sb.de,
-	berg@calypso.cs.uni-sb.de,
-	berg@oberon.cs.uni-sb.de,
-	berg@titan.cs.uni-sb.de,
-	berg@puck.cs.uni-sb.de,
 	chbe0025@stud.uni-sb.de,
-	df7cb@dl0uds.ee.uni-sb.de
+	cb@heim-d.uni-sb.de,
+	cb@wjpserver.cs.uni-sb.de,
+	cb@wurzelausix.cs.uni-sb.de
 
 # This is a list of formats for address books.  Each entry in the list is made
 # up of space-delimited tokens telling which fields are displayed and in
@@ -290,7 +290,7 @@ scroll-margin=2
 status-message-delay=
 
 # The approximate number of seconds between checks for new mail
-mail-check-interval=15
+mail-check-interval=300
 
 # Full path and name of NEWSRC file
 newsrc-path=
@@ -373,7 +373,8 @@ rsh-path=
 rsh-command=
 
 # List of programs to open Internet URLs (e.g. http or ftp references).
-url-viewers="/usr/bin/lynx -child _URL_"
+url-viewers="/usr/bin/lynx -child _URL_",
+	"/usr/local/bin/lynx -child _URL_"
 
 # List of mail drivers to disable. See technical notes.
 disable-these-drivers=
@@ -388,5 +389,9 @@ remote-abook-history=
 reply-leadin=
 
 # Patterns and their actions are stored here.
-patterns=LIT:pattern="/NICK=DF7CB/TO=dl0uds,tnt" action="/ROLE=1/FROM=Christoph Berg DF7CB <df7cb@heim-d.uni-sb.de>/FCC=owner-tnt-devel/SIG=.signature-df7cb/RTYPE=NC/FTYPE=YES",
-	LIT:pattern="/NICK=default" action="/ROLE=1/RTYPE=YES/FTYPE=YES"
+#patterns=LIT:pattern="/NICK=DF7CB/TO=dl0uds,tnt" action="/ROLE=1/FROM=Christoph Berg DF7CB <df7cb@heim-d.uni-sb.de>/FCC=owner-tnt-devel/SIG=.signature-df7cb/RTYPE=NC/FTYPE=YES",
+#	LIT:pattern="/NICK=default" action="/ROLE=1/RTYPE=YES/FTYPE=YES"
+patterns=
+
+# Set by Pine; controls beginning-of-month sent-mail pruning.
+last-time-prune-questioned=
