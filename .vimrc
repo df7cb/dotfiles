@@ -9,6 +9,8 @@ set nocompatible	" Use Vim defaults (much better!)
 set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
+set list		" show tabs et al.
+set lcs=tab:·\ ,trail:·	" how to show tabs
 set nojoinspaces	" \frenchspacing
 set ruler		" Show the line and column numbers of the cursor 
 set showcmd		" Show (partial) command in status line.
@@ -24,6 +26,9 @@ nmap <space> <c-f>
 nmap <c-h> i<c-h>
 nmap b <c-b>
 nmap - <c-b>
+
+" highlights
+hi NonText cterm=NONE
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
