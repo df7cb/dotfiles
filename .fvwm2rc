@@ -5,14 +5,11 @@
 ###############################################################################
 # n.b. These paths must NOT be longer than 255 chars
 
-ModulePath /usr/X11R6/lib/X11/fvwm2
+ModulePath /usr/X11R6/lib/X11/fvwm2:/usr/X11R6/lib/X11/fvwm2/2.2
 
 PixmapPath /usr/include/X11/3dpixmaps/small:\
 	/usr/include/X11/3dpixmaps/normal:\
-	/usr/include/X11/pixmaps:\
-	/usr/include/X11/susexpm/small:\
-	/usr/include/X11/susexpm/normal:\
-	/usr/include/X11/susexpm/mini\
+	/usr/include/X11/pixmaps
 
 IconPath /usr/X11R6/include/X11/bitmaps
 
@@ -116,8 +113,8 @@ Style	"*"		SloppyFocus
 Style	"*"		SmartPlacement, RandomPlacement
 
 # decorations for transient windows
-#Style	"*"		DecorateTransient
-Style	"*"		NakedTransient
+Style	"*"		DecorateTransient
+#Style	"*"		NakedTransient
 
 # flat window borders when inactive
 BorderStyle Inactive -- HiddenHandles NoInset
