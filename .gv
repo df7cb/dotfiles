@@ -11,7 +11,7 @@ GV.fallbackOrientation: Portrait
 GV.orientation:		Automatic
 GV.fallbackPageMedia:   A4
 GV.pageMedia:		Automatic
-GV.swapLandscape:       True
+GV.swapLandscape:       False
 GV.autoResize:		True
 GV.antialias:		True
 GV.watchFile:		False
