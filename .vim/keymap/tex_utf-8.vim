@@ -43,7 +43,6 @@ _9	₉
 \\bigwedge	⋀
 \\bigvee	⋁
 \\lnot	¬
-\\not	¬
 \\neg	¬
 \\times	×
 \\to	→
@@ -67,7 +66,9 @@ _9	₉
 \\emptyset	∅
 \\in	∈
 \\notin	∉
+\\not\\in	∉
 \\ni	∋
+\\notni	∌
 \\not\\ni	∌
 \\setminus	∖
 \\cap	∩
@@ -117,8 +118,8 @@ _9	₉
 \\rceil	⌉
 \\lfloor	⌊
 \\rfloor	⌋
-\\langle	〈
-\\rangle	〉
+\\langle	⟨
+\\rangle	⟩
 
 " greek letters
 \\Alpha	Α
@@ -181,3 +182,6 @@ _9	₉
 \\int	ℤ
 \\powset	℘
 \\mathcal<Space>P	℘
+
+" abbreviations
+\\item	•
