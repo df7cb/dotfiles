@@ -13,13 +13,16 @@ $opt_b = 1;
 $opt_n = 6;
 $opt_m = 0;
 $opt_f = "index";
+$opt_H = "";
 $opt_L = 1; # obsolete
+$opt_q = 0;
 $opt_s = 0;
 $opt_t = "";
+$opt_T = "";
 $opt_v = 0;
 
 use Getopt::Std;
-getopts('w:h:b:n:mf:Lst:v');
+getopts('w:h:H:b:n:mf:Lqst:T:v');
 
 @ARGV = sort @ARGV if $opt_s;
 
@@ -33,34 +36,46 @@ getopts('w:h:b:n:mf:Lst:v');
 		}
 	}
 	s/\.gif$/.gif[0]/; # extract first frame from from animated gifs
+	s/'/'\\''/g; # quote '
 	$_ = "'$_'"; # quote filenames
 } @files;
 $files = join " ", @files;
 
-print "Schreibe";
+print "Schreibe" unless $opt_q;
 unless($opt_m) {
 	$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background white -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
 	print "$command\n" if $opt_v;
-	print " $opt_f.jpg...";
+	print " $opt_f.jpg..." unless $opt_q;
 	system $command;
 }
 
 my $map = "$opt_f-map.html";
-print " $map...\n";
+print " $map...\n" unless $opt_q;
 open MAP, ">$map" or die "$map: $!";
 
-print MAP "<map name=\"$opt_f-map\">\n";
+my $name = $opt_f;
+$name =~ s!.*/!!;
+
+print MAP "<map name=\"$name\">\n";
 $n = 0;
 foreach (@ARGV) {
 	$left = ($n % $opt_n) * ($opt_w+2*$opt_b);
 	$right = $left + ($opt_w+$opt_b);
 	$top = int($n / $opt_n) * ($opt_h+2*$opt_b);
 	$bottom = $top + ($opt_h+$opt_b);
-	print MAP " <area shape=rect coords=\"$left,$top,$right,$bottom\" href=\"$_\" alt=\"$_\">\n";
+	my $href = $_;
+	my $title = $_;
+	if($opt_H) {
+		eval "\$href =~ $opt_H";
+	}
+	if($opt_T) {
+		eval "\$title =~ $opt_T";
+	}
+	print MAP " <area shape=rect coords=\"$left,$top,$right,$bottom\" href=\"$href\" alt=\"$title\" title=\"$title\">\n";
 	$n++;
 }
 print MAP "</map>\n";
-print MAP "<img src=\"$opt_f.jpg\" usemap=\"#$opt_f-map\" border=\"0\">\n" if $opt_L;
+print MAP "<img src=\"$name.jpg\" usemap=\"#$name\" border=\"0\">\n" if $opt_L;
 close MAP;
 
 
@@ -77,6 +92,9 @@ B<make-indexjpg>
 [I<-n> B<n>]
 [I<-m>]
 [I<-f> B<name>]
+[I<-H> B<expr>]
+[I<-T> B<expr>]
+[I<-q>]
 [I<-s>]
 [I<-t> B<directory>]
 [I<-v>]
@@ -111,6 +129,22 @@ Only generate the B<name>-map.html file, omit B<name>.jpg. [generate both]
 
 Name the index image B<name>.jpg and the HTML map file B<name>-map.html.
 [index.jpg, index-map.html]
+
+=head2 I<-H> B<expr>
+
+Apply perl regexp to filenames before writing href attributes.
+Example: -H 's/(.*)/images\/$1/'.
+[do not]
+
+=head2 I<-T> B<expr>
+
+Apply perl regexp to filenames before writing alt and title attributes.
+Example: -T 's/(.*)\.jpg/Picture of $1/'.
+[do not]
+
+=head2 I<-q>
+
+Be quiet. [print names of files written]
 
 =head2 I<-s>
 
