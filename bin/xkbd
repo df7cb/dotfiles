@@ -4,8 +4,15 @@
 VENDOR=`xdpyinfo | grep 'vendor string'`
 
 case "$VENDOR" in
-	*'The XFree86 Project, Inc') echo pc ;;
-	*'X Consortium') echo sun ;;
-	*'Network Computing Devices Inc.') echo ncd ;;
+	*'The XFree86 Project, Inc')		XKBD="pc" ;;
+	*'X Consortium')			XKBD="sun" ;;
+	*'Network Computing Devices Inc.')	XKBD="ncd" ;;
 	*) echo "$0: unknown $VENDOR" 1>&2
 esac
+
+if [ "$1" = load ] ; then
+	xmodmap .xmodmap-$XKBD
+else
+	echo $XKBD
+	export XKBD
+fi
