@@ -53,10 +53,6 @@
       <separator/>
       <bookmark href="javascript:location.href=%22http://web.archive.org/web/*/%22+location.href">
         <title>Old versions of this page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-          </metadata>
-        </info>
       </bookmark>
       <bookmark href="javascript:if(frames.length%3E0){F=' (Open frame in new window first.)'}else{F=''}Q=document.getSelection();if(!Q){void(Q=prompt('No text selected on page.'+F+'\n\nKeywords...?',''))};if(Q)location.href='http://bookmarklets.com/moreinfo.phtml?q='+escape(Q)">
         <title>More Info About...</title>
@@ -3086,6 +3082,14 @@
             </metadata>
           </info>
         </bookmark>
+        <bookmark href="http://www.cdt.org/speech/spam/030319spamreport.shtml">
+          <title>Why Am I Getting All This Spam?</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051089629</time_added>
+            </metadata>
+          </info>
+        </bookmark>
       </folder>
       <folder folded="yes">
         <title>AFu</title>
@@ -3464,6 +3468,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1048844615</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.thewml.org/">
+          <title>Website META Language (WML)</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1051105278</time_added>
             </metadata>
           </info>
         </bookmark>
