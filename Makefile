@@ -26,7 +26,7 @@ diff:
 	diff -u .pinerc.m4 .pinerc || true
 
 up: update
-update:
+update: bookmark-clean
 	cvs update -I "*"
 
 com: commit
