@@ -150,7 +150,7 @@ feature-list=enable-suspend,
 	enable-fast-recent-test,
 	quell-status-message-beeping,
 	fcc-without-attachments,
-	alternate-compose-menu,
+	no-alternate-compose-menu,
 	mark-for-cc,
 	enable-msg-view-forced-arrows,
 	expose-hidden-config
