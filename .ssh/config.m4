@@ -34,10 +34,10 @@ host milhouse.cs.uni-sb.de milhouse
  hostname milhouse.cs.uni-sb.de
  forwardagent yes
 host millikan.milhouse.cs.uni-sb.de millikan
- hostname millikan.milhouse.cs.uni-sb.de
  ifdomain(milhouse.cs.uni-sb.de,
  hostname 172.16.170.2
  hostkeyalias millikan.milhouse.cs.uni-sb.de,
+ hostname millikan.milhouse.cs.uni-sb.de
  proxycommand ssh milhouse.cs.uni-sb.de bin/linux-intel/nc -q0 172.16.170.2 22)
  forwardagent yes
 
