@@ -1,4 +1,9 @@
-LOGFILE=lib/mail/procmail.log
+# vim:ts=4:sw=4:
+# $Id$
+# Christoph Berg <cb@df7cb.de>
+
+MONTH=`date "+%Y-%m"`
+LOGFILE=lib/mail/procmail-$MONTH.log
 LOGABSTRACT=all
 
 #:0 c
@@ -7,6 +12,11 @@ LOGABSTRACT=all
 #:0c:
 #* ^TO_((berg|chbe0025)@|(cb|df7cb)@fsinfo)
 #mail/IN/old-addresses
+
+:0fhw
+* !^Status:
+* ^From: Christoph Berg.*cb@
+| formail -i"Status: RO"
 
 :0
 * ^From: BugScan reporter <bugscan@debian.org>
@@ -27,6 +37,57 @@ LOGABSTRACT=all
 	debian/wnpp
 }
 
+### X-Label
+
+# X-GUUG-PR-Message: report 1680
+:0fhw
+* !^X-Label:
+* ^X-(Debian|GUUG)-PR-Message: (report|closed) \/[0-9]*
+| formail -i"X-Label: #$MATCH"
+:0fhw
+* !^X-Label:
+* ^X-PTS-Package: \/.*
+| formail -i"X-Label: p $MATCH"
+:0fhw
+* !^X-Label:
+* ^List-Id: <debian-\/[a-z-]*
+| formail -i"X-Label: $MATCH"
+
+# List-Id: discussion of the procmail program <procmail.lists.RWTH-Aachen.DE>
+# List-Id: <irssi-users.dragoncat.net>
+# List-Id: Unix Selbsthilfegruppe <unix-ag.net.uni-sb.de>
+# X-list: muttpatches
+:0fhw
+* !^X-Label:
+* ^(List-Id: .*<|X-list: |Sender: owner-)\/[a-z-]*
+| formail -i"X-Label: $MATCH"
+
+:0fhw
+* !^X-Label:
+* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
+| formail -i"X-Label: root"
+
+:0fhw
+* !^X-Label:
+* ^TO_g-wilhelm@cs.uni-sb.de
+| formail -i"X-Label: g-wilhelm"
+
+:0fhw
+* !^X-Label:
+* ^TO_cb
+| formail -i"X-Label: cb"
+
+:0fhw
+* !^X-Label:
+| formail -i"X-Label: -"
+
+### /X-Label
+
+:0:
+* ^Sender: .*(debbugs@master.debian.org|bugs@trithemius.gnupg.org)
+* ^X-(Debian|GUUG)-PR-Message: ack-info
+main/IN/debian-bts
+
 :0:
 * ^X-Mailing-List: .*debian-user-german
 #* ^To: .*debian
@@ -38,12 +99,9 @@ mail/IN/debian-user-german
 #* ^To: .*debian
 mail/IN/debian
 
+# X-list: muttpatches
 :0:
-* ^To: .*fs.*@fsinfo
-mail/IN/fsinfo
-
-:0:
-* ^(Subject: .*\[Linux-sony\]|Sender: owner-mutt-.*@mutt.org|Mailing-List: .*vim-.*@vim.org|List-Id: |X-BeenThere: aspell|List-Owner:.*cert.org)
+* ^(Subject: .*\[Linux-sony\]|Sender: owner-mutt-.*@mutt.org|Mailing-List: .*vim-.*@vim.org|List-Id: |X-BeenThere: aspell|List-Owner:.*cert.org|X-list: muttpatches)
 mail/IN/lists
 
 :0:
@@ -53,6 +111,10 @@ mail/IN/root
 :0:
 * ^From: tagesschau
 mail/IN/tagesschau
+
+:0:
+* ^Sender: owner-(fs[rgm]|720)@fsinfo.cs.uni-sb.de
+mail/IN/fsinfo
 
 :0:
 mail/IN/cb
