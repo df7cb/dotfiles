@@ -1,5 +1,6 @@
 #!/bin/sh
 # $Id$
+set -v
 
 cd $HOME
 
@@ -20,7 +21,7 @@ xset b 0 0  # xset b off does not work
 xsetroot -solid navy
 ( sleep 10 ; xroot ) &
 xclock -g 116x12+0+0 &
-which pland > /dev/null && pland -k &
+type -p pland > /dev/null && pland -k &
 
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
 SHLVL=-1
