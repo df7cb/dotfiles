@@ -1,0 +1,21 @@
+! $Id$
+! This is an `xmodmap' input file for NCD N97 (US) keyboards.
+! Automatically generated on Sat Feb  6 18:01:20 1999 by cb with
+! XKeyCaps 2.43; Copyright (c) 1998 Jamie Zawinski <jwz@jwz.org>.
+! http://www.jwz.org/xkeycaps/
+!
+! This file presupposes that the keyboard is in the default state, and
+! may malfunction if it is not.
+!
+remove Lock    = Caps_Lock
+remove Mod1    = Alt_R
+
+keycode 0x3C =	U	NoSymbol	Udiaeresis
+keycode 0x44 =	O	NoSymbol	Odiaeresis
+keycode 0x1C =	A	NoSymbol	Adiaeresis
+keycode 0x1B =	S	NoSymbol	ssharp
+keycode 0x14 =	Control_L
+keycode 0x39 =	Mode_switch
+
+add    Control = Control_L
+add    Mod2    = Mode_switch
