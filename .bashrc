@@ -30,6 +30,7 @@ HISTSIZE=500
 unset ignoreeof
 [ -f /etc/inputrc ] && export INPUTRC=/etc/inputrc
 [ -f ~/.inputrc ] && export INPUTRC=~/.inputrc
+stty erase  >& /dev/null
 #unset noclobber
 
 # general stuff
