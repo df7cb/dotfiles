@@ -58,7 +58,7 @@ ignore X-Sender, X-X-Sender # t-dialin.net, crap
 # options
 #set abort_nosubject
 set abort_unmodified=ask-yes
-#set alias_file=~/.mutt/aliases.new
+set alias_file=~/.mutt/aliases
 set alternates=^cb@.*uni-sb.de$
 unset beep
 #set beep_new
