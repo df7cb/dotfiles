@@ -33,7 +33,7 @@ fi
 u='[\[\033[1;31m\]$?\[\033[0m\]] \u@\h:\[\033[1;34m\]\w\[\033[0m\]'
 case $TERM in
 linux*|*vt100*|cons25)
-	PS1='\n'$u' '$j'\$' ;;
+	PS1="\\n$u $j\\l \\$" ;;
 xterm*|rxvt|screen*|cygwin)
 	PS1='\n\[\033]0;\u@\h:\w\007\]'$u' '$j'\$'
 	if [ "$console" ] ; then
@@ -60,7 +60,7 @@ HISTIGNORE="..:[bf]g:cd:l:ls"
 HISTSIZE=500
 unset ignoreeof
 shopt -s extglob no_empty_cmd_completion
-[ -t 0 ] && stty erase ^H &> /dev/null
+#[ -t 0 ] && stty erase ^H &> /dev/null
 #unset noclobber
 
 [ -f ~/.bashrc-local ] && . ~/.bashrc-local
