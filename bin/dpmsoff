@@ -1,6 +1,12 @@
 #!/bin/sh
 # $Id$
 
-xset dpms 0 0 2
-sleep 2
+if [ -z "$1" ] ; then  # no argument
+	xset dpms 0 0 2
+	sleep 2
+else		# with argument
+	xset dpms 0 0 60
+	xlock -resetsaver
+fi
+
 xset dpms 0 0 1800
