@@ -1,0 +1,11 @@
+#!/bin/sh
+
+RC=$HOME/.aumixrc-muted
+
+if [ -f $RC ] ; then
+	aumix -f $RC -L > /dev/null
+	rm $RC
+else
+	aumix -f $RC -S
+	aumix -v 0
+fi
