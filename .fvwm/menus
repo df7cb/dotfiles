@@ -16,6 +16,7 @@ AddToMenu Main	"fvwm2"		Title
 +		" @wjpserver"	Exec ssh -f wjpserver netscape
 +		"xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
 +		"gv"		Exec gv
++		"mw"		Exec mw
 +		""		Nop
 +		"dpmsoff"	Exec dpmsoff
 +		"xlock"		Exec dpmsoff blank
