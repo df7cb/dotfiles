@@ -17,21 +17,38 @@ set ruler		" Show the line and column numbers of the cursor
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set smartcase		" Do case-sensitive case sensitive matching
+set nostartofline	" Do not move to start of line on buffer change etc.
 set textwidth=0		" Don't wrap words by default
 set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
 set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
 
+filetype plugin on
+
 " Key bindings
-imap <c-z> <esc><c-z>
-nmap <space> <c-f>
 nmap <c-h> i<c-h>
 nmap <tab> :bn<cr>
-nmap b <c-b>
+imap <c-z> <esc><c-z>
+nmap <space> <c-f>
 nmap - <c-b>
+map _i i\begin{itemize}<cr>\item <esc>mi}O\end{itemize}<esc>'i
+nmap M :make!<cr><cr>
+nmap b <c-b>
 
 " xdvi source specials integration by mah@wjpserver.cs.uni-sb.de
-map _g :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote +\%l \%f" -sourceposition ' . line (".") . expand("%") . " " . expand("%:r") . ".dvi &" \| redraw!<cr>
+"map _g :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote +\%l \%f" -sourceposition ' . line (".") . expand("%") . " " . expand("%:r") . ".dvi &" \| redraw!<cr>
+"map <F7> :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote +\%l \%f" -sourceposition ' . line (".") . expand("%") . " " . expand("%:r") . ".dvi &" \| redraw!<cr>
+fu! GetDVIName()
+	let a = system("grep -l '\\@input{" . expand("%:r") . ".aux}' *.aux")
+	let a = substitute(a,"\n",'','g')
+	if a == ''
+		return expand("%:r") . '.dvi'
+	else
+		return fnamemodify(a,":r") . '.dvi'
+	endif
+endfu
+" TODO killall -USR1 xdvi ??
+map W :exe 'silent !xdvi -editor "vim --servername ' . v:servername . ' --remote +\%l \%f" -sourceposition ' . line (".") . expand("%") . " " . GetDVIName() . " &" \| redraw!<cr>
 
 " highlights
 hi NonText cterm=NONE
