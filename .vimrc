@@ -86,11 +86,9 @@ if has("syntax")
   syntax on
 endif
 
-" Debian uses compressed helpfiles. We must inform vim that the main
-" helpfiles is compressed. Other helpfiles are stated in the tags-file.
-" set helpfile=$VIM/doc/help.txt.gz
-
 if has("autocmd")
+
+au BufNewFile,BufRead *.swml  setf wml
 
 " HTML (.shtml for server side)
 "augroup html
