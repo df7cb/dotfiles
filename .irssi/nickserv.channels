@@ -1,0 +1,7 @@
+# This file should contain a list of all channels
+# which you don't want to join until after you've
+# successfully identified with NickServ.  This is
+# useful for channels which are access-controlled.
+#
+# Channel       IrcNet Tag
+# --------      ----------
