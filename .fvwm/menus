@@ -21,7 +21,8 @@ AddToMenu Main	"fvwm2"		Title
 +		"Window Ops"	Popup WindowOps
 +		"fvwm2..."	Popup FvwmMenu
 +		""		Nop
-+		"Quit"		Quit
++		"Quit FVWM"	Quit
++		"Quit X"	Exec killall xterm
 
 
 AddToMenu FvwmMenu	"fvwm2"	Title
