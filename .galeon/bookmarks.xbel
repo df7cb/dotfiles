@@ -621,7 +621,7 @@
           <title>Graduiertenkolleg &quot;Leistungsgarantien f&#195;&#188;r Rechnersysteme&quot;</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1051629067</time_modified>
+              <time_modified>1054047481</time_modified>
               <time_added>988284136</time_added>
             </metadata>
           </info>
@@ -707,6 +707,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>986472836</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://web.swi.uni-saarland.de/swi/root-t3/index.php?hssp">
+          <title>HSSP - Hochschulsport der Universit&#195;&#164;t des Saarlandes: Home</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1054733828</time_added>
             </metadata>
           </info>
         </bookmark>
@@ -1593,14 +1601,6 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.absint.com/">
-        <title>AbsInt: Advanced Compiler Technology for Embedded Systems</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1046078782</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <folder folded="yes">
         <title>People</title>
         <info>
@@ -1625,6 +1625,22 @@
           </info>
         </bookmark>
       </folder>
+      <bookmark href="http://www.absint.com/">
+        <title>AbsInt: Advanced Compiler Technology for Embedded Systems</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1046078782</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://www.artist-embedded.org/">
+        <title>ARTIST Home Page</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1054129693</time_added>
+          </metadata>
+        </info>
+      </bookmark>
       <separator/>
       <folder folded="yes">
         <title>Assembly</title>
@@ -1713,14 +1729,6 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1051546704</time_added>
-          </metadata>
-        </info>
-      </bookmark>
-      <bookmark href="http://www.systemes-critiques.org/ARTIST/">
-        <title>ARTIST Home Page</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1052312216</time_added>
           </metadata>
         </info>
       </bookmark>
