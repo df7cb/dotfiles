@@ -1,36 +1,36 @@
 # version = 2.4.1 (20021124)
-handle=Myon%hosts=*!cberg@hamberg.it.uu.se *!cb@sycorax.cs.uni-sb.de%globflags=omr%chanflags=%password=bxEtV2DlRwxq2%comment=%
-handle=At-Tifl%hosts=*!*hagen@ppp-82-135-0-151.mnet-online.de *!*Miranda@*.mnet-online.de%globflags=%chanflags=#plant,o,%password=6RrlI9bDyBO2Q%comment=%
+handle=Myon%hosts=*!cb@sycorax.cs.uni-sb.de *!cberg@hamberg.it.uu.se%globflags=omr%chanflags=%password=bxEtV2DlRwxq2%comment=%
+handle=At-Tifl%hosts=*!*Miranda@*.mnet-online.de *!*hagen@ppp-82-135-0-151.mnet-online.de%globflags=%chanflags=#plant,o,%password=6RrlI9bDyBO2Q%comment=%
 handle=beeelze%hosts=*!*schutz@d139.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
-handle=bernhard%hosts=*!*bernhard@pc-atelier.crmcn.univ-mrs.fr *!*bernhard@139.124.18.229 *!*bernhard@xGagC632.WH1.TU-Dresden.De%globflags=%chanflags=#plant,ao,%password=%comment=%
-handle=chris101%hosts=*!~chcl@mpii-cf.zb.mpi-sb.mpg.de *!chcl@*.mpi-sb.mpg.de *!~chcl@paris.mpi-sb.mpg.de *!~ich@mpii-cf.zb.mpi-sb.mpg.de *!*ich@mpiat0205.mpi-sb.mpg.de *!*ich@ganymed.mpi-sb.mpg.de%globflags=%chanflags=#plant,ao,%password=%comment=%
-handle=deOnkel%hosts=*!bruno@fsinfo.cs.uni-sb.de *!bruno@wh106.stw.stud.uni-saarland.de *!*bruno@*.dip.t-dialin.net *!bruno@amalthea.cs.uni-sb.de%globflags=%chanflags=#unixagsb,, #plant,o,%password=%comment=%
+handle=bernhard%hosts=*!*bernhard@139.124.18.229 *!*bernhard@pc-atelier.crmcn.univ-mrs.fr *!*bernhard@xGagC632.WH1.TU-Dresden.De%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=chris101%hosts=*!*ich@ganymed.mpi-sb.mpg.de *!*ich@mpiat0205.mpi-sb.mpg.de *!chcl@*.mpi-sb.mpg.de *!~chcl@mpii-cf.zb.mpi-sb.mpg.de *!~chcl@paris.mpi-sb.mpg.de *!~ich@mpii-cf.zb.mpi-sb.mpg.de%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=Yrrsinn%hosts=*!*bruno@*.dip.t-dialin.net *!bruno@amalthea.cs.uni-sb.de *!bruno@fsinfo.cs.uni-sb.de *!bruno@wh106.stw.stud.uni-saarland.de%globflags=%chanflags=#unixagsb,, #plant,o,%password=FDWO97pvF4HGg%comment=%
 handle=DerBerg%hosts=*!matber@d020.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
-handle=Desira%hosts=Desira!*@*.dip.t-dialin.net *!*blub@*.arcor-ip.net%globflags=%chanflags=#heim-d,o, #plant,o,%password=9btlt6qV0kOGU%comment=%
+handle=Desira%hosts=*!*blub@*.arcor-ip.net Desira!*@*.dip.t-dialin.net%globflags=%chanflags=#heim-d,o, #plant,o,%password=9btlt6qV0kOGU%comment=%
 handle=Ermel%hosts=*!*ermel@*.arcor-ip.net%globflags=%chanflags=%password=%comment=%
 handle=FelixKatz%hosts=*!~felix@contact.mpi-sb.mpg.de *!~felix@mpii00103.mpi-sb.mpg.de%globflags=%chanflags=#unixagsb,ao, #plant,aomr,%password=%comment=%
 handle=gogo%hosts=*!*gogo@eugene.cs.uni-sb.de%globflags=%chanflags=#plant,ao,%password=d2SO6yCtbDuj2%comment=%
 handle=HeimGeist%hosts=*!heimfee@d096.stw.stud.uni-saarland.de%globflags=r%chanflags=#heim-d,ao,%password=%comment=%
-handle=Heimling%hosts=*!luiza@d049.stw.stud.uni-saarland.de *!*_piru_@d072.stw.stud.uni-saarland.de *!celeste_r@d023.stw.stud.uni-saarland.de *!thedevil82@d224.stw.stud.uni-saarland.de *!*gagolo@d050.stw.stud.uni-saarland.de *!*ollo@d042.stw.stud.uni-saarland.de *!echse@d190.stw.stud.uni-saarland.de *!*rosine@d177.stw.stud.uni-saarland.de *!jp@d078.stw.stud.uni-saarland.de *!sadfsadf@d050.stw.stud.uni-saarland.de *!*moskito@d176.stw.stud.uni-saarland.de *!~I@d132.stw.stud.uni-saarland.de *!~dude@e059.stw.stud.uni-saarland.de *!bringa@d035.stw.stud.uni-saarland.de *!*morrigu@d042.stw.stud.uni-saarland.de *!~ops@d136.stw.stud.uni-saarland.de *!*ruja0000@cip???.studcs.uni-sb.de *!*chanel@d077.stw.stud.uni-saarland.de *!*_TnT2_@proxym.medical-intern.com *!*fosters@d046.stw.stud.uni-saarland.de *!Hilli@d029.stw.stud.uni-saarland.de *!*k0nr?d@d071.stw.stud.uni-saarland.de *!~bboy@d019.stw.stud.uni-saarland.de *!~enrico@d213.stw.stud.uni-saarland.de *!*nomak@my.brain.is.still.b3ta.org *!*morpheus@d035.stw.stud.uni-saarland.de *!*Kiwi@d194.stw.stud.uni-saarland.de *!*naga@d114.stw.stud.uni-saarland.de *!LizH@d192.stw.stud.uni-saarland.de *!Attila@d107.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao, #heimd,ao,%password=EWupkUwjDnkuY%comment=%
+handle=Heimling%hosts=*!*Kiwi@d194.stw.stud.uni-saarland.de *!*_TnT2_@proxym.medical-intern.com *!*_piru_@d072.stw.stud.uni-saarland.de *!*chanel@d077.stw.stud.uni-saarland.de *!*fosters@d046.stw.stud.uni-saarland.de *!*gagolo@d050.stw.stud.uni-saarland.de *!*k0nr?d@d071.stw.stud.uni-saarland.de *!*morpheus@d035.stw.stud.uni-saarland.de *!*morrigu@d042.stw.stud.uni-saarland.de *!*moskito@d176.stw.stud.uni-saarland.de *!*naga@d114.stw.stud.uni-saarland.de *!*nomak@my.brain.is.still.b3ta.org *!*ollo@d042.stw.stud.uni-saarland.de *!*rosine@d177.stw.stud.uni-saarland.de *!*ruja0000@cip???.studcs.uni-sb.de *!Attila@d107.stw.stud.uni-saarland.de *!Hilli@d029.stw.stud.uni-saarland.de *!LizH@d192.stw.stud.uni-saarland.de *!bringa@d035.stw.stud.uni-saarland.de *!celeste_r@d023.stw.stud.uni-saarland.de *!echse@d190.stw.stud.uni-saarland.de *!jp@d078.stw.stud.uni-saarland.de *!luiza@d049.stw.stud.uni-saarland.de *!sadfsadf@d050.stw.stud.uni-saarland.de *!thedevil82@d224.stw.stud.uni-saarland.de *!~I@d132.stw.stud.uni-saarland.de *!~bboy@d019.stw.stud.uni-saarland.de *!~dude@e059.stw.stud.uni-saarland.de *!~enrico@d213.stw.stud.uni-saarland.de *!~ops@d136.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao, #heimd,ao,%password=EWupkUwjDnkuY%comment=%
 handle=HomDoq%hosts=*!*ruehli@*.arcor-ip.net%globflags=%chanflags=%password=%comment=%
-handle=kodomo%hosts=*!*memyself@egret.net.informatik.tu-muenchen.de *!*memyself@raven.net.informatik.tu-muenchen.de *!*grsch@egret.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=kodomo%hosts=*!*grsch@egret.net.informatik.tu-muenchen.de *!*memyself@egret.net.informatik.tu-muenchen.de *!*memyself@raven.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=lizz%hosts=*!*lizard@xGagC632.WH1.TU-Dresden.De%globflags=%chanflags=#plant,ao,%password=%comment=%
-handle=LnxBil%hosts=*!*lnxbil@smartie.cs.uni-sb.de *!*lnxbil@balora.cs.uni-sb.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
-handle=[mIc]%hosts=*!*sauer@p*.dip0.t-ipconnect.de *!*mic@p*.dip0.t-ipconnect.de%globflags=%chanflags=#heim-d,oa,%password=%comment=%
-handle=mjung%hosts=*!*madbob@mpii00103.mpi-sb.mpg.de *!*madbob@mpiat0209.zb.mpi-sb.mpg.de *!*madbob@contact.mpi-sb.mpg.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
+handle=LnxBil%hosts=*!*lnxbil@balora.cs.uni-sb.de *!*lnxbil@smartie.cs.uni-sb.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
+handle=[mIc]%hosts=*!*mic@p*.dip0.t-ipconnect.de *!*sauer@p*.dip0.t-ipconnect.de%globflags=%chanflags=#heim-d,oa,%password=%comment=%
+handle=mjung%hosts=*!*madbob@contact.mpi-sb.mpg.de *!*madbob@mpiat0209.zb.mpi-sb.mpg.de *!*madbob@mpii00103.mpi-sb.mpg.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
 handle=MrRagga%hosts=*!MrRagga@p*.dip.t-dialin.net%globflags=%chanflags=%password=%comment=%
 handle=_nexus_%hosts=*!~nexus@hspc05.cs.uni-sb.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=pacman%hosts=*!pacman@serverraum.org%globflags=%chanflags=#plant,,%password=%comment=%
 handle=pwAIn%hosts=*!mike@*.dip.t-dialin.net *!pwain@*.dip.t-dialin.net%globflags=%chanflags=#plant,,%password=UEOK9X4TGHwjQ%comment=%
 handle=pwAIn-TU%hosts=*!~pwain@finch.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,,%password=%comment=%
-handle=Re-EL%hosts=*!*el@212.88.154.242 *!*El_Nino@242-154-088-212.ip-addr.teresto.net *!el@h10.rk4.iku-netz.de%globflags=%chanflags=#plant,ao,%password=%comment=%
+handle=Re-EL%hosts=*!*El_Nino@242-154-088-212.ip-addr.teresto.net *!*el@212.88.154.242 *!el@h10.rk4.iku-netz.de%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=Reisender%hosts=*!~schoenin@hspc05.cs.uni-sb.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=robilad%hosts=*!*topic@mpiat*.ag2.mpi-sb.mpg.de%globflags=%chanflags=#plant,ao,%password=%comment=%
-handle=rossinie%hosts=*!*rossinie@*.ip-addr.teresto.net *!*rossinie@*.*.pppool.de%globflags=%chanflags=%password=ss3SqdcffFmP2%comment=%
-handle=Schnueff%hosts=*!*mah@test2.cs.uni-sb.de *!*mah@susie.cs.uni-sb.de *!*mah@schnuller.cs.uni-sb.de *!mah@d096.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
+handle=rossinie%hosts=*!*rossinie@*.*.pppool.de *!*rossinie@*.ip-addr.teresto.net%globflags=%chanflags=%password=ss3SqdcffFmP2%comment=%
+handle=Schnueff%hosts=*!*mah@schnuller.cs.uni-sb.de *!*mah@susie.cs.uni-sb.de *!*mah@test2.cs.uni-sb.de *!mah@d096.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=schnepfe%hosts=*!*schnepfe@*.in-berlin.de *!*wolff@dialin*.in-berlin.de%globflags=%chanflags=%password=%comment=%
 handle=[TnT]%hosts=*!*tsc@213.135.4.2%globflags=%chanflags=#heim-d,ao,%password=%comment=%
-handle=wam%hosts=*!arnew@p*.dip.t-dialin.net *!arnew@dsl-*.arcor-ip.net%globflags=%chanflags=#plant,o,%password=%comment=%
+handle=wam%hosts=*!arnew@dsl-*.arcor-ip.net *!arnew@p*.dip.t-dialin.net%globflags=%chanflags=#plant,o,%password=%comment=%
 handle=x11y%hosts=*!*raya@*.pppool.de%globflags=%chanflags=#plant,oa,%password=%comment=%
 handle=Xellos%hosts=*!*adh@fsphy.fs.uni-sb.de%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=XTaran%hosts=*!*abe@virtually.noone.org *!abe@sycorax.cs.uni-sb.de%globflags=%chanflags=#plant,oa,%password=Cg7GqlJIx34rU%comment=%

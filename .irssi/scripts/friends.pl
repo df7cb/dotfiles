@@ -930,7 +930,7 @@ sub save_friends {
 		# write the actual line
 		print(F join("%",
 			"handle=".get_handbyidx($idx),
-			"hosts=".(join(" ", get_friends_hosts($idx, $friends_PLAIN_HOSTS))),
+			"hosts=".(join(" ", sort(get_friends_hosts($idx, $friends_PLAIN_HOSTS)))),
 			"globflags=".(get_friends_flags($idx, undef)),
 			"chanflags=".(join(" ", @chanstr)),
 			"password=".$friends[$idx]->{password},
