@@ -3,12 +3,22 @@
 DEPS = Makefile .configrc
 UNDEFINE = -Uformat -Uindex -Uunix
 
-all: .pinerc .ytalkrc .xinitrc mail/d .configrc
+all: .mutt/aliases.new .mutt/muttrc.local \
+	.pinerc .ytalkrc .xinitrc mail/d .configrc
 
 ## targets ##
 
+# mutt
+.mutt/aliases.new:
+	touch .mutt/aliases.new
+.mutt/muttrc.local:
+	touch .mutt/muttrc.local
+
+# pine
 .pinerc: .pinerc.m4 $(DEPS)
 	m4 $(UNDEFINE) .configrc .pinerc.m4 > .pinerc
+diff:
+	diff -u .pinerc.m4 .pinerc || true
 
 .ytalkrc: .ytalkrc.m4 $(DEPS)
 	m4 $(UNDEFINE) .configrc .ytalkrc.m4 > .ytalkrc
@@ -20,9 +30,6 @@ mail/d:
 	@mkdir mail || true
 	touch mail/deleted
 	ln -s deleted mail/d
-
-diff:
-	diff -u .pinerc.m4 .pinerc || true
 
 ## update stuff ##
 
