@@ -59,13 +59,13 @@ keycode 0x6D =	Control_R
 ! "third" win key
 keycode 0x72 =	Mode_switch
 ! left win
-keycode 0x73 =	Meta_L
+keycode 0x73 =	Hyper_L
 ! right win
 keycode 0x74 =	Mode_switch
 ! left meta
-keycode 0x81 =	Meta_R
+keycode 0x81 =	Hyper_R
 ! right meta
-keycode 0x83 =	Meta_L
+keycode 0x83 =	Hyper_L
 
 clear Shift
 clear Lock
@@ -81,5 +81,5 @@ add	Control	= Control_L Control_R
 add	Mod1	= Alt_L
 add	Mod2	= Num_Lock
 add	Mod3	= Mode_switch
-add	Mod4	= Meta_L Meta_R
+add	Mod4	= Hyper_L Hyper_R
 ! add	Mod5	= Scroll_Lock
