@@ -3410,6 +3410,14 @@
               </metadata>
             </info>
           </bookmark>
+          <bookmark href="http://f1ulq.free.fr/">
+            <title>Home of F1ULQ</title>
+            <info>
+              <metadata owner="http://galeon.sourceforge.net/">
+                <time_added>1060724469</time_added>
+              </metadata>
+            </info>
+          </bookmark>
         </folder>
         <bookmark href="http://oh2aq.kolumbus.com/dxs/oldlook.html">
           <title>DX Summit</title>
@@ -4100,14 +4108,6 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://lists.debian.org/debian-legal/2000/debian-legal-200012/msg00058.html">
-        <title>Re: plain language disclaimer</title>
-        <info>
-          <metadata owner="http://galeon.sourceforge.net/">
-            <time_added>1060082018</time_added>
-          </metadata>
-        </info>
-      </bookmark>
       <bookmark href="http://nm.debian.org/index.php">
         <title>Debian GNU/Linux -- Debian New Maintainer</title>
         <info>
@@ -4116,6 +4116,31 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>Postings</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_modified>1061032640</time_modified>
+            <time_added>1061032636</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://groups.google.com/groups?selm=CBusDD.MIK%2540unix.portal.com%26output=gplain">
+          <title>New release under development; suggestions requested</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1061032332</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://lists.debian.org/debian-legal/2000/debian-legal-200012/msg00058.html">
+          <title>Re: plain language disclaimer</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060082018</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
     </folder>
     <folder folded="yes">
       <title>Zeug</title>
@@ -4706,6 +4731,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1023101657</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.markojung.net/">
+          <title>marko jung - homepage</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1060910106</time_added>
             </metadata>
           </info>
         </bookmark>
