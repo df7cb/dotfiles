@@ -5,3 +5,4 @@ source ~/.vimrc
 
 set nobackup
 set nohlsearch
+set wrapmargin=10

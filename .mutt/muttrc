@@ -5,6 +5,7 @@ source ~/.mutt/aliases
 source ~/.mutt/pgp5
 
 # key bindings
+bind index - previous-page
 bind index <space> next-page
 #bind pager <space> next-page
 bind pager <up> previous-line
@@ -15,6 +16,8 @@ macro generic d s=deleted\cM 'Move message to trash folder'
 macro index d s=deleted\cM 'Move message to trash folder'
 macro pager d s=deleted\cM 'Move message to trash folder'
 bind index G last-entry
+bind pager G bottom
+macro index = s=
 
 # options
 set abort_nosubject
