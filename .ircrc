@@ -104,38 +104,28 @@
 #/alias h /set hold_mode $0-
 
 # Channel-Aliase
-#/alias sar /join #saar
-#/alias wsar /who #saar
 /alias heim /msg heimgeist
-/alias heimgeist /msg heimgeist
 /alias heimd /join #heim-d
 /alias wheimd /who #heim-d
-/alias tt /msg trancetip
 
 # /on stuff
-#/on join "heimgeist" who $0
-#/on who "#heim-d HeimGeist H *heimfee hal.heim-d.uni-sb.de" mode * +o HeimGeist
-/alias ts echo $0- \($Z)
-/on ^action "* *" echo 4* $0 $2-
-/on ^action "rosine *" echo 4* $0 4$2- \($1)
+/alias ts echo $Z $0-
+/on ^action "* *" ts 4* $0 $2-
 /on ^join "* *" whois $0;ts 6*** $0 joined $1
 /on ^leave "* * *" whois $0;ts 6*** $0 left $1: $2-
 /on ^mail * ts 7*** new mail
 /on ^mode "* * *" echo 11*** Mode change "$2-" on $1 by $0
 /on ^msg "* *" ts 3*$0* $1-
-#/on ^msg "rosine *" ts 3*$03* $1-
 /on -msg "* *troet*" exec nc d056 ttylink
 /on ^nick "* *" echo 6*** $0 -> $1
-/on ^public "* * *" echo <2$0> $2-
-/on ^public "*rosine* * *" echo <2$0> $2-
-/on ^public "* * *cb*" echo <2$0> $2-
-/on ^public "* * *myon*" echo <2$0> $2-
+/on ^public "* * *" ts <3$0> $2-
+/on ^public "* * *cb*" ts <2$0> $2-
+/on ^public "* * *myon*" ts <2$0> $2-
 /on ^topic "* * *" ts 7*** Topic on $1 by $0: $2-
 /on ^signoff "* *" whowas $0;ts 6*** $0 signed off: $1-
 /on ^send_action "*" echo 4* $N $1-
 /on ^send_msg "* *" echo ->3 *$0* $1-
 /on ^send_public "*" echo 4> $1-
-#/on -send_public "*" echo 4> $1-
 
 #autoop
 /load .irc.op
