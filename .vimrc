@@ -6,6 +6,7 @@ set autowrite		" Automatically save before commands like :next and :make
 set backspace=2		" allow backspacing over everything in insert mode
 set backup		" keep a backup file
 set nocompatible	" Use Vim defaults (much better!)
+set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
 set ruler		" Show the line and column numbers of the cursor 
