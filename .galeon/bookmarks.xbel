@@ -3912,13 +3912,13 @@
           </metadata>
         </info>
       </bookmark>
-      <bookmark href="http://www.debian.org">
+      <bookmark href="http://www.debian.org/Bugs/">
         <title>Debian Bugs</title>
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
-            <time_modified>1049805500</time_modified>
+            <time_modified>1056806828</time_modified>
             <time_added>1042724966</time_added>
-            <smarturl>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=%s</smarturl>
+            <smarturl>http://bugs.debian.org/%s</smarturl>
           </metadata>
         </info>
       </bookmark>
