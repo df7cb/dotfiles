@@ -4071,7 +4071,10 @@
           <title>Jargon File Resources</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
+              <nick>j</nick>
+              <time_modified>1065443939</time_modified>
               <time_added>1062769800</time_added>
+              <smarturl>http://www.google.de/search?q=%s&amp;sitesearch=www.catb.org</smarturl>
             </metadata>
           </info>
         </bookmark>
@@ -4315,6 +4318,14 @@
         <info>
           <metadata owner="http://galeon.sourceforge.net/">
             <time_added>1062932730</time_added>
+          </metadata>
+        </info>
+      </bookmark>
+      <bookmark href="http://73lab2.free.fr/debian_posters/">
+        <title>Index of /debian_posters</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1065437743</time_added>
           </metadata>
         </info>
       </bookmark>
