@@ -12,6 +12,7 @@ XClock*font:		-misc-fixed-medium-*-*-*-12-*-*-*-*-*-*-*
 XDvi.expert:		true
 XDvi.keepPosition:	true
 Fig*inches:		false
+Fig*library_dir:	~/lib/xfig
 Fig*PaperSize:		A4
 Netscape*blinkingEnabled: false
 Netscape*installColormap: true
