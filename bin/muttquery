@@ -1,7 +1,12 @@
 #!/usr/bin/perl
 # $Id$
 
-$query = $ARGV[0] or die "$0: no query?\n";
+# format: email name comments
+
+unless ($query = $ARGV[0]) {
+	print "no query given?!\n";
+	exit 1;
+}
 
 print "Looking for $query..\n";
 
@@ -14,6 +19,15 @@ if (open A, "$ENV{HOME}/.mutt/aliases") {
 		print "$3\t$2\t$1\n";
 	}
 	close A;
+}
+
+# pgp keys
+if (open P, "pgpk -l $query |") {
+	while (<P>) {
+		next unless /^uid  (.*) <(.*)>(.*)/;
+		print "$2\t$1\t$3\n";
+	}
+	close P;
 }
 
 # system passwd
