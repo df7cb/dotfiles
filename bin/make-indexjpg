@@ -1,0 +1,121 @@
+#!/usr/bin/perl -w
+# $Header$
+# cb 030421: getopt support
+
+#<map name="Testbild"> 
+#<area shape=rect coords="1,1,249,49" href="#Anker"> 
+#</map>
+#<img src="hypgraph.gif" usemap="#Testbild" border=0>
+
+$opt_w = 120;
+$opt_h = 90;
+$opt_b = 1;
+$opt_n = 6;
+$opt_f = "index";
+$opt_L = 1; # obsolete
+$opt_s = 0;
+$opt_t = "";
+$opt_v = 0;
+
+use Getopt::Std;
+getopts('w:h:b:n:f:Lst:v');
+
+@ARGV = sort @ARGV if $opt_s;
+
+@files = @ARGV;
+map {
+	if($opt_t) {
+		if(-f "$opt_t/$_") { # look for thumbs
+			$_ = "$opt_t/$_";
+		} elsif (/(.*)\.(gif|bmp)$/) {
+			$_ = "$opt_t/$1.jpg" if -f "$opt_t/$1.jpg";
+		}
+	}
+	s/\.gif$/.gif[0]/; # extract first frame from from animated gifs
+	"'$_'"; # quote filenames
+} @files;
+$files = join " ", @files;
+
+$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background white -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
+print "$command\n" if $opt_v;
+print "Schreibe $opt_f.jpg...";
+system $command;
+
+my $map = "$opt_f-map.html";
+print " $map...\n";
+open MAP, ">$map" or die "$map: $!";
+
+print MAP "<map name=\"$opt_f-map\">\n";
+$n = 0;
+foreach (@ARGV) {
+	$left = ($n % $opt_n) * ($opt_w+2*$opt_b);
+	$right = $left + ($opt_w+$opt_b);
+	$top = int($n / $opt_n) * ($opt_h+2*$opt_b);
+	$bottom = $top + ($opt_h+$opt_b);
+	print MAP " <area shape=rect coords=\"$left,$top,$right,$bottom\" href=\"$_\" alt=\"$_\">\n";
+	$n++;
+}
+print MAP "</map>\n";
+print MAP "<img src=\"$opt_f.jpg\" usemap=\"#$opt_f-map\" border=\"0\">\n" if $opt_L;
+close MAP;
+
+
+=head1 NAME
+
+make-indexjpg - creates thumbnail image and corresponding HTML map file
+
+=head1 SYNOPSIS
+
+B<make-indexjpg>
+[I<-w> B<x>]
+[I<-h> B<y>]
+[I<-b> B<b>]
+[I<-n> B<n>]
+[I<-f> B<name>]
+[I<-s>]
+[I<-t> B<directory>]
+[I<-v>]
+B<images> ...
+
+=head1 DESCRIPTION
+
+B<make-indexjpg> takes a list of image file names and uses B<montage> to create
+an image with thumbnails. A correspoding HTML map file can be used to make the
+index image clickable.
+
+=head1 OPTIONS
+
+=head2 I<-w> B<x> I<-h> B<y>
+
+The thumbnails inside the index image will have size B<x> * B<y> pixels.
+[120 * 90]
+
+=head2 I<-b> B<b>
+
+Put a border of B<b> pixels around each image. [1]
+
+=head2 I<-n> B<n>
+
+Arrange the thumbnails in a grid with B<n> columns. [6]
+
+=head2 I<-f> B<name>
+
+Name the index image B<name>.jpg and the HTML map file B<name>-map.html.
+[index.jpg, index-map.html]
+
+=head2 I<-s>
+
+Sort the list of images given. [do not]
+
+=head2 I<-t> B<directory>
+
+Look for precomputed thumbnails in B<directory>. Use this to speed up the
+B<montage> call. [no thumbnails]
+
+=head2 I<-v>
+
+Be verbose, print commands as they are executed. [do not]
+
+=head1 AUTHOR
+
+Christoph Berg <cb@cs.uni-sb.de>
