@@ -10,6 +10,8 @@ sub oerks {
 	s/</&lt;/g; s/>/&gt;/g;
 	# </ul></td></tr></table>
 	print "<p><font color=red>Suddenly, the script named $0 died for some strange reason:\n<pre>$_</pre></font>\n";
+	print "<p>Fehlermeldungen bitte an $ENV{SERVER_ADMIN} senden!\n";
+	print "<p>Please mail error messages to $ENV{SERVER_ADMIN}!\n";
 	my $time = scalar(localtime);
 	print STDERR "[$time] [die] $0: @_";
 	exit 1;
@@ -90,6 +92,16 @@ sub html_quotemeta {
 	$str =~ s/>/&gt;/g;
 	return $str;
 }
+
+
+#sub html_quoteall {
+#	my $str = shift;
+#	$str =~ s/&/&amp;/g;
+#	$str =~ s/([^\w\^&<>;,.#_ -])/"&#".ord($1).";"/ge;
+#	$str =~ s/</&lt;/g;
+#	$str =~ s/>/&gt;/g;
+#	return $str;
+#}
 
 
 sub smileyfy {
