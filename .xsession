@@ -2,19 +2,22 @@
 # $Id$
 
 . $HOME/.path
-test "$SHELL" = /bin/sh -a -x /usr/local/bin/bash && SHELL=/usr/local/bin/bash
+if [ "$SHELL" = /bin/sh ] ; then
+	SHELL=`which zsh` || SHELL=`which bash`
+	|| SHELL=`which tcsh` || SHELL=/bin/sh
+fi
 
 #set up X server
 xhost - >/dev/null
 XMODMAP=`os kbd`
 [ -f $XMODMAP ] && xmodmap $XMODMAP
 xset s off
-xset dpms 0 0 600 2> /dev/null
+xset dpms 0 0 900 2> /dev/null
 xrdb -merge .Xdefaults
 
 xsetroot -solid navy
 ( sleep 10 ; xroot ) &
-xclock -g +41+0 &
+xclock -g 116x12+41+0 &
 
 fvwm2 -s &
 
