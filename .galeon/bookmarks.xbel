@@ -1649,19 +1649,19 @@
           </info>
         </bookmark>
         <bookmark href="http://www.asta.uni-saarland.de/mailman/admin/resa">
-          <title>Resa Administration</title>
+          <title>ReSa Administration</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1068983532</time_modified>
+              <time_modified>1069342385</time_modified>
               <time_added>1068983438</time_added>
             </metadata>
           </info>
         </bookmark>
         <bookmark href="http://www.asta.uni-saarland.de/mailman/admin/haufi">
-          <title>Haufi Administration</title>
+          <title>HauFi Administration</title>
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
-              <time_modified>1068983540</time_modified>
+              <time_modified>1069342388</time_modified>
               <time_added>1068983479</time_added>
             </metadata>
           </info>
@@ -3828,6 +3828,14 @@
           <info>
             <metadata owner="http://galeon.sourceforge.net/">
               <time_added>1061848741</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.sackheads.org/~bnaylor/spew/away_msgs.html">
+          <title>People who use /away constantly suck ass</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1069438644</time_added>
             </metadata>
           </info>
         </bookmark>
