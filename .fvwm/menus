@@ -23,7 +23,7 @@ AddToMenu Main	"fvwm2"		Title
 
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
-+		"f&irefox"	Exec mozilla-firefox
++		"f&irefox"	Exec firefox
 +		"g&aleon"	Exec galeon
 +		"address&book"	Exec addressbook
 +		"&grip"		Exec grip
