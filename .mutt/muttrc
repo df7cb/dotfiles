@@ -20,6 +20,8 @@ macro pager d s=deleted\cM 'Move message to trash folder'
 bind index G last-entry
 bind pager G bottom
 macro compose = f=
+bind compose <return> send-message
+bind compose v view-attach
 macro index = s=
 macro pager = s=
 
@@ -52,7 +54,7 @@ set pager_stop
 set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x6D8ABE71"
-set pgp_timeout=7200
+set pgp_timeout=14400
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set record="=sent-mail"
