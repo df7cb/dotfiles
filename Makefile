@@ -1,11 +1,20 @@
 # $Id$
 
-all: .configrc .less .ssh/config .ytalkrc .xinitrc bin/ctar
+all: .configrc .less .plan.dir/dayplan .ssh/cb@fermi .ssh/config .ytalkrc .xinitrc bin/ctar
 
 ## targets ##
 
+#.firefox/cb/cbcbcbcb.slt/bookmarks.html:
+#	[ -f .priv/bookmarks.html ] && ln -s ../../../.priv/bookmarks.html $@
+
 .less: .lesskey
 	lesskey
+
+.plan.dir/dayplan:
+	[ -f .priv/dayplan ] && ln -s ../.priv/dayplan $@
+
+.ssh/cb@fermi:
+	[ -f .priv/cb@fermi ] && cd .ssh && ln -s ../.priv/cb@fermi* .
 
 .ssh/config: .ssh/config.m4
 	@rm -f $@
