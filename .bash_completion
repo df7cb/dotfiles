@@ -1,0 +1,81 @@
+# $Id$
+# bash completions
+
+# 1) find command name from comspec list (first full path, then basename)
+# 2) generate list if found, otherwise do default
+# 2a) perform actions, filter prefixes (-f, -d: use $FIGNORE)
+# 2b) generate -G filename expansion pattern matches (do not use $GLOBIGNORE, use $FIGNORE)
+# 2c) prefix match on -W (use $IFS, expand words)
+# 2d) shell function -F, command -C ($COMP_LINE, $COMP_POINT, -F: $COMP_WORDS, $COMP_CWORD)
+#     1st arg: name of the command, 2nd arg: word preceding the word being completed
+#     NO FILTERING!
+# 2d1) -F: completions in $COMPREPLY array
+# 2d2) -C: completions stdout, one per line
+# 2e) filter with -X (& = word being completed, ! negates the pattern)
+# 2f) -P, -S: add prefix/suffix to each completion
+# 2g) use -o
+
+# -o comp-option
+#      The  comp-option  controls  several aspects of the compspec's behavior
+#      beyond the simple generation of completions.  comp-option may  be  one
+#      of:
+#      default Use  readline's  default  filename  completion if the compspec
+#              generates no matches.
+#      dirnames
+#              Perform directory name completion if the compspec generates no
+#              matches.
+#      filenames
+#              Tell readline that the compspec generates filenames, so it can
+#              perform any filename-specific processing (like adding a  slash
+#              to  directory names or suppressing trailing spaces).  Intended
+#              to be used with shell functions.
+#      nospace Tell readline not to append a space  (the  default)  to  words
+#              completed at the end of the line.
+
+# -A action
+#      The  action may be one of the following to generate a list of possible
+#      completions:
+#      alias   Alias names.  May also be specified as -a.
+#      arrayvar
+#              Array variable names.
+#      binding Readline key binding names.
+#      builtin Names of shell builtin commands.  May also be specified as -b.
+#      command Command names.  May also be specified as -c.
+#      directory
+#              Directory names.  May also be specified as -d.
+#      disabled
+#              Names of disabled shell builtins.
+#      enabled Names of enabled shell builtins.
+#      export  Names  of  exported shell variables.  May also be specified as
+#              -e.
+#      file    File names.  May also be specified as -f.
+#      function
+#              Names of shell functions.
+#      group   Group names.  May also be specified as -g.
+#      helptopic
+#              Help topics as accepted by the help builtin.
+#      hostname
+#              Hostnames, as taken from the file specified  by  the  HOSTFILE
+#              shell variable.
+#      job     Job names, if job control is active.  May also be specified as
+#              -j.
+#      keyword Shell reserved words.  May also be specified as -k.
+#      running Names of running jobs, if job control is active.
+#      service Service names.  May also be specified as -s.
+#      setopt  Valid arguments for the -o option to the set builtin.
+#      shopt   Shell option names as accepted by the shopt builtin.
+#      signal  Signal names.
+#      stopped Names of stopped jobs, if job control is active.
+#      user    User names.  May also be specified as -u.
+#      variable
+#              Names of all shell variables.  May also be specified as -v.
+
+complete -W "install remove" -C '_apt-get' apt-get
+complete -d cd
+complete -C _complete -X '!&*' complete
+complete -A running disown
+complete -C _mailsync -X '!&*' mailsync
+complete -c man
+complete -C _ncftp -X '!&*' ncftp
+complete -v unset
+complete -f -W Makefile vim
