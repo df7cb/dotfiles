@@ -5,6 +5,7 @@ my $cmd = "";
 $cmd = "tar xfv"  if $ARGV[0] =~ /\.tar$/;
 $cmd = "tar xfvz" if $ARGV[0] =~ /\.(tgz|tar\.gz|tar\.Z)$/;
 $cmd = "tar xfvj" if $ARGV[0] =~ /\.tar\.bz2$/;
+$cmd = "unace x" if $ARGV[0] =~ /\.ace$/;
 $cmd = "ar xv" if $ARGV[0] =~ /\.(ar|deb)$/;
 $cmd = "unarj x" if $ARGV[0] =~ /\.arj$/;
 $cmd = "unrar x" if $ARGV[0] =~ /\.rar$/;

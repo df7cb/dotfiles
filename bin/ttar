@@ -11,7 +11,8 @@ case "$1" in
 	*.tgz|*.tar.gz|*.tar.Z)	T="tar tvfz"	C="tar cvfz" ;;
 	*.tar.bz2)		T="tar tvfj"	C="tar cvfj" ;;
 	*.ace)			T="unace v"	C="echo ace not supported:" ;;
-	*.ar|*.deb)		T="ar tv"	C="echo ar not supported:" ;;
+	*.ar)			T="ar tv"	C="echo ar not supported:" ;;
+	*.deb)			T="dpkg-deb --contents"	C="echo ar not supported:" ;;
 	*.arj)			T="unarj v"	C="echo arj not supported:" ;;
 	*.lzh)			T="lha v"	C="lha a" ;;
 	*.rar)			T="unrar v"	C="echo rar not supported:" ;;
