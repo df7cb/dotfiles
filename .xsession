@@ -3,8 +3,7 @@
 
 . $HOME/.path
 if [ "$SHELL" = /bin/sh ] ; then
-	SHELL=`which zsh` || SHELL=`which bash`
-	|| SHELL=`which tcsh` || SHELL=/bin/sh
+  SHELL=`which zsh` || SHELL=`which bash` || SHELL=`which tcsh` || SHELL=/bin/sh
 fi
 
 #set up X server
