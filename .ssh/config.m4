@@ -41,8 +41,9 @@ host millikan.milhouse.cs.uni-sb.de millikan
  proxycommand ssh milhouse.cs.uni-sb.de bin/linux-intel/nc -q0 172.16.170.2 22)
  forwardagent yes
 
-host asta
+host server.asta.uni-saarland.de
  hostname server.asta.uni-saarland.de
+ forwardagent yes
 
 host kap?? cip???.studcs.uni-sb.de cip??? xcip?
  user berg
