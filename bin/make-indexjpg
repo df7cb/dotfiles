@@ -11,6 +11,7 @@ $opt_w = 120;
 $opt_h = 90;
 $opt_b = 1;
 $opt_n = 6;
+$opt_B = "white";
 $opt_m = 0;
 $opt_f = "index";
 $opt_H = "";
@@ -22,7 +23,7 @@ $opt_T = "";
 $opt_v = 0;
 
 use Getopt::Std;
-getopts('w:h:H:b:n:mf:Lqst:T:v');
+getopts('w:h:H:b:n:B:mf:Lqst:T:v');
 
 @ARGV = sort @ARGV if $opt_s;
 
@@ -43,7 +44,7 @@ $files = join " ", @files;
 
 print "Schreibe" unless $opt_q;
 unless($opt_m) {
-	$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background white -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
+	$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background '$opt_B' -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
 	print "$command\n" if $opt_v;
 	print " $opt_f.jpg..." unless $opt_q;
 	system $command;
@@ -90,6 +91,7 @@ B<make-indexjpg>
 [I<-h> B<y>]
 [I<-b> B<b>]
 [I<-n> B<n>]
+[I<-B> B<color>]
 [I<-m>]
 [I<-f> B<name>]
 [I<-H> B<expr>]
@@ -120,6 +122,10 @@ Put a border of B<b> pixels around each image. [1]
 =head2 I<-n> B<n>
 
 Arrange the thumbnails in a grid with B<n> columns. [6]
+
+=head2 I<-B> B<color>
+
+Background color to use. [white]
 
 =head2 I<-m>
 
