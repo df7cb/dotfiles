@@ -1605,6 +1605,77 @@
           </metadata>
         </info>
       </bookmark>
+      <folder folded="yes">
+        <title>AStA</title>
+        <info>
+          <metadata owner="http://galeon.sourceforge.net/">
+            <time_added>1068983206</time_added>
+          </metadata>
+        </info>
+        <bookmark href="http://www.asta.uni-saarland.de/">
+          <title>AStA der UdS - Startseite</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1068983518</time_modified>
+              <time_added>1068983219</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.asta.uni-saarland.de/stupa/index.html">
+          <title>Studierendenparlament der Studierendenschaft der Universit&#195;&#164;t des Saarlandes</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1068983526</time_modified>
+              <time_added>1068983233</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.asta.uni-saarland.de/~cb/stupa/">
+          <title>Index of /~cb/stupa</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_added>1068983578</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <separator/>
+        <bookmark href="http://www.asta.uni-saarland.de/mailman/admin/stupisten">
+          <title>Stupisten Administration</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1068983537</time_modified>
+              <time_added>1068983461</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.asta.uni-saarland.de/mailman/admin/resa">
+          <title>Resa Administration</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1068983532</time_modified>
+              <time_added>1068983438</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.asta.uni-saarland.de/mailman/admin/haufi">
+          <title>Haufi Administration</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1068983540</time_modified>
+              <time_added>1068983479</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+        <bookmark href="http://www.asta.uni-saarland.de/mailman/admin/hauptaus">
+          <title>Hauptaus Administration</title>
+          <info>
+            <metadata owner="http://galeon.sourceforge.net/">
+              <time_modified>1068983543</time_modified>
+              <time_added>1068983493</time_added>
+            </metadata>
+          </info>
+        </bookmark>
+      </folder>
       <bookmark href="http://www.cvtips.com/">
         <title>CV Tips.com</title>
         <info>
