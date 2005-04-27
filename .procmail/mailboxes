@@ -25,21 +25,30 @@ mail/IN/tagesschau
 
 # pisg-general list
 :0:
-* ^List-Id: .pisg-general
+* ^List-Id: .pisg-(general|commits)
 mail/IN/pisg
 # pisg tracker items
+#:0:
+#* ^Received: .*cvs.*.sourceforge.net
+#* ^X-Mailer: .*syncmail
+#mail/IN/pisg
+
+# mutt
 :0:
-* ^Sender: .*nobody@sourceforge.net
-* ^Subject: .*pisg
-mail/IN/pisg
+* ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|X-list: muttpatches|X-GUUG-PR-Message: )
+mail/IN/mutt
 
 # catch-all recipe
 :0:
-* ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|Mailing-List: |List-Id: |X-BeenThere: aspell|List-Owner: |X-list: muttpatches|X-GUUG-PR-Message: )
+* ^(Mailing-List: |List-Id: |X-BeenThere: aspell|List-Owner: )
 mail/IN/lists
 
 :0:
-* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
+* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster|logcheck)@
+mail/IN/root
+# mailman
+:0:
+* ^X-List-Administrivia: yes
 mail/IN/root
 
 :0:

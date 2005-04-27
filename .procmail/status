@@ -1,13 +1,13 @@
 :0fhw
-* !^Status:
+#* !^Status:
 * ^From: Christoph Berg.*cb@
-| formail -i"Status: RO"
+| formail -I"Status: RO"
 
 # killfile
 :0fhw
-* !^Status:
+#* !^Status:
 * ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org)>
-| formail -i"Status: RO"
+| formail -I"Status: RO"
 
 #:0fhw
 #* ^From: BugScan reporter <bugscan@debian.org>
@@ -24,5 +24,5 @@
 {
 	:0Bfhw
 	* !\*
-	| formail -i"Status: RO"
+	| formail -I"Status: RO"
 }

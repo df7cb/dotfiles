@@ -40,7 +40,7 @@
 | formail -i"X-Label: frmit"
 :0fhw
 * !^X-Label:
-* ^TO_g-wilhelm@cs.uni-sb.de
+* ^TO_g-wilhelm@.*cs.uni-sb.de
 | formail -i"X-Label: g-wilhelm"
 :0fhw
 * !^X-Label:
