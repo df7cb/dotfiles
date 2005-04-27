@@ -1,0 +1,5 @@
+:0fh
+* ^From: .*noreply@sourceforge.net
+* ^Subject: .*-\/[0-9]+
+* !^References:
+| formail -i"References: <$MATCH@sourceforge.net>"
