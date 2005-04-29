@@ -88,6 +88,7 @@ complete -o default -f -X '!*.@(changes|dsc)' debsign
 complete -o default -f -X '!*.changes' dput
 complete -o default -f -X '!*.?(e)ps*(.gz)' gv
 complete -o default -f -X '!*.tex' latex
+complete -o default -f -X '!*.?(e)ps' lpr
 complete -o default -f -X '!*.dvi' kdvi xdvi
 complete -o default -f -X '!*.fig' xfig
 complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|ace|ar|deb|arj|lzh|rar|zip)' ttar xtar
