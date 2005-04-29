@@ -11,7 +11,7 @@ TEX = latex
 
 # dvi -> ps
 %.ps: %.dvi
-	dvips -o $@ $<
+	dvips $(DVIPSFLAGS) -o $@ $<
 
 dvips: $(patsubst %.dvi, %.ps, $(wildcard *.dvi))
 
