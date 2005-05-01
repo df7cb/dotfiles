@@ -3,7 +3,7 @@
 #message-hook .			'unset display_filter'
 #message-hook '~h X-Face'	'set display_filter="procmail -pm $HOME/.mutt/x-face.procmailrc"'
 
-set xface
+set xface xface_w3mimgdisplay="/usr/lib/w3m/w3mimgdisplay" xface_w3mimgdisplay_options="-x 580 -y 80"
 ignore X-Face
 
 my_hdr X-Face: (nN@x(D\\O)J!Qu\\q4fh8W^7WGqxpwTk&Xy0*ya<z@L\`gg26[[T%n/TA:l\\Pde>wYj,M\;75\"\n N13_k}S.rS\#lmX[G]QOuw[H\"4\#z\$tSn\$SkV<IurN\'6\;gkRFZw@/XLtl7\":0v&kN3*-iM~q*\;.*CfH@\n qM>5ucV193Tz3IWj<]8at(6\"K.ht//s\"Ds,xMV9A\\_bN/)w@^PmEM>-dF34Kw?,<G0ya

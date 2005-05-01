@@ -1,202 +1,24 @@
 # $Id$
 
-# external files
-source ~/.mutt/aliases
-#source ~/.mutt/pgp5
-
-# key bindings
-bind	alias	-	previous-page
-bind	index	-	previous-page
-bind	alias	<space>	next-page
-bind	browser	<space>	next-page
-bind	index	<space>	next-page
-bind	generic	<space>	next-page
-#bind	pager	<space>	next-page
-bind	pager	<up>	previous-line
-bind	pager	<down>	next-line
-bind	index	<esc><tab> previous-unread
-bind	pager	<esc><tab> previous-unread
-bind	index	<tab>	next-unread
-bind	pager	<tab>	next-unread
-bind	index	^	link-threads
-bind	pager	^	link-threads
-bind	index	*	toggle-new	# this should be mark-as-new :-/
-bind	pager	*	mark-as-new	# this should be toggle-new :-/
-macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
-#macro	generic	d	s=deleted<return>	'Move message to trash folder'
-#macro	index	d	s=deleted<return>	'Move message to trash folder'
-#macro	pager	d	s=deleted<return>	'Move message to trash folder'
-#macro	index	\cd	'<esc>t;d'	'Move all messages in thread to trash folder'
-bind	index	D	purge-message
-bind	pager	D	purge-message
-bind	index	G	last-entry
-bind	pager	G	bottom
-macro	index	\ch	"<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><next-unread>"
-bind	generic	N	search-opposite
-bind	index	N	search-opposite
-bind	pager	N	search-opposite
-bind	browser	v	view-file
-bind	index	x	sync-mailbox
-bind	pager	x	sync-mailbox
-macro	index	=	s=		'Save to ~/mail/'
-macro	pager	=	s=		'Save to ~/mail/'
-
-bind	compose	<return> send-message	# <enter> = numeric keypad
-macro	compose	=	f=		'Fcc to ~/mail/'
-bind	compose	v	view-attach
-
-# purge duplicates
-macro	index	,=	"<delete-pattern>~=<enter>"
-# index format with mailing list name
-macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s'\n"
-# delete messages older > 1m
-macro	index	,d	"<delete-pattern>~R !~F ~d>1m<enter>"
-# index format with year included
-macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.15F %s'\n"
-#macro	index	,R	"l!~R\n"	# limit to unread meassages
-macro	index	,r	"l~(!~D(!~R|~F|~P))\n<esc>V"	# limit to threads with unread meassages
-
-macro	pager	S	"<exit>S"
-macro	index	S	"<save-message>=spam-queue/spam<enter>" "Save spam for processing with SA"
-macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=spam-queue/ham<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
-
-# headers
-ignore Importance # M$
-ignore Organisation Organization # stuff
-#ignore Mail-Followup-To # mailing lists
-ignore X-BeenThere X-Mailman List- # mailman
-ignore Delivered-To Precedence X-Loop Errors-To # mailman (video4linux)
-ignore X-Envelope-From X-Envelope-To Path Newsgroups NNTP-Posting-Host X-Trace # NNTP->Mail postings
-ignore X-Bulkmail # tagesschau.de
-ignore X-Cron-Env # cron
-ignore X-MIME-Autoconverted Auto-Submitted # sendmail
-ignore X-Spam-Level X-Keywords X-UID X-Spam-Checker-Version X-Spam-Status # spamassassin
-ignore X-Label # procmail/formail/%Y
-ignore X-Virus-Scanned X-Scanned-By X-AntiVirus X-DCC- # scanners
-ignore X-Mailer X-Accept-Language # Mozilla
-ignore User-Agent # slrn
-ignore X-Sender X-X-Sender # t-dialin.net, crap
-ignore Old-Return-Path Resent-Message-ID Resent-From X-Mailing-List Resent-Sender Resent-Date # lists.debian.org
-ignore Original-Sender Resent-To Resent-Cc # bugs.debian.org
-#unignore X-Debian-PR-Message
-ignore X-PTS- X-Unsubscribe # packages.qa.debian.org
-ignore X-Authenticated X-Flags # GMX
-ignore X-Cookie X-Operating X-Sheldon X-Url X-Habeas-SWE- X-GPG- X-Geek- # various induhviduals
-ignore X-From-Note X-Mutt-Ignore X-Revised- X-Message-Flag X-Virus
-
-unignore Date
-unhdr_order *
-hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
-
-# options
-#set abort_nosubject
-set abort_unmodified=ask-yes
-set alias_file=~/.mutt/aliases
-#set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
-alternates ^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$
-set attribution="Re: %F in %i"
-set auto_tag
-unset beep
-#set beep_new
-unset bounce_delivered
-unset collapse_unread
-unset confirmappend
-unset confirmcreate
-set edit_headers
-set editor="vim -u ~/.mutt/vimrc -c '/^$'"
-set delete=yes
-set fast_reply
-unset fcc_attach
 set folder="~/mail"
-set forward_format="%s (fwd)"
-unset help
-set hidden_host
-set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
-set ispell="aspell --lang=de check"
-#set locale="de_DE.ISO-8859-1"
-unset markers
-set mbox_type=mbox
-set menu_context=3
-#unset menu_move_off
-set menu_scroll
-set mime_forward=ask-yes
-unset move
-set pager_index_lines=5
-set pager_stop
-unset pipe_decode
-set pipe_split
-set pgp_auto_traditional
-set pgp_autosign
-set pgp_replyencrypt
-set pgp_sign_as="0x6D8ABE71"
-set pgp_timeout=14400
-set postponed="=postponed-msgs"
-set query_command="muttquery '%s'"
-set quit=ask-yes
-set quote_regexp="^([ \t]*[|>:}%])+|^[a-zA-Z]{,9}>"
-set record="!"
-set reverse_name
-unset reverse_realname
-set rfc2047_parameters
-#unset save_empty
-set send_charset="us-ascii:iso-8859-1:iso-8859-15:utf-8"
-set sendmail_wait=15
-unset sig_dashes
-set status_format="-%r-Mutt: %f%?V?[%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
-set status_on_top
-set sort=threads
-set tilde
-set timeout=30
-set trash="=trash/trash"
-set use_domain
-set use_from
-unset wait_key
-unset write_bcc
-set xterm_set_titles
 
-# colors
-color normal    default default
-color attachment brightyellow default
-color bold	brightdefault default
-color error	cyan default
-color hdrdefault cyan default
-color indicator default cyan
-color markers   green default
-color message	cyan default
-color signature cyan default
-color status    brightgreen blue
-color tilde     blue default
-color tree      red default
-color underline	brightdefault default
-
-color index	blue default ~p
-color index	green default ~P
-color index	cyan default ~v
-color index	brightdefault default ~T
-color index	brightdefault default ~F
-color index	magenta default "~t debian-news"
-color index	red default "~t debian-security-announce"
-color index	yellow default "~h 'X-Debian-PR-Package: (ircmarkers|usemod-wiki|xmms-coverviewer)"
-
-color header    brightdefault default ^From:
-color header    blue default ^(Date|To|Reply-To|Cc):
-color header    brightred default ^Subject:
-color header    red default ^User-Agent:
-color quoted	green default
-color quoted1	cyan default
-color quoted2	blue default
-color quoted3	red default
-color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body      blue default (https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+
-#color body	cyan default "^> >.*"
-
-# MIME config
-auto_view text/html
-alternative_order text/plain text/html
-mime_lookup application/octet-stream
-
-source ~/.mutt/hooks
+# external files
+source ~/.mutt/options
+source ~/.mutt/bind
+source ~/.mutt/color
+source ~/.mutt/headers
+source ~/.mutt/x-face
+source ~/.mutt/aliases
 source ~/.mutt/lists
+source ~/.mutt/hooks
 
 # local configuration options
-source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
+#source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
+
+set from="cb@df7cb.de"
+set hostname="df7cb.de"
+macro generic & "!retch -F\cM"
+macro index & "!retch -F\cM"
+set spoolfile="=IN/cb"
+mailboxes ! =rw/inbox =IN/root =IN/pisg =IN/mutt =IN/debian =IN/lists =IN/tagesschau
+color header brightblack default heim-d@df7cb.de

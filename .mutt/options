@@ -1,0 +1,70 @@
+# vim:ft=muttrc:
+
+# options
+#set abort_nosubject
+set abort_unmodified=ask-yes
+set alias_file=~/.mutt/aliases
+#set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
+alternates ^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$
+set attribution="Re: %F in %i"
+set auto_tag
+unset beep
+#set beep_new
+set bounce
+unset bounce_delivered
+unset collapse_unread
+unset confirmappend
+unset confirmcreate
+set edit_headers
+set editor="vim -u ~/.mutt/vimrc -c '/^$'"
+set delete=yes
+set fast_reply
+unset fcc_attach
+set folder="~/mail"
+source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
+set forward_format="%s (fwd)"
+unset help
+unset hidden_host
+set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
+set ispell="aspell --lang=de check"
+#set locale="de_DE.ISO-8859-1"
+unset markers
+set mbox_type=mbox
+set menu_context=3
+#unset menu_move_off
+set menu_scroll
+set mime_forward=ask-yes
+unset move
+set pager_index_lines=5
+set pager_stop
+unset pipe_decode
+set pipe_split
+set pgp_auto_traditional
+set pgp_autosign
+set pgp_replyencrypt
+set pgp_sign_as="0x6D8ABE71"
+set pgp_timeout=14400
+set postponed="=postponed-msgs"
+set query_command="muttquery '%s'"
+set quit=ask-yes
+set quote_regexp="^([ \t]*[|>:}%])+|^[a-zA-Z]{,9}>"
+set record="!"
+set reverse_name
+unset reverse_realname
+set rfc2047_parameters
+#unset save_empty
+set send_charset="us-ascii:iso-8859-1:iso-8859-15:utf-8"
+set sendmail_wait=15
+unset sig_dashes
+set status_format="-%r-Mutt: %f%?V?[%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+set status_on_top
+set sort=threads
+set tilde
+set timeout=30
+set trash="=trash/trash"
+set use_domain
+set use_from
+unset wait_key
+unset write_bcc
+set xterm_set_titles
+

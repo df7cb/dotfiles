@@ -1,0 +1,40 @@
+# vim:ft=muttrc:
+
+# colors
+color normal    default default
+color attachment brightyellow default
+color bold	brightdefault default
+color error	cyan default
+color hdrdefault cyan default
+color indicator default cyan
+color markers   green default
+color message	cyan default
+color signature cyan default
+color status    brightgreen blue
+color tilde     blue default
+color tree      red default
+color underline	brightdefault default
+
+color index	blue default ~p
+color index	green default ~P
+color index	cyan default ~v
+color index	brightdefault default ~T
+color index	brightdefault default ~F
+color index	magenta default "~t debian-news"
+color index	red default "~t debian-security-announce"
+color index	yellow default '~y (aspell-de\|endeavour\|image-size\|ircmarkers\|usemod-wiki\|vcr\|xmms-coverviewer)'
+
+color index_author red default
+color index_number blue default
+
+color header    brightdefault default ^From:
+color header    blue default ^(Date|To|Reply-To|Cc):
+color header    brightred default ^Subject:
+color header    red default ^User-Agent:
+color quoted	green default
+color quoted1	cyan default
+color quoted2	blue default
+color quoted3	red default
+color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body      blue default (https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+
+

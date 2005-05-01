@@ -1,0 +1,62 @@
+# vim:ft=muttrc:
+
+# key bindings
+bind	alias	-	previous-page
+bind	index	-	previous-page
+bind	alias	<space>	next-page
+bind	browser	<space>	next-page
+bind	index	<space>	next-page
+bind	generic	<space>	next-page
+#bind	pager	<space>	next-page
+bind	pager	<up>	previous-line
+bind	pager	<down>	next-line
+bind	index	<esc><tab> previous-unread
+bind	pager	<esc><tab> previous-unread
+bind	index	<tab>	next-unread
+bind	pager	<tab>	next-unread
+bind	index	^	link-threads
+bind	pager	^	link-threads
+bind	index	*	toggle-new	# this should be mark-as-new :-/
+bind	pager	*	mark-as-new	# this should be toggle-new :-/
+macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
+#macro	generic	d	s=deleted<return>	'Move message to trash folder'
+#macro	index	d	s=deleted<return>	'Move message to trash folder'
+#macro	pager	d	s=deleted<return>	'Move message to trash folder'
+#macro	index	\cd	'<esc>t;d'	'Move all messages in thread to trash folder'
+bind	index	D	purge-message
+bind	pager	D	purge-message
+bind	index	G	last-entry
+bind	pager	G	bottom
+macro	index	\ch	"<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><next-unread>"
+bind	generic	N	search-opposite
+bind	index	N	search-opposite
+bind	pager	N	search-opposite
+#macro	index	q	'<change-folder>?<tab>'
+#macro	browser	q	'<exit><quit>'
+bind	browser	v	view-file
+bind	index	x	sync-mailbox
+bind	pager	x	sync-mailbox
+macro	index	=	s=		'Save to ~/mail/'
+macro	pager	=	s=		'Save to ~/mail/'
+
+bind	compose	<return> send-message	# <enter> = numeric keypad
+macro	compose	=	f=		'Fcc to ~/mail/'
+bind	compose	v	view-attach
+
+# purge duplicates
+macro	index	,=	"<delete-pattern>~=<enter>"
+# index format with mailing list name
+macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s'\n"
+# delete messages older > 1m
+#macro	index	,d	"<delete-pattern>~R !~F ~d>1m<enter>"
+# index format with year included
+macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.15F %s'\n"
+#macro	index	,R	"l!~R\n"	# limit to unread meassages
+macro	index	,r	"l~(!~D(!~R|~F|~P))\n<esc>V"	# limit to threads with unread meassages
+
+macro	pager	S	"<exit>S"
+macro	index	S	"<bounce-message>cb+spam@meitner.df7cb.de<enter><purge-message>" "Save spam for processing with SA"
+#macro	index	S	"<save-message>=spam-queue/spam<enter>" "Save spam for processing with SA"
+#macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=spam-queue/ham<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
+macro	index	,d	"|listmanage_mailman -d<enter><purge-message>"
+
