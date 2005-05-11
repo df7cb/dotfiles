@@ -3,7 +3,7 @@
 *foreground:		black
 !*Scrollbar*background:	Navy
 *Scrollbar*foreground:	LimeGreen
-*Scrollbar*thickness:	8
+*Scrollbar*thickness:	7
 *Scrollbar*thumb:	None
 XApm*background:	LightSkyBlue
 XApm*delay:		5
@@ -74,6 +74,7 @@ XLock.logoutButton:	-1
 XLock.background:	black
 XLock.foreground:	red
 XLock.echokeys:		true
+Xpdf.initialZoom:	page
 XTerm*boldMode:		false
 XTerm*color3:		orange
 XTerm*color11:		orange

@@ -22,7 +22,7 @@ WIDTH.HEIGHT, 1152.864, `define(_LO,92x27+_T)define(_RO,92x27-_T)
 WIDTH.HEIGHT, 1152.900, `define(_LO,92x28+_T)define(_RO,92x28-_T)
 			 define(_LU,92x29+_B)define(_RU,92x29-_B)',
 WIDTH, 1280,		`define(_LO,103x33+_T)define(_RO,103x33-_T)
-			 define(_LU,103x34+0+461)define(_RU,103x34-0+461)',
+			 define(_LU,103x33+0+467)define(_RU,103x33-0+467)',
 WIDTH, 1600,		`define(_LO,129x40+_T)define(_RO,130x40-_T)
 			 define(_LU,129x40+_B)define(_RU,130x40-_B)',
 			`define(_LO,80x25+_T)define(_RO,80x25-_T)
