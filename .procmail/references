@@ -1,5 +1,14 @@
+# group tracker items
 :0fh
 * ^From: .*noreply@sourceforge.net
 * ^Subject: .*-\/[0-9]+
 * !^References:
 | formail -i"References: <$MATCH@sourceforge.net>"
+
+# group CVS changes
+:0
+* ^From: .*@users.sourceforge.net
+* ^To: pisg-commits@lists.sourceforge.net
+* ^Date: \/.*
+* !^References:
+| formail -i"References: <pisg-commit-`date -d '$MATCH' '+%Y%m%d%H%M'`@sourceforge.net>"
