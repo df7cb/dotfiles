@@ -10,6 +10,12 @@
 * ^From: asta-bounces@asta.uni-saarland.de
 /dev/null
 
+:0
+* ^From: .*-bounces@
+* ^Precedence: bulk
+* ^X-List-Administrivia: yes
+/dev/null
+
 :0:
 * ^To: .*heim-.*-request@stud.uni-saarland.de
 /dev/null
@@ -29,6 +35,10 @@ mail/spam-queue/spam
 :0:
 * ^X-Spam-Status: Yes
 $SPAMDIR/prefiltered
+
+:0fw
+* ^X-Spam-Status:
+| formail -R X-Spam-Status Old-X-Spam-Status -R X-Spam-Checker-Version Old-X-Spam-Checker-Version
 
 :0fw: $SPAMDIR/.spamassassin.lock
 ## do not re-filter through spamassassin
