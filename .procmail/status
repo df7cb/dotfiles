@@ -5,9 +5,9 @@
 
 # killfile
 :0fhw
-#* !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org)>
-| formail -I"Status: RO"
+* !^Status:
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com)>
+| formail -i"Status: RO"
 
 #:0fhw
 #* ^From: BugScan reporter <bugscan@debian.org>
