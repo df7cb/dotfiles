@@ -7,12 +7,7 @@
 	LOGFILE=$LOGDIR/archive-$MONTH.log
 	DATE=`date -u "+%Y-%m"`
 	UMASK=033
-
 	MUTTDIR="/cb/www.df7cb.de/mutt/archive"
-
-	:0
-	* ^(X-)No-Archive: (yes|true)
-	{ NOARCHIVE=.no-archive }
 
 	:0
 	* ^Sender: owner-mutt-announce@mutt.org
@@ -49,11 +44,17 @@
 		* !^(X-)No-Archive: (yes|true)
 		$MUTTDIR/lurker-queue/$MUTTLIST
 		:0:
-		$MUTTDIR/$MUTTLIST/$MUTTLIST-$DATE$NOARCHIVE
+		* !^(X-)No-Archive: (yes|true)
+		$MUTTDIR/$MUTTLIST/$MUTTLIST-$DATE
+		:0:
+		/cb/www.df7cb.de/mutt/no-archive/$MUTTLIST-$DATE.no-archive
 	}
 
 	:0:
-	$MUTTDIR/unknown-list-$DATE$NOARCHIVE
+	* !^(X-)No-Archive: (yes|true)
+	$MUTTDIR/unknown-list-$DATE
+	:0:
+	$MUTTDIR/unknown-list-$DATE.no-archive
 }
 
 :0c
