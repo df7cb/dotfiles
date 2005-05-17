@@ -32,8 +32,8 @@ sub new_topic {
     if ($topics{$server->{tag}."_".$channel}) {
 	$topics{$server->{tag}."_".$channel} =~ s/^ +| +$//g;
 	$topic =~ s/^ +| +$//g;
-	my @original = split /\s*\|\s*/, $topics{$server->{tag}."_".$channel};
-	my @modified = split /\s*\|\s*/, $topic;
+	my @original = split /\s*\|\s*|\s+-\s+/, $topics{$server->{tag}."_".$channel};
+	my @modified = split /\s*\|\s*|\s+-\s+/, $topic;
 	
 	
       outer: while( $i <= $#original) {
