@@ -50,18 +50,18 @@ sub save_colors {
 # function) changes their nick, we'd like to keep the same color associated
 # with them (but only in the session_colors, ie a temporary mapping).
 
-sub sig_nick {
-  my ($server, $newnick, $nick, $address) = @_;
-  my $color;
-
-  $newnick = substr ($newnick, 1) if ($newnick =~ /^:/);
-
-  if ($color = $saved_colors{$nick}) {
-    $session_colors{$newnick} = $color;
-  } elsif ($color = $session_colors{$nick}) {
-    $session_colors{$newnick} = $color;
-  }
-}
+#sub sig_nick {
+#  my ($server, $newnick, $nick, $address) = @_;
+#  my $color;
+#
+#  $newnick = substr ($newnick, 1) if ($newnick =~ /^:/);
+#
+#  if ($color = $saved_colors{$nick}) {
+#    $session_colors{$newnick} = $color;
+#  } elsif ($color = $session_colors{$nick}) {
+#    $session_colors{$newnick} = $color;
+#  }
+#}
 
 # This gave reasonable distribution values when run across
 # /usr/share/dict/words
@@ -151,4 +151,4 @@ load_colors;
 Irssi::command_bind('color', 'cmd_color');
 
 Irssi::signal_add('message public', 'sig_public');
-Irssi::signal_add('event nick', 'sig_nick');
+#Irssi::signal_add('event nick', 'sig_nick');
