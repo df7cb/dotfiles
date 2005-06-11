@@ -11,60 +11,39 @@ AddToMenu Main	"fvwm2"		Title
 +		"&Init"		Popup Init
 +		"&Fvwm"		Popup FvwmMenu
 +		"&Keymaps"	Popup KeymapMenu
-+		"&Mail"		Popup Mail
-+		"&Network"	Popup Network
 +		"&Screen"	Popup Screen
++		"&VNC"		Popup VNC
 +		"&Window"	Popup WindowOps
 +		""		Nop
 #+		"Quit FVWM"	Quit
 +		"&Quit X"	Exec killall xterm xterm.real
-+		"&Poweroff"	Exec super poweroff
++		"&Poweroff"	Exec poweroff
++		"&Commit+off"	Exec xterm -e "make commit ; poweroff"
 
 
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
-+		"f&irefox"	Exec firefox
-+		"g&aleon"	Exec galeon
++		"&firefox"	Exec firefox
 +		"address&book"	Exec addressbook
++		"bbo"		Exec bbo
++		"gimp"		Exec gimp
 +		"&grip"		Exec grip
 +		"gv"		Exec gv
-+		"m&w"		Exec mw
 +		"&netscape"	Exec netscape
 +		"oo&ffice"	Exec ooffice
-+		"&opera"	Exec opera
-+		"&plan"		Exec plan
++		"&plan"		Exec LANG=de_DE.ISO-8859-1 plan
 +		"&teatimer"	Exec teatimer 02:30
 +		"&unison-gtk"	Exec unison-gtk
 +		"xawt&v"	Exec xawtv -geometry 780x585
 +		"x&mms"		Exec xmms
-+		"&xtnt"		Exec ssh -f df7cb@df7cb.heim-d.uni-sb.de xtnt
-#+		"tet"		Exec ssh -f tante@goedel tet
 +		"&xvncviewer"	Exec xvncviewer
 
 
 DestroyMenu Init
 AddToMenu Init	"Init"		Title
-+		"&poweroff"	Exec super poweroff
-+		"&halt"		Exec super halt
-+		"&reboot"	Exec super reboot
-+		"init &2"	Exec super init-2
-+		"init &3"	Exec super init-3
-
-
-DestroyMenu Mail
-AddToMenu Mail	"Mail"	Title
-+		"w&mbiff"	Exec wmbiff
-+		"  &offline"	Exec wmbiff -c /home/cb/.wmbiffrc-offline
-#+		"mailsync"	Nop
-#+		"  heim-d-in"	Exec mailsync -lf heim-d-in
-#+		"  heim-d"	Exec mailsync -lf heim-d
-#+		"  wjp-in"	Exec mailsync -lf wjp-in
-#+		"  wjp"		Exec mailsync -lf wjp
-
-
-DestroyMenu Network
-AddToMenu Network	"Network"	Title
-+		"&heim-d"	Exec super heim-d
++		"&poweroff"	Exec poweroff
++		"&halt"		Exec halt
++		"&reboot"	Exec reboot
 +		"&pump"		Exec super pump
 
 
@@ -86,9 +65,15 @@ AddToMenu FvwmMenu	"fvwm2"	Title
 +			""		Nop
 +			"Re&fresh"	Refresh
 +			"Re&capture"	Recapture
-+			"Re&start"	Restart fvwm2
-#+			"Start fvwm1"	Restart fvwm
++			"Re&start"	Restart
 +			"&Quit"		Quit
+
+
+DestroyMenu VNC
+AddToMenu VNC		"VNC"	Title
++ "intertalk:0"	Exec vncviewer -passwd /home/cb/.vnc/passwd_intertalk:0 intertalk.vpn.df7cb.de:0
++ "meitner:1"	Exec vncviewer -passwd /home/cb/.vnc/passwd_meitner:1 meitner.vpn.df7cb.de:1
++ "volta:0"	Exec vncviewer -passwd /home/cb/.vnc/passwd_volta:0 volta.vpn.df7cb.de:0
 
 
 DestroyMenu WindowOps
