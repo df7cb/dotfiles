@@ -158,8 +158,7 @@ Key	0	A	M4	Exec fvwm-toolbox aumix mute
 # root menu bindings for fvwm2 and fvwm95
 Mouse	1	R	A	Menu Main
 Mouse	2	R	A	Menu Apps
-Mouse	3	R	A	WindowList
-				#FvwmWinList Transient
+Mouse	3	R	A	WindowList NoDeskNum
 Mouse	4	R	A	Exec fvwm-toolbox aumix -v +5
 Mouse	5	R	A	Exec fvwm-toolbox aumix -v -5
 
