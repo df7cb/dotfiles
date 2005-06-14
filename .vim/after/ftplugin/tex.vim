@@ -18,4 +18,4 @@ nmap L MW
 
 map _i i\begin{itemize}<cr>\item <esc>mi}O\end{itemize}<esc>`i
 
-set keymap=tex
+"set keymap=tex
