@@ -97,7 +97,8 @@ XTerm*scrollTtyOutput:	false
 XTerm*showBlinkAsBold:	true
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
-xterm*VT100.Translations: #override <Key>BackSpace: string(0x08) \n\
+!xterm*VT100.Translations: #override <Key>BackSpace: string(0x08) \n\
+xterm*VT100.Translations: #override \n\
 	Ctrl ~Shift <KeyPress> -: smaller-vt-font() \n\
 	Ctrl ~Shift <KeyPress> =: larger-vt-font() \n\
 	Shift <KeyPress> Prior:scroll-back(2,halfpage) \n\
@@ -122,7 +123,3 @@ xv.*.ggraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 xv.*.bgraf: S 4 : 0,0 : 64,64 : 192,192 : 255,255
 xv.saveNormal: true
 wmWeather*geometry:	+898+416
-
-pvs.activedisplayforeground: red
-pvs.font:		9x15
-pvs.geometry:		87x60+0+0
