@@ -97,7 +97,7 @@ XTerm*scrollTtyOutput:	false
 XTerm*showBlinkAsBold:	true
 XTerm*utmpInhibit:	true
 XTerm*visualBell:	true
-!xterm*VT100.Translations: #override <Key>BackSpace: string(0x08) \n\
+!xterm*VT100.Translations: #override <Key>BackSpace: string(0x08) \n
 xterm*VT100.Translations: #override \n\
 	Ctrl ~Shift <KeyPress> -: smaller-vt-font() \n\
 	Ctrl ~Shift <KeyPress> =: larger-vt-font() \n\
@@ -105,14 +105,6 @@ xterm*VT100.Translations: #override \n\
 	Shift <KeyPress> Next:scroll-forw(2,halfpage) \n\
 	<Btn4Down>:scroll-back(2,halfpage,m)     \n\
 	<Btn5Down>:scroll-forw(2,halfpage,m)
-!	<Btn4Down>: string(0x1b) string("[5~") \n\
-!	<Btn5Down>: string(0x1b) string("[6~") \n
-!\n\
-!	<Key>Delete:	string(0x1b) string("[3~")\n\
-!	<Key>Home:	string(0x1b) string("[1~")\n\
-!	<Key>End:	string(0x1b) string("[4~")\n\
-!	Ctrl<Key>Prior:	string(0x1b) string("[40~")\n\
-!	Ctrl<Key>Next:	string(0x1b) string("[41~")
 xv*ctrlGeometry: -15-30
 xv.preset1.igraf: S 3 : 0,0 : 127,137 : 255,255
 xv.preset2.igraf: S 3 : 0,0 : 127,147 : 255,255
