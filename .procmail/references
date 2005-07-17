@@ -6,7 +6,7 @@
 | formail -i"References: <$MATCH@sourceforge.net>"
 
 # group CVS changes
-:0
+:0fh
 * ^From: .*@users.sourceforge.net
 * ^To: pisg-commits@lists.sourceforge.net
 * ^Date: \/.*
