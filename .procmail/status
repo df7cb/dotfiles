@@ -6,7 +6,7 @@
 # killfile
 :0fhw
 * !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com)>
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de)>
 | formail -i"Status: RO"
 
 #:0fhw

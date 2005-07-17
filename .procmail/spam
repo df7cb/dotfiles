@@ -30,7 +30,7 @@ $SPAMDIR/SUBJECT
 
 :0:
 * ^X-Original-To: cb\+spam@.*df7cb.de
-mail/spam-queue/spam
+mail/spam/queue
 
 :0:
 * ^X-Spam-Status: Yes
