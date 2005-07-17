@@ -2,6 +2,15 @@
 # cb 2004-10-05
 
 :0c
+* ^(List-Id: .*<|X-list: |Sender: owner-|Delivered-To: mailing list |X-Mailing-List: <)\/[a-z0-9-]*
+* !^X-List-Administrivia: yes
+{
+  MKDIR=`[ -d /cb/mail/$MATCH ] || mkdir /cb/mail/$MATCH`
+  :0
+  | gzip -9 >> /cb/mail/$MATCH/$MATCH-$MONTH.gz
+}
+
+:0c
 * ^Sender: (.*owner.*@mutt.org|mutt-newbie-list-admin@lists.sourceforge.net|muttpatches-owner@ml.free.fr|procmail.*@lists.RWTH-Aachen.DE)|^Delivered-To: .* mutt-rpm@mutt.justpickone.org
 {
 	LOGFILE=$LOGDIR/archive-$MONTH.log
