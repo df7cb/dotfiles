@@ -93,6 +93,7 @@ alias rado Rado Smiljanic <rado@math.uni-hamburg.de>
 alias reborn81 René Liesefeld <reborn81@gmx.de>
 alias rene René Engelhard <rene@debian.org>
 alias resa ReSa <resa@asta.uni-saarland.de>
+alias roessler Thomas Roessler <roessler@does-not-exist.org>
 alias root_asta root@asta.uni-saarland.de
 alias sekretariat AStA-Sekretariat <sekretariat@asta.uni-saarland.de>
 alias sithglan Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
@@ -112,5 +113,6 @@ alias w.heidrich Waltraud Heidrich <w.heidrich@studentenwerk-saarland.de>
 alias w.mueller Wolfgang Müller <w.mueller@univw.uni-saarland.de>
 alias weber.alex Alexandra Weber <weber.alex@gmx.net>
 alias weikum Gerhard Weikum <weikum@cs.uni-sb.de>
+alias wk Werner Koch <wk@gnupg.org>
 alias wspark Wooseok Park <wspark@cs.uni-sb.de>
 source ~/.mutt/aliases.addressbook
