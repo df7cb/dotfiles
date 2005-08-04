@@ -19,6 +19,11 @@
 * ^List-Id: <debian-\/[a-z0-9-]*
 | formail -i"X-Label: $MATCH"
 
+:0fhw
+* !^X-Label:
+* ^X-Mutt-PR: \/.*
+| formail -i"X-Label: $MATCH"
+
 # List-Id: discussion of the procmail program <procmail.lists.RWTH-Aachen.DE>
 # List-Id: <irssi-users.dragoncat.net>
 # List-Id: Unix Selbsthilfegruppe <unix-ag.net.uni-sb.de>
