@@ -1,0 +1,745 @@
+servers = (
+  {
+    address = "meitner.vpn.df7cb.de";
+    chatnet = "ircnet";
+    port = "13331";
+    password = "Eira1yeu";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "meitner.vpn.df7cb.de";
+    chatnet = "freenode";
+    port = "13332";
+    password = "Eira1yeu";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "meitner.vpn.df7cb.de";
+    chatnet = "oftc";
+    port = "13333";
+    password = "Eira1yeu";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "meitner.vpn.df7cb.de";
+    chatnet = "quakenet";
+    port = "13334";
+    password = "Eira1yeu";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "meitner.vpn.df7cb.de";
+    chatnet = "bitlbee";
+    port = "13335";
+    password = "Eira1yeu";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  ircnet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_modes = "3";
+    max_msgs = "5";
+    max_whois = "4";
+    max_query_chans = "5";
+  };
+  EFNet = { 
+    type = "IRC";
+    max_kicks = "4";
+    max_modes = "4";
+    max_msgs = "3";
+  };
+  Undernet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_modes = "3";
+    max_msgs = "3";
+  };
+  DALNet = { 
+    type = "IRC";
+    max_kicks = "4";
+    max_modes = "6";
+    max_msgs = "3";
+  };
+  GIMPNet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_modes = "4";
+    max_msgs = "3";
+  };
+  PTLink = {
+    type = "IRC";
+    max_kicks = "1";
+    max_modes = "6";
+    max_msgs = "100";
+  };
+  SILC = { type = "SILC"; };
+  freenode = { type = "IRC"; };
+  oftc = { type = "IRC"; };
+  quakenet = { type = "IRC"; };
+  bitlbee = { type = "IRC"; };
+};
+
+channels = (
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
+  { name = "#heim-d"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#plant"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#debian.de"; chatnet = "ircnet"; autojoin = "yes"; },
+  { name = "#debian.de"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#mutt"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#procmail"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian.de"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#xskat"; chatnet = "ircnet"; },
+  { name = "#xskat"; chatnet = "freenode"; },
+  { name = "#debian"; chatnet = "freenode"; },
+  { name = "#debian"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#pisg"; chatnet = "quakenet"; autojoin = "yes"; },
+  { name = "#ircmarkers"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-qa"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-bugs"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-devel"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#eyecatcher"; chatnet = "freenode"; autojoin = "yes"; },
+  { 
+    name = "#debian-newmaint";
+    chatnet = "freenode";
+    autojoin = "yes";
+  },
+  { name = "#debian-mentors"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#debian-release"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#debian-devel"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#verkehrsschilder"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#abk"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#alioth"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#bitlbee"; chatnet = "bitlbee"; autojoin = "yes"; },
+  {
+    name = "#idlerpg";
+    chatnet = "freenode";
+    autojoin = "yes";
+    autosendcmd = "/msg -freenode IdleBot login Myon Cobeis2z";
+  },
+  { name = "#gnupg"; chatnet = "freenode"; autojoin = "yes"; }
+);
+
+aliases = {
+  J = "join";
+  WJOIN = "join -window";
+  WQUERY = "query -window";
+  LEAVE = "part";
+  BYE = "quit";
+  EXIT = "quit";
+  SIGNOFF = "quit";
+  DESCRIBE = "action";
+  DATE = "time";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "who";
+  N = "names";
+  M = "msg";
+  T = "topic";
+  C = "clear";
+  CL = "clear";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  BANS = "ban";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  IG = "ignore";
+  UNIG = "unignore";
+  SB = "scrollback";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window new hide";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "SCRIPT LOAD";
+  UPTIME = "eval exec - expr `date +%s` - \\$F | awk '{print \"Irssi uptime: \"int(\\\\\\$1/3600/24)\"d \"int(\\\\\\$1/3600%24)\"h \"int(\\\\\\$1/60%60)\"m \"int(\\\\\\$1%60)\"s\" }'";
+  CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
+  SBAR = "STATUSBAR";
+  INVITELIST = "mode $C +I";
+  chanserv = "/quote chanserv";
+  identify = "/quote nickserv identify";
+  memoserv = "/quote memoserv";
+  think = "say .oO($0-)";
+  plonk = "ignore -time 600";
+  realname = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen (VN NN) ein, danke";
+  cs = "chanserv";
+  ns = "quote nickserv";
+  cskick = "quote cs op $C $N ; /wait 2000; /k $*; /mode -o $N";
+  csvoice = "quote cs op $C $N ; /wait 2000 ; /mode +v-o $* $N";
+  WI = "whois";
+  fuckinggoogleit = "say http://www.fuckinggoogleit.com/?q=$0-";
+  slap = "/me slaps $0 around a bit with a large $1-";
+  hide = "color set $0 15 ; color save";
+  addallchannels = "script exec foreach my \\$channel (Irssi::channels()) { Irssi::command(\"channel add -auto \\$channel->{name} \\$channel->{server}->{tag} \\$channel->{key}\")\\;}";
+  csop = "quote cs op $C";
+};
+
+statusbar = {
+  # formats:
+  # when using {templates}, the template is shown only if it's argument isn't
+  # empty unless no argument is given. for example {sb} is printed always,
+  # but {sb $T} is printed only if $T isn't empty.
+
+  items = {
+    # start/end text in statusbars
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    # treated "normally", you could change the time/user name to whatever
+    time = "{sb $Z}";
+    user = "{sb $cumode$N{sbmode $usermode}{sbaway $A}}";
+
+    # treated specially .. window is printed with non-empty windows,
+    # window_empty is printed with empty windows
+    window = "{sb $winref:$T{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+    prompt = "{prompt $[.15]T}";
+    prompt_empty = "{prompt $winname}";
+    topic = " $topic";
+    topic_empty = " Irssi v$J - http://irssi.org/help/";
+
+    # all of these treated specially, they're only displayed when needed
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  # there's two type of statusbars. root statusbars are either at the top
+  # of the screen or at the bottom of the screen. window statusbars are at
+  # the top/bottom of each split window in screen.
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = {
+      disabled = "no";
+
+      # window, root
+      type = "window";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "1";
+      # active, inactive, always
+      visible = "active";
+
+      # list of items in statusbar in the display order
+      items = {
+        barstart = { priority = "100"; };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+        chanact = { };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        # treated specially, this is the real input line.
+        input = { priority = "10"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        barstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    time = { disabled = "yes"; };
+  };
+};
+settings = {
+  core = {
+    real_name = "Christoph Berg";
+    user_name = "cb";
+    nick = "Myon";
+    override_coredump_limit = "no";
+    log_create_mode = "644";
+    timestamp_format = "%H:%M";
+  };
+  "irc/core" = { alternate_nick = "Tauon"; };
+  "perl/core/scripts" = {
+    friends_show_flags_on_join = "no";
+    friends_autosave = "yes";
+    title_string = "irssi $winname$C@$tag (proxy)";
+    chanact_header = "\\";
+    chanact_abbreviate_names = "3";
+    chanact_display = "$H$N$C$S";
+    trackbar_string = "-";
+    chanact_remove_prefix = "debian.";
+    screen_away_repeat = "10";
+    screen_away_message = "screen detached";
+  };
+  "fe-text" = {
+    scroll_page_count = "/1";
+    paste_verify_line_count = "10";
+    autostick_split_windows = "no";
+    term_type = "utf-8";
+  };
+  "fe-common/core" = {
+    autolog_path = "/cb/irc/log/${0}_$tag/%Y-%m/${0}-%Y-%m-%d";
+    autolog = "no";
+    hilight_nick_matches = "no";
+    show_nickmode = "yes";
+    activity_hide_targets = "";
+    activity_hide_level = "JOINS PARTS QUITS NICKS mode";
+    autoclose_windows = "yes";
+    reuse_unused_windows = "yes";
+    show_nickmode_empty = "no";
+  };
+  proxy = {
+    irssiproxy_password = "Eira1yeu";
+    irssiproxy_ports = "ircnet=13331 freenode=13332 oftc=13333 quakenet=13334";
+    irssiproxy_bind = "10.7.1.1";
+  };
+};
+hilights = (
+  { text = "Myon"; nick = "no"; word = "yes"; },
+  { text = "df7cb"; nick = "no"; word = "yes"; },
+  {
+    text = "coverviewer";
+    color = "%b";
+    act_color = "%b";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "gpgmailsign";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "usemod";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "gpgmailsign";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "endeavour";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "springgraph";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "xkeycaps";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "aspell-de";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "coverviewer";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "image-size";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "latex-bridge";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "coverviewer";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  },
+  {
+    text = "imgsize";
+    color = "%g";
+    act_color = "%g";
+    nick = "yes";
+    word = "yes";
+  }
+);
+ignores = (
+  { level = "NOTICES"; channels = ( "#xskat1" ); },
+  { mask = "*^!*@*"; level = "MSGS"; },
+  { mask = "*-!*@*"; level = "MSGS"; },
+  { mask = "*`!*@*"; level = "MSGS"; },
+  { mask = "*__!*@*"; level = "MSGS"; },
+  { level = "MODES"; channels = ( "#bitlbee" ); }
+);
+logs = { };
+keyboard = (
+  { key = "meta2-P"; id = "change_window"; data = "1"; },
+  { key = "meta-OP"; id = "change_window"; data = "1"; },
+  { key = "meta2-Q"; id = "change_window"; data = "2"; },
+  { key = "meta2-R"; id = "change_window"; data = "3"; },
+  { key = "meta2-S"; id = "change_window"; data = "4"; },
+  { key = "meta-[15~"; id = "change_window"; data = "5"; },
+  { key = "meta-[17~"; id = "change_window"; data = "6"; },
+  { key = "meta-[18~"; id = "change_window"; data = "7"; },
+  { key = "meta-[19~"; id = "change_window"; data = "8"; },
+  { key = "meta-[20~"; id = "change_window"; data = "9"; },
+  { key = "meta-[21~"; id = "change_window"; data = "10"; },
+  { key = "meta-[23~"; id = "change_window"; data = "11"; },
+  { key = "meta2-O2P"; id = "change_window"; data = "11"; },
+  { key = "meta-[24~"; id = "change_window"; data = "12"; },
+  { key = "meta2-O2Q"; id = "change_window"; data = "12"; },
+  { key = "meta2-O2R"; id = "change_window"; data = "13"; },
+  { key = "meta2-O2S"; id = "change_window"; data = "14"; },
+  { key = "meta-[15;2~"; id = "change_window"; data = "15"; },
+  { key = "meta-[17;2~"; id = "change_window"; data = "16"; },
+  { key = "meta-[18;2~"; id = "change_window"; data = "17"; },
+  { key = "meta-[19;2~"; id = "change_window"; data = "18"; },
+  { key = "meta-[20;2~"; id = "change_window"; data = "19"; },
+  { key = "meta-[21;2~"; id = "change_window"; data = "20"; },
+  { key = "meta-p"; id = "change_window"; data = "20"; },
+  { key = "meta-[23;2~"; id = "change_window"; data = "21"; },
+  { key = "meta-!"; id = "change_window"; data = "21"; },
+  { key = "meta-[24;2~"; id = "change_window"; data = "22"; },
+  { key = "meta-@"; id = "change_window"; data = "22"; },
+  { key = "meta-#"; id = "change_window"; data = "23"; },
+  { key = "meta-%"; id = "change_window"; data = "25"; },
+  { key = "meta-$"; id = "change_window"; data = "24"; },
+  { key = "meta-^"; id = "change_window"; data = "26"; },
+  { key = "meta-&"; id = "change_window"; data = "27"; },
+  { key = "meta-*"; id = "change_window"; data = "28"; },
+  { key = "meta-("; id = "change_window"; data = "29"; },
+  { key = "meta-)"; id = "change_window"; data = "30"; },
+  { key = "meta-Q"; id = "change_window"; data = "31"; },
+  { key = "meta-W"; id = "change_window"; data = "32"; },
+  { key = "meta-E"; id = "change_window"; data = "33"; },
+  { key = "meta-R"; id = "change_window"; data = "34"; },
+  { key = "meta-T"; id = "change_window"; data = "35"; },
+  { key = "meta-Y"; id = "change_window"; data = "36"; },
+  { key = "meta-U"; id = "change_window"; data = "37"; },
+  { key = "meta-I"; id = "change_window"; data = "38"; },
+  { key = "meta-P"; id = "change_window"; data = "40"; },
+  { key = "meta--"; id = "command"; data = "window shrink"; },
+  { key = "meta-="; id = "command"; data = "window grow"; },
+  { key = "^O"; id = "upper_window"; data = ""; }
+);
+notifies = { };
+windows = {
+  22 = {
+    items = (
+      { 
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#abk";
+        tag = "oftc";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "ircnet";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#plant";
+        tag = "ircnet";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "oftc";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#verkehrsschilder";
+        tag = "oftc";
+      }
+    );
+  };
+  17 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-newmaint";
+        tag = "freenode";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "oftc";
+      }
+    );
+  };
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-devel";
+        tag = "oftc";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-devel";
+        tag = "freenode";
+      }
+    );
+  };
+  19 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-release";
+        tag = "oftc";
+      }
+    );
+  };
+  18 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-mentors";
+        tag = "freenode";
+      }
+    );
+  };
+  23 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#alioth";
+        tag = "oftc";
+      }
+    );
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-qa";
+        tag = "freenode";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-bugs";
+        tag = "freenode";
+      }
+    );
+  };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#pisg";
+        tag = "quakenet";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#procmail";
+        tag = "freenode";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#heim-d";
+        tag = "ircnet";
+      }
+    );
+  };
+  25 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "zobel";
+        tag = "oftc";
+      }
+    );
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#bitlbee";
+        tag = "bitlbee";
+      }
+    );
+  };
+  24 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "panthera";
+        tag = "oftc";
+      }
+    );
+  };
+  21 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#eyecatcher";
+        tag = "freenode";
+      }
+    );
+  };
+  20 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ircmarkers";
+        tag = "freenode";
+      }
+    );
+  };
+};
+mainwindows = { 22 = { first_line = "1"; lines = "31"; }; };
