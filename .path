@@ -103,10 +103,10 @@ unset TMPDIRS TEST
 #done
 #export TEXINPUTS
 
-if [ -f $HOME/lib/make/Makefile ] ; then
-	MAKEFILES=$HOME/lib/make/Makefile
-	export MAKEFILES
-fi
+#if [ -f $HOME/lib/make/Makefile ] ; then
+#	MAKEFILES=$HOME/lib/make/Makefile
+#	export MAKEFILES
+#fi
 
 IFS=$IFS_SAVE
 unset test_dir dir save IFS_SAVE PREFIXES
