@@ -340,7 +340,7 @@ settings = {
   };
   proxy = {
     irssiproxy_password = "Eira1yeu";
-    irssiproxy_ports = "ircnet=13331 freenode=13332 oftc=13333 quakenet=13334";
+    irssiproxy_ports = "ircnet=13331 freenode=13332 oftc=13333 quakenet=13334 bitlbee=13335";
     irssiproxy_bind = "10.7.1.1";
   };
 };
@@ -500,13 +500,24 @@ keyboard = (
 );
 notifies = { };
 windows = {
-  22 = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  12 = {
     items = (
-      { 
+      {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#abk";
-        tag = "oftc";
+        name = "#pisg";
+        tag = "quakenet";
+      }
+    );
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode";
       }
     );
   };
@@ -520,103 +531,32 @@ windows = {
       }
     );
   };
-  4 = {
+  34 = {
     items = (
       {
-        type = "CHANNEL";
+        type = "QUERY";
         chat_type = "IRC";
-        name = "#debian.de";
+        name = "XTaran";
         tag = "ircnet";
       }
     );
   };
-  3 = {
+  24 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#plant";
-        tag = "ircnet";
-      }
-    );
-  };
-  6 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian.de";
-        tag = "oftc";
-      }
-    );
-  };
-  7 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#verkehrsschilder";
-        tag = "oftc";
-      }
-    );
-  };
-  17 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-newmaint";
+        name = "#idlerpg";
         tag = "freenode";
       }
     );
   };
-  16 = {
+  25 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian";
-        tag = "oftc";
-      }
-    );
-  };
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  9 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-devel";
-        tag = "oftc";
-      }
-    );
-  };
-  8 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-devel";
-        tag = "freenode";
-      }
-    );
-  };
-  19 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-release";
-        tag = "oftc";
-      }
-    );
-  };
-  18 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-mentors";
+        name = "#gnupg";
         tag = "freenode";
       }
     );
@@ -631,92 +571,12 @@ windows = {
       }
     );
   };
-  10 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mutt";
-        tag = "freenode";
-      }
-    );
-  };
-  14 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-qa";
-        tag = "freenode";
-      }
-    );
-  };
-  13 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-bugs";
-        tag = "freenode";
-      }
-    );
-  };
-  12 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#pisg";
-        tag = "quakenet";
-      }
-    );
-  };
-  11 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#procmail";
-        tag = "freenode";
-      }
-    );
-  };
-  15 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#heim-d";
-        tag = "ircnet";
-      }
-    );
-  };
-  25 = {
+  22 = {
     items = (
       { 
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "zobel";
-        tag = "oftc";
-      }
-    );
-  };
-  2 = {
-    items = (
-      {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#bitlbee";
-        tag = "bitlbee";
-      }
-    );
-  };
-  24 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "panthera";
+        name = "#abk";
         tag = "oftc";
       }
     );
@@ -741,5 +601,235 @@ windows = {
       }
     );
   };
+  19 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-release";
+        tag = "oftc";
+      }
+    );
+  };
+  18 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-mentors";
+        tag = "freenode";
+      }
+    );
+  };
+  17 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-newmaint";
+        tag = "freenode";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "oftc";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#heim-d";
+        tag = "ircnet";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-qa";
+        tag = "freenode";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-bugs";
+        tag = "freenode";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#procmail";
+        tag = "freenode";
+      }
+    );
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-devel";
+        tag = "oftc";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-devel";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#verkehrsschilder";
+        tag = "oftc";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "oftc";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
+        tag = "ircnet";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#plant";
+        tag = "ircnet";
+      }
+    );
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#bitlbee";
+        tag = "bitlbee";
+      }
+    );
+  };
+  33 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "fernando";
+        tag = "freenode";
+      }
+    );
+  };
+  32 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "mah";
+        tag = "bitlbee";
+      }
+    );
+  };
+  31 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Oleg";
+        tag = "bitlbee";
+      }
+    );
+  };
+  30 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Edith";
+        tag = "bitlbee";
+      }
+    );
+  };
+  29 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "chris101";
+        tag = "ircnet";
+      }
+    );
+  };
+  26 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "emrys";
+        tag = "freenode";
+      }
+    );
+  };
+  27 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Markus";
+        tag = "bitlbee";
+      }
+    );
+  };
+  28 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Torben";
+        tag = "bitlbee";
+      }
+    );
+  };
 };
-mainwindows = { 22 = { first_line = "1"; lines = "31"; }; };
+mainwindows = { 1 = { first_line = "1"; lines = "31"; }; };
