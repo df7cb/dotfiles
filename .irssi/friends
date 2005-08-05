@@ -17,9 +17,9 @@ handle=kodomo%hosts=*!*grsch@egret.net.informatik.tu-muenchen.de *!*memyself@egr
 handle=lizz%hosts=*!*lizard@xGagC632.WH1.TU-Dresden.De%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=LnxBil%hosts=*!*lnxbil@balora.cs.uni-sb.de *!*lnxbil@smartie.cs.uni-sb.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
 handle=[mIc]%hosts=*!*mic@p*.dip0.t-ipconnect.de *!*sauer@p*.dip0.t-ipconnect.de%globflags=%chanflags=#heim-d,oa,%password=%comment=%
-handle=mjung%hosts=*!*madbob@contact.mpi-sb.mpg.de *!*madbob@mpiat0209.zb.mpi-sb.mpg.de *!*madbob@mpii00103.mpi-sb.mpg.de%globflags=%chanflags=#unixagsb,ao, #plant,ao,%password=%comment=%
+handle=mjung%hosts=*!*madbob@contact.mpi-sb.mpg.de *!*madbob@mpiat0209.zb.mpi-sb.mpg.de *!*madbob@mpii00103.mpi-sb.mpg.de%globflags=%chanflags=#unixagsb,ao, #plant,,%password=%comment=%
 handle=MrRagga%hosts=*!MrRagga@p*.dip.t-dialin.net%globflags=%chanflags=%password=%comment=%
-handle=_nexus_%hosts=*!~nexus@hspc05.cs.uni-sb.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
+handle=_nexus_%hosts=*!~nexus@hsdpc02.cs.uni-sb.de *!~nexus@hspc05.cs.uni-sb.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=pacman%hosts=*!pacman@serverraum.org%globflags=%chanflags=#plant,,%password=%comment=%
 handle=pwAIn%hosts=*!mike@*.dip.t-dialin.net *!pwain@*.dip.t-dialin.net%globflags=%chanflags=#plant,,%password=UEOK9X4TGHwjQ%comment=%
 handle=pwAIn-TU%hosts=*!~pwain@finch.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,,%password=%comment=%

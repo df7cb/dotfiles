@@ -1,30 +1,35 @@
 # Makefile to create links in ~/.irssi/scripts/autorun/
 # $Id$
 
-all: scripts
-
-.PHONY: scripts
+.PHONY: scripts scripts.main
 scripts:
 	$(MAKE) -C $@ -f ../Makefile scripts_all
+scripts.main:
+	$(MAKE) -C scripts -f ../Makefile scripts_all.main
 
 ###
 
 scripts_all: autorun links
+scripts_all.main: autorun links.main
 
 autorun:
 	mkdir $@
 
-links:	autorun/friends.pl \
-	autorun/autorealname.pl \
+# load these scripts only on the irssi proxy server
+links.main: links \
+	autorun/friends.pl \
+	autorun/keepnick.pl \
+	autorun/muttwiki.pl \
+	autorun/nickident.pl \
+	autorun/screen_away.pl
+
+# load these scripts always
+links:	autorun/autorealname.pl \
 	autorun/chanact.pl \
 	autorun/chanshare.pl \
-	autorun/keepnick.pl \
 	autorun/len.pl \
-	autorun/muttwiki.pl \
 	autorun/nickcolor.pl \
-	autorun/nickident.pl \
 	autorun/recode.pl \
-	autorun/screen_away.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \

@@ -948,6 +948,7 @@ sub save_friends {
 
 	# restore umask
 	umask($old_umask);
+	return 0;
 }
 
 # void cmd_savefriends($data, $server, $channel)
@@ -957,7 +958,7 @@ sub cmd_savefriends {
 	eval {
 		save_friends(0, $file);
 	};
-	Irssi::print("Saving friendlist failed: $?") if ($?);
+	Irssi::print("Saving friendlist failed: $@") if ($@);
 }
 
 # void event_setup_saved($config, $auto)
@@ -969,7 +970,7 @@ sub event_setup_saved {
 	eval {
 		save_friends($auto);
 	};
-	Irssi::print("Saving friendlist failed: $?") if ($?);
+	Irssi::print("Saving friendlist failed: $@") if ($@);
 }
 
 # void event_setup_reread($config)
