@@ -1,0 +1,35 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my ($card, $fn, @mail, %seen);
+
+while (<>) {
+	$card = 1 if /^BEGIN:VCARD/;
+	next unless $card;
+	$fn = $1 if /^FN:(.*)/;
+	if (/^EMAIL;TYPE=internet(.*):(.*)/) {
+		if ($1) { # ,pref
+			unshift @mail, $2;
+		} else {
+			push @mail, $2;
+		}
+	}
+	if (/^END:VCARD/) {
+		if ($fn and @mail) {
+			foreach my $m (@mail) {
+				$m =~ /(.*)@/ or die;
+				my $u = lc $1;
+				if ($seen{$u}) {
+					print "alias $m $fn <$m>\n";
+				} else {
+					print "alias $u $fn <$m>\n";
+					$seen{$u} = 1;
+				}
+			}
+		}
+		undef $fn;
+		undef @mail;
+		$card = 0;
+	}
+}
