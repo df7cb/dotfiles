@@ -36,7 +36,7 @@ my ($fh, $file) = tempfile();
 print $fh "skip-unchanged 1\n";
 print $fh "verbose 0\n";
 for my $i (0 .. $argc - 1) {
-	printf $fh "%6d\t$ARGV[$i]\n", $i;
+	printf $fh "%6d\t%s\n", $i, $ARGV[$i];
 }
 close $fh;
 
