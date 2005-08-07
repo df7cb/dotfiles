@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Header$
+# $Header: /home/cb/lib/cvs/cb/bin/make-indexjpg,v 1.4 2004/01/11 22:45:59 cb Exp $
 # cb 030421: getopt support
 
 #<map name="Testbild"> 
@@ -24,6 +24,8 @@ $opt_v = 0;
 
 use Getopt::Std;
 getopts('w:h:H:b:n:B:mf:Lqst:T:v');
+
+exit 0 unless @ARGV;
 
 @ARGV = sort @ARGV if $opt_s;
 
