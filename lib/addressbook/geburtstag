@@ -7,6 +7,8 @@ use strict;
 use lib '.';
 use addressbook;
 
+addressbook::iconv("utf-8", "iso-8859-1");
+
 # plan kann keine Jahre vor 1970 :-/
 my $y = (localtime)[5] + 1900;
 

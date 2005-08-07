@@ -3,9 +3,17 @@
 
 package addressbook;
 
+use Text::Iconv;
+my $iconv;
+
+sub iconv {
+	$iconv = Text::Iconv->new(@_);
+}
+
 sub addr_get_line {
 	my $line = shift;
 	chomp $line;
+	$line = $iconv->convert($line) if $iconv;
 
 # Christoph;Berg;DF7CB;Uni 18, 2405;D;66123;Saarbrücken;9.3.1977;0681/9657944, 0179/4530792;5573;3065;cb@heim-d.uni-sb.de, cb@cs.uni-sb.de;rw4.cs.uni-sb.de/~cb/;vdl;
 
