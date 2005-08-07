@@ -1,9 +1,16 @@
 #!/bin/sh
 # $Id$
 
+if [ -x /usr/bin/dpkg ] ; then
+    case `dpkg --print-architecture` in
+	i386)		OS="linux-intel" ;;
+	amd64)		OS="linux-amd64" ;;
+    esac
+else
 case "`uname -srm`" in
 	Linux*[3-6]86)	OS="linux-intel" ;;
 	Linux*alpha)	OS="linux-alpha" ;;
+	Linux*x86_64)	OS="linux-amd64" ;;
 	Linux*sparc)	OS="linux-sparc" ;;
 	SunOS*4.*sun*)	OS="sunos4-sparc" ;;
 	SunOS*5.*sun*)	OS="solaris-sparc" ;;
@@ -16,6 +23,7 @@ case "`uname -srm`" in
 	*)		OS="unknown"
 			echo "os: warning: os type unknown" 1>&2 ;;
 esac
-export OS
+fi
 
+export OS
 echo $OS
