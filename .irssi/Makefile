@@ -7,6 +7,9 @@ scripts:
 scripts.main:
 	$(MAKE) -C scripts -f ../Makefile scripts_all.main
 
+clean:
+	rm -f scripts/autorun/*.pl
+
 ###
 
 scripts_all: autorun links
