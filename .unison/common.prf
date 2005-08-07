@@ -5,13 +5,15 @@ ignore = Name .#*
 ignore = Name *~
 ignore = Name .*~
 ignore = Name .nfs*
+ignore = Name *.bak
+ignore = Name .*.bak
 
 diff = tkdiff
-merge = tkdiff CURRENT1 CURRENT2 -a OLD -o NEW
-merge2 = tkdiff CURRENT1 CURRENT2 -o NEW
-editor = vim
-
-logfile = tmp/unison.log
+#merge = "tkdiff CURRENT1 CURRENT2 -a OLD -o NEW"
+#merge2 = "tkdiff CURRENT1 CURRENT2 -o NEW"
+#editor = vim
+logfile = /home/cb/tmp/unison.log
+times = true
 
 ## example
 #include common.prf
