@@ -1,6 +1,6 @@
 # $Id$
 
-all: .configrc .irssi/nickserv.users .less .plan.dir/dayplan .ssh/cb@fermi .ssh/config .ytalkrc .xinitrc bin/ctar
+all: .configrc .irssi/nickserv.users .less .plan.dir/dayplan .ssh/cb@fermi .ssh/config .ytalkrc .xinitrc bin/ctar .priv
 
 ## targets ##
 
@@ -35,6 +35,10 @@ all: .configrc .irssi/nickserv.users .less .plan.dir/dayplan .ssh/cb@fermi .ssh/
 
 bin/ctar:
 	ln -s ttar bin/ctar
+
+.PHONY: .priv
+.priv:
+	$(MAKE) -C .priv
 
 .PHONY: /tmp/$(USER) tmp
 tmp /tmp/$(USER):
@@ -138,18 +142,12 @@ export CVS_RSH=ssh
 
 up: update
 update: cleanup
-	cvs -q update
-
-safe: cleanup # conflict
-	for file in `cvs -q -n update | grep '^[MPU] ' | cut -c 3-` ; do \
-		cvs update $$file ; done
-
-conflict:
-	-cvs -q -n update | grep '^C '
+	svn update
+	if [ -d .priv ] ; then cd .priv && svn update ; fi
 
 com: commit
 commit: cleanup
-	cvs commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
+	svn commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
 
 ## installation stuff ##
 
