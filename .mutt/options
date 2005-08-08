@@ -7,7 +7,7 @@ set alias_file=~/.mutt/aliases
 #set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
 alternates ^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$
 set attribution="Re: %F in %i"
-set auto_tag
+unset auto_tag
 unset beep
 #set beep_new
 set bounce
@@ -49,7 +49,7 @@ set query_command="muttquery '%s'"
 set quit=ask-yes
 set quote_regexp="^([ \t]*[|>:}%])+|^[a-zA-Z]{,9}>"
 set record="!"
-set reply_regexp="^(re([\\[0-9\\]+])*|aw|antwort):[ \t]*"
+set reply_regexp="^(re([\\[0-9\\]+])*|aw|antwort|betreff):[ \t]*"
 set reverse_name
 unset reverse_realname
 set rfc2047_parameters
