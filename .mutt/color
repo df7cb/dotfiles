@@ -20,8 +20,8 @@ color index	green default ~P
 color index	cyan default ~v
 color index	brightdefault default ~T
 color index	brightdefault default ~F
-color index	magenta default "~t debian-news"
-color index	yellow default "~t -announce"
+color index	magenta default "~C debian-news"
+color index	yellow default "~C -announce"
 color index	red default "~t debian-security-announce"
 color index	yellow default '~y (aspell-de\|endeavour\|image-size\|ircmarkers\|usemod-wiki\|vcr\|xmms-coverviewer)'
 

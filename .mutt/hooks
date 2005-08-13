@@ -2,7 +2,7 @@
 unhook folder-hook
 unhook send-hook
 
-folder-hook .			'set record="!" trash="=trash/trash" menu_context=4'
+folder-hook .			'set record="!" trash="=trash/trash"'
 folder-hook IN/.		'set record="^" trash="^.trash"'
 folder-hook =rw/.		'set record="^" trash="=rw/trash/trash"'
 folder-hook \.trash$		'unset trash'
@@ -10,12 +10,12 @@ folder-hook \.trash$		'unset trash'
 #folder-hook .			'set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %s"'
 #folder-hook debian|lists	'set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"'
 #folder-hook debian|lists	'push "<delete-pattern>~R !~F ~d>1m<enter>"'
-folder-hook debian|lists	'push ,r;set menu_context=8'
+folder-hook debian|lists	'push ,r'
 
 folder-hook .			'push <collapse-all>'
 
 send-hook . "set pgp_autosign pgp_sign_as=0x6D8ABE71"
-send-hook '~t (majordomo\|-request)' "unset pgp_autosign"
+send-hook '~t (majordomo\|-request\|cabot)' "unset pgp_autosign"
 send-hook '~t debian\.org$' "set pgp_sign_as=0x58510B5A"
 
 send-hook . 'unmy_hdr X-Debbugs-No-Ack:'
