@@ -6,6 +6,7 @@
 \t	next-file
 p	prev-file
 ^H	prev-file
+	prev-file
 
 #env
 # ?X and %[ work with less >= 382
