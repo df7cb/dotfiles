@@ -2,7 +2,7 @@
 unhook folder-hook
 unhook send-hook
 
-folder-hook .			'push ,=;set record="!" trash="=trash/trash" menu_context=4'
+folder-hook .			'set record="!" trash="=trash/trash" menu_context=4'
 folder-hook IN/.		'set record="^" trash="^.trash"'
 folder-hook =rw/.		'set record="^" trash="=rw/trash/trash"'
 folder-hook \.trash$		'unset trash'
