@@ -6,7 +6,7 @@
 
 use strict;
 
-my ($card, $fn, @mail, %seen);
+my ($card, $fn, @mail, %seen, @out);
 
 while (<>) {
 	$card = 1 if /^BEGIN:VCARD/;
@@ -25,9 +25,9 @@ while (<>) {
 				$m =~ /(.*)@/ or die;
 				my $u = lc $1;
 				if ($seen{$u}) {
-					print "alias $m $fn <$m>\n";
+					push @out, "alias $m $fn <$m>\n";
 				} else {
-					print "alias $u $fn <$m>\n";
+					push @out, "alias $u $fn <$m>\n";
 					$seen{$u} = 1;
 				}
 			}
@@ -37,3 +37,5 @@ while (<>) {
 		$card = 0;
 	}
 }
+
+map { print; } sort @out;
