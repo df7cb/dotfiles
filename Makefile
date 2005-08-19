@@ -81,7 +81,7 @@ endif
 	@rm -f $<.bak
 	@touch $@
 # find duplicate aliases
-	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.addressbook | sort | uniq -d
+	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.ab | sort | uniq -d
 
 ifeq ($(shell [ -d .ncftp ] && echo yes), yes)
 COMMITS += .ncftp/bookmarks
@@ -96,17 +96,6 @@ endif
 	@[ ! -L .netscape/lock ]
 	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
 	@touch $@
-
-ifeq ($(shell [ -e .priv/addressbook.vcf ] && echo yes), yes)
-COMMITS += .priv/addressbook.vcf
-endif
-
-ifeq ($(shell [ -e .priv/dayplan ] && echo yes), yes)
-cleanup: .plan.dir/check-plan-running
-COMMITS += .priv/dayplan
-endif
-.plan.dir/check-plan-running:
-	@[ ! -f .plan.dir/lock.plan ]
 
 ifeq ($(shell [ -f .ssh/known_hosts ] && echo yes), yes)
 cleanup: .ssh/.known_hosts
@@ -136,18 +125,15 @@ endif
 
 ## update stuff ##
 
-# this needs GNU make
-export CVSIGNORE=*
-export CVS_RSH=ssh
-
 up: update
 update: cleanup
 	svn update
-	if [ -d .priv ] ; then cd .priv && svn update ; fi
+	if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 
 com: commit
 commit: cleanup
 	svn commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
+	if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
 ## installation stuff ##
 
