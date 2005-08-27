@@ -125,15 +125,20 @@ endif
 
 ## update stuff ##
 
+st: status
+status:
+	@svn -q status
+	@if [ -d .priv ] ; then $(MAKE) -C .priv status ; fi
+
 up: update
 update: cleanup
 	svn update
-	if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
+	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 
 com: commit
 commit: cleanup
 	svn commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
-	if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
+	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
 ## installation stuff ##
 
