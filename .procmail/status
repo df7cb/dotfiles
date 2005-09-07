@@ -1,6 +1,7 @@
+# I don't want to read my own messages again
 :0fhw
 #* !^Status:
-* ^From: Christoph Berg.*cb@
+* ^From: Christoph Berg <(cb|myon)@
 | formail -I"Status: RO"
 
 # killfile
@@ -18,6 +19,14 @@
 #* ^X-Mailer: maintainers-needed.pl
 #| formail -i"Status: RO"
 
+# hide QA uploads
+:0fhw
+* !^Status:
+* ^From: .*<(installer|katie)@
+* ^List-Id: .*debian-qa-packages
+| formail -i"Status: RO"
+
+# hide empty mutt cvs notifications
 :0
 * ^To: mutt-dev@mutt.org
 * ^Subject: \[.*\] CVS repository changes
