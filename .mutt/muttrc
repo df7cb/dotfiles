@@ -8,9 +8,12 @@ source ~/.mutt/bind
 source ~/.mutt/color
 source ~/.mutt/headers
 source ~/.mutt/x-face
-source ~/.mutt/aliases
 source ~/.mutt/lists
 source ~/.mutt/hooks
+
+# aliases
+source ~/.mutt/aliases
+source `if [ -f ~/.priv/aliases.ab ] ; then echo ~/.priv/aliases.ab ; else echo /dev/null ; fi`
 
 # local configuration options
 #source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
