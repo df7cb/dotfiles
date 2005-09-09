@@ -13,7 +13,8 @@ folder-hook \.trash$		'unset trash'
 #folder-hook debian|lists	'push "<delete-pattern>~R !~F ~d>1m<enter>"'
 folder-hook debian|lists	'push ,r'
 
-folder-hook .			'push <collapse-all>'
+folder-hook .			'push <collapse-all>; set from=cb@df7cb.de'
+folder-hook debian		'set from=myon@debian.org'
 
 # Debian archive messages
 message-hook .			"ignore Sender"
@@ -21,7 +22,7 @@ message-hook '~h X-Katie:'	"unignore Sender"
 
 send-hook . "set pgp_autosign pgp_sign_as=0x6D8ABE71"
 send-hook '~t (majordomo\|-request\|cabot)' "unset pgp_autosign"
-send-hook '~t debian\.org$' "set pgp_sign_as=0x58510B5A"
+send-hook '~t debian\.org$' "set from=myon@debian.org pgp_sign_as=0x58510B5A"
 
 # don't bug me with bugs
 send-hook . 'unmy_hdr X-Debbugs-No-Ack:'
