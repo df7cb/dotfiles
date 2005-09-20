@@ -1,4 +1,4 @@
-# $Id$
+# $Id$ vim:ft=sshconfig:
 changequote([, ])dnl
 define([HOSTNAME], esyscmd([echo -n $HOSTNAME]))dnl
 ifelse(HOSTNAME, [], [errprint(Hostname undefined) m4exit(1)])dnl
@@ -10,6 +10,10 @@ ForwardX11 yes
 NumberOfPasswordPrompts 3
 
 #ifdomain(intertalk.cs.uni-sb.de,
+#  Host es05
+#  Hostname rw4
+#  User es05
+#  ProxyCommand ssh knecht /RW/users/cb/bin/linux-intel/nc -q0 %h %p
 # Host knecht.cs.uni-sb.de knecht
 #  ProxyCommand none
 # Host *
@@ -23,13 +27,16 @@ host fermi.df7cb.de fermi
 host planck.df7cb.de planck
  hostname planck.df7cb.de
  forwardagent yes
- ifndomain(df7cb.de, proxyCommand ssh fermi.df7cb.de nc -q0 %h 22
- checkHostIP no)
- #localForward 5901 localhost:5901
- #remoteForward 16001 localhost:16001
+ ifndomain(df7cb.de, checkHostIP no)
 host meitner.df7cb.de meitner
  hostname meitner.df7cb.de
  forwardagent yes
+
+host meitner.vpn.df7cb.de
+ hostkeyalias meitner.df7cb.de
+ hostname 10.7.1.1
+ forwardagent yes
+
 ifdomain(planck.df7cb.de,host irssi
  hostname meitner.df7cb.de
  forwardagent yes
@@ -49,14 +56,11 @@ host d096.stw.stud.uni-saarland.de d096 hal.heim-d.uni-sb.de hal hal.cs
  hostname d096.stw.stud.uni-saarland.de
  forwardagent yes
 
-host maggie.cs.uni-sb.de maggie
- hostname maggie.cs.uni-sb.de
- forwardagent yes
-host milhouse.cs.uni-sb.de milhouse
- hostname milhouse.cs.uni-sb.de
- forwardagent yes
 host knecht.cs.uni-sb.de knecht
  hostname knecht.cs.uni-sb.de
+host es05
+ hostname rw4.cs.uni-sb.de
+ user es05
 
 host server.asta.uni-saarland.de
  hostname server.asta.uni-saarland.de
