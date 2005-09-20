@@ -4,7 +4,7 @@
 :
 : There is another theory which states that this has already happened.
 
-* Home:                               cb@df7cb.de
+* Home:                               cb@df7cb.de, myon@debian.org
    Christoph Berg                     http://www.df7cb.de/
    Dudweilerstr. 77                   0681/96 57 944
    66123 Saarbrücken                  0179/45 30 792 (Mobile)
@@ -14,16 +14,21 @@
    Building 45, Room 404              +49 (0)681/302-5573
    Universität des Saarlandes         +49 (0)681/302-3065 (Fax)
    66123 Saarbrücken
+* IRC: Myon (oftc/freenode/ircnet)
+* Jabber: myon@jabber.snow-crash.org
 * Ham Radio: DF7CB, Packet: df7cb@f6kft.fcal.fra.eu
 
-Type Bits/KeyID     Date       User ID
-pub  1024R/6D8ABE71 1998-07-25 Christoph Berg <cb@df7cb.de>
-     Key fingerprint = 09 9D 09 8F 89 52 24 12  FE C2 31 9D FE F8 5C 03
-uid                            Christoph Berg <cb@cs.uni-sb.de>
+pub   1024R/6D8ABE71 1998-07-25
+      Key fingerprint = 09 9D 09 8F 89 52 24 12  FE C2 31 9D FE F8 5C 03
+uid                  Christoph Berg <myon@debian.org>
+uid                  Christoph Berg <cb@df7cb.de>
+uid                  Christoph Berg <cb@cs.uni-sb.de>
 
-pub  1024D/58510B5A 2004-04-17 Christoph Berg <cb@df7cb.de>
-     Key fingerprint = D224 C8B0 7E63 A694 6DA3  2E07 C5AF 774A 5851 0B5A
-sub  1024g/4772A2E5 2004-04-17
+pub   1024D/58510B5A 2004-04-17
+      Key fingerprint = D224 C8B0 7E63 A694 6DA3  2E07 C5AF 774A 5851 0B5A
+uid                  Christoph Berg <cb@df7cb.de>
+uid                  Christoph Berg <myon@debian.org>
+sub   1024g/4772A2E5 2004-04-17
 
 -----BEGIN GEEK CODE BLOCK-----
 Version: 2.1/3.1
@@ -35,32 +40,36 @@ X@ !5 R- G' !tv b++>+++ DI++++ D-- g+ e+++ u++ h+ f+ r n- y+
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.4.1 (GNU/Linux)
 
-mQCNAzW54BAAAAEEAMx6ku4RoFCXH164Z1FIK8SFOFlS9oDswhIr5ETbFS6A/Ay4
-tJbcSqJelYAoy0QrVAzVIyaOc4ZBfGUhKQt4oB0jzNU+mfn1oaIZyiMNMbw7Omkq
-1yVMX3BK+KbslH3Dpk4Fa9zqxUtsywyDLQH2iSOUJBDCZQp7R7Rrkjttir5xAAUR
-tBxDaHJpc3RvcGggQmVyZyA8Y2JAZGY3Y2IuZGU+iQCVAwUTPvboM7Rrkjttir5x
-AQFJ7wQAlykxUiwjkka/hVKQO7qs9lpxNZ72ZOW6cl4tEqPTQ121iPPrzazFdLT7
-1IG30jP5Qrx4sd7NDFkeQVGPZj28uxWMShmwKOHkkmW4w9U2wQf4mfwUBdhw/Lin
-Jmz0JBBpzqpQYECgshLQ6+QIPaEjcopyihUb1Q/oTW4+7qC8dGy0IENocmlzdG9w
-aCBCZXJnIDxjYkBjcy51bmktc2IuZGU+iQCVAwUQOoSdJbRrkjttir5xAQEt7gP/
-ZQFMCO15UonwXHlTcAB5Mf1AxPMZgt8csQ5qQTl9sNDxZGTo0G/pYuvB+EA8qD81
-qqVpMDYKmCnFQrUZ2SBRRLOIQjU3Qv9JU44/Wb+SRye0Ez84IcZCco6FvV/j4gr8
-YBXO5Rre+iXV4zJHzUyDo1ej3XbuUOiAWmfBQxNvLla0JENocmlzdG9waCBCZXJn
-IDxjYkBoZWltLWQudW5pLXNiLmRlPokAlQMFMEDp43W0a5I7bYq+cQEB6E4EAMGc
-zkc4tLlFav8ijuR4xRcvCCpdVEN9c0jkZj3Z/Zczw0D//LBm7bZw3QdvCXYLGkvQ
-P/VY31nGHypehtWvtqgAsoucTWqyWKQlwaLEypZ60umB1Ssn2fd3xS+I/GIRuuOS
-4SLoK+07dqoiWf7vb6MYcPVWNwyJUfzTiXfLHseLiQCVAwUQNvOFtLRrkjttir5x
-AQGWpQP8D/yP92KTR3pndLXiKSlX10+Fh7KeANPNpju9hYL1OJPoCDqF73tui3Zq
-hQHKHOb3LKT7WUhiqS/5E8yoUC/KedM3ye2nxYNntE6o5DhuObjILWhZNhpduVdY
-AoXlZVcnCsI65IvsEwclkrC/hWsILnEocE+vKaxBm53NhAyaS0q0J0NocmlzdG9w
-aCBCZXJnIDxjYkBmc2luZm8uY3MudW5pLXNiLmRlPokAlQMFMEDp40+0a5I7bYq+
-cQEBZhgD/0VUEOw6+gxy7XcehKpnGjeRCRVZSo+WGRa5OEH5i2zgTedfL2T6HAxH
-N1nWEZYUUpbawqVGPrD0NhGxiU0trbhXigJxWwsAD+uOxIq4lSwkOo8OT2sGaNrD
-QlMZbAfWO8Bt/qKYgqyf2uE4SkxvMfEOs1BiJ3uW4lyW5lNIVDN7iQCVAwUQNbng
-EbRrkjttir5xAQFGwAP/XImMIia62PaTZfePbB7iPvFQm8GF8gYXB+170iVs+C+6
-L7B7/2jslI8IJYyeUDxXbnsdX5kP4kje3fw/IcXpsTrKjJWKeh8bC8yB8Sy/FjG1
-yKd9gnKLrTDbTYZ/XUFke97tZjLVirLTp+oRwU+lNlZcRvCaoLKA4MbF8j9FyLc=
-=CVWa
+mI0DNbngEAAAAQQAzHqS7hGgUJcfXrhnUUgrxIU4WVL2gOzCEivkRNsVLoD8DLi0
+ltxKol6VgCjLRCtUDNUjJo5zhkF8ZSEpC3igHSPM1T6Z+fWhohnKIw0xvDs6aSrX
+JUxfcEr4puyUfcOmTgVr3OrFS2zLDIMtAfaJI5QkEMJlCntHtGuSO22KvnEABRG0
+IENocmlzdG9waCBCZXJnIDxteW9uQGRlYmlhbi5vcmc+iQCVAwUTQxw997Rrkjtt
+ir5xAQGkYAQApoRjJixMruft/qaLfvZX8SNYx8OQqeTKnPAvRGwen8h9HupORQTI
+vfazy+lRGIs9pipOdVdPw0MHg/UiMEonIyEH7d7RZp7janX8RsI2M11G25fEUPCr
+MlPZSJwzO9Xl+2lLU6vPH4Ja+OkdL94SAiIo46NfzKo6luB4/ObruhK0HENocmlz
+dG9waCBCZXJnIDxjYkBkZjdjYi5kZT6JAJUDBRM+9ugztGuSO22KvnEBAUnvBACX
+KTFSLCOSRr+FUpA7uqz2WnE1nvZk5bpyXi0So9NDXbWI8+vNrMV0tPvUgbfSM/lC
+vHix3s0MWR5BUY9mPby7FYxKGbAo4eSSZbjD1TbBB/iZ/BQF2HD8uKcmbPQkEGnO
+qlBgQKCyEtDr5Ag9oSNyinKKFRvVD+hNbj7uoLx0bLQgQ2hyaXN0b3BoIEJlcmcg
+PGNiQGNzLnVuaS1zYi5kZT6JAJUDBRA6hJ0ltGuSO22KvnEBAS3uA/9lAUwI7XlS
+ifBceVNwAHkx/UDE8xmC3xyxDmpBOX2w0PFkZOjQb+li68H4QDyoPzWqpWkwNgqY
+KcVCtRnZIFFEs4hCNTdC/0lTjj9Zv5JHJ7QTPzghxkJyjoW9X+PiCvxgFc7lGt76
+JdXjMkfNTIOjV6Pddu5Q6IBaZ8FDE28uVrQkQ2hyaXN0b3BoIEJlcmcgPGNiQGhl
+aW0tZC51bmktc2IuZGU+iQCVAwUQNvOFtLRrkjttir5xAQGWpQP8D/yP92KTR3pn
+dLXiKSlX10+Fh7KeANPNpju9hYL1OJPoCDqF73tui3ZqhQHKHOb3LKT7WUhiqS/5
+E8yoUC/KedM3ye2nxYNntE6o5DhuObjILWhZNhpduVdYAoXlZVcnCsI65IvsEwcl
+krC/hWsILnEocE+vKaxBm53NhAyaS0qJAJUDBTBA6eN1tGuSO22KvnEBAehOBADB
+nM5HOLS5RWr/Io7keMUXLwgqXVRDfXNI5GY92f2XM8NA//ywZu22cN0Hbwl2CxpL
+0D/1WN9Zxh8qXobVr7aoALKLnE1qslikJcGixMqWetLpgdUrJ9n3d8UviPxiEbrj
+kuEi6CvtO3aqIln+72+jGHD1VjcMiVH804l3yx7Hi7QnQ2hyaXN0b3BoIEJlcmcg
+PGNiQGZzaW5mby5jcy51bmktc2IuZGU+iQCVAwUQNbngEbRrkjttir5xAQFGwAP/
+XImMIia62PaTZfePbB7iPvFQm8GF8gYXB+170iVs+C+6L7B7/2jslI8IJYyeUDxX
+bnsdX5kP4kje3fw/IcXpsTrKjJWKeh8bC8yB8Sy/FjG1yKd9gnKLrTDbTYZ/XUFk
+e97tZjLVirLTp+oRwU+lNlZcRvCaoLKA4MbF8j9FyLeJAJUDBTBA6eNPtGuSO22K
+vnEBAWYYA/9FVBDsOvoMcu13HoSqZxo3kQkVWUqPlhkWuThB+Yts4E3nXy9k+hwM
+RzdZ1hGWFFKW2sKlRj6w9DYRsYlNLa24V4oCcVsLAA/rjsSKuJUsJDqPDk9rBmja
+w0JTGWwH1jvAbf6imIKsn9rhOEpMbzHxDrNQYid7luJcluZTSFQzew==
+=JkTq
 -----END PGP PUBLIC KEY BLOCK-----
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -77,8 +86,15 @@ nehXdjS2aqPT1M9a+9eE/h1vSXId2UBJLLqSp/X5gkmi/O1bVUxtUVaXUiNvPy/S
 9sxwjBRht6VshYqlc+KS5znAc1SpZFdvjRB+COcMz2BFBWpuq7QcQ2hyaXN0b3Bo
 IEJlcmcgPGNiQGRmN2NiLmRlPohfBBMRAgAfBQJAgRnQAhsDBwsJCAcDAgEDFQID
 AxYCAQIeAQIXgAAKCRDFr3dKWFELWlFEAJ9jsxnIHunKR2/Keiz+7wgZqNGzvgCg
-yZf0oLFTEy0ci978IkZZwlOJ7Ic=
-=GzZb
+yZf0oLFTEy0ci978IkZZwlOJ7IeIXgQTEQIAHgIbAwIeAQIXgAUCQr3CEwYLCQgH
+AwIDFQIDAxYCAQAKCRDFr3dKWFELWk9aAKCRqxt1oxxKpdU0wIwKIslMcXcfcQCg
+vqbmDaDvsEGnYkmX3w8mZZNpBNOIYQQTEQIAIQIbAwIeAQIXgAYLCQgHAwIDFQID
+AxYCAQUCQxwWgwIZAQAKCRDFr3dKWFELWrCDAKClm+wFg68IMfuPWU0z2IRWf+ip
+eQCghdrpeKXX5qhNqb3i25OhdSmJbBm0IENocmlzdG9waCBCZXJnIDxteW9uQGRl
+Ymlhbi5vcmc+iF4EExECAB4FAkMcFl0CGwMGCwkIBwMCAxUCAwMWAgECHgECF4AA
+CgkQxa93SlhRC1qU/ACfekT5fXtPyvLhU5g1fCjWU+TUBZcAmgNcsbctt02yhobj
+vlaoTQjhnJuI
+=b52H
 -----END PGP PUBLIC KEY BLOCK-----
 
 ($Id$)
