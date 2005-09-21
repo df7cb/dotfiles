@@ -94,7 +94,7 @@ Style	"ProcMeter*"	NoTitle, Sticky, WindowListSkip, ClickToFocus
 
 # general
 #Style	"xv 3*"		NoTitle
-#Style	"VNC*"		HandleWidth 0, NoTitle
+Style	"VNC*"		HandleWidth 0, NoTitle
 #Style	Netscape*	StartsOnPage 0 1, SkipMapping
 Style	"xine*"		HilightFore DarkGrey, HilightBack black
 #Style	"xmms"		StartsOnPage 2 0, SkipMapping

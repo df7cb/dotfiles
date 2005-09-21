@@ -79,3 +79,18 @@ ifelse(HEIGHT, 480,
 +		"xterm &LU"	Function XTermLU
 +		"xterm &RU"	Function XTermRU'
 )
+
+ifelse(
+WIDTH.HEIGHT, 2304.1024, `
+define(_LLO,103x33+0+0)define(_LRO,103x33+384+0)
+define(_LLU,103x33+0+467)define(_LRU,103x33+384+467)
+define(`JLLO',`0 0')define(`JLRO',`20 0')define(`JLLU',`0 45')define(`JLRU',`20 45')
+
+# select an xterm
+AddToFunc   JumpWindowLLO "I" JumpWindow JLLO
+AddToFunc   JumpWindowLRO "I" JumpWindow JLRO
+AddToFunc   JumpWindowLLU "I" JumpWindow JLLU
+AddToFunc   JumpWindowLRU "I" JumpWindow JLRU
+'
+)dnl
+

@@ -18,20 +18,23 @@ AddToMenu Main	"fvwm2"		Title
 #+		"Quit FVWM"	Quit
 +		"&Quit X"	Exec killall xterm xterm.real
 +		"&Poweroff"	Exec poweroff
-+		"&Commit+off"	Exec xterm -e "make commit ; poweroff"
++		" +&Commit"	Exec xterm -e "make commit ; poweroff"
++		" +&Backup"	Exec xterm -e "make commit ; rdiff-volta-planck ; poweroff"
 
 
 DestroyMenu Apps
 AddToMenu Apps	"Apps"		Title
 +		"&firefox"	Exec firefox
-+		"address&book"	Exec addressbook
+#+		"address&book"	Exec addressbook
 +		"bbo"		Exec bbo
++		"&endeavour2"	Exec endeavour2
 +		"gimp"		Exec gimp
 +		"&grip"		Exec grip
 +		"gv"		Exec gv
 +		"&netscape"	Exec netscape
 +		"oo&ffice"	Exec ooffice
 +		"&plan"		Exec LANG=de_DE.ISO-8859-1 plan
++		"p&ycocuma"	Exec pycocuma --finder
 +		"&teatimer"	Exec teatimer 02:30
 +		"&unison-gtk"	Exec unison-gtk
 +		"xawt&v"	Exec xawtv -geometry 780x585

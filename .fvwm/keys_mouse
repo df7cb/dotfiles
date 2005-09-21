@@ -24,6 +24,11 @@ Key	Left	A	CS	Scroll -100 +0
 Key	Right	A	CS	Scroll +100 +0
 Key	Up	A	CS	Scroll +0   -100
 Key	Down	A	CS	Scroll +0   +100
+#
+Key	Left	A	CSM	Scroll -50  +0
+Key	Right	A	CSM	Scroll +50  +0
+Key	Up	A	CSM	Scroll +0   -50
+Key	Down	A	CSM	Scroll +0   +50
 
 Key	Insert	A	CS	GotoPage 0 0
 Key	Home	A	CS	GotoPage 1 0
@@ -53,10 +58,11 @@ Key	k	A	4	JumpWindowLO
 Key	l	A	4	JumpWindowRO
 Key	comma	A	4	JumpWindowLU
 Key	period	A	4	JumpWindowRU
-#Key	comma	A	C4	JumpWindow 11 0
-#Key	period	A	C4	JumpWindow 50 0
-#Key	End	A	4	JumpWindow 11 0
-#Key	Next	A	4	JumpWindow 50 0
+# left xinerama screen
+Key	h	A	4	JumpWindowLLO
+Key	j	A	4	JumpWindowLRO
+Key	n	A	4	JumpWindowLLU
+Key	m	A	4	JumpWindowLRU
 
 Key	Insert	A	CSM	Function XTermLO
 Key	Home	A	CSM	Function XTermLO
@@ -95,7 +101,7 @@ Key	Space	A	4	RaiseLower
 Key	r	A	S4	Resize
 Key	s	A	S4	Resize
 Key	x	A	S4	Close
-Key	m	A	4	Move
+#Key	m	A	4	Move
 Key	f	A	4	Function Maximize0100
 Key	f	A	S4	Function Maximize100100
 Key	f	A	C4	Function Maximize1000
