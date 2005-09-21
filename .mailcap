@@ -1,12 +1,18 @@
-application/pdf; acroread '%s'; test=which acroread > /dev/null
+application/bbolin; $HOME/projects/bridge/linviewer/xlinviewer '%s'; test=test -n "$DISPLAY"
+application/msword; ooffice '%s'; test=test -n "$DISPLAY"
+application/pdf; xpdf '%s'; test=which xpdf > /dev/null
 application/postscript; gv '%s'
+application/rtf; ooffice '%s'; test=test -n "$DISPLAY"
 application/x-gunzip; gunzip -c '%s'; copiousoutput; description=Gzipped data
 application/x-perl; xterm -e less %s
 audio/x-pn-realaudio; realplay '%s'
 image/*; xv '%s'; test=test -n "$DISPLAY" && which xv > /dev/null
+text/gdl; aisee '%s'; test=test -n "$DISPLAY"
+text/html; /usr/bin/links '%s';		needsterminal; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/links
+text/html; /usr/bin/links -dump '%s' | iconv -f latin1;	copiousoutput; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/links
 text/html; /usr/bin/w3m '%s';		needsterminal; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/w3m
 text/html; /usr/bin/w3m -dump '%s';	copiousoutput; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/w3m
 text/html; /usr/bin/elinks '%s';	needsterminal; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/elinks
 text/html; /usr/bin/elinks -dump '%s';	copiousoutput; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/elinks
-text/html; /usr/bin/links '%s';		needsterminal; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/links
-text/html; /usr/bin/links -dump '%s';	copiousoutput; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/links
+text/*; xless '%s'; test=test -n "$DISPLAY"
+application/*; xless '%s'; edit=xterm -e vim '%s'
