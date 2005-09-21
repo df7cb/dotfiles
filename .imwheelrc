@@ -13,6 +13,8 @@ None,	Up,	Page_Up
 None,	Down,	Page_Down
 ,	Up,	k
 ,	Down,	j
+,	Left,	k
+,	Right,	j
 
 "^gv"
 None,	Up,	Shift_L|space
@@ -23,6 +25,8 @@ Shift_L,	Down,	Page_Down
 "^less "
 None,	Up,	Page_Up
 None,	Down,	Page_Down
+None,	Left,	BackSpace
+None,	Right,	Tab
 
 "^irssi "
 None,	Up,	Page_Up
@@ -31,6 +35,8 @@ Shift_L,	Up,	Control_L|N
 Shift_L,	Down,	Control_L|P
 Control_L,	Up,	Control_L|N
 Control_L,	Down,	Control_L|P
+None,	Right,	Control_L|N
+None,	Left,	Control_L|P
 
 "^vim - "
 None,	Up,	Page_Up
@@ -48,10 +54,10 @@ None,	Down,	Space
 None,	Up,	Backspace
 None,	Down,	Space
 
-".*"
-@Priority=-1000
-@Exclude
-@Repeat
+#".*"
+#@Priority=-1000
+#@Exclude
+#@Repeat
 
 # ops:
 #"^mutt.*"
