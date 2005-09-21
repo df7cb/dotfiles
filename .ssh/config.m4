@@ -27,7 +27,7 @@ host fermi.df7cb.de fermi
 host planck.df7cb.de planck
  hostname planck.df7cb.de
  forwardagent yes
- ifndomain(df7cb.de, checkHostIP no)
+ checkHostIP no
 host meitner.df7cb.de meitner
  hostname meitner.df7cb.de
  forwardagent yes
@@ -37,22 +37,11 @@ host meitner.vpn.df7cb.de
  hostname 10.7.1.1
  forwardagent yes
 
-ifdomain(planck.df7cb.de,host irssi
- hostname meitner.df7cb.de
- forwardagent yes
- localForward 13331 localhost:13331
- localForward 13332 localhost:13332
- localForward 13333 localhost:13333)
+host *.debian.org *.debian.net
+ user myon
+ identityfile ~/.priv/myon@debian.org
 
-ifdomain(planck.df7cb.de, # woody chroot planck:/data/debian/woody-root
-host woody
- proxycommand super woody.sshd
- HostKeyAlias woody.planck.df7cb.de
-host sid
- proxycommand super sid.sshd
- HostKeyAlias woody.planck.df7cb.de)
-
-host d096.stw.stud.uni-saarland.de d096 hal.heim-d.uni-sb.de hal hal.cs
+host d096.stw.stud.uni-saarland.de d096 hal.heim-d.uni-sb.de hal
  hostname d096.stw.stud.uni-saarland.de
  forwardagent yes
 
@@ -65,7 +54,6 @@ host es05
 host server.asta.uni-saarland.de
  hostname server.asta.uni-saarland.de
  forwardagent yes
- ifndomain(uni-sb.de, Port 44)
 
 host kap?? cip???.studcs.uni-sb.de cip??? xcip?
  user berg
@@ -83,3 +71,5 @@ host hamberg hamberg.it.uu.se
 
 host shell.sourceforge.net
  user df7cb
+
+# vim:ft=sshconfig:
