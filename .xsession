@@ -40,7 +40,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	type -p pland > /dev/null && pland -k &
 	[ -p .aumix-pipe ] && rm -f .aumix-pipe
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
-	type -p esd > /dev/null && esd -nobeeps -tcp -as 5 &
+	type -p esd > /dev/null && esd -nobeeps -as 2 &
 
 	if [ "`echo .ssh/*.pub`" != ".ssh/*.pub" ] ; then # there are keys
 		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
