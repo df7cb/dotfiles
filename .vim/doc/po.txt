@@ -1,0 +1,88 @@
+*po.txt*	Plugin for editing po files
+
+" Vim ftplugin for PO file (GNU gettext) editing.
+" Maintainer:	Aleksandar Jelenak <ajelenak AT yahoo.com>
+" Last Change:	Tue, 12 Apr 2005 13:49:55 -0400
+"
+" *** Latest version: http://www.vim.org/scripts/script.php?script_id=695 ***
+"
+" DESCRIPTION
+"     This file is a Vim ftplugin for editing PO files (GNU gettext -- the GNU
+"     i18n and l10n system). It automates over a dozen frequent tasks that
+"     occur while editing files of this type.
+"
+"                                                      Key mappings
+"     Action (Insert mode)                            GUI Vim     Vim
+"     ===============================================================
+"     Move to an untransl. string forward             <S-F1>      \m
+"     Move to an untransl. string backward            <S-F2>      \p
+"     Copy the msgid string to msgstr                 <S-F3>      \c
+"     Delete the msgstr string                        <S-F4>      \d
+"     Move to the next fuzzy translation              <S-F5>      \f
+"     Move to the previous fuzzy translation          <S-F6>      \b
+"     Label the translation fuzzy                     <S-F7>      \z
+"     Remove the fuzzy label                          <S-F8>      \r
+"     Show msgfmt statistics for the file(*)          <S-F11>     \s
+"     Browse through msgfmt errors for the file(*)    <S-F12>     \e
+"     Put the translator info in the header           \t          \t
+"     Put the lang. team info in the header           \l          \l
+"     ---------------------------------------------------------------
+"     (*) Only available on UNIX computers.
+"
+"
+"                                                      Key mappings
+"     Action (Normal mode)                            GUI Vim     Vim
+"     ===============================================================
+"     Move to an untransl. string forward             <S-F1>      \m
+"     Move to an untransl. string backward            <S-F2>      \p
+"     Move to the next fuzzy translation              <S-F5>      \f
+"     Move to the previous fuzzy translation          <S-F6>      \b
+"     Label the translation fuzzy                     <S-F7>      \z
+"     Remove the fuzzy label                          <S-F8>      \r
+"     Split-open the file under cursor                  gf        gf
+"     Show msgfmt statistics for the file(*)          <S-F11>     \s
+"     Browse through msgfmt errors for the file(*)    <S-F12>     \e
+"     Put the translator info in the header           \t          \t
+"     Put the lang. team info in the header           \l          \l
+"     ---------------------------------------------------------------
+"     (*) Only available on UNIX computers.
+"
+"     Remarks:
+"     - "S" in the above key mappings stands for the <Shift> key and "\" in
+"       fact means "<LocalLeader>" (:help <LocalLeader>), which is "\" by
+"       Vim's default.
+"     - Information about the translator and language team is supplied by two
+"       global variables: 'g:po_translator' and 'g:po_lang_team'. They should
+"       be defined in the ".vimrc" (UNIX) or "_vimrc" (Windows) file. If they
+"       are not defined, the default values (descriptive strings) are put
+"       instead.
+"     - Vim's "gf" Normal mode command is remapped (local to the PO buffer, of
+"       course). It will only function on lines starting with "#: ". Search
+"       for the file is performed in the directories specified by the 'path'
+"       option. The user can supply its own addition to this option via the
+"       'g:po_path' global variable. Its default value for PO files can be
+"       found by typing ":set path?" from within a PO buffer. For the correct
+"       format please see ":help 'path'". Warning messages are printed if no
+"       or more than one file is found.
+"     - Vim's Quickfix mode (see ":help quickfix") is used for browsing
+"       through msgfmt-reported errors for the file. No MO file is created
+"       when running the msgfmt program since its output is directed to
+"       "/dev/null". The user can supply command-line arguments to the msgfmt
+"       program via the global variable 'g:po_msgfmt_args'. All arguments are
+"       allowed except the "-o" for output file. The default value is
+"       "-vv -c".
+"
+"     But there's even more!
+"
+"     Every time the PO file is saved, a PO-formatted time stamp is
+"     automatically added to the file header.
+"
+" INSTALLATION
+"     Put this file in a Vim ftplugin directory. On UNIX computers it is
+"     usually either "~/.vim/ftplugin" or "~/.vim/after/ftplugin". On Windows
+"     computers, the defaults are "$VIM\vimfiles\ftplugin" or
+"     "$VIM\vimfiles\after\ftplugin". For more information consult the Vim
+"     help, ":help 'ftplugin'" and ":help 'runtimepath'".
+"
+" REMOVAL
+"     Just delete the bloody file!
