@@ -12,7 +12,7 @@ mail/IN/debian-bts
 
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
-* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*katie@ftp-master.debian.org)
+* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<katie@.*.debian.org>)
 mail/IN/debian
 
 :0:
