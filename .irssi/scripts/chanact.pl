@@ -238,7 +238,8 @@ sub remake() {
 		}
 		if ($abbrev) {
 			if ($name =~ /^[&#+!=]/) {
-				$name = substr($name, 0, $abbrev + 1);
+				#$name = substr($name, 0, $abbrev + 1);
+				$name = substr($name, 1, $abbrev);
 			} else {
 				$name = substr($name, 0, $abbrev);
 			}
