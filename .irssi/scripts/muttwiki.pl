@@ -61,7 +61,7 @@ if(-e $s) {
 open F, "$f" or die "$f: $!";
 my $opened = 0;
 while(<F>) {
-	if(/^<li><a href="index.cgi/) {
+	if(/^<li><a href=/) {
 		chomp;
 		s/<[^>]*>//g;
 		s/^\(diff\)  //;
