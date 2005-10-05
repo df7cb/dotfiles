@@ -1,5 +1,5 @@
-# mensa
-# vim:ts=2
+# muttwiki.pl
+# vim:ts=4
 
 use strict;
 use POSIX;
@@ -83,6 +83,18 @@ close F;
 if(%N) {
 	print $wh "MuttWiki: ", (join "; ", map { "$_ changed ". join ", ", @{$N{$_}}; } sort keys %N), "\n";
 }
+
+# announce mutt PRs
+my $prfile = "/home/cb/.irssi/mutt-newpr";
+if(-f $prfile) {
+	open M, $prfile;
+	while(<M>) {
+		print $wh "New PR:$_";
+	}
+	close M;
+	unlink $prfile;
+}
+
 		# ------------------------------------------------------------------------
 		close($wh);
 		POSIX::_exit(1);
