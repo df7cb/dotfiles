@@ -27,6 +27,7 @@ alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
 alias debian-channel \"debian.de\" <debian-channel@lists.infodrom.org>
 alias debian-devel debian-devel <debian-devel@lists.debian.org>
+alias debian-qa Debian QA Group <debian-qa@lists.debian.org>
 alias desc Debian Description Translation Project <desc@ddtp.debian.org>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
 alias dickey Thomas Dickey <dickey@his.com>
