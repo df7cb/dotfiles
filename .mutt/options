@@ -7,7 +7,7 @@ set alias_file=~/.mutt/aliases
 #set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
 alternates ^(cb@((cs|asta).uni-s(b|aarland)|df7cb).de|myon.*@.*debian.org|df7cb@.*)$
 set attribution="Re: %F in %i"
-unset auto_tag
+set auto_tag
 unset beep
 #set beep_new
 set bounce
@@ -67,5 +67,5 @@ set use_domain
 set use_from
 unset wait_key
 unset write_bcc
-set xterm_set_titles xterm_title="Mutt: %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]"
+set xterm_set_titles xterm_title="Mutt: %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b?"
 
