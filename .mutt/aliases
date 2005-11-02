@@ -2,6 +2,7 @@
 # mutt aliases
 alias 5erof 5er-OF-System <5erof@luithle.net>
 alias a.neisius Alfred Neisius <a.neisius@rz.uni-sb.de>
+alias a.oswald Anne-Marie Oswald <a.oswald@studentenwerk-saarland.de>
 alias aerat-ml Ältestenrat <aerat-ml@asta.uni-saarland.de>
 alias ai Aktive Idealisten <ai@fsinfo.cs.uni-sb.de>
 alias alexkleist Alexander Kleist <alex@alex-kleist.net>
@@ -25,6 +26,8 @@ alias control@bugs.guug.de Mutt Bugs Control <control@bugs.guug.de>
 alias d-bildt Dominik Bildt <d-bildt@gmx.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
+alias ddpo DDPO Control Bot <ddpo@qa.debian.org>
+alias debian-admin Debian-Admin <debian-admin@lists.debian.org>
 alias debian-channel \"debian.de\" <debian-channel@lists.infodrom.org>
 alias debian-devel debian-devel <debian-devel@lists.debian.org>
 alias debian-qa Debian QA Group <debian-qa@lists.debian.org>
@@ -72,6 +75,7 @@ alias krieger Hans-Ulrich Krieger <krieger@dfki.de>
 alias labor Labor <labor@wjpserver.cs.uni-sb.de>
 alias learfox Tara Milana <learfox@twu.net>
 alias liste Aktive Idealisten <liste@aktive-idealisten.de>
+alias listmaster Debian Listmasters <listmaster@lists.debian.org>
 alias m Majordomo List Manager <majordomo@heim-d.uni-sb.de>
 alias majordomo Lithe-Majordomo <majordomo@lists.lithe.de>
 alias marechal Marechal Nadege <marechal@cs.uni-sb.de>
