@@ -22,7 +22,7 @@ None,	Down,	space
 Shift_L,	Up,	Page_Up
 Shift_L,	Down,	Page_Down
 
-"^less "
+"^less"
 None,	Up,	Page_Up
 None,	Down,	Page_Down
 None,	Left,	BackSpace
@@ -41,6 +41,8 @@ None,	Left,	Control_L|P
 "^vim - "
 None,	Up,	Page_Up
 None,	Down,	Page_Down
+None,	Left,	Shift_L|F11
+None,	Right,	Shift_L|F12
 
 "^Xdvi:"
 None,	Up,	Page_Up

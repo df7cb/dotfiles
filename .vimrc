@@ -68,6 +68,12 @@ nmap <s-f8>	:b18<cr>
 nmap <s-f9>	:b19<cr>
 nmap <s-f10>	:b20<cr>
 
+" for imwheel
+nmap <s-f11>	:bp<cr>
+nmap <s-f12>	:bn<cr>
+imap <s-f11>	<c-o>:bp<cr>
+imap <s-f12>	<c-o>:bn<cr>
+
 " swap C arguments
 nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
 
