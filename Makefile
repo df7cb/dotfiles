@@ -69,6 +69,16 @@ endif
 	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
 	@touch $@
 
+ifeq ($(shell [ -d .kazehakase ] && echo yes), yes)
+cleanup: .kazehakase/.bookmarks.xml kazehakase-run
+#COMMITS += .kazehakase/bookmarks.xml
+endif
+.kazehakase/.bookmarks.xml: .kazehakase/bookmarks.xml kazehakase-run
+	# Cleaning $<
+	@touch $@
+kazehakase-run:
+	@if pidof kazehakase > /dev/null ; then echo "kazehakase is running " ; false ; else true ; fi
+
 ifeq ($(shell [ -d .mutt ] && echo yes), yes)
 cleanup: .mutt/.aliases
 COMMITS += .mutt/aliases
