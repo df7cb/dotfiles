@@ -7,14 +7,17 @@
       <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^(http:|ftp:|file:|https:|about:)" kz:smart_uri="%s"/>
       <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^#?([0-9]+)$" kz:smart_uri="http://bugs.debian.org/\1" kz:smart_urlencode="yes"/>
       <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^b (.*)" kz:smart_uri="http://bugs.debian.org/\1" kz:smart_urlencode="yes"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^(.*\..*@.*\..*)$" kz:smart_uri="http://lists.debian.org/~asuffield/msgid.php/%s" kz:smart_urlencode="yes"/>
       <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^ddpo (.*)" kz:smart_uri="http://qa.debian.org/developer.php?login=\1" kz:smart_urlencode="yes"/>
-      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^qa (.*)" kz:smart_uri="http://packages.qa.debian.org/\1"/>
-      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^p (.*)" kz:smart_uri="http://packages.debian.org/\1"/>
-      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="\.(com|net|org|edu|gov|mil|int|info|biz|name|pro|museum|aero|coop)($|/)" kz:smart_uri="%s"/>
-      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="\.([a-z][a-z])($|/)" kz:smart_uri="%s"/>
-      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="localhost($|/)" kz:smart_uri="%s"/>
-      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^/.*" kz:smart_uri="file://%s"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^(.*@.*\..*)$" kz:smart_uri="http://qa.debian.org/developer.php?login=%s"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^g (.*)" kz:smart_uri="http://www.google.de/search?hl=de&amp;q=\1" kz:smart_urlencode="yes"/>
       <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^leo (.*)" kz:smart_uri="http://dict.leo.org/?lp=ende&amp;search=\1" kz:smart_urlencode="yes"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^mw (.*)" kz:smart_uri="http://www.m-w.com/dictionary/\1"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^p (.*)" kz:smart_uri="http://packages.debian.org/\1"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^qa (.*)" kz:smart_uri="http://packages.qa.debian.org/\1"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="^/.*" kz:smart_uri="file://%s"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="\.([a-z]*)($|/)" kz:smart_uri="%s"/>
+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:smart_regex="localhost($|/)" kz:smart_uri="%s"/>
     </info>
     <desc>LocationEntry</desc>
   </bookmark>
