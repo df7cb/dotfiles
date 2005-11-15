@@ -2,8 +2,11 @@
 #echo '$Id$'
 #set -x
 
+echo
+echo "`date` $0: start"
+
 cd $HOME
-. $HOME/.path
+. .path
 
 if [ "$SHELL" = /bin/sh ] ; then
 	if SHELL=`which bash` ; then
@@ -14,13 +17,9 @@ if [ "$SHELL" = /bin/sh ] ; then
 	SHELL=/bin/sh
 fi
 
-export LANG=de_DE.UTF-8
-echo "`date` $0: start"
-locale
+. .env
 
-. $HOME/.bashrc
-
-export XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
+XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
 
 #set up X server
 xhost - >/dev/null
@@ -32,13 +31,12 @@ xset r rate 400 30
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy
-	( sleep 10 ; xroot ) &
+	( sleep 5 ; xroot ) &
 	case $(xdpyinfo | grep '^XFree86 version' | cut -d ' ' -f 3) in
 		4.3*|4.4*) xclock -g x13+0+0 -strftime '%e.%m. %T' & ;; # 110x13
 		*) xclock -g 116x12+0+0 & ;;
 	esac
-	type -p pland > /dev/null && pland -k &
-	[ -p .aumix-pipe ] && rm -f .aumix-pipe
+	[ -e .plan.dir/dayplan ] && type -p pland > /dev/null && pland -k &
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
 	type -p esd > /dev/null && esd -nobeeps -as 2 &
 
@@ -56,13 +54,9 @@ fi
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
 SHLVL=-1
 
-#LANG=de_DE.ISO-8859-1 fvwm2 -s &
 fvwm &
 
-if [[ "$XVENDOR" != *VNC* ]] ; then
-	console=yes exec xterm +ut -vb -C -geometry 62x5+120-0 -T console
-else
-	exec xterm +ut -vb -C -geometry 62x5+120-0 -T console
-fi
+[[ "$XVENDOR" != *VNC* ]] && export console=yes
+exec xterm +ut -vb -C -geometry 62x5+120-0 -T console
 
 # vim:ts=4:sw=4:
