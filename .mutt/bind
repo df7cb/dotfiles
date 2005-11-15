@@ -34,7 +34,7 @@ bind	pager	N	search-opposite
 #macro	index	q	'<change-folder>?<tab>'
 #macro	browser	q	'<exit><quit>'
 bind	browser	v	view-file
-bind	index	v	collapse-thread
+bind	index	V	collapse-thread
 bind	index	x	sync-mailbox
 bind	pager	x	sync-mailbox
 macro	index	=	s=		'Save to ~/mail/'
