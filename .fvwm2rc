@@ -34,7 +34,7 @@ ClickTime 200
 
 ColormapFocus FollowsMouse
 
-OpaqueMoveSize 10
+OpaqueMoveSize 100
 
 CursorStyle TITLE 52
 CursorStyle SYS 90

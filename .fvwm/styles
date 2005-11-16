@@ -62,6 +62,7 @@ Style	"*"		Icon small.Template.xpm
 Style	"*"		SlipperyIcon, IconBox +515 -90 -0 -0
 Style	"*"		NoPPosition
 Style	"*"		SloppyFocus, SmartPlacement, RandomPlacement
+Style	"*"		ResizeOpaque
 
 # decorations for transient windows
 Style	"*"		DecorateTransient
