@@ -31,6 +31,7 @@ alias ddpo DDPO Control Bot <ddpo@qa.debian.org>
 alias debian-admin Debian-Admin <debian-admin@lists.debian.org>
 alias debian-channel \"debian.de\" <debian-channel@lists.infodrom.org>
 alias debian-devel debian-devel <debian-devel@lists.debian.org>
+alias debian-devel-announce debian-devel-announce <debian-devel-announce@lists.debian.org>
 alias debian-qa Debian QA Group <debian-qa@lists.debian.org>
 alias desc Debian Description Translation Project <desc@ddtp.debian.org>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
