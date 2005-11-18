@@ -43,6 +43,11 @@ mail/IN/mutt
 * ^(Mailing-List: |List-Id: |X-BeenThere: aspell|List-Owner: )
 mail/IN/lists
 
+# AI-Bounces direkt
+:0:
+* ^Subject: BOUNCE
+mail/IN/cb
+# root
 :0:
 * ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster|logcheck)@
 mail/IN/root
@@ -51,6 +56,7 @@ mail/IN/root
 * ^X-List-Administrivia: yes
 mail/IN/root
 
+# Inbox
 :0:
 mail/IN/cb
 
