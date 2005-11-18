@@ -7,7 +7,7 @@
 # killfile
 :0fhw
 * !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de)>
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com)>
 | formail -i"Status: RO"
 
 #:0fhw
@@ -24,6 +24,13 @@
 * !^Status:
 * ^From: .*<(installer|katie)@
 * ^List-Id: .*debian-qa-packages
+| formail -i"Status: RO"
+
+# hide messages from debianqueued
+:0fhw
+* !^Status:
+* ^From: .*<katie@
+* ^Subject: Processing of .*.changes
 | formail -i"Status: RO"
 
 # hide empty mutt cvs notifications
