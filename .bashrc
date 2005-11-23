@@ -2,11 +2,6 @@
 # login shells: /etc/profile, then ~/.[bash_]profile; interactive: ~/.bashrc
 #echo .bashrc
 
-# general stuff
-#ulimit -Sc 0	# disable core dumps
-#if [ $UID -gt 0 ] && [ $LOGNAME = $(id -ng) ] ; then umask 002 ; else umask 022 ; fi
-umask 022
-
 source_rc () {
 	if [ -e ~/$1 ] ; then . ~/$1
 	elif [ -e ~cb/$1 ] ; then . ~cb/$1
