@@ -20,9 +20,9 @@ folder-hook debian		'set from=myon@debian.org'
 message-hook .			"ignore Sender"
 message-hook '~h X-Katie:'	"unignore Sender"
 
-send-hook . "set pgp_autosign pgp_sign_as=0x6D8ABE71"
+send-hook . "set pgp_autosign"
 send-hook '~t (majordomo\|-request\|cabot)' "unset pgp_autosign"
-send-hook '~t debian\.org$' "set from=myon@debian.org pgp_sign_as=0x58510B5A"
+send-hook '~t debian\.org$' "set from=myon@debian.org"
 
 # don't bug me with bugs
 send-hook . 'unmy_hdr X-Debbugs-No-Ack:'

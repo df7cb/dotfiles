@@ -31,7 +31,7 @@ set ispell="aspell --lang=de check"
 unset markers
 set mbox_type=mbox
 set menu_context=8
-#unset menu_move_off
+unset menu_move_off
 set menu_scroll
 set mime_forward=ask-yes
 unset move
@@ -42,7 +42,7 @@ set pipe_split
 set pgp_auto_traditional
 set pgp_autosign
 set pgp_replyencrypt
-set pgp_sign_as="0x6D8ABE71"
+set pgp_sign_as="0x58510B5A"
 set pgp_timeout=14400
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
