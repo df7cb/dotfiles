@@ -13,17 +13,19 @@ alias asp16 Adeodato Simó <asp16@alu.ua.es>
 alias asta AStA Saarbrücken <asta@asta.uni-saarland.de>
 alias asta_rso_gewinnspiel AStA-RSO-Gewinnspiel <asta_rso_gewinnspiel@web.de>
 alias azoff Torbjörn Svensson <azoff@se.linux.org>
+alias bach Ilina Bach <bach@cs.uni-sb.de>
+alias bdecker Björn Decker <bdecker@cs.uni-sb.de>
 alias benni Benjamin Grewer <benni@asta.uni-saarland.de>
 alias bogdana Bogdana Dakova <bogdana@cs.uni-sb.de>
 alias brendan Brendan Cully <brendan@kublai.com>
 alias bridge-runde Bridge-Runde <bridge-runde@lists.mawan.de>
+alias bwachter Björn Wachter <bwachter@cs.uni-sb.de>
 alias caligari Villani Eric <caligari@libertysurf.fr>
 alias cbieg Claudia Bieg <cbieg@cs.uni-sb.de>
 alias cfry Charles Fry <cfry@frogcircus.org>
 alias champagnnia Verena Bürger <champagnnia@yahoo.de>
 alias chuth Claus Huth <chuth@t-online.de>
 alias control Debian Bugs Control <control@bugs.debian.org>
-alias control@bugs.guug.de Mutt Bugs Control <control@bugs.guug.de>
 alias d-bildt Dominik Bildt <d-bildt@gmx.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
@@ -104,28 +106,32 @@ alias nkuttler Jean-Nicolas Kuttler <nkuttler@asta.uni-saarland.de>
 alias pdesc DDTP Package Descriptions <pdesc@ddtp.debian.org>
 alias pilzecker Markus Pilzecker <pilzecker@free.fr>
 alias pisg-general Pisg <pisg-general@lists.sourceforge.net>
+alias pister Markus Pister <pister@cs.uni-sb.de>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
 alias pts PTS Control Bot <pts@qa.debian.org>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
 alias rado Rado Smiljanic <rado@math.uni-hamburg.de>
 alias reborn81 René Liesefeld <reborn81@gmx.de>
+alias reineke Jan Reineke <reineke@cs.uni-sb.de>
 alias rene René Engelhard <rene@debian.org>
 alias request Debian Bugs Request <request@bugs.debian.org>
 alias resa ReSa <resa@asta.uni-saarland.de>
 alias roessler Thomas Roessler <roessler@does-not-exist.org>
 alias root_asta root@asta.uni-saarland.de
+alias schlickling Marc Schlickling <schlickling@cs.uni-sb.de>
 alias sekretariat AStA-Sekretariat <sekretariat@asta.uni-saarland.de>
 alias sithglan Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
 alias stefanchadzelek Stefan Chadzelek <StefanChadzelek@web.de>
 alias steve-md Steve Kennedy <steve-md@gbnet.net>
 alias stupisten Stupa <stupisten@asta.uni-saarland.de>
 alias submit Debian Bugs Submit <submit@bugs.debian.org>
-alias submit@bugs.guug.de Mutt Bugs Submit <submit@bugs.guug.de>
+alias thesing Stephan Thesing <thesing@cs.uni-sb.de>
 alias tiffy Susanne Pfeifer <tiffy@tiffy.it>
 alias timovoe Timo von Oertzen <timovoe@studcs.uni-sb.de>
 alias tischer Dr. Peter Tischer <tischer@szsb.uni-sb.de>
 alias tnt-devel TNT developers <tnt-devel@excelsior.kullen.rwth-aachen.de>
 alias tolimar Alexander Schmehl <tolimar@schmehl.info>
+alias topic Dalibor Topic <topic@mpi-sb.mpg.de>
 alias unix-ag Unix AG <unix-ag@net.uni-sb.de>
 alias vdl-abi96 Abi 96 <vdl-abi96@heim-d.uni-sb.de>
 alias video4linux-list Video4Linux <video4linux-list@redhat.com>
