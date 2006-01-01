@@ -1,0 +1,43 @@
+[DEFAULT]
+progress_indicator = 2
+
+[delayed]
+method = scp
+fqdn = gluck.debian.org
+incoming = ~tfheen
+login = myon
+
+[ganneff_scp]
+fqdn = dak.ganneff.de
+method = scp
+incoming = /opt/dak/queue/unchecked
+allow_unsigned_uploads = 0
+run_dinstall = 0
+login = cb
+
+[ganneff_app]
+fqdn = dak.ganneff.de
+method = ftp
+incoming = ./
+allow_unsigned_uploads = 0
+run_dinstall = 0
+login = dak
+
+[debonaras]
+fqdn = ftp-master.debonaras.org
+method = ftp
+incoming = /pub/UploadQueue
+allow_unsigned_uploads = 0
+run_dinstall = 0
+login = ftp
+
+[bpo]
+fqdn = www.backports.org
+incoming = /
+login = anonymous
+
+[meitner]
+fqdn = meitner.df7cb.de
+login = cb
+method = scp
+incoming = .
