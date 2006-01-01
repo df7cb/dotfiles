@@ -4,7 +4,7 @@
 VENDOR=`xdpyinfo | grep 'vendor string'`
 
 case "$VENDOR" in
-	*'The XFree86 Project, Inc'|*'Mandrake Linux'*)	XKBD="pc" ;;
+	*'The X.Org Foundation'|*'The XFree86 Project, Inc'|*'Mandrake Linux'*)	XKBD="pc" ;;
 	*'X Consortium')			XKBD="sun" ;;
 	*'Network Computing Devices Inc.')	XKBD="ncd" ;;
 	*) echo "$0: unknown $VENDOR" 1>&2
