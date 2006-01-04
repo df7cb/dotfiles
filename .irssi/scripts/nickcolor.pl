@@ -143,6 +143,8 @@ sub cmd_color {
   } elsif ($op eq "preview") {
     Irssi::print ("\nAvailable colors:" .
 		join('', map { chr (3) . "$_" . " #$_"; } (0..15)) );
+  } else {
+    Irssi::print ("Available commands: save, set <nick> <color>, clear <nick>, list, preview");
   }
 }
 
