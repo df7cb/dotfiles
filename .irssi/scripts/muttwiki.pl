@@ -109,7 +109,7 @@ sub pipe_input {
 	Irssi::input_remove($$tag);
 	foreach my $line (split("\n",$text)) {
 		#$server->command("msg $dest $line");
-		$server->command("msg -freenode #mutt $line");
+		$server->command("msg -freenode2 #mutt $line");
 	}
 }
 
