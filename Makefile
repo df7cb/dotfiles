@@ -113,7 +113,8 @@ COMMITS += .ssh/known_hosts
 endif
 known_hosts-uniq:
 	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
-	@perl -e 'while(<>){ foreach(/^(\w+)\b/) { print "repeated: $$_\n" if $$1 eq $$l; $$l = $$1; }}' .ssh/known_hosts
+	@cut -d' ' -f 2-3 < .ssh/known_hosts | sort | uniq -d | while read line ; do grep "$line" .ssh/known_hosts ; done
+	@perl -e 'while(<>){ foreach(/(\w+)/) { print "repeated: $$s{$$_}:$$_\n" if $$s{$$_}; $$s{$$_} = $$.; }}' .ssh/known_hosts
 .ssh/.known_hosts: .ssh/known_hosts
 	# Sorting $<
 	@grep -qv '<<<<' $<
