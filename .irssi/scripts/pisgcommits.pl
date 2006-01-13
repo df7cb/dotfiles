@@ -1,6 +1,17 @@
 # pisgcommits.pl
 # vim:ts=4
 
+# procmail part:
+#:0ci
+#* ^From: .* <.*@users.sourceforge.net>
+#* ^From: .* <\/[^@]*
+#* ^To: pisg-commits@lists.sourceforge.net
+#| ( perl -ne 'print "$1: " if /^Subject: (.*)/; $l = 0 unless /./; chomp; print "$_ " if $l; $l = 1 if /^Log Message/' ; echo "($MATCH)" ) >> .irssi/pisg-commits
+
+# irssi part:
+#/script load pisgcommits
+#/timer add pisg 3600 0 pisgcommits
+
 use strict;
 use POSIX;
 # version info
