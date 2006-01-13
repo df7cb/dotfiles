@@ -289,5 +289,8 @@ abstracts = {
   sb_act_hilight_color = "$0$1-%n";
 };
 formats = {
-  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00312$0}}$1"; };
+  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00309$0}}$1"; };
+  "Irssi::Script::joininfo" = {
+    ji_whois_success = "{channick_hilight $0} is $1 ($2)";
+  };
 };

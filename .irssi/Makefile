@@ -20,24 +20,28 @@ autorun:
 
 # load these scripts only on the irssi proxy server
 links.main: links \
+	autorun/buf.pl \
 	autorun/friends.pl \
 	autorun/keepnick.pl \
+	autorun/pisgcommits.pl \
 	autorun/muttwiki.pl \
 	autorun/nickident.pl \
 	autorun/screen_away.pl
 
 # load these scripts always
-links:	autorun/autorealname.pl \
+links: \
 	autorun/chanact.pl \
 	autorun/chanshare.pl \
+	autorun/joininfo.pl \
 	autorun/len.pl \
 	autorun/nickcolor.pl \
-	autorun/recode.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \
 	autorun/topics.pl \
 	autorun/trackbar.pl
+
+#	autorun/autorealname.pl \
 
 autorun/%.pl: %.pl
 	ln -s ../$< $@
