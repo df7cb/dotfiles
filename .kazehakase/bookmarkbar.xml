@@ -18,7 +18,7 @@
 Debian Security Advisories
   </desc>
   </folder>
-  <folder href="http://wiki.mutt.org:80/?RecentChanges"><title>MuttWiki</title>
+  <folder href="http://wiki.mutt.org/?RecentChanges"><title>MuttWiki</title>
     <info>
       <metadata owner="http://kazehakase.sourceforge.jp/" kz:location="http://wiki.mutt.org/?action=rss"/>
     </info>
