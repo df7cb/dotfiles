@@ -13,6 +13,8 @@ source_rc () {
 source_rc bin/os > /dev/null
 source_rc .path
 source_rc .env
+[[ $TERM == screen* ]] && unset DISPLAY # update $DISPLAY in screen shells
+[ -f ~/.display ] && . ~/.display
 
 # check whether we run interactively
 [ "$PS1" ] || return
@@ -42,10 +44,6 @@ xterm*|rxvt|screen*|cygwin)
 	PS1='\n[$?] \u@'$h'w '$j'\$' ;;
 esac
 unset h j u
-
-case $TERM in # update $DISPLAY in screen shells
-	screen*) [ -f ~/.display ] && . ~/.display ;;
-esac
 
 # internal shell settings
 auto_resume=

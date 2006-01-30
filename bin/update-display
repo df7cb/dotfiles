@@ -1,34 +1,37 @@
 #!/bin/sh
-# (c) 2004 Christoph Berg <cb@df7cb.de>
+# (c) 2004, 2006 Christoph Berg <cb@df7cb.de>
 # This program is free software covered by the GNU GPL.
-# $Id$
 # cb 040405
 
-[ -z "$DISPLAY" ] && exit 1
-
 DISPLAYRC="$HOME/.display"
-TTY=`tty`
-DATE=`date`
 
-purge_display () {
-	[ -f $DISPLAYRC ] || return
-	egrep -v "DISPLAY='?$DISPLAY'? |TTY='?$TTY'? " $DISPLAYRC > $DISPLAYRC.tmp
-	mv -f $DISPLAYRC.tmp $DISPLAYRC
-	[ -s $DISPLAYRC ] || rm -f $DISPLAYRC
+put () {
+	[ "$1" ] && echo ": \${$2:=$1} ; export $2 # $ID" >> $DISPLAYRC
 }
 
 case "$1" in
 	add)
-		purge_display
-		[ "$SSH_AUTH_SOCK" ] && S1="SSH_AUTH_SOCK='$SSH_AUTH_SOCK' "
-		[ "$SSH_AGENT_PID" ] && S2="SSH_AGENT_PID='$SSH_AGENT_PID' "
-		echo "export DISPLAY='$DISPLAY' $S1$S2# TTY='$TTY' DATE='$DATE'" >> $DISPLAYRC
+		[ -f $DISPLAYRC ] && egrep -v "PPID='$PPID' " $DISPLAYRC > $DISPLAYRC.tmp
+		> $DISPLAYRC
+		ID="PPID='$PPID' DATE='`date`'"
+		put "$DISPLAY" "DISPLAY"
+		put "$SSH_AUTH_SOCK" "SSH_AUTH_SOCK"
+		put "$SSH_AGENT_PID" "SSH_AGENT_PID"
+		put "$GPG_AGENT_INFO" "GPG_AGENT_INFO"
+		cat $DISPLAYRC.tmp >> $DISPLAYRC
+		rm -f $DISPLAYRC.tmp
+		[ -s $DISPLAYRC ] || rm -f $DISPLAYRC
 		;;
 	remove|del*)
-		purge_display
+		[ -f $DISPLAYRC ] || exit 0
+		egrep -v "PPID='$PPID' " $DISPLAYRC > $DISPLAYRC.tmp
+		mv -f $DISPLAYRC.tmp $DISPLAYRC
+		[ -s $DISPLAYRC ] || rm -f $DISPLAYRC
 		;;
 	*)
 		echo "usage: $0 {add|remove}" 1>&2
 		exit 1
 		;;
 esac
+
+# vim:ts=4:sw=4:
