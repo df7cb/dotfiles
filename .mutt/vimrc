@@ -13,3 +13,4 @@ map _h mm1GSFrom: Christoph Berg <cb@heim-d.uni-sb.de><esc>`m
 map _m mm1GSFrom: Christoph Berg <myon@debian.org><esc>`m
 "map _7 mm1GSFrom: Christoph Berg DF7CB <df7cb@df7cb.de><esc>`m
 map _a mm1GSFrom: Christoph Berg <cb@asta.uni-saarland.de><esc>`m
+map _M 1G/^To:<cr>yypcf<Bcc: mia-<esc>:s/@/=/<cr>$C@qa.debian.org<esc>oX-MIA-Summary: -<esc>k:s/=debian.org//<cr>
