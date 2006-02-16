@@ -7,7 +7,7 @@ set alias_file=~/.mutt/aliases
 #set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
 alternates ^(cb@((cs|asta).uni-s(b|aarland)|df7cb).de|myon.*@.*debian.org|df7cb@.*)$
 set attribution="Re: %F in %i"
-set auto_tag
+set auto_tag smart_auto_tag
 unset beep
 #set beep_new
 set bounce
