@@ -1,6 +1,8 @@
 # .procmail/spam
 # cb 2004-10-05
 
+SPAMDIR=mail/spam
+
 #:0:
 #* ^From: .*<(fminfos|neu)@web.de>
 #$SPAMDIR/crap
@@ -33,7 +35,7 @@ $SPAMDIR/SUBJECT
 
 :0:
 * ^X-Original-To: cb\+spam@.*df7cb.de
-mail/spam/queue
+$SPAMDIR/queue
 
 :0:
 * ^X-Spam-Status: Yes
@@ -45,10 +47,10 @@ $SPAMDIR/prefiltered
 
 :0fw: $SPAMDIR/.spamassassin.lock
 ## do not re-filter through spamassassin
-#* !^X-Spam-Status: 
-| /usr/bin/spamassassin
+#* !^X-Spam-Status:
+#| /usr/bin/spamassassin
 #| /usr/bin/spamassassin -P -l /home/cb/.spamassassin/log
-#| /usr/bin/spamc
+| /usr/bin/spamc
 :0e
 {
 	EXITCODE=$?
