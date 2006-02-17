@@ -4,11 +4,16 @@
 * ^From: Christoph Berg <(cb|myon)@
 | formail -I"Status: RO"
 
-# killfile
+# killfile 1
 :0fhw
 * !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|madduck@debian.org|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com)>
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|mennucc1@debian.org|wildfire@progsoc.uts.edu.au)>
 | formail -i"Status: RO"
+
+# killfile 2
+:0
+* ^From: .*<(wieseltux23@gmail.com)>
+/dev/null
 
 #:0fhw
 #* ^From: BugScan reporter <bugscan@debian.org>
