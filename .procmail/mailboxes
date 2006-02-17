@@ -10,18 +10,35 @@ mail/IN/debian-bts
 #* ^X-Mailing-List: .*debian-user-german
 #mail/IN/debian-user-german
 
+:0:
+* ^X-Mailing-List: <debian-(devel-)?announce@lists.debian.org>
+$DEFAULT
+
+:0:
+* ^Delivered-To: mia@qa.debian.org
+mail/IN/mia
+
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
 * ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<katie@.*.debian.org>)
 mail/IN/debian
 
 :0:
+* ^(List-Id: .*<backports-)
+mail/IN/backports
+
+# Bridge
+:0:
+* ^(List-Id: .*<(5erof|bbo-team))
+mail/IN/cb
+:0:
+* ^(List-Id: .*<(doubl|blml|bb-forums))
+mail/IN/bridge
+
+# AStA
+:0:
 * ^List-Id: .*(asta.uni-saarland.de|bridge-runde.lists.mawan.de)
 $DEFAULT
-
-:0:
-* ^From: .*(tagesschau.de|@zeit.de)
-mail/IN/tagesschau
 
 # pisg-general list
 :0:
