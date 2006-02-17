@@ -50,6 +50,7 @@ my $skip = 1;
 my $verbose = 0;
 while(<FH>) {
 	next if /^\s*#/;
+	next if /^\s*$/;
 	if(/^apply (.*)/) {
 		$apply = $1;
 		next;
