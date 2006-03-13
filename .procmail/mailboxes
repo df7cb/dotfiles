@@ -10,7 +10,7 @@ mail/IN/debian-bts
 #* ^X-Mailing-List: .*debian-user-german
 #mail/IN/debian-user-german
 
-:0:
+:0c:
 * ^X-Mailing-List: <debian-(devel-)?announce@lists.debian.org>
 $DEFAULT
 
@@ -32,7 +32,7 @@ mail/IN/backports
 * ^(List-Id: .*<(5erof|bbo-team))
 mail/IN/cb
 :0:
-* ^(List-Id: .*<(doubl|blml|bb-forums))
+* ^(List-Id: .*<(doubl|blml|bb-))
 mail/IN/bridge
 
 # AStA
