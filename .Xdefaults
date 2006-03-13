@@ -104,7 +104,8 @@ xterm*VT100.Translations: #override \n\
 	Shift <KeyPress> Prior:scroll-back(2,halfpage) \n\
 	Shift <KeyPress> Next:scroll-forw(2,halfpage) \n\
 	<Btn4Down>:scroll-back(2,halfpage,m)     \n\
-	<Btn5Down>:scroll-forw(2,halfpage,m)
+	<Btn5Down>:scroll-forw(2,halfpage,m)     \n\
+	Ctrl Shift <KeyPress> p: string(0xe2) string(0x99) string(0xa0)
 xv*ctrlGeometry: -15-30
 xv.preset1.igraf: S 3 : 0,0 : 127,137 : 255,255
 xv.preset2.igraf: S 3 : 0,0 : 127,147 : 255,255
