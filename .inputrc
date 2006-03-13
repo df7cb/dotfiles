@@ -20,6 +20,22 @@ set page-completions off
 set show-all-if-ambiguous off
 set visible-stats on
 
+$if Bash
+	"\eOP": "%1\n"
+	"\eOQ": "%2\n"
+	"\eOR": "%3\n"
+	"\eOS": "%4\n"
+	"\e[15~": "%5\n"
+	"\e[17~": "%6\n"
+	"\e[18~": "%7\n"
+	"\e[19~": "%8\n"
+	"\e[20~": "%9\n"
+	"\e[21~": "%10\n"
+	"\e[23~": "%11\n"
+	"\e[24~": "%12\n"
+$endif
+
+
 ## VI line editing
 #$if mode=vi
 #set editing-mode vi
