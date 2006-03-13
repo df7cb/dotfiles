@@ -25,9 +25,9 @@ SPAMDIR=mail/spam
 :0D:
 * ^(SUBJECT: |FROM: |(To|From):.*Microsoft|(To|From): MS|Subject: \[MS\] )
 $SPAMDIR/SUBJECT
-:0:
-* ^Subject: Re\[
-$SPAMDIR/SUBJECT
+#:0:
+#* ^Subject: Re\[
+#$SPAMDIR/SUBJECT
 
 :0:
 * ^From:.*AntiVir@rz.uni-saarland.de

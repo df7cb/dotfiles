@@ -5,9 +5,19 @@
 | formail -I"Status: RO"
 
 # killfile 1
-:0fhw
+:0
 * !^Status:
 * ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|mennucc1@debian.org|wildfire@progsoc.uts.edu.au)>
+{
+	:0ch
+	* ^Message-Id: \/.*
+	| .procmail/blacklister -b "$MATCH"
+	:0fhw
+	| formail -i"Status: RO"
+}
+:0Efhw
+* !^Status:
+* ? .procmail/blacklister -c
 | formail -i"Status: RO"
 
 # killfile 2
@@ -36,6 +46,12 @@
 * !^Status:
 * ^From: .*<katie@
 * ^Subject: Processing of .*.changes
+| formail -i"Status: RO"
+
+:0fhw
+* !^Status:
+* ^From: Jeroen van Wolffelaar and others <mia@qa.debian.org>
+* ^Subject: Added:
 | formail -i"Status: RO"
 
 # hide empty mutt cvs notifications
