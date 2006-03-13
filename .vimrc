@@ -5,9 +5,10 @@ set autoindent		" always set autoindenting on
 set autoread		" Automatically read buffers if file changed on disk
 set autowrite		" Automatically save before commands like :next and :make
 set backspace=2		" allow backspacing over everything in insert mode
-set backup		" keep a backup file
+"set backup		" keep a backup file
 set backupskip=/tmp/*,$TMPDIR/*,*.tmp
 set nocompatible	" Use Vim defaults (much better!)
+set fileencodings=ucs-bom,utf-8,default,latin1
 set hidden		" use multiple buffers
 set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
