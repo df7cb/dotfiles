@@ -31,19 +31,15 @@ xset r rate 400 30
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy
-	( sleep 5 ; xroot ) &
-	case $(xdpyinfo | grep '^XFree86 version' | cut -d ' ' -f 3) in
-		4.3*|4.4*) xclock -g x13+0+0 -strftime '%e.%m. %T' & ;; # 110x13
-		*) xclock -g 116x12+0+0 & ;;
-	esac
+	xroot &
+	xclock -g x13+0+0 -strftime '%e.%m. %T' & # 110x13
 	[ -e .plan.dir/dayplan ] && type -p pland > /dev/null && pland -k &
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
 	type -p esd > /dev/null && esd -nobeeps -as 2 &
 
-	if [ "`echo .ssh/*.pub`" != ".ssh/*.pub" ] ; then # there are keys
-		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
-		[ "$SSH_AUTH_SOCK" ] && ssh-add < /dev/null
-	fi
+	[ -x /usr/bin/gpg-agent ] && [ -z "$GPG_AGENT_INFO" ] && eval `gpg-agent --daemon`
+	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
+	[ "`echo .ssh/*.pub`" != ".ssh/*.pub" ] && [ "$SSH_AUTH_SOCK" ] && ssh-add < /dev/null # there are keys
 	update-display add
 
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
@@ -57,6 +53,10 @@ SHLVL=-1
 fvwm &
 
 [[ "$XVENDOR" != *VNC* ]] && export console=yes
-exec xterm +ut -vb -C -geometry 62x5+120-0 -T console
+xterm +ut -vb -C -geometry 62x5+120-0 -T console
+
+# clean up
+[ "$GPG_AGENT_INFO" ] && kill `echo $GPG_AGENT_INFO | cut -d: -f 2`
+update-display remove
 
 # vim:ts=4:sw=4:
