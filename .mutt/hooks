@@ -4,7 +4,9 @@ unhook message-hook
 unhook send-hook
 
 folder-hook .			'set record="!" trash="=trash/trash"'
+folder-hook .			'unmy_hdr X-MIA-Summary Bcc'
 folder-hook IN/.		'set record="^" trash="^.trash"'
+folder-hook IN/mia		'my_hdr X-MIA-Summary: -; my_hdr Bcc: mia@qa.debian.org'
 folder-hook =rw/.		'set record="^" trash="=rw/trash/trash"'
 folder-hook \.trash$		'unset trash'
 
@@ -13,8 +15,9 @@ folder-hook \.trash$		'unset trash'
 #folder-hook debian|lists	'push "<delete-pattern>~R !~F ~d>1m<enter>"'
 folder-hook debian|lists	'push ,r'
 
-folder-hook .			'push <collapse-all>; set from=cb@df7cb.de'
-folder-hook debian		'set from=myon@debian.org'
+folder-hook .			'push <collapse-all>'
+#folder-hook .			'set from=cb@df7cb.de'
+#folder-hook debian		'set from=myon@debian.org'
 
 # Debian archive messages
 message-hook .			"ignore Sender"
@@ -23,6 +26,7 @@ message-hook '~h X-Katie:'	"unignore Sender"
 send-hook . "set pgp_autosign"
 send-hook '~t (majordomo\|-request\|cabot)' "unset pgp_autosign"
 send-hook '~t debian\.org$' "set from=myon@debian.org"
+send2-hook 'debian.org' "set from=myon@debian.org"
 
 # don't bug me with bugs
 send-hook . 'unmy_hdr X-Debbugs-No-Ack:'

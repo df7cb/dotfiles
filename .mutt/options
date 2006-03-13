@@ -6,7 +6,7 @@ set abort_unmodified
 set alias_file=~/.mutt/aliases
 #set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
 alternates ^(cb@((cs|asta).uni-s(b|aarland)|df7cb).de|myon.*@.*debian.org|df7cb@.*)$
-set attribution="Re: %F in %i"
+set attribution="Re: %F %(%Y-%m-%d) %i"
 set auto_tag smart_auto_tag
 unset beep
 #set beep_new
@@ -44,6 +44,7 @@ set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x58510B5A"
 set pgp_timeout=14400
+set pgp_use_gpg_agent
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set quit=ask-yes
