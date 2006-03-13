@@ -1,13 +1,13 @@
-"^AcroRead"
-None,	Up,	Page_Up
-None,	Down,	Page_Down
+#"^AcroRead"
+#None,	Up,	Page_Up
+#None,	Down,	Page_Down
 
 "^xterm$"
 @Priority=-1
 None,	Up,	Shift_R|Page_Up
 None,	Down,	Shift_R|Page_Down
 
-"^Mutt.*"
+"^Mutt: "
 @Priority=1
 None,	Up,	Page_Up
 None,	Down,	Page_Down
@@ -16,11 +16,13 @@ None,	Down,	Page_Down
 ,	Left,	k
 ,	Right,	j
 
-"^gv"
-None,	Up,	Shift_L|space
-None,	Down,	space
-Shift_L,	Up,	Page_Up
-Shift_L,	Down,	Page_Down
+"^gv: "
+None,	Up,	Page_Up
+None,	Down,	Page_Down
+Shift_L, Up,	Shift_L|space
+Shift_L, Down,	space
+None,	Left, 	Left
+None,	Right, 	Right
 
 "^less"
 None,	Up,	Page_Up
@@ -60,18 +62,3 @@ None,	Down,	Space
 #@Priority=-1000
 #@Exclude
 #@Repeat
-
-# ops:
-#"^mutt.*"
-#None, Up, Up
-#None, Down, Down
-#
-#".*VIM$"
-#None, Up, Control_L|Y, 3
-#None, Down, Control_L|E, 3
-#
-#"^Opera.*"
-#None, Up, Up, 5
-#None, Down, Down, 5
-#None, Left, z
-#None, Right, x
