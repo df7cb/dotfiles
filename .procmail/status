@@ -48,11 +48,11 @@
 * ^Subject: Processing of .*.changes
 | formail -i"Status: RO"
 
-:0fhw
-* !^Status:
-* ^From: Jeroen van Wolffelaar and others <mia@qa.debian.org>
-* ^Subject: Added:
-| formail -i"Status: RO"
+#:0fhw
+#* !^Status:
+#* ^From: Jeroen van Wolffelaar and others <mia@qa.debian.org>
+#* ^Subject: Added:
+#| formail -i"Status: RO"
 
 # hide empty mutt cvs notifications
 :0
