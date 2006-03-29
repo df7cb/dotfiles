@@ -36,6 +36,7 @@ alias debian-admin Debian-Admin <debian-admin@lists.debian.org>
 alias debian-channel \"debian.de\" <debian-channel@lists.infodrom.org>
 alias debian-devel debian-devel <debian-devel@lists.debian.org>
 alias debian-devel-announce debian-devel-announce <debian-devel-announce@lists.debian.org>
+alias debian-project Debian Project <debian-project@lists.debian.org>
 alias debian-qa Debian QA Group <debian-qa@lists.debian.org>
 alias desc Debian Description Translation Project <desc@ddtp.debian.org>
 alias df7cb@directbox.com df7cb@directbox.com <df7cb@directbox.com>
@@ -105,6 +106,7 @@ alias mutt-dev Mutt Developers <mutt-dev@mutt.org>
 alias mutt-users Mutt Users <mutt-users@mutt.org>
 alias neli Neli Busch <cb@labastide.net>
 alias netzwart Netzwarte D <netzwart@heim-d.uni-sb.de>
+alias new-maintainer NM Frontdesk <new-maintainer@debian.org>
 alias nina_8000 Nina Stastny <nina_8000@hotmail.com>
 alias nkuttler Jean-Nicolas Kuttler <nkuttler@asta.uni-saarland.de>
 alias pdesc DDTP Package Descriptions <pdesc@ddtp.debian.org>
