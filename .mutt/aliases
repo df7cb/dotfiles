@@ -31,11 +31,13 @@ alias control Debian Bugs Control <control@bugs.debian.org>
 alias d-bildt Dominik Bildt <d-bildt@gmx.de>
 alias d.klein Dieter Klein <d.klein@rz.uni-saarland.de>
 alias d.reichert Dietmar Reichert <d.reichert@rz.uni-sb.de>
+alias da-manager Debian Account Managers <da-manager@debian.org>
 alias ddpo DDPO Control Bot <ddpo@qa.debian.org>
 alias debian-admin Debian-Admin <debian-admin@lists.debian.org>
 alias debian-channel \"debian.de\" <debian-channel@lists.infodrom.org>
 alias debian-devel debian-devel <debian-devel@lists.debian.org>
 alias debian-devel-announce debian-devel-announce <debian-devel-announce@lists.debian.org>
+alias debian-newmaint Debian New Maintainer List <debian-newmaint@lists.debian.org>
 alias debian-project Debian Project <debian-project@lists.debian.org>
 alias debian-qa Debian QA Group <debian-qa@lists.debian.org>
 alias desc Debian Description Translation Project <desc@ddtp.debian.org>
@@ -59,6 +61,7 @@ alias g-wilhelm Lehrstuhl Wilhelm <g-wilhelm@cs.uni-sb.de>
 alias gg Gunter Gerhardt <gg@guntergerhardt.de>
 alias gk Graduiertenkolleg Leistungsgarantien <gk@cs.uni-sb.de>
 alias guenther Margot Günther <guenther@cs.uni-sb.de>
+alias gurkan Gürkan Sengün <gurkan@linuks.mine.nu>
 alias gz Geschäftszimmer <gz@cs.uni-sb.de>
 alias h-j.schmidt Hans-Joachim Schmidt <h-j.schmidt@bildung.saarland.de>
 alias h.becker Hendrik Becker <h.becker@internett.de>
@@ -72,6 +75,7 @@ alias heimlinge Heimbewohner D <heimlinge@heim-d.uni-sb.de>
 alias helge.schmidt Helge Schmidt <helge.schmidt@gmx.de>
 alias herve Herve Peuengueu <herve@heim-d.uni-sb.de>
 alias hp Heimpräsidenten D <hp@heim-d.uni-sb.de>
+alias hubert Hubert Chan <hubert@uhoreg.ca>
 alias ianw Ian Wienand <ianw@ieee.org>
 alias igenibel Igor Genibel <igenibel@debian.org>
 alias ingabreitbach Inga Breitbach <IngaBreitbach@web.de>
