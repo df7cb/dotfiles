@@ -1,6 +1,6 @@
 # $Id$
 
-set folder="~/mail"
+set folder="~/mail/rw"
 
 # external files
 source ~/.mutt/options
@@ -18,10 +18,13 @@ source `if [ -f ~/.priv/aliases.ab ] ; then echo ~/.priv/aliases.ab ; else echo 
 # local configuration options
 #source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
 
-set from="cb@df7cb.de"
-set hostname="df7cb.de"
-macro generic & "!retch -F\cM"
-macro index & "!retch -F\cM"
-set spoolfile="=IN/cb"
-mailboxes ! =rw/inbox =IN/root =IN/pisg =IN/mutt =IN/mia =IN/debian =IN/backports =IN/bridge =IN/lists
-color header brightblack default heim-d@df7cb.de
+# local settings
+set folder="~/mail/rw"
+mailboxes =inbox
+
+macro	pager	S	"<exit>S"
+macro	index	S	"<save-message>=spam-queue/spam<enter>" "Save spam for processing with SA"
+macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=spam-queue/ham<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
+
+set from="cb@cs.uni-sb.de"
+set print_command="enscript"

@@ -1,4 +1,9 @@
 ARCH=`dpkg --print-architecture`
+case $ARCH in
+	i386) MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian" ;;
+	amd64) MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian" ;;
+	*) exit 1 ;;
+esac
 case `cat /etc/debian_version` in
 	3.1) DISTRIBUTION="sarge" ;;
 	testing/unstable) DISTRIBUTION="sid" ;;
@@ -6,32 +11,24 @@ case `cat /etc/debian_version` in
 	   exit 1 ;;
 esac
 
-BASETGZ="/srv/pbuilder/$DISTRIBUTION-$ARCH.tgz"
-BUILDPLACE="/srv/pbuilder/build/"
-BUILDRESULT="/srv/pbuilder/result/"
+ROOT="/cb/debian/pbuilder"
+BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
+BUILDPLACE="$ROOT/build"
+BUILDRESULT="$ROOT/result"
+APTCACHE="$ROOT/aptcache"
+#ln: creating hard link `/data/pbuilder/aptcache//g++_4%3a3.3.5-1_i386.deb' to `/data/pbuilder/build//3381/var/cache/apt/archives/g++_4%3a3.3.5-1_i386.deb': Invalid cross-device link
+APTCACHEHARDLINK="no"
 
 BUILDUSERID=1000
 LOGNAME=root
 
-case $ARCH in
-	i386) MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian" ;;
-	amd64) MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian" ;;
-	*) exit 1 ;;
-esac
 #OTHERMIRROR="deb http://planck.df7cb.de/apt-move unstable main"
-APTCACHE="/srv/pbuilder/aptcache"
 #export http_proxy="http://router.df7cb.de:3128/"
 unset http_proxy
-
-#ln: creating hard link `/data/pbuilder/aptcache//g++_4%3a3.3.5-1_i386.deb' to `/data/pbuilder/build//3381/var/cache/apt/archives/g++_4%3a3.3.5-1_i386.deb': Invalid cross-device link
-APTCACHEHARDLINK="no"
 
 REMOVEPACKAGES="lilo"
 #BINDMOUNTS="/home/cb /tmp"
 
-#export TMPDIR="/tmp"
-#export TMP="/tmp"
-#export TEMP="/tmp"
 unset TMPDIR TMP TEMP
 
 # vim:ft=sh:

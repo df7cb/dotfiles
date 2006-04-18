@@ -9,8 +9,8 @@ case $1 in
 		*) echo "$0 $1: unknown argument '$2'"
 		exit 1 ;;
 	esac
-	killall osd_cat 2> /dev/null
-	xvidtune -show | cut -f 1 -d ' ' | osd_cat -p middle -A center -O 1 -f '-misc-fixed-medium-r-semicondensed-*-50-*-*-*-c-*-*-*'
+	#killall osd_cat 2> /dev/null
+	#xvidtune -show | cut -f 1 -d ' ' | osd_cat -p middle -A center -O 1 -f '-misc-fixed-medium-r-semicondensed-*-50-*-*-*-c-*-*-*'
 	;;
 
 	aumix)
@@ -30,8 +30,8 @@ case $1 in
 		aumix "$@"
 		;;
 	esac
-	killall osd_cat 2> /dev/null
-	osd_cat -b percentage -p bottom -A center -P `aumix -q | perl -i -ne 'print $1 if /vol (\d+)/'` &
+	#killall osd_cat 2> /dev/null
+	#osd_cat -b percentage -p bottom -A center -P `aumix -q | perl -i -ne 'print $1 if /vol (\d+)/'` &
 	;;
 
 	*) echo "$0: unknown argument '$1'" ;;

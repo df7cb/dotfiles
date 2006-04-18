@@ -68,6 +68,9 @@ defscrollback 1000
 termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 termcapinfo rxvt  'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
+# use the xterm scrollback
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
 # our xterm has colors! (rxvt, too)
 #termcap  xterm 'AF=\E[3%dm:AB=\E[4%dm'
 #terminfo xterm 'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
