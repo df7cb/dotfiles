@@ -27,6 +27,7 @@ AddToMenu Apps	"Apps"		Title
 +		"&firefox"	Exec firefox
 #+		"address&book"	Exec addressbook
 +		"bbo"		Exec bbo
++		"bm2000"	Exec bm2000
 +		"&endeavour2"	Exec endeavour2
 +		"gimp"		Exec gimp
 +		"&grip"		Exec grip
@@ -34,7 +35,7 @@ AddToMenu Apps	"Apps"		Title
 +		"&netscape"	Exec netscape
 +		"oo&ffice"	Exec ooffice
 +		"&plan"		Exec LANG=de_DE.ISO-8859-1 plan
-+		"p&ycocuma"	Exec pycocuma --finder
++		"p&ycocuma"	Exec pycocuma
 +		"&teatimer"	Exec teatimer 02:30
 +		"&unison-gtk"	Exec unison-gtk
 +		"xawt&v"	Exec xawtv -geometry 780x585
