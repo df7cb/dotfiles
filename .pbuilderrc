@@ -1,9 +1,3 @@
-ARCH=`dpkg --print-architecture`
-MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian"
-if [ $ARCH = amd64 ] && [ $DISTRIBUTION = sarge ] ; then
-	MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian"
-fi
-
 case `cat /etc/debian_version` in
 	3.1) DISTRIBUTION="sarge" ;;
 	testing/unstable) DISTRIBUTION="sid" ;;
@@ -11,7 +5,13 @@ case `cat /etc/debian_version` in
 	   exit 1 ;;
 esac
 
-ROOT="/cb/debian/pbuilder"
+ARCH=`dpkg --print-architecture`
+MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian"
+if [ "$ARCH" = amd64 ] && [ "$DISTRIBUTION" = sarge ] ; then
+	MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian"
+fi
+
+ROOT="/srv/pbuilder"
 BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
