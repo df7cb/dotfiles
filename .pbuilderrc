@@ -1,9 +1,9 @@
 ARCH=`dpkg --print-architecture`
-case $ARCH in
-	i386) MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian" ;;
-	amd64) MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian" ;;
-	*) exit 1 ;;
-esac
+MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian"
+if [ $ARCH = amd64 ] && [ $DISTRIBUTION = sarge ] ; then
+	MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian"
+fi
+
 case `cat /etc/debian_version` in
 	3.1) DISTRIBUTION="sarge" ;;
 	testing/unstable) DISTRIBUTION="sid" ;;
