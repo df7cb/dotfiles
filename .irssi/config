@@ -143,7 +143,7 @@ channels = (
   { name = "#debian.de"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#xskat"; chatnet = "ircnet"; },
   { name = "#xskat"; chatnet = "freenode"; },
-  { name = "#debian"; chatnet = "freenode"; },
+  { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#debian"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#pisg"; chatnet = "quakenet"; autojoin = "yes"; },
   { name = "#ircmarkers"; chatnet = "freenode"; autojoin = "yes"; },
@@ -155,7 +155,7 @@ channels = (
   { name = "#debian-devel"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#verkehrsschilder"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#abk"; chatnet = "oftc"; autojoin = "yes"; },
-  { name = "#alioth"; chatnet = "oftc"; autojoin = "yes"; },
+  { name = "#alioth"; chatnet = "oftc"; },
   { name = "#bitlbee"; chatnet = "bitlbee"; autojoin = "yes"; },
   {
     name = "#idlerpg";
@@ -163,11 +163,17 @@ channels = (
     autojoin = "yes";
     autosendcmd = "/msg -freenode OldleBot login Myon xxxxxxxx;/msg -freenode NewdleBot login Myon xxxxxxxx";
   },
-  { name = "#gnupg"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#debian-bugs"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#debian-qa"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#debian-newmaint"; chatnet = "oftc"; autojoin = "yes"; },
-  { name = "#mutt"; chatnet = "freenode2"; autojoin = "yes"; }
+  { name = "#mutt"; chatnet = "freenode2"; autojoin = "yes"; },
+  { name = "#debian-backports"; chatnet = "oftc"; autojoin = "yes"; },
+  {
+    name = "#debian-private";
+    chatnet = "oftc";
+    autojoin = "yes";
+    password = "dosurackfes";
+  }
 );
 
 aliases = {
@@ -219,7 +225,7 @@ aliases = {
   realname = "/say $0: trage im Ircname-Feld bitte deinen vollständigen Namen (VN NN) ein, danke";
   cs = "chanserv";
   ns = "quote nickserv";
-  cskick = "quote cs op $C $N ; /wait 2000; /k $*; /mode -o $N";
+  cskick = "quote cs op $C $N ; /wait 2000; /kick $*; /mode -o $N";
   csvoice = "quote cs op $C $N ; /wait 2000 ; /mode +v-o $* $N";
   WI = "whois";
   fuckinggoogleit = "say http://www.fuckinggoogleit.com/?q=$0-";
@@ -231,6 +237,9 @@ aliases = {
   "channel-metafrage" = "say http://channel.debian.de/netiquette/ch-rules.html#s-metafrage";
   "channel-hilight" = "say http://channel.debian.de/netiquette/ch-rules.html#s-hilight";
   noquestion = "say no question, no answer";
+  "channel-just-ask" = "say http://channel.debian.de/netiquette/ch-rules.html#s-just-ask";
+  "channel-wiederholen" = "say http://channel.debian.de/netiquette/ch-rules.html#s-wiederholen";
+  csdevoice = "quote cs op $C $N ; /wait 2000 ; /mode -v-o $* $N";
 };
 
 statusbar = {
@@ -349,9 +358,12 @@ settings = {
     override_coredump_limit = "no";
     log_create_mode = "644";
     timestamp_format = "%H:%M";
+    recode_out_default_charset = "iso-8859-15";
+    recode_fallback = "iso-8859-15";
+    recode_transliterate = "no";
   };
   "irc/core" = {
-    alternate_nick = "Tauon";
+    alternate_nick = "Myon_";
     ban_type = "custom nick user host";
     skip_motd = "yes";
   };
@@ -360,10 +372,10 @@ settings = {
     friends_autosave = "yes";
     title_string = "irssi $winname$C@$tag";
     chanact_header = "\\";
-    chanact_abbreviate_names = "2";
+    chanact_abbreviate_names = "3";
     chanact_display = "$H$N$C$S";
     trackbar_string = "-";
-    chanact_remove_prefix = "debian.";
+    chanact_remove_prefix = "deb(ian.(devel-)?)?";
     screen_away_repeat = "10";
     screen_away_message = "screen detached";
   };
@@ -373,6 +385,7 @@ settings = {
     autostick_split_windows = "no";
     term_type = "utf-8";
     scrollback_time = "2day";
+    paste_join_multiline = "no";
   };
   "fe-common/core" = {
     autolog_path = "/cb/irc/log/${0}_$tag/%Y-%m/${0}-%Y-%m-%d";
@@ -384,6 +397,7 @@ settings = {
     autoclose_windows = "yes";
     reuse_unused_windows = "yes";
     show_nickmode_empty = "no";
+    term_charset = "utf-8";
   };
   proxy = {
     irssiproxy_password = "xxxxxxxx";
@@ -394,46 +408,6 @@ settings = {
 hilights = (
   { text = "Myon"; nick = "no"; word = "yes"; },
   { text = "df7cb"; nick = "no"; word = "yes"; },
-  {
-    text = "usemod";
-    color = "%g";
-    act_color = "%g";
-    nick = "yes";
-    word = "yes";
-  },
-  {
-    text = "image-size";
-    color = "%g";
-    act_color = "%g";
-    nick = "yes";
-    word = "yes";
-  },
-  {
-    text = "latex-bridge";
-    color = "%g";
-    act_color = "%g";
-    nick = "yes";
-    word = "yes";
-  },
-  {
-    text = "coverviewer";
-    color = "%g";
-    act_color = "%g";
-    nick = "yes";
-    word = "yes";
-  },
-  { 
-    text = "usemod -color %g -actcolor %g";
-    nick = "no";
-    word = "yes";
-  },
-  {
-    text = "usemod";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-  },
   {
     text = "endeavour";
     color = "%g";
@@ -463,34 +437,6 @@ hilights = (
     word = "yes";
   },
   {
-    text = "springgraph";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-  },
-  {
-    text = "sig2dot";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-  },
-  {
-    text = "latex-bridge";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-  },
-  {
-    text = "pycocuma";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-  },
-  {
     text = "gfontview";
     color = "%g";
     act_color = "%g";
@@ -505,32 +451,45 @@ hilights = (
     word = "yes";
   },
   {
-    text = "sdate";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-  },
-  {
     text = "7plus";
     color = "%g";
     act_color = "%g";
     nick = "no";
     word = "yes";
   },
-  {
-    text = "sdate";
-    color = "%g";
-    act_color = "%g";
-    nick = "no";
-    word = "yes";
-    fullword = "yes";
-  },
   { text = "Tauon"; nick = "no"; word = "yes"; },
   {
     text = "xkeycaps";
     color = "%g";
     act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "aspell-de";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "avscan";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "ddpo";
+    color = "%g";
+    act_color = "%b";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "developer.php";
+    color = "%g";
+    act_color = "%b";
     nick = "no";
     word = "yes";
   },
@@ -542,7 +501,7 @@ hilights = (
     word = "yes";
   },
   {
-    text = "aspell-de";
+    text = "image-size";
     color = "%g";
     act_color = "%g";
     nick = "no";
@@ -561,6 +520,57 @@ hilights = (
     act_color = "%g";
     nick = "no";
     word = "yes";
+  },
+  {
+    text = "caff";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+    fullword = "yes";
+  },
+  {
+    text = "sdate";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+    fullword = "yes";
+  },
+  {
+    text = "patchutils";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "sig2dot";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "springgraph";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "pycocuma";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
+  },
+  {
+    text = "signing-party";
+    color = "%g";
+    act_color = "%g";
+    nick = "no";
+    word = "yes";
   }
 );
 ignores = (
@@ -570,7 +580,22 @@ ignores = (
   { mask = "*`!*@*"; level = "MSGS"; },
   { mask = "*__!*@*"; level = "MSGS"; },
   { level = "MODES"; channels = ( "#bitlbee" ); },
-  { mask = "*!*@freenode/*"; level = "NOTICES"; }
+  { mask = "*!*@freenode/*"; level = "NOTICES"; },
+  {
+    mask = "Myon!i=cb@meitner.df7cb.de";
+    level = "PUBLICS";
+    channels = ( "#mutt" );
+  },
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#debian" ); },
+  { 
+    level = "JOINS PARTS QUITS";
+    channels = ( "#debian-dpl-debate" );
+  },
+  { mask = "Doughbwoy"; level = "MSGS"; },
+  { mask = "paddy"; level = "MSGS"; },
+  { mask = "tuxipuxi"; level = "MSGS"; },
+  { mask = "TwIzTiD"; level = "MSGS"; },
+  { mask = "elfantiel"; level = "MSGS"; }
 );
 logs = {
   "/cb/irc/log/heim-d/heim-d-%Y-%m-%d" = {
@@ -682,38 +707,169 @@ keyboard = (
   { key = "meta-P"; id = "change_window"; data = "60"; },
   { key = "meta--"; id = "command"; data = "window shrink"; },
   { key = "meta-="; id = "command"; data = "window grow"; },
-  { key = "^O"; id = "upper_window"; data = ""; }
+  { key = "^O"; id = "upper_window"; data = ""; },
+  { key = "meta-A"; id = "change_window"; data = "61"; },
+  { key = "meta-S"; id = "change_window"; data = "62"; },
+  { key = "meta-D"; id = "change_window"; data = "63"; },
+  { key = "meta-F"; id = "change_window"; data = "64"; },
+  { key = "meta-G"; id = "change_window"; data = "65"; },
+  { key = "meta-H"; id = "change_window"; data = "66"; },
+  { key = "meta-J"; id = "change_window"; data = "67"; },
+  { key = "meta-K"; id = "change_window"; data = "68"; },
+  { key = "meta-L"; id = "change_window"; data = "69"; },
+  { key = "meta-:"; id = "change_window"; data = "70"; },
+  { key = "meta-Z"; id = "change_window"; data = "71"; },
+  { key = "meta-X"; id = "change_window"; data = "72"; },
+  { key = "meta-C"; id = "change_window"; data = "73"; },
+  { key = "meta-V"; id = "change_window"; data = "74"; },
+  { key = "meta-B"; id = "change_window"; data = "75"; },
+  { key = "meta-N"; id = "change_window"; data = "76"; },
+  { key = "meta-M"; id = "change_window"; data = "77"; },
+  { key = "meta-<"; id = "change_window"; data = "78"; },
+  { key = "meta->"; id = "change_window"; data = "79"; },
+  { key = "meta-?"; id = "change_window"; data = "80"; }
 );
 notifies = { };
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  21 = {
+  9 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#eyecatcher";
+        name = "#verkehrsschilder";
+        tag = "oftc";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
         tag = "freenode";
       }
     );
   };
-  22 = {
-    items = (
-      { 
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#abk";
-        tag = "oftc";
-      }
-    );
-  };
-  23 = {
+  4 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#alioth";
+        name = "#debian.de";
+        tag = "ircnet";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian.de";
         tag = "oftc";
+      }
+    );
+    scroll = "yes";
+  };
+  17 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-newmaint";
+        tag = "oftc";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-qa";
+        tag = "oftc";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-devel";
+        tag = "oftc";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-bugs";
+        tag = "freenode";
+      }
+    );
+  };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#pisg";
+        tag = "quakenet";
+      }
+    );
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode";
+      }
+    );
+  };
+  44 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Toots";
+        tag = "freenode";
+      }
+    );
+  };
+  43 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debconf-team";
+        tag = "freenode";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-devel";
+        tag = "freenode";
+      }
+    );
+  };
+  76 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debconf";
+        tag = "freenode";
       }
     );
   };
@@ -722,27 +878,57 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
+        name = "#debian-private";
+        tag = "freenode";
+      }
+    );
+  };
+  35 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "tarzeau";
+        tag = "freenode";
+      }
+    );
+  };
+  28 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "freenode";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#heim-d";
+        tag = "ircnet";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "oftc";
+      }
+    );
+  };
+  22 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
         name = "#idlerpg";
-        tag = "freenode";
-      }
-    );
-  };
-  25 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#gnupg";
-        tag = "freenode";
-      }
-    );
-  };
-  20 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#ircmarkers";
         tag = "freenode";
       }
     );
@@ -767,56 +953,6 @@ windows = {
       }
     );
   };
-  17 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-newmaint";
-        tag = "freenode";
-      }
-    );
-  };
-  16 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian";
-        tag = "oftc";
-      }
-    );
-  };
-  14 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-qa";
-        tag = "freenode";
-      }
-    );
-  };
-  13 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-bugs";
-        tag = "freenode";
-      }
-    );
-  };
-  12 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#pisg";
-        tag = "quakenet";
-      }
-    );
-  };
   11 = {
     items = (
       {
@@ -827,63 +963,33 @@ windows = {
       }
     );
   };
-  10 = {
+  75 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#mutt";
+        name = "#debian-newmaint";
         tag = "freenode";
       }
     );
   };
-  9 = {
+  74 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian-devel";
-        tag = "oftc";
-      }
-    );
-  };
-  8 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian-devel";
+        name = "#debian-qa";
         tag = "freenode";
       }
     );
   };
-  7 = {
+  73 = {
     items = (
       {
-        type = "CHANNEL";
+        type = "QUERY";
         chat_type = "IRC";
-        name = "#verkehrsschilder";
+        name = "bolinera";
         tag = "oftc";
-      }
-    );
-  };
-  6 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian.de";
-        tag = "oftc";
-      }
-    );
-  };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#debian.de";
-        tag = "ircnet";
       }
     );
   };
@@ -897,13 +1003,48 @@ windows = {
       }
     );
   };
-  5 = {
+  42 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "adn"; tag = "oftc"; }
+    );
+  };
+  72 = {
     items = (
       {
-        type = "CHANNEL";
+        type = "QUERY";
         chat_type = "IRC";
-        name = "#debian.de";
+        name = "Oleg";
+        tag = "bitlbee";
+      }
+    );
+  };
+  71 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "IdleBot";
         tag = "freenode";
+      }
+    );
+  };
+  70 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "sigi";
+        tag = "freenode";
+      }
+    );
+  };
+  65 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "white";
+        tag = "oftc";
       }
     );
   };
@@ -917,15 +1058,400 @@ windows = {
       }
     );
   };
-  15 = {
+  57 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#heim-d";
-        tag = "ircnet";
+        name = "#debbugs";
+        tag = "oftc";
+      }
+    );
+  };
+  52 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "weasel";
+        tag = "oftc";
+      }
+    );
+  };
+  26 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Ganneff";
+        tag = "oftc";
+      }
+    );
+  };
+  30 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#alioth";
+        tag = "oftc";
+      }
+    );
+  };
+  27 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode2";
+      }
+    );
+  };
+  29 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-backports";
+        tag = "oftc";
+      }
+    );
+  };
+  61 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Rosine";
+        tag = "bitlbee";
+      }
+    );
+  };
+  50 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Jarot";
+        tag = "freenode";
+      }
+    );
+  };
+  59 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Azoff";
+        tag = "quakenet";
+      }
+    );
+  };
+  69 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "mah";
+        tag = "bitlbee";
+      }
+    );
+  };
+  21 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#eyecatcher";
+        tag = "freenode";
+      }
+    );
+  };
+  20 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ircmarkers";
+        tag = "freenode";
+      }
+    );
+  };
+  23 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-bugs";
+        tag = "oftc";
+      }
+    );
+  };
+  25 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "panthera";
+        tag = "oftc";
+      }
+    );
+  };
+  31 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian-test.de";
+        tag = "freenode";
+      }
+    );
+  };
+  41 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "aba"; tag = "oftc"; }
+    );
+  };
+  40 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "jvw"; tag = "oftc"; }
+    );
+  };
+  39 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "dpkg";
+        tag = "freenode";
+      }
+    );
+  };
+  38 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "OldleBot";
+        tag = "freenode";
+      }
+    );
+  };
+  37 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Duppy";
+        tag = "freenode";
+      }
+    );
+  };
+  36 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "rafl";
+        tag = "freenode";
+      }
+    );
+  };
+  34 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Guest2919";
+        tag = "oftc";
+      }
+    );
+  };
+  33 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "ianw";
+        tag = "freenode";
+      }
+    );
+  };
+  32 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Hadron";
+        tag = "freenode";
+      }
+    );
+  };
+  51 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Torben";
+        tag = "bitlbee";
+      }
+    );
+  };
+  66 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "q";
+        tag = "quakenet";
+      }
+    );
+  };
+  67 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "maks"; tag = "oftc"; }
+    );
+  };
+  47 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "HE"; tag = "oftc"; }
+    );
+  };
+  68 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "l";
+        tag = "quakenet";
+      }
+    );
+  };
+  62 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "tbm";
+        tag = "freenode";
+      }
+    );
+  };
+  63 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "zobel";
+        tag = "oftc";
+      }
+    );
+  };
+  64 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Rhonda";
+        tag = "oftc";
+      }
+    );
+  };
+  55 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "nobse";
+        tag = "oftc";
+      }
+    );
+  };
+  58 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "lilo";
+        tag = "freenode";
+      }
+    );
+  };
+  54 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Toots";
+        tag = "oftc";
+      }
+    );
+  };
+  48 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "dondelelcaro";
+        tag = "freenode";
+      }
+    );
+  };
+  60 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Caesar";
+        tag = "freenode";
+      }
+    );
+  };
+  56 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "Tine";
+        tag = "bitlbee";
+      }
+    );
+  };
+  53 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "tiCo"; tag = "oftc"; }
+    );
+  };
+  45 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "init0";
+        tag = "freenode";
+      }
+    );
+  };
+  49 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "helix";
+        tag = "freenode";
+      }
+    );
+  };
+  46 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "thesaltydog";
+        tag = "freenode";
       }
     );
   };
 };
-mainwindows = { 1 = { first_line = "1"; lines = "31"; }; };
+mainwindows = { 1 = { first_line = "1"; lines = "21"; }; };
