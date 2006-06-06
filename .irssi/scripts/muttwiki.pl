@@ -99,7 +99,7 @@ if(-f $prfile) {
 		close($wh);
 		POSIX::_exit(1);
 	}
-}
+} # sub muttwiki_poll
 
 sub pipe_input {
 	my($rh, $tag, $data, $server, $item)=@{$_[0]};
@@ -113,5 +113,19 @@ sub pipe_input {
 	}
 }
 
-#Irssi::signal_add_last('event privmsg','on_event_privmsg');
+sub on_event_privmsg {
+	my ($server, $data, $user, $address) = @_;
+	my ($target, $line) = split(/ :/, $data, 2);
+	my $dest = ($data =~ /^#/ ? $target : $user);
+
+	if ($dest eq '#mutt' and $line =~ /^Tauon[:,] ping/) {
+		#$server->command("msg -freenode2 #mutt $user: pong");
+		muttwiki_poll($data, $server, "");
+	}
+}
+
+
+Irssi::signal_add_last('event privmsg','on_event_privmsg');
 command_bind 'muttwiki' => sub { muttwiki_poll(@_) };
+
+# vim:sw=4:
