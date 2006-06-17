@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# script for easier injection of messages into the NM db
+# (please set pipe_split; unset pipe_decode in mutt)
+
+TMP=`mktemp -t nm.XXXXXX`
+cat > $TMP
+TAG=`perl -lne 'if (/^Subject: .*<(.*)>/) { $a = $1; $a =~ s/@/=/; print $a }' < $TMP`
+
+< $TMP formail -I"Delivered-To:" | /usr/sbin/sendmail nm-"$TAG"@nm.debian.org
+rm -f $TMP
