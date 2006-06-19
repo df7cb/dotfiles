@@ -1,6 +1,7 @@
 # .procmail/x-label
 # cb 2004-10-05
 
+# Debian
 :0
 * !^X-Label:
 * ^X-(Debian|GUUG)-PR-Message: (report|closed|ack-info) \/[0-9]*
@@ -21,6 +22,12 @@
 
 :0fhw
 * !^X-Label:
+* ^Delivered-To: \/.*@nm.debian.org
+| formail -i"X-Label: $MATCH"
+
+# Mutt
+:0fhw
+* !^X-Label:
 * ^X-Mutt-PR: \/.*
 | formail -i"X-Label: $MATCH"
 
@@ -34,11 +41,13 @@
 * ^(List-Id: .*<|X-list: |Sender: owner-|Delivered-To: mailing list |X-Mailing-List: <)\/[a-z0-9-]*
 | formail -i"X-Label: $MATCH"
 
+# root
 :0fhw
 * !^X-Label:
 * ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
 | formail -i"X-Label: root"
 
+# Uni
 :0fhw
 * !^X-Label:
 * ^TO_f[br]-?mit@cs.uni-sb.de
@@ -52,6 +61,7 @@
 * ^TO_.*@avacs.org
 | formail -i"X-Label: avacs"
 
+# df7cb.de
 :0fhw
 * !^X-Label:
 * ^Delivered-To: .*@df7cb.de
@@ -63,6 +73,7 @@
 #* ^TO_cb
 #| formail -i"X-Label: cb"
 
+# other
 :0fhw
 * !^X-Label:
 | formail -i"X-Label: -"
