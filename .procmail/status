@@ -7,7 +7,7 @@
 # killfile 1
 :0
 * !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|mennucc1@debian.org|wildfire@progsoc.uts.edu.au)>
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|mennucc1@debian.org|wildfire@progsoc.uts.edu.au|hexstar@gmail.com)>
 {
 	:0ch
 	* ^Message-Id: \/.*
