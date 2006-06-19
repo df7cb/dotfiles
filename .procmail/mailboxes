@@ -18,6 +18,10 @@ $DEFAULT
 * ^Delivered-To: mia@qa.debian.org
 mail/IN/mia
 
+:0:
+* ^Delivered-To: .*@nm.debian.org
+mail/IN/nm
+
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 :0:
 * ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<katie@.*.debian.org>)
