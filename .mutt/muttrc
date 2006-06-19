@@ -23,7 +23,7 @@ set hostname="df7cb.de"
 macro generic & "!retch -F\cM"
 macro index & "!retch -F\cM"
 set spoolfile="=IN/cb"
-mailboxes ! =rw/inbox =IN/root =IN/pisg =IN/mutt =IN/mia =IN/debian =IN/backports =IN/bridge =IN/lists
+mailboxes ! =rw/inbox =IN/root =IN/pisg =IN/mutt =IN/nm =IN/mia =IN/debian =IN/backports =IN/bridge =IN/lists
 color header brightblack default heim-d@df7cb.de
 
 # local settings
