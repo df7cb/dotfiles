@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# set HOME for running from inetd
+: ${HOME:=/home/cb}
+export HOME
+
+LOCK="$HOME/.retchmail/retchmail.lock"
+
+if lockfile -r0 $LOCK ; then
+	if [ -t 0 ] ; then
+		retchmail "$@"
+	else
+		retchmail "$@" > /dev/null
+	fi
+	rm -f $LOCK
+fi
