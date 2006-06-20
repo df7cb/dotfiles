@@ -16,9 +16,11 @@ alias asta AStA Saarbrücken <asta@asta.uni-saarland.de>
 alias asta_rso_gewinnspiel AStA-RSO-Gewinnspiel <asta_rso_gewinnspiel@web.de>
 alias azoff Torbjörn Svensson <azoff@se.linux.org>
 alias bach Ilina Bach <bach@cs.uni-sb.de>
+alias bas Bas Zoetekouw <bas@debian.org>
 alias bbo-team Teamkämpfe auf BBO <bbo-team@luithle.net>
 alias bdecker Björn Decker <bdecker@cs.uni-sb.de>
 alias benni Benjamin Grewer <benni@asta.uni-saarland.de>
+alias blade Eduard Bloch <blade@debian.org>
 alias bogdana Bogdana Dakova <bogdana@cs.uni-sb.de>
 alias brendan Brendan Cully <brendan@kublai.com>
 alias bridge-runde Bridge-Runde <bridge-runde@lists.mawan.de>
@@ -52,6 +54,7 @@ alias dvabernd Bernd Dörr <DVABernd@aol.com>
 alias elendil Frans Pop <elendil@planet.nl>
 alias engblom Jakob Engblom <jakob@acm.org>
 alias enrico Enrico Zini <enrico@debian.org>
+alias falk Falk Hüffner <falk@debian.org>
 alias famile_kiefer Familie Kiefer <famile_kiefer@t-online.de>
 alias fassbender Rosy Fassbender <fassbender@cs.uni-sb.de>
 alias ff Frank Fontaine <ff@absint.com>
@@ -86,6 +89,7 @@ alias hubert Hubert Chan <hubert@uhoreg.ca>
 alias ianw Ian Wienand <ianw@ieee.org>
 alias igenibel Igor Genibel <igenibel@debian.org>
 alias ingabreitbach Inga Breitbach <IngaBreitbach@web.de>
+alias ingo Ingo Saitz <ingo@debian.org>
 alias jakob Jakob Engblom <jakob@virtutech.com>
 alias jeroen Jeroen van Wolffelaar <jeroen@debian.org>
 alias joern.schneider Jörn Schneider <Joern.Schneider@de.bosch.com>
@@ -164,3 +168,4 @@ alias weber.alex Alexandra Weber <weber.alex@gmx.net>
 alias weikum Gerhard Weikum <weikum@cs.uni-sb.de>
 alias wk Werner Koch <wk@gnupg.org>
 alias wspark Wooseok Park <wspark@cs.uni-sb.de>
+alias zorglub Clément Stenac <zorglub@debian.org>
