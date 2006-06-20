@@ -81,7 +81,7 @@ kazehakase-run:
 
 ifeq ($(shell [ -d .mutt ] && echo yes), yes)
 cleanup: .mutt/.aliases
-COMMITS += .mutt/aliases
+COMMITS += .mutt/aliases $(wildcard .mutt/fortunes-??)
 endif
 .mutt/.aliases: .mutt/aliases
 	# Sorting $<
