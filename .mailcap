@@ -1,3 +1,4 @@
+application/bbolin; NetBridgeVu '%s'; test=test -n "$DISPLAY"
 application/bbolin; $HOME/projects/bridge/linviewer/xlinviewer '%s'; test=test -n "$DISPLAY"
 application/msword; ooffice '%s'; test=test -n "$DISPLAY"
 application/pdf; xpdf '%s'; test=which xpdf > /dev/null
