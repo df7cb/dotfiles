@@ -17,6 +17,10 @@ $DEFAULT
 :0:
 * ^Delivered-To: mia@qa.debian.org
 mail/IN/mia
+:0c:
+* ^X-Mailing-List: .*debian
+* ^Subject: .*\[vac
+mail/IN/mia
 
 :0:
 * ^Delivered-To: .*@nm.debian.org
