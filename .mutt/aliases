@@ -99,12 +99,14 @@ alias juliane Juliane Büchel <juliane@lhgsaar.de>
 alias kassenwart Kassenwart D <kassenwart@heim-d.uni-sb.de>
 alias kink Thijs Kinkhorst <kink@squirrelmail.org>
 alias krieger Hans-Ulrich Krieger <krieger@dfki.de>
+alias kroeckx Kurt Roeckx <kurt@roeckx.be>
 alias labor Labor <labor@wjpserver.cs.uni-sb.de>
 alias learfox Tara Milana <learfox@twu.net>
 alias liste Aktive Idealisten <liste@aktive-idealisten.de>
 alias listmaster Debian Listmasters <listmaster@lists.debian.org>
 alias luk Luk Claes <luk@debian.org>
 alias m Majordomo List Manager <majordomo@heim-d.uni-sb.de>
+alias madcoder Pierre Habouzit <madcoder@debian.org>
 alias majordomo Lithe-Majordomo <majordomo@lists.lithe.de>
 alias marechal Marechal Nadege <marechal@cs.uni-sb.de>
 alias marlenesiegel Marlene Siegel <marlenesiegel@web.de>
@@ -130,6 +132,7 @@ alias pdesc DDTP Package Descriptions <pdesc@ddtp.debian.org>
 alias pilzecker Markus Pilzecker <pilzecker@free.fr>
 alias pisg-general Pisg <pisg-general@lists.sourceforge.net>
 alias pister Markus Pister <pister@cs.uni-sb.de>
+alias pkern Philipp Kern <pkern@debian.org>
 alias praesidium Heimpräsidium D <praesidium@heim-d.uni-sb.de>
 alias pts PTS Control Bot <pts@qa.debian.org>
 alias pvs-help PVS Help <pvs-help@csl.sri.com>
@@ -143,6 +146,7 @@ alias roessler Thomas Roessler <roessler@does-not-exist.org>
 alias root_asta root@asta.uni-saarland.de
 alias schlickling Marc Schlickling <schlickling@cs.uni-sb.de>
 alias sekretariat AStA-Sekretariat <sekretariat@asta.uni-saarland.de>
+alias sfrost Stephen Frost <sfrost@debian.org>
 alias sithglan Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
 alias sjr Simon Richter <sjr@debian.org>
 alias skibbe Torsten Skibbe <skibbe@t-online.de>
