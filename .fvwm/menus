@@ -17,9 +17,9 @@ AddToMenu Main	"fvwm2"		Title
 +		""		Nop
 #+		"Quit FVWM"	Quit
 +		"&Quit X"	Exec killall xterm xterm.real
-+		"&Poweroff"	Exec poweroff
-+		" +&Commit"	Exec xterm -e "make commit ; poweroff"
-+		" +&Backup"	Exec xterm -e "make commit ; rdiff-volta-planck ; poweroff"
++		"&Poweroff"	Exec sudo poweroff
++		" +&Commit"	Exec xterm -e "make commit ; sudo poweroff"
++		" +&Backup"	Exec xterm -e "make commit ; rdiff-volta-planck ; sudo poweroff"
 
 
 DestroyMenu Apps
@@ -45,10 +45,10 @@ AddToMenu Apps	"Apps"		Title
 
 DestroyMenu Init
 AddToMenu Init	"Init"		Title
-+		"&poweroff"	Exec poweroff
-+		"&halt"		Exec halt
-+		"&reboot"	Exec reboot
-+		"&pump"		Exec super pump
++		"&poweroff"	Exec sudo poweroff
++		"&halt"		Exec sudo halt
++		"&reboot"	Exec sudo reboot
++		"&pump"		Exec sudo pump
 
 
 DestroyMenu Screen
