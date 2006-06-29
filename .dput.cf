@@ -41,3 +41,9 @@ fqdn = meitner.df7cb.de
 login = cb
 method = scp
 incoming = .
+
+[fermi]
+fqdn = fermi.df7cb.de
+login = cb
+method = scp
+incoming = UploadQueue
