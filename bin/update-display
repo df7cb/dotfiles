@@ -18,7 +18,7 @@ case "$1" in
 		put "$SSH_AUTH_SOCK" "SSH_AUTH_SOCK"
 		put "$SSH_AGENT_PID" "SSH_AGENT_PID"
 		put "$GPG_AGENT_INFO" "GPG_AGENT_INFO"
-		cat $DISPLAYRC.tmp >> $DISPLAYRC
+		[ -f $DISPLAYRC.tmp ] && cat $DISPLAYRC.tmp >> $DISPLAYRC
 		rm -f $DISPLAYRC.tmp
 		[ -s $DISPLAYRC ] || rm -f $DISPLAYRC
 		;;
