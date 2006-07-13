@@ -36,3 +36,12 @@
 %
 <vorlon> I was looking forward to some Directed Acrylic Graphs
 %
+> why has the installed-size of openoffice-org.bin been reduced by
+> almost 60M in this update?
+Maybe the implementation of the - now removed - "arbitrary code
+execution" feature was rather inefficient? ;o)
+ -- Philipp A. Hartmann
+%
+<weasel> what do you mean, not irssi?
+<weasel> that's like no internet, isn't it?
+%
