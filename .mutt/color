@@ -26,7 +26,7 @@ color index	yellow default '~y (aspell-de\|endeavour\|image-size\|ircmarkers\|us
 color index	brightdefault default ~T
 color index	brightdefault default ~F
 
-color index_author red default
+color index_author red default .
 color index_number blue default
 
 color header    brightdefault default ^From:
