@@ -3,7 +3,7 @@
 # options
 #set abort_nosubject
 set abort_unmodified
-set alias_file=~/.mutt/aliases
+set alias_file=~/.priv/aliases
 #set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
 alternates ^(cb@((cs|asta).uni-s(b|aarland)|df7cb).de|myon.*@.*debian.org|df7cb@.*)$
 set attribution="Re: %F %[%Y-%m-%d] %i"
