@@ -12,7 +12,7 @@ source ~/.mutt/lists
 source ~/.mutt/hooks
 
 # aliases
-source ~/.mutt/aliases
+source `if [ -f ~/.mutt/aliases ] ; then echo ~/.mutt/aliases ; else echo /dev/null ; fi`
 source `if [ -f ~/.mutt/aliases.ab ] ; then echo ~/.mutt/aliases.ab ; else echo /dev/null ; fi`
 
 # local configuration options

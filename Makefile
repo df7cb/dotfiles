@@ -1,26 +1,11 @@
 # $Id$
 
-all: .configrc .irssi/nickserv.users .less .plan.dir/dayplan .ssh/cb@fermi .ssh/config .ytalkrc .xinitrc bin/ctar .priv
+all: .configrc .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
 
 ## targets ##
 
-#.firefox/cb/cbcbcbcb.slt/bookmarks.html:
-#	[ -f .priv/bookmarks.html ] && ln -s ../../../.priv/bookmarks.html $@
-
-.irssi/nickserv.users:
-	[ -f .priv/nickserv.users ] && ln -s ../.priv/nickserv.users $@
-
 .less: .lesskey
 	lesskey
-
-.plan.dir/dayplan:
-	if [ -f .priv/dayplan ] ; then \
-		mkdir .plan.dir ; \
-		ln -s ../.priv/dayplan $@ ; \
-	fi
-
-.ssh/cb@fermi:
-	[ -f .priv/cb@fermi ] && cd .ssh && ln -s ../.priv/cb@fermi* .
 
 .ssh/config: .ssh/config.m4
 	@rm -f $@
@@ -78,20 +63,6 @@ endif
 	@touch $@
 kazehakase-run:
 	@if pidof kazehakase > /dev/null ; then echo "kazehakase is running " ; false ; else true ; fi
-
-ifeq ($(shell [ -d .mutt ] && echo yes), yes)
-cleanup: .mutt/.aliases
-COMMITS += .mutt/aliases $(wildcard .mutt/fortunes-??)
-endif
-.mutt/.aliases: .mutt/aliases
-	# Sorting $<
-	@grep -qv '<<<<' $<
-	@mv $< $<.bak
-	@LC_ALL=C sort -u $<.bak > $<
-	@rm -f $<.bak
-	@touch $@
-# find duplicate aliases
-	@cut -f2 -d' ' .mutt/aliases .mutt/aliases.ab | sort | uniq -d
 
 ifeq ($(shell [ -d .ncftp ] && echo yes), yes)
 COMMITS += .ncftp/bookmarks
