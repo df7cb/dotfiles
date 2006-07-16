@@ -1,6 +1,6 @@
 # $Id$
 
-all: .configrc .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
+all: .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
 
 ## targets ##
 
@@ -14,9 +14,6 @@ all: .configrc .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
 
 .xinitrc:
 	ln -s .xsession .xinitrc
-
-.ytalkrc: .ytalkrc.m4 .configrc
-	m4 .configrc .ytalkrc.m4 > .ytalkrc
 
 bin/ctar:
 	ln -s ttar bin/ctar
@@ -122,34 +119,3 @@ commit: cleanup
 	svn commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
-## installation stuff ##
-
-install:
-	[ ! -f .configrc ]
-	rm -f ../.ssh/known_hosts
-	-rmdir ../.ssh
-	-[ -d ../.ssh ] && mv ../.ssh ../ssh~
-	-[ -d ../.ssh2 ] && mv ../.ssh2 ../ssh2~
-	mv * .[a-z]* .[A-Z]* ..
-	cd .. ; rmdir cb conf ; $(MAKE)
-
-.configrc:
-	echo "divert(-1)" >> .configrc
-	echo "# local configuration data: `hostname`" >> .configrc
-	echo "" >> .configrc
-	echo "define(_MAILDOMAIN_, `hostname`)" >> .configrc
-	echo "define(_ORGANIZATION_, \`')" >> .configrc
-	echo "define(_YTALK_, 3.1)" >> .configrc
-	echo "" >> .configrc
-	echo "divert(0)dnl" >> .configrc
-	vim .configrc || vi .configrc
-
-.ssh/known_hosts:
-	# Fetching new $@
-	echo "#!/bin/sh" > $(HOME)/ssh-update
-	echo 'ssh -o "UserKnownHostsFile $$HOME/ssh_known_hosts" "$$@"' >> $(HOME)/ssh-update
-	chmod 700 $(HOME)/ssh-update
-	CVS_RSH="$(HOME)/ssh-update" cvs up $@
-	rm -f $(HOME)/ssh-update $(HOME)/ssh_known_hosts
-
-##
