@@ -1,6 +1,6 @@
 # $Id$
 
-all: .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
+all: cleanup .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
 
 ## targets ##
 
@@ -52,14 +52,13 @@ endif
 	@touch $@
 
 ifeq ($(shell [ -d .kazehakase ] && echo yes), yes)
-cleanup: .kazehakase/.bookmarks.xml kazehakase-run
+cleanup: .kazehakase/.bookmarks.xml
 #COMMITS += .kazehakase/bookmarks.xml
 endif
-.kazehakase/.bookmarks.xml: .kazehakase/bookmarks.xml kazehakase-run
+.kazehakase/.bookmarks.xml: .kazehakase/bookmarks.xml
 	# Cleaning $<
-	@touch $@
-kazehakase-run:
 	@if pidof kazehakase > /dev/null ; then echo "kazehakase is running " ; false ; else true ; fi
+	@touch $@
 
 ifeq ($(shell [ -d .ncftp ] && echo yes), yes)
 COMMITS += .ncftp/bookmarks
