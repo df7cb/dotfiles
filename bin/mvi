@@ -1,20 +1,21 @@
 #!/usr/bin/perl -w
 # mvi - rename files interactively (mv-vi)
 # $Id$
-# (c) 2001..2004 Christoph Berg <cb@df7cb.de>
+# (c) 2001..2004, 2006 Christoph Berg <cb@df7cb.de>
 # This program is free software covered by the GNU GPL.
 #
 # 010711 cb v0.1
 # 030312 cb v0.2: better quoting
 # 040408 cb v0.3: support for editing symlinks, use strict
 # 040507 cb v0.4: does not use a sh script any more
+# 060719 cb v0.5: warn instead of overwriting files
 
 use strict;
 use File::Temp qw/tempfile/;
 use Getopt::Std;
 
 my %opts;
-getopts("0f:", \%opts);
+getopts("0f:v", \%opts);
 
 my $argc = @ARGV;
 $opts{f} ||= "-" if $opts{0};
@@ -33,8 +34,8 @@ if($opts{f}) {
 my ($fh, $file) = tempfile();
 
 #print $fh "apply mv -iv %O %N\n";
-print $fh "skip-unchanged 1\n";
-print $fh "verbose 0\n";
+#print $fh "skip-unchanged 1\n";
+#print $fh "verbose 0\n";
 for my $i (0 .. $argc - 1) {
 	printf $fh "%6d\t%s\n", $i, $ARGV[$i];
 }
@@ -47,7 +48,7 @@ open FH, $file or die "$file: $!";
 
 my $apply = "echo apply undefined";
 my $skip = 1;
-my $verbose = 0;
+my $exit = 0;
 while(<FH>) {
 	next if /^\s*#/;
 	next if /^\s*$/;
@@ -60,7 +61,7 @@ while(<FH>) {
 		next;
 	}
 	if(/^verbose (1|0)$/) {
-		$verbose = $1;
+		$opts{v} = $1;
 		next;
 	}
 	if(/^([ \d]{6})\t(.+)/) {
@@ -73,7 +74,12 @@ while(<FH>) {
 		#$cmd =~ s/\%N/$n/;
 		#print "$i: $cmd\n" if $verbose;
 		#system $cmd;
-		print "rename $ARGV[$i], $n\n" if $verbose;
+		print "mv $ARGV[$i] $n\n" if $opts{v};
+		if (-e $n) {
+			print STDERR "Warning: not renaming $ARGV[$i], $n exists\n";
+			$exit = 1;
+			next;
+		}
 		rename $ARGV[$i], $n or warn "rename $ARGV[$i], $n: $!";
 		next;
 	}
@@ -82,3 +88,4 @@ while(<FH>) {
 close FH;
 
 unlink $file, "$file~";
+exit $exit;
