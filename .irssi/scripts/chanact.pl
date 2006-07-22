@@ -4,7 +4,7 @@ use Irssi::TextUI;
 
 use vars qw($VERSION %IRSSI);
 
-$VERSION = "0.5.5+cb";
+$VERSION = "0.5.5";
 %IRSSI = (
     authors     => 'BC-bd, Veli',
     contact     => 'bd@bc-bd.org, veli@piipiip.net',
@@ -29,7 +29,6 @@ $VERSION = "0.5.5+cb";
 # veli@piipiip.net   /window_alias code
 # qrczak@knm.org.pl  chanact_abbreviate_names
 # qerub@home.se      Extra chanact_show_mode and chanact_chop_status
-# Christoph Berg <cb@df7cb.de> Prefix stripping
 # 
 #########
 # USAGE
@@ -176,8 +175,9 @@ sub chanact {
 sub remake() {
 	my ($afternumber,$finish,$hilight,$mode,$number,$display);
 	my $separator = Irssi::settings_get_str('chanact_separator'); 
+	my $remove_prefix = Irssi::settings_get_str('chanact_remove_prefix');
 	my $abbrev = Irssi::settings_get_int('chanact_abbreviate_names');
-	my $remove_prefix = Irssi::settings_get_str('chanact_remove_prefix'); 
+	my $remove_hash = Irssi::settings_get_bool('chanact_remove_hash');
 	
 	$actString = "";
 	foreach my $win (sort { ($a->{refnum}) <=> ($b->{refnum})} Irssi::windows) {
@@ -192,8 +192,8 @@ sub remake() {
 
 		# (status) is an awfull long name, so make it short to 'S'
 		# some people don't like it, so make it configurable
-		if ($name eq "(status)" &&
-			Irssi::settings_get_bool('chanact_chop_status')) {
+		if (Irssi::settings_get_bool('chanact_chop_status')
+		    && $name eq "(status)") {
 			$name = "S";
 		}
 	
@@ -238,11 +238,13 @@ sub remake() {
 		}
 		if ($abbrev) {
 			if ($name =~ /^[&#+!=]/) {
-				#$name = substr($name, 0, $abbrev + 1);
-				$name = substr($name, 1, $abbrev);
+				$name = substr($name, 0, $abbrev + 1);
 			} else {
 				$name = substr($name, 0, $abbrev);
 			}
+		}
+		if ($remove_hash) {
+			$name =~ s/^[&#+!=]//;
 		}
 
 		if (Irssi::settings_get_bool('chanact_show_alias') == 1 && 
@@ -385,6 +387,7 @@ Irssi::settings_add_int('chanact', 'chanact_abbreviate_names', 0);
 Irssi::settings_add_bool('chanact', 'chanact_show_alias', 1);
 Irssi::settings_add_str('chanact', 'chanact_separator', " ");
 Irssi::settings_add_bool('chanact', 'chanact_autorenumber', 0);
+Irssi::settings_add_bool('chanact', 'chanact_remove_hash', 0);
 Irssi::settings_add_str('chanact', 'chanact_remove_prefix', "");
 Irssi::settings_add_int('chanact', 'chanact_renumber_start', 50);
 Irssi::settings_add_str('chanact', 'chanact_header', "Act: ");
@@ -409,10 +412,7 @@ Irssi::signal_add_last('window refnum changed', 'refnum_changed');
 ###
 #
 # Changelog
-#
-# 0.5.5+cb
-# - prefix stripping option by Christoph Berg <cb@df7cb.de>
-#
+# 
 # 0.5.5
 # - some speedups from David Leadbeater <dgl@dgl.cx>
 # 
