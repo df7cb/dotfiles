@@ -26,6 +26,7 @@ my %nickservs = (
     oftc         => [ 'NickServ', 'services@services.oftc.net' ],
     techno       => [ 'NickServ', 'services@campus-sbg.at' ],
     euirc        => [ 'NickServ', 'anope@services.eu-irc.net' ],
+    cacert       => [ 'NickServ', 'services@wireless' ],
 );
 
 use Irssi;
@@ -80,7 +81,8 @@ sub got_nickserv_msg {
 			Irssi::signal_stop();
 		} elsif ($text =~ /nick, type.+msg NickServ IDENTIFY.+password.+Otherwise,|please choose a different nick./i) {
 			Irssi::signal_stop();
-		} elsif ($text =~ /Password accepted - you are now recognized./) {
+		} elsif ($text =~ /Password accepted - you are now recognized./ ||
+		         $text =~ /Wow, you managed to remember your password.  That's a miracle by your usual standard./ ) {
 			Irssi::print("Got a positive response from $nick/" . $server->{'tag'});
 			join_channels($server);
 			Irssi::signal_stop();
