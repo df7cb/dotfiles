@@ -35,6 +35,7 @@ links: \
 	autorun/joininfo.pl \
 	autorun/len.pl \
 	autorun/nickcolor.pl \
+	autorun/queryresume.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \
