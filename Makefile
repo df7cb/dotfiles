@@ -35,11 +35,12 @@ ifeq ($(shell [ -d .firefox ] && echo yes), yes)
 cleanup: .firefox/cb/cbcbcbcb.slt/.bookmarks.html
 COMMITS += .firefox/cb/cbcbcbcb.slt/bookmarks.html
 endif
-.firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html
+.firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html firefox-run
 	# Cleaning $<
-	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
 	@perl -i -pe 's/ (LAST_VISIT)="\d+"//g' $<
 	@touch $@
+firefox-run:
+	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
 
 ifeq ($(shell [ -d .galeon ] && echo yes), yes)
 cleanup: .galeon/.bookmarks.xbel
@@ -89,13 +90,6 @@ known_hosts-uniq:
 	@LC_ALL=C sort -u $<.bak > $<
 	@rm -f $<.bak
 	@touch $@
-
-ifeq ($(shell [ -d lib/addressbook ] && echo yes), yes)
-cleanup: lib/addressbook/check-addressbook-running
-COMMITS += lib/addressbook/cb.dat
-endif
-lib/addressbook/check-addressbook-running:
-	@[ ! -f lib/addressbook/cb.dat.lock ]
 
 ifeq ($(shell [ -d lib/todo ] && echo yes), yes)
 COMMITS += lib/todo/todo
