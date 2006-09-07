@@ -45,3 +45,11 @@ execution" feature was rather inefficient? ;o)
 <weasel> what do you mean, not irssi?
 <weasel> that's like no internet, isn't it?
 %
+<wiggy> watch this:
+<wiggy>              total       used       free     shared    buffers     cached
+<wiggy> Mem:      16252488      89756   16162732          0       6580      48160
+* enrico feels his penis getting smaller
+%
+<Aleric> Ah, I found out where the screenshot icon went: it's position was set
+	to 1073741823 .. I think that is to the right of my monitor.
+%
