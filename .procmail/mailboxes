@@ -32,20 +32,29 @@ mail/IN/nm
 mail/IN/debian
 
 :0:
-* ^(List-Id: .*<backports-)
+* ^List-Id: .*<backports-
 mail/IN/backports
+
+:0:
+* ^List-Id: .*<debconf-
+mail/IN/debconf
+
+# OFTC
+:0:
+* ^List-Id: .*lists.oftc.net>
+mail/IN/oftc
 
 # Bridge
 :0:
-* ^(List-Id: .*<(5erof|bbo-team))
+* ^List-Id: .*<(5erof|bbo-)
 mail/IN/cb
 :0:
-* ^(List-Id: .*<(doubl|blml|bb-))
+* ^List-Id: .*<(doubl|blml|bb-|bridge)
 mail/IN/bridge
 
 # AStA
 :0:
-* ^List-Id: .*(asta.uni-saarland.de|bridge-runde.lists.mawan.de)
+* ^List-Id: .*asta.uni-saarland.de
 $DEFAULT
 
 # pisg-general list
