@@ -29,7 +29,7 @@ tmp /tmp/$(USER):
 ## cleanup stuff ##
 
 cleanup:
-COMMITS =
+COMMITS = $(wildcard .mutt/fortunes-??)
 
 ifeq ($(shell [ -d .firefox ] && echo yes), yes)
 cleanup: .firefox/cb/cbcbcbcb.slt/.bookmarks.html
