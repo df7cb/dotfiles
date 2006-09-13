@@ -25,6 +25,7 @@ ignore X-Cookie X-Operating X-Sheldon X-Url X-Habeas-SWE- X-GPG- X-Geek- # vario
 ignore X-From-Note X-Mutt-Ignore X-Revised- X-Message-Flag X-Virus
 ignore Old-X-Spam- # .procmailrc/spam
 ignore X-Original-To # postfix
+ignore X-IMAP
 
 unignore Date
 unhdr_order *
