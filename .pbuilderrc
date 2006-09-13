@@ -6,13 +6,15 @@ case `cat /etc/debian_version` in
 esac
 
 ARCH=`dpkg --print-architecture`
-MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian"
+#MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian"
+MIRRORSITE="http://ftp2.de.debian.org/debian"
 if [ "$ARCH" = amd64 ] && [ "$DISTRIBUTION" = sarge ] ; then
 	MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian"
 fi
 
 ROOT="/srv/pbuilder"
 BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
+ls -l "$BASETGZ" || :
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
 APTCACHE="$ROOT/aptcache"
