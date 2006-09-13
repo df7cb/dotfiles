@@ -3,7 +3,7 @@
 
 . ~/.bashrc
 
-mesg y
+mesg y 2> /dev/null
 finger
 
 [ "$DISPLAY" ] && update-display add
