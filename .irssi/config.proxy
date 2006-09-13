@@ -325,7 +325,6 @@ settings = {
     scroll_page_count = "/1";
     paste_verify_line_count = "10";
     autostick_split_windows = "no";
-    term_type = "utf-8";
   };
   "fe-common/core" = {
     autolog_path = "/cb/irc/log/${0}_$tag/%Y-%m/${0}-%Y-%m-%d";
@@ -337,6 +336,7 @@ settings = {
     autoclose_windows = "yes";
     reuse_unused_windows = "yes";
     show_nickmode_empty = "no";
+    term_charset = "utf-8";
   };
   proxy = {
     irssiproxy_password = "Eira1yeu";
