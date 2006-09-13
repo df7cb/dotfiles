@@ -42,7 +42,7 @@ for my $i (0 .. $argc - 1) {
 close $fh;
 
 my $editor = $ENV{EDITOR} || "vi";
-system "$editor +3 $file";
+system "$editor $file";
 
 open FH, $file or die "$file: $!";
 
