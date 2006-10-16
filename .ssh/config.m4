@@ -25,7 +25,7 @@ host volta.df7cb.de
  checkHostIP no
 
 # debian.org
-host *.debian.org *.debian.net *.turmzimmer.net
+host *.debian.org *.debian.net *.turmzimmer.net *.zseries.org
  user myon
  identityfile ~/.priv/myon@debian.org
 host merkel.debian.org gluck.debian.org
