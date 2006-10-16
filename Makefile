@@ -1,6 +1,6 @@
 # $Id$
 
-all: cleanup .less .ytalkrc .xinitrc bin/ctar .priv
+all: cleanup .less .xinitrc bin/ctar .priv
 
 ## targets ##
 
