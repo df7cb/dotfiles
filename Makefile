@@ -56,10 +56,6 @@ endif
 	@if pidof kazehakase > /dev/null ; then echo "kazehakase is running " ; false ; else true ; fi
 	@touch $@
 
-ifeq ($(shell [ -d .ncftp ] && echo yes), yes)
-COMMITS += .ncftp/bookmarks
-endif
-
 ifeq ($(shell [ -f .ssh/known_hosts ] && echo yes), yes)
 cleanup: .ssh/.known_hosts
 COMMITS += .ssh/known_hosts
