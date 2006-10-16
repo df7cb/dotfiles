@@ -1,16 +1,11 @@
 # $Id$
 
-all: cleanup .less .ssh/config .ytalkrc .xinitrc bin/ctar .priv
+all: cleanup .less .ytalkrc .xinitrc bin/ctar .priv
 
 ## targets ##
 
 .less: .lesskey
 	lesskey
-
-.ssh/config: .ssh/config.m4
-	@rm -f $@
-	m4 $< > $@
-	@chmod -w $@
 
 .xinitrc:
 	ln -s .xsession .xinitrc
@@ -64,16 +59,6 @@ endif
 ifeq ($(shell [ -d .ncftp ] && echo yes), yes)
 COMMITS += .ncftp/bookmarks
 endif
-
-ifeq ($(shell [ -d .netscape ] && echo yes), yes)
-cleanup: .netscape/.bookmarks.html
-COMMITS += .netscape/bookmarks.html
-endif
-.netscape/.bookmarks.html: .netscape/bookmarks.html
-	# Cleaning $<
-	@[ ! -L .netscape/lock ]
-	@perl -i -pe 's/(LAST_VISIT|LAST_MODIFIED)="\d+"/$$1="0"/g' .netscape/bookmarks.html
-	@touch $@
 
 ifeq ($(shell [ -f .ssh/known_hosts ] && echo yes), yes)
 cleanup: .ssh/.known_hosts
