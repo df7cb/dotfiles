@@ -102,3 +102,8 @@ execution" feature was rather inefficient? ;o)
 <Myon> prod jvw
 <kink> that looks like something I can manage
 %
+<Zugschlus> Hm. is sed -i POSIX?
+<Zugschlus> or GNU?
+<madduck> it's useful
+<madduck> so it's neither
+%
