@@ -61,8 +61,8 @@ sub do_quiet
 		return;
 	}
 	my @data = split /\s+/, $data;
-	$witem->command("quote mode $witem->{name} " .
-		($quiet ? "+" : "-") . ("q" x (@data)) . " @data");
+	my $mode = @data > 0 ? ($quiet ? "+" : "-") . ("q" x (@data)) . " @data" : "+q";
+	$witem->command("quote mode $witem->{name} $mode");
 }
 
 sub quiet { do_quiet(@_, 1); }
