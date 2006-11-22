@@ -25,6 +25,8 @@
 #  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 #  SUCH DAMAGE.
 
+#  This script adds support for +q (quiet user) channel modes to irssi.
+
 use strict;
 use Irssi;
 use Irssi::Irc;
