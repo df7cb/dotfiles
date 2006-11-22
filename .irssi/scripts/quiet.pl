@@ -53,8 +53,9 @@ sub do_quiet
 {
 	my ($data, $server, $witem, $quiet) = @_;
 	my $support = $server->isupport("CHANMODES");
-	if ($support !~ /q,/) {
-		Irssi::print("This server does not support channel mode +q, trying anyway");
+	if ($support !~ /q/) {
+		Irssi::print("This server does not support channel mode +q");
+		return;
 	}
 	if (!$witem or $witem->{type} ne "CHANNEL") {
 		Irssi::print("Not joined to any channel");
@@ -62,7 +63,7 @@ sub do_quiet
 	}
 	my @data = split /\s+/, $data;
 	my $mode = @data > 0 ? ($quiet ? "+" : "-") . ("q" x (@data)) . " @data" : "+q";
-	$witem->command("quote mode $witem->{name} $mode");
+	$witem->command("mode $witem->{name} $mode");
 }
 
 sub quiet { do_quiet(@_, 1); }
