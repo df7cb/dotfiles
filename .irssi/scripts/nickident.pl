@@ -8,11 +8,7 @@
 
 use strict;
 
-my $cvsid = '$Id$';
-my $version = '?';
-if( $cvsid =~ /\$Id: [^ ]+ (\d+\.\d+)/ ) {
-	$version = $1;
-}
+my $name = "nickident";
 my $nickserv_passfile = glob "~/.irssi/nickserv.users";
 my $nickserv_chanfile = glob "~/.irssi/nickserv.channels";
 my @users = ();
@@ -36,13 +32,13 @@ sub join_channels {
 	my ($server) = @_;
 	my $current_ircnet = $server->{'tag'};
 
-	Irssi::print("joining channels for $current_ircnet");
+	#Irssi::print("$name: Joining channels for $current_ircnet");
 	foreach $_ (@chans) {
 		my ($channel, $ircnet) = split(/:/);
 		if ($current_ircnet =~ /^$ircnet$/i) {
-			Irssi::print("joining $channel");
-			$server->send_message("ChanServ", "UNBAN $channel", "-nick");
-			sleep 1;
+			#Irssi::print("$name: Joining $channel");
+			#$server->send_message("ChanServ", "UNBAN $channel", "-nick");
+			#sleep 1;
 			Irssi::Server::channels_join($server, $channel, 0);
 		}
 	}
@@ -68,22 +64,26 @@ sub got_nickserv_msg {
 		# The below is for OPN style.. i need to figure out a way to
 		# make this portable
 		if ($text =~ /This nickname is owned by someone else/i) {
-			Irssi::print("got authrequest from $nick/" . $server->{'tag'});
+			Irssi::print("$name: Got authrequest from $nick/" . $server->{'tag'});
 			$server->send_message("nickserv", "IDENTIFY $password", "-nick");
 			Irssi::signal_stop();
 		} elsif ($text =~ /^This nickname is registered and protected\.  If it is your/) {
-		        Irssi::print("got authrequest from $nick/" . $server->{'tag'});
+		        Irssi::print("$name: Got authrequest from $nick/" . $server->{'tag'});
 			$server->send_message("nickserv", "IDENTIFY $password", "-nick");
 			Irssi::signal_stop();
-		} elsif ($text =~ /^This nick is registered\.  Please choose another\./) {
-		        Irssi::print("got authrequest from $nick/" . $server->{'tag'});
+		# testnet:
+		# is a registered nickname and you are not on its access list
+		# authenticate yourself to services ^Bnow^B
+		} elsif ($text =~ /^This nick is registered\.  Please choose another\.|is a registered nickname and you are not on its access list|authenticate yourself to services/) {
+		        Irssi::print("$name: Got authrequest from $nick/" . $server->{'tag'});
 			$server->send_message("nickserv", "IDENTIFY $password", "-nick");
 			Irssi::signal_stop();
 		} elsif ($text =~ /nick, type.+msg NickServ IDENTIFY.+password.+Otherwise,|please choose a different nick./i) {
 			Irssi::signal_stop();
 		} elsif ($text =~ /Password accepted - you are now recognized./ ||
-		         $text =~ /Wow, you managed to remember your password.  That's a miracle by your usual standard./ ) {
-			Irssi::print("Got a positive response from $nick/" . $server->{'tag'});
+		         $text =~ /Wow, you managed to remember your password.  That's a miracle by your usual standard./ ||
+		 	 $text =~ /You are sucessfully identified as/ ) {
+			Irssi::print("$name: Got a positive response from $nick/" . $server->{'tag'});
 			join_channels($server);
 			Irssi::signal_stop();
 		}
@@ -102,10 +102,19 @@ sub event_nickserv_message {
 	}
 }
 
+sub cmd_nickident {
+	my ($data, $server, $witem) = @_;
+	if (my $password = get_nickpass($server->{'nick'}, $server->{'tag'})) {
+		$server->send_message("nickserv", "IDENTIFY $password", "-nick");
+	} else {
+		Irssi::print("$name: No password for $server->{'nick'}/$server->{'tag'} found");
+	}
+}
+
 sub create_users {
-	Irssi::print("Creating basic userfile in $nickserv_passfile. please edit it and run /nickserv_read");
+	Irssi::print("$name: Creating basic userfile in $nickserv_passfile. please edit it and run /nickserv_read");
 	if(!(open NICKUSERS, ">$nickserv_passfile")) {
-		Irssi::print("Unable to create file $nickserv_passfile");
+		Irssi::print("$name: Unable to create file $nickserv_passfile");
 	}
 
 	print NICKUSERS "# This file should contain all your protected nicks\n";
@@ -121,9 +130,9 @@ sub create_users {
 }
 
 sub create_chans {
-	Irssi::print("Creating basic channelfile in $nickserv_chanfile. please edit it and run /nickserv_read");
+	Irssi::print("$name: Creating basic channelfile in $nickserv_chanfile. please edit it and run /nickserv_read");
 	if(!(open NICKCHANS, ">$nickserv_chanfile")) {
-		Irssi::print("Unable to create file $nickserv_chanfile");
+		Irssi::print("$name: Unable to create file $nickserv_chanfile");
 	}
 
 	print NICKCHANS "# This file should contain a list of all channels\n";
@@ -140,78 +149,59 @@ sub create_chans {
 
 sub read_users {
 	my $count = 0;
-
-	# Lets reset @users so we can call this as a function.
 	@users = ();
 
 	if (!(open NICKUSERS, "<$nickserv_passfile")) {
 		create_users;
 	};
 	
-	Irssi::print("Running checks on the userfile.");
-
 	# first we test the file with mask 066 (we don't actually care if the
 	# file is executable by others.. what could they do with it =)
-	
-	# Well, according to my calculations umask 066 should be 54, go figure.
-
 	my $mode = (stat($nickserv_passfile))[2];
-	if ($mode & 54) {
-		Irssi::print("your password file should be mode 0600. Go fix it!");
-		Irssi::print("use command: chmod 0600 $nickserv_passfile");
+	if ($mode & 066) {
+		Irssi::print("$name: Your password file should be mode 0600. Go fix it!");
+		Irssi::print("$name: Use command: chmod 0600 $nickserv_passfile");
 	}
 	
-	# and then we read the userfile.
-	# apaprently Irssi resets $/, so we set it here.
-
+	# apparently Irssi resets $/, so we set it here.
 	$/ = "\n";
 	while( my $line = <NICKUSERS>) {
-		if( $line !~ /^(#|\s*$)/ ) { 
-			my ($nick, $ircnet, $password) = 
-				$line =~ /\s*(\S+)\s+(\S+)\s+(\S+)/;
-			push @users, "$nick:$ircnet:$password";
+		if ($line =~ /^\s*([^#]\S+)\s+(\S+)\s+(\S+)/) {
+			push @users, "$1:$2:$3";
 			$count++;
 		}
 	}
-	Irssi::print("Found $count accounts");
+	Irssi::print("$name: Found $count accounts");
 
 	close NICKUSERS;
 }
 
 sub read_chans {
 	my $count = 0;
-
-	# Lets reset @users so we can call this as a function.
 	@chans = ();
 
 	if (!(open NICKCHANS, "<$nickserv_chanfile")) {
 		create_chans;
 	};
 	
-	Irssi::print("Running checks on the channelfile.");
-
 	# first we test the file with mask 066 (we don't actually care if the
 	# file is executable by others.. what could they do with it =)
-	
 	my $mode = (stat($nickserv_chanfile))[2];
 	if ($mode & 066) {
-		Irssi::print("your channels file should be mode 0600. Go fix it!");
-		Irssi::print("use command: chmod 0600 $nickserv_chanfile");
+		Irssi::print("$name: Your channels file should be mode 0600. Go fix it!");
+		Irssi::print("$name: Use command: chmod 0600 $nickserv_chanfile");
 	}
 	
-	# and then we read the channelfile.
-	# apaprently Irssi resets $/, so we set it here.
-
+	# apparently Irssi resets $/, so we set it here.
 	$/ = "\n";
 	while( my $line = <NICKCHANS>) {
-		if( $line !~ /^(#|\s*$)/ ) { 
-			my ($channel, $ircnet) = 
-				$line =~ /\s*(\S+)\s+(\S+)/;
-			push @chans, "$channel:$ircnet";
+		next if /^#\s/;
+		if ($line =~ /^\s*(\S+)\s+(\S+)\s*$/)  { 
+			push @chans, "$1:$2";
 			$count++;
 		}
 	}
-	Irssi::print("Found $count channels");
+	Irssi::print("$name: Found $count channels");
 
 	close NICKCHANS;
 }
@@ -224,6 +214,6 @@ sub read_files {
 
 Irssi::signal_add("event notice", "event_nickserv_message");
 Irssi::command_bind('nickserv_read', 'read_files');
+Irssi::command_bind('nickident', 'cmd_nickident');
 
 read_files();
-Irssi::print("Nickserv Interface $version loaded...");
