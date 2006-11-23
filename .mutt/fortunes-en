@@ -113,3 +113,9 @@ execution" feature was rather inefficient? ;o)
 <madduck> it's useful
 <madduck> so it's neither
 %
+<jvw> 53382 N   Nov16 00 nagios@wolffela (0.9K) ** PROBLEM alert -
+	Mordor/DAEMON/Nagios is CRITICAL **
+<jvw> what was I smoking when I coded a nagios check for nagios on the same
+	host?
+<jvw> and -- why does it work...
+%
