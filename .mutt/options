@@ -39,7 +39,6 @@ set pager_index_lines=5
 set pager_stop
 unset pipe_decode
 set pipe_split
-set pgp_auto_traditional
 set pgp_autosign
 set pgp_replyencrypt
 set pgp_sign_as="0x58510B5A"
