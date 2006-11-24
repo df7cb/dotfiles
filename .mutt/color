@@ -25,6 +25,7 @@ color index	red default "~t debian-security-announce"
 color index	yellow default '~y (aspell-de\|endeavour\|image-size\|ircmarkers\|usemod-wiki\|vcr\|xmms-coverviewer)'
 color index	brightdefault default ~T
 color index	brightdefault default ~F
+color index	white default ~D
 
 color index_author red default .
 color index_number blue default
