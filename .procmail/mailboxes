@@ -17,19 +17,14 @@ $DEFAULT
 :0:
 * ^Delivered-To: mia@qa.debian.org
 mail/IN/mia
-:0c:
-* ^X-Mailing-List: .*debian
-* ^Subject: .*\[vac
-mail/IN/mia
+#:0c:
+#* ^X-Mailing-List: .*debian
+#* ^Subject: .*\[vac
+#mail/IN/mia
 
 :0:
 * ^Delivered-To: .*@nm.debian.org
 mail/IN/nm
-
-#Resent-From: Debian BTS <debbugs@master.debian.org>
-:0:
-* ^(X-Mailing-List: .*debian|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<katie@.*.debian.org>)
-mail/IN/debian
 
 :0:
 * ^List-Id: .*<backports-
@@ -38,6 +33,21 @@ mail/IN/backports
 :0:
 * ^List-Id: .*<debconf-
 mail/IN/debconf
+
+#Resent-From: Debian BTS <debbugs@master.debian.org>
+#* ^(List-Id: .*lists.debian.org|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<dak@.*.debian.org>)
+:0:
+* ^(List-Id: .*\.debian\.org>|From: .*<dak@.*.debian.org>|X-Mailing-List: <debian-.*@lists.infodrom.org>)
+mail/IN/debian
+#:0c:
+#* ^Delivered-To: cb\+debian@df7cb.de
+#$DEFAULT
+:0:
+* ^Delivered-To: cb\+pts@df7cb.de
+mail/IN/debian
+#:0c:
+#* ^(X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package:)
+#mail/IN/debian
 
 # OFTC
 :0:
@@ -51,11 +61,6 @@ mail/IN/cb
 :0:
 * ^List-Id: .*<(doubl|blml|bb-|bridge)
 mail/IN/bridge
-
-# AStA
-:0:
-* ^List-Id: .*asta.uni-saarland.de
-$DEFAULT
 
 # pisg-general list
 :0:
@@ -78,9 +83,9 @@ mail/IN/mutt
 mail/IN/lists
 
 # AI-Bounces direkt
-:0:
-* ^Subject: BOUNCE
-mail/IN/cb
+#:0:
+#* ^Subject: BOUNCE
+#mail/IN/cb
 # root
 :0:
 * ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster|logcheck)@
