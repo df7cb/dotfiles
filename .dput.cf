@@ -36,8 +36,8 @@ fqdn = www.backports.org
 incoming = /
 login = anonymous
 
-[meitner]
-fqdn = meitner.df7cb.de
+[tesla]
+fqdn = tesla.df7cb.de
 login = cb
 method = scp
 incoming = .
