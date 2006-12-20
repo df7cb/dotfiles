@@ -15,7 +15,7 @@ use File::Temp qw/tempfile/;
 use Getopt::Std;
 
 my %opts;
-getopts("0f:v", \%opts);
+getopts("0c:f:v", \%opts);
 
 my $argc = @ARGV;
 $opts{f} ||= "-" if $opts{0};
@@ -37,12 +37,22 @@ my ($fh, $file) = tempfile();
 #print $fh "skip-unchanged 1\n";
 #print $fh "verbose 0\n";
 for my $i (0 .. $argc - 1) {
-	printf $fh "%6d\t%s\n", $i, $ARGV[$i];
+	if ($opts{c}) {
+		print $fh "$opts{c} $ARGV[$i] $ARGV[$i]\n";
+	} else {
+		printf $fh "%6d\t%s\n", $i, $ARGV[$i];
+	}
 }
 close $fh;
 
 my $editor = $ENV{EDITOR} || "vi";
 system "$editor $file";
+
+if ($opts{c}) {
+	system "sh $file";
+	unlink $file, "$file~";
+	exit 0;
+}
 
 open FH, $file or die "$file: $!";
 
