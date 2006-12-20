@@ -16,7 +16,7 @@ case "$1" in
 	*.arj)			T="unarj v"	C="echo arj not supported:" ;;
 	*.lzh)			T="lha v"	C="lha a" ;;
 	*.rar)			T="unrar v"	C="echo rar not supported:" ;;
-	*.zip|*.exe)		T="unzip -l"	C="zip" ;;
+	*.zip|*.exe)		T="unzip -l"	C="zip -r" ;;
 	*)	echo "$0 error: suffix not recognized: $1" 1>&2
 		exit 1 ;;
 esac
