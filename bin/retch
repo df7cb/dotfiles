@@ -8,9 +8,9 @@ LOCK="$HOME/.retchmail/retchmail.lock"
 
 if lockfile -r0 $LOCK ; then
 	if [ -t 0 ] ; then
-		retchmail "$@"
+		retchmail -F "$@"
 	else
-		retchmail "$@" > /dev/null
+		retchmail -F "$@" > /dev/null
 	fi
 	rm -f $LOCK
 fi
