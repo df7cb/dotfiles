@@ -131,6 +131,9 @@ execution" feature was rather inefficient? ;o)
 <weasel> it's like waiting for your parents to leave for vacation when you want
 	to throw a party
 %
+<HE> apt-cache search innovation yields no results. That explains a lot about
+	Debian.
+%
 The Alt key is also known as the Meta key, but of course in Emacs you
 can access Meta with the Esc key, (while in Solaris, the Meta key looks
 like a diamond and the Alt key is just Alt). If you could follow the
