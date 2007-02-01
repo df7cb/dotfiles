@@ -224,7 +224,7 @@ sub read_files {
 
 
 Irssi::signal_add("event notice", "event_nickserv_message");
-Irssi::command_bind('nickserv_read', 'read_files');
+Irssi::command_bind('nickident_read', 'read_files');
 Irssi::command_bind('nickident', 'cmd_nickident');
 
 read_files();
