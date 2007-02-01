@@ -1,6 +1,6 @@
-#  Copyright (c) Christoph Berg <cb@df7cb.de>
+#  Copyright (c) 2006 Christoph Berg <cb@df7cb.de>
 #  All rights reserved.
-#  
+#
 #  Redistribution and use in source and binary forms, with or without
 #  modification, are permitted provided that the following conditions
 #  are met:
@@ -9,10 +9,7 @@
 #  2. Redistributions in binary form must reproduce the above copyright
 #     notice, this list of conditions and the following disclaimer in the
 #     documentation and/or other materials provided with the distribution.
-#  3. Neither the name of the University nor the names of its contributors
-#     may be used to endorse or promote products derived from this software
-#     without specific prior written permission.
-#  
+#
 #  THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
 #  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 #  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -30,8 +27,18 @@
 use strict;
 use Irssi;
 use Irssi::Irc;
+use vars qw($VERSION %IRSSI);
 
-# :helium.oftc.net 344 Tauon #test test!*@* cryogen!stu@asteria.debian.or.at 1164222156
+$VERSION = '0.2';
+%IRSSI = (
+    authors     => 'Christoph Berg',
+    contact     => 'cb@df7cb.de',
+    name        => 'quiet',
+    description => 'support for +q (quiet user) channel mode',
+    license     => '2-clause BSD',
+);
+
+# :helium.oftc.net 344 Tauon #test test!*@* cryogen!stu@o.net 1164222156
 # :helium.oftc.net 345 Tauon #test :End of Channel Quiet List
 
 sub event_quiet_list
