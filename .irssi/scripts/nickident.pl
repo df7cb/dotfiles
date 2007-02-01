@@ -4,9 +4,20 @@
 # NickServ interface
 #  Original code by Sami Haahtinen / ZaNaGa 
 #  Protected channel support added by David McNett <nugget@slacker.com>
+#  Heavily patched by Christoph Berg <cb@df7cb.de>
 #
 
 use strict;
+use vars qw($VERSION %IRSSI);
+
+$VERSION = '20070201';
+%IRSSI = (
+    authors     => 'Sami Haahtinen, Christoph Berg',
+    name        => 'nickident',
+    description => 'identify to nickserv',
+    url         => 'http://cvsweb.oftc.net/svn/oftc-tools/trunk/user/irssi/',
+    license     => 'public domain',
+);
 
 my $name = "nickident";
 my $nickserv_passfile = glob "~/.irssi/nickserv.users";
@@ -19,10 +30,10 @@ my %nickservs = (
 	cuckoonet    => [ 'NickServ', 'services@irc.cuckoo.com' ],
 	slashnet     => [ 'NickServ', 'services@services.slashnet.org' ],
 	roxnet       => [ 'NickServ', 'services@ircsystems.net' ],
-    oftc         => [ 'NickServ', 'services@services.oftc.net' ],
-    techno       => [ 'NickServ', 'services@campus-sbg.at' ],
-    euirc        => [ 'NickServ', 'anope@services.eu-irc.net' ],
-    cacert       => [ 'NickServ', 'services@wireless' ],
+	oftc         => [ 'NickServ', 'services@services.oftc.net' ],
+	techno       => [ 'NickServ', 'services@campus-sbg.at' ],
+	euirc        => [ 'NickServ', 'anope@services.eu-irc.net' ],
+	cacert       => [ 'NickServ', 'services@wireless' ],
 );
 
 use Irssi;
