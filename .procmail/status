@@ -2,6 +2,7 @@
 :0fhw
 #* !^Status:
 * ^From: Christoph Berg <(cb|myon)@
+* !^X-New-Mutt-PR:
 | formail -I"Status: RO"
 
 # killfile 1
