@@ -39,7 +39,7 @@ login = anonymous
 [tesla]
 fqdn = tesla.df7cb.de
 login = cb
-method = scp
+method = rsync
 incoming = .
 
 [fermi]
