@@ -1,15 +1,18 @@
 case `cat /etc/debian_version` in
 	3.1) DISTRIBUTION="sarge" ;;
-	testing/unstable) DISTRIBUTION="sid" ;;
+	4.0) DISTRIBUTION="etch" ;;
+	unstable) DISTRIBUTION="sid" ;;
+	testing/unstable) echo "please use unstable in /etc/debian_version"
+	   exit 1 ;;
 	*) echo "unknown distribution in /etc/debian_version"
 	   exit 1 ;;
 esac
 
 ARCH=`dpkg --print-architecture`
-#MIRRORSITE="http://localhost/apt-cacher/ftp2.de.debian.org/debian"
-MIRRORSITE="http://ftp2.de.debian.org/debian"
+MIRRORSITE="http://localhost:9999/debian"
+#MIRRORSITE="http://ftp2.de.debian.org/debian"
 if [ "$ARCH" = amd64 ] && [ "$DISTRIBUTION" = sarge ] ; then
-	MIRRORSITE="http://localhost/apt-cacher/ftp.de.debian.org/debian-amd64/debian"
+	MIRRORSITE="http://localhost:9999/debian-amd64"
 fi
 
 ROOT="/srv/pbuilder"
