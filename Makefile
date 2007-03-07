@@ -30,12 +30,11 @@ ifeq ($(shell [ -d .firefox ] && echo yes), yes)
 cleanup: .firefox/cb/cbcbcbcb.slt/.bookmarks.html
 COMMITS += .firefox/cb/cbcbcbcb.slt/bookmarks.html
 endif
-.firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html firefox-run
+.firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html
 	# Cleaning $<
+	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
 	@perl -i -pe 's/ (LAST_VISIT)="\d+"//g' $<
 	@touch $@
-firefox-run:
-	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
 
 ifeq ($(shell [ -d .galeon ] && echo yes), yes)
 cleanup: .galeon/.bookmarks.xbel
@@ -90,6 +89,6 @@ update: cleanup
 
 com: commit
 commit: cleanup
-	svn commit -m "make commit by $(USER)@$(HOSTNAME)" $(COMMITS)
+	svn commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS)
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
