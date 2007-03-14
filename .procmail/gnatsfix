@@ -1,7 +1,7 @@
 # This procmailrc snippet fixes some of the annoyances of gnats
 
 # first handle web attachments
-:0fHB
+:0HB
 * ^Received: from gnats by trithemius.gnupg.org
 * ! ^Content-Type:
 * ^ ----gnatsweb-attachment----
