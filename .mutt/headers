@@ -12,7 +12,7 @@ ignore X-Cron-Env # cron
 ignore X-MIME-Autoconverted Auto-Submitted # sendmail
 ignore X-Spam-Level X-Keywords X-UID X-Spam-Checker-Version X-Spam-Status # spamassassin
 ignore X-Label # procmail/formail/%Y
-ignore X-Virus-Scanned X-Scanned-By X-AntiVirus X-DCC- # scanners
+ignore X-Virus-Scanned X-Scanned-By X-AntiVirus X-DCC- X-ACL-Warn # scanners
 ignore X-Mailer X-Accept-Language # Mozilla
 ignore User-Agent # slrn
 ignore X-Sender X-X-Sender # t-dialin.net, crap
