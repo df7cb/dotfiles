@@ -1,0 +1,177 @@
+#!/bin/sh
+# configure wmii
+
+xwrite() {
+	file="$1"; shift
+	echo -n "$@" | wmiir write "$file"
+}
+
+proglist() {
+	ls -lL "$@" 2>/dev/null | awk 'NF>2 && $1 ~ /^[^d].*x/ {print $NF}' | sort -u
+}
+
+MODKEY=Mod4
+UP=k
+DOWN=j
+LEFT=h
+RIGHT=l
+
+WMII_FONT='-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*'
+WMII_SELCOLORS='#000000 #dd0000 #ff0000'
+WMII_NORMCOLORS='#000000 #888888 #a8a8a8'
+
+#export WMII_FONT WMII_NORMCOLORS WMII_SELCOLORS
+
+# give wmiiwm a chance to start
+while :
+do
+	echo Start wmiirc | wmiir write /event >/dev/null 2>&1 && break
+	sleep 1
+done
+
+# WM CONFIGURATION
+xwrite /def/border 1
+xwrite /def/font $WMII_FONT
+xwrite /def/selcolors $WMII_SELCOLORS
+xwrite /def/normcolors $WMII_NORMCOLORS
+xwrite /def/colmode default
+xwrite /def/colwidth 0
+
+# TAGGING RULES
+wmiir write /def/rules <<EOF
+/XMMS.*/ -> ~
+/Gimp.*/ -> ~
+/MPlayer.*/ -> ~
+/.*/ -> !
+/.*/ -> 1
+EOF
+
+# MISC
+xsetroot -solid '#333333'
+status &
+PROGS_FILE=`mktemp /tmp/.wmiimenu.proglist.XXXXXX` || exit 2
+proglist `echo "$OLD_PATH" | tr : ' '` >$PROGS_FILE &
+
+# SHORTCUTS
+xwrite /def/grabmod Mod1
+wmiir write /def/keys <<EOF
+$MODKEY-$LEFT
+$MODKEY-$RIGHT
+$MODKEY-$DOWN
+$MODKEY-$UP
+$MODKEY-space
+$MODKEY-d
+$MODKEY-f
+$MODKEY-s
+$MODKEY-m
+$MODKEY-a
+$MODKEY-p
+$MODKEY-t
+$MODKEY-0
+$MODKEY-1
+$MODKEY-2
+$MODKEY-3
+$MODKEY-4
+$MODKEY-5
+$MODKEY-6
+$MODKEY-7
+$MODKEY-8
+$MODKEY-9
+$MODKEY-Return
+$MODKEY-Shift-$LEFT
+$MODKEY-Shift-$RIGHT
+$MODKEY-Shift-$UP
+$MODKEY-Shift-$DOWN
+$MODKEY-Shift-space
+$MODKEY-Shift-c
+$MODKEY-Shift-t
+$MODKEY-Shift-0
+$MODKEY-Shift-1
+$MODKEY-Shift-2
+$MODKEY-Shift-3
+$MODKEY-Shift-4
+$MODKEY-Shift-5
+$MODKEY-Shift-6
+$MODKEY-Shift-7
+$MODKEY-Shift-8
+$MODKEY-Shift-9
+$MODKEY-Control-$LEFT
+$MODKEY-Control-$RIGHT
+$MODKEY-Control-$DOWN
+$MODKEY-Control-$UP
+EOF
+
+# EVENT LOOP
+wmiir read /event 2>/dev/null |
+while read event
+do
+	set -f
+	set -- $event
+	set +f
+	type="$1"; shift
+	case "$type" in
+	Start)
+		if test wmiirc = "$1"
+		then
+			rm -f $PROGS_FILE
+			exit
+		fi;;
+	BarClick)
+		xwrite /ctl view "$1";;
+	Key)
+		case "$1" in
+		$MODKEY-$LEFT)
+			xwrite /view/ctl select prev;;
+		$MODKEY-$RIGHT)
+			xwrite /view/ctl select next;;
+		$MODKEY-$DOWN)
+			xwrite /view/sel/ctl select next;;
+		$MODKEY-$UP)
+			xwrite /view/sel/ctl select prev;;
+		$MODKEY-space)
+			xwrite /view/ctl select toggle;;
+		$MODKEY-d)
+			xwrite /view/sel/mode default;;
+		$MODKEY-s)
+			xwrite /view/sel/mode stack;;
+		$MODKEY-m)
+			xwrite /view/sel/mode max;;
+		$MODKEY-f)
+			xwrite /view/0/sel/geom 0 0 east south;;
+		$MODKEY-a)
+			`proglist $HOME/.wmii-3 /etc/X11/wmii-3 | wmiimenu` &;;
+		$MODKEY-p)
+			PATH="$OLD_PATH" wmiisetsid `wmiimenu <$PROGS_FILE` &;;
+		$MODKEY-t)
+			xwrite /ctl view "`wmiir read /tags | wmiimenu`" &;;
+		$MODKEY-[0-9])
+			xwrite /ctl view `echo $1 | sed 's/.*-//'`;;
+		$MODKEY-Return)
+			PATH="$OLD_PATH" x-terminal-emulator &;;
+		$MODKEY-Shift-$LEFT)
+			xwrite /view/sel/sel/ctl sendto prev;;
+		$MODKEY-Shift-$RIGHT)
+			xwrite /view/sel/sel/ctl sendto next;;
+		$MODKEY-Shift-$DOWN)
+			xwrite /view/sel/sel/ctl swap down;;
+		$MODKEY-Shift-$UP)
+			xwrite /view/sel/sel/ctl swap up;;
+		$MODKEY-Shift-space)
+			xwrite /view/sel/sel/ctl sendto toggle;;
+		$MODKEY-Shift-c)
+			xwrite /view/sel/sel/ctl kill;;
+		$MODKEY-Shift-t)
+			xwrite /view/sel/sel/tags "`wmiir read /tags | wmiimenu`" &;;
+		$MODKEY-Shift-[0-9])
+			xwrite /view/sel/sel/tags `echo $1 | sed 's/.*-//'`;;
+		$MODKEY-Control-$LEFT)
+			xwrite /view/sel/sel/ctl swap prev;;
+		$MODKEY-Control-$RIGHT)
+			xwrite /view/sel/sel/ctl swap next;;
+		$MODKEY-Control-$DOWN)
+			xwrite /view/sel/sel/ctl swap down;;
+		$MODKEY-Control-$UP)
+			xwrite /view/sel/sel/ctl swap up;;
+		esac;;
+	esac
+done &

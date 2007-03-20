@@ -1,0 +1,11 @@
+#!/bin/sh
+# periodically print date and load average to the bar
+
+wmiir remove /bar/status 2>/dev/null && sleep 2
+wmiir create /bar/status
+echo -n '#000000 #f0c000 #f0f066' | wmiir write /bar/status/colors
+
+while sleep 1
+do
+	echo -n `date '+%1e. %b %H:%M:%S'` - `uptime | sed 's/.*://; s/,//g'`
+done | wmiir write /bar/status/data
