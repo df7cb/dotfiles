@@ -1,6 +1,7 @@
 # .procmail/listarchive
 # cb 2004-10-05
 
+# catch-all storage
 :0c
 * ^(List-Id: .*<|X-list: |Sender: owner-|Delivered-To: mailing list |X-Mailing-List: <)\/[a-z0-9-]*
 * !^X-List-Administrivia: yes
@@ -11,15 +12,27 @@
   | gzip -9 >> /cb/mail/$MATCH/$MATCH-$MONTH.gz
 }
 
+# lurker archives
+:0c
+* ^List-Id: .*<doubl.imperia
+* !^(X-)No-Archive: (yes|true)
+| lurker-index -c /cb/lists.df7cb.de/etc/doubl-lurker.conf -m -l doubl
+
+:0c
+* ^Sender: owner-ai@lists.lithe.de
+* !^(X-)No-Archive: (yes|true)
+| lurker-index -c /cb/lists.df7cb.de/etc/ai-lurker.conf -m -l ai
+
+:0c
+* ^List-Id: .*<(fs-oldies|fs-nulldevice).fsinfo.cs.uni-sb.de>
+* ^List-Id: .*<\/(fs-oldies|fs-nulldevice)
+* !^(X-)No-Archive: (yes|true)
+| lurker-index -c /cb/lists.df7cb.de/etc/fsinfo-lurker.conf -m -l $MATCH
+
 :0c
 * ^Sender: (.*owner.*@mutt.org|mutt-newbie-list-admin@lists.sourceforge.net|muttpatches-owner@ml.free.fr|procmail.*@lists.RWTH-Aachen.DE)|^Delivered-To: .* mutt-rpm@mutt.justpickone.org
 * !^(X-)No-Archive: (yes|true)
 {
-	LOGFILE=$LOGDIR/archive-$MONTH.log
-	DATE=`date -u "+%Y-%m"`
-	UMASK=033
-	MUTTDIR="/cb/www.df7cb.de/mutt/archive"
-
 	:0
 	* ^Sender: owner-mutt-announce@mutt.org
 	{ MUTTLIST=mutt-announce }
@@ -50,63 +63,9 @@
 
 	:0
 	* MUTTLIST ?? .
-	{
-		:0c:
-		$MUTTDIR/lurker-queue/$MUTTLIST
-		:0:
-		$MUTTDIR/$MUTTLIST/$MUTTLIST-$DATE
-	}
+	| lurker-index -c /cb/lists.df7cb.de/etc/mutt-lurker.conf -m -l $MUTTLIST
 
 	:0:
-	$MUTTDIR/unknown-list-$DATE
-}
-
-:0c
-* ^Sender: owner-(fs-oldies|fs-nulldevice)@fsinfo.cs.uni-sb.de
-* !^(X-)No-Archive: (yes|true)
-{
-	LOGFILE=$LOGDIR/archive-$MONTH.log
-	DATE=`date -u "+%Y-%m"`
-	UMASK=033
-
-	ARCHIVEDIR="/cb/www.df7cb.de/fs-lurker/archive"
-
-	:0
-	* ^Sender: owner-fs-oldies@
-	{ LIST=fs-oldies }
-	:0
-	* ^Sender: owner-fs-nulldevice@
-	{ LIST=fs-nulldevice }
-
-	:0
-	* LIST ?? .
-	{
-		:0c:
-		* !^(X-)No-Archive: (yes|true)
-		$ARCHIVEDIR/fs-queue/$LIST
-		:0:
-		$ARCHIVEDIR/$LIST/$LIST-$DATE
-	}
-
-	:0:
-	$ARCHIVEDIR/unknown-list-$DATE
-}
-
-:0c
-* ^Sender: owner-ai@lists.lithe.de
-* !^(X-)No-Archive: (yes|true)
-{
-	LOGFILE=$LOGDIR/archive-$MONTH.log
-	DATE=`date -u "+%Y-%m"`
-	UMASK=033
-
-	ARCHIVEDIR="/cb/www.df7cb.de/mail"
-
-	:0:
-	* ^Sender: owner-ai@
-	$ARCHIVEDIR/ai/ai-$DATE
-
-	:0:
-	$ARCHIVEDIR/unknown-list-$DATE
+	/cb/lists.df7cb.de/mutt.unknown.mbox
 }
 
