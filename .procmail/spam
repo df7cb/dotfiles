@@ -23,11 +23,14 @@ SPAMDIR=mail/spam
 /dev/null
 
 :0D:
-* ^(SUBJECT: |FROM: |(To|From):.*Microsoft|(To|From): MS|Subject: \[MS\] )
+* ^(SUBJECT: |FROM: |(To|From):.*Microsoft|(To|From): MS|Subject: (\[MS\] |RE:Report))
 $SPAMDIR/SUBJECT
-#:0:
-#* ^Subject: Re\[
-#$SPAMDIR/SUBJECT
+:0:
+* ^Subject: ([a-z]* wrote:|fwd: [a-z]*|it's me [a-z]*)$
+$SPAMDIR/SUBJECT
+:0B:
+* ! .
+$SPAMDIR/empty
 
 :0:
 * ^From:.*AntiVir@rz.uni-saarland.de
