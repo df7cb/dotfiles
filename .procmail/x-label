@@ -28,8 +28,8 @@
 # Mutt
 :0fhw
 * !^X-Label:
-* ^X-Mutt-PR: \/.*
-| formail -i"X-Label: $MATCH"
+* ^X-Trac-Ticket-ID: \/.*
+| formail -i"X-Label: #$MATCH"
 
 # List-Id: discussion of the procmail program <procmail.lists.RWTH-Aachen.DE>
 # List-Id: <irssi-users.dragoncat.net>
