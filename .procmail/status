@@ -8,24 +8,7 @@
 # killfile 1
 :0
 * !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|neroden@fastmail.fm|mennucc1@debian.org|wildfire@progsoc.uts.edu.au|hexstar@gmail.com|t@b-tk.org|mjr@phonecoop.coop|brederlo@informatik.uni-tuebingen.de|joss@debian.org)>
-{
-	:0ch
-	* ^Message-Id: \/.*
-	| .procmail/blacklister -b "$MATCH"
-	:0fhw
-	| formail -i"Status: RO"
-}
-:0Efhw
-* !^Status:
-* ? .procmail/blacklister -c
-| formail -i"Status: RO"
-
-# killfile 1a
-:0
-* !^Status:
-* ^List-Id: .*debian-wnpp
-* ^Subject: .*ITP
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|neroden@fastmail.fm|mennucc1@debian.org|wildfire@progsoc.uts.edu.au|hexstar@gmail.com|t@b-tk.org|mjr@phonecoop.coop|brederlo@informatik.uni-tuebingen.de|joss@debian.org|Joerg.Schilling@fokus.fraunhofer.de)>
 {
 	:0ch
 	* ^Message-Id: \/.*
@@ -43,15 +26,6 @@
 * ^From: .*<(wieseltux23@gmail.com)>
 /dev/null
 
-#:0fhw
-#* ^From: BugScan reporter <bugscan@debian.org>
-#| formail -i"Status: RO"
-
-#:0fhw
-#* ^From:.*wnpp@debian.org
-#* ^X-Mailer: maintainers-needed.pl
-#| formail -i"Status: RO"
-
 # hide QA uploads
 :0fhw
 * !^Status:
@@ -65,19 +39,3 @@
 * ^From: .*<dak@.*.debian.org>
 * ^Subject: Processing of .*.changes
 | formail -i"Status: RO"
-
-#:0fhw
-#* !^Status:
-#* ^From: Jeroen van Wolffelaar and others <mia@qa.debian.org>
-#* ^Subject: Added:
-#| formail -i"Status: RO"
-
-# hide empty mutt cvs notifications
-:0
-* ^To: mutt-dev@mutt.org
-* ^Subject: \[.*\] CVS repository changes
-{
-	:0Bfhw
-	* !\*
-	| formail -I"Status: RO"
-}
