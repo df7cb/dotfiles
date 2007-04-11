@@ -8,4 +8,4 @@ colour	verylow=default
 filter	+children
 
 # done oben, wichtig unten, neues oben
-sort -done,-priority,created
+#sort -done,-priority,created
