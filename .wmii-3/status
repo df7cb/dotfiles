@@ -2,7 +2,7 @@
 # periodically print date and load average to the bar
 
 BARS="a b_log c_clock d_load e_mail"
-BDAY="`vcard-today $HOME/.priv/addressbook.vcf`"
+BDAY="`$HOME/.wmii-3/vcard-today $HOME/.priv/addressbook.vcf`"
 [ "$BDAY" ] && BARS="$BARS f_birthday"
 
 for bar in $BARS ; do wmiir remove /bar/$bar 2>/dev/null ; done
