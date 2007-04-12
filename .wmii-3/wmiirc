@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # configure wmii
 
 xwrite() {
@@ -17,7 +17,7 @@ LEFT=h
 RIGHT=l
 
 WMII_FONT='-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*'
-WMII_SELCOLORS='#000000 #dd0000 #ff0000'
+WMII_SELCOLORS='#000000 #f0c000 #f0f044'
 WMII_NORMCOLORS='#000000 #888888 #a8a8a8'
 
 #export WMII_FONT WMII_NORMCOLORS WMII_SELCOLORS
@@ -47,7 +47,7 @@ wmiir write /def/rules <<EOF
 EOF
 
 # MISC
-xsetroot -solid '#333333'
+#xsetroot -solid '#333333'
 status &
 PROGS_FILE=`mktemp /tmp/.wmiimenu.proglist.XXXXXX` || exit 2
 proglist `echo "$OLD_PATH" | tr : ' '` >$PROGS_FILE &
@@ -103,30 +103,30 @@ EOF
 
 # EVENT LOOP
 wmiir read /event 2>/dev/null |
-while read event
+while read type arg1 arg2 arg3
 do
-	set -f
-	set -- $event
-	set +f
-	type="$1"; shift
 	case "$type" in
 	Start)
-		if test wmiirc = "$1"
+		if test wmiirc = "$arg1"
 		then
 			rm -f $PROGS_FILE
 			exit
 		fi;;
 	BarClick)
-		xwrite /ctl view "$1";;
+		case $arg1 in
+			[0-9]) xwrite /ctl view "$arg1" ;;
+			f_birthday) wmiir remove /bar/f_birthday ;;
+			*) echo $arg1 $arg2 ;;
+		esac ;;
 	Key)
-		case "$1" in
-		$MODKEY-$LEFT)
+		case "$arg1" in
+		$MODKEY-$LEFT) warp=1
 			xwrite /view/ctl select prev;;
-		$MODKEY-$RIGHT)
+		$MODKEY-$RIGHT) warp=1
 			xwrite /view/ctl select next;;
-		$MODKEY-$DOWN)
+		$MODKEY-$DOWN) warp=1
 			xwrite /view/sel/ctl select next;;
-		$MODKEY-$UP)
+		$MODKEY-$UP) warp=1
 			xwrite /view/sel/ctl select prev;;
 		$MODKEY-space)
 			xwrite /view/ctl select toggle;;
@@ -145,16 +145,16 @@ do
 		$MODKEY-t)
 			xwrite /ctl view "`wmiir read /tags | wmiimenu`" &;;
 		$MODKEY-[0-9])
-			xwrite /ctl view `echo $1 | sed 's/.*-//'`;;
+			xwrite /ctl view `echo $arg1 | sed 's/.*-//'`;;
 		$MODKEY-Return)
 			PATH="$OLD_PATH" x-terminal-emulator &;;
-		$MODKEY-Shift-$LEFT)
+		$MODKEY-Shift-$LEFT) warp=1
 			xwrite /view/sel/sel/ctl sendto prev;;
-		$MODKEY-Shift-$RIGHT)
+		$MODKEY-Shift-$RIGHT) warp=1
 			xwrite /view/sel/sel/ctl sendto next;;
-		$MODKEY-Shift-$DOWN)
+		$MODKEY-Shift-$DOWN) warp=1
 			xwrite /view/sel/sel/ctl swap down;;
-		$MODKEY-Shift-$UP)
+		$MODKEY-Shift-$UP) warp=1
 			xwrite /view/sel/sel/ctl swap up;;
 		$MODKEY-Shift-space)
 			xwrite /view/sel/sel/ctl sendto toggle;;
@@ -163,15 +163,21 @@ do
 		$MODKEY-Shift-t)
 			xwrite /view/sel/sel/tags "`wmiir read /tags | wmiimenu`" &;;
 		$MODKEY-Shift-[0-9])
-			xwrite /view/sel/sel/tags `echo $1 | sed 's/.*-//'`;;
-		$MODKEY-Control-$LEFT)
+			xwrite /view/sel/sel/tags `echo $arg1 | sed 's/.*-//'`;;
+		$MODKEY-Control-$LEFT) warp=1
 			xwrite /view/sel/sel/ctl swap prev;;
-		$MODKEY-Control-$RIGHT)
+		$MODKEY-Control-$RIGHT) warp=1
 			xwrite /view/sel/sel/ctl swap next;;
-		$MODKEY-Control-$DOWN)
+		$MODKEY-Control-$DOWN) warp=1
 			xwrite /view/sel/sel/ctl swap down;;
-		$MODKEY-Control-$UP)
+		$MODKEY-Control-$UP) warp=1
 			xwrite /view/sel/sel/ctl swap up;;
 		esac;;
+	ClientFocus)
+		if [ "$warp" ] ; then
+			set -- `wmiir read /client/$arg1/geom`
+			wmiiwarp $(($1 + 9)) $(($2 + 16))
+			unset warp
+		fi ;;
 	esac
 done &

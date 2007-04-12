@@ -1,11 +1,42 @@
 #!/bin/sh
 # periodically print date and load average to the bar
 
-wmiir remove /bar/status 2>/dev/null && sleep 2
-wmiir create /bar/status
-echo -n '#000000 #f0c000 #f0f066' | wmiir write /bar/status/colors
+BARS="a b_log c_clock d_load e_mail"
+BDAY="`vcard-today $HOME/.priv/addressbook.vcf`"
+[ "$BDAY" ] && BARS="$BARS f_birthday"
 
-while sleep 1
+for bar in $BARS ; do wmiir remove /bar/$bar 2>/dev/null ; done
+for bar in $BARS ; do wmiir create /bar/$bar ; done
+
+echo -n '#000000 #666666 #777777' | wmiir write /bar/a/colors
+echo -n '#000000 #88b0ff #a0f0f0' | wmiir write /bar/b_log/colors
+echo -n '#000000 #b088ff #f0a0f0' | wmiir write /bar/c_clock/colors
+echo -n '#000000 #b0dd88 #a0f080' | wmiir write /bar/d_load/colors
+echo -n '#000000 #d0a020 #d0d044' | wmiir write /bar/e_mail/colors
+[ "$BDAY" ] && echo -n '#000000 #dd0000 #ff0000' | wmiir write /bar/f_birthday/colors
+
+( tail -n 3 -Fq $HOME/.xsession-errors /var/log/syslog |
+	while read line ; do
+		case $line in
+			*postfix/qmgr*removed*|*postfix/local*) ;;
+			*postfix/*) echo -n $line ; sleep 0.2 ;;
+			*) echo -n $line ; sleep 1.4 ;;
+		esac
+	done |
+	wmiir write /bar/b_log/data ) &
+
+( while true
 do
-	echo -n `date '+%1e. %b %H:%M:%S'` - `uptime | sed 's/.*://; s/,//g'`
-done | wmiir write /bar/status/data
+	echo -n `date '+%1e. %b %H:%M:%S'`
+	sleep 1
+done | wmiir write /bar/c_clock/data ) &
+
+( while true
+do
+	echo -n `uptime | sed 's/.*://; s/,//g'`
+	sleep 5
+done | wmiir write /bar/d_load/data ) &
+
+( $HOME/.wmii-3/mail | wmiir write /bar/e_mail/data ) &
+
+[ "$BDAY" ] && echo -n "$BDAY" | wmiir write /bar/f_birthday/data
