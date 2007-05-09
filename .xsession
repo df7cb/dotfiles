@@ -32,10 +32,12 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy
 	xroot &
-	xclock -g x13+0+0 -strftime '%e.%m. %T' & # 110x13
+	#xclock -g x13+0+0 -strftime '%e.%m. %T' & # 110x13
 	[ -e .plan.dir/dayplan ] && type -p pland > /dev/null && pland -k &
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
 	type -p esd > /dev/null && esd -nobeeps -as 2 &
+	workrave &
+	xplanet &
 
 	[ -x /usr/bin/gpg-agent ] && [ -z "$GPG_AGENT_INFO" ] && eval `gpg-agent --daemon`
 	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
@@ -50,10 +52,10 @@ fi
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
 SHLVL=-1
 
-fvwm &
+wmii
 
-[[ "$XVENDOR" != *VNC* ]] && export console=yes
-xterm +ut -vb -C -geometry 62x5+120-0 -T console
+#[[ "$XVENDOR" != *VNC* ]] && export console=yes
+#xterm +ut -vb -C -geometry 62x5+120-0 -T console
 
 # clean up
 [ "$GPG_AGENT_INFO" ] && kill `echo $GPG_AGENT_INFO | cut -d: -f 2`
