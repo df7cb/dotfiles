@@ -4,6 +4,7 @@
 . ~/.bashrc
 
 mesg y 2> /dev/null
+uptime
 finger
 
 [ "$DISPLAY" ] && update-display add
