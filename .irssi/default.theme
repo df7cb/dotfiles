@@ -211,7 +211,7 @@ abstracts = {
   ctcp = "%g$*%n";
 
   # wallops
-  wallop = "%W$*%n: ";
+  wallop = "%M$*%n: ";
   wallop_nick = "%n$*";
   wallop_action = "%W * $*%n ";
 
@@ -289,9 +289,15 @@ abstracts = {
   sb_act_hilight_color = "$0$1-%n";
 };
 formats = {
-  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00302$0}}$1"; };
+  "fe-common/core" = {
+    pubmsg = "{pubmsgnick $2 {pubnick \00305$0}}$1";
+    set_item = "$0 $1";
+  };
   "Irssi::Script::joininfo" = {
     ji_whois_success = "{channick_hilight $0} is $1 ($2)";
   };
-  "fe-common/irc" = { notice_private = "{notice $0}$2"; };
+  "fe-common/irc" = {
+    notice_private = "{notice $0}$2";
+    notice_server = "%y{servernotice $0}$1";
+  };
 };
