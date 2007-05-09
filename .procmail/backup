@@ -5,9 +5,9 @@
 {
         :0: $BACKUPDIR/.big.lock
         * >15000
-        | gzip -9 >> $BACKUPDIR/backup-$WEEK.big.gz
+        | gzip -9 >> $BACKUPDIR/backup-$MONTH.big.gz
 
         :0: $BACKUPDIR/.lock
-        | gzip -9 >> $BACKUPDIR/backup-$WEEK.gz
+        | gzip -9 >> $BACKUPDIR/backup-$MONTH.gz
 }
 
