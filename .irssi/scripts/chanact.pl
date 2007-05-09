@@ -171,6 +171,13 @@ sub chanact {
 	$item->default_handler($get_size_only, $actString, undef, 1);
 }
 
+sub chan_sort {
+	my ($an, $bn) = ($a->get_active_name, $b->get_active_name);
+	return -1 if $an !~ /^[#&]/ and $bn =~ /^[#&]/;
+	return 1 if $an =~ /^[#&]/ and $bn !~ /^[#&]/;
+	return $a->{refnum} <=> $b->{refnum};
+}
+
 # this is the real creation method
 sub remake() {
 	my ($afternumber,$finish,$hilight,$mode,$number,$display);
@@ -180,7 +187,7 @@ sub remake() {
 	my $remove_hash = Irssi::settings_get_bool('chanact_remove_hash');
 	
 	$actString = "";
-	foreach my $win (sort { ($a->{refnum}) <=> ($b->{refnum})} Irssi::windows) {
+	foreach my $win (sort chan_sort Irssi::windows) {
 	
 		# since irssi is single threaded this shouldn't happen
 		!ref($win) && next;
