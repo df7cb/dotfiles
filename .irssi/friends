@@ -4,7 +4,7 @@ handle=At-Tifl%hosts=*!*Miranda@*.mnet-online.de *!*hagen@ppp-82-135-0-151.mnet-
 handle=beeelze%hosts=*!*schutz@d139.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=bernhard%hosts=*!*bernhard@139.124.18.229 *!*bernhard@pc-atelier.crmcn.univ-mrs.fr *!*bernhard@xGagC632.WH1.TU-Dresden.De%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=chris101%hosts=*!chcl@*.mpi-sb.mpg.de chris101*!*chris101@*.mpi-sb.mpg.de%globflags=%chanflags=#plant,ao,%password=%comment=%
-handle=Yrrsinn%hosts=*!*bruno@*.dip.t-dialin.net *!bruno@amalthea.cs.uni-sb.de *!bruno@fsinfo.cs.uni-sb.de *!bruno@wh106.stw.stud.uni-saarland.de%globflags=%chanflags=#unixagsb,, #plant,o,%password=FDWO97pvF4HGg%comment=%
+handle=Yrrsinn%hosts=*!bruno@amalthea.cs.uni-sb.de *!bruno@fsinfo.cs.uni-sb.de *!bruno@wh106.stw.stud.uni-saarland.de Yrrsinn!*bruno@*.dip.t-dialin.net%globflags=%chanflags=#unixagsb,, #plant,oa,%password=FDWO97pvF4HGg%comment=%
 handle=DerBerg%hosts=*!matber@d020.stw.stud.uni-saarland.de%globflags=%chanflags=#heim-d,ao,%password=%comment=%
 handle=Desira%hosts=*!*blub@*.arcor-ip.net Desira!*@*.dip.t-dialin.net Desira!*blub@p*.dip0.t-ipconnect.de%globflags=%chanflags=#heim-d,o, #plant,o,%password=9btlt6qV0kOGU%comment=%
 handle=Ermel%hosts=*!*ermel@*.arcor-ip.net%globflags=%chanflags=%password=%comment=%
@@ -34,7 +34,7 @@ handle=wam%hosts=*!arnew@dsl-*.arcor-ip.net *!arnew@p*.dip.t-dialin.net%globflag
 handle=x11y%hosts=*!*raya@*.pppool.de%globflags=%chanflags=#plant,oa,%password=%comment=%
 handle=Xellos%hosts=*!*adh@fsphy.fs.uni-sb.de%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=XTaran%hosts=*!*abe@virtually.noone.org *!abe@sycorax.cs.uni-sb.de%globflags=%chanflags=#plant,oa,%password=Cg7GqlJIx34rU%comment=%
-handle=Y_Plentyn%hosts=*!*aw@crow.net.uni-sb.de *!*aw@raven.net.informatik.tu-muenchen.de%globflags=%chanflags=#plant,aomr,%password=%comment=%
+handle=Y_Plentyn%hosts=*!*aw@crow.net.uni-sb.de *!*aw@raven.net.informatik.tu-muenchen.de Y_Plentyn!~aw@*.pools.arcor-ip.net%globflags=%chanflags=#plant,aomr,%password=%comment=%
 handle=Zwiebeltu%hosts=*!*m@elvis.franken.de%globflags=%chanflags=%password=%comment=%
 handle=dyfa%hosts=*!dyfa@imperial.addict.de%globflags=%chanflags=#plant,ao,%password=%comment=%
 handle=bjoerny%hosts=*!*bjmi0000@sbustd.stud.uni-saarland.de%globflags=%chanflags=#plant,ao,%password=%comment=%
