@@ -4,8 +4,7 @@
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation; either version 2 of the License, or
-#    (at your option) any later version.
+#    the Free Software Foundation; version 2 of the License.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -85,8 +84,8 @@ sub event_challenge_received{
 Irssi::command_bind('cr', 'challenge_oper');
 
 # Add the settings
-Irssi::settings_add_str("challenge.pl", "challenge_oper_key", "/home/joerg/.irssi/oper-ganneff.key");
-Irssi::settings_add_str("challenge.pl", "challenge_rsa_path", "/home/joerg/bin/respond");
+Irssi::settings_add_str("challenge.pl", "challenge_oper_key", "$ENV{HOME}/.irssi/oper-$ENV{USER}.key");
+Irssi::settings_add_str("challenge.pl", "challenge_rsa_path", "respond");
 
 # Ok, setup the redirect event, so we can later handle the challenge thing.
 Irssi::Irc::Server::redirect_register("challenge",
