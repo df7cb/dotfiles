@@ -1,9 +1,11 @@
 #!/bin/sh
 # periodically print date and load average to the bar
 
-BARS="a b_log c_clock d_load e_mail"
+BARS="a b_log c_clock d_load"
+[ -d $HOME/mail/IN ] && BARS="$BARS e_mail"
 BDAY="`$HOME/.wmii-3/vcard-today $HOME/.priv/addressbook.vcf`"
 [ "$BDAY" ] && BARS="$BARS f_birthday"
+[ -d /proc/acpi/battery ] && BARS="$BARS g_battery"
 
 for bar in $BARS ; do wmiir remove /bar/$bar 2>/dev/null ; done
 for bar in $BARS ; do wmiir create /bar/$bar ; done
@@ -14,6 +16,7 @@ echo -n '#000000 #b088ff #f0a0f0' | wmiir write /bar/c_clock/colors
 echo -n '#000000 #b0dd88 #a0f080' | wmiir write /bar/d_load/colors
 echo -n '#000000 #d0a020 #d0d044' | wmiir write /bar/e_mail/colors
 [ "$BDAY" ] && echo -n '#000000 #dd0000 #ff0000' | wmiir write /bar/f_birthday/colors
+echo -n '#000000 #d0a090 #d0d044' | wmiir write /bar/g_battery/colors
 
 ( tail -n 3 -Fq $HOME/.xsession-errors /var/log/syslog |
 	while read line ; do
@@ -40,3 +43,5 @@ done | wmiir write /bar/d_load/data ) &
 ( $HOME/.wmii-3/mail | wmiir write /bar/e_mail/data ) &
 
 [ "$BDAY" ] && echo -n "$BDAY" | wmiir write /bar/f_birthday/data
+
+( $HOME/.wmii-3/battery | wmiir write /bar/g_battery/data ) &

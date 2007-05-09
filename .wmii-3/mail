@@ -2,7 +2,7 @@
 
 use strict;
 
-chdir "$ENV{HOME}/mail/IN";
+chdir "$ENV{HOME}/mail/IN" or exit 0;
 my @boxes = sort grep { $_ !~ /trash/ } glob ("*");
 
 do {

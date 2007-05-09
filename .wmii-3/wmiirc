@@ -139,7 +139,7 @@ do
 		$MODKEY-f)
 			xwrite /view/0/sel/geom 0 0 east south;;
 		$MODKEY-a)
-			`proglist $HOME/.wmii-3 /etc/X11/wmii-3 | wmiimenu` &;;
+			PATH="$HOME/.wmii-3:/etc/X11/wmii-3:$PATH" `proglist $HOME/.wmii-3 /etc/X11/wmii-3 | wmiimenu` &;;
 		$MODKEY-p)
 			PATH="$OLD_PATH" wmiisetsid `wmiimenu <$PROGS_FILE` &;;
 		$MODKEY-t)
