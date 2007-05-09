@@ -8,11 +8,9 @@ set nohlsearch
 set textwidth=70
 
 map _d mm1GSFrom: Christoph Berg <cb@df7cb.de><esc>`m
-map _c mm1GSFrom: Christoph Berg <cb@cs.uni-sb.de><esc>`m
-map _h mm1GSFrom: Christoph Berg <cb@heim-d.uni-sb.de><esc>`m
+map _c mm1GSFrom: Christoph Berg <christoph.berg@credativ.de><esc>`m
 map _m mm1GSFrom: Christoph Berg <myon@debian.org><esc>`m
 map _n mm1GSFrom: Christoph Berg <myon@nm.debian.org><esc>`m
-"map _7 mm1GSFrom: Christoph Berg DF7CB <df7cb@df7cb.de><esc>`m
-map _a mm1GSFrom: Christoph Berg <cb@asta.uni-saarland.de><esc>`m
+
 map _M 1G/^To:<cr>yypcf<Bcc: mia-<esc>:s/@/=/<cr>f>C@qa.debian.org<esc>oX-MIA-Summary: -<esc>k:s/=debian.org//<cr>
 map _N 1G/^Subject:<cr>yyp:s/.*[ <]\([^ ]*@[^ >]*\).*/Bcc: nm-\1/<cr>:s/@/=/<cr>A@nm.debian.org<esc>

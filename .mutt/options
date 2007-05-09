@@ -20,8 +20,6 @@ set editor="vim -u ~/.mutt/vimrc -c '/^$'"
 set delete=yes
 set fast_reply
 unset fcc_attach
-set folder="~/mail"
-source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
 set forward_format="%s (fwd)"
 unset help
 unset hidden_host
@@ -69,5 +67,5 @@ set use_domain
 set use_from
 unset wait_key
 unset write_bcc
-set xterm_set_titles xterm_title="Mutt: %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b?"
+set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b?"
 
