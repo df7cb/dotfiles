@@ -22,7 +22,7 @@ $VERSION = '2003021201';
 );  
 
 use Irssi 20020324;
-use Date::Format;
+use POSIX qw(strftime);
 use File::Glob ':glob';
 
 my $timestamp_re = '^--- (?:Log opened|Day changed) ([^:]+) ';
@@ -38,8 +38,7 @@ sub sig_window_item_new ($$) {
     $filename =~ s/\$tag\b|\$\{tag\}|\$1\b|\$\{1\}/$servertag/g;
     $filename =~ s/\$0\b|\$\{0\}/$name/g;
     my @lt = localtime(time);
-    my $zone;
-    $filename = strftime($filename, @lt, $zone);
+    $filename = strftime($filename, @lt);
     $filename =~ s/(\[|\])/\\$1/g;
     local *F;
     open(F, "<".bsd_glob($filename)) or return;
