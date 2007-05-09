@@ -24,25 +24,27 @@ links.main: links \
 	autorun/friends.pl \
 	autorun/keepnick.pl \
 	autorun/pisgcommits.pl \
-	autorun/muttwiki.pl \
 	autorun/nickident.pl \
 	autorun/screen_away.pl
 
 # load these scripts always
 links: \
+	autorun/akilluser.pl \
+	autorun/away2web.pl \
+	autorun/challenge.pl \
 	autorun/chanact.pl \
 	autorun/chanshare.pl \
 	autorun/joininfo.pl \
 	autorun/len.pl \
 	autorun/nickcolor.pl \
+	autorun/oftc-server-notices.pl \
 	autorun/queryresume.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \
 	autorun/topics.pl \
-	autorun/trackbar.pl
-
-#	autorun/autorealname.pl \
+	autorun/trackbar.pl \
+	autorun/usercount.pl
 
 autorun/%.pl: %.pl
 	ln -s ../$< $@
