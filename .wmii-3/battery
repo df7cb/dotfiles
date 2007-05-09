@@ -1,0 +1,46 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my ($state, $rate, $cap);
+my $full_cap = 1000;
+my $temp;
+
+$| = 1;
+
+open F, "/proc/acpi/battery/BAT1/info" or die;
+while (<F>) {
+	if (/^last full capacity:\s+(\d+)/) {
+		$full_cap = $1;
+	}
+}
+close F;
+
+do {
+	open F, "/proc/acpi/battery/BAT1/state" or die;
+	while (<F>) {
+		if (/^charging state:\s+(.+)/) {
+			$state = $1;
+		} elsif (/^present rate:\s+(\d+)/) {
+			$rate = $1 || 0.01;
+		} elsif (/^remaining capacity:\s+(\d+)/) {
+			$cap = $1;
+			#$cap_str = sprintf "%.1fAh", $1/1000;
+		}
+	}
+	close F;
+
+	open F, "/proc/acpi/thermal_zone/THRM/temperature" or die;
+	while (<F>) {
+		if (/^temperature:\s+(\d+)/) {
+			$temp = $1;
+		}
+	}
+	close F;
+
+	my $cap_str = sprintf "%.1f%%", 100 * $cap / $full_cap;
+	my $bat_file = $state ne "charged" ? sprintf(" \%dmin", 60*$cap/$rate) : "";
+
+	print "$state $cap_str$bat_file ${temp}°C" or exit;
+
+} while (sleep 5);

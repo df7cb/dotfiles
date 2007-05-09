@@ -10,7 +10,7 @@ proglist() {
 	ls -lL "$@" 2>/dev/null | awk 'NF>2 && $1 ~ /^[^d].*x/ {print $NF}' | sort -u
 }
 
-MODKEY=Mod4
+MODKEY=Mod1
 UP=k
 DOWN=j
 LEFT=h
