@@ -48,7 +48,7 @@ EOF
 
 # MISC
 #xsetroot -solid '#333333'
-status &
+$HOME/.wmii-3/status &
 PROGS_FILE=`mktemp /tmp/.wmiimenu.proglist.XXXXXX` || exit 2
 proglist `echo "$OLD_PATH" | tr : ' '` >$PROGS_FILE &
 
@@ -115,8 +115,15 @@ do
 	BarClick)
 		case $arg1 in
 			[0-9]) xwrite /ctl view "$arg1" ;;
-			f_birthday) wmiir remove /bar/f_birthday ;;
-			*) echo $arg1 $arg2 ;;
+			??_birthday) wmiir remove /bar/70_birthday ;;
+			??_clock) plan & ;;
+			??_log) xterm -e less +F /var/log/syslog & ;;
+			??_timer) case $arg2 in
+				1) pkill -PWR  timer ;;
+				2) pkill -USR1 timer ;;
+				3) pkill -USR2 timer ;;
+				esac ;;
+			*) echo $0: $arg1 $arg2 $arg3 ;;
 		esac ;;
 	Key)
 		case "$arg1" in
@@ -179,5 +186,7 @@ do
 			wmiiwarp $(($1 + 9)) $(($2 + 16))
 			unset warp
 		fi ;;
+	CreateClient) ;;
+	*) echo $0: $type $arg1 $arg2 $arg3 ;;
 	esac
 done &
