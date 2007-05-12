@@ -10,11 +10,11 @@ source_rc () {
 }
 
 # Environment
+source_rc lib/locale.sh
+source_rc lib/session.sh
 source_rc bin/os > /dev/null
 source_rc .path
 source_rc .env
-[[ $TERM == screen* ]] && unset DISPLAY # update $DISPLAY in screen shells
-[ -f ~/.display ] && . ~/.display
 
 # check whether we run interactively
 [ "$PS1" ] || return
