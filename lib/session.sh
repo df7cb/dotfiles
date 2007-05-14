@@ -5,20 +5,21 @@ check_proc ()
 
 clean_session ()
 {
-	for f in ~/.var/*.display ; do
-		if [ -e $f ] ; then
-			[ -e /tmp/.X11-unix/$(basename $f .display) ] || rm -f $f
-		fi
+	for f in ~/.var/*.unix.display ; do
+		[ -e $f ] || continue
+		[ -e /tmp/.X11-unix/X$(basename $f .display) ] || rm -f $f
+	done
+	for f in ~/.var/*.tcp.display ; do
+		[ -e $f ] || continue
+		netstat -tln | grep -q ":$f " || rm -f $f
 	done
 	for f in ~/.var/*.ssh-agent ; do
-		if [ -e $f ] ; then
-			check_proc ssh-agent $(basename $f .ssh-agent) || rm -f $f
-		fi
+		[ -e $f ] || continue
+		check_proc ssh-agent $(basename $f .ssh-agent) || rm -f $f
 	done
 	for f in ~/.var/*.gpg-agent ; do
-		if [ -e $f ] ; then
-			check_proc gpg-agent $(basename $f .gpg-agent) || rm -f $f
-		fi
+		[ -e $f ] || continue
+		check_proc gpg-agent $(basename $f .gpg-agent) || rm -f $f
 	done
 }
 
@@ -33,11 +34,28 @@ create_session ()
 
 	# X11 display
 	if [ "$DISPLAY" ] ; then
-		if [ -e /tmp/.X11-unix/$DISPLAY ] ; then
-			echo "export DISPLAY='$DISPLAY'" > ~/.var/$DISPLAY.display
-		else
-			unset DISPLAY
-		fi
+		case $DISPLAY in
+		:*) local display
+			display=`echo $DISPLAY | sed -e 's/^://' -e 's/\..*//'`
+			if [ -e /tmp/.X11-unix/X$display ] ; then
+				echo "export DISPLAY='$DISPLAY'" > ~/.var/$display.unix.display
+			else
+				unset DISPLAY
+			fi
+			;;
+		localhost:*) local display port
+			display=`echo $DISPLAY | sed -e 's/^localhost://' -e 's/\..*//'`
+			port=$(($display + 6000))
+			if netstat -tln | grep -q ":$port " ; then
+				echo "export DISPLAY='$DISPLAY'" > ~/.var/$port.tcp.display
+			else
+				unset DISPLAY
+			fi
+			;;
+		*)
+			echo "$0: could not handle DISPLAY $DISPLAY" 1>&2
+			;;
+		esac
 	fi
 	if [ ! "$DISPLAY" ] ; then
 		for f in ~/.var/*.display ; do
