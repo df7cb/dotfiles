@@ -15,7 +15,7 @@ clean_session ()
 	done
 	for f in ~/.var/*.ssh-agent ; do
 		[ -e $f ] || continue
-		check_proc ssh-agent $(basename $f .ssh-agent) || rm -f $f
+		[ -S /tmp/ssh-$(basename $f .ssh-agent | sed -e 's:_:/agent.:') ] || rm -f $f
 	done
 	for f in ~/.var/*.gpg-agent ; do
 		[ -e $f ] || continue
@@ -64,14 +64,14 @@ create_session ()
 	fi
 
 	# ssh-agent
-	if [ "$SSH_AGENT_PID" ] ; then
-		if check_proc ssh-agent $SSH_AGENT_PID ; then
-			echo "export SSH_AUTH_SOCK='$SSH_AUTH_SOCK' SSH_AGENT_PID='$SSH_AGENT_PID'" > ~/.var/$SSH_AGENT_PID.ssh-agent
+	if [ "$SSH_AUTH_SOCK" ] ; then
+		if [ -S "$SSH_AUTH_SOCK" ] ; then
+			echo "export SSH_AUTH_SOCK='$SSH_AUTH_SOCK' SSH_AGENT_PID='$SSH_AGENT_PID'" > ~/.var/$(echo $SSH_AUTH_SOCK | sed -e 's:/tmp/ssh-::' -e 's:/agent.:_:').ssh-agent
 		else
 			unset SSH_AUTH_SOCK SSH_AGENT_PID
 		fi
 	fi
-	if [ ! "$SSH_AGENT_PID" ] ; then
+	if [ ! "$SSH_AUTH_SOCK" ] ; then
 		for f in ~/.var/*.ssh-agent ; do
 			[ -e $f ] && . $f
 		done
