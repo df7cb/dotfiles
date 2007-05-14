@@ -7,11 +7,11 @@ clean_session ()
 {
 	for f in ~/.var/*.unix.display ; do
 		[ -e $f ] || continue
-		[ -e /tmp/.X11-unix/X$(basename $f .display) ] || rm -f $f
+		[ -e /tmp/.X11-unix/X$(basename $f .unix.display) ] || rm -f $f
 	done
 	for f in ~/.var/*.tcp.display ; do
 		[ -e $f ] || continue
-		netstat -tln | grep -q ":$f " || rm -f $f
+		netstat -tln | grep -q ":$(basename $f .tcp.display) " || rm -f $f
 	done
 	for f in ~/.var/*.ssh-agent ; do
 		[ -e $f ] || continue
