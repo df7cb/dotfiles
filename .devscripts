@@ -1,0 +1,3 @@
+DEBEMAIL="myon@debian.org"
+DEBSIGN_KEYID="0x58510B5A"
+USCAN_DOWNLOAD="no"
