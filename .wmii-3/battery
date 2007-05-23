@@ -2,7 +2,7 @@
 
 use strict;
 
-my ($state, $rate, $cap);
+my ($capstate, $state, $rate, $cap);
 my $full_cap = 1000;
 my $temp;
 
@@ -19,7 +19,9 @@ close F;
 do {
 	open F, "/proc/acpi/battery/BAT1/state" or die;
 	while (<F>) {
-		if (/^charging state:\s+(.+)/) {
+		if (/^capacity state:\s+(.+)/) {
+			$capstate = $1;
+		} elsif (/^charging state:\s+(.+)/) {
 			$state = $1;
 		} elsif (/^present rate:\s+(\d+)/) {
 			$rate = $1 || 0.01;
@@ -40,7 +42,16 @@ do {
 
 	my $cap_str = sprintf "%.1f%%", 100 * $cap / $full_cap;
 	my $bat_file = $state ne "charged" ? sprintf(" \%dmin", 60*$cap/$rate) : "";
+	my $capstate_str = $capstate ne "ok" ? "$capstate " : "";
 
-	print "$state $cap_str$bat_file ${temp}°C" or exit;
+	print "$capstate_str$state $cap_str$bat_file ${temp}°C" or exit;
+
+	if ($capstate eq "critical" and $state ne "charging") {
+		system "xmessage 'Battery critical. Will hibernate in 60s.' &";
+		sleep 60;
+		system "sudo hibernate";
+		sleep 10;
+		wait;
+	}
 
 } while (sleep 5);
