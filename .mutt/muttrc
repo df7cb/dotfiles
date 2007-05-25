@@ -1,13 +1,14 @@
 # $Id$
 
 set folder="~/mail"
+#set folder="imaps://localhost/"
 
 # external files
 source ~/.mutt/options
 source ~/.mutt/bind
 source ~/.mutt/color
 source ~/.mutt/headers
-source ~/.mutt/x-face
+ifdef xface source ~/.mutt/x-face
 source ~/.mutt/lists
 source ~/.mutt/hooks
 
@@ -23,7 +24,7 @@ set hostname="df7cb.de"
 macro generic & "!retch -F\cM"
 macro index & "!retch -F\cM"
 set spoolfile="=IN/cb"
-mailboxes ! =rw/inbox =IN/root =IN/pisg =IN/mutt =IN/nm =IN/mia =IN/debian =IN/debconf =IN/backports =IN/oftc =IN/bridge =IN/lists
+mailboxes ! =rw/inbox =IN/root =IN/nm =IN/mutt =IN/devscripts =IN/mia =IN/debian =IN/pisg =IN/debconf =IN/backports =IN/oftc =IN/bridge =IN/lists
 color header brightblack default heim-d@df7cb.de
 
 # local settings
