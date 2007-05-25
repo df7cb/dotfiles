@@ -3,7 +3,7 @@
 * ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|X-list: muttpatches|X-Debian-PR-Source: mutt|Delivered-To: cb\+mutt@df7cb.de)
 mail/IN/mutt
 :0:
-* ^From: .*owner@bugs.debian.org
+* ^From: .*(owner@bugs.debian.org|fleas@mutt.org)
 * ^(Cc|To): .*mutt
 mail/IN/mutt
 
