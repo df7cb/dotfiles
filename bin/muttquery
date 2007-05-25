@@ -22,7 +22,7 @@ if (open A, "$ENV{HOME}/.mutt/aliases") {
 }
 
 # personal mutt aliases
-if (open A, "$ENV{HOME}/.mutt/aliases.addressbook") {
+if (open A, "$ENV{HOME}/.mutt/aliases.ab") {
 	while (<A>) {
 		next if /^#/;
 		next unless /$query/i;
