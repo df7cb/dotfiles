@@ -6,7 +6,18 @@
 TMP=`mktemp -t nm.XXXXXX`
 cat > $TMP
 
-TAG=`perl -lne 'if (/^Subject: .*?([\w.-]+\@[\w.-]+)/i) { $a = $1; $a =~ s/@/=/; print $a; exit 0; }' < $TMP`
+if [ "$1" ] ; then
+	TAG=`echo "$1" | sed -e 's/@/=/'`
+else
+	TAG=`perl -lne 'if (/^Subject: .*?([\w.-]+\@[\w.-]+)/i) { $a = $1; $a =~ s/@/=/; print $a; exit 0; }' < $TMP`
+fi
 
-[ "$TAG" ] && < $TMP formail -I"Delivered-To:" | /usr/sbin/sendmail nm-"$TAG"@nm.debian.org
+if [ "$TAG" ] ; then
+	< $TMP formail -I"Delivered-To:" | /usr/sbin/sendmail nm-"$TAG"@nm.debian.org
+else
+	echo "No tag found" 1>&2
+	EXIT=1
+fi
+
 rm -f $TMP
+exit $EXIT
