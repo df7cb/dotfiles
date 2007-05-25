@@ -1,12 +1,14 @@
-case `cat /etc/debian_version` in
+DEBIAN_VERSION=`cat /etc/debian_version`
+case $DEBIAN_VERSION in
 	3.1) DISTRIBUTION="sarge" ;;
 	4.0) DISTRIBUTION="etch" ;;
-	unstable) DISTRIBUTION="sid" ;;
+	unstable|*/sid) DISTRIBUTION="sid" ;;
 	testing/unstable) echo "please use unstable in /etc/debian_version"
 	   exit 1 ;;
-	*) echo "unknown distribution in /etc/debian_version"
+	*) echo "unknown distribution in /etc/debian_version: $DEBIAN_VERSION"
 	   exit 1 ;;
 esac
+echo "Debian version: $DEBIAN_VERSION -> $DISTRIBUTION"
 
 ARCH=`dpkg --print-architecture`
 MIRRORSITE="http://localhost:9999/debian"
