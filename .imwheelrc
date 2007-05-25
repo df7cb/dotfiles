@@ -7,7 +7,7 @@
 None,	Up,	Shift_R|Page_Up
 None,	Down,	Shift_R|Page_Down
 
-"^Mutt: "
+"^Mutt "
 @Priority=1
 None,	Up,	Page_Up
 None,	Down,	Page_Down
@@ -46,7 +46,7 @@ None,	Down,	Page_Down
 None,	Left,	Shift_L|F11
 None,	Right,	Shift_L|F12
 
-"^Xdvi:"
+"^Xdvi"
 None,	Up,	Page_Up
 None,	Down,	Page_Down
 
