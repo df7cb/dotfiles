@@ -27,17 +27,17 @@ color index	brightdefault default ~T
 color index	brightdefault default ~F
 color index	white default ~D
 
-color index_author red default .
-color index_number blue default
+#color index_author red default .
+#color index_number blue default
 
-color header    brightdefault default ^From:
-color header    blue default ^(Date|To|Reply-To|Cc|Message-Id):
-color header    brightred default ^Subject:
-color header    red default ^User-Agent:
+color header    brightdefault default "^From:"
+color header    blue default "^(Date|To|Reply-To|Cc|Message-Id):"
+color header    brightred default "^Subject:"
+color header    red default "^User-Agent:"
 color quoted	green default
 color quoted1	cyan default
 color quoted2	blue default
 color quoted3	red default
-color body      blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body      blue default (https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+
+color body      blue default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
+color body      blue default "(https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+"
 
