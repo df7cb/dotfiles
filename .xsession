@@ -6,6 +6,7 @@ echo
 echo "`date` $0: start"
 
 cd $HOME
+. lib/locale.sh
 . .path
 
 if [ "$SHELL" = /bin/sh ] ; then
