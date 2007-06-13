@@ -7,7 +7,7 @@
 None,	Up,	Shift_R|Page_Up
 None,	Down,	Shift_R|Page_Down
 
-"^Mutt "
+"^Mutt"
 @Priority=1
 None,	Up,	Page_Up
 None,	Down,	Page_Down
