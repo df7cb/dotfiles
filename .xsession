@@ -36,7 +36,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	#xclock -g x13+0+0 -strftime '%e.%m. %T' & # 110x13
 	[ -e .plan.dir/dayplan ] && type -p pland > /dev/null && pland -k &
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
-	type -p esd > /dev/null && esd -nobeeps -as 2 &
+	#type -p esd > /dev/null && esd -nobeeps -as 2 &
 	workrave &
 	xplanet &
 
