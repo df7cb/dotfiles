@@ -14,7 +14,7 @@ fi
 
 case $DOMAIN in
 	*credativ*)
-	for host in gauss.credativ.com burns.credativ.lan bsi-freq ; do
+	for host in gauss.credativ.com bsi-freq burns.credativ.lan ; do
 		PATH="$OLD_PATH" ssh -Nf $host &
 	done
 	;;
