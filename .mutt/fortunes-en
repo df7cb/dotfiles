@@ -158,6 +158,11 @@ last sentence, you have my sympathies!
 <Ganneff> bad exchange rate probably
 <weasel> does that mean the dollar is crashing?
 %
+<jcristau> pfffft, xserver-xorg.postinst is pretty simple
+<jcristau> NOT
+<HE> jcristau: I like to look at it whenever I got the impression that I did
+	something evil in shell. It always makes me feel clean again.
+%
 <Myon> svenl--
 <vorlon> ERANGE
 %
