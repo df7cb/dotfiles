@@ -17,7 +17,7 @@ LEFT=h
 RIGHT=l
 
 WMII_FONT='-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*'
-WMII_SELCOLORS='#000000 #f0c000 #f0f044'
+WMII_SELCOLORS='#ffffff #0a55e0 #5589ff' # font background border
 WMII_NORMCOLORS='#000000 #888888 #a8a8a8'
 
 #export WMII_FONT WMII_NORMCOLORS WMII_SELCOLORS
@@ -186,7 +186,12 @@ do
 			wmiiwarp $(($1 + 9)) $(($2 + 16))
 			unset warp
 		fi ;;
-	CreateClient) ;;
+	NextTag) nexttag="$arg1" ;;
+	CreateClient) # n
+		if [ "$nexttag" ] ; then
+			xwrite /client/$arg1/tags "$nexttag"
+			nexttag=''
+		fi ;;
 	*) echo $0: $type $arg1 $arg2 $arg3 ;;
 	esac
 done &
