@@ -1,0 +1,4 @@
+#!/bin/sh
+
+gpg "$@" --recv $PGPKEY $PGPKEY2
+gpg "$@" --send $PGPKEY $PGPKEY2
