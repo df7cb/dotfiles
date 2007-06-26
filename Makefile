@@ -1,6 +1,7 @@
 # $Id$
 
-all: cleanup .less .xinitrc bin/ctar bin/dbuild bin/dbinary .priv
+DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
+all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN)
 
 ## targets ##
 
@@ -13,7 +14,7 @@ all: cleanup .less .xinitrc bin/ctar bin/dbuild bin/dbinary .priv
 bin/ctar:
 	ln -s ttar bin/ctar
 
-bin/dbuild bin/dbinary:
+$(DCLEAN):
 	ln -s dclean $@
 
 .PHONY: .priv
