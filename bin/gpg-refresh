@@ -1,4 +1,7 @@
 #!/bin/sh
 
-gpg "$@" --recv $PGPKEY $PGPKEY2
+for server in `host subkeys.pgp.net | cut -d ' ' -f 4` ; do
+	gpg --keyserver $server --recv $PGPKEY2
+done
+
 gpg "$@" --send $PGPKEY $PGPKEY2
