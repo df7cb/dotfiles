@@ -1,6 +1,6 @@
 # $Id$
 
-all: cleanup .less .xinitrc bin/ctar .priv
+all: cleanup .less .xinitrc bin/ctar bin/dbuild bin/dbinary .priv
 
 ## targets ##
 
@@ -12,6 +12,9 @@ all: cleanup .less .xinitrc bin/ctar .priv
 
 bin/ctar:
 	ln -s ttar bin/ctar
+
+bin/dbuild bin/dbinary:
+	ln -s dclean $@
 
 .PHONY: .priv
 .priv:

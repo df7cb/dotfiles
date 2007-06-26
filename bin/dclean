@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+dh_testdir
+case $0 in
+	*dclean) fakeroot ./debian/rules clean ;;
+	*dbuild) ./debian/rules build ;;
+	*dbinary) fakeroot ./debian/rules binary ;;
+	*) echo "huh?" ;;
+esac
