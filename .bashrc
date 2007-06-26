@@ -24,26 +24,27 @@ source_rc .bash_bind
 
 if [ "$BASH_VERSION" \> "2.04" ] ; then # new bash supporting '\j' and completion
 	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
-	[ -f ~/.bash_completion ] && . ~/.bash_completion
+	#[ -f ~/.bash_completion ] && . ~/.bash_completion
+	. /etc/bash_completion
 else
 	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s ")'
 fi
 [ -f /etc/debian_chroot ] && h=$(cat /etc/debian_chroot).
-u='[\[\033[1;31m\]$?\[\033[0m\]] \u@'$h'\h:\[\033[1;34m\]\w\[\033[0m\]'
+w='$(echo "\w" | perl -pe "1 while (length>35 and s!([^/]{2})[^/]+/!\$1/!)")'
+u='\[\033[46m\][\[\033[1;31m\]$?\[\033[0;46m\]] \A \u@'$h'\h:\[\033[1;34;46m\]'$w'\[\033[0;46m\]'
 case $TERM in
 linux*|*vt100*|cons25)
-	PS1="\\n$u $j\\l \\$" ;;
+	PS1=''$u' '$j'\l \$\[\033[0m\] ' ;;
 xterm*|rxvt|screen*|cygwin)
-	PS1='\n\[\033]0;\u@'$h'\h:\w\007\]'$u' '$j'\$'
+	PS1='\[\033]0;\u@'$h'\h:\w\007\]'$u' '$j'\$\[\033[0m\] '
 	if [ "$console" ] ; then
-		PS1='\[\033]0;console@'$h'\h:\w\007'$u' '$j'\$'
+		PS1='\[\033]0;console@'$h'\h:\w\007'$u' '$j'\$\[\033[0m\] '
 		export -n console
 	fi ;;
-97801)	PS1='\n\[\033[2m\][\[\033[m\]$?\[\033[2m\]] \u@'$h'\h[\033[4m\]\w\[\033[2m\] '$j'\$\[\033[m\]' ;;
 *)
 	PS1='\n[$?] \u@'$h'w '$j'\$' ;;
 esac
-unset h j u
+unset h j u w
 
 # internal shell settings
 auto_resume=
