@@ -1,11 +1,13 @@
+M=mail/cb
+
 # mutt
 :0:
 * ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|X-list: muttpatches|X-Debian-PR-Source: mutt|Delivered-To: cb\+mutt@df7cb.de)
-mail/IN/mutt
+$M/mutt
 :0:
 * ^From: .*(owner@bugs.debian.org|fleas@mutt.org)
 * ^(Cc|To): .*mutt
-mail/IN/mutt
+$M/mutt
 
 # Debian
 :0:
@@ -14,7 +16,7 @@ mail/IN/mutt
 #* ^Sender:.*(debbugs@master.debian.org|bugs@trithemius.gnupg.org)
 #* ^Sender:.*debbugs@master.debian.org
 * ^X-Debian-PR-Message: ack-info
-mail/IN/debian-bts
+$M/debian-bts
 
 :0c:
 * ^X-Mailing-List: <debian-(devel-)?announce@lists.debian.org>
@@ -22,80 +24,80 @@ $DEFAULT
 
 :0:
 * ^Delivered-To: mia@qa.debian.org
-mail/IN/mia
+$M/mia
 #:0c:
 #* ^X-Mailing-List: .*debian
 #* ^Subject: .*\[vac
-#mail/IN/mia
+#$M/mia
 
 :0:
 #* ^Delivered-To: .*@nm.debian.org
 * ^Delivered-To: cb\+nm@df7cb.de
-mail/IN/nm
+$M/nm
 
 :0:
 * ^List-Id: .*<backports-changes
 * ^X-Katie:
-mail/IN/backports-changes
+$M/backports-changes
 :0:
 * ^List-Id: .*<backports-
-mail/IN/debian
+$M/debian
 
 :0:
 * ^List-Id: .*<debconf-
-mail/IN/debian
+$M/debian
 
 :0:
 * ^(List-Id: .*<pkg-devscripts|X-PTS-Package: devscripts)
-mail/IN/devscripts
+$M/devscripts
 
 #Resent-From: Debian BTS <debbugs@master.debian.org>
 #* ^(List-Id: .*lists.debian.org|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<dak@.*.debian.org>)
 :0:
 * ^(List-Id: .*\.debian\.org>|From: .*<dak@.*.debian.org>|X-Mailing-List: <debian-.*@lists.infodrom.org>)
-mail/IN/debian
+$M/debian
 #:0c:
 #* ^Delivered-To: cb\+debian@df7cb.de
 #$DEFAULT
 :0:
 * ^Delivered-To: cb\+pts@df7cb.de
-mail/IN/debian
+$M/debian
 #:0c:
 #* ^(X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package:)
-#mail/IN/debian
+#$M/debian
 
 # OFTC
 :0:
 * ^List-Id: .*lists.oftc.net>
-mail/IN/oftc
+$M/oftc
 
 # Bridge
 :0:
 * ^List-Id: .*<(5erof|bbo-)
-mail/IN/cb
+$M/cb
 :0:
 * ^List-Id: .*<(doubl|blml|bb-|bridge)
-mail/IN/bridge
+$M/bridge
 
 # pisg-general list
 :0:
 * ^List-Id: .pisg-(general|commits)
-mail/IN/pisg
+$M/pisg
 
 # catch-all recipe
 :0:
 * ^(Mailing-List: |List-Id: |List-Owner: )
-mail/IN/lists
+$M/lists
 
 :0:
 * ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster|logcheck)@
-mail/IN/root
+$M/root
 # mailman
 :0:
 * ^X-List-Administrivia: yes
-mail/IN/root
+$M/root
 
 # Inbox
 :0:
-mail/IN/cb
+$M/cb
 
