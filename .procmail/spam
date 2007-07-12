@@ -8,8 +8,7 @@ SPAMDIR=mail/spam
 #$SPAMDIR/crap
 
 :0:
-* ^Subject: .*Benachrichtigung.*das.automatische.Verwerfen
-* ^From: asta-bounces@asta.uni-saarland.de
+* ^To: owner-ai@lists.lithe.de
 /dev/null
 
 :0
