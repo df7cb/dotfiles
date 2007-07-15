@@ -1,0 +1,91 @@
+user_pref("adblock.patterns",
+ "http*://ad.*/
+ http*://ads.*/
+ http://*.adserver.com/
+ http://*.advertising.com/
+ http://*.atdmt.com/
+ http://*.evanzo-server.de/
+ http://*.extreme-dm.com/
+ http://*.falkag.de/
+ http://*.falkag.net/
+ http://*.fastclick.net/
+ http://*.googlesyndication.com/
+ http://*.ivwbox.de/
+ http://*.maxserving.com/
+ http://*.statcounter.com/
+ http://*.tfag.de/
+ http://*.tribalfusion.com/
+ http://*.valueclick.com/
+ http://*.yimg.com/
+ http://*/*/jsads/*
+ http://*/*ServeAd*
+ http://*/*adbanners*
+ http://*/*adtype*
+ http://*/AdServer/
+ http://*/RealMedia/ads/*
+ http://*/adframe*
+ http://*/images/werbung/
+ http://*web.de/iframe.ng/*
+ http://63.115.6.15/
+ http://a1444.g.akamai.net/
+ http://ads.leo.org/
+ http://adserv.*/
+ http://adserver007.com/
+ http://at.multimap.com/
+ http://banner.*/
+ http://banners.*
+ http://dict.leo.org/*.gif
+ http://dict.leo.org/*kw*.gif
+ http://i-fr.ifrance.com/
+ http://img.web.de/CITIBANK/
+ http://img.web.de/M*
+ http://img.web.de/WEBDE/
+ http://matrix.mediavantage.de/
+ http://oasis.lwn.net/
+ http://promo.bahn.de/
+ http://rcm.amazon.com/
+ http://themis.geocities.yahoo.com/
+ http://www.bridgeplus.com/pub/
+ http://www.cash4popup.de/
+ http://www.heise.de/kiosk/
+ http://www.pay-by-click.de/
+ http://www.pro-linux.de/produkte/prof.php
+ http://www.zanox-affiliate.de/
+ https://*.as-us.falkag.net/
+ https://*.ostg.com/
+ https://*/*/ads/*
+ https://*/banner/*
+ http*://ssl.google-analytics.com/
+");
+user_pref("guc.contextMenuText", "Lookup \"##\"");
+user_pref("guc.groupRules", false);
+user_pref("guc.menutext1", "Bug #1");
+user_pref("guc.menutext10", "");
+user_pref("guc.menutext2", "Submitted bugs");
+user_pref("guc.menutext3", "PTS #1");
+user_pref("guc.menutext4", "Msgid #1");
+user_pref("guc.menutext5", "DDPO #1");
+user_pref("guc.menutext6", "DDPP #1");
+user_pref("guc.menutext7", "PHP ##");
+user_pref("guc.menutext8", "MW ##");
+user_pref("guc.menutext9", "Google ##");
+user_pref("guc.searchpattern1", "^#?([0-9]+)$");
+user_pref("guc.searchpattern10", "");
+user_pref("guc.searchpattern2", "(.*@[a-z.+-]+)");
+user_pref("guc.searchpattern3", "^([a-z.+-]+)");
+user_pref("guc.searchpattern4", "(.*@.*)");
+user_pref("guc.searchpattern5", "(.*@[a-z.+-]+)");
+user_pref("guc.searchpattern6", "^([a-z.+-]+)");
+user_pref("guc.searchpattern7", "([a-z0-9-]+)");
+user_pref("guc.searchpattern8", "(.*)");
+user_pref("guc.searchpattern9", "");
+user_pref("guc.url1", "http://bugs.debian.org/#1");
+user_pref("guc.url10", "");
+user_pref("guc.url2", "http://bugs.debian.org/submitter=#1");
+user_pref("guc.url3", "http://packages.qa.debian.org/#1");
+user_pref("guc.url4", "http://lists.debian.org/msgid-search/#1/firsthit");
+user_pref("guc.url5", "http://qa.debian.org/developer.php?login=#1");
+user_pref("guc.url6", "http://qa.debian.org/developer.php?package=#1");
+user_pref("guc.url7", "de2.php.net/search.php?pattern=#1&show=quickref");
+user_pref("guc.url8", "http://www.m-w.com/cgi-bin/dictionary?va=##");
+user_pref("guc.url9", "http://www.google.de/search?q=##");

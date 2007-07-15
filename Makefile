@@ -19,11 +19,10 @@ $(DCLEAN):
 
 .PHONY: .priv
 .priv:
-	$(MAKE) -C .priv
+	@$(MAKE) -C .priv
 
-.PHONY: /tmp/$(USER) tmp
 tmp /tmp/$(USER):
-	mkdir -m 0700 $@ ; ls -ld $@
+	mkdir -m 0700 $@
 
 ## cleanup stuff ##
 
@@ -32,6 +31,7 @@ COMMITS = $(wildcard .mutt/fortunes-??)
 
 ifeq ($(shell [ -d .firefox ] && echo yes), yes)
 cleanup: .firefox/cb/cbcbcbcb.slt/.bookmarks.html
+all: .firefox/cb/cbcbcbcb.slt/prefs.js
 COMMITS += .firefox/cb/cbcbcbcb.slt/bookmarks.html
 endif
 .firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html
@@ -39,25 +39,13 @@ endif
 	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
 	@perl -i -pe 's/ (LAST_VISIT)="\d+"//g' $<
 	@touch $@
-
-ifeq ($(shell [ -d .galeon ] && echo yes), yes)
-cleanup: .galeon/.bookmarks.xbel
-COMMITS += .galeon/bookmarks.xbel
-endif
-.galeon/.bookmarks.xbel: .galeon/bookmarks.xbel
-	# Cleaning $<
-	@if pidof galeon-bin > /dev/null ; then echo "Galeon is running " ; false ; else true ; fi
-	@-[ -f .galeon/bookmarks.xbel ] && perl -i -ne 's/folded="no"/folded="yes"/; print unless /^\s+<time_visited>\d+<\/time_visited>$$/' .galeon/bookmarks.xbel
-	@touch $@
-
-ifeq ($(shell [ -d .kazehakase ] && echo yes), yes)
-cleanup: .kazehakase/.bookmarks.xml
-#COMMITS += .kazehakase/bookmarks.xml
-endif
-.kazehakase/.bookmarks.xml: .kazehakase/bookmarks.xml
-	# Cleaning $<
-	@if pidof kazehakase > /dev/null ; then echo "kazehakase is running " ; false ; else true ; fi
-	@touch $@
+.firefox/cb/cbcbcbcb.slt/prefs.js: .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
+	# Updating $@
+	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
+	cat $< >> $@
+firefox-pull:
+	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
+	.firefox/cb/cbcbcbcb.slt/pull .firefox/cb/cbcbcbcb.slt/prefs.js > .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 
 ifeq ($(shell [ -f .ssh/known_hosts ] && echo yes), yes)
 cleanup: .ssh/.known_hosts
@@ -90,6 +78,7 @@ up: update
 update: cleanup
 	svn update
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
+	@$(MAKE) all
 
 com: commit
 commit: cleanup
