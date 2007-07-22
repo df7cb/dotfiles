@@ -92,7 +92,7 @@ complete -o default -f -X '!*.tex' latex
 complete -o default -f -X '!*.?(e)ps' lpr
 complete -o default -f -X '!*.dvi' kdvi xdvi
 complete -o default -f -X '!*.fig' xfig
-complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|ace|ar|deb|arj|lzh|rar|zip)' ttar xtar
+complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|ace|ar|deb|arj|lzh|rar|xar|zip)' ttar xtar
 
 # stuff that uses my completer
 complete -o default -C completer man
