@@ -1,12 +1,15 @@
 # $Id$
 
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
-all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN)
+all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) .ssh/config
 
 ## targets ##
 
 .less: .lesskey
 	lesskey
+
+.ssh/config:
+	ln -s config.public $@
 
 .xinitrc:
 	ln -s .xsession .xinitrc
@@ -46,22 +49,6 @@ endif
 firefox-pull:
 	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
 	.firefox/cb/cbcbcbcb.slt/pull .firefox/cb/cbcbcbcb.slt/prefs.js > .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
-
-ifeq ($(shell [ -f .ssh/known_hosts ] && echo yes), yes)
-cleanup: .ssh/.known_hosts
-COMMITS += .ssh/known_hosts
-endif
-known_hosts-uniq:
-	@cut -d' ' -f 1-2 < .ssh/known_hosts | uniq -d
-	@cut -d' ' -f 2-3 < .ssh/known_hosts | sort | uniq -d | while read line ; do grep "$line" .ssh/known_hosts ; done
-	@perl -e 'while(<>){ foreach(/(\w+)/) { print "repeated: $$s{$$_}:$$_\n" if $$s{$$_}; $$s{$$_} = $$.; }}' .ssh/known_hosts
-.ssh/.known_hosts: .ssh/known_hosts
-	# Sorting $<
-	@grep -qv '<<<<' $<
-	@mv $< $<.bak
-	@LC_ALL=C sort -u $<.bak > $<
-	@rm -f $<.bak
-	@touch $@
 
 ifeq ($(shell [ -d lib/todo ] && echo yes), yes)
 COMMITS += lib/todo/todo
