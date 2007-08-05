@@ -9,12 +9,9 @@ $M/mutt
 * ^(Cc|To): .*mutt
 $M/mutt
 
+
 # Debian
 :0:
-# X-Debian-PR-Message: ack-info
-# Sender: Debian BTS <debbugs@master.debian.org>
-#* ^Sender:.*(debbugs@master.debian.org|bugs@trithemius.gnupg.org)
-#* ^Sender:.*debbugs@master.debian.org
 * ^X-Debian-PR-Message: ack-info
 $M/debian-bts
 
@@ -25,16 +22,20 @@ $DEFAULT
 :0:
 * ^Delivered-To: mia@qa.debian.org
 $M/mia
-#:0c:
-#* ^X-Mailing-List: .*debian
-#* ^Subject: .*\[vac
-#$M/mia
 
+# NM
 :0:
-#* ^Delivered-To: .*@nm.debian.org
 * ^Delivered-To: cb\+nm@df7cb.de
 $M/nm
+:0:
+* ^List-Id: .*<debian-newmaint\.lists\.debian\.org>
+$M/nm
 
+:0:
+* ^(List-Id: .*<pkg-devscripts|X-PTS-Package: devscripts)
+$M/devscripts
+
+# bpo
 :0:
 * ^List-Id: .*<backports-changes
 * ^X-Katie:
@@ -43,28 +44,18 @@ $M/backports-changes
 * ^List-Id: .*<backports-
 $M/debian
 
+# Bulk mail
 :0:
-* ^List-Id: .*<debconf-
-$M/debian
+* ^List-Id: .*<(debian-(devel|project|wnpp)\.|debconf-)
+$M/debian-devel
 
-:0:
-* ^(List-Id: .*<pkg-devscripts|X-PTS-Package: devscripts)
-$M/devscripts
-
-#Resent-From: Debian BTS <debbugs@master.debian.org>
-#* ^(List-Id: .*lists.debian.org|(Resent-)?Sender: .*debian.org|Resent-From: .*debian.org|X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package: |From: .*<dak@.*.debian.org>)
 :0:
 * ^(List-Id: .*\.debian\.org>|From: .*<dak@.*.debian.org>|X-Mailing-List: <debian-.*@lists.infodrom.org>)
 $M/debian
-#:0c:
-#* ^Delivered-To: cb\+debian@df7cb.de
-#$DEFAULT
 :0:
 * ^Delivered-To: cb\+pts@df7cb.de
 $M/debian
-#:0c:
-#* ^(X-Debian-PR-|X-loop: owner@bugs.debian.org|X-PTS-Package:)
-#$M/debian
+
 
 # OFTC
 :0:
@@ -90,7 +81,7 @@ $M/pisg
 $M/lists
 
 :0:
-* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster|logcheck)@
+* ^From: .*(MAILER-DAEMON|root|owner-.*|postmaster|logcheck|nagios)@
 $M/root
 # mailman
 :0:
