@@ -3,21 +3,12 @@ unhook folder-hook
 unhook message-hook
 unhook send-hook
 
-folder-hook .			'set record="!" trash="=trash/trash"'
-folder-hook .			'unmy_hdr X-MIA-Summary Bcc'
-folder-hook IN/.		'set record="^" trash="^.trash"'
-folder-hook IN/mia		'my_hdr X-MIA-Summary: -; my_hdr Bcc: mia@qa.debian.org'
-folder-hook =rw/.		'set record="^" trash="=rw/trash/trash"'
+folder-hook .			'set record="!" trash="=trash"'
+folder-hook mail/		'set record="^" trash="^.trash"'
 folder-hook \.trash$		'unset trash'
 
-#folder-hook .			'set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %s"'
-#folder-hook debian|lists	'set index_format="%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"'
-#folder-hook debian|lists	'push "<delete-pattern>~R !~F ~d>1m<enter>"'
 folder-hook debian|lists|mutt	'push ,r'
-
 folder-hook .			'push <collapse-all>'
-#folder-hook .			'set from=cb@df7cb.de'
-#folder-hook debian		'set from=myon@debian.org'
 
 # Debian archive messages
 message-hook .			"ignore Sender"
