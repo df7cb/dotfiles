@@ -2,7 +2,7 @@ DEBIAN_VERSION=`cat /etc/debian_version`
 case $DEBIAN_VERSION in
 	3.1) DISTRIBUTION="sarge" ;;
 	4.0) DISTRIBUTION="etch" ;;
-	unstable|*/sid) DISTRIBUTION="sid" ;;
+	unstable|*/sid|sid) DISTRIBUTION="sid" ;;
 	testing/unstable) echo "please use unstable in /etc/debian_version"
 	   exit 1 ;;
 	*) echo "unknown distribution in /etc/debian_version: $DEBIAN_VERSION"
