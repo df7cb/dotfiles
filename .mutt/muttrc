@@ -13,27 +13,8 @@ source ~/.mutt/lists
 source ~/.mutt/hooks
 
 # aliases
-source `if [ -f ~/.mutt/aliases ] ; then echo ~/.mutt/aliases ; else echo /dev/null ; fi`
-source `if [ -f ~/.mutt/aliases.ab ] ; then echo ~/.mutt/aliases.ab ; else echo /dev/null ; fi`
+source `if [ -f ~/.priv/mutt/aliases ] ; then echo ~/.priv/mutt/aliases ; else echo /dev/null ; fi`
+source `if [ -f ~/.priv/mutt/aliases.ab ] ; then echo ~/.priv/mutt/aliases.ab ; else echo /dev/null ; fi`
 
-# local configuration options
-#source `if [ -f ~/.mutt/muttrc.local ] ; then echo ~/.mutt/muttrc.local ; else echo /dev/null ; fi`
-
-set from="cb@df7cb.de"
-set hostname="df7cb.de"
-macro generic & "!retch -F\cM"
-macro index & "!retch -F\cM"
-set spoolfile="=IN/cb"
-mailboxes ! =rw/inbox =IN/root =IN/nm =IN/mutt =IN/devscripts =IN/mia =IN/debian =IN/pisg =IN/debconf =IN/backports =IN/oftc =IN/bridge =IN/lists
-color header brightblack default heim-d@df7cb.de
-
-# local settings
-#set folder="~/mail/rw"
-#mailboxes =inbox
-#
-#macro	pager	S	"<exit>S"
-#macro	index	S	"<save-message>=spam-queue/spam<enter>" "Save spam for processing with SA"
-#macro	index	<ESC>S	"<tag-pattern>!~D<enter><tag-prefix><copy-message>=spam-queue/ham<enter><untag-pattern>.<enter>" "Save ham for processing with SA"
-#
-#set from="cb@cs.uni-sb.de"
-#set print_command="enscript"
+set spoolfile="~/mail/cb/cb"
+source `if [ -f ~/.priv/mutt/account ] ; then echo ~/.priv/mutt/account ; else echo /dev/null ; fi`

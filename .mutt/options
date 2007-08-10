@@ -4,8 +4,7 @@
 #set abort_nosubject
 set abort_unmodified
 set alias_file=~/.priv/aliases
-#set alternates="^cb@((cs|asta).uni-s(b|aarland)|df7cb).de$"
-alternates ^(cb.*@.*df7cb.de|myon@.*|df7cb@.*|christoph.berg@.*)$
+alternates ^(cb.*@.*df7cb\.de|myon@.*|df7cb@.*|christoph\.berg@.*)$
 set attribution="Re: %F %[%Y-%m-%d] %i"
 set auto_tag #smart_auto_tag
 unset beep
@@ -22,6 +21,7 @@ set delete=yes
 set fast_reply
 unset fcc_attach
 set forward_format="%s (fwd)"
+set header_cache="~/.mutt/cache"
 unset help
 #unset hidden_host
 set index_format="%4C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
@@ -56,7 +56,6 @@ unset reverse_realname
 #set rfc2047_parameters
 #unset save_empty
 set send_charset="us-ascii:iso-8859-1:iso-8859-15:utf-8"
-#set sendmail_wait=15
 unset sig_dashes
 set sleep_time="0"
 set simple_search="~f %s | ~s %s | ~C %s"
@@ -65,7 +64,7 @@ set status_on_top
 set sort=threads
 set tilde
 set timeout=30
-ifdef trash set trash="=trash/trash"
+ifdef trash set trash="=trash"
 #set use_domain
 #set use_from
 unset wait_key
@@ -74,7 +73,6 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 
 #set crypt_use_gpgme
 #set crypt_use_pka
-set header_cache="~/.mutt/cache"
 
 set smime_default_key=f4037fe5.0
 set smime_sign_as=f4037fe5.0
