@@ -55,9 +55,10 @@ macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.1
 #macro	index	,R	"l!~R\n"	# limit to unread meassages
 macro	index	,r	"l~(!~R|~F)\n<esc>V"	# limit to threads with unread meassages
 
-macro	index	\\d	"<save-message>=IN/debian<enter>"
-macro	index	\\m	"<save-message>=IN/mutt<enter>"
-macro	index	\\n	"<save-message>=IN/nm<enter>"
+macro	index	\\b	"<save-message>=cb/bridge<enter>"
+macro	index	\\d	"<save-message>=cb/debian<enter>"
+macro	index	\\m	"<save-message>=cb/mutt<enter>"
+macro	index	\\n	"<save-message>=cb/nm<enter>"
 
 macro	pager	S	"<exit>S"
 macro	index	S	"<bounce-message>cb+spam@tesla.df7cb.de<enter><purge-message>" "Save spam for processing with SA"
