@@ -22,7 +22,7 @@ $(DCLEAN):
 
 .PHONY: .priv
 .priv:
-	@$(MAKE) -C .priv
+	-@$(MAKE) -C .priv
 
 tmp /tmp/$(USER):
 	mkdir -m 0700 $@

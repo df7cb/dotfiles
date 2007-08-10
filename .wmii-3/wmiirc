@@ -154,7 +154,7 @@ do
 		$MODKEY-[0-9])
 			xwrite /ctl view `echo $arg1 | sed 's/.*-//'`;;
 		$MODKEY-Return)
-			PATH="$OLD_PATH" x-terminal-emulator &;;
+			PATH="$OLD_PATH" SHLVL=0 xterm &;;
 		$MODKEY-Shift-$LEFT) warp=1
 			xwrite /view/sel/sel/ctl sendto prev;;
 		$MODKEY-Shift-$RIGHT) warp=1

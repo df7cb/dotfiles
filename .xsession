@@ -31,8 +31,9 @@ xset r rate 400 30
 
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
-	xsetroot -solid navy
-	xroot &
+	xscreensaver -nosplash &
+	xsetroot -solid navy &
+	#xroot &
 	#xclock -g x13+0+0 -strftime '%e.%m. %T' & # 110x13
 	[ -e .plan.dir/dayplan ] && type -p pland > /dev/null && pland -k &
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
