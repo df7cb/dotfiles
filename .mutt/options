@@ -3,7 +3,7 @@
 # options
 #set abort_nosubject
 set abort_unmodified
-set alias_file=~/.priv/aliases
+set alias_file="~/.priv/mutt/aliases"
 alternates ^(cb.*@.*df7cb\.de|myon@.*|df7cb@.*|christoph\.berg@.*)$
 set attribution="Re: %F %[%Y-%m-%d] %i"
 set auto_tag #smart_auto_tag
