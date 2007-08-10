@@ -56,6 +56,17 @@ user_pref("adblock.patterns",
  https://*/*/ads/*
  https://*/banner/*
  http*://ssl.google-analytics.com/
+ http://www.m-w.com/*.swf*
+ http://www.google-analytics.com/*
+ http://*.adbureau.net/
+ *ads.js
+ http://adtech.*
+ http://*.banner*
+ */banners/*
+ http://adserver.*
+ http://partners.*
+ http://images.quelle.de/*
+ http://media.ohost.de/*
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
