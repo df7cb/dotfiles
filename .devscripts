@@ -1,4 +1,5 @@
 DEBEMAIL=myon@debian.org
+#DEBEMAIL=christoph.berg@credativ.de
 DEBFULLNAME="Christoph Berg"
 USCAN_DOWNLOAD=no
 USCAN_PASV=yes
