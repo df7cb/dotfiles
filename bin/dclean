@@ -5,5 +5,9 @@ case $0 in
 	*dclean) fakeroot ./debian/rules clean ;;
 	*dbuild) ./debian/rules build ;;
 	*dbinary) fakeroot ./debian/rules binary ;;
+	*dconfigure) ./debian/rules configure ;;
+	*dinstall) fakeroot ./debian/rules install ;;
+	*dpatch|*dpatch_) ./debian/rules patch ;;
+	*dunpatch) ./debian/rules unpatch ;;
 	*) echo "huh?" ;;
 esac
