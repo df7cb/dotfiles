@@ -67,6 +67,9 @@ user_pref("adblock.patterns",
  http://partners.*
  http://images.quelle.de/*
  http://media.ohost.de/*
+ http://*.sponsorads.de/*
+ http://www.euros4click.de/*
+ */banner/*
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
