@@ -70,6 +70,8 @@ user_pref("adblock.patterns",
  http://*.sponsorads.de/*
  http://www.euros4click.de/*
  */banner/*
+ http://www.paypal.com/*
+ http://*-ads.*
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
