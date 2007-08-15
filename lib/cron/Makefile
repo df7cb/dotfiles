@@ -1,5 +1,5 @@
 CRONTABS=*.crontab
-TARGET=.cron.$(HOST)
+TARGET=.cron.$(shell hostname)
 
 install: $(TARGET)
 
