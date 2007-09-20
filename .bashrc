@@ -35,7 +35,9 @@ u='\[\033[46m\][\[\033[1;31m\]$?\[\033[0;46m\]] \A \[\033[1m\]\u@'$h'\h:\[\033[3
 case $TERM in
 linux*|*vt100*|cons25)
 	PS1=''$u' '$j'\l \$\[\033[0m\] ' ;;
-xterm*|rxvt|screen*|cygwin)
+screen*)
+	PS1='\[\033k\u@'$h'\h\033\\\033]0;\u@'$h'\h:\w\007\]'$u' '$j'\$\[\033[0m\] ' ;;
+xterm*|rxvt|cygwin)
 	PS1='\[\033]0;\u@'$h'\h:\w\007\]'$u' '$j'\$\[\033[0m\] '
 	if [ "$console" ] ; then
 		PS1='\[\033]0;console@'$h'\h:\w\007'$u' '$j'\$\[\033[0m\] '
