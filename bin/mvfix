@@ -5,12 +5,8 @@ if [ -z "$1" ] ; then
 fi
 
 for f in "$@" ; do
-	#f2=`echo "$f" | tr ' ™šá„”' '_ÄÖÜßäöü'`
-	f2=`echo "$f" | tr ' ' '_'`
-	f2=`echo "$f2" | sed 's/%20/_/g'`
-	if [ "$f" = "$f2" ] ; then
-		#echo "$f: no change"
-		continue
-	fi
+	f=`echo "$f" | sed -e 's!/$!!'`
+	f2=`echo "$f" | sed -e 's/ /_/g' -e 's/%20/_/g'`
+	[ "$f" = "$f2" ] && continue
 	mv -iv "$f" "$f2"
 done
