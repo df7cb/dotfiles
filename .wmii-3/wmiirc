@@ -10,7 +10,8 @@ proglist() {
 	ls -lL "$@" 2>/dev/null | awk 'NF>2 && $1 ~ /^[^d].*x/ {print $NF}' | sort -u
 }
 
-MODKEY=Mod1
+#MODKEY=Mod1
+MODKEY=Mod4
 UP=k
 DOWN=j
 LEFT=h
@@ -39,9 +40,12 @@ xwrite /def/colwidth 0
 
 # TAGGING RULES
 wmiir write /def/rules <<EOF
-/XMMS.*/ -> ~
 /Gimp.*/ -> ~
 /MPlayer.*/ -> ~
+/Tenace.*/ -> ~
+/XMMS.*/ -> ~
+/Workrave.*/ -> 0
+/.*Iceweasel/ -> 2
 /.*/ -> !
 /.*/ -> 1
 EOF
@@ -67,6 +71,7 @@ $MODKEY-m
 $MODKEY-a
 $MODKEY-p
 $MODKEY-t
+$MODKEY-x
 $MODKEY-0
 $MODKEY-1
 $MODKEY-2
@@ -165,7 +170,7 @@ do
 			xwrite /view/sel/sel/ctl swap up;;
 		$MODKEY-Shift-space)
 			xwrite /view/sel/sel/ctl sendto toggle;;
-		$MODKEY-Shift-c)
+		$MODKEY-Shift-c|$MODKEY-x)
 			xwrite /view/sel/sel/ctl kill;;
 		$MODKEY-Shift-t)
 			xwrite /view/sel/sel/tags "`wmiir read /tags | wmiimenu`" &;;
