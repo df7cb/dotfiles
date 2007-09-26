@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ "$WMII_ADDRESS" ] || exit 2
-[ "$1" ] || exit 1
-
-echo "NextTag $1" | wmiir write /event
-shift
-
-"$@"
