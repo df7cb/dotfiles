@@ -39,7 +39,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
 	#type -p esd > /dev/null && esd -nobeeps -as 2 &
 	workrave &
-	xplanet &
+	xplanet -lat 51.191253 -lon 6.422786 &
 
 	[ -x /usr/bin/gpg-agent ] && [ -z "$GPG_AGENT_INFO" ] && eval `gpg-agent --daemon`
 	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
@@ -52,7 +52,7 @@ fi
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
 SHLVL=-1
 
-wmii
+while ! wmii ; do sleep 5 ; done
 
 #[[ "$XVENDOR" != *VNC* ]] && export console=yes
 #xterm +ut -vb -C -geometry 62x5+120-0 -T console
