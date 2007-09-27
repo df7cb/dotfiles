@@ -45,7 +45,7 @@ elif [ "$PROG" = ncftp ] ; then
 elif [ "$PROG" = ssh ] ; then
 	perl -lne 's/^#| .*//; foreach (split /,/) { print if /\./ }' ~/.ssh/known_hosts
 
-elif [ "$PROG" = scp ] ; then
+elif [ "$PROG" = scp ] || [ "$PROG" = rsync ] ; then
 	perl -lne 's/^#| .*//; foreach (split /,/) { print "$_:" if /\./ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = super ] ; then
