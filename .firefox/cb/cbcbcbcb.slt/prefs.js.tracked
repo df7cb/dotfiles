@@ -73,6 +73,7 @@ user_pref("adblock.patterns",
  http://www.paypal.com/*
  http://*-ads.*
  http://static.lycos-europe.net/
+ */Ads/*
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
