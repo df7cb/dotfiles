@@ -41,3 +41,7 @@ color quoted3	red default
 color body      blue default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
 color body      blue default "(https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+"
 
+# hilight diffs
+color body	green default '^(===|---|\+\+\+) .*'
+color body	blue default "^@@ .* @@\n"
+color body	magenta default '^[ +-](===|---|\+\+\+|@@|Index:) .*'
