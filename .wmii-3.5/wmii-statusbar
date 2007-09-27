@@ -46,7 +46,8 @@ do {
 	close F;
 
 	my $cap_str = sprintf "%.1f%%", 100 * $cap / $full_cap;
-	my $bat_file = $state ne "charged" ? sprintf(" \%dmin", 60*$cap/$rate) : "";
+	my $bat_file = $state eq "charged" ? "" :
+		sprintf(" \%dmin %.1fW", 60*$cap/$rate, $rate / 1000);
 	my $capstate_str = $capstate ne "ok" ? "$capstate " : "";
 
 	open L, "/proc/loadavg";
@@ -76,7 +77,6 @@ do {
 		system "xmessage 'Battery critical. Will hibernate in 60s.' &";
 		sleep 60;
 		system "sudo hibernate";
-		sleep 10;
 		wait;
 	}
 
