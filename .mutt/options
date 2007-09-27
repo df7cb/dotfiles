@@ -17,6 +17,7 @@ unset confirmappend
 unset confirmcreate
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c '/^$'"
+set envelope_from_address="cb@df7cb.de" use_envelope_from
 set delete=yes
 set fast_reply
 unset fcc_attach
@@ -60,7 +61,7 @@ unset sig_dashes
 set sleep_time="0"
 set simple_search="~f %s | ~s %s | ~C %s"
 set sleep_time="0"
-set status_format=" %f %r%?V? [%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?l? %l?]%?p? Post:%p?%?b? Inc:%b? (%s/%S) -%>- %P --"
+set status_format=" %f %r%?V? [%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?l? %l?]%?p? Post:%p?%?b? Inc:%b? (%s/%S) -%>- $my_profile - %P --"
 set status_on_top
 set sort=threads
 set tilde
@@ -74,6 +75,8 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 
 #set crypt_use_gpgme
 #set crypt_use_pka
+
+ifdef sidebar_visible set sidebar_visible sidebar_width=30
 
 set smime_default_key=f4037fe5.0
 set smime_sign_as=f4037fe5.0
