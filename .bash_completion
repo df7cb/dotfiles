@@ -104,5 +104,5 @@ complete -X '!&*' -C completer complete mailsync
 complete -W "install remove" -C completer apt-get
 complete -o default -d -X '!&*' -C completer cvs
 complete -o default -X '!&*' -C completer ssh
-complete -o default -f -d -X '!&*' -C completer scp
+complete -o default -f -d -X '!&*' -C completer scp rsync
 #complete -o default -f -W Makefile vim
