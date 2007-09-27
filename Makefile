@@ -51,10 +51,6 @@ firefox-pull:
 	.firefox/cb/cbcbcbcb.slt/pull .firefox/cb/cbcbcbcb.slt/prefs.js > .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 	svn diff .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 
-ifeq ($(shell [ -d lib/todo ] && echo yes), yes)
-COMMITS += lib/todo/todo
-endif
-
 ## update stuff ##
 
 st: status
