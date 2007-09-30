@@ -3,12 +3,11 @@
 
 source ~/.vimrc
 
-set nobackup
-set nohlsearch
 set textwidth=70
 
 map _d mm1GSFrom: Christoph Berg <cb@df7cb.de><esc>`m
 map _c mm1GSFrom: Christoph Berg <christoph.berg@credativ.de><esc>`m
+map _g mm1GSFrom: Christoph Berg <cbe@dg-i.net><esc>`m
 map _m mm1GSFrom: Christoph Berg <myon@debian.org><esc>`m
 map _n mm1GSFrom: Christoph Berg <myon@nm.debian.org><esc>`m
 
