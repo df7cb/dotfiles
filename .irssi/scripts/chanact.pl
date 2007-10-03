@@ -4,7 +4,7 @@ use Irssi::TextUI;
 
 use vars qw($VERSION %IRSSI);
 
-$VERSION = "0.5.5";
+$VERSION = "0.5.5.2";
 %IRSSI = (
     authors     => 'BC-bd, Veli',
     contact     => 'bd@bc-bd.org, veli@piipiip.net',
@@ -185,6 +185,9 @@ sub remake() {
 	my $remove_prefix = Irssi::settings_get_str('chanact_remove_prefix');
 	my $abbrev = Irssi::settings_get_int('chanact_abbreviate_names');
 	my $remove_hash = Irssi::settings_get_bool('chanact_remove_hash');
+	my %level_list = map { /(.*):(.*)/ ? ($1, $2) : ($_, 1) }
+		split (/\s+/, Irssi::settings_get_str("chanact_ignore_level"));
+	my $data_level = Irssi::settings_get_int('chanact_data_level');
 	
 	$actString = "";
 	foreach my $win (sort chan_sort Irssi::windows) {
@@ -196,6 +199,10 @@ sub remake() {
 		my $active = $win->{active};
 
 		!ref($win) && next;
+
+		if ($win->{data_level} < ($level_list{$name} || $data_level)) {
+			next;
+		}
 
 		# (status) is an awfull long name, so make it short to 'S'
 		# some people don't like it, so make it configurable
@@ -399,6 +406,8 @@ Irssi::settings_add_str('chanact', 'chanact_remove_prefix', "");
 Irssi::settings_add_int('chanact', 'chanact_renumber_start', 50);
 Irssi::settings_add_str('chanact', 'chanact_header', "Act: ");
 Irssi::settings_add_bool('chanact', 'chanact_chop_status', 1);
+Irssi::settings_add_int('chanact', 'chanact_data_level', 1);
+Irssi::settings_add_str('chanact', 'chanact_ignore_level', '');
 
 # register the statusbar item
 Irssi::statusbar_item_register('chanact', '$0', 'chanact');
