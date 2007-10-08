@@ -186,3 +186,10 @@ last sentence, you have my sympathies!
 <ths> can someone help me with the application lazarus??
 <dkr> is it dead?
 %
+<enrico> The Italian translation of the debconf warning of the latest openssl
+	update was so bad that I got totally distracted by how bad it was and I
+	clicked ok before I was finished reading it
+<vorlon> enrico: so what are the bugs in that text?
+<enrico> vorlon: the word used to translate 'release' is very rarely used with
+	software and more commonly used with sphincters
+%
