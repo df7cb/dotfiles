@@ -28,6 +28,7 @@ bind	pager	D	purge-message
 bind	index	G	last-entry
 bind	pager	G	bottom
 macro	index	\ch	"<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><next-unread>"
+macro	index	l	'<enter-command>macro index q "<limit\>.<enter\><enter-command\>bind index q quit<enter\>"<enter><limit>' 'limit with quit enabled'
 bind	generic	N	search-opposite
 bind	index	N	search-opposite
 bind	pager	N	search-opposite
@@ -37,11 +38,11 @@ bind	browser	v	view-file
 bind	index	V	collapse-thread
 bind	index	x	sync-mailbox
 bind	pager	x	sync-mailbox
-macro	index	=	s=		'Save to ~/mail/'
-macro	pager	=	s=		'Save to ~/mail/'
+macro	index	=	's='		'Save to ~/mail/'
+macro	pager	=	's='		'Save to ~/mail/'
 
 bind	compose	<return> send-message	# <enter> = numeric keypad
-macro	compose	=	f=		'Fcc to ~/mail/'
+macro	compose	=	'f='		'Fcc to ~/mail/'
 bind	compose	v	view-attach
 
 # purge duplicates
