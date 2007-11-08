@@ -24,8 +24,8 @@ source_rc .bash_bind
 
 if [ "$BASH_VERSION" \> "2.04" ] ; then # new bash supporting '\j' and completion
 	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s " ; [ \j -gt 0 ] && echo -n "\jj ")'
-	#[ -f ~/.bash_completion ] && . ~/.bash_completion
-	. /etc/bash_completion
+	[ -f ~/.bash_completion ] && . ~/.bash_completion
+	#. /etc/bash_completion
 else
 	j='$([ $SHLVL -gt 1 ] && echo -n "${SHLVL}s ")'
 fi
