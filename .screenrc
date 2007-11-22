@@ -22,6 +22,8 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 defbce on
 term screen-bce
 
+msgwait 1
+
 # advertise hardstatus support to $TERMCAP
 # termcapinfo  * '' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
 
