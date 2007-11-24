@@ -38,12 +38,45 @@ login = anonymous
 
 [tesla]
 fqdn = tesla.df7cb.de
-login = cb
+login = myon
 method = rsync
 incoming = .
 
 [fermi]
 fqdn = fermi.df7cb.de
-login = cb
+login = myon
 method = scp
 incoming = UploadQueue
+
+[tesla-any]
+fqdn = tesla.df7cb.de
+login = myon
+method = rsync
+incoming = tmp/UploadQueue
+pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro --ignore=wrongdistribution include any tmp/UploadQueue/*.changes
+
+[tesla-etch]
+fqdn = tesla.df7cb.de
+login = myon
+method = rsync
+incoming = tmp/UploadQueue
+pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro --ignore=wrongdistribution include etch tmp/UploadQueue/*.changes
+
+[tesla-lenny]
+fqdn = tesla.df7cb.de
+login = myon
+method = rsync
+incoming = tmp/UploadQueue
+pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro --ignore=wrongdistribution include lenny tmp/UploadQueue/*.changes
+
+[tesla-sid]
+fqdn = tesla.df7cb.de
+login = myon
+method = rsync
+incoming = tmp/UploadQueue
+pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro include sid tmp/UploadQueue/*.changes
+
