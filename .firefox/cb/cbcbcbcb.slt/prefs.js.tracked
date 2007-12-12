@@ -74,36 +74,42 @@ user_pref("adblock.patterns",
  http://*-ads.*
  http://static.lycos-europe.net/
  */Ads/*
+ http://*emediate.eu/*
+ http://www1.dastelefonbuch.de/img/aktion/
+ http://dict.leo.org/*.jpg
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
 user_pref("guc.menutext1", "Bug #1");
-user_pref("guc.menutext10", "");
-user_pref("guc.menutext2", "Submitted bugs");
-user_pref("guc.menutext3", "PTS #1");
-user_pref("guc.menutext4", "Msgid #1");
-user_pref("guc.menutext5", "DDPO #1");
-user_pref("guc.menutext6", "DDPP #1");
-user_pref("guc.menutext7", "PHP ##");
-user_pref("guc.menutext8", "MW ##");
-user_pref("guc.menutext9", "Google ##");
+user_pref("guc.menutext10", "Google ##");
+user_pref("guc.menutext11", "");
+user_pref("guc.menutext2", "ET #1");
+user_pref("guc.menutext3", "Submitted bugs");
+user_pref("guc.menutext4", "PTS #1");
+user_pref("guc.menutext5", "Msgid #1");
+user_pref("guc.menutext6", "DDPO #1");
+user_pref("guc.menutext7", "DDPP #1");
+user_pref("guc.menutext8", "PHP ##");
+user_pref("guc.menutext9", "MW ##");
 user_pref("guc.searchpattern1", "^#?([0-9]+)$");
 user_pref("guc.searchpattern10", "");
-user_pref("guc.searchpattern2", "(.*@[a-z.+-]+)");
-user_pref("guc.searchpattern3", "^([a-z.+-]+)");
-user_pref("guc.searchpattern4", "(.*@.*)");
-user_pref("guc.searchpattern5", "(.*@[a-z.+-]+)");
-user_pref("guc.searchpattern6", "^([a-z.+-]+)");
-user_pref("guc.searchpattern7", "([a-z0-9-]+)");
-user_pref("guc.searchpattern8", "(.*)");
-user_pref("guc.searchpattern9", "");
+user_pref("guc.searchpattern11", "");
+user_pref("guc.searchpattern2", "^([0-9]{4})");
+user_pref("guc.searchpattern3", "(.*@[a-z.+-]+)");
+user_pref("guc.searchpattern4", "^([a-z.+-]+)");
+user_pref("guc.searchpattern5", "(.*@.*)");
+user_pref("guc.searchpattern6", "(.*@[a-z.+-]+)");
+user_pref("guc.searchpattern7", "^([a-z.+-]+)");
+user_pref("guc.searchpattern8", "([a-z0-9-]+)");
+user_pref("guc.searchpattern9", "(.*)");
 user_pref("guc.url1", "http://bugs.debian.org/#1");
-user_pref("guc.url10", "");
-user_pref("guc.url2", "http://bugs.debian.org/submitter=#1");
-user_pref("guc.url3", "http://packages.qa.debian.org/#1");
-user_pref("guc.url4", "http://lists.debian.org/msgid-search/#1/firsthit");
-user_pref("guc.url5", "http://qa.debian.org/developer.php?login=#1");
-user_pref("guc.url6", "http://qa.debian.org/developer.php?package=#1");
-user_pref("guc.url7", "de2.php.net/search.php?pattern=#1&show=quickref");
-user_pref("guc.url8", "http://www.m-w.com/cgi-bin/dictionary?va=##");
-user_pref("guc.url9", "http://www.google.de/search?q=##");
+user_pref("guc.url10", "http://www.google.de/search?q=##");
+user_pref("guc.url11", "");
+user_pref("guc.url2", "https://unsere.allianz24.de/az24/bugzilla/show_bug.cgi?id=#1");
+user_pref("guc.url3", "http://bugs.debian.org/submitter=#1");
+user_pref("guc.url4", "http://packages.qa.debian.org/#1");
+user_pref("guc.url5", "http://lists.debian.org/msgid-search/#1/firsthit");
+user_pref("guc.url6", "http://qa.debian.org/developer.php?login=#1");
+user_pref("guc.url7", "http://qa.debian.org/developer.php?package=#1");
+user_pref("guc.url8", "de2.php.net/search.php?pattern=#1&show=quickref");
+user_pref("guc.url9", "http://www.m-w.com/cgi-bin/dictionary?va=##");
