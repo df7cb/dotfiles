@@ -4,16 +4,15 @@
 :
 : There is another theory which states that this has already happened.
 
-* Home:                               cb@df7cb.de, myon@debian.org
-   Christoph Berg                     http://www.df7cb.de/
-   Dudweilerstr. 77                   0681/96 57 944
-   66123 Saarbrücken                  0179/45 30 792 (Mobile)
+* Home:
+   Christoph Berg                     cb@df7cb.de, myon@debian.org
+   Luisenstr. 150                     http://www.df7cb.de/
+   41061 Mönchengladbach              +49 1520 1880805
 * Work:
-   Christoph Berg                     cb@cs.uni-sb.de
-   Compiler Design Lab, CS Dept.      http://www.df7cb.de/cs/
-   Building 45, Room 404              +49 (0)681/302-5573
-   Universität des Saarlandes         +49 (0)681/302-3065 (Fax)
-   66123 Saarbrücken
+   Christoph Berg                     christoph.berg@credativ.de
+   credativ GmbH                      http://www.credativ.de/
+   Hohenzollernstr. 133               +49 41061 4643 187
+   41061 Mönchengladbach              +49 41061 4643 100 (Fax)
 * IRC: Myon (oftc/freenode/ircnet)
 * Jabber: myon@jabber.snow-crash.org
 * Ham Radio: DF7CB, Packet: df7cb@f6kft.fcal.fra.eu
@@ -22,7 +21,7 @@ pub   1024D/58510B5A 2004-04-17
       Key fingerprint = D224 C8B0 7E63 A694 6DA3  2E07 C5AF 774A 5851 0B5A
 uid                  Christoph Berg <cb@df7cb.de>
 uid                  Christoph Berg <myon@debian.org>
-sub   1024g/4772A2E5 2004-04-17
+uid                  Christoph Berg <christoph.berg@credativ.de>
 
 -----BEGIN GEEK CODE BLOCK-----
 Version: 2.1/3.1
@@ -51,18 +50,30 @@ yZf0oLFTEy0ci978IkZZwlOJ7IeIYQQTEQIAIQIbAwIeAQIXgAYLCQgHAwIDFQID
 AxYCAQUCQxwWgwIZAQAKCRDFr3dKWFELWrCDAKClm+wFg68IMfuPWU0z2IRWf+ip
 eQCghdrpeKXX5qhNqb3i25OhdSmJbBmIZwQTEQIAHwUCQIEZ0AIbAwcLCQgHAwIB
 AxUCAwMWAgECHgECF4AAEgkQxa93SlhRC1oHZUdQRwABAVFEAJ9jsxnIHunKR2/K
-eiz+7wgZqNGzvgCgyZf0oLFTEy0ci978IkZZwlOJ7Ie0IENocmlzdG9waCBCZXJn
+eiz+7wgZqNGzvgCgyZf0oLFTEy0ci978IkZZwlOJ7IeIXgQTEQIAHgUCQxwWXQIb
+AwYLCQgHAwIDFQIDAxYCAQIeAQIXgAAKCRDFr3dKWFELWpT8AJ96RPl9e0/K8uFT
+mDV8KNZT5NQFlwCaA1yxty23TbKGhuO+VqhNCOGcm4i0IENocmlzdG9waCBCZXJn
 IDxteW9uQGRlYmlhbi5vcmc+iF4EExECAB4FAkMcFl0CGwMGCwkIBwMCAxUCAwMW
 AgECHgECF4AACgkQxa93SlhRC1qU/ACfekT5fXtPyvLhU5g1fCjWU+TUBZcAmgNc
-sbctt02yhobjvlaoTQjhnJuIuQENBECBGdUQBACUc1nl+O0tLNjB4ScIbsxLBqy2
-E6S9mE5tNKgboMWtGuEfmUlyswS7griYi+mfa/+H+OeXwt+TToO9ij0mX0C4X4MK
-n1v9hhmlM5aQXPWfcmphUgjP27AjkqrKxZVtsJ4K4YM4t18GZwSslpZIQeUDv7tV
-ZtM6ukSlM//9BgedVwAEDQP+Oeu2Hletf/83u26uGIdyyvw5W8oVW3Fot+XKbFsT
-RKZRS3YP9gGV5suKD/e9ZYs4gDXi60mNVWsWiVcQRs7cp9CdGGc19M3heW4NT4WP
-IFB7rxdh77VPKcAEz5d84EUtAqfxl/EwPtJOV1/654NcwCbd385aO19hk31ltRwy
-O/aIUQQYEQIACQUCQIEZ1QIbDAASCRDFr3dKWFELWgdlR1BHAAEBbb8AoLLSNPRW
-7XTt6ewWh7FDU9KapQx/AKD5MiKf+7+dfF+NEUDlCcltS/8Xtw==
-=Pect
+sbctt02yhobjvlaoTQjhnJuIiF4EExECAB4CGwMCHgECF4AFAkK9whMGCwkIBwMC
+AxUCAwMWAgEACgkQxa93SlhRC1pPWgCgkasbdaMcSqXVNMCMCiLJTHF3H3EAoL6m
+5g2g77BBp2JJl98PJmWTaQTTiGEEExECACECGwMCHgECF4AGCwkIBwMCAxUCAwMW
+AgEFAkMcFoMCGQEACgkQxa93SlhRC1qwgwCgpZvsBYOvCDH7j1lNM9iEVn/oqXkA
+oIXa6Xil1+aoTam94tuToXUpiWwZiGcEExECAB8FAkCBGdACGwMHCwkIBwMCAQMV
+AgMDFgIBAh4BAheAABIJEMWvd0pYUQtaB2VHUEcAAQFRRACfY7MZyB7pykdvynos
+/u8IGajRs74AoMmX9KCxUxMtHIve/CJGWcJTieyHtCtDaHJpc3RvcGggQmVyZyA8
+Y2hyaXN0b3BoLmJlcmdAY3JlZGF0aXYuZGU+iGAEExECACAFAkZAGOUCGwMGCwkI
+BwMCBBUCCAMEFgIDAQIeAQIXgAAKCRDFr3dKWFELWjkmAJ4paQzEMkfPKx3rKBQJ
+CB5FPoKQcACgn/bsIYoygsYNMyuDYFnmE/vFN2SIXgQTEQIAHgIbAwIeAQIXgAUC
+Qr3CEwYLCQgHAwIDFQIDAxYCAQAKCRDFr3dKWFELWk9aAKCRqxt1oxxKpdU0wIwK
+IslMcXcfcQCgvqbmDaDvsEGnYkmX3w8mZZNpBNOIXgQTEQIAHgUCQxwWXQIbAwYL
+CQgHAwIDFQIDAxYCAQIeAQIXgAAKCRDFr3dKWFELWpT8AJ96RPl9e0/K8uFTmDV8
+KNZT5NQFlwCaA1yxty23TbKGhuO+VqhNCOGcm4iIYQQTEQIAIQIbAwIeAQIXgAYL
+CQgHAwIDFQIDAxYCAQUCQxwWgwIZAQAKCRDFr3dKWFELWrCDAKClm+wFg68IMfuP
+WU0z2IRWf+ipeQCghdrpeKXX5qhNqb3i25OhdSmJbBmIZwQTEQIAHwUCQIEZ0AIb
+AwcLCQgHAwIBAxUCAwMWAgECHgECF4AAEgkQxa93SlhRC1oHZUdQRwABAVFEAJ9j
+sxnIHunKR2/Keiz+7wgZqNGzvgCgyZf0oLFTEy0ci978IkZZwlOJ7Ic=
+=dsXO
 -----END PGP PUBLIC KEY BLOCK-----
 
 ($Id$)
