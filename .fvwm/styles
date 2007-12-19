@@ -35,8 +35,11 @@ ButtonStyle 2 4 50x24@1 75x74@0 25x74@0 50x24@1
 #Style	"*"		HilightFore yellow, HilightBack #5176e8
 #Style	"*"		ForeColor #5176e8, BackColor #90abf4
 # colorful style (030930)
-Style	"*"		HilightFore Yellow, HilightBack Orange
-Style	"*"		ForeColor Orange, BackColor RoyalBlue
+#Style	"*"		HilightFore Yellow, HilightBack Orange
+#Style	"*"		ForeColor Orange, BackColor RoyalBlue
+# wmii-like
+Style	"*"		HilightFore White, HilightBack #0a55e0
+Style	"*"		ForeColor Black, BackColor #888888
 
 # Style for fonts is
 #-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng
@@ -48,8 +51,7 @@ MenuStyle Black Grey LightGrey \
 	-misc-fixed-medium-r-normal-*-15-*-75-75-c-90-iso8859-1 fvwm
 
 # Now the common fonts - one for window titles, another for icons
-#WindowFont	-misc-fixed-bold-r-normal-*-13-*-75-75-c-80-iso8859-1
-WindowFont	-*-lucida-bold-r-*-*-14-*-*-*-*-*-*-*
+WindowFont	-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*
 IconFont	-misc-fixed-medium-r-normal-*-10-*-*-*-c-60-*-*
 
 
@@ -57,7 +59,7 @@ IconFont	-misc-fixed-medium-r-normal-*-10-*-*-*-c-60-*-*
 #   style options for modules and programs                                    #
 ###############################################################################
 
-Style	"*"		BorderWidth 5, HandleWidth 5, DepressableBorder
+Style	"*"		BorderWidth 2, HandleWidth 2, DepressableBorder
 Style	"*"		Icon small.Template.xpm
 Style	"*"		SlipperyIcon, IconBox +515 -90 -0 -0
 Style	"*"		NoPPosition

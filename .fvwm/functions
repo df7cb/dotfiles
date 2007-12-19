@@ -3,15 +3,15 @@
 
 # fvwm-startup functions ##################################################
 
-AddToFunc InitFunction
-+	"I"	Module FvwmPager 0 0
-+	"I"	Wait FvwmPager
-+	"I"	Function XTerms
+#AddToFunc InitFunction
+#+	"I"	Module FvwmPager 0 0
+#+	"I"	Wait FvwmPager
+#+	"I"	Function XTerms
 
 # fvwm-restart
-AddToFunc RestartFunction
+#AddToFunc RestartFunction
 # cleanup previous programs
-+	"I"	Module FvwmPager 0 0
+#+	"I"	Module FvwmPager 0 0
 #+	"I"	Module FvwmButtons
 #+	"I"	Exec xosview -geometry 175x135-10-10
 

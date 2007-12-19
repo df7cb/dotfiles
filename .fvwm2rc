@@ -24,7 +24,8 @@ ModulePath +:/usr/X11R6/lib/X11/fvwm2: \
 ###############################################################################
 
 # this describes how many rows and columns are displayed in the pager
-DeskTopSize 3x2
+#DeskTopSize 3x2
+DeskTopSize 1x1
 
 EdgeResistance 100 20
 #EdgeResistance 0 20

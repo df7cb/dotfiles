@@ -5,21 +5,22 @@
 
 DestroyMenu Main
 AddToMenu Main	"fvwm2"		Title
-+		"&xterm"	Popup xterm
++		"&xterm"	Exec xterm
+#+		"xterm"		Popup xterm
 +		"&Apps"		Popup Apps
 +		"&Debian"	Popup "/Debian"
-+		"&Init"		Popup Init
+#+		"&Init"		Popup Init
 +		"&Fvwm"		Popup FvwmMenu
 +		"&Keymaps"	Popup KeymapMenu
-+		"&Screen"	Popup Screen
-+		"&VNC"		Popup VNC
+#+		"&Screen"	Popup Screen
+#+		"&VNC"		Popup VNC
 +		"&Window"	Popup WindowOps
 +		""		Nop
 #+		"Quit FVWM"	Quit
-+		"&Quit X"	Exec killall xterm xterm.real
++		"&Quit X"	Exec killall xterm xterm.real fvwm
 +		"&Poweroff"	Exec sudo poweroff
-+		" +&Commit"	Exec xterm -e "make commit ; sudo poweroff"
-+		" +&Backup"	Exec xterm -e "make commit ; rdiff-volta-planck ; sudo poweroff"
+#+		" +&Commit"	Exec xterm -e "make commit ; sudo poweroff"
+#+		" +&Backup"	Exec xterm -e "make commit ; rdiff-volta-planck ; sudo poweroff"
 
 
 DestroyMenu Apps
