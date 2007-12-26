@@ -10,7 +10,7 @@ system "wmiir remove $bar 2> /dev/null && sleep 1";
 system "echo \"$ENV{WMII_FOCUSCOLORS}\" | wmiir create $bar";
 
 do {
-	my $date = POSIX::strftime ("%a %e. %b %H:%M:%S", localtime);
+	my $date = POSIX::strftime ("KW %V %a %e. %b %H:%M:%S", localtime);
 
 	open W, "| wmiir write $bar" or exit;
 	print W "$date\n" or exit;
