@@ -143,6 +143,12 @@ screen "0" {
       nmaster = 1
       ncol = 1
     }
+    tag "null" {
+      layout = "floating"
+      mwfact = 0.500000
+      nmaster = 1
+      ncol = 1
+    }
   }
   colors {
     normal_border = "#111111"
@@ -389,49 +395,49 @@ keys {
   }
   key {
     modkey = {"Mod4"}
-    key = "0"
+    key = "o"
     command = "tag_view"
     # arg = ""
   }
   key {
     modkey = {"Mod4", "Control"}
-    key = "0"
+    key = "o"
     command = "tag_toggleview"
     # arg = ""
   }
   key {
     modkey = {"Mod4", "Shift"}
-    key = "0"
+    key = "o"
     command = "client_tag"
     # arg = ""
   }
   key {
     modkey = {"Mod4", "Shift", "Control"}
-    key = "0"
+    key = "o"
     command = "client_toggletag"
     # arg = ""
   }
   keylist {
     modkey = {"Mod4"}
-    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "0", "7", "8", "9"}
     command = "tag_view"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
     modkey = {"Mod4", "Control"}
-    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "0", "7", "8", "9"}
     command = "tag_toggleview"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
     modkey = {"Mod4", "Shift"}
-    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "0", "7", "8", "9"}
     command = "client_tag"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
     modkey = {"Mod4", "Shift", "Control"}
-    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "0", "7", "8", "9"}
     command = "client_toggletag"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
