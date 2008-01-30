@@ -77,6 +77,8 @@ user_pref("adblock.patterns",
  http://*emediate.eu/*
  http://www1.dastelefonbuch.de/img/aktion/
  http://dict.leo.org/*.jpg
+ http://jobs.*
+ http://*.blogads.*
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
