@@ -3,7 +3,7 @@
 
 # catch-all storage
 :0c
-* ^(List-Id: .*<|X-list: |Sender: owner-|Delivered-To: mailing list |X-Mailing-List: <)\/[a-z0-9-]*
+* ^(List-Id: .*<|X-list: |Sender: owner-|Delivered-To: mailing list |X-Mailing-List: <|Mailing-List: contact )\/[a-z0-9-]*
 * !^X-List-Administrivia: yes
 * !^(X-)No-Archive: (yes|true)
 {

@@ -75,9 +75,20 @@ $M/bridge
 * ^List-Id: .pisg-(general|commits)
 $M/pisg
 
+# Geocaching logs
+:0:
+* ^From: .*@geocaching.com
+* ^Subject: \[LOG\]
+$M/geocaching
+
+# Hobbit
+:0:
+* ^List-Post: <mailto:hobbit
+$M/hobbit
+
 # catch-all recipe
 :0:
-* ^(Mailing-List: |List-Id: |List-Owner: )
+* ^(Mailing-List: |List-Id: |List-Owner: |Sender: owner-ai)
 $M/lists
 
 :0:
