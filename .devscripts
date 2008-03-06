@@ -7,3 +7,5 @@ USCAN_SYMLINK=no
 USCAN_VERBOSE=yes
 DEBSIGN_KEYID=0x58510B5A
 DGET_PATH="/srv/pbuilder/result"
+#DGET_VERIFY="no"
+DSCVERIFY_KEYRINGS="$HOME/.gnupg/pubring.gpg"
