@@ -2,4 +2,4 @@
 
 prog=`dmenu_path | dmenu -fn 10x20 -nb '#111111' -nf '#ffffff' -sb '#9cd234' -sf '#ffffff'`
 
-[ "$prog" ] && eval "$prog"
+[ "$prog" ] && eval exec "$prog"
