@@ -23,6 +23,7 @@ set fast_reply
 unset fcc_attach
 set forward_format="%s (fwd)"
 set header_cache="~/.mutt/cache"
+#unset maildir_header_cache_verify
 unset help
 #unset hidden_host
 set index_format="%4C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
@@ -44,7 +45,7 @@ set pgp_auto_decode
 set pgp_replyencrypt
 set pgp_sign_as="0x58510B5A"
 set pgp_timeout=14400
-unset pgp_use_gpg_agent
+set pgp_use_gpg_agent
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set quit=ask-yes
@@ -76,7 +77,7 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 #set crypt_use_gpgme
 #set crypt_use_pka
 
-ifdef sidebar_visible set sidebar_visible sidebar_width=30
+#ifdef sidebar_visible set sidebar_visible sidebar_width=20
 
 set smime_default_key=f4037fe5.0
 set smime_sign_as=f4037fe5.0

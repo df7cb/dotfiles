@@ -12,9 +12,14 @@ ifdef xface source ~/.mutt/x-face
 source ~/.mutt/lists
 source ~/.mutt/hooks
 
+set from="cb@df7cb.de"
+set postponed="=cb/postponed"
+set signature="~/.priv/mutt/signature.cb@df7cb.de"
+set spoolfile="=cb/cb"
+set record="!"
+
 # aliases
 source `if [ -f ~/.priv/mutt/aliases ] ; then echo ~/.priv/mutt/aliases ; else echo /dev/null ; fi`
 source `if [ -f ~/.priv/mutt/aliases.ab ] ; then echo ~/.priv/mutt/aliases.ab ; else echo /dev/null ; fi`
 
-set spoolfile="~/mail/cb/cb"
 source `if [ -f ~/.priv/mutt/account ] ; then echo ~/.priv/mutt/account ; else echo /dev/null ; fi`
