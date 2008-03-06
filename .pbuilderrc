@@ -25,6 +25,7 @@ BUILDRESULT="$ROOT/result"
 APTCACHE="$ROOT/aptcache"
 #ln: creating hard link `/data/pbuilder/aptcache//g++_4%3a3.3.5-1_i386.deb' to `/data/pbuilder/build//3381/var/cache/apt/archives/g++_4%3a3.3.5-1_i386.deb': Invalid cross-device link
 APTCACHEHARDLINK="no"
+#DEBBUILDOPTS="-j2"
 
 BUILDUSERID=1000
 LOGNAME=root
