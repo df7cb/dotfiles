@@ -1,0 +1,42 @@
+#!/bin/sh
+
+try_vcs_dir ()
+{
+	dir="$1"
+	if [ -d $dir/CVS ] ; then
+		VCS=cvs
+	elif [ -d $dir/.svn ] ; then
+		VCS=svn
+	elif [ -d $dir/.hg ] ; then
+		VCS=hg
+	elif [ -d $dir/.git ] ; then
+		VCS=git
+	elif [ -d $dir/.bzr ] ; then
+		VCS=bzr
+	else
+		return 1
+	fi
+	return 0
+}
+
+find_vcs ()
+{
+	if ! try_vcs_dir . || try_vcs_dir .. || try_vcs_dir ../.. ; then
+		echo "No VCS found" 1&>2
+		exit 1
+	fi
+}
+
+find_vcs
+
+case $1 in
+	st*) case $VCS in
+		cvs) shift; cvs update ;;
+		*) $VCS "$@" ;;
+	esac ;;
+	add*) $VCS "$@" ;;
+	ci*) $VCS "$@" ;;
+	co*) $VCS "$@" ;;
+	log*) $VCS "$@" ;;
+	up*) $VCS "$@" ;;
+esac
