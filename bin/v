@@ -1,8 +1,13 @@
 #!/bin/sh
 
+# DWIM cvs/svn/whatever wrapper.
+# (public domain) 2008 Christoph Berg <cb@df7cb.de>
+# One of the scripts I should have written years ago.
+
 try_vcs_dir ()
 {
 	dir="$1"
+	#echo "Looking in $dir ..."
 	if [ -d $dir/CVS ] ; then
 		VCS=cvs
 	elif [ -d $dir/.svn ] ; then
@@ -21,22 +26,30 @@ try_vcs_dir ()
 
 find_vcs ()
 {
-	if ! try_vcs_dir . || try_vcs_dir .. || try_vcs_dir ../.. ; then
-		echo "No VCS found" 1&>2
-		exit 1
+	base="$1"
+	if try_vcs_dir $base || try_vcs_dir $base/.. || try_vcs_dir $base/../.. ; then
+		return 0
 	fi
+	echo "No VCS found" 1>&2
+	exit 1
 }
 
-find_vcs
+command="$1"
+shift
 
-case $1 in
-	st*) case $VCS in
+base="."
+for base in "$@" ; do : ; done
+test ! -d "$base" && base=$(dirname "$base")
+find_vcs "$base"
+
+#echo $VCS "$@"
+case $command in
+	st|status) case $VCS in
 		cvs) shift; cvs update ;;
-		*) $VCS "$@" ;;
+		*) $VCS $command "$@" ;;
 	esac ;;
-	add*) $VCS "$@" ;;
-	ci*) $VCS "$@" ;;
-	co*) $VCS "$@" ;;
-	log*) $VCS "$@" ;;
-	up*) $VCS "$@" ;;
+	add|ci|co|commit|diff|log|up|update|"")
+		$VCS $command "$@" ;;
+	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
+		$VCS $command "$@" ;;
 esac
