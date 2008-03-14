@@ -35,11 +35,11 @@ find_vcs ()
 }
 
 command="$1"
-shift
+test "$command" && shift
 
 base="."
 for base in "$@" ; do : ; done
-test ! -d "$base" && base=$(dirname "$base")
+test ! -d "$base" && base="`dirname '$base'`"
 find_vcs "$base"
 
 #echo $VCS "$@"
@@ -51,5 +51,5 @@ case $command in
 	add|ci|co|commit|diff|log|up|update|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
-		$VCS $command "$@" ;;
+		$VCS "$command" "$@" ;;
 esac
