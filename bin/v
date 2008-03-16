@@ -44,11 +44,15 @@ find_vcs "$base"
 
 #echo $VCS "$@"
 case $command in
-	st|status) case $VCS in
-		cvs) shift; cvs update ;;
+	pull) case $VCS in
+		hg) hg pull -u "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	add|ci|co|commit|diff|log|up|update|"")
+	st|status) case $VCS in
+		cvs) cvs update "$@" ;;
+		*) $VCS $command "$@" ;;
+	esac ;;
+	add|ci|co|commit|diff|log|push|up|update|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
 		$VCS "$command" "$@" ;;
