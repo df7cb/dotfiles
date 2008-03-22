@@ -2,7 +2,7 @@
 # Configure wmii
 
 # Configuration Variables
-MODKEY=Mod1
+MODKEY=Mod4
 UP=k
 DOWN=j
 LEFT=h
@@ -109,7 +109,7 @@ eventstuff() {
 	Key $MODKEY-t
 		wmiir xwrite /ctl "view $(tagsmenu)" &
 	Key $MODKEY-Return
-		$WMII_TERM &
+		SHLVL=0 $WMII_TERM &
 	Key $MODKEY-Shift-space
 		wmiir xwrite /tag/sel/ctl send sel toggle
 	Key $MODKEY-Shift-c
