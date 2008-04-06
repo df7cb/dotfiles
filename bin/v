@@ -52,6 +52,8 @@ case $command in
 	esac ;;
 	pull) case $VCS in
 		hg) hg pull -u "$@" ;;
+		svn) [ "$1" = "-u" ] && shift
+		     svn update "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	st|status) case $VCS in
