@@ -15,9 +15,9 @@ screen "0" {
     width = 0
     layoutinfo "mylayoutinfo" {
       mouse { modkey = {} button = "1" command = "tag_setlayout" arg = "+1" }
-      mouse { modkey = {} button = "4" command = "tag_setlayout" arg = "+1" }
       mouse { modkey = {} button = "3" command = "tag_setlayout" arg = "-1" }
-      mouse { modkey = {} button = "5" command = "tag_setlayout" arg = "-1" }
+      mouse { modkey = {} button = "4" command = "tag_setlayout" arg = "-1" }
+      mouse { modkey = {} button = "5" command = "tag_setlayout" arg = "+1" }
     }
     taglist "mytaglist" {
       mouse { modkey = {} button = "1" command = "tag_view" }
@@ -42,6 +42,8 @@ screen "0" {
       # font = ""
       show_icons = true
     }
+    textbox "mail" { text = "" bg = "#dd3333" }
+    textbox "clock" { text = "" bg = "#3333ff" }
   }
   tags {
     tag "1" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
@@ -49,8 +51,7 @@ screen "0" {
     tag "3" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
     tag "4" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
     tag "5" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "6" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "0" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "6" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
   }
   colors {
     normal_border = "#111111"
@@ -61,11 +62,11 @@ screen "0" {
     focus_fg = "#ffffff"
     urgent_bg = "#ff0000"
     urgent_fg = "#ffffff"
-    tab_border = "#ff0000"
   }
   layouts {
     layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
     layout "tileleft" { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
+    layout "tilebottom" { image = "/usr/share/awesome/icons/layouts/tilebottomw.png" }
     layout "spiral" { image = "/usr/share/awesome/icons/layouts/spiralw.png" }
     layout "dwindle" { image = "/usr/share/awesome/icons/layouts/dwindlew.png" }
     layout "max" { image = "/usr/share/awesome/icons/layouts/maxw.png" }
@@ -90,9 +91,9 @@ screen "1" {
     width = 0
     layoutinfo "mylayoutinfo" {
       mouse { modkey = {} button = "1" command = "tag_setlayout" arg = "+1" }
-      mouse { modkey = {} button = "4" command = "tag_setlayout" arg = "+1" }
       mouse { modkey = {} button = "3" command = "tag_setlayout" arg = "-1" }
-      mouse { modkey = {} button = "5" command = "tag_setlayout" arg = "-1" }
+      mouse { modkey = {} button = "4" command = "tag_setlayout" arg = "-1" }
+      mouse { modkey = {} button = "5" command = "tag_setlayout" arg = "+1" }
     }
     taglist "mytaglist" {
       mouse { modkey = {} button = "1" command = "tag_view" }
@@ -117,16 +118,16 @@ screen "1" {
       # font = ""
       show_icons = true
     }
-    textbox clock { text = "                          " bg = "#3333ff" }
+    textbox "mail" { text = "" bg = "#dd3333" }
+    textbox "clock" { text = "" bg = "#3333ff" }
   }
   tags {
-    tag "7" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "8" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "9" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "A" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "B" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "C" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "D" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "1" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "2" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "3" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "4" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "5" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
+    tag "6" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
   }
   colors {
     normal_border = "#111111"
@@ -137,11 +138,11 @@ screen "1" {
     focus_fg = "#ffffff"
     urgent_bg = "#ff0000"
     urgent_fg = "#ffffff"
-    tab_border = "#ff0000"
   }
   layouts {
     layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
     layout "tileleft" { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
+    layout "tilebottom" { image = "/usr/share/awesome/icons/layouts/tilebottomw.png" }
     layout "spiral" { image = "/usr/share/awesome/icons/layouts/spiralw.png" }
     layout "dwindle" { image = "/usr/share/awesome/icons/layouts/dwindlew.png" }
     layout "max" { image = "/usr/share/awesome/icons/layouts/maxw.png" }
@@ -166,7 +167,10 @@ rules {
 }
 keys {
   key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "exec x-terminal-emulator" }
-  key { modkey = {"Mod4"} key = "p" command = "spawn" arg = "exec dprog" }
+  key { modkey = {"Mod4"} key = "p" command = "spawn"
+    #arg = "exec /bin/sh -c \"find `echo $PATH | sed 's/:/ /g'` -maxdepth 1 -not -type d -printf '%f\n' | sort -u | awesome-menu -e 'exec '\""
+    arg = "exec dprog"
+  }
   key { modkey = {"Mod4", "Control"} key = "n" command = "tag_setlayout" arg = "+1" }
   key { modkey = {"Mod4", "Control"} key = "p" command = "tag_setlayout" arg = "-1" }
   key { modkey = {"Mod4"} key = "b" command = "statusbar_toggle" }
@@ -197,25 +201,25 @@ keys {
   key { modkey = {"Mod4", "Shift", "Control"} key = "o" command = "client_toggletag" }
   keylist {
     modkey = {"Mod4"}
-    keylist = {"1", "2", "3", "4", "5", "6", "0", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "tag_view"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
     modkey = {"Mod4", "Control"}
-    keylist = {"1", "2", "3", "4", "5", "6", "0", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "tag_toggleview"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
     modkey = {"Mod4", "Shift"}
-    keylist = {"1", "2", "3", "4", "5", "6", "0", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "client_tag"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
     modkey = {"Mod4", "Shift", "Control"}
-    keylist = {"1", "2", "3", "4", "5", "6", "0", "8", "9"}
+    keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "client_toggletag"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
