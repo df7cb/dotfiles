@@ -12,6 +12,7 @@
 #include <unistd.h>
 
 #define TIMEFORMAT " %-e. %-H:%M:%S "
+/* #define TIMEFORMAT " KW %V %-e. %b %-H:%M:%S " */
 
 static void
 wait_for_socket ()
