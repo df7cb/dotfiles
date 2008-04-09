@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#IFS=: ; find $PATH -maxdepth 1 -not -type d -printf '%f\n' | sort -u | awesome-menu -e 'exec '
-
-prog=`dmenu_path | dmenu -fn 10x20 -nb '#111111' -nf '#ffffff' -sb '#9cd234' -sf '#ffffff'`
+prog=`( IFS=: ; find $PATH -maxdepth 1 -not -type d -printf '%f\n' | sort -u ) | dmenu`
 
 [ "$prog" ] && eval exec "$prog"
