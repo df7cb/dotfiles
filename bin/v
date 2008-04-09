@@ -60,7 +60,11 @@ case $command in
 		cvs) cvs update "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	add|co|cp|diff|log|mv|push|resolved|revert|rm|up|update|"")
+	up|update) case $VCS in
+		hg) hg pull -u "$@" ;;
+		*) $VCS $command "$@" ;;
+	esac ;;
+	add|co|cp|diff|log|mv|push|resolved|revert|rm|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
 		$VCS "$command" "$@" ;;
