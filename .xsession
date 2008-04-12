@@ -22,7 +22,7 @@ fi
 
 XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
 
-#set up X server
+# set up X server
 xhost - >/dev/null
 xkbd load
 xrdb .Xdefaults
@@ -31,19 +31,19 @@ xset r rate 400 30
 
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
-	xscreensaver -nosplash &
 	xsetroot -solid navy &
-	#xroot &
-	#xclock -g x13+0+0 -strftime '%e.%m. %T' & # 110x13
-	[ -e .plan.dir/dayplan ] && type -p pland > /dev/null && pland -k &
-	[ -f .aumixrc-default ] && aumix -f .aumixrc-default -L
-	#type -p esd > /dev/null && esd -nobeeps -as 2 &
-	workrave &
-	xplanet -lat 51.191253 -lon 6.422786 &
-
-	[ -x /usr/bin/gpg-agent ] && [ -z "$GPG_AGENT_INFO" ] && eval `gpg-agent --daemon`
-	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
-	[ "`echo .ssh/*.pub`" != ".ssh/*.pub" ] && [ "$SSH_AUTH_SOCK" ] && ssh-add < /dev/null # there are keys
+	type -p autocutsel > /dev/null && autocutsel &
+	if type -p ssh-agent > /dev/null ; then
+		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
+		[ "`echo .ssh/*.pub`" != ".ssh/*.pub" ] && [ "$SSH_AUTH_SOCK" ] && \
+			ssh-add < /dev/null # there are keys
+	fi
+	type -p gpg-agent > /dev/null && [ -z "$GPG_AGENT_INFO" ] && \
+		eval `gpg-agent --daemon`
+	#type -p workrave > /dev/null && workrave &
+	type -p xscreensaver > /dev/null && xscreensaver -nosplash &
+	type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
+	type -p awesome-clock > /dev/null && awesome-clock 1 ~/mail/cb/cb/new &
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
 else
 	xsetroot -solid limegreen
@@ -52,9 +52,7 @@ fi
 # ugly hack to make SHLVL=1 in xterms spawned by fvwm
 SHLVL=-1
 
-while ! wmii ; do sleep 5 ; done
-
-#[[ "$XVENDOR" != *VNC* ]] && export console=yes
-#xterm +ut -vb -C -geometry 62x5+120-0 -T console
+while ! awesome ; do sleep 2 ; done
+#xterm
 
 # vim:ts=4:sw=4:
