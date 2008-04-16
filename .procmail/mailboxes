@@ -46,7 +46,7 @@ $M/debian
 
 # Bulk mail
 :0:
-* ^List-Id: .*<(debian-(devel|project|wnpp)\.|debconf-)
+* ^List-Id: .*<(debian-(devel|project|wnpp)\.|debconf-|backports-users)
 $M/debian-devel
 
 :0:
@@ -78,7 +78,7 @@ $M/pisg
 # Geocaching logs
 :0:
 * ^From: .*@geocaching.com
-* ^Subject: \[LOG\]
+* ^Subject: \[LOG\] Watchlist:
 $M/geocaching
 
 # Hobbit
