@@ -1,15 +1,31 @@
 screen "0" {
+  styles {
+    normal {
+      font = "Mono 12"
+      fg = "#ffffff"
+      bg = "#111111"
+      border = "#111111"
+    }
+    focus {
+      fg = "#ffffff"
+      bg = "#9cd234"
+      border = "#ecb204"
+    }
+    urgent {
+      fg = "#ffffff"
+      bg = "#ff0000"
+    }
+  }
   general {
     border = 1
     snap = 8
     resize_hints = true
-    opacity_unfocused = 100
+    opacity_unfocused = 1.0
     sloppy_focus = true
     new_become_master = true
     new_get_focus = true
-    font = "mono-12"
   }
-  statusbar "mystatusbar" {
+  statusbar "topbar" {
     position = "top"
     height = 0
     width = 0
@@ -42,8 +58,22 @@ screen "0" {
       # font = ""
       show_icons = true
     }
-    textbox "mail" { text = "" bg = "#dd3333" }
-    textbox "clock" { text = "" bg = "#3333ff" }
+    textbox "mail" { text = ""
+      style {
+	font = "Mono 12"
+	fg = "#ffffff"
+	bg = "#111111"
+	border = "#111111"
+      }
+    }
+    textbox "clock" { text = ""
+      style {
+	font = "Mono 12"
+	fg = "#ffffff"
+	bg = "#111111"
+	border = "#111111"
+      }
+    }
   }
   tags {
     tag "1" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
@@ -52,16 +82,6 @@ screen "0" {
     tag "4" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
     tag "5" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
     tag "6" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-  }
-  colors {
-    normal_border = "#111111"
-    normal_bg = "#111111"
-    normal_fg = "#ffffff"
-    focus_border = "#ecb204"
-    focus_bg = "#9cd234"
-    focus_fg = "#ffffff"
-    urgent_bg = "#ff0000"
-    urgent_fg = "#ffffff"
   }
   layouts {
     layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
@@ -75,15 +95,32 @@ screen "0" {
   padding { top = 0 bottom = 0 right = 0 left = 0 }
 }
 screen "1" {
+  styles {
+    normal {
+      font = "Mono 12"
+      fg = "#ffffff"
+      bg = "#111111"
+      border = "#111111"
+    }
+    focus {
+      fg = "#ffffff"
+      bg = "#9cd234"
+      border = "#ecb204"
+    }
+    urgent {
+      fg = "#ffffff"
+      bg = "#ff0000"
+    }
+  }
   general {
     border = 1
     snap = 8
     resize_hints = true
-    opacity_unfocused = 100
+    opacity_unfocused = 1.0
     sloppy_focus = true
     new_become_master = true
     new_get_focus = true
-    font = "mono-12"
+    #font = "Mono 12"
   }
   statusbar "mystatusbar" {
     position = "top"
@@ -118,8 +155,8 @@ screen "1" {
       # font = ""
       show_icons = true
     }
-    textbox "mail" { text = "" bg = "#dd3333" }
-    textbox "clock" { text = "" bg = "#3333ff" }
+    textbox "mail" { text = "" } #background = "#dd3333" }
+    textbox "clock" { text = "" } #background = "#3333ff" }
   }
   tags {
     tag "1" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
@@ -129,16 +166,16 @@ screen "1" {
     tag "5" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
     tag "6" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
   }
-  colors {
-    normal_border = "#111111"
-    normal_bg = "#111111"
-    normal_fg = "#ffffff"
-    focus_border = "#ecb204"
-    focus_bg = "#9cd234"
-    focus_fg = "#ffffff"
-    urgent_bg = "#ff0000"
-    urgent_fg = "#ffffff"
-  }
+  #colors {
+  #  normal_border = "#111111"
+  #  normal_bg = "#111111"
+  #  normal_fg = "#ffffff"
+  #  focus_border = "#ecb204"
+  #  focus_bg = "#9cd234"
+  #  focus_fg = "#ffffff"
+  #  urgent_bg = "#ff0000"
+  #  urgent_fg = "#ffffff"
+  #}
   layouts {
     layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
     layout "tileleft" { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
@@ -158,12 +195,11 @@ rules {
     # tags = ""
     # icon = ""
     float = "true"
-    screen = -1
   }
-  rule { name = "MPlayer" float = "true" screen = -1 }
-  rule { name = "Acroread" float = "true" screen = -1 }
-  rule { name = "pinentry" float = "true" screen = -1 }
-  rule { name = "Tenace" float = "true" screen = -1 }
+  rule { name = "MPlayer" float = "true" }
+  rule { name = "Acroread" float = "true" }
+  rule { name = "pinentry" float = "true" }
+  rule { name = "Tenace" float = "true" }
 }
 keys {
   key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "exec x-terminal-emulator" }
