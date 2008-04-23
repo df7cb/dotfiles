@@ -84,16 +84,16 @@ main (int argc, char **argv)
 	for (;;) {
 		gettimeofday (&t, NULL);
 		strftime (buf, sizeof (buf), TIMEFORMAT, localtime (&t.tv_sec));
-		fprintf (a, "%d widget_tell clock %s\n\n",
+		fprintf (a, "%d widget_tell topbar clock text %s\n\n",
 				clock_screen, buf);
 
 		if (maildir && t.tv_sec >= mail_time + 10) {
 			int c = count_mail (maildir);
 			if (c)
-				fprintf (a, "0 widget_tell mail  %d Mail%s \n",
+				fprintf (a, "0 widget_tell topbar mail text  %d Mail%s \n",
 						c, c > 1 ? "s" : "");
 			else
-				fprintf (a, "0 widget_tell mail \n");
+				fprintf (a, "0 widget_tell topbar mail text \n");
 			mail_time = t.tv_sec - (t.tv_sec % 10);
 		}
 
