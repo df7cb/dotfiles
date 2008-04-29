@@ -185,7 +185,7 @@ sub remake() {
 	my $remove_prefix = Irssi::settings_get_str('chanact_remove_prefix');
 	my $abbrev = Irssi::settings_get_int('chanact_abbreviate_names');
 	my $remove_hash = Irssi::settings_get_bool('chanact_remove_hash');
-	my %level_list = map { /(.*):(.*)/ ? ($1, $2) : ($_, 1) }
+	my %level_list = map { /(.*):(.*)/ ? (lc($1), $2) : (lc($_), 1) }
 		split (/\s+/, Irssi::settings_get_str("chanact_ignore_level"));
 	my $data_level = Irssi::settings_get_int('chanact_data_level');
 	
@@ -200,7 +200,7 @@ sub remake() {
 
 		!ref($win) && next;
 
-		if ($win->{data_level} < ($level_list{$name} || $data_level)) {
+		if ($win->{data_level} < ($level_list{lc($name)} || $data_level)) {
 			next;
 		}
 
@@ -386,12 +386,38 @@ sub refnum_changed {
 	}
 }
 
+sub cmd_ignore_level {
+	my ($data, $server, $witem) = @_;
+	my $level_list = Irssi::settings_get_str("chanact_ignore_level");
+	my %level_list = map { /(.*):(.*)/ ? ($1, $2) : ($_, 1) } split (/\s+/, $level_list);
+
+	my @args = split /\s+/, $data;
+	if (@args == 2 and $args[1] =~ /^[1-9]$/) {
+		$level_list{$args[0]} = $args[1];
+	} elsif (@args == 2 and $args[1] =~ /^[0-]$/) {
+		delete $level_list{$args[0]};
+	} elsif (@args == 1) {
+		$level_list{$args[0]} = 1;
+	} elsif (@args == 0) {
+		Irssi::print ("chanact_ignore_level $level_list");
+		return;
+	} else {
+		Irssi::print ("Usage: /chanact_ignore_level #channel [level]  Set level to 0 to remove.");
+		return;
+	}
+
+	$level_list = join (' ', map { $level_list{$_} != 1 ? "$_:$level_list{$_}" : $_} sort keys %level_list);
+	Irssi::settings_set_str ("chanact_ignore_level", $level_list);
+	chanactHasChanged ();
+}
+
 $needRemake = 1;
 
 # Window alias command
 Irssi::command_bind('window_alias','cmd_window_alias');
 Irssi::command_bind('window_unalias','cmd_window_unalias');
 # Irssi::command_bind('window_alias_rebuild','cmd_rebuild_aliases');
+Irssi::command_bind('chanact_ignore_level','cmd_ignore_level');
 
 # our config item
 Irssi::settings_add_str('chanact', 'chanact_display', '$H$N:$M$C$S');
