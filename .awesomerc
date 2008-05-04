@@ -62,7 +62,7 @@ screen "0" {
       style {
 	font = "Mono 12"
 	fg = "#ffffff"
-	bg = "#111111"
+	bg = "#dd1111"
 	border = "#111111"
       }
     }
@@ -70,7 +70,7 @@ screen "0" {
       style {
 	font = "Mono 12"
 	fg = "#ffffff"
-	bg = "#111111"
+	bg = "#1111dd"
 	border = "#111111"
       }
     }
@@ -83,99 +83,6 @@ screen "0" {
     tag "5" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
     tag "6" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
   }
-  layouts {
-    layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
-    layout "tileleft" { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
-    layout "tilebottom" { image = "/usr/share/awesome/icons/layouts/tilebottomw.png" }
-    layout "spiral" { image = "/usr/share/awesome/icons/layouts/spiralw.png" }
-    layout "dwindle" { image = "/usr/share/awesome/icons/layouts/dwindlew.png" }
-    layout "max" { image = "/usr/share/awesome/icons/layouts/maxw.png" }
-    layout "floating" { image = "/usr/share/awesome/icons/layouts/floatingw.png" }
-  }
-  padding { top = 0 bottom = 0 right = 0 left = 0 }
-}
-screen "1" {
-  styles {
-    normal {
-      font = "Mono 12"
-      fg = "#ffffff"
-      bg = "#111111"
-      border = "#111111"
-    }
-    focus {
-      fg = "#ffffff"
-      bg = "#9cd234"
-      border = "#ecb204"
-    }
-    urgent {
-      fg = "#ffffff"
-      bg = "#ff0000"
-    }
-  }
-  general {
-    border = 1
-    snap = 8
-    resize_hints = true
-    opacity_unfocused = 1.0
-    sloppy_focus = true
-    new_become_master = true
-    new_get_focus = true
-    #font = "Mono 12"
-  }
-  statusbar "mystatusbar" {
-    position = "top"
-    height = 0
-    width = 0
-    layoutinfo "mylayoutinfo" {
-      mouse { modkey = {} button = "1" command = "tag_setlayout" arg = "+1" }
-      mouse { modkey = {} button = "3" command = "tag_setlayout" arg = "-1" }
-      mouse { modkey = {} button = "4" command = "tag_setlayout" arg = "-1" }
-      mouse { modkey = {} button = "5" command = "tag_setlayout" arg = "+1" }
-    }
-    taglist "mytaglist" {
-      mouse { modkey = {} button = "1" command = "tag_view" }
-      mouse { modkey = {} button = "2" command = "client_tag" }
-      mouse { modkey = {} button = "3" command = "tag_toggleview" }
-      mouse { modkey = {"Mod4"} button = "3" command = "client_toggletag" }
-      mouse { modkey = {} button = "4" command = "tag_viewprev" }
-      mouse { modkey = {} button = "5" command = "tag_viewnext" }
-    }
-    tasklist "mytasklist" {
-      mouse { modkey = {"Mod4"} button = "1" command = "client_togglefloating" }
-      mouse { modkey = {} button = "2" command = "client_zoom" }
-      mouse { modkey = {} button = "3" command = "client_togglemax" }
-      mouse { modkey = {} button = "4" command = "client_focusprev" }
-      mouse { modkey = {} button = "5" command = "client_focusnext" }
-      mouse { modkey = {"Mod4"} button = "4" command = "client_swapprev" }
-      mouse { modkey = {"Mod4"} button = "5" command = "client_swapnext" }
-      # fg = ""
-      # bg = ""
-      # focus_fg = ""
-      # focus_bg = ""
-      # font = ""
-      show_icons = true
-    }
-    textbox "mail" { text = "" } #background = "#dd3333" }
-    textbox "clock" { text = "" } #background = "#3333ff" }
-  }
-  tags {
-    tag "1" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "2" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "3" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "4" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "5" { layout = "tile" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-    tag "6" { layout = "floating" mwfact = 0.500000 nmaster = 1 ncol = 1 }
-  }
-  #colors {
-  #  normal_border = "#111111"
-  #  normal_bg = "#111111"
-  #  normal_fg = "#ffffff"
-  #  focus_border = "#ecb204"
-  #  focus_bg = "#9cd234"
-  #  focus_fg = "#ffffff"
-  #  urgent_bg = "#ff0000"
-  #  urgent_fg = "#ffffff"
-  #}
   layouts {
     layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
     layout "tileleft" { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
