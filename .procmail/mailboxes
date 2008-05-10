@@ -16,7 +16,7 @@ $M/mutt
 $M/debian-bts
 
 :0c:
-* ^X-Mailing-List: <debian-(devel-)?announce@lists.debian.org>
+* ^X-Mailing-List: <debian-((devel-)?announce|news)@lists.debian.org>
 $DEFAULT
 
 :0:
