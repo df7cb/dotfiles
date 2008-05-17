@@ -80,6 +80,9 @@ $M/pisg
 * ^From: .*@geocaching.com
 * ^Subject: \[LOG\] Watchlist:
 $M/geocaching
+:0:
+* ^List-Id:.*(gpsbabel|openstreetmap.org|viking)
+$M/geocaching
 
 # Hobbit
 :0:
