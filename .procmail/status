@@ -8,7 +8,7 @@
 # killfile 1
 :0
 * !^Status:
-* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|neroden@fastmail.fm|mennucc1@debian.org|wildfire@progsoc.uts.edu.au|hexstar@gmail.com|t@b-tk.org|mjr@phonecoop.coop|brederlo@informatik.uni-tuebingen.de|joss@debian.org|Joerg.Schilling@fokus.fraunhofer.de|paddy.frank@gmail.com|sven@powerlinux.fr|michaelkammermeier@freenet.de)>
+* ^From: .*<(paddy@panici.net|linux4michelle@freenet.de|sven.luther@wanadoo.fr|tb@becket.net|ean@brainfood.com|bunk@stusta.de|neroden@twcny.rr.com|neroden@fastmail.fm|mennucc1@debian.org|wildfire@progsoc.uts.edu.au|hexstar@gmail.com|t@b-tk.org|mjr@phonecoop.coop|brederlo@informatik.uni-tuebingen.de|joss@debian.org|Joerg.Schilling@fokus.fraunhofer.de|paddy.frank@gmail.com|sven@powerlinux.fr|michaelkammermeier@freenet.de|mgb-debian@yosemite.net)>
 {
 	:0ch
 	* ^Message-Id: \/.*
