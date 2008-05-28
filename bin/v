@@ -47,6 +47,7 @@ find_vcs "$base"
 #echo $VCS "$@"
 case $command in
 	ci|com|commit) case $VCS in
+		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
@@ -61,6 +62,7 @@ case $command in
 		*) $VCS $command "$@" ;;
 	esac ;;
 	up|update) case $VCS in
+		bzr) bzr pull "$@" ;;
 		hg) hg pull -u "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
