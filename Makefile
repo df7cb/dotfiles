@@ -57,13 +57,11 @@ st: status
 status:
 	@svn -q status
 	@if [ -d .priv ] ; then $(MAKE) -C .priv status ; fi
-	@if [ -d projects/geocaching ] ; then cd projects/geocaching && svn st ; fi
 
 up: update
 update: cleanup
 	svn update
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
-	@if [ -d projects/geocaching ] ; then cd projects/geocaching && svn up ; fi
 	@$(MAKE) all
 
 com: commit
