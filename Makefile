@@ -70,5 +70,4 @@ com: commit
 commit: cleanup
 	svn commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS)
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
-	@if [ -d projects/geocaching ] ; then cd projects/geocaching && svn ci -m "make commit by $(USER)@$(shell hostname)" myon.viking ; fi
 
