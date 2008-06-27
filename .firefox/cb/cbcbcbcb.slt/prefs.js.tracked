@@ -79,6 +79,9 @@ user_pref("adblock.patterns",
  http://dict.leo.org/*.jpg
  http://jobs.*
  http://*.blogads.*
+ http://*banner*
+ http://www.frsirt.com/
+ https://ssl.dg-i.net/rt/NoAuth/images/bplogo.gif
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
