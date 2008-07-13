@@ -1,0 +1,32 @@
+#!/bin/sh
+
+cd ${TMPDIR:-"/tmp"}
+
+POCKET=`basename $1 .zip`
+
+NAME="$2"
+[ -z "$NAME" ] && NAME="$POCKET"
+case $NAME in
+	1948628) NAME="Mönchengladbach" ;;
+	1948630) NAME="Myon gefunden" ;;
+	2047388) NAME="Neue Caches" ;;
+esac
+
+unzip -o $1
+[ -e $POCKET.gpx ] || exit 2
+
+#lsmod | grep -q garmin || sudo modprobe garmin_gps
+#gpsbabel -i gpx -f $POCKET.gpx -f $POCKET-wpts.gpx -o garmin -F /dev/ttyUSB0
+
+gpsbabel -c utf-8 -i gpx -f $POCKET.gpx -o html,logs -F $POCKET-utf8.html
+iconv -c -f utf8 -t latin1 $POCKET-utf8.html > $POCKET.html
+
+# --url-pattern=$POCKET.html
+plucker-build --stayondomain --bpp=8 \
+  --doc-name="$NAME" --category="Geocaching" \
+  --charset=utf-8 --maxwidth=300 \
+  --doc-file=$PWD/$POCKET --home-url=$PWD/$POCKET.html
+
+pilot-xfer -i $POCKET.pdb
+
+rm -f $POCKET*.gpx $POCKET*.html $POCKET.pdb

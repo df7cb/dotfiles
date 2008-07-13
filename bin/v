@@ -28,7 +28,10 @@ find_vcs ()
 {
 	base="$1"
 	#echo "Looking from $base ..."
-	if try_vcs_dir $base || try_vcs_dir $base/.. || try_vcs_dir $base/../.. ; then
+	if try_vcs_dir $base ||
+	   try_vcs_dir $base/.. ||
+	   try_vcs_dir $base/../.. ||
+	   try_vcs_dir $base/../../.. ; then
 		echo "$VCS: $dir" 1>&2
 		return 0
 	fi
