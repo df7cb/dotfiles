@@ -15,9 +15,10 @@ folder-hook .			'push <collapse-all>'
 message-hook .			"ignore Sender"
 message-hook '~h X-Katie:'	"unignore Sender"
 
-send-hook . "set pgp_autosign mime_forward=ask-yes"
+send-hook . "set pgp_autosign pgp_autoinline=no mime_forward=ask-yes"
 send-hook '~t (majordomo\|-request\|fleas)@' "unset pgp_autosign mime_forward"
 send-hook '~t debian\.org$' "set from=myon@debian.org"
+send-hook '~t rt\.debian\.org$' "set pgp_autoinline"
 send2-hook 'debian.org' "set from=myon@debian.org"
 
 # don't bug me with bugs
