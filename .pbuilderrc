@@ -22,13 +22,15 @@ BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
 ls -l "$BASETGZ" || :
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
-APTCACHE="$ROOT/aptcache"
+#APTCACHE="$ROOT/aptcache"
+APTCACHE=""
 #ln: creating hard link `/data/pbuilder/aptcache//g++_4%3a3.3.5-1_i386.deb' to `/data/pbuilder/build//3381/var/cache/apt/archives/g++_4%3a3.3.5-1_i386.deb': Invalid cross-device link
 APTCACHEHARDLINK="no"
 #DEBBUILDOPTS="-j2"
 
 BUILDUSERID=1000
 LOGNAME=root
+HOOKDIR=$HOME/.pbuilder-hooks
 
 #OTHERMIRROR="deb http://planck.df7cb.de/apt-move unstable main"
 #export http_proxy="http://router.df7cb.de:3128/"
