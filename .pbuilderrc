@@ -2,6 +2,7 @@ DEBIAN_VERSION=`cat /etc/debian_version`
 case $DEBIAN_VERSION in
 	3.1) DISTRIBUTION="sarge" ;;
 	4.0) DISTRIBUTION="etch" ;;
+	5.0|lenny*) DISTRIBUTION="lenny" ;;
 	unstable|*/sid|sid) DISTRIBUTION="sid" ;;
 	testing/unstable) echo "please use unstable in /etc/debian_version"
 	   exit 1 ;;
@@ -20,6 +21,7 @@ fi
 ROOT="/srv/pbuilder"
 BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
 ls -l "$BASETGZ" || :
+BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
 #APTCACHE="$ROOT/aptcache"
@@ -27,8 +29,10 @@ APTCACHE=""
 #ln: creating hard link `/data/pbuilder/aptcache//g++_4%3a3.3.5-1_i386.deb' to `/data/pbuilder/build//3381/var/cache/apt/archives/g++_4%3a3.3.5-1_i386.deb': Invalid cross-device link
 APTCACHEHARDLINK="no"
 #DEBBUILDOPTS="-j2"
+DEBOOTSTRAP="debootstrap"
 
-BUILDUSERID=1000
+BUILDUSERID=1009
+BUILDUSERNAME=buildd
 LOGNAME=root
 HOOKDIR=$HOME/.pbuilder-hooks
 
