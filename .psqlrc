@@ -1,1 +1,3 @@
 \set ON_ERROR_ROLLBACK on
+\set PROMPT1 '%n@%m:%/ %x%R%# '
+\set PROMPT2 '%n@%m:%/ %x%R%# '
