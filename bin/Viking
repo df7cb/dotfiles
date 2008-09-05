@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd $HOME/.priv/geocaching
+viking myon.viking
