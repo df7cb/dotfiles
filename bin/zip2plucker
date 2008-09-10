@@ -23,24 +23,27 @@ NAME="$2"
 [ -z "$NAME" ] && NAME="$BASE"
 case $NAME in
 	1948628) NAME="Mönchengladbach" ;;
-	1948630) NAME="Myon gefunden" ;;
+	1948630) NAME="Gefunden von Myon" ;;
 	2047388) NAME="Neue Caches" ;;
 	2163721) NAME="Berlin" ;;
+	2234517) NAME="Myons Caches" ;;
+	2234688) NAME="Duisburg" ;;
 esac
 
 to_plucker () {
 	gpsbabel -c utf-8 -i gpx -f $BASE.gpx -o html,logs -F $BASE-utf8.html
 	iconv -c -f utf8 -t latin1 $BASE-utf8.html > $BASE.html || :
 
-	# --url-pattern=$BASE.html
+	# --url-pattern=$BASE.html --stayondomain
 	plucker-build \
 	  --doc-name="$NAME" --category="Geocaching" \
 	  --charset=utf-8 \
-	  --bpp=8 --maxwidth=160 --maxheight=160 --alt-maxwidth=320 \
-	  --maxdepth=1 --stayondomain \
+	  --bpp=16 --maxwidth=160 --maxheight=160 --alt-maxwidth=320 --alt-maxheight=320 \
+	  --maxdepth=1 \
 	  --doc-file=$PWD/$BASE --home-url=$PWD/$BASE.html
 
-	pilot-xfer -i $BASE.pdb
+	ls -lh $BASE.pdb
+	pilot-xfer -D/PALM/programs/Plucker/$BASE.pdb -i $BASE.pdb
 }
 
 to_viking () {
