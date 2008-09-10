@@ -1,32 +1,65 @@
 #!/bin/sh
 
-cd ${TMPDIR:-"/tmp"}
+set -e
 
-POCKET=`basename $1 .zip`
+DIR=$(mktemp -d -t pluckerXXXXXX)
+trap "rm -rf $DIR" 0 2 3 15
+
+FILE="$1"
+case $FILE in
+	*.zip) BASE=`basename $FILE .zip`
+		unzip -d $DIR -o $FILE ;;
+	*.gpx) BASE=`basename $FILE .gpx`
+		cp $FILE $DIR ;;
+	*) echo "unknown extension" ; exit 1 ;;
+esac
+cd $DIR
+if ! [ -e $BASE.gpx ] ; then
+	echo "$BASE.gpx not found"
+	exit 1
+fi
 
 NAME="$2"
-[ -z "$NAME" ] && NAME="$POCKET"
+[ -z "$NAME" ] && NAME="$BASE"
 case $NAME in
 	1948628) NAME="Mönchengladbach" ;;
 	1948630) NAME="Myon gefunden" ;;
 	2047388) NAME="Neue Caches" ;;
+	2163721) NAME="Berlin" ;;
 esac
 
-unzip -o $1
-[ -e $POCKET.gpx ] || exit 2
+to_plucker () {
+	gpsbabel -c utf-8 -i gpx -f $BASE.gpx -o html,logs -F $BASE-utf8.html
+	iconv -c -f utf8 -t latin1 $BASE-utf8.html > $BASE.html || :
 
-#lsmod | grep -q garmin || sudo modprobe garmin_gps
-#gpsbabel -i gpx -f $POCKET.gpx -f $POCKET-wpts.gpx -o garmin -F /dev/ttyUSB0
+	# --url-pattern=$BASE.html
+	plucker-build \
+	  --doc-name="$NAME" --category="Geocaching" \
+	  --charset=utf-8 \
+	  --bpp=8 --maxwidth=160 --maxheight=160 --alt-maxwidth=320 \
+	  --maxdepth=1 --stayondomain \
+	  --doc-file=$PWD/$BASE --home-url=$PWD/$BASE.html
 
-gpsbabel -c utf-8 -i gpx -f $POCKET.gpx -o html,logs -F $POCKET-utf8.html
-iconv -c -f utf8 -t latin1 $POCKET-utf8.html > $POCKET.html
+	pilot-xfer -i $BASE.pdb
+}
 
-# --url-pattern=$POCKET.html
-plucker-build --stayondomain --bpp=8 \
-  --doc-name="$NAME" --category="Geocaching" \
-  --charset=utf-8 --maxwidth=300 \
-  --doc-file=$PWD/$POCKET --home-url=$PWD/$POCKET.html
+to_viking () {
+	viking $BASE*.gpx
+}
 
-pilot-xfer -i $POCKET.pdb
+to_gps () {
+	lsmod | grep -q garmin || sudo modprobe garmin_gps
+	gpsbabel -i gpx -f $BASE.gpx -f $BASE-wpts.gpx -o garmin -F /dev/ttyUSB0
+}
 
-rm -f $POCKET*.gpx $POCKET*.html $POCKET.pdb
+if test -t 1 ; then
+	read -p 'Open with (p)lucker (v)iking (g)ps? ' answer
+	case $answer in
+		p) to_plucker ;;
+		v) to_viking ;;
+		g) to_gps ;;
+		*) echo "huh?" ; exit 1 ;;
+	esac
+else
+	to_plucker
+fi
