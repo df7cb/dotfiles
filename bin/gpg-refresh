@@ -1,6 +1,8 @@
 #!/bin/sh
 
 for server in `host subkeys.pgp.net | cut -d ' ' -f 4` ; do
+	[ "$server" = 221.133.213.196 ] && continue
+	host $server
 	gpg --keyserver $server --recv $PGPKEY $PGPKEY2
 done
 
