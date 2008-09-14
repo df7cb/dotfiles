@@ -47,6 +47,7 @@ to_plucker () {
 }
 
 to_viking () {
+	lsmod | grep -q garmin || sudo modprobe garmin_gps
 	viking $BASE*.gpx
 }
 
