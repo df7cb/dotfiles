@@ -13,6 +13,7 @@
 
 #define TIMEFORMAT " %-e. %-H:%M:%S "
 /* #define TIMEFORMAT " KW %V %-e. %b %-H:%M:%S " */
+#define ms * 1000
 
 static void
 wait_for_socket ()
@@ -30,9 +31,11 @@ wait_for_socket ()
 			getenv ("HOME"), atoi (display + 1));
 
 	for (i = 0; i < 20; i++) {
-		if (stat (socket, &st) != -1)
+		if (stat (socket, &st) != -1) {
+			usleep (1000 ms);
 			return;
-		usleep (500000);
+		}
+		usleep (500 ms);
 	}
 
 	perror (socket);
@@ -159,6 +162,6 @@ main (int argc, char **argv)
 		fprintf (a, "\n");
 
 		fflush (a);
-		usleep (1000000 - t.tv_usec);
+		usleep (1000 ms - t.tv_usec);
 	}
 }
