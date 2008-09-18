@@ -43,8 +43,8 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	#type -p workrave > /dev/null && workrave &
 	type -p xscreensaver > /dev/null && xscreensaver -nosplash &
 	type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
-	type -p awesome-clock > /dev/null && awesome-clock 1 ~/mail/cb/cb/new &
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
+	( sleep 2 ; type -p awesome-clock > /dev/null && awesome-clock 1 ~/mail/cb/cb/new ) &
 else
 	xsetroot -solid limegreen
 fi
