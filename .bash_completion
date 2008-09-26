@@ -82,7 +82,7 @@ complete -o default -c strace sudo type xargs
 complete -v unset vared
 
 # generic filetype rules
-complete -o default -f -X '!*.pdf' acroread xpdf
+complete -o default -f -X '!*.pdf' acroread evince xpdf
 complete -o default -f -X '!*.@(changes|deb|dsc)' lintian linda
 complete -o default -f -X '!*.@(deb|dsc)' debdiff
 complete -o default -f -X '!*.@(changes|dsc)' dscverify
