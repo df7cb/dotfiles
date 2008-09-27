@@ -80,3 +80,15 @@ incoming = tmp/UploadQueue
 pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
 post_upload_command = ssh tesla.df7cb.de reprepro include sid tmp/UploadQueue/*.changes
 
+[local]
+fqdn = volta.df7cb.de
+method = local
+incoming = /srv/ftp.debian.org/queue/unchecked
+run_dinstall = 0
+
+[debug]
+fqdn = tesla.df7cb.de
+login = myon
+method = rsync
+incoming = /cb/debug.debian.net/incoming
+post_upload_command = ssh tesla.df7cb.de /cb/debug.debian.net/process_incoming.sh
