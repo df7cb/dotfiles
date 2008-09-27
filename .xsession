@@ -35,8 +35,13 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	type -p autocutsel > /dev/null && autocutsel &
 	if type -p ssh-agent > /dev/null ; then
 		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
-		[ "`echo .ssh/*.pub`" != ".ssh/*.pub" ] && [ "$SSH_AUTH_SOCK" ] && \
-			ssh-add < /dev/null # there are keys
+		if [ "$SSH_AUTH_SOCK" ] ; then
+			for key in .ssh/*.pub ; do
+				KEY="$KEY .ssh/$(basename $key .pub)"
+			done
+			[ "$KEY" ] && ssh-add $KEY < /dev/null # there are keys
+			unset KEY
+		fi
 	fi
 	type -p gpg-agent > /dev/null && [ -z "$GPG_AGENT_INFO" ] && \
 		eval `gpg-agent --daemon`
