@@ -37,14 +37,14 @@ linux*|*vt100*|cons25)
 	PS1=''$u' '$j'\l \$\[\033[0m\] ' ;;
 screen*)
 	PS1='\[\033k\u@'$h'\h\033\\\033]0;\u@'$h'\h:\w\007\]'$u' '$j'\$\[\033[0m\] ' ;;
-xterm*|rxvt|cygwin)
+xterm*|rxvt*|cygwin)
 	PS1='\[\033]0;\u@'$h'\h:\w\007\]'$u' '$j'\$\[\033[0m\] '
 	if [ "$console" ] ; then
 		PS1='\[\033]0;console@'$h'\h:\w\007'$u' '$j'\$\[\033[0m\] '
 		export -n console
 	fi ;;
 *)
-	PS1='\n[$?] \u@'$h'w '$j'\$' ;;
+	PS1='\n[$?] \A \u@'$h'\h:\w '$j'\$ ' ;;
 esac
 unset h j u w
 
