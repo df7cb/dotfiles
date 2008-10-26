@@ -34,6 +34,8 @@ set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
 set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
 
+let g:is_posix=1	" sh syntax is POSIX
+
 filetype plugin indent on
 
 " Key bindings
