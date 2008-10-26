@@ -42,7 +42,7 @@ $M/devscripts
 $M/backports-changes
 :0:
 * ^List-Id: .*<backports-
-$M/debian
+$M/debian-devel
 
 # Bulk mail
 :0:
@@ -74,6 +74,11 @@ $M/bridge
 :0:
 * ^List-Id: .pisg-(general|commits)
 $M/pisg
+
+# PostgreSQL
+:0:
+* ^List-Id: <.*\.postgresql\.org>
+$M/postgresql
 
 # Geocaching logs
 :0:
