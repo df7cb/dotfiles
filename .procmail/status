@@ -39,3 +39,10 @@
 * ^From: .*<dak@.*.debian.org>
 * ^Subject: Processing of .*.changes
 | formail -i"Status: RO"
+
+# hide OFTC alerts
+:0fhw
+* !^Status:
+* ^From: .*cdlu@railfan.ca
+* ^Subject: \[oftc-noc\] Alert: 
+| formail -i"Status: RO"
