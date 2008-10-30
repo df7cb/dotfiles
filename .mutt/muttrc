@@ -8,7 +8,7 @@ source ~/.mutt/options
 source ~/.mutt/bind
 source ~/.mutt/color
 source ~/.mutt/headers
-ifdef xface source ~/.mutt/x-face
+source ~/.mutt/x-face
 source ~/.mutt/lists
 source ~/.mutt/hooks
 

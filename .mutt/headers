@@ -26,6 +26,7 @@ ignore X-From-Note X-Mutt-Ignore X-Revised- X-Message-Flag X-Virus
 ignore Old-X-Spam- # .procmailrc/spam
 ignore X-Original-To # postfix
 ignore X-IMAP
+ignore Face Mail-Copies-To X-Hashcash X-CRM114- X-SA- X-Grey # Manoj
 
 unignore Date
 unhdr_order *
