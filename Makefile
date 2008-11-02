@@ -69,3 +69,6 @@ commit: cleanup
 	svn commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS)
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
+ci:
+	$(MAKE) update
+	$(MAKE) commit
