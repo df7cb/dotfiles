@@ -39,6 +39,7 @@ links: \
 	autorun/nickcolor.pl \
 	autorun/oftc-server-notices.pl \
 	autorun/queryresume.pl \
+	autorun/quiet.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \
