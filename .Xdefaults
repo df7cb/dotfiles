@@ -31,45 +31,12 @@ Fig*PaperSize:		A4
 Fig*specialtext:	true
 Fig*splash:		false
 Netscape*blinkingEnabled: false
-! From http://kaluta.ilog.fr/colas/mouse-wheel-scroll/
-Netscape*drawingArea.translations:  #replace    \
-	<Btn1Down>:           ArmLink()   \n\
-	<Btn2Down>:           ArmLink()   \n\
-	~Shift<Btn1Up>:       ActivateLink()  \n\
-	~Shift<Btn2Up>:       ActivateLink(new-window)  \
-	DisarmLink()    \n\
-	Shift<Btn1Up>:        ActivateLink(save-only)  \
-	DisarmLink()    \n\
-	Shift<Btn2Up>:        ActivateLink(save-only)  \
-	DisarmLink()    \n\
-	<Btn1Motion>:             DisarmLinkIfMoved()  \n\
-	<Btn2Motion>:             DisarmLinkIfMoved()  \n\
-	<Btn3Motion>:             DisarmLinkIfMoved()  \n\
-	<Motion>:             DescribeLink()  \n\
-	<Btn3Down>:           xfeDoPopup()    \n\
-	<Btn3Up>:             ActivatePopup() \n\
-	Ctrl<Btn4Down>: PageUp()\n\
-	Ctrl<Btn5Down>: PageDown()\n\
-	Shift<Btn4Down>: LineUp()\n\
-	Shift<Btn5Down>: LineDown()\n\
-	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()\n\
-	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
-	Alt<Btn4Down>: xfeDoCommand(forward)\n\
-	Alt<Btn5Down>: xfeDoCommand(back)\n\
-	<Btn3Down>: \n\
-	<Btn3Down>,<Btn3Up>: xfeDoCommand(back)\n\
-	<Btn3Down>,<Btn3Motion>: xfeDoPopup()\n
-Netscape*globalNonTextTranslations: #override\n\
-	Shift<Btn4Down>: LineUp()\n\
-	Shift<Btn5Down>: LineDown()\n\
-	None<Btn4Down>:LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()\n\
-	None<Btn5Down>:LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
-	Alt<Btn4Down>: xfeDoCommand(forward)\n\
-	Alt<Btn5Down>: xfeDoCommand(back)\n\
-	<Btn3Down>: \n\
-	<Btn3Down>,<Btn3Up>: xfeDoCommand(back)\n\
-	<Btn3Down>,<Btn3Motion>: xfeDoPopup()\n
-Netscape*installColormap: true
+URxvt.font:		xft:Mono-9
+URxvt.keysym.M-C-1:	command:\033]710;xft:Mono-7\007
+URxvt.keysym.M-C-2:	command:\033]710;xft:Mono-9\007
+URxvt.keysym.M-C-3:	command:\033]710;xft:Mono-12\007
+URxvt.keysym.M-C-4:	command:\033]710;xft:Mono-15\007
+URxvt.keysym.M-C-5:	command:\033]710;xft:Mono-18\007
 XLock.logoutButton:	-1
 XLock.background:	black
 XLock.foreground:	red
