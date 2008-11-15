@@ -41,17 +41,17 @@ URxvt.colorBD:		navy
 URxvt.cursorBlink:	true
 URxvt.cursorColor:	RoyalBlue
 URxvt.fadeColor:	white
-URxvt.font:		xft:Mono-9
+URxvt.font:		xft:DejaVu Sans Mono-9,xft:Mono-9
 URxvt.internalBorder:	0
 URxvt.keysym.M-C-1:	command:\033]710;5x8\007
 URxvt.keysym.M-C-2:	command:\033]710;6x10\007
-URxvt.keysym.M-C-3:	command:\033]710;xft:Mono-9\007
-URxvt.keysym.M-C-4:	command:\033]710;xft:Mono-12\007
-URxvt.keysym.M-C-5:	command:\033]710;xft:Mono-15\007
-URxvt.keysym.M-C-6:	command:\033]710;xft:Mono-19\007
-URxvt.keysym.M-C-7:	command:\033]710;xft:Mono-23\007
-URxvt.keysym.M-C-8:	command:\033]710;xft:Mono-28\007
-URxvt.keysym.M-C-9:	command:\033]710;xft:Mono-35\007
+URxvt.keysym.M-C-3:	command:\033]710;xft:DejaVu Sans Mono-9,xft:Mono-9\007
+URxvt.keysym.M-C-4:	command:\033]710;xft:DejaVu Sans Mono-12,xft:Mono-12\007
+URxvt.keysym.M-C-5:	command:\033]710;xft:DejaVu Sans Mono-15,xft:Mono-15\007
+URxvt.keysym.M-C-6:	command:\033]710;xft:DejaVu Sans Mono-19,xft:Mono-19\007
+URxvt.keysym.M-C-7:	command:\033]710;xft:DejaVu Sans Mono-23,xft:Mono-23\007
+URxvt.keysym.M-C-8:	command:\033]710;xft:DejaVu Sans Mono-28,xft:Mono-28\007
+URxvt.keysym.M-C-9:	command:\033]710;xft:DejaVu Sans Mono-35,xft:Mono-35\007
 URxvt.keysym.M-C-p:	\342\231\240
 URxvt.mouseWheelScrollPage: true
 URxvt.saveLines:	2000
