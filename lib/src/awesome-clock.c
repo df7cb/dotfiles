@@ -61,10 +61,8 @@ count_mail (char *path)
 	return count;
 }
 
-#define LAST_FULL "last full capacity:"
-#define BAT_STATE "/proc/acpi/battery/BAT1/state"
-#define REMAINING "remaining capacity:"
-#define RATE "present rate:"
+#define BAT_STATE "/sys/class/power_supply/BAT1/energy_now"
+#define CURRENT "/sys/class/power_supply/BAT1/current_now"
 
 static int
 bat_cap (FILE *a)
@@ -78,16 +76,12 @@ bat_cap (FILE *a)
 		return -1;
 
 	if (max_cap == -1) {
-		if ((f = fopen ("/proc/acpi/battery/BAT1/info", "r")) == NULL) {
+		if ((f = fopen ("/sys/class/power_supply/BAT1/energy_full", "r")) == NULL) {
 			max_cap = -2;
 			return -1;
 		}
-		while (fgets (buf, sizeof (buf), f)) {
-			if (!strncmp (buf, LAST_FULL, sizeof (LAST_FULL) - 1)) {
-				max_cap = atoi (buf + sizeof (LAST_FULL));
-				break;
-			}
-		}
+		fgets (buf, sizeof (buf), f);
+		max_cap = atoi (buf);
 		fclose (f);
 		if (max_cap <= 0) {
 			fprintf (stderr, "Cannot read last full capacity\n");
@@ -101,19 +95,24 @@ bat_cap (FILE *a)
 		max_cap = -2;
 		return -1;
 	}
-	while (fgets (buf, sizeof (buf), f)) {
-		if (!strncmp (buf, REMAINING, sizeof (REMAINING) - 1))
-			remaining = atoi (buf + sizeof (REMAINING));
-		if (!strncmp (buf, RATE, sizeof (RATE) - 1))
-			rate = atoi (buf + sizeof (RATE));
+	fgets (buf, sizeof (buf), f);
+	remaining = atoi (buf);
+	fclose (f);
+
+	if ((f = fopen (CURRENT, "r")) == NULL) {
+		perror (CURRENT);
+		max_cap = -2;
+		return -1;
 	}
+	fgets (buf, sizeof (buf), f);
+	rate = atoi (buf);
 	fclose (f);
 
 	if (rate > 0)
-		fprintf (a, "0 widget_tell topbar battery text  %d mAh %.1f%% %.1fm \n", remaining, (double) remaining / max_cap * 100.0,
+		fprintf (a, "0 widget_tell topbar battery text  %.0f mAh %.1f%% %.1fm \n", remaining / 1000.0, (double) remaining / max_cap * 100.0,
 			(double) remaining / rate * 60.0);
 	else
-		fprintf (a, "0 widget_tell topbar battery text  %d mAh %.1f%% \n", remaining, (double) remaining / max_cap * 100.0);
+		fprintf (a, "0 widget_tell topbar battery text  %.0f mAh %.1f%% \n", remaining / 1000.0, (double) remaining / max_cap * 100.0);
 
 	return 0;
 }

@@ -298,6 +298,6 @@ formats = {
   };
   "fe-common/irc" = {
     notice_private = "{notice $0}$2";
-    notice_server = "%y{servernotice $0}$1";
+    notice_server = "%n{servernotice $0}$1";
   };
 };

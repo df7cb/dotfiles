@@ -83,7 +83,9 @@ complete -v unset vared
 
 # generic filetype rules
 complete -o default -f -X '!*.pdf' acroread evince xpdf
-complete -o default -f -X '!*.@(changes|deb|dsc)' lintian linda
+complete -o default -f -X '!*.deb' dpkg-deb
+complete -o default -f -X '!*.dsc' dpkg-source
+complete -o default -f -X '!*.@(changes|deb|dsc)' lintian
 complete -o default -f -X '!*.@(deb|dsc)' debdiff
 complete -o default -f -X '!*.@(changes|dsc)' dscverify
 complete -o default -f -X '!*.changes' debsign dput debrsign
