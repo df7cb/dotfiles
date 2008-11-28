@@ -1,9 +1,13 @@
 #!/bin/sh
 
-for server in `host subkeys.pgp.net | cut -d ' ' -f 4` ; do
-	[ "$server" = 221.133.213.196 ] && continue
+SERVERS=$(host subkeys.pgp.net | cut -d ' ' -f 4 | egrep -v '221.133.213.196|114.31.78.196|208.72.157.55|64.71.173.107')
+
+for server in $SERVERS ; do
 	host $server
 	gpg --keyserver $server --recv $PGPKEY $PGPKEY2
 done
 
-gpg "$@" --send $PGPKEY $PGPKEY2
+for server in $SERVERS ; do
+	host $server
+	gpg --keyserver $server --send $PGPKEY $PGPKEY2
+done
