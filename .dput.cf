@@ -91,4 +91,4 @@ fqdn = tesla.df7cb.de
 login = myon
 method = rsync
 incoming = /cb/debug.debian.net/incoming
-post_upload_command = ssh tesla.df7cb.de /cb/debug.debian.net/process_incoming.sh
+#post_upload_command = ssh tesla.df7cb.de /cb/debug.debian.net/process_incoming.sh
