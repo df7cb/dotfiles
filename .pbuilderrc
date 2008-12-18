@@ -1,9 +1,9 @@
 DEBIAN_VERSION=`cat /etc/debian_version`
 case $DEBIAN_VERSION in
-	3.1) DISTRIBUTION="sarge" ;;
-	4.0) DISTRIBUTION="etch" ;;
-	5.0|lenny*) DISTRIBUTION="lenny" ;;
-	unstable|*/sid|sid) DISTRIBUTION="sid" ;;
+	3.1|sarge) DISTRIBUTION="sarge" ;;
+	4.0|etch) DISTRIBUTION="etch" ;;
+	5.0|lenny) DISTRIBUTION="lenny" ;;
+	unstable|sid) DISTRIBUTION="sid" ;;
 	testing/unstable) echo "please use unstable in /etc/debian_version"
 	   exit 1 ;;
 	*) echo "unknown distribution in /etc/debian_version: $DEBIAN_VERSION"
@@ -13,7 +13,7 @@ echo "Debian version: $DEBIAN_VERSION -> $DISTRIBUTION"
 
 ARCH=`dpkg --print-architecture`
 MIRRORSITE="http://localhost:9999/debian"
-#MIRRORSITE="http://ftp2.de.debian.org/debian"
+#MIRRORSITE="http://debian.credativ.lan/debian"
 if [ "$ARCH" = amd64 ] && [ "$DISTRIBUTION" = sarge ] ; then
 	MIRRORSITE="http://localhost:9999/debian-amd64"
 fi
@@ -24,25 +24,24 @@ ls -l "$BASETGZ" || :
 BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
-#APTCACHE="$ROOT/aptcache"
 APTCACHE=""
-#ln: creating hard link `/data/pbuilder/aptcache//g++_4%3a3.3.5-1_i386.deb' to `/data/pbuilder/build//3381/var/cache/apt/archives/g++_4%3a3.3.5-1_i386.deb': Invalid cross-device link
 APTCACHEHARDLINK="no"
 #DEBBUILDOPTS="-j2"
 DEBOOTSTRAP="debootstrap"
 
-BUILDUSERID=1009
-BUILDUSERNAME=buildd
+case $DISTRIBUTION-$ARCH in
+	sid-amd64)   BUILDUSERID=4002 BUILDUSERNAME=buildd2 ;;
+	sid-i386)    BUILDUSERID=4003 BUILDUSERNAME=buildd3 ;;
+	lenny-amd64) BUILDUSERID=4004 BUILDUSERNAME=buildd4 ;;
+	lenny-i386)  BUILDUSERID=4005 BUILDUSERNAME=buildd5 ;;
+	*)           BUILDUSERID=4001 BUILDUSERNAME=buildd ;;
+esac
 LOGNAME=root
 HOOKDIR=$HOME/.pbuilder-hooks
+REMOVEPACKAGES=""
 
-#OTHERMIRROR="deb http://planck.df7cb.de/apt-move unstable main"
-#export http_proxy="http://router.df7cb.de:3128/"
 unset http_proxy
-
-REMOVEPACKAGES="lilo"
-#BINDMOUNTS="/home/cb /tmp"
-
 unset TMPDIR TMP TEMP
+unset MAKEFLAGS
 
 # vim:ft=sh:
