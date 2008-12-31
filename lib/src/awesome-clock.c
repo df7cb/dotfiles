@@ -1,4 +1,5 @@
 #define _BSD_SOURCE
+#include <assert.h>
 #include <ctype.h>
 #include <dirent.h>
 #include <locale.h>
@@ -109,11 +110,38 @@ bat_cap (FILE *a)
 	fclose (f);
 
 	if (rate > 0)
-		fprintf (a, "0 widget_tell topbar battery text  %.0f mAh %.1f%% %.1fm \n", remaining / 1000.0, (double) remaining / max_cap * 100.0,
+		fprintf (a, "0 widget_tell topbar battery text  %.1f%% %.1fm \n",
+			(double) remaining / max_cap * 100.0,
 			(double) remaining / rate * 60.0);
 	else
-		fprintf (a, "0 widget_tell topbar battery text  %.0f mAh %.1f%% \n", remaining / 1000.0, (double) remaining / max_cap * 100.0);
+		fprintf (a, "0 widget_tell topbar battery text  %.1f%% \n",
+			(double) remaining / max_cap * 100.0);
 
+	return 0;
+}
+
+static int
+loadavg (FILE *a)
+{
+	FILE *f;
+	char buf[30];
+	if ((f = fopen ("/proc/loadavg", "r")) == NULL) {
+		perror ("/proc/loadavg");
+		return -1;
+	}
+	fgets (buf, sizeof (buf), f);
+	fclose (f);
+
+	char *p;
+	p = strchr (buf, ' ');
+	assert (p);
+	p = strchr (p + 1, ' ');
+	assert (p);
+	p = strchr (p + 1, ' ');
+	assert (p);
+	*p = '\0';
+
+	fprintf (a, "0 widget_tell topbar loadavg text  %s \n", buf);
 	return 0;
 }
 
@@ -147,6 +175,7 @@ main (int argc, char **argv)
 				clock_screen, buf);
 
 		bat_cap (a);
+		loadavg (a);
 
 		if (maildir && t.tv_sec >= mail_time + 10) {
 			int c = count_mail (maildir);
