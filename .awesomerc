@@ -1,7 +1,7 @@
 screen "0" {
   styles {
     normal {
-      font = "Mono 12"
+      font = "DejaVu Sans 11"
       fg = "#ffffff"
       bg = "#111111"
       border = "#111111"
@@ -60,15 +60,20 @@ screen "0" {
     }
     textbox "battery" { text = ""
       style {
-	font = "Mono 12"
 	fg = "#ffffff"
 	bg = "#11dd11"
 	border = "#111111"
       }
     }
+    textbox "loadavg" { text = ""
+      style {
+	fg = "#ffffff"
+	bg = "#1133aa"
+	border = "#111111"
+      }
+    }
     textbox "mail" { text = ""
       style {
-	font = "Mono 12"
 	fg = "#ffffff"
 	bg = "#dd1111"
 	border = "#111111"
@@ -76,7 +81,6 @@ screen "0" {
     }
     textbox "clock" { text = ""
       style {
-	font = "Mono 12"
 	fg = "#ffffff"
 	bg = "#1111dd"
 	border = "#111111"
