@@ -76,6 +76,9 @@ $M/bridge
 $M/pisg
 
 # PostgreSQL
+:0c:
+* ^List-Id: <pgsql-announce\.postgresql\.org>
+$DEFAULT
 :0:
 * ^List-Id: <.*\.postgresql\.org>
 $M/postgresql
@@ -91,7 +94,7 @@ $M/geocaching
 
 # Hobbit
 :0:
-* ^List-Post: <mailto:hobbit
+* ^List-(Post|Id): <(mailto:)?hobbit
 $M/hobbit
 
 # catch-all recipe

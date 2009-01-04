@@ -7,18 +7,18 @@ SPAMDIR=mail/spam
 #* ^From: .*<(fminfos|neu)@web.de>
 #$SPAMDIR/crap
 
-:0:
+:0
 * ^To: owner-ai@lists.lithe.de
+/dev/null
+
+:0
+* ^From: .*@aa-training.ch
 /dev/null
 
 :0
 * ^From: .*-bounces@
 * ^Precedence: bulk
 * ^X-List-Administrivia: yes
-/dev/null
-
-:0:
-* ^To: .*heim-.*-request@stud.uni-saarland.de
 /dev/null
 
 :0D:
@@ -30,10 +30,6 @@ $SPAMDIR/SUBJECT
 :0B:
 * ! .
 $SPAMDIR/empty
-
-:0:
-* ^From:.*AntiVir@rz.uni-saarland.de
-/dev/null
 
 :0:
 * ^X-Original-To: cb\+spam@.*df7cb.de
