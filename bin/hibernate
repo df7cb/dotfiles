@@ -1,0 +1,11 @@
+#!/bin/sh
+
+xscreensaver-command -lock &
+
+sleep 2
+
+if [ -x /usr/sbin/pm-hibernate ] ; then
+	sudo /usr/sbin/pm-hibernate
+else
+	sudo /usr/sbin/hibernate
+fi
