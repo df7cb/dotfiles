@@ -1,0 +1,9 @@
+[alias]
+	ci = commit
+	st = status
+
+[core]
+	pager = cat
+
+[user]
+	email = myon@debian.org
