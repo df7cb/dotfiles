@@ -50,7 +50,7 @@ set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
 set quit=ask-yes
 set quote_regexp="^([ \t]*[|>:}%])+|^[a-zA-Z]{,9}>"
-set read_inc=1000 write_inc=100
+set read_inc=100 write_inc=100
 set record="!"
 set reply_regexp="^(re([\\[0-9\\]+])*|aw|antwort|betreff):[ \t]*"
 set reverse_name
