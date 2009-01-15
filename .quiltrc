@@ -1,4 +1,4 @@
 QUILT_DIFF_OPTS="-p"
 QUILT_PATCH_OPTS="-U"
-#QUILT_PATCHES="debian/patches"
+QUILT_PATCHES="debian/patches"
 QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
