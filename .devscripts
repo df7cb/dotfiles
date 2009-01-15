@@ -10,3 +10,4 @@ DEBSIGN_KEYID=0x58510B5A
 DGET_PATH="/srv/pbuilder/result"
 #DGET_VERIFY="no"
 DSCVERIFY_KEYRINGS="$HOME/.gnupg/pubring.gpg"
+RMADISON_URL_MAP_debug="http://debug.debian.net/cgi-bin/madison.cgi"
