@@ -39,18 +39,18 @@ screen "0" {
       mouse { modkey = {} button = "1" command = "tag_view" }
       mouse { modkey = {} button = "2" command = "client_tag" }
       mouse { modkey = {} button = "3" command = "tag_toggleview" }
-      mouse { modkey = {"Mod1"} button = "3" command = "client_toggletag" }
+      mouse { modkey = {"Mod4"} button = "3" command = "client_toggletag" }
       mouse { modkey = {} button = "4" command = "tag_viewprev" }
       mouse { modkey = {} button = "5" command = "tag_viewnext" }
     }
     tasklist "mytasklist" {
-      mouse { modkey = {"Mod1"} button = "1" command = "client_togglefloating" }
+      mouse { modkey = {"Mod4"} button = "1" command = "client_togglefloating" }
       mouse { modkey = {} button = "2" command = "client_zoom" }
       mouse { modkey = {} button = "3" command = "client_togglemax" }
       mouse { modkey = {} button = "4" command = "client_focusprev" }
       mouse { modkey = {} button = "5" command = "client_focusnext" }
-      mouse { modkey = {"Mod1"} button = "4" command = "client_swapprev" }
-      mouse { modkey = {"Mod1"} button = "5" command = "client_swapnext" }
+      mouse { modkey = {"Mod4"} button = "4" command = "client_swapprev" }
+      mouse { modkey = {"Mod4"} button = "5" command = "client_swapnext" }
       # fg = ""
       # bg = ""
       # focus_fg = ""
@@ -121,59 +121,59 @@ rules {
   rule { name = "Tenace" float = "true" }
 }
 keys {
-  key { modkey = {"Mod1"} key = "Return" command = "spawn" arg = "exec x-terminal-emulator" }
-  key { modkey = {"Mod1"} key = "p" command = "spawn"
+  key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "exec x-terminal-emulator" }
+  key { modkey = {"Mod4"} key = "p" command = "spawn"
     #arg = "exec /bin/sh -c \"find `echo $PATH | sed 's/:/ /g'` -maxdepth 1 -not -type d -printf '%f\n' | sort -u | awesome-menu -e 'exec '\""
     arg = "exec dprog"
   }
-  key { modkey = {"Mod1", "Control"} key = "n" command = "tag_setlayout" arg = "+1" }
-  key { modkey = {"Mod1", "Control"} key = "p" command = "tag_setlayout" arg = "-1" }
-  key { modkey = {"Mod1"} key = "b" command = "statusbar_toggle" }
-  key { modkey = {"Mod1"} key = "j" command = "client_focusnext" }
-  key { modkey = {"Mod1"} key = "k" command = "client_focusprev" }
-  key { modkey = {"Mod1"} key = "Tab" command = "focus_history" arg = "-1" }
-  key { modkey = {"Mod1", "Shift"} key = "j" command = "client_swapnext" }
-  key { modkey = {"Mod1", "Shift"} key = "k" command = "client_swapprev" }
-  key { modkey = {"Mod1"} key = "Escape" command = "screen_focus" arg = "+1" }
-  #key { modkey = {"Mod1", "Control"} key = "k" command = "screen_focus" arg = "-1" }
-  key { modkey = {"Mod1"} key = "h" command = "tag_setmwfact" arg = "-0.05" }
-  key { modkey = {"Mod1"} key = "l" command = "tag_setmwfact" arg = "+0.05" }
-  key { modkey = {"Mod1"} key = "equal" command = "tag_setnmaster" arg = "+1" }
-  key { modkey = {"Mod1"} key = "minus" command = "tag_setnmaster" arg = "-1" }
-  key { modkey = {"Mod1", "Shift"} key = "equal" command = "tag_setncol" arg = "+1" }
-  key { modkey = {"Mod1", "Shift"} key = "minus" command = "tag_setncol" arg = "-1" }
-  key { modkey = {"Mod1"} key = "Left" command = "tag_viewprev" }
-  key { modkey = {"Mod1"} key = "Right" command = "tag_viewnext" }
-  key { modkey = {"Mod1"} key = "m" command = "client_togglemax" }
-  key { modkey = {"Mod1"} key = "space" command = "client_zoom" }
-  key { modkey = {"Mod1", "Shift"} key = "space" command = "client_togglefloating" }
-  key { modkey = {"Mod1", "Shift"} key = "c" command = "client_kill" }
-  key { modkey = {"Mod1", "Shift"} key = "q" command = "quit" }
-  key { modkey = {"Mod1", "Control"} key = "r" command = "exec" arg = "awesome" }
-  key { modkey = {"Mod1"} key = "o" command = "tag_view" }
-  key { modkey = {"Mod1", "Control"} key = "o" command = "tag_toggleview" }
-  key { modkey = {"Mod1", "Shift"} key = "o" command = "client_tag" }
-  key { modkey = {"Mod1", "Shift", "Control"} key = "o" command = "client_toggletag" }
+  key { modkey = {"Mod4", "Control"} key = "n" command = "tag_setlayout" arg = "+1" }
+  key { modkey = {"Mod4", "Control"} key = "p" command = "tag_setlayout" arg = "-1" }
+  key { modkey = {"Mod4"} key = "b" command = "statusbar_toggle" }
+  key { modkey = {"Mod4"} key = "j" command = "client_focusnext" }
+  key { modkey = {"Mod4"} key = "k" command = "client_focusprev" }
+  key { modkey = {"Mod4"} key = "Tab" command = "focus_history" arg = "-1" }
+  key { modkey = {"Mod4", "Shift"} key = "j" command = "client_swapnext" }
+  key { modkey = {"Mod4", "Shift"} key = "k" command = "client_swapprev" }
+  key { modkey = {"Mod4"} key = "Escape" command = "screen_focus" arg = "+1" }
+  #key { modkey = {"Mod4", "Control"} key = "k" command = "screen_focus" arg = "-1" }
+  key { modkey = {"Mod4"} key = "h" command = "tag_setmwfact" arg = "-0.05" }
+  key { modkey = {"Mod4"} key = "l" command = "tag_setmwfact" arg = "+0.05" }
+  key { modkey = {"Mod4"} key = "equal" command = "tag_setnmaster" arg = "+1" }
+  key { modkey = {"Mod4"} key = "minus" command = "tag_setnmaster" arg = "-1" }
+  key { modkey = {"Mod4", "Shift"} key = "equal" command = "tag_setncol" arg = "+1" }
+  key { modkey = {"Mod4", "Shift"} key = "minus" command = "tag_setncol" arg = "-1" }
+  key { modkey = {"Mod4"} key = "Left" command = "tag_viewprev" }
+  key { modkey = {"Mod4"} key = "Right" command = "tag_viewnext" }
+  key { modkey = {"Mod4"} key = "m" command = "client_togglemax" }
+  key { modkey = {"Mod4"} key = "space" command = "client_zoom" }
+  key { modkey = {"Mod4", "Shift"} key = "space" command = "client_togglefloating" }
+  key { modkey = {"Mod4", "Shift"} key = "c" command = "client_kill" }
+  key { modkey = {"Mod4", "Shift"} key = "q" command = "quit" }
+  key { modkey = {"Mod4", "Control"} key = "r" command = "exec" arg = "awesome" }
+  key { modkey = {"Mod4"} key = "o" command = "tag_view" }
+  key { modkey = {"Mod4", "Control"} key = "o" command = "tag_toggleview" }
+  key { modkey = {"Mod4", "Shift"} key = "o" command = "client_tag" }
+  key { modkey = {"Mod4", "Shift", "Control"} key = "o" command = "client_toggletag" }
   keylist {
-    modkey = {"Mod1"}
+    modkey = {"Mod4"}
     keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "tag_view"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
-    modkey = {"Mod1", "Control"}
+    modkey = {"Mod4", "Control"}
     keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "tag_toggleview"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
-    modkey = {"Mod1", "Shift"}
+    modkey = {"Mod4", "Shift"}
     keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "client_tag"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
   }
   keylist {
-    modkey = {"Mod1", "Shift", "Control"}
+    modkey = {"Mod4", "Shift", "Control"}
     keylist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     command = "client_toggletag"
     arglist = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
@@ -183,8 +183,8 @@ mouse {
   root { modkey = {} button = "3" command = "spawn" arg = "exec x-terminal-emulator" }
   root { modkey = {} button = "4" command = "tag_viewprev" }
   root { modkey = {} button = "5" command = "tag_viewnext" }
-  client { modkey = {"Mod1"} button = "1" command = "client_movemouse" }
-  client { modkey = {"Mod1", "Shift" } button = "1" command = "client_togglefloating" }
-  client { modkey = {"Mod1"} button = "2" command = "client_zoom" }
-  client { modkey = {"Mod1"} button = "3" command = "client_resizemouse" }
+  client { modkey = {"Mod4"} button = "1" command = "client_movemouse" }
+  client { modkey = {"Mod4", "Shift" } button = "1" command = "client_togglefloating" }
+  client { modkey = {"Mod4"} button = "2" command = "client_zoom" }
+  client { modkey = {"Mod4"} button = "3" command = "client_resizemouse" }
 }
