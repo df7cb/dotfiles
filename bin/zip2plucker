@@ -28,6 +28,7 @@ case $NAME in
 	2163721) NAME="Berlin" ;;
 	2234517) NAME="Myons Caches" ;;
 	2234688) NAME="Duisburg" ;;
+	2428267) NAME="Köln" ;;
 esac
 
 to_plucker () {
