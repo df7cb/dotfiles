@@ -61,6 +61,7 @@ URxvt.scrollstyle:	plain
 URxvt.scrollTtyKeypress: true
 URxvt.scrollTtyOutput:	false
 URxvt.scrollWithBuffer:	true
+URxvt.selection.pattern-0: ([^:„“”«»]+)
 URxvt.underlineColor:	#888888
 
 XLock.logoutButton:	-1
