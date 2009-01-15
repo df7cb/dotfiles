@@ -1,0 +1,7 @@
+mode expert
+mutt
+no-cc
+no-check-available
+no-check-installed
+no-query-bts
+no-query-source
