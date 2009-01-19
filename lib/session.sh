@@ -1,6 +1,6 @@
 check_proc ()
 {
-	pgrep -u $USER $1 | grep -q $2
+	pgrep -u ${LOGNAME:-$USER} $1 | grep -q $2
 }
 
 clean_session ()
