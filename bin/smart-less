@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ ! -t 1 ] && exec cat "$@"
+
+if [ "$LINES" ] && [ -e "$1" ] ; then
+	lines=$(wc -l < "$1")
+	[ "$lines" -le "$LINES" ] && exec cat "$@"
+fi
+
+exec less "$@"

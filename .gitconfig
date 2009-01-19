@@ -1,9 +1,9 @@
 [alias]
 	ci = commit
-	st = status
+	st = !git --no-pager status
 
 [core]
-	pager = cat
+	pager = smart-less
 
 [user]
 	email = myon@debian.org
