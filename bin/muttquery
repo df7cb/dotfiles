@@ -11,7 +11,7 @@ unless ($query = $ARGV[0]) {
 print "Looking for $query..\n";
 
 # personal mutt aliases
-if (open A, "$ENV{HOME}/.mutt/aliases") {
+if (open A, "$ENV{HOME}/.priv/mutt/aliases") {
 	while (<A>) {
 		next if /^#/;
 		next unless /$query/i;
@@ -22,7 +22,7 @@ if (open A, "$ENV{HOME}/.mutt/aliases") {
 }
 
 # personal mutt aliases
-if (open A, "$ENV{HOME}/.mutt/aliases.ab") {
+if (open A, "$ENV{HOME}/.priv/mutt/aliases.ab") {
 	while (<A>) {
 		next if /^#/;
 		next unless /$query/i;
