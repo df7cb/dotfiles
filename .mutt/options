@@ -31,7 +31,7 @@ set ispell="aspell --lang=de check"
 #set locale="de_DE.ISO-8859-1"
 unset markers
 set mbox_type=mbox
-set menu_context=8
+set menu_context=5
 unset menu_move_off
 #set menu_scroll
 set mime_forward=ask-yes
