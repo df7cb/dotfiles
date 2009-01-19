@@ -78,7 +78,7 @@ complete -u adduser deluser
 complete -u id
 complete -o default -d -X '@(*/CVS|CVS)' cd rd
 complete -o default -A running disown
-complete -o default -c strace sudo type xargs
+complete -o default -c fakeroot ltrace strace sudo type xargs
 complete -v unset vared
 
 # generic filetype rules
