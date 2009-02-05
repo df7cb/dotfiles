@@ -79,6 +79,9 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 
 #ifdef sidebar_visible set sidebar_visible sidebar_width=20
 
+set smime_ca_location="~/.priv/smime/ca-certificates.crt"
+set smime_certificates="~/.priv/smime/certificates"
+set smime_keys="~/.priv/smime/keys"
 set smime_default_key=f4037fe5.0
 set smime_sign_as=f4037fe5.0
 
