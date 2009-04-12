@@ -1,84 +1,80 @@
 #!/usr/bin/perl -w
-# $Header: /home/cb/lib/cvs/cb/bin/make-indexjpg,v 1.4 2004/01/11 22:45:59 cb Exp $
-# cb 030421: getopt support
 
-#<map name="Testbild"> 
-#<area shape=rect coords="1,1,249,49" href="#Anker"> 
-#</map>
-#<img src="hypgraph.gif" usemap="#Testbild" border=0>
-
-$opt_w = 120;
-$opt_h = 90;
-$opt_b = 1;
-$opt_n = 6;
-$opt_B = "white";
-$opt_m = 0;
-$opt_f = "index";
-$opt_H = "";
-$opt_L = 1; # obsolete
-$opt_q = 0;
-$opt_s = 0;
-$opt_t = "";
-$opt_T = "";
-$opt_v = 0;
-
+use strict;
 use Getopt::Std;
-getopts('w:h:H:b:n:B:mf:Lqst:T:v');
+
+my %opt = (
+	w => 120,
+	h => 90,
+	b => 1,
+	n => 6,
+	B => "white",
+	m => 0,
+	f => ".index",
+	H => "",
+	q => 0,
+	s => 0,
+	t => "",
+	T => "",
+	v => 0,
+);
+
+getopts('w:h:H:b:n:B:mf:qst:T:v', \%opt);
 
 exit 0 unless @ARGV;
 
-@ARGV = sort @ARGV if $opt_s;
+@ARGV = sort @ARGV if $opt{s};
 
-@files = @ARGV;
+my @files = @ARGV;
 @files = map {
-	if($opt_t) {
-		if(-f "$opt_t/$_") { # look for thumbs
-			$_ = "$opt_t/$_";
+	if($opt{t}) {
+		if(-f "$opt{t}/$_") { # look for thumbs
+			$_ = "$opt{t}/$_";
 		} elsif (/(.*)\.(gif|bmp)$/) {
-			$_ = "$opt_t/$1.jpg" if -f "$opt_t/$1.jpg";
+			$_ = "$opt{t}/$1.jpg" if -f "$opt{t}/$1.jpg";
 		}
 	}
 	s/\.gif$/.gif[0]/; # extract first frame from from animated gifs
 	s/'/'\\''/g; # quote '
 	$_ = "'$_'"; # quote filenames
 } @files;
-$files = join " ", @files;
+my $files = join " ", @files;
 
-print "Schreibe" unless $opt_q;
-unless($opt_m) {
-	$command =  "montage -geometry ${opt_w}x$opt_h+$opt_b+$opt_b -background '$opt_B' -tile ${opt_n}x100 -adjoin $files $opt_f.jpg";
-	print "$command\n" if $opt_v;
-	print " $opt_f.jpg..." unless $opt_q;
+print "Schreibe" unless $opt{q};
+unless($opt{m}) {
+	my $command =  "montage -geometry $opt{w}x$opt{h}+$opt{b}+$opt{b} -background '$opt{B}' -tile $opt{n}x100 -adjoin $files $opt{f}.jpg";
+	print "$command\n" if $opt{v};
+	print " $opt{f}.jpg..." unless $opt{q};
 	system $command;
 }
 
-my $map = "$opt_f-map.html";
-print " $map...\n" unless $opt_q;
+my $map = "$opt{f}-map.html";
+print " $map...\n" unless $opt{q};
 open MAP, ">$map" or die "$map: $!";
 
-my $name = $opt_f;
+my $name = $opt{f};
 $name =~ s!.*/!!;
 
 print MAP "<map name=\"$name\">\n";
-$n = 0;
+my $n = 0;
 foreach (@ARGV) {
-	$left = ($n % $opt_n) * ($opt_w+2*$opt_b);
-	$right = $left + ($opt_w+$opt_b);
-	$top = int($n / $opt_n) * ($opt_h+2*$opt_b);
-	$bottom = $top + ($opt_h+$opt_b);
+	my $left = ($n % $opt{n}) * ($opt{w}+2*$opt{b});
+	my $right = $left + ($opt{w}+$opt{b});
+	my $top = int($n / $opt{n}) * ($opt{h}+2*$opt{b});
+	my $bottom = $top + ($opt{h}+$opt{b});
 	my $href = $_;
 	my $title = $_;
-	if($opt_H) {
-		eval "\$href =~ $opt_H";
+	if($opt{H}) {
+		eval "\$href =~ $opt{H}";
 	}
-	if($opt_T) {
-		eval "\$title =~ $opt_T";
+	if($opt{T}) {
+		eval "\$title =~ $opt{T}";
 	}
 	print MAP " <area shape=rect coords=\"$left,$top,$right,$bottom\" href=\"$href\" alt=\"$title\" title=\"$title\">\n";
 	$n++;
 }
 print MAP "</map>\n";
-print MAP "<img src=\"$name.jpg\" usemap=\"#$name\" border=\"0\">\n" if $opt_L;
+print MAP "<img src=\"$name.jpg\" usemap=\"#$name\" border=\"0\">\n";
 close MAP;
 
 
@@ -136,7 +132,7 @@ Only generate the B<name>-map.html file, omit B<name>.jpg. [generate both]
 =head2 I<-f> B<name>
 
 Name the index image B<name>.jpg and the HTML map file B<name>-map.html.
-[index.jpg, index-map.html]
+[.index.jpg, .index-map.html]
 
 =head2 I<-H> B<expr>
 
