@@ -2,6 +2,7 @@
 
 use strict;
 use Getopt::Std;
+use POSIX qw(ceil);
 
 my %opt = (
 	w => 120,
@@ -42,7 +43,8 @@ my $files = join " ", @files;
 
 print "Schreibe" unless $opt{q};
 unless($opt{m}) {
-	my $command =  "montage -geometry $opt{w}x$opt{h}+$opt{b}+$opt{b} -background '$opt{B}' -tile $opt{n}x100 -adjoin $files $opt{f}.jpg";
+	my $rows = ceil (scalar (@files) / $opt{n});
+	my $command =  "montage -geometry $opt{w}x$opt{h}+$opt{b}+$opt{b} -background '$opt{B}' -tile $opt{n}x$rows -adjoin $files $opt{f}.jpg";
 	print "$command\n" if $opt{v};
 	print " $opt{f}.jpg..." unless $opt{q};
 	system $command;
