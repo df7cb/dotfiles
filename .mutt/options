@@ -23,7 +23,7 @@ set fast_reply
 unset fcc_attach
 set forward_format="%s (fwd)"
 set header_cache="~/.mutt/cache"
-#unset maildir_header_cache_verify
+unset maildir_header_cache_verify
 unset help
 #unset hidden_host
 set index_format="%4C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s"
