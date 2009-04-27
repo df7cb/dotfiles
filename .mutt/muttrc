@@ -15,7 +15,7 @@ source ~/.mutt/hooks
 set from="cb@df7cb.de"
 set postponed="=cb/postponed"
 set signature="~/.priv/mutt/signature.cb@df7cb.de"
-set spoolfile="=cb/cb"
+set spoolfile="=cb/INBOX"
 set record="!"
 
 # aliases
