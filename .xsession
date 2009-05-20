@@ -37,6 +37,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
 		if [ "$SSH_AUTH_SOCK" ] ; then
 			for key in .ssh/*.pub ; do
+				[ -f "$key" ] || break
 				KEY="$KEY .ssh/$(basename $key .pub)"
 			done
 			[ "$KEY" ] && ssh-add $KEY < /dev/null # there are keys
