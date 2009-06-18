@@ -103,6 +103,7 @@ complete -o default -X '!&*' -C completer bibtex make ncftp ssh super
 complete -X '!&*' -C completer complete mailsync
 
 # special rules
+complete -C completer agi agr
 complete -W "install remove" -C completer apt-get
 complete -o default -d -X '!&*' -C completer cvs
 complete -o default -X '!&*' -C completer ssh

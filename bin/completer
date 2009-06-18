@@ -3,7 +3,7 @@
 PROG=$1
 PREFIX=$2
 
-if [ "$PROG" = apt-get ] ; then
+if [ "$PROG" = "apt-get" ] || [ "$PROG" = "agi" ] || [ "$PROG" = "agr" ] ; then
 	apt-cache pkgnames "$PREFIX"
 
 elif [ "$PROG" = bibtex ] ; then
@@ -39,14 +39,11 @@ elif [ "$PROG" = mutt ] ; then
 	MUTT=$HOME/.mutt
 	cut -d ' ' -f 2 $MUTT/aliases $MUTT/aliases.addressbook| egrep "^$PREFIX"
 
-elif [ "$PROG" = ncftp ] ; then
-	cut -f 1 -d , ~/.ncftp/bookmarks | egrep -v '^Number|NcFTP'
-
 elif [ "$PROG" = ssh ] ; then
-	perl -lne 's/^#| .*//; foreach (split /,/) { print if /\./ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*//; foreach (split /,/) { print if /\.(com|de|net|org)$/ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = scp ] || [ "$PROG" = rsync ] ; then
-	perl -lne 's/^#| .*//; foreach (split /,/) { print "$_:" if /\./ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*//; foreach (split /,/) { print "$_:" if /\.(com|de|net|org)$/ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = super ] ; then
 	cut -f 1 /etc/super.tab | egrep '^[a-z]'
