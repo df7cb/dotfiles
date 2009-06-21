@@ -29,7 +29,13 @@ case $NAME in
 	2234517) NAME="Myons Caches" ;;
 	2234688) NAME="Duisburg" ;;
 	2428267) NAME="Köln" ;;
+	2620390) NAME="Erkrath" ;;
 esac
+
+to_html () {
+	gpsbabel -c utf-8 -i gpx -f $BASE.gpx -o html,logs -F $BASE-utf8.html
+	iconv -c -f utf8 -t latin1 $BASE-utf8.html > $HOME/$BASE.html || :
+}
 
 to_plucker () {
 	gpsbabel -c utf-8 -i gpx -f $BASE.gpx -o html,logs -F $BASE-utf8.html
@@ -214,8 +220,9 @@ to_gps () {
 }
 
 if test -t 1 ; then
-	read -p 'Open with (p)lucker (v)iking (g)ps? ' answer
+	read -p 'Open with (h)tml (p)lucker (v)iking (g)ps? ' answer
 	case $answer in
+		h) to_html ;;
 		p) to_plucker ;;
 		v) to_viking ;;
 		g) to_gps ;;
