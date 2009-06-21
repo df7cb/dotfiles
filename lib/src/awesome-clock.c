@@ -121,6 +121,29 @@ bat_cap (FILE *a)
 }
 
 static int
+wireless (FILE *a)
+{
+	FILE *f;
+	char buf[200];
+	if ((f = fopen ("/proc/net/wireless", "r")) == NULL) {
+		return -1;
+	}
+
+	int link_quality;
+	while (fgets (buf, sizeof (buf), f)) {
+		puts (buf);
+		if (sscanf (buf, "%*s %*d %d", &link_quality) >0) {
+			fprintf (a, "0 widget_tell topbar wireless text  %d%% \n",
+					link_quality);
+			break;
+		}
+	}
+	fclose (f);
+
+	return 0;
+}
+
+static int
 loadavg (FILE *a)
 {
 	FILE *f;
@@ -175,6 +198,7 @@ main (int argc, char **argv)
 				clock_screen, buf);
 
 		bat_cap (a);
+		wireless (a);
 		loadavg (a);
 
 		if (maildir && t.tv_sec >= mail_time + 10) {
