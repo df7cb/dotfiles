@@ -43,7 +43,6 @@ gps_protocol=0
 gps_port=2
 record_tracking=t
 center_start_tracking=t
-centered_tracking=f
 gpsd_host=localhost
 gpsd_port=2947
 
