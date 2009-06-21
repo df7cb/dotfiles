@@ -131,7 +131,6 @@ wireless (FILE *a)
 
 	int link_quality;
 	while (fgets (buf, sizeof (buf), f)) {
-		puts (buf);
 		if (sscanf (buf, "%*s %*d %d", &link_quality) >0) {
 			fprintf (a, "0 widget_tell topbar wireless text  %d%% \n",
 					link_quality);

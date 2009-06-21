@@ -8,3 +8,7 @@ install: awesome-clock
 
 clean:
 	rm -f awesome-clock
+
+restart:
+	-killall awesome-clock
+	grep awesome-clock ~/.xsession | sh
