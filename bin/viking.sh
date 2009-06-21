@@ -5,21 +5,7 @@ set -e
 DIR=$(mktemp -d -t pluckerXXXXXX)
 trap "rm -rf $DIR" 0 2 3 15
 
-FILE="$1"
-case $FILE in
-	*.zip) BASE=`basename $FILE .zip`
-		unzip -d $DIR -o $FILE ;;
-	*.gpx) BASE=`basename $FILE .gpx`
-		cp $FILE $DIR ;;
-	*) echo "unknown extension" ; exit 1 ;;
-esac
-cd $DIR
-if ! [ -e $BASE.gpx ] ; then
-	echo "$BASE.gpx not found"
-	exit 1
-fi
-
-cat > google.viking <<EOF
+cat > $DIR/map.viking <<EOF
 #VIKING GPS Data file http://viking.sf.net/
 
 xmpp=4,000000
@@ -31,8 +17,8 @@ color=#cccccc
 drawscale=t
 drawcentermark=t
 ~Layer Map
-name=Satellitenkarte
-mode=11
+name=Karte
+mode=13
 directory=
 alpha=255
 autodownload=t
@@ -40,7 +26,7 @@ mapzoom=0
 ~EndLayer
 EOF
 
-cat > gps.viking <<EOF
+cat > $DIR/gps.viking <<EOF
 #VIKING GPS Data file http://viking.sf.net/
 
 xmpp=4,000000
@@ -174,4 +160,4 @@ type="waypointlistend"
 ~EndLayer
 EOF
 
-viking google.viking $BASE*.gpx gps.viking
+viking $DIR/map.viking "$@" $DIR/gps.viking
