@@ -81,7 +81,9 @@ user_pref("adblock.patterns",
  http://*.blogads.*
  http://*banner*
  http://www.frsirt.com/
- https://ssl.dg-i.net/rt/NoAuth/images/bplogo.gif
+ http://www.ohloh.net/
+ http://*.mediaplex.com/
+ http://*.adspeed.net/
 ");
 user_pref("guc.contextMenuText", "Lookup \"##\"");
 user_pref("guc.groupRules", false);
