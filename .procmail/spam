@@ -25,7 +25,7 @@ SPAMDIR=mail/spam
 * ^(SUBJECT: |FROM: |(To|From):.*Microsoft|(To|From): MS|Subject: (\[MS\] |RE:Report))
 $SPAMDIR/SUBJECT
 :0:
-* ^Subject: ([a-z]* wrote:|fwd: [a-z]*|it's me [a-z]*|Emailing: .*\.(zip|xls))$
+* ^Subject: ([a-z]* wrote:|it's me [a-z]*|Emailing: .*\.(zip|xls))$
 $SPAMDIR/SUBJECT
 :0B:
 * ! .
