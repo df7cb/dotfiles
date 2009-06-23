@@ -29,6 +29,8 @@ case $NAME in
 	2234517) NAME="Myons Caches" ;;
 	2234688) NAME="Duisburg" ;;
 	2428267) NAME="Köln" ;;
+	2620316) NAME="Meerbusch" ;;
+	2620381) NAME="Düsseldorf" ;;
 	2620390) NAME="Erkrath" ;;
 esac
 
