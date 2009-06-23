@@ -30,6 +30,9 @@ $M/nm
 :0:
 * ^List-Id: .*<debian-newmaint\.lists\.debian\.org>
 $M/nm
+:0:
+* ^Delivered-To: cb\+deb\.dm@df7cb.de
+$M/deb/dm
 
 :0:
 * ^(List-Id: .*<pkg-devscripts|X-PTS-Package: devscripts)
@@ -65,7 +68,7 @@ $M/oftc
 # Bridge
 :0:
 * ^List-Id: .*<(5erof|bbo-)
-$M/cb
+$DEFAULT
 :0:
 * ^List-Id: .*<(doubl|blml|bb-|bridge)
 $M/bridge
@@ -112,5 +115,5 @@ $M/root
 
 # Inbox
 :0:
-$M/cb
+$DEFAULT
 
