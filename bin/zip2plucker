@@ -65,13 +65,21 @@ to_gps () {
 	gpsbabel -i gpx -f $BASE.gpx -f $BASE-wpts.gpx -o garmin -F /dev/ttyUSB0
 }
 
+to_gpx () {
+	lsmod | grep -q garmin || sudo modprobe garmin_gps
+	test -d /media/e61 || pmount /dev/disk/by-uuid/1AFF-7785 e61
+	cp -av $BASE.gpx /media/e61/gpx/"$NAME".gpx
+	pumount e61
+}
+
 if test -t 1 ; then
-	read -p 'Open with (h)tml (p)lucker (v)iking (g)ps? ' answer
+	read -p 'Open with (h)tml (p)lucker (v)iking (g)ps e61-gp(x)? ' answer
 	case $answer in
 		h) to_html ;;
 		p) to_plucker ;;
 		v) to_viking ;;
 		g) to_gps ;;
+		x) to_gpx ;;
 		*) echo "huh?" ; exit 1 ;;
 	esac
 else
