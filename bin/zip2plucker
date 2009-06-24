@@ -27,11 +27,11 @@ case $NAME in
 	2047388) NAME="Neue Caches" ;;
 	2163721) NAME="Berlin" ;;
 	2234517) NAME="Myons Caches" ;;
-	2234688) NAME="Duisburg" ;;
 	2428267) NAME="Köln" ;;
 	2620316) NAME="Meerbusch" ;;
 	2620381) NAME="Düsseldorf" ;;
 	2620390) NAME="Erkrath" ;;
+	2740763) NAME="Duisburg" ;;
 esac
 
 to_html () {
