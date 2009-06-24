@@ -32,6 +32,8 @@ case $NAME in
 	2620381) NAME="Düsseldorf" ;;
 	2620390) NAME="Erkrath" ;;
 	2740763) NAME="Duisburg" ;;
+	3182597) NAME="Brasov" ;;
+	3182652) NAME="Bukarest" ;;
 esac
 
 to_html () {
