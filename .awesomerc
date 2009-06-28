@@ -97,9 +97,7 @@ screen "0" {
   }
   layouts {
     layout "tile" { image = "/usr/share/awesome/icons/layouts/tilew.png" }
-    layout "tileleft" { image = "/usr/share/awesome/icons/layouts/tileleftw.png" }
     layout "tilebottom" { image = "/usr/share/awesome/icons/layouts/tilebottomw.png" }
-    layout "spiral" { image = "/usr/share/awesome/icons/layouts/spiralw.png" }
     layout "dwindle" { image = "/usr/share/awesome/icons/layouts/dwindlew.png" }
     layout "max" { image = "/usr/share/awesome/icons/layouts/maxw.png" }
     layout "floating" { image = "/usr/share/awesome/icons/layouts/floatingw.png" }
