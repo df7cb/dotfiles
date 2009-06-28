@@ -1,10 +1,11 @@
 #!/usr/bin/perl -w
 
 while (<>) {
-	if (/^user_pref\("adblock\.patterns"/) {
-		s/ /\n /g;
-		s/"\)/\n")/g;
-		print;
+	if (/^(user_pref\("adblock\.patterns",) "(.*)"\)/) {
+		print "$1\n \"";
+		my @patterns = split / /, $2;
+		print join ("\n ", sort @patterns);
+		print "\");\n";
 	}
 	if (/^user_pref\("guc\./) {
 		print;

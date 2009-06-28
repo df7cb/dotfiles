@@ -34,10 +34,12 @@ COMMITS = $(wildcard .mutt/fortunes-??)
 
 ifeq ($(shell [ -d .firefox ] && echo yes), yes)
 all: .firefox/cb/cbcbcbcb.slt/prefs.js
+COMMITS += .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 endif
 .firefox/cb/cbcbcbcb.slt/prefs.js: .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 	# Updating $@
 	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
+	sed -i -e '/"adblock.patterns"/d' -e '/"guc\./d' $@
 	cat $< >> $@
 firefox-pull:
 	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
