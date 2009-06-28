@@ -33,15 +33,8 @@ cleanup:
 COMMITS = $(wildcard .mutt/fortunes-??)
 
 ifeq ($(shell [ -d .firefox ] && echo yes), yes)
-cleanup: .firefox/cb/cbcbcbcb.slt/.bookmarks.html
 all: .firefox/cb/cbcbcbcb.slt/prefs.js
-COMMITS += .firefox/cb/cbcbcbcb.slt/bookmarks.html
 endif
-.firefox/cb/cbcbcbcb.slt/.bookmarks.html: .firefox/cb/cbcbcbcb.slt/bookmarks.html
-	# Cleaning $<
-	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
-	@perl -i -pe 's/ (LAST_VISIT)="\d+"//g' $<
-	@touch $@
 .firefox/cb/cbcbcbcb.slt/prefs.js: .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 	# Updating $@
 	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
