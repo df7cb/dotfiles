@@ -36,6 +36,7 @@ links: \
 	autorun/chanshare.pl \
 	autorun/joininfo.pl \
 	autorun/len.pl \
+	autorun/loadavg.pl \
 	autorun/nickcolor.pl \
 	autorun/oftc-server-notices.pl \
 	autorun/queryresume.pl \
