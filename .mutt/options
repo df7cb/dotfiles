@@ -79,10 +79,13 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 
 #ifdef sidebar_visible set sidebar_visible sidebar_width=20
 
-unset crypt_autosmime
+unset crypt_autosmime smime_decrypt_use_default_key
 set smime_ca_location="~/.priv/smime/ca-certificates.crt"
-set smime_certificates="~/.priv/smime/certificates"
-set smime_keys="~/.priv/smime/keys"
-set smime_default_key=f4037fe5.0
-set smime_sign_as=f4037fe5.0
+set smime_certificates="~/.priv/smime/certificates" smime_keys="~/.priv/smime/keys"
+set smime_default_key="f4037fe5.0" smime_sign_as="f4037fe5.0"
 
+set smime_decrypt_command="echo Using key %k, recipient %c >&2 ; openssl smime -decrypt -passin stdin -inform DER -in %f -inkey %k -recip %c"
+set smime_verify_command="openssl smime -verify -inform DER -in %s %C -content %f -signer %f.crt ; \
+openssl x509 -noout -email -subject -issuer -fingerprint -dates -in %f.crt -noout >&2 ; rm %f.crt"
+set smime_verify_opaque_command="openssl smime -verify -inform DER -in %s %C -signer %f.crt ; \
+openssl x509 -noout -email -subject -issuer -fingerprint -dates -in %f.crt -noout >&2 ; rm %f.crt"
