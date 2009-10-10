@@ -1,34 +1,9 @@
 # vim:ft=muttrc:
 
 # headers
-ignore Importance # M$
-ignore Organisation Organization # stuff
-#ignore Mail-Followup-To # mailing lists
-ignore X-BeenThere X-Mailman List- # mailman
-ignore Delivered-To Precedence X-Loop Errors-To # mailman (video4linux)
-ignore X-Envelope-From X-Envelope-To Path Newsgroups NNTP-Posting-Host X-Trace # NNTP->Mail postings
-ignore X-Bulkmail # tagesschau.de
-ignore X-Cron-Env # cron
-ignore X-MIME-Autoconverted Auto-Submitted # sendmail
-ignore X-Spam-Level X-Keywords X-UID X-Spam-Checker-Version X-Spam-Status # spamassassin
-ignore X-Label # procmail/formail/%Y
-ignore X-Virus-Scanned X-Scanned-By X-AntiVirus X-DCC- X-ACL-Warn # scanners
-ignore X-Mailer X-Accept-Language # Mozilla
-ignore User-Agent # slrn
-ignore X-Sender X-X-Sender # t-dialin.net, crap
-ignore Old-Return-Path Resent-Message-ID Resent-From X-Mailing-List Resent-Sender Resent-Date X-Rc-Spam X-Rc-Virus # lists.debian.org
-ignore Original-Sender Resent-To Resent-Cc # bugs.debian.org
-#unignore X-Debian-PR-Message
-ignore X-PTS- X-Unsubscribe # packages.qa.debian.org
-ignore X-Authenticated X-Flags # GMX
-ignore X-Cookie X-Operating X-Sheldon X-Url X-Habeas-SWE- X-GPG- X-Geek- # various induhviduals
-ignore X-From-Note X-Mutt-Ignore X-Revised- X-Message-Flag X-Virus
-ignore Old-X-Spam- # .procmailrc/spam
-ignore X-Original-To # postfix
-ignore X-IMAP
-ignore Face Mail-Copies-To X-Hashcash X-CRM114- X-SA- X-Grey # Manoj
+ignore *
+unignore From\  Date: From: Reply-To: To: Cc: Subject: X-Debian
 
-unignore Date
 unhdr_order *
 hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
 
