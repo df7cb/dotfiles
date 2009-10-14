@@ -47,6 +47,8 @@ keycode 0x3D =	slash		question	questiondown	questiondown
 keycode 0x42 =	Control_L
 ! right alt
 keycode 0x6C =	Mode_switch
+! right win
+keycode 0x86 =	Mode_switch
 
 clear Shift
 clear Lock
