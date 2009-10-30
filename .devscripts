@@ -1,4 +1,5 @@
 DEBCHANGE_AUTO_NMU="no"
+DEBDIFF_UNPACK_TARBALLS="no"
 DEBEMAIL=myon@debian.org
 #DEBEMAIL=christoph.berg@credativ.de
 DEBFULLNAME="Christoph Berg"
