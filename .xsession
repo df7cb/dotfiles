@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #echo '$Id$'
 #set -x
 
@@ -7,7 +7,7 @@ echo "`date` $0: start"
 
 cd $HOME
 . lib/locale.sh
-. .path
+. ./.path
 
 if [ "$SHELL" = /bin/sh ] ; then
 	if SHELL=`which bash` ; then
@@ -18,7 +18,7 @@ if [ "$SHELL" = /bin/sh ] ; then
 	SHELL=/bin/sh
 fi
 
-. .env
+. ./.env
 
 XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
 
@@ -48,9 +48,10 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 		eval `gpg-agent --daemon`
 	#type -p workrave > /dev/null && workrave &
 	type -p xscreensaver > /dev/null && xscreensaver -nosplash &
-	type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
+	#type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
+	xroot loop &
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
-	( sleep 2 ; type -p awesome-clock > /dev/null && awesome-clock 0 ~/mail/cb/cb/new ) &
+	( sleep 2 ; type -p awesome-clock > /dev/null && awesome-clock 0 $MAILDIR/new ) &
 else
 	xsetroot -solid limegreen
 fi
