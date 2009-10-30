@@ -3,7 +3,7 @@
 HOST=$(eval echo \${$#} | sed -e 's/[.\/ -].*//')
 LOCK=$HOME/mail/.mbsync.$HOST.lock
 
-if ip addr show dev eth0 2> /dev/null | fgrep -q 192.168.17. ; then
+if netstat -tln | grep -q 127.0.0.1:1080 ; then
 	SOCKS=tsocks
 fi
 
