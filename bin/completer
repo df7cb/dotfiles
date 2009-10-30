@@ -40,10 +40,10 @@ elif [ "$PROG" = mutt ] ; then
 	cut -d ' ' -f 2 $MUTT/aliases $MUTT/aliases.addressbook| egrep "^$PREFIX"
 
 elif [ "$PROG" = ssh ] ; then
-	perl -lne 's/^#| .*//; foreach (split /,/) { print if /\.(com|de|net|org)$/ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.(com|de|lan|net|org)$/ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = scp ] || [ "$PROG" = rsync ] ; then
-	perl -lne 's/^#| .*//; foreach (split /,/) { print "$_:" if /\.(com|de|net|org)$/ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.(com|de|lan|net|org)$/ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = super ] ; then
 	cut -f 1 /etc/super.tab | egrep '^[a-z]'
