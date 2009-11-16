@@ -3,10 +3,8 @@ unhook folder-hook
 unhook message-hook
 unhook send-hook
 
-folder-hook .			'set record="!" trash="=trash"'
-folder-hook mail/		'set record="^" trash="^.trash"'
-folder-hook mail/credativ	'set record="^" trash="^/trash"'
-folder-hook \.trash$		'unset trash'
+folder-hook .			'set record="!" trash="=Trash"'
+folder-hook trash$		'unset trash'
 
 folder-hook debian|lists|mutt	'push ,r'
 folder-hook .			'push <collapse-all>'
