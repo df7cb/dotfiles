@@ -1,5 +1,12 @@
 M=mail/cb
 
+EXTFOLDER=`if test "$EXTENSION" && test -d "$HOME/Maildir/.$EXTENSION" ; then echo "$HOME/Maildir/.$EXTENSION" ; fi`
+
+# plus-addressing folders
+:0
+* EXTFOLDER ?? .
+$EXTFOLDER/
+
 # mutt
 :0:
 * ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|X-list: muttpatches|X-Debian-PR-Source: mutt|Delivered-To: cb\+mutt@df7cb.de)
@@ -27,6 +34,9 @@ $M/mia
 :0:
 * ^Delivered-To: cb\+nm@df7cb.de
 $M/nm
+:0:
+* ^Delivered-To: myon\+debian.wat@df7cb.de
+$M/wat
 :0:
 * ^List-Id: .*<debian-newmaint\.lists\.debian\.org>
 $M/nm
@@ -79,18 +89,18 @@ $M/bridge
 $M/pisg
 
 # PostgreSQL
-:0c:
+:0:
 * ^List-Id: <pgsql-announce\.postgresql\.org>
 $DEFAULT
-:0:
-* ^List-Id: <.*\.postgresql\.org>
-$M/postgresql
+#:0:
+#* ^List-Id: <.*\.postgresql\.org>
+#$M/postgresql
 
 # Geocaching logs
-:0:
-* ^From: .*@geocaching.com
-* ^Subject: \[LOG\] Watchlist:
-$M/geocaching
+#:0:
+#* ^From: .*@geocaching.com
+#* ^Subject: \[LOG\] Watchlist:
+#$M/geocaching
 :0:
 * ^List-Id:.*(gpsbabel|openstreetmap.org|viking)
 $M/geocaching
