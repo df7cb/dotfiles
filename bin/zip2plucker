@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 DIR=$(mktemp -d -t pluckerXXXXXX)
 trap "rm -rf $DIR" 0 2 3 15
 
@@ -20,23 +18,23 @@ if ! [ -e $BASE.gpx ] ; then
 fi
 
 NAME="$2"
-[ -z "$NAME" ] && NAME="$BASE"
-case $NAME in
-	1948628) NAME="Moenchengladbach" ;;
-	1948630) NAME="Gefunden von Myon" ;;
-	2047388) NAME="Neue Caches" ;;
-	2163721) NAME="Berlin" ;;
-	2234517) NAME="Myons Caches" ;;
-	2428267) NAME="Koeln" ;;
-	2620316) NAME="Krefeld" ;;
-	2620381) NAME="Duesseldorf" ;;
-	2620390) NAME="Erkrath" ;;
-	2740763) NAME="Duisburg" ;;
-	3182597) NAME="Brasov" ;;
-	3182652) NAME="Bukarest" ;;
-	3449001) NAME="Koblenz" ;;
-	3489444) NAME="Bonn" ;;
-esac
+if [ -z "$NAME" ] ; then
+	case $BASE in
+		# extract name from filename
+		*_*) NAME=$(echo "$BASE" | cut -d _ -f 2-) ;;
+		# extract name from end of this script
+		*) NAME=$(grep "^$BASE" $0 | cut -d ' ' -f 2-) ;;
+	esac
+fi
+if [ -z "$NAME" ] && [ -t 1 ] ; then
+	# ask for name and save it
+	read -p "Enter name for $BASE: " NAME
+	[ "$NAME" ] && echo "$BASE $NAME" >> $0
+fi
+if [ -z "$NAME" ] ; then
+	# use base as name
+	NAME="$BASE"
+fi
 
 if [ "$NAME" != "$BASE" ] ; then
 	for f in $BASE* ; do
@@ -92,8 +90,9 @@ to_db () {
 }
 
 if test -t 1 ; then
-	echo "$NAME ($BASE)"
-	read -p 'Open with (e)61 (h)tml (p)lucker (v)iking (g)ps gp(x) gc(d)b? ' answer
+    while true ; do
+	echo "\033[1m$BASE: $NAME\033[0m"
+	read -p 'Open with (e)61 (h)tml (p)lucker (v)iking (g)ps gp(x) gc(d)b (q)uit? ' answer
 	case $answer in
 		e) to_e61 ;;
 		h) to_html ;;
@@ -102,8 +101,16 @@ if test -t 1 ; then
 		g) to_gps ;;
 		x) to_gpx ;;
 		d) to_db ;;
-		*) echo "huh?" ; exit 1 ;;
+		q) exit 0 ;;
+		*) echo "huh?" ;;
 	esac
+    done
 else
-	to_plucker
+	to_viking
 fi
+
+exit 0
+
+__DATA__
+1948630 Gefunden_von_Myon
+2296729 Blieskastel
