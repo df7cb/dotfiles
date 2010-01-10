@@ -10,8 +10,8 @@ cat > $DIR/map.viking <<EOF
 
 xmpp=4,000000
 ympp=4,000000
-lat=51,193833
-lon=6,424075
+lat=51,432107
+lon=6,795948
 mode=mercator
 color=#cccccc
 drawscale=t
@@ -31,8 +31,8 @@ cat > $DIR/gps.viking <<EOF
 
 xmpp=4,000000
 ympp=4,000000
-lat=51,193833
-lon=6,424075
+lat=51,432107
+lon=6,795948
 mode=mercator
 color=#cccccc
 drawscale=t
