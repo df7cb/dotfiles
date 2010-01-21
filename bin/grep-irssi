@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+# --- Log opened Di Dez 01 00:00:14 2009
+# --- Day changed Mi Dez 02 2009
+
+my $re = shift;
+my $day = "??";
+
+foreach my $file (@ARGV) {
+	if ($file =~ /\.gz$/) {
+		open F, "gunzip -c $file |" or die "$file: $!";
+	} else {
+		open F, $file or die "$file: $!";
+	}
+
+	while (<F>) {
+		if (/^--- (?:Log opened|Day changed) (.*)/) {
+			$day = $1;
+		}
+		if (/(.*?)($re)(.*)/o) {
+			if (@ARGV > 1) {
+				print "$file:";
+			}
+			if (-t 1) {
+				print "$day $1[1m$2[0m$3\n";
+			} else {
+				print "$day $_";
+			}
+		}
+	}
+
+	close F;
+}
