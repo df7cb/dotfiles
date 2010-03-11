@@ -16,6 +16,8 @@ bind	index	<tab>	next-unread
 bind	pager	<tab>	next-unread
 bind	index	^	link-threads
 bind	pager	^	link-threads
+bind	index	&	imap-fetch-mail
+bind	pager	&	imap-fetch-mail
 bind	index	*	toggle-new	# this should be mark-as-new :-/
 bind	pager	*	mark-as-new	# this should be toggle-new :-/
 macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
