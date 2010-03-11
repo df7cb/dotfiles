@@ -1,4 +1,7 @@
 # vim:ft=muttrc:
+uncolor index *
+uncolor header *
+uncolor body *
 
 # colors
 color normal    default default
@@ -15,7 +18,6 @@ color tilde     blue default
 color tree      red default
 color underline	brightdefault default
 
-uncolor index *
 color index	blue default ~p
 color index	green default ~P
 color index	cyan default ~v
@@ -43,6 +45,9 @@ color body      blue default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
 color body      blue default "(https?|ftp)://[\-\.\,/%&~_:?\#=a-zA-Z0-9]+"
 
 # hilight diffs
-color body	green default '^(===|---|\+\+\+) .*'
-color body	blue default "^@@ .* @@\n"
-color body	magenta default '^[ +-](===|---|\+\+\+|@@|Index:) .*'
+color body	blue default "^@@ .* @@$"
+color body	red default '^-.*'
+color body	green default '^\+.*'
+color body	default red '^--- .*'
+color body	default green '^\+\+\+ .*'
+color body	magenta default '^[ +-](===|---|\+\+\+|@@|Index:) .*' # diff-in-diff
