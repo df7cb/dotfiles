@@ -8,9 +8,7 @@ try_vcs_dir ()
 {
 	dir="$1"
 	#echo "Looking in $dir ..."
-	if [ -d $dir/CVS ] ; then
-		VCS=cvs
-	elif [ -d $dir/.svn ] ; then
+	if [ -d $dir/.svn ] ; then
 		VCS=svn
 	elif [ -d $dir/.hg ] ; then
 		VCS=hg
@@ -18,6 +16,8 @@ try_vcs_dir ()
 		VCS=git
 	elif [ -d $dir/.bzr ] ; then
 		VCS=bzr
+	elif [ -d $dir/CVS ] ; then
+		VCS=cvs
 	else
 		return 1
 	fi
@@ -70,6 +70,10 @@ case $command in
 		git) git pull "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
+	diff)
+		CAT=cat
+		[ -x /usr/bin/colordiff ] && CAT=colordiff
+		$VCS $command "$@" | $CAT ;;
 	add|co|cp|diff|info|log|mv|push|resolved|revert|rm|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
