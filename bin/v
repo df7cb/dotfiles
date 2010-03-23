@@ -51,13 +51,17 @@ case $command in
 	ci|com|commit) case $VCS in
 		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
-		git) git commit "$@" && git push ;;
+		git) git commit "$@" && git push --tags ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	pull) case $VCS in
 		hg) hg pull -u "$@" ;;
 		svn) [ "$1" = "-u" ] && shift
 		     svn update "$@" ;;
+		*) $VCS $command "$@" ;;
+	esac ;;
+	push) case $VCS in
+		git) $VCS $command --tags "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	st|status) case $VCS in
@@ -74,7 +78,7 @@ case $command in
 		CAT=cat
 		[ -x /usr/bin/colordiff ] && CAT=colordiff
 		$VCS $command "$@" | $CAT ;;
-	add|co|cp|diff|info|log|mv|push|resolved|revert|rm|"")
+	add|co|cp|diff|info|log|mv|resolved|revert|rm|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
 		$VCS "$command" "$@" ;;
