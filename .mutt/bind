@@ -27,8 +27,8 @@ macro	generic	A	:source<space>~/.mutt/muttrc<return>	'Re-read aliases/muttrc'
 #macro	index	\cd	'<esc>t;d'	'Move all messages in thread to trash folder'
 bind	index	D	purge-message
 bind	pager	D	purge-message
-bind	index	<esc>D	decrypt-save
-bind	pager	<esc>D	decrypt-save
+macro	index	<esc>D	<decrypt-save>^<enter>
+macro	pager	<esc>D	<decrypt-save>^<enter>
 bind	index	G	last-entry
 bind	pager	G	bottom
 macro	index	\ch	"<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><next-unread>"
