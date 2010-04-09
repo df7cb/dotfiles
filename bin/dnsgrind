@@ -1,6 +1,6 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
-# Copyright (c) 2008 Christoph Berg <cb@df7cb.de>
+# Copyright (c) 2008, 2010 Christoph Berg <cb@df7cb.de>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -24,13 +24,14 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 
 use strict;
+use warnings;
 use Net::DNS;
 
 my %cache;
 my $res = Net::DNS::Resolver->new;
 
-my ($c1, $c2) = ("", "");
-($c1, $c2) = ("\033[32m", "\033[0m") if (-t 1);
+my ($c1, $c2, $c3, $c0) = ("", "", "");
+($c1, $c2, $c3, $c0) = map { "\033[${_}m" } qw(32 33 31 0) if (-t 1);
 
 sub dns ($$);
 
@@ -42,25 +43,29 @@ sub dns ($$)
 
 	my $query = $res->search($q, 'ANY');
 	if (! $query) {
-		warn "    " x $depth, "$c1$q$c2 query failed: ", $res->errorstring, "\n";
+		warn "    " x $depth, "$c1$q$c0 query failed: $c3", $res->errorstring, "$c0\n";
 		return;
 	}
+
 	foreach my $rr ($query->answer) {
 		my $t = $rr->type;
 		my $a = $rr->rdatastr;
-		print "    " x $depth, "$c1$q$c2 $t $a\n";
-		if ($t eq 'MX') {
-			$a =~ s/\d+ //;
-		} elsif ($t eq 'TXT') {
-			next;
+		my $q2 = $a;
+
+		if ($t =~ /^(AFSDB|MX)$/) {
+			$q2 =~ s/\d+ //;
 		} elsif ($t eq 'SOA') {
-			next;
-		} elsif ($t eq 'SSHFP') {
-			next;
+			$q2 =~ s/ .*//s;
+		} elsif ($t =~ /^(DNSKEY|HINFO|NSEC3PARAM|RRSIG|SSHFP|TXT)$/) {
+			$q2 = ""; # no recursion here
 		}
 
-		next unless $a;
-		dns ($a, $depth + 1);
+		my ($cq, $cq0) = ("", "");
+		($cq, $cq0) = ($c2, $c0) if ($cache{$q2} and -t 1);
+		print "    " x $depth, "$c1$q$c0 $t $cq$a$cq0\n";
+
+		next unless $q2;
+		dns ($q2, $depth + 1);
 	}
 }
 
