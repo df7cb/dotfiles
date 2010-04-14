@@ -2,10 +2,12 @@
 # $Id$
 
 if [ -x /usr/bin/dpkg ] ; then
-    case `dpkg --print-architecture` in
+    DPKG_ARCH=$(dpkg --print-architecture)
+    case $DPKG_ARCH in
 	i386)		OS="linux-intel" ;;
-	amd64)		OS="linux-amd64" ;;
+	*)		OS="linux-$DPKG_ARCH" ;;
     esac
+    unset DPKG_ARCH
 else
 case "`uname -srm`" in
 	Linux*[3-6]86)	OS="linux-intel" ;;
