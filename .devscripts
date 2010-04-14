@@ -1,4 +1,8 @@
 DEBCHANGE_AUTO_NMU="no"
+DEBCHECKOUT_AUTH_URLS='
+  ^\w+://(hg\.df7cb\.de)/	ssh://$1//
+  ^\w+://(svn\.df7cb\.de)/	svn+ssh://$1/svn/
+'
 DEBDIFF_UNPACK_TARBALLS="no"
 DEBEMAIL=myon@debian.org
 #DEBEMAIL=christoph.berg@credativ.de
