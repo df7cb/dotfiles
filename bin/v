@@ -74,10 +74,11 @@ case $command in
 		git) git pull "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	diff)
-		CAT=cat
-		[ -x /usr/bin/colordiff ] && CAT=colordiff
-		$VCS $command "$@" | $CAT ;;
+	diff) if [ -t 1 ] && [ -x /usr/bin/colordiff ] ; then
+		$VCS $command "$@" | colordiff
+	else
+		$VCS $command "$@"
+	fi ;;
 	add|co|cp|diff|info|log|mv|resolved|revert|rm|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
