@@ -37,6 +37,7 @@ URxvt.color3:		orange
 URxvt.color11:		orange
 URxvt.color5:		maroon
 URxvt.color13:		maroon
+URxvt.color15:		lightgrey
 URxvt.colorBD:		navy
 URxvt.cursorBlink:	true
 URxvt.cursorColor:	RoyalBlue
