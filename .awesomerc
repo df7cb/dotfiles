@@ -126,6 +126,8 @@ rules {
   rule { name = "Tenace" float = "true" }
 }
 keys {
+  key { key = "Pause" command = "spawn" arg = "lock" }
+  key { modkey = {"Shift"} key = "Pause" command = "spawn" arg = "poweroff" }
   key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "exec x-terminal-emulator" }
   key { modkey = {"Mod4"} key = "f" command = "spawn" arg = "exec firefox" }
   key { modkey = {"Mod4"} key = "p" command = "spawn"
