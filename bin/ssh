@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# remote host
+HOST="$1"
+case $HOST in -*) HOST="$2" ;; esac
+
+# remote domain
+for KEY in $HOME/.priv/ssh/*.pub ; do
+	test -e "$KEY" || continue
+
+	KEYDOMAIN=$(basename $KEY .pub)
+	case $HOST in *.$KEYDOMAIN)
+		DOMAIN="$KEYDOMAIN"
+		break ;;
+	esac
+done
+
+# start per-domain ssh-agent
+if [ "$DOMAIN" ] ; then
+	SOCKET="$HOME/.ssh/ssh-agent-$DOMAIN"
+
+	if test -e "$SOCKET.pid" ; then
+		SSH_AGENT_PID=$(cat "$SOCKET.pid")
+		if ! kill -0 "$SSH_AGENT_PID" 2> /dev/null ; then
+			echo "Removing stale socket $SOCKET"
+			rm -f "$SOCKET" "$SOCKET.pid"
+		fi
+	fi
+
+	if test -e "$SOCKET" ; then
+		SSH_AUTH_SOCK="$SOCKET"
+		export SSH_AUTH_SOCK
+	else
+		eval $(ssh-agent -s -a "$SOCKET")
+		echo "$SSH_AGENT_PID" > "$SOCKET.pid"
+		ssh-add $HOME/.priv/ssh/$DOMAIN
+	fi
+fi
+
+# set terminal title
+case $TERM in screen*|xterm*|rxvt*)
+	if test -t 1 ; then
+		SHORTHOST=$(echo "$HOST" | sed -e 's/\.[a-z].*//')
+		case $TERM in screen*) echo -en "\\033k$SHORTHOST\\033\\" ;; esac
+		echo -en "\\033]0;$SHORTHOST\\007"
+	fi
+	;;
+esac
+
+/usr/bin/ssh "$@"
