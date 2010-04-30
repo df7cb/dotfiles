@@ -133,7 +133,7 @@ wireless (FILE *a)
 	while (fgets (buf, sizeof (buf), f)) {
 		if (sscanf (buf, "%*s %*d %d", &link_quality) >0) {
 			fprintf (a, "0 widget_tell topbar wireless text  %d%% \n",
-					link_quality);
+					(int) (link_quality / 0.7));
 			break;
 		}
 	}
@@ -176,6 +176,7 @@ main (int argc, char **argv)
 	time_t mail_time = 0;
 	int clock_screen = 0;
 	char *maildir = NULL;
+	//int mailcount = -1;
 
 	setlocale (LC_ALL, "");
 
@@ -208,6 +209,11 @@ main (int argc, char **argv)
 			else
 				fprintf (a, "0 widget_tell topbar mail text  \n");
 			mail_time = t.tv_sec - (t.tv_sec % 10);
+			/*
+			if (c > mailcount && mailcount != -1)
+				system ("echo mx | sudo cw -e -s console -w 30");
+			mailcount = c;
+			*/
 		}
 
 		fprintf (a, "\n");
