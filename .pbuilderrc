@@ -12,7 +12,8 @@ esac
 echo "Debian version: $DEBIAN_VERSION -> $DISTRIBUTION"
 
 ARCH=`dpkg --print-architecture`
-MIRRORSITE="http://localhost:9999/debian"
+MIRRORSITE="http://debian.netcologne.de/debian"
+#MIRRORSITE="http://localhost:9999/debian"
 #MIRRORSITE="http://debian.credativ.lan/debian"
 if [ "$ARCH" = amd64 ] && [ "$DISTRIBUTION" = sarge ] ; then
 	MIRRORSITE="http://localhost:9999/debian-amd64"
@@ -24,7 +25,7 @@ ls -l "$BASETGZ" || :
 BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
-APTCACHE=""
+APTCACHE="/srv/pbuilder/aptcache"
 APTCACHEHARDLINK="no"
 #DEBBUILDOPTS="-j2"
 DEBOOTSTRAP="debootstrap"
