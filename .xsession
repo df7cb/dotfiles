@@ -46,12 +46,14 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	fi
 	type -p gpg-agent > /dev/null && [ -z "$GPG_AGENT_INFO" ] && \
 		eval `gpg-agent --daemon`
+	type -p gnome-keyring-daemon > /dev/null && [ -z "$GNOME_KEYRING_CONTROL" ] && \
+		eval `gnome-keyring-daemon`
 	#type -p workrave > /dev/null && workrave &
 	type -p xscreensaver > /dev/null && xscreensaver -nosplash &
 	#type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
 	xroot loop &
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
-	( sleep 2 ; type -p awesome-clock > /dev/null && awesome-clock 0 $MAILDIR/new ) &
+	( sleep 2 ; type -p awesome-clock > /dev/null && awesome-clock 0 ) &
 else
 	xsetroot -solid limegreen
 fi
@@ -60,6 +62,3 @@ fi
 SHLVL=-1
 
 while ! awesome ; do sleep 2 ; done
-#xterm
-
-# vim:ts=4:sw=4:
