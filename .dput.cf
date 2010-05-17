@@ -1,11 +1,11 @@
 [DEFAULT]
+login = myon
 progress_indicator = 2
 
 [delayed]
 method = scp
 fqdn = gluck.debian.org
 incoming = ~tfheen
-login = myon
 
 [ganneff_scp]
 fqdn = dak.ganneff.de
@@ -23,14 +23,6 @@ allow_unsigned_uploads = 0
 run_dinstall = 0
 login = dak
 
-[debonaras]
-fqdn = ftp-master.debonaras.org
-method = ftp
-incoming = /pub/UploadQueue
-allow_unsigned_uploads = 0
-run_dinstall = 0
-login = ftp
-
 [bpo]
 fqdn = www.backports.org
 incoming = /
@@ -38,57 +30,44 @@ login = anonymous
 
 [tesla]
 fqdn = tesla.df7cb.de
-login = myon
 method = rsync
 incoming = .
-
-[fermi]
-fqdn = fermi.df7cb.de
-login = myon
-method = scp
-incoming = UploadQueue
+allow_unsigned_uploads = 1
 
 [tesla-any]
 fqdn = tesla.df7cb.de
-login = myon
 method = rsync
 incoming = tmp/UploadQueue
+allow_unsigned_uploads = 1
 pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro --ignore=wrongdistribution include any tmp/UploadQueue/*.changes
-
-[tesla-etch]
-fqdn = tesla.df7cb.de
-login = myon
-method = rsync
-incoming = tmp/UploadQueue
-pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro --ignore=wrongdistribution include etch tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-tesla any
 
 [tesla-lenny]
 fqdn = tesla.df7cb.de
-login = myon
 method = rsync
 incoming = tmp/UploadQueue
+allow_unsigned_uploads = 1
 pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro --ignore=wrongdistribution include lenny tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro include lenny tmp/UploadQueue/*.changes && sign-tesla lenny
+
+[tesla-squeeze]
+fqdn = tesla.df7cb.de
+method = rsync
+incoming = tmp/UploadQueue
+allow_unsigned_uploads = 1
+pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh tesla.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-tesla squeeze
 
 [tesla-sid]
 fqdn = tesla.df7cb.de
-login = myon
 method = rsync
 incoming = tmp/UploadQueue
+allow_unsigned_uploads = 1
 pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro include sid tmp/UploadQueue/*.changes
-
-[local]
-fqdn = volta.df7cb.de
-method = local
-incoming = /srv/ftp.debian.org/queue/unchecked
-run_dinstall = 0
+post_upload_command = ssh tesla.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-tesla sid
 
 [debug]
 fqdn = nott.ayous.org
-login = myon
 method = rsync
 incoming = /org/debug.debian.net/incoming
 #post_upload_command = ssh tesla.df7cb.de /cb/debug.debian.net/process_incoming.sh

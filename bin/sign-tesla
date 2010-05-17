@@ -5,4 +5,4 @@ DIST="$1"
 
 ssh tesla.df7cb.de cat /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release | \
 	gpg --detach-sign --armor | \
-	ssh tesla.df7cb.de tee /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release.gpg
+	ssh tesla.df7cb.de "cat > /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release.gpg"
