@@ -127,12 +127,12 @@ rules {
 }
 keys {
   key { key = "Pause" command = "spawn" arg = "lock" }
-  key { modkey = {"Shift"} key = "Pause" command = "spawn" arg = "poweroff" }
-  key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "exec x-terminal-emulator" }
-  key { modkey = {"Mod4"} key = "f" command = "spawn" arg = "exec firefox" }
+  key { modkey = {"Shift"} key = "Pause" command = "spawn" arg = "hibernate" }
+  key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "x-terminal-emulator" }
+  key { modkey = {"Mod4"} key = "f" command = "spawn" arg = "firefox" }
   key { modkey = {"Mod4"} key = "p" command = "spawn"
-    #arg = "exec /bin/sh -c \"find `echo $PATH | sed 's/:/ /g'` -maxdepth 1 -not -type d -printf '%f\n' | sort -u | awesome-menu -e 'exec '\""
-    arg = "exec dprog"
+    #arg = "/bin/sh -c \"find `echo $PATH | sed 's/:/ /g'` -maxdepth 1 -not -type d -printf '%f\n' | sort -u | awesome-menu -e 'exec '\""
+    arg = "dprog"
   }
   key { modkey = {"Mod4", "Control"} key = "n" command = "tag_setlayout" arg = "+1" }
   key { modkey = {"Mod4", "Control"} key = "p" command = "tag_setlayout" arg = "-1" }
@@ -188,7 +188,7 @@ keys {
   }
 }
 mouse {
-  root { modkey = {} button = "3" command = "spawn" arg = "exec x-terminal-emulator" }
+  root { modkey = {} button = "3" command = "spawn" arg = "x-terminal-emulator" }
   root { modkey = {} button = "4" command = "tag_viewprev" }
   root { modkey = {} button = "5" command = "tag_viewnext" }
   client { modkey = {"Mod4"} button = "1" command = "client_movemouse" }
