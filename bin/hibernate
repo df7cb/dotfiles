@@ -1,6 +1,7 @@
 #!/bin/sh
 
 xscreensaver-command -lock &
+wicd-cli -y -x
 
 sleep 2
 
@@ -9,3 +10,6 @@ if [ -x /usr/sbin/pm-hibernate ] ; then
 else
 	sudo /usr/sbin/hibernate
 fi
+
+wicd-cli -y -n 0 -c
+sudo anacron cron.daily
