@@ -1,5 +1,10 @@
 #!/bin/sh
 
+debug () {
+	test -t 2 || return
+	echo "$@" >&2
+}
+
 # remote host
 HOST="$1"
 case $HOST in -*) HOST="$2" ;; esac
@@ -13,21 +18,35 @@ for KEY in $HOME/.priv/ssh/*.pub ; do
 		DOMAIN="$KEYDOMAIN"
 		break ;;
 	esac
+	if [ "$KEYDOMAIN" = "credativ.de" ] ; then
+		case $HOST in *.credativ.com|*.credativ.lan|*.credativ.dmz)
+			DOMAIN="$KEYDOMAIN"
+			break ;;
+		esac
+	fi
 done
 
 # start per-domain ssh-agent
 if [ "$DOMAIN" ] ; then
 	SOCKET="$HOME/.ssh/ssh-agent-$DOMAIN"
 
+	# socket without pidfile, probably ssh-agent was interrupted while
+	# asking for a passphrase
+	if test -e "$SOCKET" && ! test -e "$SOCKET.pid" ; then
+		debug "Removing socket $SOCKET without pid file"
+		rm -f "$SOCKET"
+	fi
+
 	if test -e "$SOCKET.pid" ; then
 		SSH_AGENT_PID=$(cat "$SOCKET.pid")
 		if ! kill -0 "$SSH_AGENT_PID" 2> /dev/null ; then
-			echo "Removing stale socket $SOCKET"
+			debug "Removing stale socket $SOCKET"
 			rm -f "$SOCKET" "$SOCKET.pid"
 		fi
 	fi
 
 	if test -e "$SOCKET" ; then
+		debug "Using socket $SOCKET"
 		SSH_AUTH_SOCK="$SOCKET"
 		export SSH_AUTH_SOCK
 	else
