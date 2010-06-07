@@ -1,6 +1,7 @@
 /* http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include <glib.h>
 #include "gnome-keyring.h"
@@ -36,23 +37,30 @@ int main(int argc, char * argv[])
     } mode;
     char * name;
     char * password;
+    char * env_command = getenv ("GNOME_KEYRING_QUERY");
     
     g_set_application_name(APPLICATION_NAME);
     
-    if (argc != 3)
+    if (argc == 3) {
+	if (g_ascii_strcasecmp(argv[1], "get") == 0)
+	    mode = MODE_GET;
+	else if (g_ascii_strcasecmp(argv[1], "set") == 0)
+	    mode = MODE_SET;
+	else
+	{
+	    fprintf(stderr, "Invalid mode: %s\n", argv[1]);
+	    exit(EXIT_FAILURE);
+	}
+	
+	name = argv[2];
+
+    } else if ((argc == 1 || argc == 2) && env_command) {
+	mode = MODE_GET;
+	name = env_command;
+
+    } else {
         usage();
-        
-    if (g_ascii_strcasecmp(argv[1], "get") == 0)
-        mode = MODE_GET;
-    else if (g_ascii_strcasecmp(argv[1], "set") == 0)
-        mode = MODE_SET;
-    else
-    {
-        fprintf(stderr, "Invalid mode: %s\n", argv[1]);
-        exit(EXIT_FAILURE);
     }
-    
-    name = argv[2];
     
     switch (mode)
     {
@@ -72,7 +80,11 @@ int main(int argc, char * argv[])
             password = g_malloc(MAX_PASSWORD_LENGTH);
             *password = '\0';
             fgets(password, MAX_PASSWORD_LENGTH, stdin);
-            
+
+            char *nl = strchr (password, '\n');
+            if (nl)
+                *nl = '\0';
+
             if (!set_password(name, password))
             {
                 fprintf(stderr, "Failed to set password: %s\n", name);
