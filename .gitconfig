@@ -1,5 +1,7 @@
 [alias]
+	branches = branch
 	ci = commit
+	co = checkout
 	st = !git --no-pager status
 
 [core]
