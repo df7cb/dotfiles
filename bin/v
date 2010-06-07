@@ -51,7 +51,10 @@ case $command in
 	ci|com|commit) case $VCS in
 		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
-		git) git commit "$@" && git push --tags ;;
+		git) git commit "$@" && {
+			read -p "Push? [y] " push
+			case $push in "|y*") git push --tags ;; esac
+		     } ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	pull) case $VCS in

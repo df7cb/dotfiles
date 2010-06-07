@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 debug () {
 	test -t 2 || return
@@ -52,6 +52,9 @@ if [ "$DOMAIN" ] ; then
 	else
 		eval $(ssh-agent -s -a "$SOCKET")
 		echo "$SSH_AGENT_PID" > "$SOCKET.pid"
+	fi
+
+	if ! ssh-add -l | grep -q "$DOMAIN" ; then
 		ssh-add $HOME/.priv/ssh/$DOMAIN
 	fi
 fi
