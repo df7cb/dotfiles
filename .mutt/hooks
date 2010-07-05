@@ -13,6 +13,10 @@ folder-hook .			'push <collapse-all>'
 message-hook .			"ignore Sender"
 message-hook '~h X-Katie:'	"unignore Sender"
 
+# Debian spam (http://wiki.debian.org/Teams/ListMaster/ListArchiveSpam/MUAPlugins/Mutt)
+message-hook '~A' 'macro index,pager S "<save-message>=Spam<enter>" "Save spam for processing with SA"'
+message-hook '~h "^List-Id: <[^ \t]+\.lists\.debian\.org>"' 'macro index,pager S "<enter-command>unset resolve<enter><save-message>=Spam<enter><bounce-message>report-listspam@lists.debian.org<enter><enter-command>set resolve<enter>" "report list spam to debian"'
+
 send-hook . "set pgp_autosign pgp_autoinline=no mime_forward=ask-yes"
 send-hook '~t (majordomo\|-request\|fleas)@' "unset pgp_autosign mime_forward"
 send-hook '~t debian\.org$' "set from=myon@debian.org"
