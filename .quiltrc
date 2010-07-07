@@ -1,4 +1,10 @@
 QUILT_DIFF_OPTS="-p"
 QUILT_PATCH_OPTS="-U"
-QUILT_PATCHES="debian/patches"
 QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
+
+for where in ./ ../ ../../ ../../../ ../../../../ ../../../../../; do
+	if [ -e ${where}debian/rules -a -d ${where}debian/patches ]; then
+		QUILT_PATCHES=debian/patches
+		break
+	fi
+done
