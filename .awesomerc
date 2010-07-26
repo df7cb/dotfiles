@@ -127,7 +127,8 @@ rules {
 }
 keys {
   key { key = "Pause" command = "spawn" arg = "lock" }
-  key { modkey = {"Shift"} key = "Pause" command = "spawn" arg = "hibernate" }
+  key { modkey = {"Shift"} key = "Pause" command = "spawn" arg = "xscreensaver-command -activate" }
+  key { modkey = {"Control"} key = "Pause" command = "spawn" arg = "hibernate" }
   key { modkey = {"Mod4"} key = "Return" command = "spawn" arg = "x-terminal-emulator" }
   key { modkey = {"Mod4"} key = "f" command = "spawn" arg = "firefox" }
   key { modkey = {"Mod4"} key = "p" command = "spawn"
