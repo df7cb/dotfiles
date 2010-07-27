@@ -28,7 +28,7 @@ use warnings;
 use Net::DNS;
 
 my %cache;
-my $res = Net::DNS::Resolver->new;
+my $res;
 
 my ($c1, $c2, $c3, $c0) = ("", "", "");
 ($c1, $c2, $c3, $c0) = map { "\033[${_}m" } qw(32 33 31 0) if (-t 1);
@@ -54,9 +54,9 @@ sub dns ($$)
 
 		if ($t =~ /^(AFSDB|MX)$/) {
 			$q2 =~ s/\d+ //;
-		} elsif ($t eq 'SOA') {
+		} elsif ($t =~ /^(SOA|NSEC)$/) {
 			$q2 =~ s/ .*//s;
-		} elsif ($t =~ /^(DNSKEY|HINFO|NSEC3PARAM|RRSIG|SSHFP|TXT)$/) {
+		} elsif ($t =~ /^(DNSKEY|DS|HINFO|NSEC3PARAM|RRSIG|SSHFP|TXT)$/) {
 			$q2 = ""; # no recursion here
 		}
 
@@ -67,6 +67,13 @@ sub dns ($$)
 		next unless $q2;
 		dns ($q2, $depth + 1);
 	}
+}
+
+if (@ARGV and $ARGV[0] =~ /^@(.*)/) {
+	$res = Net::DNS::Resolver->new (nameservers => [$1]);
+	shift;
+} else {
+	$res = Net::DNS::Resolver->new;
 }
 
 for my $host (@ARGV) {
