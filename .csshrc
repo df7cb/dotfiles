@@ -24,7 +24,7 @@ screen_reserve_right=0
 screen_reserve_top=0
 send_menu_xml_file=~/.csshrc_send_menu
 show_history=0
-ssh=~/bin/ssh
+ssh=ssh
 ssh_args= -x -o ConnectTimeout=10
 telnet_args=
 terminal=/usr/bin/rxvt-unicode
