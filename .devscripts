@@ -5,6 +5,7 @@ DEBCHECKOUT_AUTH_URLS='
   ^\w+://(svn\.df7cb\.de)/	svn+ssh://$1/svn/
 '
 DEBDIFF_UNPACK_TARBALLS="no"
+DEBDIFF_WDIFF_SOURCE_CONTROL="yes"
 DEBEMAIL=myon@debian.org
 #DEBEMAIL=christoph.berg@credativ.de
 DEBFULLNAME="Christoph Berg"
