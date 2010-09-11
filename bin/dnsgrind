@@ -56,6 +56,8 @@ sub dns ($$)
 			$q2 =~ s/\d+ //;
 		} elsif ($t =~ /^(SOA|NSEC)$/) {
 			$q2 =~ s/ .*//s;
+		} elsif ($t =~ /^(RP)$/) { # <mbox-dname> <txt-dname>, resolve latter
+			$q2 =~ s/.* //s;
 		} elsif ($t =~ /^(DNSKEY|DS|HINFO|NSEC3PARAM|RRSIG|SSHFP|TXT)$/) {
 			$q2 = ""; # no recursion here
 		}
