@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PROG=$1
-PREFIX=$2
+PROG=$(basename "$1")
+PREFIX="$2"
 
 if [ "$PROG" = "apt-get" ] || [ "$PROG" = "agi" ] || [ "$PROG" = "agr" ] ; then
 	apt-cache pkgnames "$PREFIX"
