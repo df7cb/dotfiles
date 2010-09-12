@@ -53,11 +53,6 @@ bind	compose	v	view-attach
 macro	index	,=	"<tag-pattern>~=<enter><tag-prefix><purge-message>"
 # index format with mailing list name
 macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s'\n"
-# delete messages older > 1m
-#macro	index	,d	"<delete-pattern>~R !~F ~d>1m<enter>"
-# index format with year included
-macro	index	,l	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %y %k:%M] %-15.15F %s'\n"
-#macro	index	,R	"l!~R\n"	# limit to unread meassages
 macro	index	,r	"l~(!~R|~F)\n<esc>V"	# limit to threads with unread meassages
 
 macro	pager	S	"<exit>S"
