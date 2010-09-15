@@ -7,7 +7,10 @@ debug () {
 
 # remote host
 HOST="$1"
-case $HOST in -*) HOST="$2" ;; esac
+case $HOST in
+	-l) HOST="$3" ;;
+	-*) HOST="$2" ;;
+esac
 
 # remote domain
 for KEY in $HOME/.priv/ssh/*.pub ; do
@@ -18,6 +21,12 @@ for KEY in $HOME/.priv/ssh/*.pub ; do
 		DOMAIN="$KEYDOMAIN"
 		break ;;
 	esac
+	if [ "$KEYDOMAIN" = "df7cb.de" ] ; then
+		case $HOST in *.lan)
+			DOMAIN="$KEYDOMAIN"
+			break ;;
+		esac
+	fi
 	if [ "$KEYDOMAIN" = "credativ.de" ] ; then
 		case $HOST in *.credativ.com|*.credativ.lan|*.credativ.dmz)
 			DOMAIN="$KEYDOMAIN"
