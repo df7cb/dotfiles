@@ -17,7 +17,10 @@ foreach my $file (@ARGV) {
 	}
 
 	while (<F>) {
-		if (/^--- (?:Log opened|Day changed) (.*)/) {
+		# --- Log opened Mi Sep 01 00:00:24 2010
+		if (/^--- Log opened (.. ... ..) ..:..:.. (....)/) {
+			$day = "$1 $2";
+		} elsif (/^--- Day changed (.*)/) {
 			$day = $1;
 		}
 		if (/(.*?)($re)(.*)/o) {
