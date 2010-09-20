@@ -1,0 +1,8 @@
+#!/bin/sh
+
+DIST="$1"
+[ "$DIST" ] || exit 1
+
+ssh kepler.df7cb.de cat /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release | \
+	gpg --detach-sign --armor | \
+	ssh kepler.df7cb.de "cat > /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release.gpg"

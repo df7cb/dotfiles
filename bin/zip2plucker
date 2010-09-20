@@ -85,8 +85,8 @@ to_gpx () {
 }
 
 to_db () {
-	rsync -Pavz "$NAME"*.gpx tesla.df7cb.de:projects/geocaching/gcdb/gpx
-	ssh tesla.df7cb.de projects/geocaching/gcdb/gc.pl projects/geocaching/gcdb/gpx/"$NAME"*.gpx
+	rsync -Pavz "$NAME"*.gpx kepler.df7cb.de:projects/geocaching/gcdb/gpx
+	ssh kepler.df7cb.de projects/geocaching/gcdb/gc.pl projects/geocaching/gcdb/gpx/"$NAME"*.gpx
 }
 
 if test -t 1 ; then
