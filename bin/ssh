@@ -22,7 +22,7 @@ for KEY in $HOME/.priv/ssh/*.pub ; do
 		break ;;
 	esac
 	if [ "$KEYDOMAIN" = "df7cb.de" ] ; then
-		case $HOST in *.lan)
+		case $HOST in *.lan|*.sourceforge.net)
 			DOMAIN="$KEYDOMAIN"
 			break ;;
 		esac
