@@ -44,7 +44,7 @@ set pgp_autosign
 set pgp_auto_decode
 set pgp_replyencrypt
 set pgp_sign_as="0x58510B5A"
-set pgp_timeout=14400
+set pgp_timeout=14400 smime_timeout=14400
 set pgp_use_gpg_agent
 set postponed="=postponed-msgs"
 set query_command="muttquery '%s'"
@@ -79,7 +79,7 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 
 #ifdef sidebar_visible set sidebar_visible sidebar_width=20
 
-unset crypt_autosmime smime_decrypt_use_default_key
+unset smime_decrypt_use_default_key
 set smime_ca_location="~/.priv/smime/ca-certificates.crt"
 set smime_certificates="~/.priv/smime/certificates" smime_keys="~/.priv/smime/keys"
 set smime_default_key="f4037fe5.0" smime_sign_as="f4037fe5.0"
