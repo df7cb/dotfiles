@@ -82,7 +82,7 @@ set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o
 unset smime_decrypt_use_default_key
 set smime_ca_location="~/.priv/smime/ca-certificates.crt"
 set smime_certificates="~/.priv/smime/certificates" smime_keys="~/.priv/smime/keys"
-set smime_default_key="f4037fe5.0" smime_sign_as="f4037fe5.0"
+set smime_default_key="e45f1751.0" smime_sign_as="e45f1751.0"
 
 set smime_decrypt_command="echo Decrypting using key %k, recipient %c >&2 ; \
 openssl smime -decrypt -passin stdin -inform DER -in %f -inkey %k -recip %c -signer /tmp/crt"
