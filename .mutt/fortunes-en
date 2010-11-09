@@ -250,3 +250,5 @@ it.
 %
 <weasel> we're releasing way too early.  stable doesn't hurt yet
 %
+<pnl> oh dear, rfc822.c wants to hurt me bad
+%
