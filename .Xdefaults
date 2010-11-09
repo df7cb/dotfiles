@@ -57,6 +57,8 @@ URxvt.keysym.M-C-p:	\342\231\240
 URxvt.matcher.button:	3
 URxvt.matcher.pattern.1: \\#(\\d{6})
 URxvt.matcher.launcher.1: iceweasel bugs.debian.org/$1
+URxvt.matcher.pattern.2: <([^<>]+@[^<>]+)>
+URxvt.matcher.launcher.2: iceweasel lists.debian.org/$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,3digits
 URxvt.perl-lib:		/home/myon/lib/urxvt
