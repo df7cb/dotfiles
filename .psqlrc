@@ -6,3 +6,4 @@
 \set VERBOSITY verbose
 \pset null '(n)'
 \timing
+\set act 'SELECT datname, procpid, usename, waiting AS wait, date_trunc($$second$$, age(now(), xact_start)) AS xact_age, date_trunc($$second$$, age(now(), query_start)) AS query_age, date_trunc($$second$$, age(now(), backend_start)) AS backend_age, client_addr || $$:$$ || client_port AS client, CASE WHEN procpid = pg_backend_pid() THEN $$:act$$ ELSE current_query END FROM pg_stat_activity;'
