@@ -55,9 +55,9 @@ URxvt.keysym.M-C-8:	command:\033]710;xft:DejaVu Sans Mono-28,xft:Mono-28\007
 URxvt.keysym.M-C-9:	command:\033]710;xft:DejaVu Sans Mono-35,xft:Mono-35\007
 URxvt.keysym.M-C-p:	\342\231\240
 URxvt.matcher.button:	3
-URxvt.matcher.pattern.1: \\#(\\d{6})
+URxvt.matcher.pattern.1: (?:Closes:.|\\#)(\\d{6})
 URxvt.matcher.launcher.1: iceweasel bugs.debian.org/$1
-URxvt.matcher.pattern.2: <([^<>]+@[^<>]+)>
+URxvt.matcher.pattern.2: <([^<>]+[0-9][^<>]+@[^<>]+)>
 URxvt.matcher.launcher.2: iceweasel lists.debian.org/$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,3digits
