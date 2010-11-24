@@ -84,8 +84,9 @@ set smime_ca_location="~/.priv/smime/ca-certificates.crt"
 set smime_certificates="~/.priv/smime/certificates" smime_keys="~/.priv/smime/keys"
 set smime_default_key="e45f1751.0" smime_sign_as="e45f1751.0"
 
+# kill ^M in q-p input
 set smime_decrypt_command="echo Decrypting using key %k, recipient %c >&2 ; \
-openssl smime -decrypt -passin stdin -inform DER -in %f -inkey %k -recip %c -signer /tmp/crt"
+openssl smime -decrypt -passin stdin -inform DER -in %f -inkey %k -recip %c -signer /tmp/crt | sed -e 's/^=0D//'"
 set smime_verify_command="echo Verifying detached signature %s %f >&2 ; \
 openssl smime -verify -inform DER -in %s %C -content %f -signer %f.crt ; \
 test -f %f.crt && openssl x509 -noout -email -subject -issuer -fingerprint -dates -in %f.crt -noout >&2 ; \
