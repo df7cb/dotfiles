@@ -62,7 +62,7 @@ URxvt.matcher.launcher.2: iceweasel lists.debian.org/$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,3digits
 URxvt.perl-lib:		/home/myon/lib/urxvt
-URxvt.saveLines:	2000
+URxvt.saveLines:	5000
 URxvt.scrollBar_floating: true
 URxvt.scrollColor:	#858585
 URxvt.scrollstyle:	plain
