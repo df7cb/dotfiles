@@ -24,50 +24,66 @@ run_dinstall = 0
 login = dak
 
 [bpo]
-fqdn = www.backports.org
-incoming = /
+fqdn = backports-master.debian.org
+incoming = /pub/UploadQueue/
+method = ftp
 login = anonymous
+allow_dcut = 1
 
-[tesla]
-fqdn = tesla.df7cb.de
+[kepler]
+fqdn = kepler.df7cb.de
 method = rsync
 incoming = .
 allow_unsigned_uploads = 1
 
-[tesla-any]
-fqdn = tesla.df7cb.de
+[kepler-any]
+fqdn = kepler.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-tesla any
+pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh kepler.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-kepler any
 
-[tesla-lenny]
-fqdn = tesla.df7cb.de
+[kepler-lenny]
+fqdn = kepler.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro include lenny tmp/UploadQueue/*.changes && sign-tesla lenny
+pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh kepler.df7cb.de reprepro include lenny tmp/UploadQueue/*.changes && sign-kepler lenny
 
-[tesla-squeeze]
-fqdn = tesla.df7cb.de
+[kepler-squeeze]
+fqdn = kepler.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-tesla squeeze
+pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh kepler.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-kepler squeeze
 
-[tesla-sid]
-fqdn = tesla.df7cb.de
+[kepler-sid]
+fqdn = kepler.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh tesla.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh tesla.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-tesla sid
+pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh kepler.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-kepler sid
 
 [debug]
 fqdn = nott.ayous.org
 method = rsync
 incoming = /org/debug.debian.net/incoming
-#post_upload_command = ssh tesla.df7cb.de /cb/debug.debian.net/process_incoming.sh
+#post_upload_command = ssh kepler.df7cb.de /cb/debug.debian.net/process_incoming.sh
+
+[conrad]
+fqdn = conrad.dus.dg-i.net
+login = cbe
+method = rsync
+incoming = .
+allow_unsigned_uploads = 1
+
+[willi]
+fqdn = willi.dus.dg-i.net
+login = root
+method = rsync
+incoming = .
+allow_unsigned_uploads = 1
