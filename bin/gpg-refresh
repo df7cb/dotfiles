@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SERVERS=$(host subkeys.pgp.net | cut -d ' ' -f 4 | \
-	egrep -v '64.71.173.107|114.31.78.196|213.239.212.133')
+	egrep -v '64.71.173.107|114.31.78.196|213.239.212.133|213.239.206.174')
 
 for server in $SERVERS ; do
 	getent hosts $server
