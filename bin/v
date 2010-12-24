@@ -48,15 +48,30 @@ test -d "$base" || base="."
 find_vcs "$base"
 
 case $command in
+	br|branch) $VCS branch "$@" ;;
 	ci|com|commit) case $VCS in
 		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
 		git) git commit "$@" && {
 			read -p "Push? [y] " push
-			case $push in "|y*") git push --tags ;; esac
+			case $push in
+				"") git push ;;
+				y*) git push ;;
+			esac
 		     } ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
+	di|diff) if [ -t 1 ] && [ -x /usr/bin/colordiff ] ; then
+		$VCS $command "$@" | colordiff
+	else
+		$VCS $command "$@"
+	fi ;;
+	wd|wdi|wdiff) [ -x /usr/bin/dwdiff ] && WDIFF=dwdiff
+		case $VCS in
+			git) git diff --color-words "$@" ;;
+			#svn) svn diff --diff-cmd $WDIFF "$@" -x '-C1' ;;
+			*) $VCS diff "$@" | wdiff -d ;;
+		esac ;;
 	pull) case $VCS in
 		hg) hg pull -u "$@" ;;
 		svn) [ "$1" = "-u" ] && shift
@@ -77,11 +92,6 @@ case $command in
 		git) git pull "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	diff) if [ -t 1 ] && [ -x /usr/bin/colordiff ] ; then
-		$VCS $command "$@" | colordiff
-	else
-		$VCS $command "$@"
-	fi ;;
 	add|co|cp|diff|info|log|mv|resolved|revert|rm|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2

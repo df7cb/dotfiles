@@ -4,6 +4,9 @@
 	ci = commit
 	co = checkout
 	st = !git --no-pager status
+	tags = tag
+	wd = diff --color-words
+	wdiff = diff --color-words
 
 [core]
 	pager = smart-less
