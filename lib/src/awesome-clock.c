@@ -62,8 +62,10 @@ count_mail (char *path)
 	return count;
 }
 
-#define BAT_STATE "/sys/class/power_supply/BAT1/energy_now"
-#define CURRENT "/sys/class/power_supply/BAT1/current_now"
+#define BAT "C1ED"
+#define BAT_FULL  "/sys/class/power_supply/" BAT "/charge_full"
+#define BAT_STATE "/sys/class/power_supply/" BAT "/charge_now"
+#define CURRENT   "/sys/class/power_supply/" BAT "/current_now"
 
 static int
 bat_cap (FILE *a)
@@ -77,7 +79,7 @@ bat_cap (FILE *a)
 		return -1;
 
 	if (max_cap == -1) {
-		if ((f = fopen ("/sys/class/power_supply/BAT1/energy_full", "r")) == NULL) {
+		if ((f = fopen (BAT_FULL, "r")) == NULL) {
 			max_cap = -2;
 			return -1;
 		}
