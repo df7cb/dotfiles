@@ -66,10 +66,10 @@ case $command in
 	else
 		$VCS $command "$@"
 	fi ;;
-	wd|wdi|wdiff) [ -x /usr/bin/dwdiff ] && WDIFF=dwdiff
+	wd|wdi|wdiff) [ -x /usr/bin/dwdiff ]
 		case $VCS in
 			git) git diff --color-words "$@" ;;
-			#svn) svn diff --diff-cmd $WDIFF "$@" -x '-C1' ;;
+			svn) svn diff --diff-cmd wdiff.sh "$@" ;;
 			*) $VCS diff "$@" | wdiff -d ;;
 		esac ;;
 	pull) case $VCS in
