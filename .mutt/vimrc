@@ -1,10 +1,10 @@
 " .vimrc for mutt
-" $Id$
 
 source ~/.vimrc
 
 set textwidth=70
 
+map _b mm1GSFrom: Christoph Berg <berg@df7cb.de><esc>`m
 map _d mm1GSFrom: Christoph Berg <cb@df7cb.de><esc>`m
 map _c mm1GSFrom: Christoph Berg <christoph.berg@credativ.de><esc>`m
 map _g mm1GSFrom: Christoph Berg <cbe@dg-i.net><esc>`m
