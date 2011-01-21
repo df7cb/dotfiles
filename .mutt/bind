@@ -49,13 +49,13 @@ bind	compose	<return> send-message	# <enter> = numeric keypad
 macro	compose	=	'f='		'Fcc to ~/mail/'
 bind	compose	v	view-attach
 
-# purge duplicates
-macro	index	,=	"<tag-pattern>~=<enter><tag-prefix><purge-message>"
+macro	index	,=	"<tag-pattern>~=<enter><tag-prefix><purge-message>"	"Purge duplicate messages"
 # index format with mailing list name
 macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s'\n"
-macro	index	,r	"l~(!~R|~F)\n<esc>V"	# limit to threads with unread meassages
+macro	index	,r	"<limit>~(!~R|~F)<enter><esc>V"	"Limit to threads with unread meassages"
+macro	index	,p	"<limit>~(~p|~P)<enter>"	"Limit to threads with my mail"
 
-macro	pager	S	"<exit>S"
+macro	pager	S	"<exit>S" "Save spam for processing with SA"
 macro	index	S	"<save-message>=Spam<enter>" "Save spam for processing with SA"
 
 #macro	index	,d	"|listmanage_mailman -d<enter><purge-message>"
