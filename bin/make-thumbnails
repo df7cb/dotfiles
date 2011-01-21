@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+use POSIX qw(ceil);
+
+my $columns = 10;
+my $width = 80;
+my $height = 80;
+my $border = 1;
+
+unless (@ARGV) {
+	@ARGV = (glob ("*.jpg"), glob ("*.JPG"));
+	@ARGV = sort @ARGV;
+}
+
+exit 1 unless (@ARGV);
+
+foreach my $file (@ARGV) {
+	# ^ needs imagemagick 6.3.8-2
+	my @cmd = qw(convert -verbose -resize 80x80^ -gravity Center -crop 80x80+0+0);
+	#s/\.gif$/.gif[0]/; # extract first frame from from animated gifs
+	system (@cmd, $file, ".$file");
+}
+
+my @cmd = qw(montage -verbose -geometry 80x80+1+1 -background white -adjoin -tile);
+system @cmd,
+	(scalar (@ARGV) > $columns ? "${columns}x" : scalar (@ARGV)),
+	(map { ".$_" } @ARGV),
+	".index.jpg";
+
+open MAP, "> .index-map.html" or die ".index-map.html: $!";
+
+print MAP "<map name=\".index\">\n";
+my $n = 0;
+foreach (@ARGV) {
+	my $left = ($n % $columns) * ($width + 2*$border);
+	my $right = $left + ($width + $border);
+	my $top = int($n / $columns) * ($height + 2*$border);
+	my $bottom = $top + ($height + $border);
+	my $href = "$_.html";
+	my $title = $_;
+	$title =~ s/_/ /g;
+	$title =~ s/\.(jpe?g|png|gif)$//i;
+	print MAP " <area shape=rect coords=\"$left,$top,$right,$bottom\" href=\"$href\" alt=\"$title\" title=\"$title\">\n";
+	$n++;
+}
+print MAP "</map>\n";
+print MAP "<img src=\".index.jpg\" usemap=\"#.index\" border=\"0\">\n";
+close MAP;
