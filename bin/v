@@ -66,12 +66,11 @@ case $command in
 	else
 		$VCS $command "$@"
 	fi ;;
-	wd|wdi|wdiff) [ -x /usr/bin/dwdiff ]
-		case $VCS in
-			git) git diff --color-words "$@" ;;
-			svn) svn diff --diff-cmd wdiff.sh "$@" ;;
-			*) $VCS diff "$@" | wdiff -d ;;
-		esac ;;
+	wd|wdi|wdiff) case $VCS in
+		git) git diff --color-words "$@" ;;
+		svn) svn diff --diff-cmd wdiff.sh "$@" ;;
+		*) $VCS diff "$@" | wdiff -d ;;
+	esac ;;
 	pull) case $VCS in
 		hg) hg pull -u "$@" ;;
 		svn) [ "$1" = "-u" ] && shift
@@ -79,7 +78,11 @@ case $command in
 		*) $VCS $command "$@" ;;
 	esac ;;
 	push) case $VCS in
-		git) $VCS $command --tags "$@" ;;
+		git) $VCS $command "$@" && git push --tags ;;
+		*) $VCS $command "$@" ;;
+	esac ;;
+	revert) case $VCS in
+		git) $VCS co -- "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	st|status) case $VCS in

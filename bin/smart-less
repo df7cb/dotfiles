@@ -7,4 +7,4 @@ if [ "$LINES" ] && [ -e "$1" ] ; then
 	[ "$lines" -le "$LINES" ] && exec cat "$@"
 fi
 
-exec less "$@"
+exec less -R "$@"
