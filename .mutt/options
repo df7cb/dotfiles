@@ -92,6 +92,6 @@ openssl smime -verify -inform DER -in %s %C -content %f -signer %f.crt ; \
 test -f %f.crt && openssl x509 -noout -email -subject -issuer -fingerprint -dates -in %f.crt -noout >&2 ; \
 rm -f %f.crt"
 set smime_verify_opaque_command="echo Verifying opaque signature %s >&2 ; \
-openssl smime -verify -inform DER -in %s %C -signer %s.crt ; \
+openssl smime -verify -inform DER -in %s %C -signer %s.crt | sed -e 's/^=0D//' ; \
 test -f %s.crt && openssl x509 -noout -email -subject -issuer -fingerprint -dates -in %s.crt -noout >&2 ; \
 rm -f %s.crt"
