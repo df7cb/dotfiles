@@ -11,14 +11,17 @@ my $border = 1;
 
 unless (@ARGV) {
 	@ARGV = (glob ("*.jpg"), glob ("*.JPG"));
-	@ARGV = sort @ARGV;
+	@ARGV = sort {
+		(stat $a)[9] <=> (stat $b)[9] or
+		$a cmp $b
+	} @ARGV;
 }
 
 exit 1 unless (@ARGV);
 
 foreach my $file (@ARGV) {
 	# ^ needs imagemagick 6.3.8-2
-	my @cmd = qw(convert -verbose -resize 80x80^ -gravity Center -crop 80x80+0+0);
+	my @cmd = qw(convert -verbose -strip -resize 80x80^ -gravity Center -crop 80x80+0+0);
 	#s/\.gif$/.gif[0]/; # extract first frame from from animated gifs
 	system (@cmd, $file, ".$file");
 }
