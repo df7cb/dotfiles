@@ -1,5 +1,4 @@
 QUILT_DIFF_OPTS="-p"
-QUILT_PATCH_OPTS="-U"
 QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
 
 for where in ./ ../ ../../ ../../../ ../../../../ ../../../../../; do
