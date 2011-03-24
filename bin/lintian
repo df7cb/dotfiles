@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$*" ] || [ ! -d debian ] ; then
+	/usr/bin/lintian "$@"
+else
+	SOURCE=$(dpkg-parsechangelog | perl -lne 'print $1 if /Source: (.*)/')
+	VERSION=$(dpkg-parsechangelog | perl -lne 'print $1 if /Version: (.*)/')
+	ARCH=$(dpkg --print-architecture)
+	/usr/bin/lintian "../${SOURCE}_${VERSION}_$ARCH.changes"
+fi
