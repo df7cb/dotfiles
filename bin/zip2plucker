@@ -43,7 +43,6 @@ if [ "$NAME" != "$BASE" ] ; then
 fi
 
 to_e61 () {
-	lsmod | grep -q garmin || sudo modprobe garmin_gps
 	test -d /media/e61 || pmount /dev/disk/by-uuid/1AFF-7785 e61
 	cp -av "$NAME.gpx" /media/e61/gpx
 	pumount e61
@@ -71,7 +70,6 @@ to_plucker () {
 }
 
 to_viking () {
-	lsmod | grep -q garmin || sudo modprobe garmin_gps
 	viking.sh $BASE*.gpx
 }
 
