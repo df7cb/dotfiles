@@ -64,7 +64,7 @@ set simple_search="~f %s | ~s %s | ~C %s"
 set sleep_time="0"
 set status_format=" %f %r%?V? [%V]? [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?l? %l?]%?p? Post:%p?%?b? Inc:%b? (%s/%S) -%>- $my_profile - %P --"
 set status_on_top
-set sort=threads
+set sort=threads sort_aux=last-date
 set tilde
 set timeout=30
 ifdef trash set trash="=Trash"
