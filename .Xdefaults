@@ -59,6 +59,8 @@ URxvt.matcher.pattern.1: (?:Closes:.|\\#)(\\d{6})
 URxvt.matcher.launcher.1: iceweasel bugs.debian.org/$1
 URxvt.matcher.pattern.2: <([^<>]+[0-9][^<>]+@[^<>]+)>
 URxvt.matcher.launcher.2: iceweasel lists.debian.org/$1
+URxvt.matcher.pattern.3: (\\b[Gg][Cc][A-Za-z0-9]{3,5}\\b)
+URxvt.matcher.launcher.3: iceweasel coord.info/$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,3digits
 URxvt.perl-lib:		/home/myon/lib/urxvt
