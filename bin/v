@@ -61,7 +61,7 @@ case $command in
 		     } ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	di|diff) if [ -t 1 ] && [ -x /usr/bin/colordiff ] ; then
+	di|diff) if [ "$VCS" != git ] && [ -t 1 ] && [ -x /usr/bin/colordiff ] ; then
 		$VCS $command "$@" | colordiff
 	else
 		$VCS $command "$@"
