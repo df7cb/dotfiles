@@ -85,10 +85,9 @@ complete -v unset vared
 complete -o default -f -X '!*.pdf' acroread evince xpdf
 complete -o default -f -X '!*.deb' dpkg-deb
 complete -o default -f -X '!*.dsc' dpkg-source
-complete -o default -f -X '!*.@(changes|deb|dsc)' lintian
 complete -o default -f -X '!*.@(deb|dsc)' debdiff
 complete -o default -f -X '!*.@(changes|dsc)' dscverify
-complete -o default -f -X '!*.changes' debsign dput debrsign
+complete -o default -f -X '!*.changes' debsign dput debrsign lintian
 complete -o default -f -X '!*.?(e)ps*(.gz)' gv
 complete -o default -f -X '!*.tex' latex
 complete -o default -f -X '!*.diff*(.gz)' lsdiff interdiff
