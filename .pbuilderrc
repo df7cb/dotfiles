@@ -3,11 +3,8 @@ case $DEBIAN_VERSION in
 	3.1|sarge) DISTRIBUTION="sarge" ;;
 	4.0|etch) DISTRIBUTION="etch" ;;
 	5.0|lenny) DISTRIBUTION="lenny" ;;
-	unstable|sid) DISTRIBUTION="sid" ;;
-	testing/unstable) echo "please use unstable in /etc/debian_version"
-	   exit 1 ;;
-	*) echo "unknown distribution in /etc/debian_version: $DEBIAN_VERSION"
-	   exit 1 ;;
+	6.0|squeeze) DISTRIBUTION="lenny" ;;
+	*) DISTRIBUTION="sid" ;;
 esac
 echo "Debian version: $DEBIAN_VERSION -> $DISTRIBUTION"
 
@@ -26,7 +23,7 @@ BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
 APTCACHE="/srv/pbuilder/aptcache"
-APTCACHEHARDLINK="no"
+APTCACHEHARDLINK="yes"
 #DEBBUILDOPTS="-j2"
 DEBOOTSTRAP="debootstrap"
 
