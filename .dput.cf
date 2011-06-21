@@ -74,6 +74,13 @@ method = rsync
 incoming = /org/debug.debian.net/incoming
 #post_upload_command = ssh kepler.df7cb.de /cb/debug.debian.net/process_incoming.sh
 
+[pgapt]
+fqdn = kepler.df7cb.de
+method = rsync
+incoming = /cb/www.df7cb.de/public_html/projects/postgresql-apt/incoming
+post_upload_command = ssh kepler.df7cb.de reprepro-pgapt processincoming pgapt
+allow_unsigned_uploads = 1
+
 [conrad]
 fqdn = conrad.dus.dg-i.net
 login = cbe
