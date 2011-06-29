@@ -4,26 +4,23 @@ case $DEBIAN_VERSION in
 	4.0|etch) DISTRIBUTION="etch" ;;
 	5.0|lenny) DISTRIBUTION="lenny" ;;
 	6.0|squeeze) DISTRIBUTION="lenny" ;;
+	7.0|wheezy) DISTRIBUTION="wheezy" ;;
 	*) DISTRIBUTION="sid" ;;
 esac
 echo "Debian version: $DEBIAN_VERSION -> $DISTRIBUTION"
 
-ARCH=`dpkg --print-architecture`
+ARCH=${ARCH:-`dpkg --print-architecture`}
 MIRRORSITE="http://debian.netcologne.de/debian"
-#MIRRORSITE="http://localhost:9999/debian"
 #MIRRORSITE="http://debian.credativ.lan/debian"
-if [ "$ARCH" = amd64 ] && [ "$DISTRIBUTION" = sarge ] ; then
-	MIRRORSITE="http://localhost:9999/debian-amd64"
-fi
 
 ROOT="/srv/pbuilder"
 BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
-ls -l "$BASETGZ" || :
+#ls -l "$BASETGZ" || :
 BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
 APTCACHE="/srv/pbuilder/aptcache"
-APTCACHEHARDLINK="yes"
+#APTCACHEHARDLINK="yes"
 #DEBBUILDOPTS="-j2"
 DEBOOTSTRAP="debootstrap"
 
@@ -34,6 +31,8 @@ case $DISTRIBUTION-$ARCH in
 	lenny-i386)  BUILDUSERID=4005 BUILDUSERNAME=buildd5 ;;
 	etch-amd64)  BUILDUSERID=4006 BUILDUSERNAME=buildd6 ;;
 	etch-i386)   BUILDUSERID=4007 BUILDUSERNAME=buildd7 ;;
+	squeeze-amd64)  BUILDUSERID=4008 BUILDUSERNAME=buildd8 ;;
+	squeeze-i386)   BUILDUSERID=4009 BUILDUSERNAME=buildd9 ;;
 	*)           BUILDUSERID=4001 BUILDUSERNAME=buildd ;;
 esac
 LOGNAME=root
