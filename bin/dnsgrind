@@ -60,11 +60,11 @@ sub dns ($$)
 
 		if ($t =~ /^(AFSDB|MX)$/) {
 			$q2 =~ s/\d+ //;
-		} elsif ($t =~ /^(SOA|NSEC)$/) {
+		} elsif ($t =~ /^(SOA)$/) {
 			$q2 =~ s/ .*//s;
 		} elsif ($t =~ /^(RP)$/) { # <mbox-dname> <txt-dname>, resolve latter
 			$q2 =~ s/.* //s;
-		} elsif ($t =~ /^(DNSKEY|DS|HINFO|NSEC3PARAM|SSHFP|TXT)$/) {
+		} elsif ($t =~ /^(DNSKEY|DS|HINFO|NSEC|NSEC3PARAM|SSHFP|TXT)$/) {
 			$q2 = ""; # no recursion here
 		} elsif ($t =~ /^(RRSIG)$/) {
 			next if ($opt{q});
