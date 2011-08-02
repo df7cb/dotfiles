@@ -1,5 +1,4 @@
 #!/bin/sh
-# $Id$
 
 if [ -z "$1" ] ; then
 	echo "usage: {ttar|ctar} archive.{tar|tgz|bz2|zip|rar} [filenames...]" 1>&2
@@ -18,6 +17,7 @@ case "$1" in
 	*.rar)			T="unrar v"	C="echo rar not supported:" ;;
 	*.xar)			T="xar -tvf"	C="xar -cf" ;;
 	*.zip|*.exe)		T="unzip -l"	C="zip -r" ;;
+	*.7z)			T="7z l"	C="7z a" ;;
 	*)	echo "$0 error: suffix not recognized: $1" 1>&2
 		exit 1 ;;
 esac
