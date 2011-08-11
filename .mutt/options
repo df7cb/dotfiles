@@ -13,7 +13,7 @@ unset bounce_delivered
 set certificate_file="~/.priv/mutt/certificates"
 unset collapse_unread
 unset confirmappend
-unset confirmcreate
+set confirmcreate
 set edit_headers
 set editor="vim -u ~/.mutt/vimrc -c'/^$' -c'noh'"
 set envelope_from_address="cb@df7cb.de" use_envelope_from
