@@ -3,10 +3,14 @@
 	branches = branch
 	ci = commit
 	co = checkout
+	di = diff
 	st = !git --no-pager status
 	tags = tag
 	wd = diff --color-words
 	wdiff = diff --color-words
+
+[color]
+	ui = auto
 
 [core]
 	pager = smart-less
