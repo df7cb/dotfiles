@@ -1,8 +1,9 @@
 [alias]
 	br = branch
 	branches = branch
-	ci = commit
+	ci = commit -v
 	co = checkout
+	commit = commit -v
 	di = diff
 	st = !git --no-pager status
 	tags = tag
