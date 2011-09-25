@@ -1,0 +1,3 @@
+#!/bin/sh
+
+quilt $(basename $0 | cut -c 2-) "$@"

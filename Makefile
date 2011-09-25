@@ -1,7 +1,8 @@
 # $Id$
 
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
-all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) .ssh/config
+QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qpop bin/qpush bin/qrefresh bin/qtop
+all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) $(QUILT) .ssh/config \
 
 ## targets ##
 
@@ -19,6 +20,9 @@ bin/ctar:
 
 $(DCLEAN):
 	ln -s dclean $@
+
+$(QUILT):
+	ln -s qwrapper $@
 
 .PHONY: .priv
 .priv:
