@@ -95,7 +95,7 @@ bat_cap (FILE *a)
 
 	if ((f = fopen (BAT_STATE, "r")) == NULL) {
 		perror (BAT_STATE);
-		max_cap = -2;
+		//max_cap = -2;
 		return -1;
 	}
 	fgets (buf, sizeof (buf), f);
@@ -104,7 +104,7 @@ bat_cap (FILE *a)
 
 	if ((f = fopen (CURRENT, "r")) == NULL) {
 		perror (CURRENT);
-		max_cap = -2;
+		//max_cap = -2;
 		return -1;
 	}
 	fgets (buf, sizeof (buf), f);
@@ -112,11 +112,11 @@ bat_cap (FILE *a)
 	fclose (f);
 
 	if (rate > 0)
-		fprintf (a, "0 widget_tell topbar battery text  %.1f%% %.1fm \n",
+		fprintf (a, "0 widget_tell topbar battery text  %.0f%% %.0f' \n",
 			(double) remaining / max_cap * 100.0,
 			(double) remaining / rate * 60.0);
 	else
-		fprintf (a, "0 widget_tell topbar battery text  %.1f%% \n",
+		fprintf (a, "0 widget_tell topbar battery text  %.0f%% \n",
 			(double) remaining / max_cap * 100.0);
 
 	return 0;
