@@ -17,4 +17,4 @@ clean:
 
 restart:
 	-killall awesome-clock
-	grep awesome-clock ~/.xsession | sh
+	grep awesome-clock ~/.xsession | sh -
