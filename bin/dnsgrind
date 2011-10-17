@@ -31,10 +31,11 @@ use Getopt::Std;
 # q no RRSIG output
 # s full RRSIG output
 my %opt;
-getopts ('qs', \%opt);
+getopts ('sS', \%opt);
 
 my %cache;
 my $res;
+my $rrsigs = 0;
 
 my ($c1, $c2, $c3, $c0) = ("", "", "");
 ($c1, $c2, $c3, $c0) = map { "\033[${_}m" } qw(32 33 31 0) if (-t 1);
@@ -67,9 +68,10 @@ sub dns ($$)
 		} elsif ($t =~ /^(DNSKEY|DS|HINFO|NSEC|NSEC3PARAM|SSHFP|TXT)$/) {
 			$q2 = ""; # no recursion here
 		} elsif ($t =~ /^(RRSIG)$/) {
-			next if ($opt{q});
+			$rrsigs++;
+			next unless ($opt{s} or $opt{S});
 			$q2 = ""; # no recursion here
-			$a =~ s/ \(.*//s unless ($opt{s});
+			$a =~ s/ (?:\(.*|[0-9a-f]{32,}$)//s unless ($opt{S});
 		}
 
 		my ($cq, $cq0) = ("", "");
@@ -90,4 +92,8 @@ if (@ARGV and $ARGV[0] =~ /^@(.*)/) {
 
 for my $host (@ARGV) {
 	dns ($host, 0);
+}
+
+if ($rrsigs and not $opt{s} and not $opt{S}) {
+	print "$rrsigs RRSIG records omitted\n";
 }
