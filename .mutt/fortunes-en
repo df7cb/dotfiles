@@ -263,3 +263,7 @@ it.
 <christoph> oh we're past #640000 now
 <jwilk> 640K should be enough for everyone!
 %
+I think 100% solution in HEAD and 99.99% solution in back branches
+should be good enough.
+	-- Tom Lane
+%
