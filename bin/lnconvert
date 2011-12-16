@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -eu
+
+for f in "$@" ; do
+	test -L "$f" || continue
+	target=$(readlink "$f")
+	echo "$f -> $target"
+	dir=$(dirname "$f")
+	base=$(basename "$f")
+	( cd $dir
+	  test -L "$base"
+	  rm "$base"
+	  cp -a "$target" "$base"
+	)
+done

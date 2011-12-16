@@ -52,7 +52,7 @@ case $command in
 	ci|com|commit) case $VCS in
 		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
-		git) git commit "$@" && {
+		git) git ci "$@" && {
 			read -p "Push? [y] " push
 			case $push in
 				"") git push ;;
