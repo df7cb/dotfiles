@@ -1,0 +1,26 @@
+#!/bin/sh
+
+for f in "$@" ; do
+	if [ -e "$f" ] ; then
+		if [ -e "$f.ts" ] && [ -s "$f.ts" ] ; then
+			echo "$f.ts exists and is not empty" >&2
+			exit 1
+		fi
+		touch -r "$f" "$f.ts"
+	fi
+done
+
+"$@"
+
+for f in "$@" ; do
+	if [ -e "$f" ] ; then
+		if [ -e "$f.ts" ] && [ -s "$f.ts" ] ; then
+			echo "$f.ts exists and is not empty" >&2
+			exit 1
+		fi
+		echo "Restoring timestamp of $f"
+		touch -r "$f.ts" "$f"
+		rm "$f.ts"
+	fi
+done
+
