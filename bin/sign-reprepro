@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DIST="$1"
+[ "$DIST" ] || exit 1
+HOST="feynman.df7cb.de"
+
+ssh $HOST cat /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release | \
+	gpg -u $PGPKEY2 --detach-sign --armor | \
+	ssh $HOST "cat > /cb/vpn.df7cb.de/public_html/debian/dists/$DIST/Release.gpg"
