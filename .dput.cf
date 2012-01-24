@@ -30,55 +30,55 @@ method = ftp
 login = anonymous
 allow_dcut = 1
 
-[kepler]
-fqdn = kepler.df7cb.de
+[feynman]
+fqdn = feynman.df7cb.de
 method = rsync
 incoming = .
 allow_unsigned_uploads = 1
 
-[kepler-any]
-fqdn = kepler.df7cb.de
+[feynman-any]
+fqdn = feynman.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh kepler.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-kepler any
+pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh feynman.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-reprepro any
 
-[kepler-lenny]
-fqdn = kepler.df7cb.de
+[feynman-lenny]
+fqdn = feynman.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh kepler.df7cb.de reprepro include lenny tmp/UploadQueue/*.changes && sign-kepler lenny
+pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh feynman.df7cb.de reprepro include lenny tmp/UploadQueue/*.changes && sign-reprepro lenny
 
-[kepler-squeeze]
-fqdn = kepler.df7cb.de
+[feynman-squeeze]
+fqdn = feynman.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh kepler.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-kepler squeeze
+pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh feynman.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-reprepro squeeze
 
-[kepler-sid]
-fqdn = kepler.df7cb.de
+[feynman-sid]
+fqdn = feynman.df7cb.de
 method = rsync
 incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
-pre_upload_command = ssh kepler.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh kepler.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-kepler sid
+pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh feynman.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-reprepro sid
 
 [debug]
 fqdn = nott.ayous.org
 method = rsync
 incoming = /org/debug.debian.net/incoming
-#post_upload_command = ssh kepler.df7cb.de /cb/debug.debian.net/process_incoming.sh
+#post_upload_command = ssh feynman.df7cb.de /cb/debug.debian.net/process_incoming.sh
 
 [pgapt]
-fqdn = kepler.df7cb.de
+fqdn = feynman.df7cb.de
 method = rsync
 incoming = /cb/www.df7cb.de/public_html/projects/postgresql-apt/incoming
-post_upload_command = ssh kepler.df7cb.de reprepro-pgapt processincoming pgapt
+post_upload_command = ssh feynman.df7cb.de reprepro-pgapt processincoming pgapt
 allow_unsigned_uploads = 1
 
 [conrad]
