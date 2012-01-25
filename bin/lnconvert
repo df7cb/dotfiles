@@ -4,7 +4,7 @@ set -eu
 
 for f in "$@" ; do
 	test -L "$f" || continue
-	target=$(readlink "$f")
+	target=$(readlink -f "$f")
 	echo "$f -> $target"
 	dir=$(dirname "$f")
 	base=$(basename "$f")
