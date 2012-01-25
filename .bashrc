@@ -27,7 +27,7 @@ cyan='\[\033[0;46m\]' red='\[\033[1;31m\]' bold='\[\033[1m\]' blue='\[\033[34m\]
 screentitle='\033k\u@'$chroot'\h\033\\'
 xtitle='\033]0;\u@'$chroot'\h:\w\007'
 ps1_pwd='${PS1_PWD:-$PWD}'
-prompt="$cyan[$red\$?$cyan] \\A $bold\\u@$chroot\\h:$blue$ps1_pwd$cyan$job"
+prompt="$cyan[$red\$?$cyan] \\A $bold\\u@$chroot\\h:$blue$ps1_pwd$red\$PS1_VCS$cyan$job"
 case $TERM in
 linux*|*vt100*|cons25)
 	PS1="$prompt \\l \\\$$reset " ;;
