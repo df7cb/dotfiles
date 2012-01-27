@@ -8,6 +8,6 @@ unhdr_order *
 hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
 
 # MIME config
-auto_view text/html application/pgp-encrypted
+auto_view text/calendar text/html application/pgp-encrypted
 alternative_order text/plain text/html
 mime_lookup application/octet-stream
