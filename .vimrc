@@ -114,6 +114,9 @@ if has("autocmd")
 
 au BufNewFile,BufRead *.swml  setf wml
 
+" Prevent accidental editing of patch .orig files
+autocmd BufRead *.orig set readonly
+
 " HTML (.shtml for server side)
 "augroup html
 "  au!
