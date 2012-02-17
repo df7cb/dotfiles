@@ -1,6 +1,9 @@
 # vim:ft=muttrc:
 
 # key bindings
+bind	editor	\cN	history-down
+bind	editor	\cP	history-up
+
 bind	alias	-	previous-page
 bind	index	-	previous-page
 bind	alias	<space>	next-page
