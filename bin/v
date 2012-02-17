@@ -53,10 +53,11 @@ case $command in
 		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
 		git) git ci "$@" && {
-			read -p "Push? [y] " push
+			read -p "Push? y:yes r:pull --rebase and push [y] " push
 			case $push in
 				"") git push ;;
-				y*) git push ;;
+				y|p) git push ;;
+				r) git pull --rebase && git push ;;
 			esac
 		     } ;;
 		*) $VCS $command "$@" ;;
