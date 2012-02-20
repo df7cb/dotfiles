@@ -5,6 +5,7 @@
 	co = checkout
 	commit = commit -v
 	di = diff
+	pull = pull --stat
 	st = !git --no-pager status
 	tags = tag
 	wd = diff --color-words

@@ -57,7 +57,7 @@ case $command in
 			case $push in
 				"") git push ;;
 				y|p) git push ;;
-				r) git pull --rebase && git push ;;
+				r) git pull --stat --rebase && git push ;;
 			esac
 		     } ;;
 		*) $VCS $command "$@" ;;
