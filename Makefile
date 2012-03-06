@@ -1,7 +1,7 @@
 # $Id$
 
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
-QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qpop bin/qpush bin/qrefresh bin/qtop
+QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qnew bin/qpop bin/qpush bin/qrefresh bin/qtop
 all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) $(QUILT) .ssh/config
 
 ## targets ##
@@ -26,7 +26,7 @@ $(QUILT):
 
 .PHONY: .priv
 .priv:
-	@test -d .priv && $(MAKE) -C .priv
+	@if [ -d .priv ] ; then $(MAKE) -C .priv ; fi
 
 tmp /tmp/$(USER):
 	mkdir -m 0700 $@
@@ -35,20 +35,6 @@ tmp /tmp/$(USER):
 
 cleanup:
 COMMITS = $(wildcard .mutt/fortunes-??)
-
-ifeq ($(shell [ -d .firefox ] && echo yes), yes)
-all: .firefox/cb/cbcbcbcb.slt/prefs.js
-COMMITS += .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
-endif
-.firefox/cb/cbcbcbcb.slt/prefs.js: .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
-	# Updating $@
-	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
-	sed -i -e '/"adblock.patterns"/d' -e '/"guc\./d' $@
-	cat $< >> $@
-firefox-pull:
-	@[ ! -L .firefox/cb/cbcbcbcb.slt/lock ]
-	.firefox/cb/cbcbcbcb.slt/pull .firefox/cb/cbcbcbcb.slt/prefs.js > .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
-	svn diff .firefox/cb/cbcbcbcb.slt/prefs.js.tracked
 
 ## update stuff ##
 
