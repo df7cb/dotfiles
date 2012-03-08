@@ -83,15 +83,13 @@ for dir in $save ; do
 done
 export INFOPATH
 
-# really ugly, broken workaround for SunOS 4
-if [ -f /bin/test ] ; then TEST=/bin/test ; else TEST=test ; fi
 for dir in $TMPDIRS ; do
-	if [ -d $dir ] && $TEST -O $dir ; then
-		export TEMP=$dir TMP=$dir TMPDIR=$dir
+	if [ -d $dir ] && test -O $dir ; then
+		export TMPDIR=$dir
 		break
 	fi
 done
-unset TMPDIRS TEST
+unset TMPDIRS
 
 #unset TEXINPUTS
 #for dir in \
