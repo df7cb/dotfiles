@@ -136,3 +136,4 @@ bind ^] paste [.]
 # hardstatus alwaysignore
 # hardstatus alwayslastline "%w"
 
+caption always "%w"
