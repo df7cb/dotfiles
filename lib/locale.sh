@@ -11,5 +11,5 @@ if [ -z "$LANG" ] ; then
 		esac
 	done
 fi
-export LANG LC_COLLATE=C
+export LANG
 
