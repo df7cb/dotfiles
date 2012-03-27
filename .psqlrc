@@ -1,11 +1,17 @@
+\set QUIET on
 \set ON_ERROR_ROLLBACK on
 \set ON_ERROR_STOP on
 --\unset AUTOCOMMIT
-\set PROMPT1 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
+--\set PROMPT1 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
+\set PROMPT1 '%`date +%H:%M` %n@%/ %x%R%# '
 \set PROMPT2 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
 \set VERBOSITY verbose
+
 \pset null '(n)'
+SET bytea_output = 'escape';
+
 \timing
+\unset QUIET
 
 \set act 'SELECT datname, procpid, usename, waiting AS wait, date_trunc($$second$$, age(clock_timestamp(), xact_start)) AS xact_age, date_trunc($$second$$, age(clock_timestamp(), query_start)) AS query_age, date_trunc($$second$$, age(clock_timestamp(), backend_start)) AS backend_age, host(client_addr) || $$:$$ || client_port AS client, CASE WHEN procpid = pg_backend_pid() THEN $$:act$$ ELSE current_query END FROM pg_stat_activity ORDER BY 1, 2;'
 
@@ -13,6 +19,10 @@
 
 \set relsize 'SELECT CASE WHEN schemaname = $$public$$ THEN $$$$ ELSE schemaname||$$.$$ END || relname AS relname, pg_size_pretty (pg_relation_size(relid)) AS size, pg_relation_size(relid) AS size, pg_size_pretty (pg_total_relation_size(relid)) AS total, pg_total_relation_size(relid) AS total, pg_size_pretty (pg_total_relation_size(relid) - pg_relation_size(relid)) AS extra, pg_total_relation_size(relid) - pg_relation_size(relid) AS extra FROM pg_stat_user_tables ORDER BY CASE WHEN schemaname = $$public$$ THEN $$AAAA$$ ELSE schemaname||$$.$$ END || relname;'
 
+\set tableio 'SELECT schemaname, relname, heap_blks_read, heap_blks_hit, CASE WHEN heap_blks_read >= heap_blks_hit AND heap_blks_hit > 0 THEN ROUND (heap_blks_read::numeric/heap_blks_hit, 1) || $$:1$$ WHEN heap_blks_hit > heap_blks_read AND heap_blks_read > 0 THEN $$1:$$ || ROUND (heap_blks_hit::numeric/heap_blks_read, 1) ELSE NULL END AS heapr, idx_blks_read, idx_blks_hit, CASE WHEN idx_blks_read >= idx_blks_hit AND idx_blks_hit > 0 THEN ROUND (idx_blks_read::numeric/idx_blks_hit, 1) || $$:1$$ WHEN idx_blks_hit > idx_blks_read AND idx_blks_read > 0 THEN $$1:$$ || ROUND (idx_blks_hit::numeric/idx_blks_read, 1) ELSE NULL END AS idxr, toast_blks_read, toast_blks_hit, CASE WHEN toast_blks_read >= toast_blks_hit AND toast_blks_hit > 0 THEN ROUND (toast_blks_read::numeric/toast_blks_hit, 1) || $$:1$$ WHEN toast_blks_hit > toast_blks_read AND toast_blks_read > 0 THEN $$1:$$ || ROUND (toast_blks_hit::numeric/toast_blks_read, 1) ELSE NULL END AS toastr, tidx_blks_read, tidx_blks_hit, CASE WHEN tidx_blks_read >= tidx_blks_hit AND tidx_blks_hit > 0 THEN ROUND (tidx_blks_read::numeric/tidx_blks_hit, 1) || $$:1$$ WHEN tidx_blks_hit > tidx_blks_read AND tidx_blks_read > 0 THEN $$1:$$ || ROUND (tidx_blks_hit::numeric/tidx_blks_read, 1) ELSE NULL END AS tidxr FROM pg_statio_user_tables ORDER BY schemaname, relname;'
+
 \set schemasize 'SELECT schemaname, pg_size_pretty (SUM (pg_relation_size(relid))::bigint) AS size, SUM (pg_relation_size(relid)) AS size, pg_size_pretty (SUM (pg_total_relation_size(relid))::bigint) AS total, SUM (pg_total_relation_size(relid)) AS total, pg_size_pretty (SUM (pg_total_relation_size(relid) - pg_relation_size(relid))::bigint) AS extra, SUM (pg_total_relation_size(relid) - pg_relation_size(relid)) AS extra FROM pg_stat_user_tables GROUP BY schemaname ORDER BY schemaname;'
 
 \set datsize 'SELECT datname, pg_size_pretty (pg_database_size (datname)) AS size, pg_database_size (datname) AS size FROM pg_database WHERE datallowconn ORDER BY 1;'
+
+\set waiting 'SELECT waiting.locktype AS waiting_locktype, waiting.relation::regclass AS waiting_table, waiting_stm.current_query AS waiting_query, waiting.mode AS waiting_mode, waiting.pid AS waiting_pid, other.locktype AS other_locktype, other.relation::regclass AS other_table, other_stm.current_query AS other_query, other.mode AS other_mode, other.pid AS other_pid, other.granted AS other_granted FROM pg_catalog.pg_locks AS waiting JOIN pg_catalog.pg_stat_activity AS waiting_stm ON ( waiting_stm.procpid = waiting.pid) JOIN pg_catalog.pg_locks AS other ON ( ( waiting."database" = other."database" AND waiting.relation = other.relation) OR waiting.transactionid = other.transactionid) JOIN pg_catalog.pg_stat_activity AS other_stm ON ( other_stm.procpid = other.pid) WHERE NOT waiting.granted AND waiting.pid <> other.pid;'
