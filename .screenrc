@@ -30,6 +30,10 @@ msgwait 2
 # make the shell in every window a login shell
 #shell -$SHELL
 
+deflogin off
+defmonitor on
+activity ""
+
 # autoaka testing
 # shellaka '> |tcsh'
 # shellaka '$ |sh'
@@ -136,4 +140,4 @@ bind ^] paste [.]
 # hardstatus alwaysignore
 # hardstatus alwayslastline "%w"
 
-caption always "%{wK}%w%=%u %H"
+caption always "%{wK}%Lw%=%u %H"
