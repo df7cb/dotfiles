@@ -43,12 +43,16 @@ command="$1"
 test "$command" && shift
 
 for base in "$@" ; do : ; done
-test -d "$base" || base="$(dirname "$base")"
+test -d "$base" || base="$(dirname -- "$base")"
 test -d "$base" || base="."
 find_vcs "$base"
 
 case $command in
 	br|branch) $VCS branch "$@" ;;
+	cdi|cdiff) case $VCS in
+		git) GIT_EXTERNAL_DIFF=git-context-diff git diff "$@" ;;
+		*) echo "Not supported yet" >&2 ;;
+	esac ;;
 	ci|com|commit) case $VCS in
 		bzr) bzr $command "$@" && bzr push ;;
 		hg) hg $command "$@" && hg push ;;
@@ -96,7 +100,7 @@ case $command in
 		git) git pull "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	add|co|cp|diff|info|log|mv|resolved|revert|rm|"")
+	add|co|cp|info|log|mv|resolved|revert|rm|"")
 		$VCS $command "$@" ;;
 	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
 		$VCS "$command" "$@" ;;
