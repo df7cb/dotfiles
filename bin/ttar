@@ -8,7 +8,7 @@ fi
 case "$1" in
 	*.tar)			T="tar tvf"	C="tar cvf" ;;
 	*.tgz|*.tar.gz|*.tar.Z)	T="tar tvfz"	C="tar cvfz" ;;
-	*.tar.bz2)		T="tar tvfj"	C="tar cvfj" ;;
+	*.tbz|*.tar.bz2)	T="tar tvfj"	C="tar cvfj" ;;
 	*.ace)			T="unace v"	C="echo ace not supported:" ;;
 	*.ar)			T="ar tv"	C="echo ar not supported:" ;;
 	*.deb)			T="dpkg-deb --contents"	C="echo ar not supported:" ;;
