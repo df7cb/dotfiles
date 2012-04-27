@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -t 1 ] ; then
-	/usr/bin/wdiff -w '[31;47m' -x '[0m' -y '[32;47m' -z '[0m' "$@"
+	exec /usr/bin/wdiff -w '[31;47m' -x '[0m' -y '[32;47m' -z '[0m' "$@"
 else
-	/usr/bin/wdiff "$@"
+	exec /usr/bin/wdiff "$@"
 fi
