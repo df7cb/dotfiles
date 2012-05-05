@@ -114,6 +114,9 @@ if has("autocmd")
 
 au BufNewFile,BufRead *.swml  setf wml
 
+" psql \e and \ef
+autocmd BufRead psql.edit.* setf sql
+
 " Prevent accidental editing of patch .orig files
 autocmd BufRead *.orig set readonly
 
