@@ -117,6 +117,9 @@ au BufNewFile,BufRead *.swml  setf wml
 " psql \e and \ef
 autocmd BufRead psql.edit.* setf sql
 
+" Force ft=debchangelog even with conflict markers in the file
+autocmd BufRead debian/changelog set ft=debchangelog
+
 " Prevent accidental editing of patch .orig files
 autocmd BufRead *.orig set readonly
 
