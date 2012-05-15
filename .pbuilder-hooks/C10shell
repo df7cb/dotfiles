@@ -2,6 +2,9 @@
 # https://wiki.ubuntu.com/PbuilderHowto
 # invoke shell if build fails.
 
+# C<digit><digit><whatever-else-you-want> is executed after build failure,
+# before cleanup.
+
 #apt-get install -y --force-yes vim less bash
 cd /tmp/buildd/*/debian/..
 /bin/bash < /dev/tty > /dev/tty 2> /dev/tty

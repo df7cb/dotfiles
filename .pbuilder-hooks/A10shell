@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# A<digit><digit><whatever-else-you-want> is for --build target.  It is
+# executed  before  build  starts; after unpacking the build system, and
+# unpacking the source, and satisfying the build-dependency.
+
 exit 0
 
 cd /tmp/buildd/*/debian/..
