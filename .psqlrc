@@ -2,8 +2,13 @@
 \set ON_ERROR_ROLLBACK on
 \set ON_ERROR_STOP on
 --\unset AUTOCOMMIT
+
+\o ~/.psql-version
+SHOW server_version;
+\o
+\set version `sed -ne 's/^ //;3p' ~/.psql-version; rm -f ~/.psql-version`
 --\set PROMPT1 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
-\set PROMPT1 '%`date +%H:%M` %n@%/:%> %x%R%# '
+\set PROMPT1 '%`date +%H:%M` %n@%/:%> %:version: %x%R%# '
 \set PROMPT2 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
 \set VERBOSITY verbose
 
