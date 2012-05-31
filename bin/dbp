@@ -1,5 +1,6 @@
 #!/bin/sh
 
+ARG="-rfakeroot -us -uc -i -I"
 DIST=$(dpkg-parsechangelog | awk '/^Distribution:/ { print $2 }')
 
 case $DIST in
@@ -10,13 +11,17 @@ case $DIST in
 		##echo "$MADISON"
 		#OLDVERSION=$(echo $MADISON | cut -d '|' -f 2 | sed -e 's/ //g')
 		OLDVERSION=$(sed -ne "1d;s/^.* (\\(.*\\)) $DIST; .*/\\1/p" debian/changelog | head -n1)
+		if [ -z "$OLDVERSION" ] ; then
+			# TODO: extract last stable version
+			ARG_SA="-sa"
+		fi
 		ARG_V="-v${OLDVERSION:-0}" # full changelog for the first upload
 		VERSION=$(dpkg-parsechangelog | awk '/^Version:/ { print $2 }')
 		case $VERSION in
 			*-1~bpo*+1) ARG_SA="-sa" ;;
 		esac
-		echo Adding dpkg-buildpackage arguments $ARG_V $ARG_SA
 		;;
 esac
 
-dpkg-buildpackage -rfakeroot -us -uc -i -I $ARG_V $ARG_SA "$@"
+echo Adding dpkg-buildpackage arguments $ARG $ARG_V $ARG_SA
+dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
