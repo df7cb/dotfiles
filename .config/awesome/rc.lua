@@ -101,14 +101,15 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" }, " %e. %H:%M:%S ", 1)
 
--- -- Battery
--- require("battery")
--- 
--- bat_clo = battery.batclosure("C1ED")
--- batterywidget.text = bat_clo()
--- battimer = timer({ timeout = 30 })
--- battimer:add_signal("timeout", function() batterywidget.text = bat_clo() end)
--- battimer:start()
+-- Battery
+batterywidget = widget({type = "textbox", name = "batterywidget", align = "right" })
+require("battery")
+
+bat_clo = battery.batclosure("C1ED")
+batterywidget.text = bat_clo()
+battimer = timer({ timeout = 30 })
+battimer:add_signal("timeout", function() batterywidget.text = bat_clo() end)
+battimer:start()
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -189,6 +190,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+        batterywidget,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -384,3 +386,5 @@ end)
 client.add_signal("focus", function(c) c.border_color = "#ecb204" end)
 client.add_signal("unfocus", function(c) c.border_color = "#111111" end)
 -- }}}
+
+-- vim:et:
