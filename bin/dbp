@@ -23,5 +23,5 @@ case $DIST in
 		;;
 esac
 
-echo Adding dpkg-buildpackage arguments $ARG $ARG_V $ARG_SA
+echo dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
 dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
