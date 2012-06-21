@@ -267,3 +267,5 @@ I think 100% solution in HEAD and 99.99% solution in back branches
 should be good enough.
 	-- Tom Lane
 %
+<wouter> race conditions are fun to watch if they involve Schumacher
+%
