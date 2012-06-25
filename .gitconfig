@@ -17,5 +17,8 @@
 [core]
 	pager = smart-less
 
+[merge]
+	defaultToUpstream = true
+
 [user]
 	email = myon@debian.org
