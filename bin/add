@@ -6,6 +6,7 @@ use warnings;
 my $sum = 0;
 
 while (<>) {
+	next if /^\s*$/;
 	$sum += $_;
 }
 
