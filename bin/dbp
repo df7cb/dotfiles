@@ -3,6 +3,10 @@
 ARG="-rfakeroot -us -uc -i -I"
 DIST=$(dpkg-parsechangelog | awk '/^Distribution:/ { print $2 }')
 
+revert_debian_changelog () {
+	head -n1 debian/changelog | grep -q '~unrel' && sed -i -e '1,6d' debian/changelog
+}
+
 case $DIST in
 	*backports*)
 		#PKG=$(dpkg-parsechangelog | awk '/^Source:/ { print $2 }')
@@ -20,6 +24,12 @@ case $DIST in
 		case $VERSION in
 			*-1~bpo*+1) ARG_SA="-sa" ;;
 		esac
+		;;
+	UNREL*)
+		VERSION=$(dpkg-parsechangelog | awk '/^Version:/ { print $2 }')
+		trap revert_debian_changelog 0 2 3 15
+		dch -v "$VERSION~unrel" -b --release-heuristic log \
+			"Building unreleased version $VERSION"
 		;;
 esac
 
