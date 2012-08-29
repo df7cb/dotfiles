@@ -32,7 +32,12 @@ xset r rate 400 30
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy &
-	type -p autocutsel > /dev/null && autocutsel &
+	if type -p clipit > /dev/null ; then
+		clipit &
+	elif type -p autocutsel > /dev/null ; then
+		autocutsel &
+	fi
+	type -p wicd-client > /dev/null && wicd-client --tray &
 	if type -p ssh-agent > /dev/null ; then
 		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
 		if [ "$SSH_AUTH_SOCK" ] ; then
