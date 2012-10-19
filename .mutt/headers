@@ -2,7 +2,7 @@
 
 # headers
 ignore *
-unignore From\  Date: From: Reply-To: To: Cc: Subject: X-Debian
+unignore From\  Date: From: Reply-To: To: Cc: Subject: X-Debian X-MIA-Summary
 
 unhdr_order *
 hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
