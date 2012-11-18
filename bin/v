@@ -54,14 +54,20 @@ case $command in
 		*) echo "Not supported yet" >&2 ;;
 	esac ;;
 	ci|com|commit) case $VCS in
-		bzr) bzr $command "$@" && bzr push ;;
+		bzr) $VCS $command "$@" && {
+			read -p "Push? y:yes [y] " push
+			case $push in
+				"") $VCS push ;;
+				y|p) $VCS push ;;
+			esac
+		     } ;;
 		hg) hg $command "$@" && hg push ;;
-		git) git ci "$@" && {
+		git) $VCS ci "$@" && {
 			read -p "Push? y:yes r:pull --rebase and push [y] " push
 			case $push in
-				"") git push ;;
-				y|p) git push ;;
-				r) git pull --stat --rebase && git push ;;
+				"") $VCS push ;;
+				y|p) $VCS push ;;
+				r) $VCS pull --stat --rebase && $VCS push ;;
 			esac
 		     } ;;
 		*) $VCS $command "$@" ;;
