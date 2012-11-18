@@ -21,3 +21,4 @@ subscribe mutt-po@mutt.org
 subscribe mutt-users@mutt.org
 subscribe @bugs.guug.de
 subscribe pisg-general@lists.sourceforge.net
+lists pgsql-.*@postgresql.org
