@@ -27,8 +27,20 @@ for KEY in $HOME/.priv/ssh/*.pub ; do
 			break ;;
 		esac
 	fi
+	if [ "$KEYDOMAIN" = "postgresql.org" ] ; then
+		case $HOST in pgdgbuild.dus.dg-i.net)
+			DOMAIN="$KEYDOMAIN"
+			break ;;
+		esac
+	fi
 	if [ "$KEYDOMAIN" = "credativ.de" ] ; then
 		case $HOST in *.credativ.com|*.credativ.lan|*.credativ.dmz)
+			DOMAIN="$KEYDOMAIN"
+			break ;;
+		esac
+	fi
+	if [ "$KEYDOMAIN" = "misc" ] ; then
+		case $HOST in *.github.com)
 			DOMAIN="$KEYDOMAIN"
 			break ;;
 		esac
