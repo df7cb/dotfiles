@@ -74,11 +74,11 @@ method = rsync
 incoming = /org/debug.debian.net/incoming
 #post_upload_command = ssh feynman.df7cb.de /cb/debug.debian.net/process_incoming.sh
 
-[pgapt]
-fqdn = feynman.df7cb.de
+[pgdg]
+fqdn = atalia.postgresql.org
 method = rsync
-incoming = /cb/www.df7cb.de/public_html/projects/postgresql-apt/incoming
-post_upload_command = ssh feynman.df7cb.de reprepro-pgapt processincoming pgapt
+incoming = /srv/apt/incoming
+post_upload_command = ssh atalia.postgresql.org /srv/apt/processincoming.sh
 allow_unsigned_uploads = 1
 
 [conrad]
