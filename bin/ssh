@@ -39,6 +39,12 @@ for KEY in $HOME/.priv/ssh/*.pub ; do
 			break ;;
 		esac
 	fi
+	if [ "$KEYDOMAIN" = "dg-i.net" ] ; then
+		case $HOST in *.dg-i.net|*.allianz24.de)
+			DOMAIN="$KEYDOMAIN"
+			break ;;
+		esac
+	fi
 	if [ "$KEYDOMAIN" = "misc" ] ; then
 		case $HOST in *.github.com)
 			DOMAIN="$KEYDOMAIN"
