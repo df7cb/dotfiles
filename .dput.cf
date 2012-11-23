@@ -94,3 +94,10 @@ login = root
 method = rsync
 incoming = .
 allow_unsigned_uploads = 1
+
+[people]
+fqdn = people.debian.org
+login = myon
+method = rsync
+incoming = .
+allow_unsigned_uploads = 1
