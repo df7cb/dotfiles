@@ -269,3 +269,5 @@ should be good enough.
 %
 <wouter> race conditions are fun to watch if they involve Schumacher
 %
+<jcristau> if your hw clock is not in utc, you need to see a doctor
+%
