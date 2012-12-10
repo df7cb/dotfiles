@@ -21,5 +21,7 @@ iab \i \item
 iab \\I \end{itemize}
 iab \\f \begin{frame}<cr>\frametitle{
 iab \\F \end{frame}
+iab \\v \begin{verbatim}
+iab \\V \end{verbatim}
 
 "set keymap=tex
