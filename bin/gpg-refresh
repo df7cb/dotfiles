@@ -1,16 +1,19 @@
 #!/bin/sh
 
-SERVERS=$(host subkeys.pgp.net | cut -d ' ' -f 4 | \
-	egrep -v '64.71.173.107|114.31.78.196|213.239.212.133|213.239.206.174')
+HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
+
+SERVERS=$(echo $HOSTS | xargs -n1 getent hosts | awk '{ print $1 }' | sort -u)
 
 for server in $SERVERS ; do
 	getent hosts $server
+	case $server in *:*) server="[$server]" ;; esac
 	gpg --keyserver $server --recv $PGPKEY $PGPKEY2 $PGPKEY3
 	echo
 done
 
 for server in $SERVERS ; do
 	getent hosts $server
+	case $server in *:*) server="[$server]" ;; esac
 	gpg --keyserver $server --send $PGPKEY $PGPKEY2 $PGPKEY3
 	echo
 done
