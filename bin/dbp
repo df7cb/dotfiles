@@ -25,12 +25,12 @@ case $DIST in
 			*-1~bpo*+1) ARG_SA="-sa" ;;
 		esac
 		;;
-	UNREL*)
-		VERSION=$(dpkg-parsechangelog | awk '/^Version:/ { print $2 }')
-		trap revert_debian_changelog 0 2 3 15
-		dch -v "$VERSION~unrel" -b --release-heuristic log \
-			"Building unreleased version $VERSION"
-		;;
+#	UNREL*)
+#		VERSION=$(dpkg-parsechangelog | awk '/^Version:/ { print $2 }')
+#		trap revert_debian_changelog 0 2 3 15
+#		dch -v "$VERSION~unrel" -b --release-heuristic log \
+#			"Building unreleased version $VERSION"
+#		;;
 esac
 
 echo dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
