@@ -49,9 +49,9 @@ ps1_times () {
 	eval $(perl -w -le '<>; $_ = <>;
 		/(\d+)m([\d.]+)s (\d+)m([\d.]+)s/;
 		$u = 60.0*$1 + $2; $s = 60.0*$3 + $4;
-		$du=$u-$ENV{u};    $ds=$s-$ENV{s};
+		$du = $u-$ENV{u};  $ds = $s-$ENV{s};
 		printf STDERR "\033[47muser %.3fs system %.3fs\033[0m\n", $du, $ds
-			if ($du > 0.05 or $ds > 0.05);
+			if ($du > 1.0 or $ds > 1.0);
 		print "u=$u;s=$s" ' $tmpfile )
 	/bin/rm -f $tmpfile
 }
