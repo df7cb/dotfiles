@@ -40,7 +40,7 @@ set pager_index_lines=5
 set pager_stop
 unset pipe_decode
 set pipe_split
-set pgp_autosign
+set crypt_autosign
 set pgp_auto_decode
 set pgp_replyencrypt
 set pgp_sign_as="0x12D2A7AE"
