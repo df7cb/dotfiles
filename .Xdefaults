@@ -73,6 +73,7 @@ URxvt.matcher.launcher.7: iceweasel https:\/\/code.allsecur.de/jira/browse/$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,3digits
 URxvt.perl-lib:		/home/myon/lib/urxvt
+URxvt.print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
 URxvt.saveLines:	5000
 URxvt.scrollBar_floating: true
 URxvt.scrollColor:	#858585
