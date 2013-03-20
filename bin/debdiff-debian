@@ -1,0 +1,8 @@
+#!/bin/sh
+
+TMP=$(mktemp --tmpdir debdiff.XXXXXX)
+trap "rm -f $TMP" 0 2 3 15
+
+debdiff "$@" > $TMP
+( diffstat $TMP
+  filterdiff -i '*debian*' $TMP ) | colordiff | less -R
