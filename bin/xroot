@@ -7,7 +7,7 @@ cleanup () {
 trap "cleanup" 0 1 2 15
 
 comic () {
-	file=$(mktemp comicXXXXXX)
+	file=$(mktemp -t comicXXXXXX)
 	wget -q -O "$file" "http://www.df7cb.de/bin/random-comic"
 	if [ -s "$file" ] ; then
 		display -background navy -backdrop -window root "$file"
