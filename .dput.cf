@@ -2,29 +2,9 @@
 login = myon
 progress_indicator = 2
 
-[delayed]
-method = scp
-fqdn = gluck.debian.org
-incoming = ~tfheen
-
-[ganneff_scp]
-fqdn = dak.ganneff.de
-method = scp
-incoming = /opt/dak/queue/unchecked
-allow_unsigned_uploads = 0
-run_dinstall = 0
-login = cb
-
-[ganneff_app]
-fqdn = dak.ganneff.de
-method = ftp
-incoming = ./
-allow_unsigned_uploads = 0
-run_dinstall = 0
-login = dak
-
 [bpo]
 fqdn = backports-master.debian.org
+distributions = squeeze-backports, wheezy-backports
 incoming = /pub/UploadQueue/
 method = ftp
 login = anonymous
@@ -35,6 +15,7 @@ fqdn = feynman.df7cb.de
 method = rsync
 incoming = .
 allow_unsigned_uploads = 1
+allowed_distributions = .*
 
 [feynman-any]
 fqdn = feynman.df7cb.de
@@ -44,14 +25,6 @@ allow_unsigned_uploads = 1
 pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
 post_upload_command = ssh feynman.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-reprepro any
 
-[feynman-lenny]
-fqdn = feynman.df7cb.de
-method = rsync
-incoming = tmp/UploadQueue
-allow_unsigned_uploads = 1
-pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh feynman.df7cb.de reprepro include lenny tmp/UploadQueue/*.changes && sign-reprepro lenny
-
 [feynman-squeeze]
 fqdn = feynman.df7cb.de
 method = rsync
@@ -60,6 +33,14 @@ allow_unsigned_uploads = 1
 pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
 post_upload_command = ssh feynman.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-reprepro squeeze
 
+[feynman-wheezy]
+fqdn = feynman.df7cb.de
+method = rsync
+incoming = tmp/UploadQueue
+allow_unsigned_uploads = 1
+pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
+post_upload_command = ssh feynman.df7cb.de reprepro include wheezy tmp/UploadQueue/*.changes && sign-reprepro squeeze
+
 [feynman-sid]
 fqdn = feynman.df7cb.de
 method = rsync
@@ -67,12 +48,6 @@ incoming = tmp/UploadQueue
 allow_unsigned_uploads = 1
 pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
 post_upload_command = ssh feynman.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-reprepro sid
-
-[debug]
-fqdn = nott.ayous.org
-method = rsync
-incoming = /org/debug.debian.net/incoming
-#post_upload_command = ssh feynman.df7cb.de /cb/debug.debian.net/process_incoming.sh
 
 [pgdg]
 fqdn = atalia.postgresql.org
