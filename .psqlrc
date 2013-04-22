@@ -46,4 +46,6 @@ SHOW server_version;
 
 \set waiting 'SELECT wait.pid AS wait_pid, wait_stm.datname as wait_datname, wait_stm.usename AS wait_usename, wait.locktype AS wait_locktype, wait.mode AS wait_mode, wait.relation::regclass AS wait_table, wait_stm.current_query AS wait_query, other.pid AS other_pid, other_stm.datname AS other_datname, other_stm.usename AS other_usename, other.locktype AS other_locktype, other.mode AS other_mode, other.relation::regclass AS other_table, other_stm.current_query AS other_query, other.granted AS other_granted FROM pg_catalog.pg_locks AS wait JOIN pg_catalog.pg_stat_activity AS wait_stm ON ( wait_stm.procpid = wait.pid) JOIN pg_catalog.pg_locks AS other ON ( ( wait."database" = other."database" AND wait.relation = other.relation) OR wait.transactionid = other.transactionid) JOIN pg_catalog.pg_stat_activity AS other_stm ON ( other_stm.procpid = other.pid) WHERE NOT wait.granted AND wait.pid <> other.pid;'
 
-\i ~/credativ/postgres/tools/statsmon/psqlrc_statsmon
+\set statements 'SELECT rolname AS user, datname AS database, calls, total_time, total_time / calls AS avg_time, rows, query FROM pg_stat_statements s JOIN pg_authid a ON (s.userid = a.oid) JOIN pg_database d ON (s.dbid = d.oid) ORDER BY s.total_time DESC;'
+
+--\i ~/credativ/postgres/tools/statsmon/psqlrc_statsmon
