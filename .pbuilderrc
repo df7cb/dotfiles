@@ -10,7 +10,7 @@ esac
 echo "Debian version: $DEBIAN_VERSION -> $DISTRIBUTION"
 
 ARCH=${ARCH:-`dpkg --print-architecture`}
-MIRRORSITE="http://debian.netcologne.de/debian"
+MIRRORSITE="http://deb/debian"
 #MIRRORSITE="http://debian.credativ.lan/debian"
 
 ROOT="/srv/pbuilder"
