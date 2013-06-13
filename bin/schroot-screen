@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# option parsing
+
+while getopts "c:" opt ; do
+	case $opt in
+	c) export CHROOT="$OPTARG" ;;
+	*) exit 5 ;;
+	esac
+done
+# shift away args
+shift $(($OPTIND - 1))
+
+[ "$1" ] && export PACKAGE="$1"
+
+# reexec ourselves through screen
+
+case $TERM in
+	screen*) ;;
+	*) exec screen $0 ; exit 1 ;;
+esac
+
+# main program
+
+schroot -b -c ${CHROOT:-sid}
+export ID=$(schroot-list-sessions | cut -d : -f 1)
+
+echo
+echo "dd-schroot-cmd -c $ID apt-get update"
+dd-schroot-cmd -c $ID apt-get update
+
+if [ "$PACKAGE" ]; then
+	echo
+	echo "dd-schroot-cmd -c $ID apt-get build-dep $PACKAGE"
+	dd-schroot-cmd -c $ID apt-get build-dep $PACKAGE
+	echo
+	echo "schroot -c $ID apt-get source $PACKAGE"
+	schroot -c $ID apt-get source $PACKAGE
+fi
+
+schroot -r -c $ID
+
+echo "schroot -e -c $ID"
+schroot -e -c $ID
