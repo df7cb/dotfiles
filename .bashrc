@@ -4,8 +4,8 @@
 
 # Environment
 #. ${CONF_HOME:-$HOME}/lib/locale.sh
-export LANG=de_DE.utf8 TZ=CET
-. ${CONF_HOME:-$HOME}/lib/session.sh
+export LANG=de_DE.utf8 LANGUAGE=de:en_US:en TZ=CET
+#. ${CONF_HOME:-$HOME}/lib/session.sh
 . ${CONF_HOME:-$HOME}/bin/os > /dev/null
 . ${CONF_HOME:-$HOME}/.path
 . ${CONF_HOME:-$HOME}/.env
@@ -62,9 +62,9 @@ auto_resume=
 #FIGNORE='~'
 HISTCONTROL=ignoredups
 #histchars='!^#'
-HISTFILESIZE=100
+HISTFILESIZE=1000
 HISTIGNORE="..:[bf]g:cd:l:ls"
-HISTSIZE=500
+HISTSIZE=5000
 unset ignoreeof
 shopt -s extglob no_empty_cmd_completion
 
