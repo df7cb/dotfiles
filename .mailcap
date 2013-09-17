@@ -10,3 +10,4 @@ application/pgp-encrypted; gpg --with-fingerprint '%s'; copiousoutput
 application/x-zip-compressed; unzip -l '%s'; copiousoutput
 application/x-gpx-zip; zip2plucker '%s'
 application/zip; zip2plucker '%s'
+application/xz; xzcat %s; copiousoutput
