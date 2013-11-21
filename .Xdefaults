@@ -54,7 +54,8 @@ URxvt.keysym.M-C-6:	command:\033]710;xft:DejaVu Sans Mono-19,xft:Mono-19\007
 URxvt.keysym.M-C-7:	command:\033]710;xft:DejaVu Sans Mono-23,xft:Mono-23\007
 URxvt.keysym.M-C-8:	command:\033]710;xft:DejaVu Sans Mono-28,xft:Mono-28\007
 URxvt.keysym.M-C-9:	command:\033]710;xft:DejaVu Sans Mono-35,xft:Mono-35\007
-URxvt.keysym.M-C-p:	\342\231\240
+! for whatever reason, there is no XK_spade in keysymdef.h, pick something else and remap that here
+URxvt.keysym.maltesecross: \342\231\240
 URxvt.matcher.button:	3
 URxvt.matcher.pattern.1: (?:Closes:.|\\#)(\\d{6})
 URxvt.matcher.launcher.1: iceweasel bugs.debian.org/$1
