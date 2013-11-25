@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -eux
+
+D="$1"
+test -d $D || exit 1
+C=$(basename $D)
+
+sudo mkdir -p $D/etc/cfengine
+sudo cp -a /etc/cfengine/*.conf $D/etc/cfengine
+
+sudo chroot $D apt-get install sudo
+SSUDO="schroot -c $C sudo --"
+
+grep -q df7cb /etc/apt/sources.list ||
+	$SSUDO "echo deb http://vpn.df7cb.de/debian any main >> /etc/apt/sources.list"
+gpg --export -a C5AF774A58510B5A | $SSUDO apt-key add -
+$SSUDO apt-get update
+$SSUDO apt-get install cfengine2
+$SSUDO cfagent -IK
+$SSUDO apt-get install locales
+$SSUDO apt-get install df7cb-config
+
+$SSUDO apt-get install \
+		build-essential \
+		devscripts \
+		diffstat \
+		git \
+		patchutils \
+		ssmtp \
+		subversion \
+		vim \
+		wdiff \
+
+$SSUDO cfagent -IK
