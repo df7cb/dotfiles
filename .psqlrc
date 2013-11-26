@@ -58,4 +58,6 @@ SHOW server_version \gset
 
 \set statements 'SELECT rolname AS user, datname AS database, calls, total_time, ROUND (total_time::numeric / calls, 3) AS avg_time, rows, query FROM pg_stat_statements s JOIN pg_authid a ON (s.userid = a.oid) JOIN pg_database d ON (s.dbid = d.oid) ORDER BY s.total_time DESC;'
 
+\set create_function_exec 'CREATE FUNCTION exec(text) RETURNS text LANGUAGE plpgsql VOLATILE AS $f$BEGIN EXECUTE $1; RETURN $1; END;$f$;'
+
 --\i ~/credativ/postgres/tools/statsmon/psqlrc_statsmon
