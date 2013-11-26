@@ -281,3 +281,6 @@ should be good enough.
 %
 <pabs> the best VCS is #if 0
 %
+<crab> myon: i've got bad news for you, your data is not actually stored in an
+	elephant when you use postgres.
+%
