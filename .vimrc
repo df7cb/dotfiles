@@ -31,7 +31,7 @@ set title		" Set xterm title ... to:
 nmap _t :set titlestring=vim\ -\ %n:%f\ %(%{Tlist_Get_Tagname_By_Line()}\ %)%(%R%M%W\ %)%y%k<cr>:TlistUpdate<cr>
 set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
 "set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
-set viminfo='20,\"50,h	" read/write a .viminfo file, don't store more than
+"set viminfo='20,\"50,/10	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
 set wildmode=longest,list:longest,list:full " filename tab completion
 
