@@ -22,7 +22,7 @@ SHOW server_version \gset
 \pset null '(n)'
 
 \timing
-\x auto
+--\x auto
 \unset QUIET
 
 \set act 'SELECT datname, procpid, usename, waiting AS wait, date_trunc($$second$$, age(clock_timestamp(), xact_start)) AS xact_age, date_trunc($$second$$, age(clock_timestamp(), query_start)) AS query_age, date_trunc($$second$$, age(clock_timestamp(), backend_start)) AS backend_age, host(client_addr) || $$:$$ || client_port AS client, CASE WHEN procpid = pg_backend_pid() THEN $$:act$$ ELSE current_query END FROM pg_stat_activity ORDER BY 1, 2;'
@@ -57,6 +57,8 @@ SHOW server_version \gset
 \set unowned_sequences 'select relname, (select adsrc from pg_depend d join pg_attrdef a on (d.objid = a.oid) where d.classid = $$pg_attrdef$$::regclass and d.refobjid = c.oid and d.refclassid = $$pg_class$$::regclass) from pg_class c where relkind = $$S$$ and not exists (select * from pg_depend d where d.classid = $$pg_class$$::regclass and d.objid = c.oid and refclassid = $$pg_class$$::regclass) order by 1;'
 
 \set statements 'SELECT rolname AS user, datname AS database, calls, total_time, ROUND (total_time::numeric / calls, 3) AS avg_time, rows, query FROM pg_stat_statements s JOIN pg_authid a ON (s.userid = a.oid) JOIN pg_database d ON (s.dbid = d.oid) ORDER BY s.total_time DESC;'
+
+\set orphaned_files 'WITH files AS (SELECT $$base/$$||(SELECT oid::text FROM pg_database WHERE datname = current_database())||$$/$$||pg_ls_dir AS file FROM pg_ls_dir($$base/$$||(SELECT oid::text FROM pg_database WHERE datname = current_database()))), orphans AS (SELECT * FROM files WHERE file !~ $$[_.]$$ AND file NOT IN (SELECT pg_relation_filepath(oid) FROM pg_class WHERE pg_relation_filepath(oid) IS NOT NULL)) SELECT file, pg_stat_file(file) FROM orphans;'
 
 \set create_function_exec 'CREATE FUNCTION exec(text) RETURNS text LANGUAGE plpgsql VOLATILE AS $f$BEGIN EXECUTE $1; RETURN $1; END;$f$;'
 
