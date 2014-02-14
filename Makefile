@@ -1,5 +1,7 @@
 # $Id$
 
+# rm -f .bash* .profile && svn co http://svn.df7cb.de/dotfiles/cb . && make && . .bashrc
+
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
 QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qnew bin/qpop bin/qpush bin/qrefresh bin/qtop
 all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) $(QUILT) .ssh/config
