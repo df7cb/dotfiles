@@ -2,6 +2,7 @@
 
 PROG=$(basename "$1")
 PREFIX="$2"
+TLDS="com|de|dmz|lan|nil|net|org"
 
 if [ "$PROG" = "apt-get" ] || [ "$PROG" = "agi" ] || [ "$PROG" = "agr" ] ; then
 	apt-cache pkgnames "$PREFIX"
@@ -40,10 +41,15 @@ elif [ "$PROG" = mutt ] ; then
 	cut -d ' ' -f 2 $MUTT/aliases $MUTT/aliases.addressbook| egrep "^$PREFIX"
 
 elif [ "$PROG" = ssh ] ; then
-	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.(com|de|dmz|lan|net|org)$/ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = scp ] || [ "$PROG" = rsync ] ; then
-	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.(com|de|dmz|lan|net|org)$/ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts
+
+elif [ "$PROG" = start ] || [ "$PROG" = stop ] || [ "$PROG" = status ] || [ "$PROG" = reload ] || [ "$PROG" = restart ]; then
+	for f in /etc/init.d/$PREFIX* /lib/systemd/$PREFIX*.service; do
+		test -f $f && echo $(basename $f .service)
+	done
 
 elif [ "$PROG" = super ] ; then
 	cut -f 1 /etc/super.tab | egrep '^[a-z]'

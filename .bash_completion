@@ -97,7 +97,7 @@ complete -o default -f -X '!*.fig' xfig
 complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|ace|ar|deb|arj|lzh|rar|xar|zip|7z)' ttar xtar
 
 # stuff that uses my completer
-complete -o default -C completer man
+complete -o default -C completer man start stop status reload restart
 complete -o default -X '!&*' -C completer bibtex make ncftp ssh super
 complete -X '!&*' -C completer complete mailsync
 
