@@ -33,6 +33,24 @@ $(QUILT):
 tmp /tmp/$(USER):
 	mkdir -m 0700 $@
 
+install-dev:
+	sudo apt-get install \
+		build-essential \
+		debhelper \
+		devscripts \
+		diffstat \
+		fakeroot \
+		git \
+		locales \
+		patchutils \
+		subversion \
+		vim \
+		wdiff \
+
+install-chroot:
+	sudo apt-get install \
+		ssmtp \
+
 ## cleanup stuff ##
 
 cleanup:
