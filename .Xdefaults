@@ -71,6 +71,8 @@ URxvt.matcher.pattern.6: E\\.?T\\.?.?(\\d{4,5}\\b)
 URxvt.matcher.launcher.6: iceweasel https:\/\/unsere.allianz24.de/az24/bugzilla/show_bug.cgi?id=$1
 URxvt.matcher.pattern.7: (JT-\\d{2,5}\\b)
 URxvt.matcher.launcher.7: iceweasel https:\/\/code.allsecur.de/jira/browse/$1
+URxvt.matcher.pattern.8: credativ.\\#(\\d{3,})
+URxvt.matcher.launcher.8: iceweasel https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,vtwheel,3digits
 URxvt.perl-lib:		/home/myon/lib/urxvt
