@@ -98,13 +98,12 @@ complete -o default -f -X '!*.@(tar|tar.gz|tgz|tar.bz2|ace|ar|deb|arj|lzh|rar|xa
 
 # stuff that uses my completer
 complete -o default -C completer man start stop status reload restart
-complete -o default -X '!&*' -C completer bibtex make ncftp ssh super
+complete -o default -X '!&*' -C completer bibtex make mosh ncftp ssh super
 complete -X '!&*' -C completer complete mailsync
 
 # special rules
 complete -C completer agi agr
 complete -W "install remove" -C completer apt-get
 complete -o default -d -X '!&*' -C completer cvs
-complete -o default -X '!&*' -C completer ssh
 complete -o default -f -d -X '!&*' -C completer scp rsync
 #complete -o default -f -W Makefile vim

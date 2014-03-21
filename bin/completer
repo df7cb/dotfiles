@@ -40,7 +40,7 @@ elif [ "$PROG" = mutt ] ; then
 	MUTT=$HOME/.mutt
 	cut -d ' ' -f 2 $MUTT/aliases $MUTT/aliases.addressbook| egrep "^$PREFIX"
 
-elif [ "$PROG" = ssh ] ; then
+elif [ "$PROG" = ssh ] || [ "$PROG" = mosh ] ; then
 	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts
 
 elif [ "$PROG" = scp ] || [ "$PROG" = rsync ] ; then
