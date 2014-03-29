@@ -51,3 +51,5 @@ color body	green default '^\+.*'
 color body	default red '^--- .*'
 color body	default green '^\+\+\+ .*'
 color body	magenta default '^[ +-](===|---|\+\+\+|@@|Index:) .*' # diff-in-diff
+color body	default blue '^\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*' # context diff
+color body	blue default '^! .*' # context diff
