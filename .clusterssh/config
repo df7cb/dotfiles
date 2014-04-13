@@ -1,0 +1,6 @@
+auto_close=2
+extra_cluster_file=~/.priv/ssh/clusters
+ssh=ssh
+terminal=/usr/bin/rxvt-unicode
+terminal_colorize=0
+terminal_args=-pe default,matcher,vtwheel,3digits
