@@ -54,7 +54,6 @@ bind	compose	v	view-attach
 
 macro	index	,=	"<tag-pattern>~=<enter><tag-prefix><purge-message>"	"Purge duplicate messages"
 # index format with mailing list name
-macro	index	,b	":set index_format='%3C %Z %?M?%3Mm&%4c? %[%b %e %k:%M] %-15.15F %-10.10Y %s'\n"
 macro	index	,r	"l~(!~R|~F)<enter><esc>V"	"Limit to threads with unread meassages"
 macro	index	,p	"l~(~p|~P)<enter>"	"Limit to threads with my mail"
 
