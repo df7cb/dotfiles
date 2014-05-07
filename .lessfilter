@@ -3,6 +3,25 @@
 if [ -d "$1" ] ; then
 	echo "$1:"
 	ls -alF "$1"
-else
-	exit 1
+	exit 0
 fi
+
+case $1 in
+	*.rpm)
+		if [ -x "`which rpm`" ]; then
+			echo "$1:"
+			rpm -q -i -p "$1"
+			echo
+			echo '*** Requires:'
+			rpm -q -R -p "$1"
+			echo
+			echo '*** Provides:'
+			rpm -q --provides -p "$1"
+			echo
+			echo '*** Contents:'
+			rpm -q -l -p "$1"
+		else echo "rpm isn't available, no query on rpm package possible"; fi ;;
+
+		*)
+			exit 1 ;;
+esac
