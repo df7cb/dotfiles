@@ -101,6 +101,10 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" }, " %e. %H:%M:%S ", 1)
 
+-- cpufreq
+require("cpufreq")
+mycpufreq = awful.widget.cpufreq({ align = "right" }, 1)
+
 -- Battery
 batterywidget = widget({type = "textbox", name = "batterywidget", align = "right" })
 require("battery")
@@ -191,6 +195,7 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         batterywidget,
+        mycpufreq,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
