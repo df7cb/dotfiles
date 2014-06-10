@@ -20,6 +20,9 @@ case $1 in
 			echo
 			echo '*** Contents:'
 			rpm -q -l -p "$1"
+			echo
+			echo '*** Scripts:'
+			rpm -q --scripts -p "$1"
 		else echo "rpm isn't available, no query on rpm package possible"; fi ;;
 
 		*)
