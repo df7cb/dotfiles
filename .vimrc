@@ -15,7 +15,7 @@ set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
 set list		" show tabs et al.
-set lcs=tab:·\ ,trail:·	" how to show tabs
+set lcs=tab:Â·\ ,trail:Â·	" how to show tabs
 set nojoinspaces	" \frenchspacing
 set nrformats=hex	" drop octal number format
 set ruler		" Show the line and column numbers of the cursor 
@@ -126,13 +126,13 @@ autocmd BufRead *.orig set readonly
 " HTML (.shtml for server side)
 "augroup html
 "  au!
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ä &auml;
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ä &Auml;
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ö &ouml;
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ö &Ouml;
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ü &uuml;
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ü &Uuml;
-"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ß &szlig;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ã¤ &auml;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ã„ &Auml;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ã¶ &ouml;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ã– &Ouml;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ã¼ &uuml;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap Ãœ &Uuml;
+"  au BufNewFile,BufRead *.html,*.htm,*.shtml  imap ÃŸ &szlig;
 "augroup END
 
 " Set some sensible defaults for editing C-files
