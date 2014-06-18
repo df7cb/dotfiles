@@ -35,6 +35,12 @@ set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
 			" 50 lines of registers, do not highlight searches
 set wildmode=longest,list:longest,list:full " filename tab completion
 
+" load .vimrc file from project directories using
+" http://www.vim.org/scripts/script.php?script_id=441
+let g:localvimrc_name=".vimrc"
+let g:localvimrc_blacklist="/home/[[:alnum:]]*/.vimrc"
+let g:localvimrc_persistent=2 " Store and restore all decisions
+
 let g:is_posix=1	" sh syntax is POSIX
 
 filetype plugin indent on
