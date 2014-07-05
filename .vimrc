@@ -54,10 +54,15 @@ imap <c-z> <esc><c-z>
 nmap <space> <c-f>
 nmap - <c-b>
 nmap M :make!<cr><cr>
-set pastetoggle=<f11> " turn on/off paste in insert mode
+
 " wurstfinger mode
 imap <f1> <esc>
-nmap <f12> :set invlist<cr>
+nmap <f9>       :set spell spelllang=de_de<cr>
+imap <f9>  <c-o>:set spell spelllang=de_de<cr>
+nmap <f10>      :set spell spelllang=en_us<cr>
+imap <f10> <c-o>:set spell spelllang=en_us<cr>
+set pastetoggle=<f11> " turn on/off paste in insert mode
+nmap <f12>      :set invlist<cr>
 imap <f12> <c-o>:set invlist<cr>
 
 nmap <f1>	:b1<cr>
@@ -68,18 +73,6 @@ nmap <f5>	:b5<cr>
 nmap <f6>	:b6<cr>
 nmap <f7>	:b7<cr>
 nmap <f8>	:b8<cr>
-nmap <f9>	:b9<cr>
-nmap <f10>	:b10<cr>
-nmap <s-f1>	:b11<cr>
-nmap <s-f2>	:b12<cr>
-nmap <s-f3>	:b13<cr>
-nmap <s-f4>	:b14<cr>
-nmap <s-f5>	:b15<cr>
-nmap <s-f6>	:b16<cr>
-nmap <s-f7>	:b17<cr>
-nmap <s-f8>	:b18<cr>
-nmap <s-f9>	:b19<cr>
-nmap <s-f10>	:b20<cr>
 
 " for imwheel
 nmap <s-f11>	:bp<cr>
