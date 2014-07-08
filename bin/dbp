@@ -42,4 +42,4 @@ esac
 
 rm -f ../log ../log.gz
 echo dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
-script $E -c "dpkg-buildpackage $ARG $ARG_V $ARG_SA $*" ../log
+script $E -c "dpkg-buildpackage $ARG $ARG_V $ARG_SA $* && head -n1 debian/changelog && echo 'Lintian ...' && lintian" ../log
