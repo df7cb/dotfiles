@@ -262,6 +262,11 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+    -- awful notebook hacks
+    awful.key({ modkey, }, "s", function () awful.util.spawn("sudo iwlist scan") end),
+    awful.key({ modkey, }, "p", function () awful.util.spawn("sudo cpufreq-set -g performance") end),
+    awful.key({ modkey, }, "c", function () awful.util.spawn("sudo cpufreq-set -g conservative") end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
