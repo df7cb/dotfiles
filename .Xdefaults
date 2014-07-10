@@ -63,12 +63,10 @@ URxvt.matcher.pattern.2: <([^<>]+[0-9][^<>]+@[^<>]+)>
 URxvt.matcher.launcher.2: iceweasel lists.debian.org/$1
 URxvt.matcher.pattern.3: (\\b[Gg][Cc][A-Za-z0-9]{3,5}\\b)
 URxvt.matcher.launcher.3: iceweasel coord.info/$1
-URxvt.matcher.pattern.4: \\#(40\\d{6})
-URxvt.matcher.launcher.4: iceweasel https:\/\/support.credativ.com/$1
+URxvt.matcher.pattern.4: rt.debian.org.\\#(\\d{4,})
+URxvt.matcher.launcher.4: iceweasel https:\/\/rt.debian.org/Ticket/Display.html?id=$1
 URxvt.matcher.pattern.5: (?:RT.?|\\#)(\\d{5}\\b)
 URxvt.matcher.launcher.5: iceweasel http:\/\/portal.dg-i.net/rt/Ticket/Display.html?id=$1
-URxvt.matcher.pattern.6: E\\.?T\\.?.?(\\d{4,5}\\b)
-URxvt.matcher.launcher.6: iceweasel https:\/\/unsere.allianz24.de/az24/bugzilla/show_bug.cgi?id=$1
 URxvt.matcher.pattern.7: (JT-\\d{2,5}\\b)
 URxvt.matcher.launcher.7: iceweasel https:\/\/code.allsecur.de/jira/browse/$1
 URxvt.matcher.pattern.8: OSSC.\\#(\\d{3,})
