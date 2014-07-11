@@ -20,10 +20,13 @@ set nojoinspaces	" \frenchspacing
 set nrformats=hex	" drop octal number format
 set ruler		" Show the line and column numbers of the cursor 
 set rulerformat=%22(%n:%l/%L,%c%V%=%P%)
-set scrolloff=3		" always show n lines before and after current linE
+set scrolloff=3		" always show n lines before and after current line
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set smartcase		" Do case-sensitive case sensitive matching
+if has("spell")
+  set spell
+endif
 "set statusline=\ %n:%<%f%M%R%W\ %y%a%=%l/%L,%c%V\ %P\ 
 set nostartofline	" Do not move to start of line on buffer change etc.
 "set textwidth=0		" Don't wrap words by default
