@@ -43,6 +43,7 @@ set wildmode=longest,list:longest,list:full " filename tab completion
 let g:localvimrc_name=".vimrc"
 let g:localvimrc_blacklist="/home/[[:alnum:]]*/.vimrc"
 let g:localvimrc_persistent=2 " Store and restore all decisions
+let g:localvimrc_persistence_file=expand('$HOME') . "/.vim/localvimrc_persistent"
 
 let g:is_posix=1	" sh syntax is POSIX
 
@@ -60,6 +61,8 @@ nmap M :make!<cr><cr>
 
 " wurstfinger mode
 imap <f1> <esc>
+nmap <f8>       :set nospell<cr>
+imap <f8>  <c-o>:set nospell<cr>
 nmap <f9>       :set spell spelllang=de_de<cr>
 imap <f9>  <c-o>:set spell spelllang=de_de<cr>
 nmap <f10>      :set spell spelllang=en_us<cr>
@@ -67,15 +70,6 @@ imap <f10> <c-o>:set spell spelllang=en_us<cr>
 set pastetoggle=<f11> " turn on/off paste in insert mode
 nmap <f12>      :set invlist<cr>
 imap <f12> <c-o>:set invlist<cr>
-
-nmap <f1>	:b1<cr>
-nmap <f2>	:b2<cr>
-nmap <f3>	:b3<cr>
-nmap <f4>	:b4<cr>
-nmap <f5>	:b5<cr>
-nmap <f6>	:b6<cr>
-nmap <f7>	:b7<cr>
-nmap <f8>	:b8<cr>
 
 " for imwheel
 nmap <s-f11>	:bp<cr>
