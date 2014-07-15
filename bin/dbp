@@ -33,6 +33,13 @@ case $DIST in
 #		;;
 esac
 
+if [ "${1:-}" = "-n" ]; then
+    export DEB_BUILD_OPTIONS="nocheck"
+    shift
+else
+    export DEB_CHECK_COMMAND="lintian"
+fi
+
 trap "test -s ../log && gzip -9 ../log" 0 2 3 15
 
 case $(script --version) in
@@ -42,4 +49,5 @@ esac
 
 rm -f ../log ../log.gz
 echo dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
-script $E -c "dpkg-buildpackage $ARG $ARG_V $ARG_SA $* && head -n1 debian/changelog && echo 'Lintian ...' && lintian" ../log
+script $E -c "dpkg-buildpackage $ARG $ARG_V $ARG_SA $*" ../log
+head -n1 debian/changelog
