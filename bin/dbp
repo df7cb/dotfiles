@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 ARG="-rfakeroot -us -uc -i -I"
 DIST=$(dpkg-parsechangelog | awk '/^Distribution:/ { print $2 }')
 
