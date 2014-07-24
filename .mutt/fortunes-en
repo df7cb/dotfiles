@@ -284,3 +284,5 @@ should be good enough.
 <crab> myon: i've got bad news for you, your data is not actually stored in an
 	elephant when you use postgres.
 %
+<RhodiumToad> Mayzie: char(x) (for x > 1) is strictly for cobol programmers
+%
