@@ -2,9 +2,12 @@
 
 # option parsing
 
+: ${CHROOT:=sid}
+export CHROOT
+
 while getopts "c:" opt ; do
 	case $opt in
-	c) export CHROOT="$OPTARG" ;;
+	c) CHROOT="$OPTARG" ;;
 	*) exit 5 ;;
 	esac
 done
@@ -22,23 +25,27 @@ esac
 
 # main program
 
-schroot -b -c ${CHROOT:-sid}
-export ID=$(schroot-list-sessions | cut -d : -f 1)
+run () {
+	echo
+	echo "### $@"
+	"$@"
+}
 
-echo
-echo "dd-schroot-cmd -c $ID apt-get update"
-dd-schroot-cmd -c $ID apt-get update
+# begin session
+export ID="$USER-$CHROOT-1"
+run schroot -b -c $CHROOT -n $ID
+run dd-schroot-cmd -c $ID apt-get update
 
 if [ "$PACKAGE" ]; then
-	echo
-	echo "dd-schroot-cmd -c $ID apt-get build-dep $PACKAGE"
-	dd-schroot-cmd -c $ID apt-get build-dep $PACKAGE
-	echo
-	echo "schroot -c $ID apt-get source $PACKAGE"
-	schroot -c $ID apt-get source $PACKAGE
+	run dd-schroot-cmd -c $ID apt-get -y build-dep $PACKAGE
+	mkdir -p ~/$PACKAGE
+	cd ~/$PACKAGE
+	run schroot -r -c $ID apt-get source $PACKAGE
+	cd $PACKAGE*/
 fi
 
-schroot -r -c $ID
+# enter session
+run schroot -r -c $ID
 
-echo "schroot -e -c $ID"
-schroot -e -c $ID
+# end session
+run schroot -e -c $ID
