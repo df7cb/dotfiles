@@ -3,6 +3,9 @@ unhook folder-hook
 unhook message-hook
 unhook send-hook
 
+folder-hook .			"set narrow_tree=no"
+folder-hook oss.postgresql	"set narrow_tree"
+
 #folder-hook .			'set record="!" trash="=Trash"'
 #folder-hook trash$		'unset trash'
 
