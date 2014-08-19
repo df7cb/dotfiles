@@ -24,18 +24,21 @@ else
 	job='$([ $SHLVL -gt 1 ] && echo -n " ${SHLVL}s")'
 fi
 [ -f /etc/debian_chroot ] && chroot="$(cat /etc/debian_chroot)."
-cyan='\[\033[0;46m\]' red='\[\033[1;31m\]' bold='\[\033[1m\]' blue='\[\033[34m\]' purple='\[\033[35m\]' reset='\[\033[0m\]'
+cyan='\[\033[0;46m\]' red='\033[1;33;41m' bold='\[\033[1m\]' blue='\[\033[34m\]' purple='\[\033[35m\]' reset='\[\033[0m\]'
 screentitle='\033k\u@'$chroot'\h\033\\'
 xtitle='\033]0;\u@'$chroot'\h:\w\007'
 ps1_pwd='${PS1_PWD:-$PWD}'
-prompt="$cyan[$red\$?$cyan] \\A $bold\\u@$chroot\\h:$blue$ps1_pwd$purple\$PS1_VCS\$PS1_QUILT$cyan$job"
+prompt="$cyan\\A $bold\\u@$chroot\\h:$blue$ps1_pwd$purple\$PS1_VCS\$PS1_QUILT$cyan$job"
 case $TERM in
 linux*|*vt100*|cons25)
+	trap "echo -ne \"$red[\$?] \"" ERR
 	PS1="$prompt \\l \\\$$reset " ;;
 screen*)
+	trap "echo -ne \"$red[\$?] \"" ERR
 	PS1="\\[$screentitle$xtitle\\]$prompt \\\$$reset " ;;
 xterm*|rxvt*|cygwin)
-	PS1="\\[$xtitle\\]$prompt \\\$$reset " ;;
+	trap "echo -ne \"$red[\$?] \"" ERR
+	PS1="$prompt\\[$xtitle\\] \\\$$reset " ;;
 *)
 	PS1="$bold[\$?] \\A \\u@$chroot\\h:$ps1_pwd$job \\\$$reset " ;;
 esac
