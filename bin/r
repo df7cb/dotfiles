@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -S "${SSH_AUTH_SOCK:-}" ]; then
+	mkdir -p $HOME/.var
+	echo "$SSH_AUTH_SOCK" > $HOME/.var/ssh_auth_sock
+fi
+
+exec screen -R "$@"
