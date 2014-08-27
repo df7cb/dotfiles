@@ -5,6 +5,11 @@ set -e
 ARG="-rfakeroot -us -uc -i -I"
 DIST=$(dpkg-parsechangelog | awk '/^Distribution:/ { print $2 }')
 
+if [ -x /usr/bin/nproc ]; then
+	NPROC=$(nproc)
+	#[ $NPROC -gt 1 ] && ARG="$ARG -j$NPROC"
+fi
+
 revert_debian_changelog () {
 	head -n1 debian/changelog | grep -q '~unrel' && sed -i -e '1,6d' debian/changelog
 }
@@ -36,10 +41,15 @@ case $DIST in
 esac
 
 if [ "${1:-}" = "-n" ]; then
-    export DEB_BUILD_OPTIONS="nocheck"
+    export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:-} nocheck"
     shift
 else
     export DEB_CHECK_COMMAND="lintian"
+fi
+
+if [ "${1:-}" = "-o" ]; then
+	export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:-} noopt"
+	shift
 fi
 
 trap "test -s ../log && gzip -9 ../log" 0 2 3 15
