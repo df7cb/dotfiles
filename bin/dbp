@@ -2,6 +2,11 @@
 
 set -e
 
+if [ ! -e debian/changelog ]; then
+	echo "debian/changelog not found" >&2
+	exit 1
+fi
+
 ARG="-rfakeroot -us -uc -i -I"
 DIST=$(dpkg-parsechangelog | awk '/^Distribution:/ { print $2 }')
 
@@ -41,14 +46,14 @@ case $DIST in
 esac
 
 if [ "${1:-}" = "-n" ]; then
-    export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:-} nocheck"
+    export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
     shift
 else
     export DEB_CHECK_COMMAND="lintian"
 fi
 
 if [ "${1:-}" = "-o" ]; then
-	export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:-} noopt"
+	export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }noopt"
 	shift
 fi
 
