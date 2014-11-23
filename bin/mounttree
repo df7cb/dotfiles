@@ -1,0 +1,71 @@
+#!/usr/bin/perl
+
+# Copyright (c) 2014 Christoph Berg <myon@debian.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+use strict;
+use warnings;
+
+my %mounts;
+
+open F, "/proc/mounts" or die "/proc/mounts: $!";
+while (<F>) {
+	/(\S+) (\S+) (\S+) (\S+)/; # dev mntpt fstype options [dump pass]
+	push @{$mounts{$2}->{mnts}}, { # there might be several mounts in the same place
+		dev => $1,
+		fstype => $3,
+		options => $4,
+	};
+	$mounts{$2}->{children} = [];
+}
+close F;
+
+foreach my $mntpt (keys %mounts) {
+	next if ($mntpt eq '/');
+	my $parent = $mntpt;
+	while ($parent) {
+		$parent =~ s!/[^/]*$!!; # strip last component
+		$parent ||= '/'; # '' -> '/'
+		if ($mounts{$parent}) { # parent mountpoint found
+			push @{$mounts{$parent}->{children}}, $mntpt;
+			$mounts{$mntpt}->{display} = $mntpt;
+			$mounts{$mntpt}->{display} =~ s!^$parent/?!!;
+			last;
+		}
+	}
+}
+
+sub printmountpoint ($$);
+sub printmountpoint ($$)
+{
+	my ($mntpt, $prefix) = @_;
+	my $m = $mounts{$mntpt};
+	$m->{display} ||= '/';
+
+	foreach my $mnt (@{$m->{mnts}}) {
+		$mnt->{dev} .= " ($mnt->{fstype})" if ($mnt->{fstype} ne $mnt->{dev});
+		printf "%-30s  %-30s  %s\n", "$prefix$m->{display}", $mnt->{dev}, $mnt->{options};
+	}
+	foreach my $chld (sort @{$m->{children}}) {
+		printmountpoint ($chld, "$prefix  ");
+	}
+}
+
+printmountpoint ('/', '');
