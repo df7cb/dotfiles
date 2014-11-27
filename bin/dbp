@@ -65,6 +65,8 @@ case $(script --version) in
 esac
 
 rm -f ../log ../log.gz
-echo dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
+echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+	${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+	dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
 script $E -c "dpkg-buildpackage $ARG $ARG_V $ARG_SA $*" ../log
 head -n1 debian/changelog
