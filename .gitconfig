@@ -6,7 +6,8 @@
 	commit = commit -v
 	di = diff
 	pull = pull --stat
-	st = !git --no-pager status
+	#st = !git --no-pager status
+	st = status
 	tags = tag
 	wd = diff --color-words
 	wdiff = diff --color-words
@@ -22,3 +23,6 @@
 
 [user]
 	email = myon@debian.org
+
+[push]
+	default = current
