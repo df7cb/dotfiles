@@ -54,18 +54,18 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    --awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    --awful.layout.suit.max.fullscreen,
+    awful.layout.suit.magnifier,
+    awful.layout.suit.floating,
 }
 -- }}}
 
@@ -74,7 +74,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6 }, s, layouts[1])
 end
 -- }}}
 
@@ -102,14 +102,14 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 mytextclock = awful.widget.textclock({ align = "right" }, " %e. %H:%M:%S ", 1)
 
 -- cpufreq
-require("cpufreq")
-mycpufreq = awful.widget.cpufreq({ align = "right" }, 1)
+--require("cpufreq")
+--mycpufreq = awful.widget.cpufreq({ align = "right" }, 1)
 
 -- Battery
 batterywidget = widget({type = "textbox", name = "batterywidget", align = "right" })
 require("battery")
 
-bat_clo = battery.batclosure("C1ED")
+bat_clo = battery.batclosure("BAT1")
 batterywidget.text = bat_clo()
 battimer = timer({ timeout = 30 })
 battimer:add_signal("timeout", function() batterywidget.text = bat_clo() end)
@@ -195,7 +195,7 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         batterywidget,
-        mycpufreq,
+        --mycpufreq,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft

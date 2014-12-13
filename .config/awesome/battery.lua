@@ -15,8 +15,8 @@ local limits = {{25, 5},
             {0}}
 
 function get_bat_state (adapter)
-    local fcur = io.open("/sys/class/power_supply/"..adapter.."/charge_now")
-    local fcap = io.open("/sys/class/power_supply/"..adapter.."/charge_full")
+    local fcur = io.open("/sys/class/power_supply/"..adapter.."/energy_now")
+    local fcap = io.open("/sys/class/power_supply/"..adapter.."/energy_full")
     local fsta = io.open("/sys/class/power_supply/"..adapter.."/status")
     local cur = fcur:read()
     local cap = fcap:read()
