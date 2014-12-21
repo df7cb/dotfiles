@@ -43,6 +43,7 @@ foreach (@ARGV) {
 	my $bottom = $top + ($height + $border);
 	my $href = "$_.html";
 	my $title = $_;
+	$title =~ s/^\d+-//;
 	$title =~ s/_/ /g;
 	$title =~ s/\.(jpe?g|png|gif)$//i;
 	print MAP " <area shape=rect coords=\"$left,$top,$right,$bottom\" href=\"$href\" alt=\"$title\" title=\"$title\">\n";
