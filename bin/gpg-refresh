@@ -1,6 +1,7 @@
 #!/bin/sh
 
-HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
+#HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
+HOSTS="keys.gnupg.net"
 
 SERVERS=$(echo $HOSTS | xargs -n1 getent hosts | awk '{ print $1 }' | sort -u)
 
