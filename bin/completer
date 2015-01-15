@@ -18,6 +18,11 @@ case $PROG in
 	complete | sed -e 's/.* //'
 	;;
 
+    cp|mv)
+	# "mv foo <tab>" should expand to "mv foo foo" so we can edit the target name
+	[ -z "$2" ] && echo "$3"
+	;;
+
     cvs)
 	#sed -e 's|[^/]*/||' -e 's|/.*||' < CVS/Entries | grep -v '^D$'
 	PREFIXDIR=`dirname "$PREFIX."`
