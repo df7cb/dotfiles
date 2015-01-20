@@ -4,7 +4,8 @@
 
 # Environment
 #. ${CONF_HOME:-$HOME}/lib/locale.sh
-export LANG=de_DE.utf8 LANGUAGE=de:en_US:en TZ=CET
+: ${LANG:=de_DE.utf8} ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
+export LANG LANGUAGE TZ
 #. ${CONF_HOME:-$HOME}/lib/session.sh
 . ${CONF_HOME:-$HOME}/bin/os > /dev/null
 . ${CONF_HOME:-$HOME}/.path
