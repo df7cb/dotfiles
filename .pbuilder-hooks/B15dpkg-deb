@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for deb in ../*.deb; do
+	echo "$deb:"; dpkg --info "$deb"
+	echo
+	echo '*** Contents:'; dpkg-deb --contents "$deb"
+	echo
+done
