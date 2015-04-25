@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-# $Id$
 
 use strict;
 
@@ -18,10 +17,6 @@ if (! -d $dir) {
 		}
 		$dir2 = $dir.$$;
 	}
-
-	print STDERR "nv: create $dir? ";
-	$_ = <STDIN>;
-	exit 2 unless /^[yjo]/i;
 
 	mkdir $dir2 || $dir, 0777 or die "mkdir: $!";
 }
