@@ -8,12 +8,12 @@ try_vcs_dir ()
 {
 	dir="$1"
 	#echo "Looking in $dir ..."
-	if [ -d $dir/.svn ] ; then
+	if [ -d $dir/.git ] ; then
+		VCS=git
+	elif [ -d $dir/.svn ] ; then
 		VCS=svn
 	elif [ -d $dir/.hg ] ; then
 		VCS=hg
-	elif [ -d $dir/.git ] ; then
-		VCS=git
 	elif [ -d $dir/.bzr ] ; then
 		VCS=bzr
 	elif [ -d $dir/CVS ] ; then
@@ -26,15 +26,12 @@ try_vcs_dir ()
 
 find_vcs ()
 {
-	base="$1"
-	#echo "Looking from $base ..."
-	if try_vcs_dir $base ||
-	   try_vcs_dir $base/.. ||
-	   try_vcs_dir $base/../.. ||
-	   try_vcs_dir $base/../../.. ; then
-		echo "$VCS: $dir" 1>&2
-		return 0
-	fi
+	for dir in . .. ../.. ../../.. ../../../..; do
+		if try_vcs_dir $dir; then
+			echo "Found $VCS in $dir"
+			return 0
+		fi
+	done
 	echo "No VCS found" 1>&2
 	exit 1
 }
@@ -42,10 +39,7 @@ find_vcs ()
 command="$1"
 test "$command" && shift
 
-for base in "$@" ; do : ; done
-test -d "$base" || base="$(dirname -- "$base")"
-test -d "$base" || base="."
-find_vcs "$base"
+find_vcs
 
 case $command in
 	br|branch) $VCS branch "$@" ;;
