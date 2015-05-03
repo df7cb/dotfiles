@@ -22,6 +22,7 @@
 	defaultToUpstream = true
 
 [user]
+	name = Christoph Berg
 	email = myon@debian.org
 
 [push]
