@@ -55,11 +55,11 @@ case $PROG in
 	;;
 
     ssh|mosh)
-	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts /etc/ssh/ssh_known_hosts
 	;;
 
     scp|rsync)
-	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts /etc/ssh/ssh_known_hosts
 	;;
 
     start|stop|status|reload|restart|enable|disable)
