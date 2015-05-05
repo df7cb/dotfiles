@@ -28,7 +28,7 @@ find_vcs ()
 {
 	for dir in . .. ../.. ../../.. ../../../..; do
 		if try_vcs_dir $dir; then
-			echo "Found $VCS in $dir"
+			#echo "Found $VCS in $dir"
 			return 0
 		fi
 	done
