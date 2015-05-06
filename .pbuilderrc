@@ -16,13 +16,14 @@ MIRRORSITE="http://deb/debian"
 ROOT="/srv/pbuilder"
 BASETGZ="$ROOT/$DISTRIBUTION-$ARCH.tgz"
 #ls -l "$BASETGZ" || :
-BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
+#BASEPATH="/srv/pbuilder/cow-$DISTRIBUTION-$ARCH"
 BUILDPLACE="$ROOT/build"
 BUILDRESULT="$ROOT/result"
 APTCACHE="/srv/pbuilder/aptcache"
 #APTCACHEHARDLINK="yes"
 #DEBBUILDOPTS="-j2"
 DEBOOTSTRAP="debootstrap"
+PDEBUILD_PBUILDER=cowbuilder
 
 case $DISTRIBUTION-$ARCH in
 	sid-amd64)   BUILDUSERID=4002 BUILDUSERNAME=buildd2 ;;

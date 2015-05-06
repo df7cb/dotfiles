@@ -10,10 +10,10 @@ fi
 ARG="-rfakeroot -us -uc -i -I"
 DIST=$(dpkg-parsechangelog | awk '/^Distribution:/ { print $2 }')
 
-if [ -x /usr/bin/nproc ]; then
-	NPROC=$(nproc)
-	#[ $NPROC -gt 1 ] && ARG="$ARG -j$NPROC"
-fi
+#if [ -x /usr/bin/nproc ]; then
+#	NPROC=$(nproc)
+#	#[ $NPROC -gt 1 ] && ARG="$ARG -j$NPROC"
+#fi
 
 revert_debian_changelog () {
 	head -n1 debian/changelog | grep -q '~unrel' && sed -i -e '1,6d' debian/changelog
@@ -29,12 +29,12 @@ case $DIST in
 		OLDVERSION=$(sed -ne "1d;s/^.* (\\(.*\\)) $DIST; .*/\\1/p" debian/changelog | head -n1)
 		if [ -z "$OLDVERSION" ] ; then
 			# TODO: extract last stable version
-			ARG_SA="-sa"
+			ARG="$ARG -sa"
 		fi
-		ARG_V="-v${OLDVERSION:-0}" # full changelog for the first upload
+		ARG="$ARG -v${OLDVERSION:-0}" # full changelog for the first upload
 		VERSION=$(dpkg-parsechangelog | awk '/^Version:/ { print $2 }')
 		case $VERSION in
-			*-1~bpo*+1) ARG_SA="-sa" ;;
+			*-1~bpo*+1) ARG="$ARG -sa" ;;
 		esac
 		;;
 #	UNREL*)
@@ -45,22 +45,48 @@ case $DIST in
 #		;;
 esac
 
-if [ "${1:-}" = "-n" ]; then
-    export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
-    shift
-else
-    export DEB_CHECK_COMMAND="lintian"
-fi
+export DEB_CHECK_COMMAND="lintian"
+SHIFT=1
 
-if [ "${1:-}" = "-o" ]; then
-	export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }noopt"
-	shift
-fi
-
-if [ "${1:-}" = "-s" ]; then
-	export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nostrip"
-	shift
-fi
+while getopts "nospd:" opt 2>/dev/null; do
+  case $opt in
+    n)
+      export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
+      unset DEB_CHECK_COMMAND
+      ;;
+    o)
+      export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }noopt"
+      ;;
+    s)
+      export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nostrip"
+      ;;
+    p)
+      BUILDER="pdebuild"
+      PBUILDER_DIST="sid"
+      case $DIST in
+	*-backports)
+	  PBUILDER_DIST="${DIST%-*}"
+	  ;;
+	*UNREL*)
+	  ;;
+	*)
+	  PBUILDER_DIST="$DIST"
+	  ;;
+      esac
+      ;;
+    d)
+      BUILDER="pdebuild"
+      PBUILDER_DIST="$OPTARG"
+      ;;
+    *)
+      SHIFT=2 # don't eat the option we just couldn't parse
+      break
+      ;;
+  esac
+done
+# shift away options
+shift $((OPTIND - SHIFT))
+[ "$*" ] && ARG="$ARG $*"
 
 trap "test -s ../log && gzip -9 ../log" 0 2 3 15
 
@@ -70,8 +96,15 @@ case $(script --version) in
 esac
 
 rm -f ../log ../log.gz
-echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
-	${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
-	dpkg-buildpackage $ARG $ARG_V $ARG_SA "$@"
-script $E -c "dpkg-buildpackage $ARG $ARG_V $ARG_SA $*" ../log
+if [ "$BUILDER" ]; then
+  script $E -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+    pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/; \
+    pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/" ../log
+else
+  script $E -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+    dpkg-buildpackage $ARG; \
+    dpkg-buildpackage $ARG" ../log
+fi
 head -n1 debian/changelog
