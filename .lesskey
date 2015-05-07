@@ -3,6 +3,7 @@
 #command
 -	back-screen
 =	toggle-option
+S	toggle-option S
 \t	next-file
 p	prev-file
 ^H	prev-file
