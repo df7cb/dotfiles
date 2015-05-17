@@ -6,6 +6,7 @@ echo
 echo "`date` $0: start"
 
 cd $HOME
+[ -s .var/tz ] && . .var/tz
 . lib/locale.sh
 . ./.path
 
@@ -42,7 +43,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	elif exists autocutsel ; then
 		autocutsel &
 	fi
-	wicd-client --tray &
+	nm-applet &
 	volumeicon &
 	if exists ssh-agent ; then
 		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
