@@ -14,7 +14,7 @@
 # some defaults
 PREFIXES="$HOME:/usr/local:/usr/pkg:/usr::/usr/X11R6:/usr/openwin"
 # :: is /, /usr/pkg NetBSD, /usr/openwin Solaris
-PATH_PRELOAD="$HOME/bin/${OS:-/not/found/}" # my arch-dependent binaries
+PATH_PRELOAD="$HOME/bin/${OS:-/not/found/}:/usr/lib/ccache" # my arch-dependent binaries
 PATH="$PATH:/usr/ucb:/usr/5bin:/usr/games" # some strange locations
 # in theory, manpath should make this script mostly redundant, but this does
 # not work for $HOME/man etc.
