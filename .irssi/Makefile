@@ -30,10 +30,8 @@ links.main: links \
 # load these scripts always
 links: \
 	autorun/akilluser.pl \
-	autorun/away2web.pl \
 	autorun/challenge.pl \
 	autorun/chanact.pl \
-	autorun/chanshare.pl \
 	autorun/joininfo.pl \
 	autorun/len.pl \
 	autorun/loadavg.pl \
