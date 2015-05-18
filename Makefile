@@ -52,6 +52,10 @@ install-chroot:
 	sudo apt-get install \
 		ssmtp \
 
+deploy:
+	test "$(HOST)"
+	ssh "$(HOST)" "rm -f .bash* .profile && svn co http://svn.df7cb.de/dotfiles/cb . && make"
+
 ## cleanup stuff ##
 
 cleanup:
