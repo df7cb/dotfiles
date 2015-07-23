@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Thanks to Mika Prokop for the idea!
+# apt-get install scrot xclip
+
+set -eu
+
+date=$(date '+%F.%H%M%S')
+output=$(mktemp --tmpdir .$date.XXXXXX.png)
+name=${output##*/}
+
+trap "rm -f $output" 0 2 3 15
+
+scrot -s $output
+chmod +r $output
+
+dir="tmp/s"
+scp $output feynman.df7cb.de:html/$dir
+url="https://www.df7cb.de/$dir/$name"
+echo "$url"
+echo -n "$url" | xclip -i
