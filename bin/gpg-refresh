@@ -3,7 +3,7 @@
 #HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
 HOSTS="keys.gnupg.net"
 
-SERVERS=$(echo $HOSTS | xargs -n1 getent hosts | awk '{ print $1 }' | sort -u)
+SERVERS=$(echo $HOSTS | xargs -n1 getent hosts | awk '{ print $1 }' | sort -u | shuf)
 
 for server in $SERVERS ; do
 	getent hosts $server
