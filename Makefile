@@ -34,19 +34,28 @@ tmp /tmp/$(USER):
 	mkdir -m 0700 $@
 
 install-dev:
+	test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io | sudo tee /etc/dpkg/dpkg.cfg.d/01unsafeio
+	test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' | sudo tee /etc/apt/apt.conf.d/20norecommends
 	sudo apt-get install \
 		build-essential \
+		ccache \
 		debhelper \
 		devscripts \
 		diffstat \
+		eatmydata \
 		fakeroot \
 		git \
 		less \
+		lintian \
 		locales \
 		patchutils \
 		subversion \
 		vim \
-		wdiff \
+		wdiff
+	if ! grep -q '^de_DE.UTF-8 UTF-8' /etc/locale.gen; then \
+		echo 'de_DE.UTF-8 UTF-8' | sudo tee -a /etc/locale.gen; \
+		locale-gen; \
+	fi
 
 install-chroot:
 	sudo apt-get install \
