@@ -65,6 +65,19 @@ deploy:
 	test "$(HOST)"
 	ssh "$(HOST)" "rm -f .bash* .profile && svn co http://svn.df7cb.de/dotfiles/cb . && make"
 
+scp:
+	test "$(HOST)"
+	ssh "$(HOST)" mkdir -p bin
+	scp bin/os $(HOST):bin
+	scp \
+		.bash_bind \
+		.bash_profile \
+		.bashrc \
+		.env \
+		.path \
+		.profile \
+		$(HOST):
+
 ## cleanup stuff ##
 
 cleanup:
