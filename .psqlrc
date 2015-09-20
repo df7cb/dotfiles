@@ -28,7 +28,7 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 
 \set su 'SET ROLE postgres;'
 
-\set config 'SELECT name, CASE unit WHEN $$kB$$ THEN pg_size_pretty(setting::bigint * 1024) WHEN $$8kB$$ THEN pg_size_pretty(setting::bigint * 8192) ELSE setting || COALESCE(unit, $$$$) END AS setting, source FROM pg_settings WHERE source <> $$default$$;'
+\set config 'SELECT name, CASE unit WHEN $$kB$$ THEN pg_size_pretty(setting::bigint * 1024) WHEN $$8kB$$ THEN pg_size_pretty(setting::bigint * 8192) ELSE setting || COALESCE(unit, $$$$) END AS setting, CASE source WHEN $$configuration file$$ THEN sourcefile||$$:$$||sourceline ELSE source END FROM pg_settings WHERE source <> $$default$$;'
 
 \set act 'SELECT datname, procpid, usename, waiting AS wait, date_trunc($$second$$, age(clock_timestamp(), xact_start)) AS xact_age, date_trunc($$second$$, age(clock_timestamp(), query_start)) AS query_age, date_trunc($$second$$, age(clock_timestamp(), backend_start)) AS backend_age, host(client_addr) || $$:$$ || client_port AS client, CASE WHEN procpid = pg_backend_pid() THEN $$:act$$ ELSE current_query END FROM pg_stat_activity ORDER BY 1, 2;'
 \set act92 'SELECT datname, pid, usename, waiting AS wait, date_trunc($$second$$, age(clock_timestamp(), xact_start)) AS xact_age, date_trunc($$second$$, age(clock_timestamp(), query_start)) AS query_age, date_trunc($$second$$, age(clock_timestamp(), backend_start)) AS backend_age, host(client_addr) || $$:$$ || client_port AS client, state, CASE WHEN pid = pg_backend_pid() THEN $$:act$$ ELSE query END FROM pg_stat_activity ORDER BY CASE WHEN state = $$idle$$ THEN $$zzz$$ ELSE state END, 1, 2;'
