@@ -58,19 +58,19 @@ URxvt.keysym.M-C-9:	command:\033]710;xft:DejaVu Sans Mono-35,xft:Mono-35\007
 URxvt.keysym.maltesecross: \342\231\240
 URxvt.matcher.button:	3
 URxvt.matcher.pattern.1: (?:Closes:.|\\#)(\\d{6})
-URxvt.matcher.launcher.1: iceweasel bugs.debian.org/$1
+URxvt.matcher.launcher.1: x-www-browser bugs.debian.org/$1
 URxvt.matcher.pattern.2: <([^<>]+[0-9][^<>]+@[^<>]+)>
-URxvt.matcher.launcher.2: iceweasel lists.debian.org/$1
+URxvt.matcher.launcher.2: x-www-browser lists.debian.org/$1
 URxvt.matcher.pattern.3: (\\b[Gg][Cc][A-Za-z0-9]{3,5}\\b)
-URxvt.matcher.launcher.3: iceweasel coord.info/$1
+URxvt.matcher.launcher.3: x-www-browser coord.info/$1
 URxvt.matcher.pattern.4: rt.debian.org.\\#(\\d{4,})
-URxvt.matcher.launcher.4: iceweasel https:\/\/rt.debian.org/Ticket/Display.html?id=$1
+URxvt.matcher.launcher.4: x-www-browser https:\/\/rt.debian.org/Ticket/Display.html?id=$1
 URxvt.matcher.pattern.5: (?:RT.?|\\#)(\\d{5}\\b)
-URxvt.matcher.launcher.5: iceweasel http:\/\/portal.dg-i.net/rt/Ticket/Display.html?id=$1
+URxvt.matcher.launcher.5: x-www-browser https:\/\/portal.dg-i.net/rt/Ticket/Display.html?id=$1
 URxvt.matcher.pattern.7: (JT-\\d{2,5}\\b)
-URxvt.matcher.launcher.7: iceweasel https:\/\/code.allsecur.de/jira/browse/$1
+URxvt.matcher.launcher.7: x-www-browser https:\/\/code.allsecur.de/jira/browse/$1
 URxvt.matcher.pattern.8: OSSC.\\#(\\d{3,})
-URxvt.matcher.launcher.8: iceweasel https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
+URxvt.matcher.launcher.8: x-www-browser https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,tabbed,matcher,vtwheel,3digits
 URxvt.perl-lib:		/home/myon/lib/urxvt
