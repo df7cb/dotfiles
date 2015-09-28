@@ -64,6 +64,11 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	xscreensaver -nosplash &
 	#type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
 	xroot loop &
+
+	( SHLVL=-1 x-terminal-emulator & )
+	( SHLVL=-1 x-terminal-emulator & )
+	( chromium & )
+
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
 	#( sleep 2 ; awesome-clock && awesome-clock 0 ) &
 else
