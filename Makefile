@@ -49,6 +49,7 @@ install-dev:
 		lintian \
 		locales \
 		patchutils \
+		quilt \
 		subversion \
 		vim \
 		wdiff
