@@ -4,7 +4,9 @@
 
 # Environment
 #. ${CONF_HOME:-$HOME}/lib/locale.sh
+LANG=de_DE.utf8
 : ${LANG:=de_DE.utf8} ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
+[ "$LANG" = "C" ] && LANG="de_DE.utf8"
 export LANG LANGUAGE TZ
 #. ${CONF_HOME:-$HOME}/lib/session.sh
 . ${CONF_HOME:-$HOME}/bin/os > /dev/null
@@ -62,11 +64,12 @@ PROMPT_COMMAND="ps1_vcs"
 # internal shell settings
 auto_resume=
 #FIGNORE='~'
-HISTCONTROL=ignoredups
+HISTCONTROL='erasedups'
 #histchars='!^#'
-HISTFILESIZE=1000
+HISTFILESIZE=10000
 HISTIGNORE="..:[bf]g:cd:l:ls"
-HISTSIZE=5000
+HISTSIZE=10000
+HISTTIMEFORMAT="%F %T  "
 unset ignoreeof
 shopt -s extglob no_empty_cmd_completion
 
