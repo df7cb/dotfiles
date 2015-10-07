@@ -34,33 +34,47 @@ tmp /tmp/$(USER):
 	mkdir -m 0700 $@
 
 install-dev:
+	if [ ! -x /usr/bin/sudo ] && [ $$(id -u) = 0 ]; then apt-get install sudo; fi
 	test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io | sudo tee /etc/dpkg/dpkg.cfg.d/01unsafeio
 	test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' | sudo tee /etc/apt/apt.conf.d/20norecommends
+	test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' | sudo tee /etc/apt/apt.conf.d/50i18n
+	sudo rm -f /var/lib/apt/lists/*_Translation-de*
 	sudo apt-get install \
+		autopkgtest \
 		build-essential \
 		ccache \
 		debhelper \
 		devscripts \
 		diffstat \
+		dput \
 		eatmydata \
 		fakeroot \
 		git \
 		less \
 		lintian \
 		locales \
+		newpid \
 		patchutils \
+		openssh-client \
 		quilt \
+		rsync \
+		strace \
 		subversion \
 		vim \
 		wdiff
 	if ! grep -q '^de_DE.UTF-8 UTF-8' /etc/locale.gen; then \
 		echo 'de_DE.UTF-8 UTF-8' | sudo tee -a /etc/locale.gen; \
-		locale-gen; \
+		sudo locale-gen; \
+	fi
+	if grep -q '^ *HashKnownHosts yes' /etc/ssh/ssh_config; then \
+		sudo sed -i -e 's/^\( *HashKnownHosts\) .*/\1 no/' /etc/ssh/ssh_config; \
 	fi
 
 install-chroot:
 	sudo apt-get install \
-		ssmtp \
+		ssmtp
+	sudo sed -i -e 's/^#\(FromLineOverride\)/\1/' -e 's/^mailhub=.*/mailhub=localhost/' /etc/ssmtp/ssmtp.conf
+	sudo sed -i -e 's/^%sudo.*/%sudo	ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 
 deploy:
 	test "$(HOST)"
