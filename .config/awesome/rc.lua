@@ -115,8 +115,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
---mytextclock = awful.widget.textclock({ align = "right" }, " %e. %H:%M:%S ", 1)
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock(" %e. %H:%M:%S ", 1)
 
 -- -- cpufreq
 -- --require("cpufreq")
