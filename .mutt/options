@@ -15,7 +15,7 @@ unset collapse_unread
 unset confirmappend
 set confirmcreate
 set edit_headers
-set editor="vim -u ~/.mutt/vimrc -c'/^$' -c'noh'"
+set editor="vim -u ~/.priv/mutt/vimrc -c'/^$' -c'noh'"
 set envelope_from_address="cb@df7cb.de" use_envelope_from
 set delete=yes
 set fast_reply
