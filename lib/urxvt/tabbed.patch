@@ -1,5 +1,5 @@
---- /usr/lib/urxvt/perl/tabbed	2014-05-03 21:37:37.000000000 +0200
-+++ ./tabbed	2014-07-09 18:50:26.000000000 +0200
+--- /usr/lib/urxvt/perl/tabbed	2015-02-08 17:55:10.000000000 +0100
++++ ./tabbed	2015-11-09 09:53:48.793475781 +0100
 @@ -97,6 +97,16 @@
        $term->resource (perl_ext_2 => $term->resource ("perl_ext_2") . ",-tabbed");
     };
@@ -17,7 +17,16 @@
     push @urxvt::TERM_EXT, urxvt::ext::tabbed::tab::;
  
     my $term = new urxvt::term
-@@ -312,6 +322,12 @@
+@@ -104,6 +114,8 @@
+       -embed => $self->parent,
+       @argv,
+    ;
++
++   chdir; # go back to $HOME so the terminal doesn't keep the directory busy
+ }
+ 
+ sub configure {
+@@ -312,6 +324,12 @@
     1
  }
  
@@ -30,7 +39,7 @@
  sub tab_start {
     my ($self, $tab) = @_;
  
-@@ -402,7 +418,7 @@
+@@ -402,7 +420,7 @@
  # simply proxies all interesting calls back to the tabbed class.
  
  {
