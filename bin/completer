@@ -65,7 +65,7 @@ case $PROG in
 	;;
 
     start|stop|status|reload|restart|enable|disable)
-	for f in /etc/init.d/$PREFIX* /lib/systemd/$PREFIX*.service; do
+	for f in /etc/init.d/$PREFIX* /lib/systemd/$PREFIX*.service /etc/systemd/system/$PREFIX*.service; do
 	    case $f in
 		*.dpkg*) ;;
 		*) test -f $f && echo $(basename $f .service) ;;
