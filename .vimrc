@@ -82,6 +82,8 @@ nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
 
 " highlights
 hi NonText cterm=NONE
+" make search wrap more visible
+hi WarningMsg ctermfg=white ctermbg=red guifg=White guibg=Red gui=None
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
