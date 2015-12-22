@@ -4,6 +4,7 @@
 	ci = commit -v
 	co = checkout
 	commit = commit -v
+	c-p = cherry-pick
 	di = diff
 	pull = pull --stat
 	#st = !git --no-pager status
@@ -24,6 +25,11 @@
 [user]
 	name = Christoph Berg
 	email = myon@debian.org
+	#email = christoph.berg@credativ.de
 
 [push]
+	#default = simple
 	default = current
+
+[gitreview]
+	username = myon
