@@ -65,18 +65,15 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	#type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
 	xroot loop &
 
-	( SHLVL=-1 x-terminal-emulator & )
-	( SHLVL=-1 x-terminal-emulator & )
-	( chromium & )
+	SHLVL=0 x-terminal-emulator &
+	SHLVL=0 x-terminal-emulator &
+	chromium &
 
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
 	#( sleep 2 ; awesome-clock && awesome-clock 0 ) &
 else
 	xsetroot -solid limegreen
 fi
-
-# ugly hack to make SHLVL=1 in xterms spawned by fvwm
-SHLVL=-1
 
 if exists awesome ; then
 	exec awesome
