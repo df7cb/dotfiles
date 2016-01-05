@@ -97,7 +97,7 @@ case $command in
 	up|update) case $VCS in
 		bzr) bzr pull "$@" ;;
 		hg) hg pull -u "$@" ;;
-		git) git pull "$@" ;;
+		git) git pull "$@" && git remote prune origin ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	add|co|cp|info|log|mv|resolved|revert|rm|"")
