@@ -62,12 +62,12 @@ while getopts "nospd:" opt 2>/dev/null; do
       ;;
     p)
       BUILDER="pdebuild"
-      PBUILDER_DIST="sid"
       case $DIST in
 	*-backports)
 	  PBUILDER_DIST="${DIST%-*}"
 	  ;;
-	*UNREL*)
+	unstable|experimental|*UNREL*)
+	  PBUILDER_DIST="sid"
 	  ;;
 	*)
 	  PBUILDER_DIST="$DIST"
