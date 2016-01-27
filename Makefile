@@ -55,11 +55,13 @@ install-dev:
 		locales \
 		newpid \
 		patchutils \
+		psmisc \
 		openssh-client \
 		quilt \
 		rsync \
 		strace \
 		subversion \
+		tree \
 		vim \
 		wdiff
 	if ! grep -q '^de_DE.UTF-8 UTF-8' /etc/locale.gen; then \
