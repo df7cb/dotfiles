@@ -56,12 +56,14 @@ case $PROG in
 
     ssh|mosh)
 	[ -f /etc/ssh/ssh_known_hosts ] && ETC_KNOWN_HOSTS=/etc/ssh/ssh_known_hosts
-	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts $ETC_KNOWN_HOSTS
+	[ -f $HOME/lib/db.debian.org/debian_known_hosts ] && DEBIAN_KNOWN_HOSTS=$HOME/lib/db.debian.org/debian_known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts $ETC_KNOWN_HOSTS $DEBIAN_KNOWN_HOSTS
 	;;
 
     scp|rsync)
 	[ -f /etc/ssh/ssh_known_hosts ] && ETC_KNOWN_HOSTS=/etc/ssh/ssh_known_hosts
-	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts $ETC_KNOWN_HOSTS
+	[ -f $HOME/lib/db.debian.org/debian_known_hosts ] && DEBIAN_KNOWN_HOSTS=$HOME/lib/db.debian.org/debian_known_hosts
+	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /\.('"$TLDS"')$/ }' ~/.ssh/known_hosts $ETC_KNOWN_HOSTS $DEBIAN_KNOWN_HOSTS
 	;;
 
     start|stop|status|reload|restart|enable|disable)

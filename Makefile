@@ -121,3 +121,4 @@ commit: cleanup
 ci:
 	$(MAKE) update
 	$(MAKE) commit
+	$(MAKE) -C lib
