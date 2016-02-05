@@ -50,11 +50,13 @@ install-dev:
 		eatmydata \
 		fakeroot \
 		git \
+		git-buildpackage \
 		less \
 		lintian \
 		locales \
 		newpid \
 		patchutils \
+		pristine-tar \
 		psmisc \
 		openssh-client \
 		quilt \
