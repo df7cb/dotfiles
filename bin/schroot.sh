@@ -2,10 +2,11 @@
 
 : ${CHROOT:=sid}
 
-while getopts "c:n" opt ; do
+while getopts "c:n:u" opt ; do
 	case $opt in
 		c) CHROOT="$OPTARG" ;;
-		n) NOUPDATE=1 ;;
+		n) SESSION="$OPTARG" ;;
+		u) NOUPDATE=1 ;;
 		*) exit 5 ;;
 	esac
 done
@@ -17,11 +18,13 @@ if [ -z "$NOUPDATE" ]; then
 	schroot -c source:$CHROOT -u root -- apt-get -y dist-upgrade
 fi
 
-SESSION="$LOGNAME-$CHROOT-1"
+: ${SESSION:="$LOGNAME-$CHROOT-1"}
 
-schroot -c $CHROOT -n $SESSION -b
+schroot -c $CHROOT -n $SESSION -b && END=1
 if [ -f debian/changelog ]; then
-	schroot -c session:$SESSION -u root -r -- apt-get build-dep ./
+	schroot -c session:$SESSION -u root -r -- apt-get -y build-dep ./
 fi
 schroot -c session:$SESSION -r -- bash
-schroot -c session:$SESSION -e
+if [ "$END" ]; then
+	schroot -c session:$SESSION -e
+fi
