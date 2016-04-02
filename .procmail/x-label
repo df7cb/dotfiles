@@ -14,7 +14,7 @@
 :0fhw
 * !^X-Label:
 * ^X-PTS-Package: \/.*
-| formail -i"X-Label: p $MATCH"
+| formail -i"X-Label: $MATCH"
 :0fhw
 * !^X-Label:
 * ^List-Id: <debian-\/[a-z0-9-]*

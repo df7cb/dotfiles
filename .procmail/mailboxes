@@ -1,21 +1,50 @@
 M=mail/cb
 
-EXTFOLDER=`if test "$EXTENSION" && test -d "$HOME/Maildir/.$EXTENSION" ; then echo "$HOME/Maildir/.$EXTENSION" ; fi`
+# mutt
+:0
+* ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|X-list: muttpatches|Delivered-To: cb\+mutt@df7cb.de)
+$HOME/Maildir/.oss.mutt/
+#:0
+#* ^From: .*(owner@bugs.debian.org|fleas@mutt.org)
+#* ^(Cc|To): .*mutt
+#$HOME/Maildir/.oss.mutt/
+
+# xymon
+:0
+* ^List-Id: .*xymon
+$HOME/Maildir/.oss.hobbit/
+
+# oftc
+:0
+* ^Subject: (DISCARDED|APPROVED) by Christoph Berg
+/dev/null
+
+# PostgreSQL
+:0
+* ^List-ID: <pgadmin-support.postgresql.org>
+$HOME/Maildir/.oss.postgresql/
+:0
+* ^List-Id: .*<pljava-dev.lists.pgfoundry.org>
+$HOME/Maildir/.oss.postgresql/
 
 # plus-addressing folders
+EXTFOLDER=`if test "$EXTENSION" && test -d "$HOME/Maildir/.$EXTENSION" ; then echo "$HOME/Maildir/.$EXTENSION" ; fi`
 :0
 * EXTFOLDER ?? .
-$EXTFOLDER/
+{
+  :0c
+  * EXTFOLDER ?? debian
+  * ^Subject:.*postgres
+  $HOME/Maildir/
 
-# mutt
-:0:
-* ^(Sender: owner-mutt-.*@mutt.org|List-Unsubscribe: .*mutt-|X-list: muttpatches|X-Debian-PR-Source: mutt|Delivered-To: cb\+mutt@df7cb.de)
-$M/mutt
-:0:
-* ^From: .*(owner@bugs.debian.org|fleas@mutt.org)
-* ^(Cc|To): .*mutt
-$M/mutt
+  :0
+  $EXTFOLDER/
+}
 
+:0
+$HOME/Maildir/
+
+# STOP HERE
 
 # Debian
 :0:

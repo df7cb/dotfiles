@@ -34,11 +34,11 @@
 | formail -i"Status: RO"
 
 # hide messages from debianqueued
-:0fhw
-* !^Status:
-* ^From: .*<dak@.*.debian.org>
+:0HB
+* ^From: .*<ftpmaster@ftp-master.debian.org>
 * ^Subject: Processing of .*.changes
-| formail -i"Status: RO"
+* changes uploaded successfully
+/dev/null
 
 # hide OFTC alerts
 :0fhw
