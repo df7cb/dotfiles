@@ -1,6 +1,7 @@
 [DEFAULT]
 login = myon
 progress_indicator = 2
+default_host_main = ssh-upload
 
 [bpo]
 fqdn = backports-master.debian.org
