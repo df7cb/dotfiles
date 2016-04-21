@@ -1,5 +1,3 @@
-# $Id$
-
 alias . 'source'
 alias .. 'cd ..'
 alias cp 'cp -i'

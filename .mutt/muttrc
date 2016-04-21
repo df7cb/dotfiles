@@ -1,5 +1,3 @@
-# $Id$
-
 set folder="~/mail"
 #set folder="imaps://localhost/"
 

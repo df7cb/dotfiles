@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 ##############################################################################
-# $Id$
 # TODO	error detection for LaTeX run and other commands
 # TODO	pass latex texts through text filter
 # TODO	filter support is rudimentary...

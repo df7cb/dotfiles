@@ -1,5 +1,3 @@
-# $Id$
-
 =head1 NAME
 
 pod file - template to show how to use pod

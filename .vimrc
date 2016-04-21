@@ -1,5 +1,3 @@
-" $Id$
-
 " Options
 set autoindent		" always set autoindenting on
 set autoread		" Automatically read buffers if file changed on disk

@@ -1,5 +1,4 @@
 # Makefile to create links in ~/.irssi/scripts/autorun/
-# $Id$
 
 .PHONY: scripts scripts.main
 scripts:

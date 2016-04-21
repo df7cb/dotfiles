@@ -1,5 +1,4 @@
 #!/bin/sh
-# $Id$
 
 if [ -x /usr/bin/dpkg ] ; then
     DPKG_ARCH=$(dpkg --print-architecture)

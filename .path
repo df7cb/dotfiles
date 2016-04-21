@@ -1,5 +1,4 @@
 #!/bin/sh
-# $Id$
 # (c) 2000..2005, Christoph Berg <cb@df7cb.de>
 # This program is free software covered by the GNU GPL.
 # cb 2005-05-24: use PREFIXES, general cleanup

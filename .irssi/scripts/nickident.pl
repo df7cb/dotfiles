@@ -1,6 +1,4 @@
 #
-# $Id$
-#
 # NickServ interface
 #  Original code by Sami Haahtinen / ZaNaGa 
 #  Protected channel support added by David McNett <nugget@slacker.com>

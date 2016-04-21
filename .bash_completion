@@ -1,4 +1,3 @@
-# $Id$
 # bash completions
 
 # 1) find command name from comspec list (first full path, then basename)

@@ -1,5 +1,4 @@
 #!/bin/bash
-#echo '$Id$'
 #set -x
 
 echo
@@ -7,8 +6,7 @@ echo "`date` $0: start"
 
 cd $HOME
 [ -s .var/tz ] && . .var/tz
-. lib/locale.sh
-. ./.path
+. ./.bashrc
 
 if [ "$SHELL" = /bin/sh ] ; then
 	if SHELL=`which bash` ; then
@@ -45,17 +43,17 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	fi
 	nm-applet &
 	volumeicon &
-	if exists ssh-agent ; then
-		[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
-		if [ "$SSH_AUTH_SOCK" ] ; then
-			for key in .ssh/*.pub ; do
-				[ -f "$key" ] || break
-				KEY="$KEY .ssh/$(basename $key .pub)"
-			done
-			[ "$KEY" ] && ssh-add $KEY < /dev/null # there are keys
-			unset KEY
-		fi
-	fi
+	#if exists ssh-agent ; then
+	#	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
+	#	if [ "$SSH_AUTH_SOCK" ] ; then
+	#		for key in .ssh/*.pub ; do
+	#			[ -f "$key" ] || break
+	#			KEY="$KEY .ssh/$(basename $key .pub)"
+	#		done
+	#		[ "$KEY" ] && ssh-add $KEY < /dev/null # there are keys
+	#		unset KEY
+	#	fi
+	#fi
 	exists gpg-agent && [ -z "$GPG_AGENT_INFO" ] && \
 		eval `gpg-agent --daemon`
 	exists gnome-keyring-daemon && [ -z "$GNOME_KEYRING_CONTROL" ] && \
@@ -68,9 +66,9 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	SHLVL=0 x-terminal-emulator &
 	SHLVL=0 x-terminal-emulator &
 	chromium &
+	( icedove & )
 
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
-	#( sleep 2 ; awesome-clock && awesome-clock 0 ) &
 else
 	xsetroot -solid limegreen
 fi

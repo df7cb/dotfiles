@@ -1,4 +1,3 @@
-# $Id$
 # .zshenv -> .zprofile (login) -> .zshrc (interactive) -> .zlogin (login)
 : ${ZDOTDIR=$HOME}
 

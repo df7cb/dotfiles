@@ -1,4 +1,3 @@
-# $Id$
 # .fvwm2rc-menus-rlogin cb 990804
 
 AddToMenu Rlogins "rlogins" Title

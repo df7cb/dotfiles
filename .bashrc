@@ -1,4 +1,3 @@
-# $Id$ Christoph Berg <cb@df7cb.de>
 # login shells: /etc/profile, then ~/.[bash_]profile; interactive: ~/.bashrc
 #echo .bashrc
 

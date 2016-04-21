@@ -1,4 +1,3 @@
-# $Id$
 # echo .profile ; which bash ; which tcsh ; echo $SHELL
 
 if [ -t 0 ] ; then

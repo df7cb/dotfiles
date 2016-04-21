@@ -1,4 +1,3 @@
-# $Id$
 dnl This file will open 4 xterms that occupy the screen neatly.
 dnl For a resolution of 1024x480 (on the Sony PCG-C1VE) 2 xterms pop up.
 

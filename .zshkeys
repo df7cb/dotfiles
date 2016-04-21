@@ -1,5 +1,3 @@
-# $Id$
-#
 # zsh line editing (from SuSE)
 #
 : ${ZSHEDIT:="emacs"}

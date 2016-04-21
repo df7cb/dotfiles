@@ -1,5 +1,3 @@
-# $Id$
-
 : ${ZDOTDIR=$HOME}
 export ZDOTDIR
 

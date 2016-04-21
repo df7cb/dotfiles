@@ -1,5 +1,4 @@
 " Name: gnupg.vim
-" Version: $Id$
 " Author: Markus Braun <markus.braun@krawel.de>
 " Summary: Vim plugin for transparent editing of gpg encrypted files.
 " TODO enable signing

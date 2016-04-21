@@ -1,4 +1,3 @@
-! $Id$
 ! This is an xmodmap input file for PC 102 key #1 (Linux/XFree86; US) keyboards.
 
 keycode 0x31 =	grave		asciitilde	dead_grave	dead_tilde

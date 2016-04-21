@@ -1,4 +1,3 @@
-# $Id$
 #echo .bash_profile
 
 . ~/.bashrc

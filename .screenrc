@@ -1,5 +1,3 @@
-# $Id$
-
 # escape character is ^W, ^Wa for literal ^W
 escape ^Wa
 
