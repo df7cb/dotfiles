@@ -20,17 +20,18 @@ autorun:
 # load these scripts only on the irssi proxy server
 links.main: links \
 	autorun/buf.pl \
-	autorun/friends.pl \
 	autorun/keepnick.pl \
 	autorun/pisgcommits.pl \
 	autorun/nickident.pl \
-	autorun/screen_away.pl
+	autorun/screen_away.pl \
+	autorun/trigger.pl
 
 # load these scripts always
 links: \
 	autorun/akilluser.pl \
 	autorun/challenge.pl \
 	autorun/chanact.pl \
+	autorun/hideshow.pl \
 	autorun/joininfo.pl \
 	autorun/len.pl \
 	autorun/loadavg.pl \
@@ -38,6 +39,8 @@ links: \
 	autorun/oftc-server-notices.pl \
 	autorun/queryresume.pl \
 	autorun/quiet.pl \
+	autorun/recentdepart.pl \
+	autorun/splitlong.pl \
 	autorun/timer.pl \
 	autorun/title.pl \
 	autorun/topic-diff.pl \
