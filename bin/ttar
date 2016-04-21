@@ -17,7 +17,7 @@ case "$1" in
 	*.lzh)			T="lha v"	C="lha a" ;;
 	*.rar)			T="unrar v"	C="echo rar not supported:" ;;
 	*.xar)			T="xar -tvf"	C="xar -cf" ;;
-	*.zip|*.exe)		T="unzip -l"	C="zip -r" ;;
+	*.zip|*.ZIP|*.exe)	T="unzip -l"	C="zip -r" ;;
 	*.7z)			T="7z l"	C="7z a" ;;
 	*)	echo "$0 error: suffix not recognized: $1" 1>&2
 		exit 1 ;;

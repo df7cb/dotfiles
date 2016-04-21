@@ -13,7 +13,7 @@ $cmd = "ar xv" if $ARGV[0] =~ /\.(ar|deb)$/;
 $cmd = "unarj x" if $ARGV[0] =~ /\.arj$/;
 $cmd = "unrar x" if $ARGV[0] =~ /\.rar$/;
 $cmd = "xar -xvf" if $ARGV[0] =~ /\.xar$/;
-$cmd = "unzip" if $ARGV[0] =~ /\.zip$/;
+$cmd = "unzip" if $ARGV[0] =~ /\.zip$/i;
 $cmd = "dpkg-source -x" if $ARGV[0] =~ /\.dsc$/;
 $cmd = "7z x" if $ARGV[0] =~ /\.7z$/;
 
