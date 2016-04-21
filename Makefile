@@ -1,4 +1,4 @@
-# rm -f .bash* .profile && svn co http://svn.df7cb.de/dotfiles/cb . && make && . .bashrc
+# rm -f .bash* .profile && git clone https://github.com/ChristophBerg/dotfiles.git . && make && . .bashrc
 
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
 QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qimport bin/qnew bin/qpop bin/qpush bin/qrefresh bin/qtop
@@ -80,7 +80,7 @@ install-chroot:
 
 deploy:
 	test "$(HOST)"
-	ssh "$(HOST)" "rm -f .bash* .profile && svn co http://svn.df7cb.de/dotfiles/cb . && make"
+	ssh "$(HOST)" "rm -f .bash* .profile && git clone https://github.com/ChristophBerg/dotfiles.git . && make"
 
 scp:
 	test "$(HOST)"
@@ -104,18 +104,18 @@ COMMITS = $(wildcard .mutt/fortunes-??)
 
 st: status
 status:
-	@svn -q status
+	@git status
 	@if [ -d .priv ] ; then $(MAKE) -C .priv status ; fi
 
 up: update
 update: cleanup
-	svn update
+	git pull
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 	@$(MAKE) all
 
 com: commit
 commit: cleanup
-	svn commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS)
+	git commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS) || :
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
 ci:
