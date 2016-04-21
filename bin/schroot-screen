@@ -5,9 +5,10 @@
 : ${CHROOT:=sid}
 export CHROOT
 
-while getopts "c:" opt ; do
+while getopts "c:g" opt ; do
 	case $opt in
 	c) CHROOT="$OPTARG" ;;
+	g) GIT="yes" ;;
 	*) exit 5 ;;
 	esac
 done
@@ -40,8 +41,13 @@ if [ "$PACKAGE" ]; then
 	run dd-schroot-cmd -c $ID apt-get -y build-dep $PACKAGE
 	mkdir -p ~/$PACKAGE
 	cd ~/$PACKAGE
-	run schroot -r -c $ID apt-get source $PACKAGE
+	if [ "${GIT:-}" ]; then
+		run schroot -r -c $ID debcheckout $PACKAGE
+	else
+		run schroot -r -c $ID apt-get source $PACKAGE
+	fi
 	cd $PACKAGE*/
+	[ "${GIT:-}" ] && run schroot -r -c $ID origtargz
 fi
 
 # enter session
