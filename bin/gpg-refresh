@@ -2,19 +2,20 @@
 
 #HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
 HOSTS="keys.gnupg.net"
-
 SERVERS=$(echo $HOSTS | xargs -n1 getent hosts | awk '{ print $1 }' | sort -u | shuf)
+#KEYS="$PGPKEY $PGPKEY2 $PGPKEY3"
+KEYS="$PGPKEY2 $PGPKEY3"
 
 for server in $SERVERS ; do
 	getent hosts $server
 	case $server in *:*) server="[$server]" ;; esac
-	gpg --keyserver $server --recv $PGPKEY $PGPKEY2 $PGPKEY3
+	gpg --keyserver $server --recv $KEYS
 	echo
 done
 
 for server in $SERVERS ; do
 	getent hosts $server
 	case $server in *:*) server="[$server]" ;; esac
-	gpg --keyserver $server --send $PGPKEY $PGPKEY2 $PGPKEY3
+	gpg --keyserver $server --send $KEYS
 	echo
 done
