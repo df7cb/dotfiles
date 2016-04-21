@@ -80,7 +80,7 @@ install-chroot:
 
 deploy:
 	test "$(HOST)"
-	ssh "$(HOST)" "rm -f .bash* .profile && git clone https://github.com/ChristophBerg/dotfiles.git . && make"
+	ssh "$(HOST)" "rm -f .bash* .profile && git init && git remote add origin https://github.com/ChristophBerg/dotfiles.git && git fetch origin && git checkout master && make"
 
 scp:
 	test "$(HOST)"
