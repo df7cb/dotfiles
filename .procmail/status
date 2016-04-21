@@ -36,13 +36,6 @@
 # hide messages from debianqueued
 :0HB
 * ^From: .*<ftpmaster@ftp-master.debian.org>
-* ^Subject: Processing of .*.changes
+* ^Subject: .*Processing of .*\.changes
 * changes uploaded successfully
 /dev/null
-
-# hide OFTC alerts
-:0fhw
-* !^Status:
-* ^From: .*cdlu@railfan.ca
-* ^Subject: \[oftc-noc\] Alert: 
-| formail -i"Status: RO"
