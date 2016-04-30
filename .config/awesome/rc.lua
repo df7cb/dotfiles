@@ -466,4 +466,24 @@ client.connect_signal("focus", function(c) c.border_color = "#ecb204" end)
 client.connect_signal("unfocus", function(c) c.border_color = "#111111" end)
 -- }}}
 
+-- http://rootslash.net/171541/how-to-set-focus-on-a-client-under-mouse-cursor-when-a-tag-is-changed
+tag.connect_signal(
+  "property::selected",
+  function (t)
+    local selected = tostring(t.selected) == "false"
+    if selected then
+      local focus_timer = timer({ timeout = 0.05 })
+      focus_timer:connect_signal("timeout", function()
+        local c = awful.mouse.client_under_pointer()
+        if not (c == nil) then
+          client.focus = c
+          c:raise()
+        end
+        focus_timer:stop()
+      end)
+      focus_timer:start()
+    end
+  end
+)
+
 -- vim:et:
