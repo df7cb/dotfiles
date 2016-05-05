@@ -90,9 +90,10 @@ shift $((OPTIND - SHIFT))
 
 trap "test -s ../log && gzip -9 ../log" 0 2 3 15
 
-case $(script --version) in
-	*2.17.*) ;; # squeeze doesn't support -e
-	*) E=-e ;;
+case $(script --version 2>/dev/null) in
+  script*2.17.*) SCRIPT="script" ;; # squeeze doesn't support -e
+  script*) SCRIPT="script -e" ;;
+  # script doesn't exist on kfreebsd and hurd
 esac
 
 rm -f ../log ../log.gz
@@ -101,10 +102,15 @@ if [ "$BUILDER" ]; then
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
     pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/; \
     pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/" ../log
-else
+elif [ "$SCRIPT" ]; then
   script $E -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
     dpkg-buildpackage $ARG; \
     dpkg-buildpackage $ARG" ../log
+else
+  echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+    dpkg-buildpackage $ARG
+  dpkg-buildpackage $ARG 2>&1 | tee ../log
 fi
 head -n1 debian/changelog
