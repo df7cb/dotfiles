@@ -98,12 +98,12 @@ esac
 
 rm -f ../log ../log.gz
 if [ "$BUILDER" ]; then
-  script $E -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+  $SCRIPT -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
     pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/; \
     pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/" ../log
 elif [ "$SCRIPT" ]; then
-  script $E -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+  $SCRIPT -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
     dpkg-buildpackage $ARG; \
     dpkg-buildpackage $ARG" ../log
