@@ -1,5 +1,10 @@
 #echo .bash_profile
 
+# update git checkout
+if [ "$(find .git/FETCH_HEAD -mtime +1 2>/dev/null)" ]; then
+	make up
+fi
+
 . ~/.bashrc
 
 [ "$TERM" = linux ] && case `tty` in */tty?) unicode_start 2> /dev/null ;; esac
