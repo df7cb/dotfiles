@@ -111,7 +111,7 @@ up: update
 update: cleanup
 	git pull
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
-	@$(MAKE) all
+	@MAKEFLAGS= MAKELEVEL= make all
 
 com: commit
 commit: cleanup
