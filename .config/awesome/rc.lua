@@ -281,6 +281,8 @@ globalkeys = awful.util.table.join(
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    -- Volume
+    awful.key({        },            "Pause", function () awful.util.spawn("amixer -q set Master toggle") end),
 
     awful.key({ modkey }, "x",
               function ()
