@@ -2,6 +2,7 @@
 
 # update git checkout
 if [ "$(find .git/FETCH_HEAD -mtime +1 2>/dev/null)" ]; then
+	. ~/.bashrc # get GIT_SSL_CAINFO
 	make up
 fi
 
