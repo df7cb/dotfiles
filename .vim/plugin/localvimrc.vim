@@ -31,9 +31,21 @@ endif
 " define default "localvimrc_name" {{{2
 " copy to script local variable to prevent .lvimrc modifying the name option.
 if (!exists("g:localvimrc_name"))
-  let s:localvimrc_name = ".lvimrc"
+  let s:localvimrc_name = [ ".lvimrc" ]
 else
-  let s:localvimrc_name = g:localvimrc_name
+  if type(g:localvimrc_name) == type("")
+    let s:localvimrc_name = [ g:localvimrc_name ]
+  elseif type(g:localvimrc_name) == type([])
+    let s:localvimrc_name = g:localvimrc_name
+  endif
+endif
+
+" define default "localvimrc_event" {{{2
+" copy to script local variable to prevent .lvimrc modifying the name option.
+if (!exists("g:localvimrc_event") || !(type(g:localvimrc_event) == type([])))
+  let s:localvimrc_event = [ "BufWinEnter" ]
+else
+  let s:localvimrc_event = g:localvimrc_event
 endif
 
 " define default "localvimrc_reverse" {{{2
@@ -113,7 +125,7 @@ endif
 
 " initialize data dictionary {{{2
 " key: localvimrc file
-" value: [ answer, checksum ]
+" value: [ answer, sandbox_answer, checksum ]
 let s:localvimrc_data = {}
 
 " initialize sourced dictionary {{{2
@@ -133,8 +145,10 @@ if has("autocmd")
   augroup localvimrc
     autocmd!
 
-    " call s:LocalVimRC() when creating ore reading any file
-    autocmd BufWinEnter * call s:LocalVimRC()
+    for event in s:localvimrc_event
+      " call s:LocalVimRC() when creating or reading any file
+      exec "autocmd ".event." * call s:LocalVimRC()"
+    endfor
   augroup END
 endif
 
@@ -171,11 +185,12 @@ function! s:LocalVimRC()
   call s:LocalVimRCDebug(2, "searching directory \"" . l:directory . "\"")
 
   " generate a list of all local vimrc files with absolute file names along path to root
-  let l:absolute = {}
-  for l:rcfile in findfile(s:localvimrc_name, l:directory . ";", -1)
-    let l:absolute[resolve(fnamemodify(l:rcfile, ":p"))] = ""
+  let l:rcfiles = []
+  for l:rcname in s:localvimrc_name
+    for l:rcfile in findfile(l:rcname, l:directory . ";", -1)
+      call insert(l:rcfiles, resolve(fnamemodify(l:rcfile, ":p")))
+    endfor
   endfor
-  let l:rcfiles = sort(keys(l:absolute))
   call s:LocalVimRCDebug(1, "found files: " . string(l:rcfiles))
 
   " shrink list of found files
@@ -192,6 +207,7 @@ function! s:LocalVimRC()
 
   " source all found local vimrc files along path from root (reverse order)
   let l:answer = ""
+  let l:sandbox_answer = ""
   for l:rcfile in l:rcfiles
     call s:LocalVimRCDebug(2, "processing \"" . l:rcfile . "\"")
     let l:rcfile_load = "unknown"
@@ -199,12 +215,34 @@ function! s:LocalVimRC()
     if filereadable(l:rcfile)
       " extract information
       if has_key(s:localvimrc_data, l:rcfile)
-        let [ l:stored_answer, l:stored_checksum ] = s:localvimrc_data[l:rcfile]
+        if len(s:localvimrc_data[l:rcfile]) == 2
+          let [ l:stored_answer, l:stored_checksum ] = s:localvimrc_data[l:rcfile]
+          let l:stored_sandbox_answer = ""
+        elseif len(s:localvimrc_data[l:rcfile]) == 3
+          let [ l:stored_answer, l:stored_sandbox_answer, l:stored_checksum ] = s:localvimrc_data[l:rcfile]
+        else
+          let l:stored_answer = ""
+          let l:stored_sandbox_answer = ""
+          let l:stored_checksum = ""
+        endif
       else
         let l:stored_answer = ""
+        let l:stored_sandbox_answer = ""
         let l:stored_checksum = ""
       endif
-      call s:LocalVimRCDebug(3, "stored information: answer = '" . l:stored_answer . "' checksum = '" . l:stored_checksum . "'")
+      call s:LocalVimRCDebug(3, "stored information: answer = '" . l:stored_answer . "' sandbox answer = '" . l:stored_sandbox_answer . "' checksum = '" . l:stored_checksum . "'")
+
+      " check if checksum is the same
+      let l:checksum_is_same = s:LocalVimRCCheckChecksum(l:rcfile, l:stored_checksum)
+
+      " reset answers if checksum changed
+      if (!l:checksum_is_same)
+        call s:LocalVimRCDebug(2, "checksum mismatch, no answer reuse")
+        let l:stored_answer = ""
+        let l:stored_sandbox_answer = ""
+      else
+        call s:LocalVimRCDebug(2, "reuse previous answer = '" . l:stored_answer . "' sandbox answer = '" . l:stored_sandbox_answer . "'")
+      endif
 
       " check if whitelisted
       if (l:rcfile_load == "unknown")
@@ -224,17 +262,11 @@ function! s:LocalVimRC()
 
       " check if an answer has been given for the same file
       if !empty(l:stored_answer)
-        if (s:LocalVimRCCheckChecksum(l:rcfile, l:stored_checksum) == 1)
-          call s:LocalVimRCDebug(2, "reuse previous answer \"" . l:stored_answer . "\"")
-
-          " check the answer
-          if (l:stored_answer =~? '^y$')
-            let l:rcfile_load = "yes"
-          elseif (l:stored_answer =~? '^n$')
-            let l:rcfile_load = "no"
-          endif
-        else
-          call s:LocalVimRCDebug(2, "checksum mismatch, no answer reuse")
+        " check the answer
+        if (l:stored_answer =~? '^y$')
+          let l:rcfile_load = "yes"
+        elseif (l:stored_answer =~? '^n$')
+          let l:rcfile_load = "no"
         endif
       endif
 
@@ -301,12 +333,22 @@ function! s:LocalVimRC()
       " should this rc file be loaded?
       if (l:rcfile_load == "yes")
         " store name and directory of file
-        let g:localvimrc_file = resolve(expand("<afile>"))
+        let g:localvimrc_file = resolve(expand("<afile>:p"))
         let g:localvimrc_file_dir = fnamemodify(g:localvimrc_file, ":h")
+        call s:LocalVimRCDebug(3, "g:localvimrc_file = " . g:localvimrc_file . ", g:localvimrc_file_dir = " . g:localvimrc_file_dir)
 
         " store name and directory of script
         let g:localvimrc_script = l:rcfile
         let g:localvimrc_script_dir = fnamemodify(g:localvimrc_script, ":h")
+        call s:LocalVimRCDebug(3, "g:localvimrc_script = " . g:localvimrc_script . ", g:localvimrc_script_dir = " . g:localvimrc_script_dir)
+
+        " reset if checksum changed
+        if (!l:checksum_is_same)
+          if has_key(s:localvimrc_sourced, l:rcfile)
+            unlet s:localvimrc_sourced[l:rcfile]
+            call s:LocalVimRCDebug(2, "resetting 'sourced' information")
+          endif
+        endif
 
         " detect if this local vimrc file had been loaded
         let g:localvimrc_sourced_once = 0
@@ -321,20 +363,83 @@ function! s:LocalVimRC()
         else
           let s:localvimrc_sourced[l:rcfile] = [ g:localvimrc_file ]
         endif
+        call s:LocalVimRCDebug(3, "g:localvimrc_sourced_once = " . g:localvimrc_sourced_once . ", g:localvimrc_sourced_once_for_file = " . g:localvimrc_sourced_once_for_file)
 
-        " initialize command
-        let l:command = "silent "
+        " generate command
+        let l:command = "source " . fnameescape(l:rcfile)
 
         " add 'sandbox' if requested
         if (s:localvimrc_sandbox != 0)
-          let l:command .= "sandbox "
           call s:LocalVimRCDebug(2, "using sandbox")
-        endif
-        let l:command .= "source " . fnameescape(l:rcfile)
+          try
+            " execute the command
+            exec "sandbox " . l:command
+            call s:LocalVimRCDebug(1, "sourced " . l:rcfile)
+          catch ^Vim\%((\a\+)\)\=:E48
+            call s:LocalVimRCDebug(1, "unable to use sandbox on '" . l:rcfile . "'")
 
-        " execute the command
-        exec l:command
-        call s:LocalVimRCDebug(1, "sourced " . l:rcfile)
+            if (s:localvimrc_ask == 1)
+              if (l:sandbox_answer !~? "^a$")
+                if l:stored_sandbox_answer != ""
+                  let l:sandbox_answer = l:stored_sandbox_answer
+                  call s:LocalVimRCDebug(2, "reuse previous sandbox answer \"" . l:stored_sandbox_answer . "\"")
+                else
+                  call s:LocalVimRCDebug(2, "need to ask")
+                  let l:sandbox_answer = ""
+                  while (l:sandbox_answer !~? '^[ynaq]$')
+                    if (s:localvimrc_persistent == 0)
+                      let l:message = "localvimrc: unable to use 'sandbox' for " . l:rcfile . ".\nlocalvimrc: Source it anyway? ([y]es/[n]o/[a]ll/[q]uit) "
+                    elseif (s:localvimrc_persistent == 1)
+                      let l:message = "localvimrc: unable to use 'sandbox' for " . l:rcfile . ".\nlocalvimrc: Source it anyway? ([y]es/[n]o/[a]ll/[q]uit ; persistent [Y]es/[N]o/[A]ll) "
+                    else
+                      let l:message = "localvimrc: unable to use 'sandbox' for " . l:rcfile . ".\nlocalvimrc: Source it anyway? ([y]es/[n]o/[a]ll/[q]uit) "
+                    endif
+
+                    " turn off possible previous :silent command to force this
+                    " message to be printed
+                    unsilent let l:sandbox_answer = inputdialog(l:message)
+                    call s:LocalVimRCDebug(2, "sandbox answer is \"" . l:sandbox_answer . "\"")
+
+                    if empty(l:sandbox_answer)
+                      call s:LocalVimRCDebug(2, "aborting on empty sandbox answer")
+                      let l:sandbox_answer = "q"
+                    endif
+                  endwhile
+                endif
+              endif
+
+              " make sandbox_answer upper case if persistence is 2 ("force")
+              if (s:localvimrc_persistent == 2)
+                let l:sandbox_answer = toupper(l:sandbox_answer)
+              endif
+
+              " store y/n answers
+              if (l:sandbox_answer =~? "^y$")
+                let l:stored_sandbox_answer = l:sandbox_answer
+              elseif (l:sandbox_answer =~? "^n$")
+                let l:stored_sandbox_answer = l:sandbox_answer
+              elseif (l:sandbox_answer =~# "^a$")
+                let l:stored_sandbox_answer = "y"
+              elseif (l:sandbox_answer =~# "^A$")
+                let l:stored_sandbox_answer = "Y"
+              endif
+
+              " check the sandbox_answer
+              if (l:sandbox_answer =~? '^[ya]$')
+                " execute the command
+                exec l:command
+                call s:LocalVimRCDebug(1, "sourced " . l:rcfile)
+              elseif (l:sandbox_answer =~? "^q$")
+                call s:LocalVimRCDebug(1, "ended processing files")
+                break
+              endif
+            endif
+          endtry
+        else
+          " execute the command
+          exec l:command
+          call s:LocalVimRCDebug(1, "sourced " . l:rcfile)
+        endif
 
         " remove global variables again
         unlet g:localvimrc_file
@@ -351,7 +456,7 @@ function! s:LocalVimRC()
       let l:stored_checksum = s:LocalVimRCCalcChecksum(l:rcfile)
 
       " store information again
-      let s:localvimrc_data[l:rcfile] = [ l:stored_answer, l:stored_checksum ]
+      let s:localvimrc_data[l:rcfile] = [ l:stored_answer, l:stored_sandbox_answer, l:stored_checksum ]
     endif
   endfor
 
@@ -366,11 +471,10 @@ endfunction
 "
 " calculate checksum and store it in dictionary
 "
-function! s:LocalVimRCCalcChecksum(filename)
-  let l:file = fnameescape(a:filename)
-  let l:checksum = getfsize(l:file) . getfperm(l:file) . getftime(l:file)
+function! s:LocalVimRCCalcChecksum(file)
+  let l:checksum = getfsize(a:file) . getfperm(a:file) . getftime(a:file)
 
-  call s:LocalVimRCDebug(3, "checksum calc -> " . l:file . " : " . l:checksum)
+  call s:LocalVimRCDebug(3, "checksum calc -> " . fnameescape(a:file) . " : " . l:checksum)
 
   return l:checksum
 endfunction
@@ -379,10 +483,9 @@ endfunction
 "
 " Check checksum in dictionary. Return "0" if it does not exist, "1" otherwise
 "
-function! s:LocalVimRCCheckChecksum(filename, checksum)
+function! s:LocalVimRCCheckChecksum(file, checksum)
   let l:return = 0
-  let l:file = fnameescape(a:filename)
-  let l:checksum = s:LocalVimRCCalcChecksum(l:file)
+  let l:checksum = s:LocalVimRCCalcChecksum(a:file)
 
   if (a:checksum == l:checksum)
     let l:return = 1
@@ -410,16 +513,22 @@ function! s:LocalVimRCReadPersistent()
 
         " deserialize stored persistence information
         for l:line in l:serialized
-          let l:columns = split(l:line, '[^\\]\zs|')
-          if len(l:columns) != 3
+          let l:columns = split(l:line, '[^\\]\zs|\|^|', 1)
+          if len(l:columns) != 3 && len(l:columns) != 4
             call s:LocalVimRCDebug(1, "error in persistence file")
             call s:LocalVimRCError("error in persistence file")
           else
-            let [ l:key, l:answer, l:checksum ] = l:columns
+            if len(l:columns) == 3
+              let [ l:key, l:answer, l:checksum ] = l:columns
+              let l:sandbox = ""
+            elseif len(l:columns) == 4
+              let [ l:key, l:answer, l:sandbox, l:checksum ] = l:columns
+            endif
             let l:key = substitute(l:key, '\\|', '|', "g")
             let l:answer = substitute(l:answer, '\\|', '|', "g")
+            let l:sandbox = substitute(l:sandbox, '\\|', '|', "g")
             let l:checksum = substitute(l:checksum, '\\|', '|', "g")
-            let s:localvimrc_data[l:key] = [ l:answer, l:checksum ]
+            let s:localvimrc_data[l:key] = [ l:answer, l:sandbox, l:checksum ]
           endif
         endfor
       else
@@ -438,7 +547,7 @@ endfunction
 function! s:LocalVimRCWritePersistent()
   if (s:localvimrc_persistent >= 1)
     " select only data relevant for persistence
-    let l:persistent_data = filter(copy(s:localvimrc_data), 'v:val[0] =~# "^[YN]$"')
+    let l:persistent_data = filter(copy(s:localvimrc_data), 'v:val[0] =~# "^[YN]$" || v:val[1] =~# "^[YN]$"')
 
     " if there are answers to store and global variables are enabled for viminfo
     if (len(l:persistent_data) > 0)
@@ -448,14 +557,54 @@ function! s:LocalVimRCWritePersistent()
               \ !filereadable(s:localvimrc_persistence_file) && filewritable(fnamemodify(s:localvimrc_persistence_file, ":h"))
           let l:serialized = [ ]
           for [ l:key, l:value ] in items(l:persistent_data)
-            let [ l:answer, l:checksum ] = l:value
-            call add(l:serialized, escape(l:key, '|') . "|" . escape(l:answer, '|') . "|" . escape(l:checksum, '|'))
+            if len(l:value) == 2
+              let [ l:answer, l:checksum ] = l:value
+              let l:sandbox = ""
+            elseif len(l:value) == 3
+              let [ l:answer, l:sandbox, l:checksum ] = l:value
+            else
+              let l:answer = ""
+              let l:sandbox = ""
+              let l:checksum = ""
+            endif
+
+            " delete none persisten answers
+            if l:answer !~# "^[YN]$"
+              let l:answer = ""
+            endif
+            if l:sandbox !~# "^[YN]$"
+              let l:sandbox = ""
+            endif
+
+            call add(l:serialized, escape(l:key, '|') . "|" . escape(l:answer, '|') . "|" . escape(l:sandbox, '|') . "|" . escape(l:checksum, '|'))
           endfor
 
           call s:LocalVimRCDebug(3, "write persistent data: " . string(l:serialized))
-          call writefile(l:serialized, s:localvimrc_persistence_file)
+
+          " check if there is a exising persistence file
+          if filereadable(s:localvimrc_persistence_file)
+            " first write backup file to avoid lost persistence information
+            " on write errors if partition is full. Done this way because
+            " write/rename approach causes permission problems with sudo.
+            let l:backup_name = s:localvimrc_persistence_file . "~"
+            let l:backup_content = readfile(s:localvimrc_persistence_file, "b")
+            if writefile(l:backup_content, l:backup_name, "b") == 0
+              if writefile(l:serialized, s:localvimrc_persistence_file) == 0
+                call delete(l:backup_name)
+              else
+                call s:LocalVimRCError("error while writing persistence file, backup stored in '" . l:backup_name . "'")
+              endif
+            else
+              call s:LocalVimRCError("unable to write persistence file backup '" . l:backup_name . "'")
+            endif
+          else
+            " there is no persistence file to backup, just write new one
+            if writefile(l:serialized, s:localvimrc_persistence_file) != 0
+              call s:LocalVimRCError("unable to write persistence file '" . s:localvimrc_persistence_file . "'")
+            endif
+          endif
         else
-          call s:LocalVimRCDebug(1, "unable to write persistence file '" . s:localvimrc_persistence_file . "'")
+          call s:LocalVimRCError("unable to write persistence file '" . s:localvimrc_persistence_file . "'")
         endif
 
         " store persistence file checksum
@@ -470,7 +619,7 @@ function! s:LocalVimRCWritePersistent()
     endif
   endif
 
-  " remove old persistence data {{{2
+  " remove old persistence data
   if exists("g:LOCALVIMRC_ANSWERS")
     unlet g:LOCALVIMRC_ANSWERS
   endif
@@ -505,7 +654,7 @@ endfunction
 " output error message
 "
 function! s:LocalVimRCError(text)
-  echohl ErrorMsg | echo "localvimrc: " . a:text | echohl None
+  echohl ErrorMsg | echom "localvimrc: " . a:text | echohl None
 endfunction
 
 " Function: s:LocalVimRCDebug(level, text) {{{2
@@ -519,6 +668,7 @@ function! s:LocalVimRCDebug(level, text)
 endfunction
 
 " Section: Commands {{{1
+command! LocalVimRC      call s:LocalVimRC()
 command! LocalVimRCClear call s:LocalVimRCClear()
 
 " vim600: foldmethod=marker foldlevel=0 :
