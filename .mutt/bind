@@ -14,6 +14,8 @@ bind	generic	<space>	next-page
 bind	pager	<up>	previous-line
 bind	pager	<down>	next-line
 bind	index	<esc><tab> previous-unread
+bind	pager	<BackTab> previous-unread
+bind	index	<BackTab> previous-unread
 bind	pager	<esc><tab> previous-unread
 bind	index	<tab>	next-unread
 bind	pager	<tab>	next-unread
