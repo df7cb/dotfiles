@@ -84,3 +84,5 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 \set DROP_ALL_USERS 'DO $_$DECLARE n name; err text; BEGIN FOR n IN SELECT quote_ident(rolname) FROM pg_authid WHERE NOT rolsuper LOOP BEGIN EXECUTE $$DROP ROLE $$||n; EXCEPTION WHEN OTHERS THEN GET STACKED DIAGNOSTICS err = MESSAGE_TEXT; RAISE NOTICE $$DROP ROLE %: %$$, n, err; END; END LOOP; END;$_$'
 
 --\i ~/credativ/postgres/tools/statsmon/psqlrc_statsmon
+
+\set q '\\quit'
