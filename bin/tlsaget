@@ -4,10 +4,11 @@ set -eu
 set -o pipefail
 
 HOST="$1"
+PORT="$2"
 
-HASH=$(openssl s_client -connect "$HOST" < /dev/null | \
+HASH=$(openssl s_client -connect "$HOST:$PORT" -servername "$HOST" < /dev/null | \
 	openssl x509 -noout -pubkey | \
 	openssl pkey -pubin -outform DER | \
 	sha256sum)
 
-echo "$HOST 3 1 1 $HASH"
+echo "_$PORT._tcp.$HOST. TLSA 3 1 1 ${HASH% *}"
