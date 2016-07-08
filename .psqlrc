@@ -14,9 +14,9 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 --\set version `sed -ne 's/^ //;3p' ~/.psql-version; rm -f ~/.psql-version`
 --SHOW server_version \gset
 \set PROMPT1 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
+\set PROMPT2 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
 --\set PROMPT1 '%n@%m:%>/%/ %:server_version: %x%R%# '
---\set PROMPT2 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
-\set PROMPT2 '%n@%m:%>/%/ %:server_version: %x%R%# '
+--\set PROMPT2 '%n@%m:%>/%/ %:server_version: %x%R%# '
 \set VERBOSITY verbose
 
 \pset linestyle unicode
