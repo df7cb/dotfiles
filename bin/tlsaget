@@ -1,14 +1,20 @@
 #!/bin/bash
 
+# tlsaget [connect to host] <name> <port>
+
 set -eu
 set -o pipefail
 
-HOST="$1"
-PORT="$2"
+if [ $# -eq 3 ]; then
+  HOST="$1" NAME="$2" PORT="$3"
+else
+  HOST="$1" NAME="$1" PORT="$2"
+fi
 
-HASH=$(openssl s_client -connect "$HOST:$PORT" -servername "$HOST" < /dev/null | \
-	openssl x509 -noout -pubkey | \
-	openssl pkey -pubin -outform DER | \
-	sha256sum)
+CERT=$(openssl s_client -connect "$HOST:$PORT" -servername "$NAME" < /dev/null)
+echo "$CERT" | openssl x509 -text
+HASH=$(echo "$CERT" | openssl x509 -noout -pubkey | \
+  openssl pkey -pubin -outform DER | \
+  sha256sum)
 
-echo "_$PORT._tcp.$HOST. TLSA 3 1 1 ${HASH% *}"
+echo "_$PORT._tcp.$NAME. TLSA 3 1 1 ${HASH% *}"
