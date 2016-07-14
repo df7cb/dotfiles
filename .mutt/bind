@@ -34,6 +34,8 @@ bind	index	D	purge-message
 bind	pager	D	purge-message
 macro	index	<esc>D	<decrypt-save>^<enter>
 macro	pager	<esc>D	<decrypt-save>^<enter>
+bind	index	F	flag-message
+bind	pager	F	flag-message
 bind	index	G	last-entry
 bind	pager	G	bottom
 macro	index	\ch	"<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><next-unread>"
