@@ -36,6 +36,9 @@ set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
 			" 50 lines of registers, do not highlight searches
 set wildmode=longest,list:longest,list:full " filename tab completion
 
+" don't let netrw mess with directories (interferes with "set hidden" when directories are listed on the command line)
+let loaded_netrwPlugin = 1
+
 " load .vimrc file from project directories using
 " http://www.vim.org/scripts/script.php?script_id=441
 let g:localvimrc_name=".vimrc"
@@ -144,3 +147,9 @@ augroup cprog
 augroup END
 
 endif " has ("autocmd")
+
+" Avoid E173
+if argc() > 1
+  silent blast " load last buffer
+  silent bfirst " switch back to the first
+endif
