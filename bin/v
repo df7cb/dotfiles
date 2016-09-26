@@ -36,8 +36,16 @@ find_vcs ()
 	exit 1
 }
 
-command="$1"
-test "$command" && shift
+b=$(basename $0)
+case $b in
+	v)
+		command="$1"
+		test "$command" && shift
+		;;
+	*)
+		command="$b"
+		;;
+esac
 
 find_vcs
 
@@ -99,7 +107,7 @@ case $command in
 		bzr) bzr pull "$@" ;;
 		hg) hg pull -u "$@" ;;
 		git) git pull "$@" && git remote prune origin ;;
-		*) $VCS $command "$@" ;;
+		*) $VCS update "$@" ;;
 	esac ;;
 	add|blame|co|cp|info|log|mv|resolved|revert|rm)
 		$VCS $command "$@" ;;
