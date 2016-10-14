@@ -5,6 +5,7 @@
 	co = checkout
 	commit = commit -v
 	c-p = cherry-pick
+	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	di = diff
 	pull = pull --stat
 	#st = !git --no-pager status
