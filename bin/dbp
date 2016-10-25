@@ -91,7 +91,7 @@ shift $((OPTIND - SHIFT))
 # get orig tarball
 case $1 in
   -[bB]) ;; # binary-only build requested
-  *) origtargz ;;
+  *) if type -p origtargz > /dev/null; then origtargz; fi ;;
 esac
 
 trap "test -s ../log && gzip -9 ../log" 0 2 3 15
