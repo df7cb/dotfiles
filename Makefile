@@ -80,7 +80,7 @@ install-chroot:
 
 deploy:
 	test "$(HOST)"
-	ssh "$(HOST)" "rm -f .bash* .profile && git init && git remote add origin https://github.com/ChristophBerg/dotfiles.git && git fetch origin && git checkout master && make"
+	ssh "$(HOST)" "rm -f .bash* .profile && if [ -f /etc/ssl/ca-global/ca-certificates.crt ]; then export GIT_SSL_CAINFO=/etc/ssl/ca-global/ca-certificates.crt; fi && git init && git remote add origin https://github.com/ChristophBerg/dotfiles.git && git fetch origin && git checkout master && make"
 
 scp:
 	test "$(HOST)"
