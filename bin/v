@@ -55,7 +55,7 @@ case $command in
 		git) GIT_EXTERNAL_DIFF=git-context-diff git diff "$@" ;;
 		*) echo "Not supported yet" >&2 ;;
 	esac ;;
-	ci|com|commit) case $VCS in
+	ci|cia|com|commit) case $VCS in
 		bzr) $VCS $command "$@" && {
 			read -p "Push? y:yes [y] " push
 			case $push in
@@ -64,7 +64,7 @@ case $command in
 			esac
 		     } ;;
 		hg) hg $command "$@" && hg push ;;
-		git) $VCS ci "$@" && {
+		git) $VCS $command "$@" && {
 			read -p "Push? y:yes r:pull --rebase and push [y] " push
 			case $push in
 				"") $VCS push ;;
@@ -98,7 +98,7 @@ case $command in
 		git) $VCS co -- "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
-	st|status) case $VCS in
+	st|status|sti) case $VCS in
 		cvs) cvs update "$@" ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
