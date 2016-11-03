@@ -1,15 +1,7 @@
 [DEFAULT]
 login = myon
 progress_indicator = 2
-default_host_main = ssh-upload
-
-[bpo]
-fqdn = backports-master.debian.org
-distributions = squeeze-backports, wheezy-backports
-incoming = /pub/UploadQueue/
-method = ftp
-login = anonymous
-allow_dcut = 1
+#default_host_main = ssh-upload
 
 [feynman]
 fqdn = feynman.df7cb.de
@@ -18,62 +10,9 @@ incoming = .
 allow_unsigned_uploads = 1
 allowed_distributions = .*
 
-[feynman-any]
-fqdn = feynman.df7cb.de
-method = rsync
-incoming = tmp/UploadQueue
-allow_unsigned_uploads = 1
-pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh feynman.df7cb.de reprepro include any tmp/UploadQueue/*.changes && sign-reprepro any
-
-[feynman-squeeze]
-fqdn = feynman.df7cb.de
-method = rsync
-incoming = tmp/UploadQueue
-allow_unsigned_uploads = 1
-pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh feynman.df7cb.de reprepro include squeeze tmp/UploadQueue/*.changes && sign-reprepro squeeze
-
-[feynman-wheezy]
-fqdn = feynman.df7cb.de
-method = rsync
-incoming = tmp/UploadQueue
-allow_unsigned_uploads = 1
-pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh feynman.df7cb.de reprepro include wheezy tmp/UploadQueue/*.changes && sign-reprepro squeeze
-
-[feynman-sid]
-fqdn = feynman.df7cb.de
-method = rsync
-incoming = tmp/UploadQueue
-allow_unsigned_uploads = 1
-pre_upload_command = ssh feynman.df7cb.de rm -f tmp/UploadQueue/*.changes
-post_upload_command = ssh feynman.df7cb.de reprepro include sid tmp/UploadQueue/*.changes && sign-reprepro sid
-
 [pgdg]
 fqdn = atalia.postgresql.org
 method = rsync
 incoming = /srv/apt/incoming
 post_upload_command = ssh atalia.postgresql.org /srv/apt/processincoming.sh
-allow_unsigned_uploads = 1
-
-[conrad]
-fqdn = conrad.dus.dg-i.net
-login = cbe
-method = rsync
-incoming = .
-allow_unsigned_uploads = 1
-
-[willi]
-fqdn = willi.dus.dg-i.net
-login = root
-method = rsync
-incoming = .
-allow_unsigned_uploads = 1
-
-[people]
-fqdn = people.debian.org
-login = myon
-method = rsync
-incoming = .
 allow_unsigned_uploads = 1
