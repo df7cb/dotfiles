@@ -39,6 +39,8 @@ sub on_line_update {
    my $line = $self->line ($row);
    my $text = $line->t;
 
+   return if (length($text) > 10000);
+
    while ($text =~ /\d{5,}/g) {
       my $rend = $line->r;
 
