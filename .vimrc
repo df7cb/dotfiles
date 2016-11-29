@@ -23,7 +23,7 @@ set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set smartcase		" Do case-sensitive case sensitive matching
 if has("spell")
-  set spell
+  set spell spelllang=en_us,de_de spellfile=all.utf-8.add
 endif
 "set statusline=\ %n:%<%f%M%R%W\ %y%a%=%l/%L,%c%V\ %P\ 
 set nostartofline	" Do not move to start of line on buffer change etc.
@@ -64,10 +64,10 @@ nmap M :make!<cr><cr>
 imap <f1> <esc>
 nmap <f8>       :set nospell<cr>
 imap <f8>  <c-o>:set nospell<cr>
-nmap <f9>       :set spell spelllang=de_de<cr>
-imap <f9>  <c-o>:set spell spelllang=de_de<cr>
-nmap <f10>      :set spell spelllang=en_us<cr>
-imap <f10> <c-o>:set spell spelllang=en_us<cr>
+nmap <f9>       :set spell spelllang=de_de,all spellfile=de.utf-8.add<cr>
+imap <f9>  <c-o>:set spell spelllang=de_de,all spellfile=de.utf-8.add<cr>
+nmap <f10>      :set spell spelllang=en_us,all spellfile=en.utf-8.add<cr>
+imap <f10> <c-o>:set spell spelllang=en_us,all spellfile=en.utf-8.add<cr>
 set pastetoggle=<f11> " turn on/off paste in insert mode
 nmap <f12>      :set invlist<cr>
 imap <f12> <c-o>:set invlist<cr>
