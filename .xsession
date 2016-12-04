@@ -42,6 +42,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 		autocutsel &
 	fi
 	nm-applet &
+	udiskie --smart-tray &
 	volumeicon &
 	#if exists ssh-agent ; then
 	#	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
