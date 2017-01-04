@@ -25,9 +25,14 @@
 [merge]
 	defaultToUpstream = true
 
+[merge "dpkg-mergechangelogs"]
+	name = debian/changelog merge driver
+	driver = dpkg-mergechangelogs -m %O %A %B %A
+
 [user]
 	name = Christoph Berg
 	email = myon@debian.org
+	signingKey = 5C48FE6157F49179597087C64C5A6BAB12D2A7AE
 	#email = christoph.berg@credativ.de
 
 [push]
