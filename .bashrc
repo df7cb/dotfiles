@@ -2,11 +2,16 @@
 #echo .bashrc
 
 # Environment
-#. ${CONF_HOME:-$HOME}/lib/locale.sh
-LANG=de_DE.utf8
-: ${LANG:=de_DE.utf8} ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
-[ "$LANG" = "C" ] && LANG="de_DE.utf8"
+for L in $LANG de_DE.utf8 en_US.utf8 C.UTF-8; do
+	if LC_ALL=C locale -a | fgrep -q $L; then
+		LANG=$L
+		break
+	fi
+done
+unset L
+: ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
 export LANG LANGUAGE TZ
+
 #. ${CONF_HOME:-$HOME}/lib/session.sh
 . ${CONF_HOME:-$HOME}/bin/os > /dev/null
 . ${CONF_HOME:-$HOME}/.path
