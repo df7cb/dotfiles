@@ -6,7 +6,7 @@
 set -eu
 
 date=$(date '+%F.%H%M%S')
-output=$(mktemp --tmpdir .$date.XXXXXX.png)
+output=$(mktemp --tmpdir $date.XXXXXX.png)
 name=${output##*/}
 
 trap "rm -f $output" 0 2 3 15
@@ -14,7 +14,7 @@ trap "rm -f $output" 0 2 3 15
 scrot -s $output ${1:+--delay $1 --count}
 chmod +r $output
 
-dir="tmp/s"
+dir="s"
 scp $output feynman.df7cb.de:html/$dir
 url="https://www.df7cb.de/$dir/$name"
 echo "$url"
