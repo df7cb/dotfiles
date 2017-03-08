@@ -5,10 +5,13 @@
 	cia = commit -v --amend
 	co = checkout
 	commit = commit -v
-	c-p = cherry-pick
+	cp = cherry-pick
+	cpc = cherry-pick --continue
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	di = diff
 	pull = pull --stat
+	rb = rebase
+	rbc = rebase --continue
 	#st = !git --no-pager status
 	st = status
 	sti = status --ignored
