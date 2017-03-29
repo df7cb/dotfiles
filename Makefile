@@ -95,6 +95,16 @@ scp:
 		.profile \
 		$(HOST):
 
+vim: .vim/spell/de.utf-8.spl .vim/spell/all.utf-8.add
+.vim/spell/de.utf-8.spl:
+	mkdir -p .vim/spell
+	cd .vim/spell && wget http://ftp.vim.org/vim/runtime/spell/de.utf-8.spl
+.vim/spell/all.utf-8.add:
+	mkdir -p .vim/spell
+	touch $@
+	cd .vim/spell && vim -c ":mkspell! all.utf-8.add.spl all.utf-8.add" -c ":q"
+	reset
+
 ## cleanup stuff ##
 
 cleanup:
