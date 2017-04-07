@@ -67,7 +67,6 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	SHLVL=0 x-terminal-emulator &
 	SHLVL=0 x-terminal-emulator &
 	chromium &
-	( icedove & )
 
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
 else
