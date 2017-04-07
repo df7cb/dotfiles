@@ -1,5 +1,5 @@
-# escape character is ^F, ^Ff for literal ^F
-escape ^ff
+# escape character is ^T, ^Tt for literal ^T
+escape ^tt
 
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
