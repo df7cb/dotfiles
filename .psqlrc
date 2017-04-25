@@ -72,6 +72,8 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 
 \set create_function_exec 'CREATE FUNCTION exec(text) RETURNS text LANGUAGE plpgsql VOLATILE AS $f$BEGIN EXECUTE $1; RETURN $1; END;$f$;'
 
+\set pid 'SELECT pg_backend_pid();'
+
 \set reload_conf 'SELECT pg_reload_conf();'
 
 \set KILL_ALL_USERS 'SELECT usename, pid, pg_terminate_backend(pid) FROM pg_stat_activity JOIN pg_authid a ON (usesysid = a.oid) WHERE NOT rolsuper'
