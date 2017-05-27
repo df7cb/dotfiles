@@ -31,12 +31,14 @@ $(QUILT):
 tmp /tmp/$(USER):
 	mkdir -m 0700 $@
 
-install-dev:
+install-profile:
+	sudo cp lib/myon-profile.sh /etc/profile.d/myon-profile.sh
+
+install-dev: install-profile
 	if [ ! -x /usr/bin/sudo ] && [ $$(id -u) = 0 ]; then apt-get install sudo; fi
 	test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io | sudo tee /etc/dpkg/dpkg.cfg.d/01unsafeio
 	test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' | sudo tee /etc/apt/apt.conf.d/20norecommends
 	test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' | sudo tee /etc/apt/apt.conf.d/50i18n
-	sudo cp lib/myon-profile.sh /etc/profile.d/myon-profile.sh
 	sudo rm -f /var/lib/apt/lists/*_Translation-de*
 	sudo apt-get install \
 		autopkgtest \

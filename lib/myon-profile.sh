@@ -51,14 +51,23 @@ alias upgrade="sudo apt-get upgrade"
 
 # Services
 if [ -d /run/systemd/system ]; then
-  start   () { sudo env -i /bin/systemctl start "$@";   status "$@"; }
-  stop    () { sudo env -i /bin/systemctl stop "$@";    status "$@"; }
-  status  () { sudo        /bin/systemctl status -l "$@"; }
-  reload  () { sudo env -i /bin/systemctl reload "$@";  status "$@"; }
-  restart () { sudo env -i /bin/systemctl restart "$@"; status "$@"; }
-  enable  () { sudo        /bin/systemctl enable "$@"; }
-  disable () { sudo        /bin/systemctl disable "$@"; }
   alias sc='sudo systemctl'
+  alias scu='systemctl --user'
+  status () { sudo systemctl status --full --no-pager "$@"; }
+  do_systemctl () {
+    local r
+    sudo env -i /bin/systemctl "$@"
+    r=$?
+    shift # remove start/stop/...
+    status "$@"
+    return $r
+  }
+  start   () { do_systemctl start "$@"; }
+  stop    () { do_systemctl stop "$@"; }
+  reload  () { do_systemctl reload "$@"; }
+  restart () { do_systemctl restart "$@"; }
+  enable  () { do_systemctl enable "$@"; }
+  disable () { do_systemctl disable "$@"; }
 else
   start   () { sudo env -i /usr/sbin/service $1 start; }
   stop    () { sudo env -i /usr/sbin/service $1 stop; }

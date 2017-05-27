@@ -15,6 +15,7 @@ export LANG LANGUAGE TZ
 #. ${CONF_HOME:-$HOME}/lib/session.sh
 . ${CONF_HOME:-$HOME}/bin/os > /dev/null
 . ${CONF_HOME:-$HOME}/.path
+. ${CONF_HOME:-$HOME}/lib/myon-profile.sh
 . ${CONF_HOME:-$HOME}/.env
 
 # check whether we run interactively
@@ -68,14 +69,10 @@ PROMPT_COMMAND="ps1_vcs"
 # internal shell settings
 auto_resume=
 #FIGNORE='~'
-HISTCONTROL='erasedups'
 #histchars='!^#'
 HISTFILESIZE=10000
-HISTIGNORE="..:[bf]g:cd:l:ls"
 HISTSIZE=10000
 HISTTIMEFORMAT="%F %T  "
-unset ignoreeof
-shopt -s extglob no_empty_cmd_completion
 
 [ -f ~/.bashrc-local ] && . ~/.bashrc-local
 true
