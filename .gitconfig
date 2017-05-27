@@ -1,4 +1,5 @@
 [alias]
+	au = add -u
 	br = branch
 	branches = branch
 	ci = commit -v
@@ -9,6 +10,7 @@
 	cpc = cherry-pick --continue
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	di = diff
+	dih = diff HEAD
 	pull = pull --stat
 	rb = rebase
 	rbc = rebase --continue

@@ -26,7 +26,7 @@ try_vcs_dir ()
 
 find_vcs ()
 {
-	for dir in . .. ../.. ../../.. ../../../..; do
+	for dir in . .. ../.. ../../.. ../../../.. ../../../../..; do
 		if try_vcs_dir $dir; then
 			#echo "Found $VCS in $dir"
 			return 0
@@ -111,6 +111,6 @@ case $command in
 	esac ;;
 	add|blame|co|cp|info|log|mv|resolved|revert|rm)
 		$VCS $command "$@" ;;
-	*)	echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
+	*)	#echo "$0: $VCS command '$command' not recognized. YMMV." 1>&2
 		$VCS "$command" "$@" ;;
 esac
