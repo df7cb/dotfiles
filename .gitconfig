@@ -11,7 +11,7 @@
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	di = diff
 	dih = diff HEAD
-	pull = pull --stat
+	pull = pull --ff-only --stat
 	rb = rebase
 	rbc = rebase --continue
 	#st = !git --no-pager status
