@@ -1,5 +1,8 @@
 # Myon's profile settings (the non-obnoxious parts, hopefully)
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # Prompt
 [ -f /etc/debian_chroot ] && chroot="$(cat /etc/debian_chroot)."
 screentitle="\\ek\u@$chroot\h\e\\"
