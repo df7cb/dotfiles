@@ -5,9 +5,9 @@
 
 # Prompt
 [ -f /etc/debian_chroot ] && chroot="$(cat /etc/debian_chroot)."
-screentitle="\\ek\u@$chroot\h\e\\"
-xtitle="\[\e]0;\u@$chroot\h:\w\007\]"
-prompt="\\[\e[1m\\][\$?] \A \u@$chroot\h:\w \\$\\[\e[0m\\] "
+screentitle='\[\ek\u@'"$chroot"'\h\e\\\]'
+xtitle='\[\e]0;\u@'"$chroot"'\h:\w\a\]'
+prompt='\[\e[1m\][$?] \A \u@'"$chroot"'\h:\w \$\[\e[0m\] '
 case $TERM in
   screen*) PS1="$screentitle$xtitle$prompt" ;;
   xterm*|rxvt*|cygwin) PS1="$xtitle$prompt" ;;
