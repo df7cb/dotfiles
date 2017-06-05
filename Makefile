@@ -63,7 +63,6 @@ install-dev: install-profile
 		quilt \
 		rsync \
 		strace \
-		subversion \
 		tree \
 		vim \
 		wdiff
@@ -71,9 +70,15 @@ install-dev: install-profile
 		echo 'de_DE.UTF-8 UTF-8' | sudo tee -a /etc/locale.gen; \
 		sudo locale-gen; \
 	fi
+	if ! sudo grep -q '^%sudo.*NOPASSWD' /etc/sudoers; then \
+		sudo sed -i -e 's/^%sudo.*/%sudo	ALL = NOPASSWD: ALL/' /etc/sudoers; \
+	fi
 	if grep -q '^ *HashKnownHosts yes' /etc/ssh/ssh_config; then \
 		sudo sed -i -e 's/^\( *HashKnownHosts\) .*/\1 no/' /etc/ssh/ssh_config; \
 	fi
+	test -e /etc/postgresql-common/createcluster.d/myon.conf || \
+		{ sudo mkdir -p /etc/postgresql-common/createcluster.d/ ; \
+		  echo "create_main_cluster = false" | sudo tee /etc/postgresql-common/createcluster.d/myon.conf ; }
 
 install-chroot:
 	sudo apt-get install \
@@ -83,7 +88,19 @@ install-chroot:
 
 deploy:
 	test "$(HOST)"
-	ssh "$(HOST)" "rm -f .bash* .profile && if [ -f /etc/ssl/ca-global/ca-certificates.crt ]; then export GIT_SSL_CAINFO=/etc/ssl/ca-global/ca-certificates.crt; fi && git init && git remote add origin https://github.com/ChristophBerg/dotfiles.git && git fetch origin && git checkout master && make"
+	ssh "$(HOST)" "rm -f .bash* .profile && \
+		if ! [ -x /usr/bin/git ]; then \
+			sudo apt-get update && \
+			sudo apt-get install --no-install-recommends git; \
+		fi && \
+		if [ -f /etc/ssl/ca-global/ca-certificates.crt ]; then \
+			export GIT_SSL_CAINFO=/etc/ssl/ca-global/ca-certificates.crt; \
+		fi && \
+		git init && \
+		git remote add origin https://github.com/ChristophBerg/dotfiles.git && \
+		git fetch origin && \
+		git checkout master && \
+		make"
 
 scp:
 	test "$(HOST)"
