@@ -34,6 +34,10 @@ tmp /tmp/$(USER):
 install-profile:
 	sudo cp lib/myon-profile.sh /etc/profile.d/myon-profile.sh
 
+deploy-profile:
+	test "$(HOST)"
+	ssh $(HOST) sudo tee /etc/profile.d/myon-profile.sh < lib/myon-profile.sh
+
 install-dev: install-profile
 	if [ ! -x /usr/bin/sudo ] && [ $$(id -u) = 0 ]; then apt-get install sudo; fi
 	test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io | sudo tee /etc/dpkg/dpkg.cfg.d/01unsafeio
