@@ -14,6 +14,7 @@ set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
 set list		" show tabs et al.
 set lcs=tab:·\ ,trail:·	" how to show tabs
+set mouse=		" no mouse please
 set nojoinspaces	" \frenchspacing
 set nrformats=hex	" drop octal number format
 set ruler		" Show the line and column numbers of the cursor 
