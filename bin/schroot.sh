@@ -18,13 +18,23 @@ if [ -z "$NOUPDATE" ]; then
 	schroot -c source:$CHROOT -u root -- apt-get -y dist-upgrade
 fi
 
-: ${SESSION:="$LOGNAME-$CHROOT-1"}
-
-schroot -c $CHROOT -n $SESSION -b && END=1
+# session name
 if [ -f debian/changelog ]; then
+	PKG=$(dpkg-parsechangelog -SSource)
+	: ${SESSION:="$PKG-$CHROOT-1"}
+else
+	: ${SESSION:="$CHROOT-1"}
+fi
+
+# begin session
+if schroot -c $CHROOT -n $SESSION -b; then
+	trap "set -x; schroot -c session:$SESSION -e" 0 2 3 15
+fi
+
+# install build deps
+if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r -- apt-get -y build-dep ./
 fi
+
+# run session
 schroot -c session:$SESSION -r -- bash
-if [ "$END" ]; then
-	schroot -c session:$SESSION -e
-fi
