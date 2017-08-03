@@ -1,0 +1,23 @@
+general {
+  output_format = "i3bar"
+  interval = 1
+}
+
+order += "ethernet eth0"
+order += "wireless wlan2"
+order += "load"
+order += "cpu_usage"
+order += "time"
+
+ethernet eth0 {
+  format_up = "%speed"
+  format_down = ""
+}
+
+wireless wlan2 {
+  format_up = "%essid %quality %bitrate"
+}
+
+time {
+  format = "%Y-%m-%d %H:%M:%S"
+}

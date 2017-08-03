@@ -73,10 +73,8 @@ else
 	xsetroot -solid limegreen
 fi
 
-if exists awesome ; then
-	exec awesome
-elif exists fvwm2 ; then
-	exec fvwm2
+if exists i3 ; then
+	exec i3
 else
 	exec xterm
 fi
