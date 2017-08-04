@@ -16,6 +16,7 @@ ethernet eth0 {
 
 wireless wlan2 {
   format_up = "%essid %quality %bitrate"
+  format_down = ""
 }
 
 time {
