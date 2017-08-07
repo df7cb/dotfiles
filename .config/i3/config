@@ -1,6 +1,6 @@
 # i3 config file (v4)
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
 
@@ -137,4 +137,5 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
