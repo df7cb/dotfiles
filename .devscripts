@@ -15,6 +15,7 @@ DGET_VERIFY="no"
 DSCVERIFY_KEYRINGS="$HOME/.gnupg/pubring.gpg"
 RMADISON_URL_MAP_debug="http://debug.debian.net/cgi-bin/madison.cgi"
 RMADISON_URL_MAP_pgapt="https://pgdgbuild.dus.dg-i.net/repos/apt/madison/"
+USCAN_FORCE_DOWNLOAD=yes
 USCAN_DOWNLOAD=no
 USCAN_PASV=yes
 USCAN_SYMLINK=rename
