@@ -3,7 +3,8 @@
 	br = branch
 	branches = branch
 	ci = commit -v
-	cia = commit -v --amend
+	cia = commit -v -a
+	ciam = commit -v --amend
 	co = checkout
 	commit = commit -v
 	cp = cherry-pick
