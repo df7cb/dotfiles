@@ -1,4 +1,0 @@
-#!/bin/sh
-
-export PAGER="less -S"
-exec /usr/bin/psql "$@"
