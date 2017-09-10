@@ -2,10 +2,11 @@
 
 : ${CHROOT:=sid}
 
-while getopts "c:n:u" opt ; do
+while getopts "c:n:p:u" opt ; do
 	case $opt in
 		c) CHROOT="$OPTARG" ;;
 		n) SESSION="$OPTARG" ;;
+		p) PG_SUPPORTED_VERSIONS="$OPTARG" ;;
 		u) NOUPDATE=1 ;;
 		*) exit 5 ;;
 	esac
@@ -29,6 +30,17 @@ fi
 # begin session
 if schroot -c $CHROOT -n $SESSION -b; then
 	trap "set -x; schroot -c session:$SESSION -e" 0 2 3 15
+fi
+
+# install extra PG version
+if [ "${PG_SUPPORTED_VERSIONS:-}" ]; then
+	schroot -c session:$SESSION -u root -r <<-EOF
+		set -x
+		sed -i -e "s/main/main $PG_SUPPORTED_VERSIONS/" /etc/apt/sources.list.d/pgdg.list
+		echo "$PG_SUPPORTED_VERSIONS" > /etc/postgresql-common/supported_versions
+		apt-get -y update
+		apt-get install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
+		EOF
 fi
 
 # install build deps
