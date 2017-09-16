@@ -57,6 +57,7 @@ install-dev: install-profile
 		git \
 		git-buildpackage \
 		less \
+		libwww-perl \
 		lintian \
 		locales \
 		newpid \
