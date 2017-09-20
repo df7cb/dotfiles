@@ -3,6 +3,15 @@
 set -ex
 
 test -f debian/files
+
+# new interface
+if [ -x /usr/bin/autopkgtest ]; then
+	binaries=$(awk '/\.deb / { print "../" $1 }' debian/files)
+	sudo autopkgtest ./ $binaries -- null
+	exit
+fi
+
+# old interface
 binaries=$(awk '/\.deb / { print "--binary ../" $1 }' debian/files)
 
 sudo adt-run \
