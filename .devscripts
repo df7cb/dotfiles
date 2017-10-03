@@ -1,22 +1,20 @@
 DEBCHANGE_AUTO_NMU="no"
 DEBCHANGE_RELEASE_HEURISTIC="changelog"
 DEBCHECKOUT_AUTH_URLS='
-  ^\w+://(hg\.df7cb\.de)/	ssh://$1//
   ^\w+://(svn\.df7cb\.de)/	svn+ssh://$1/svn/
 '
+DEBCOMMIT_SIGN_TAGS="yes"
 DEBDIFF_UNPACK_TARBALLS="no"
 DEBDIFF_WDIFF_SOURCE_CONTROL="yes"
 DEBEMAIL=myon@debian.org
 #DEBEMAIL=christoph.berg@credativ.de
 DEBFULLNAME="Christoph Berg"
-DEBSIGN_KEYID="12D2A7AE"
-DGET_PATH="/srv/pbuilder/result"
+DEBSIGN_KEYID="5C48FE6157F49179597087C64C5A6BAB12D2A7AE"
 DGET_VERIFY="no"
 DSCVERIFY_KEYRINGS="$HOME/.gnupg/pubring.gpg"
-RMADISON_URL_MAP_debug="http://debug.debian.net/cgi-bin/madison.cgi"
+RMADISON_URL_MAP_d="https://api.ftp-master.debian.org/madison"
 RMADISON_URL_MAP_pgapt="https://pgdgbuild.dus.dg-i.net/repos/apt/madison/"
-USCAN_FORCE_DOWNLOAD=yes
+RMADISON_URL_MAP_u="http://people.canonical.com/~ubuntu-archive/madison.cgi"
 USCAN_DOWNLOAD=no
-USCAN_PASV=yes
 USCAN_SYMLINK=rename
 USCAN_VERBOSE=yes
