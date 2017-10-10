@@ -41,20 +41,24 @@ URxvt.colorBD:		navy
 URxvt.cursorBlink:	true
 URxvt.cursorColor:	RoyalBlue
 URxvt.fadeColor:	white
-URxvt.font:		xft:DejaVu Sans Mono-9,xft:Mono-9
+URxvt.font:		xft:DejaVu Sans Mono-8
+! https://unix.stackexchange.com/questions/118641/font-rendering-issue-in-urxvt-too-much-space-between-characters
+URxvt.letterSpace:	-1
 URxvt.internalBorder:	0
 URxvt.iso14755:		false
 URxvt.keysym.M-C-1:	command:\033]710;5x8\007
 URxvt.keysym.M-C-2:	command:\033]710;6x10\007
-URxvt.keysym.M-C-3:	command:\033]710;xft:DejaVu Sans Mono-9,xft:Mono-9\007
-URxvt.keysym.M-C-4:	command:\033]710;xft:DejaVu Sans Mono-12,xft:Mono-12\007
-URxvt.keysym.M-C-5:	command:\033]710;xft:DejaVu Sans Mono-15,xft:Mono-15\007
-URxvt.keysym.M-C-6:	command:\033]710;xft:DejaVu Sans Mono-19,xft:Mono-19\007
-URxvt.keysym.M-C-7:	command:\033]710;xft:DejaVu Sans Mono-23,xft:Mono-23\007
-URxvt.keysym.M-C-8:	command:\033]710;xft:DejaVu Sans Mono-28,xft:Mono-28\007
-URxvt.keysym.M-C-9:	command:\033]710;xft:DejaVu Sans Mono-35,xft:Mono-35\007
+URxvt.keysym.M-C-3:	command:\033]710;xft:DejaVu Sans Mono-8\007
+URxvt.keysym.M-C-4:	command:\033]710;xft:DejaVu Sans Mono-12\007
+URxvt.keysym.M-C-5:	command:\033]710;xft:DejaVu Sans Mono-15\007
+URxvt.keysym.M-C-6:	command:\033]710;xft:DejaVu Sans Mono-19\007
+URxvt.keysym.M-C-7:	command:\033]710;xft:DejaVu Sans Mono-23\007
+URxvt.keysym.M-C-8:	command:\033]710;xft:DejaVu Sans Mono-28\007
+URxvt.keysym.M-C-9:	command:\033]710;xft:DejaVu Sans Mono-35\007
 ! for whatever reason, there is no XK_spade in keysymdef.h, pick something else and remap that here
 URxvt.keysym.maltesecross: \342\231\240
+URxvt.keysym.C-equal:	font-size:increase
+URxvt.keysym.C-slash:	font-size:show
 URxvt.matcher.button:	3
 URxvt.matcher.pattern.1: (?:Closes:.|\\#)([2-9]\\d{5}\\b)
 URxvt.matcher.launcher.1: x-www-browser https:\/\/bugs.debian.org/cgi-bin/bugreport.cgi?bug=$1
@@ -73,7 +77,7 @@ URxvt.matcher.launcher.7: x-www-browser https:\/\/code.allsecur.de/jira/browse/$
 URxvt.matcher.pattern.8: OSSC.\\#(\\d{3,})
 URxvt.matcher.launcher.8: x-www-browser https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
 URxvt.mouseWheelScrollPage: true
-URxvt.perl-ext:		default,tabbed,matcher,vtwheel,3digits
+URxvt.perl-ext:		default,font-size,tabbed,matcher,vtwheel,3digits
 URxvt.print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
 URxvt.saveLines:	5000
 URxvt.scrollBar_floating: true

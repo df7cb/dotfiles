@@ -1,0 +1,34 @@
+diff --git a/font-size b/font-size
+old mode 100755
+new mode 100644
+index e1fabe5..c55c057
+--- a/font-size
++++ b/font-size
+@@ -175,8 +175,10 @@ sub on_action
+ 
+     if ($action eq "increase") {
+         fonts_change_size($self,  $step, 0);
++        fonts_show($self);
+     } elsif ($action eq "decrease") {
+         fonts_change_size($self, -$step, 0);
++        fonts_show($self);
+     } elsif ($action eq "incglobal") {
+         fonts_change_size($self,  $step, 1);
+     } elsif ($action eq "decglobal") {
+@@ -187,6 +189,7 @@ sub on_action
+         fonts_change_size($self, -$step, 2);
+     } elsif ($action eq "reset") {
+         fonts_reset($self);
++        fonts_show($self);
+     } elsif ($action eq "show") {
+         fonts_show($self);
+     }
+@@ -349,7 +352,7 @@ sub font_change_size_xft
+     my $resized_str = join(":", @resized);
+ 
+     # don't make fonts too small
+-    if ($new_size >= 6) {
++    if ($new_size >= 3) {
+         return ($resized_str, $new_size - $size, $new_size);
+     } else {
+         if ($basesize == 0) {
