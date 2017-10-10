@@ -45,6 +45,7 @@ install-dev: install-profile
 	test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' | sudo tee /etc/apt/apt.conf.d/50i18n
 	sudo rm -f /var/lib/apt/lists/*_Translation-de*
 	sudo apt-get install \
+		autodep8 \
 		autopkgtest \
 		build-essential \
 		ccache \
@@ -53,6 +54,7 @@ install-dev: install-profile
 		diffstat \
 		dput \
 		eatmydata \
+		exuberant-ctags \
 		fakeroot \
 		git \
 		git-buildpackage \
@@ -68,6 +70,7 @@ install-dev: install-profile
 		quilt \
 		rsync \
 		strace \
+		tig \
 		tree \
 		vim \
 		wdiff
@@ -84,6 +87,10 @@ install-dev: install-profile
 	test -e /etc/postgresql-common/createcluster.d/myon.conf || \
 		{ sudo mkdir -p /etc/postgresql-common/createcluster.d/ ; \
 		  echo "create_main_cluster = false" | sudo tee /etc/postgresql-common/createcluster.d/myon.conf ; }
+
+install-desktop: install-dev
+	sudo apt-get install \
+		fonts-dejavu
 
 install-chroot:
 	sudo apt-get install \
