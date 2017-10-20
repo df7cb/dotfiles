@@ -48,7 +48,7 @@ xterm*|rxvt*|cygwin)
 	PS1="$bold[\$?] \\A \\u@$chroot\\h:$ps1_pwd$job \\\$$reset " ;;
 esac
 unset cyan red bold blue purple reset
-unset screentitle xtitle ps1_pwd prompt
+unset job screentitle xtitle ps1_pwd prompt
 
 #export u=0 s=0
 #ps1_times () {
