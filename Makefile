@@ -87,10 +87,29 @@ install-dev: install-profile
 	test -e /etc/postgresql-common/createcluster.d/myon.conf || \
 		{ sudo mkdir -p /etc/postgresql-common/createcluster.d/ ; \
 		  echo "create_main_cluster = false" | sudo tee /etc/postgresql-common/createcluster.d/myon.conf ; }
+	sudo update-alternatives --set editor /usr/bin/vim.basic
 
 install-desktop: install-dev
 	sudo apt-get install \
-		fonts-dejavu
+		chromium \
+		clipit \
+		fdpowermon \
+		fonts-dejavu \
+		gnome-keyring \
+		gpg-agent \
+		network-manager-gnome \
+		postfix \
+		rxvt-unicode \
+		udiskie  \
+		vim \
+		volumeicon-alsa \
+		workrave \
+		xscreensaver
+	if grep -q '99:battery-charging.png$$' /etc/fdpowermon/theme.cfg; then \
+		sudo sed -i -e 's/99:battery-charging.png$$/100:battery-charging.png/' /etc/fdpowermon/theme.cfg; \
+	fi
+	sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
+	sudo update-alternatives --set x-www-browser /usr/bin/chromium
 
 install-chroot:
 	sudo apt-get install \
