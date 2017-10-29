@@ -91,6 +91,7 @@ install-dev: install-profile
 
 install-desktop: install-dev
 	sudo apt-get install \
+		awesome \
 		chromium \
 		clipit \
 		fdpowermon \
