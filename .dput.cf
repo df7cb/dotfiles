@@ -14,5 +14,5 @@ allowed_distributions = .*
 fqdn = atalia.postgresql.org
 method = rsync
 incoming = /srv/apt/incoming
-post_upload_command = ssh atalia.postgresql.org /srv/apt/processincoming.sh
+post_upload_command = ssh atalia.postgresql.org sudo -u aptuser processincoming.sh
 allow_unsigned_uploads = 1
