@@ -36,11 +36,13 @@ xset r rate 400 30
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy &
+	synclient TapButton1=1 SingleTapTimeout=50 HorizEdgeScroll=1
 	if exists clipit ; then
 		clipit &
 	elif exists autocutsel ; then
 		autocutsel &
 	fi
+	fdpowermon &
 	nm-applet &
 	udiskie --smart-tray &
 	volumeicon &
