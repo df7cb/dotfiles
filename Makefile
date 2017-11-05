@@ -98,6 +98,7 @@ install-desktop: install-dev
 		fonts-dejavu \
 		gnome-keyring \
 		gpg-agent \
+		libsecret-tools \
 		network-manager-gnome \
 		postfix \
 		rxvt-unicode \
