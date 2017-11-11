@@ -1,4 +1,4 @@
-CRONTABS=*.crontab
+CRONTABS=$(sort *.crontab)
 TARGET=.cron.$(shell hostname)
 
 install: $(TARGET)
