@@ -61,6 +61,7 @@ if [ -d /run/systemd/system ]; then
     local r
     sudo env -i /bin/systemctl "$@"
     r=$?
+    sleep 0.2
     shift # remove start/stop/...
     status "$@"
     return $r
