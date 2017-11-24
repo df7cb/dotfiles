@@ -19,8 +19,10 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 --\set PROMPT2 '%n@%m:%>/%/ %:server_version: %x%R%# '
 \set VERBOSITY verbose
 
-\setenv PAGER 'less -S'
+--\setenv PAGER 'less -S'
+\setenv PAGER 'pspg -b'
 \pset linestyle unicode
+\pset unicode_header_linestyle double
 --\pset null '(n)'
 \pset null '∅'
 
