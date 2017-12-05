@@ -6,7 +6,6 @@ source ~/.mutt/options
 source ~/.mutt/bind
 source ~/.mutt/color
 source ~/.mutt/headers
-source ~/.mutt/x-face
 source ~/.mutt/hooks
 
 set from="cb@df7cb.de"

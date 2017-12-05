@@ -68,7 +68,7 @@ set status_on_top
 set sort=threads sort_aux=last-date
 set tilde
 set timeout=30
-ifdef trash set trash="=Trash"
+set trash="=Trash"
 #set use_domain
 #set use_from
 unset wait_key
