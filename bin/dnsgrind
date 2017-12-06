@@ -37,8 +37,8 @@ my %cache;
 my $res;
 my $rrsigs = 0;
 
-my ($c1, $c2, $c3, $c0) = ("", "", "", "");
-($c1, $c2, $c3, $c0) = map { "\033[${_}m" } qw(32 33 31 0) if (-t 1);
+my ($green, $yellow, $red, $reset) = ("", "", "", "");
+($green, $yellow, $red, $reset) = map { "\033[${_}m" } qw(32 33 31 0) if (-t 1);
 
 sub dns ($$);
 
@@ -50,7 +50,7 @@ sub dns ($$)
 
 	my $query = $res->search($q, 'ANY');
 	if (! $query) {
-		warn "    " x $depth, "$c1$q$c0 query failed: $c3", $res->errorstring, "$c0\n";
+		warn "    " x $depth, "$green$q$reset query failed: $red", $res->errorstring, "$reset\n";
 		return;
 	}
 
@@ -75,8 +75,8 @@ sub dns ($$)
 		}
 
 		my ($cq, $cq0) = ("", "");
-		($cq, $cq0) = ($c2, $c0) if ($cache{$q2} and -t 1);
-		print "    " x $depth, "$c1$q$c0 $t $cq$a$cq0\n";
+		($cq, $cq0) = ($yellow, $reset) if (not $cache{$q2} and -t 1);
+		print "    " x $depth, "$green$q$reset $t $cq$a$cq0\n";
 
 		next if ($q2 eq '' or $q2 eq '.');
 		dns ($q2, $depth + 1);
