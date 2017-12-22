@@ -20,7 +20,7 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 \set VERBOSITY verbose
 
 --\setenv PAGER 'less -S'
-\setenv PAGER 'pspg -b'
+\setenv PAGER 'pspg -b --less-status-bar --ignore-case'
 \pset linestyle unicode
 \pset unicode_header_linestyle double
 --\pset null '(n)'
