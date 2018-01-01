@@ -28,6 +28,9 @@
 [core]
 	pager = smart-less
 
+[init]
+	templatedir = 
+
 [merge]
 	defaultToUpstream = true
 
