@@ -174,16 +174,18 @@ up: update
 update: cleanup
 	git fetch -t
 	case $$(git describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
-
-checkout:
-	git verify-tag signed-head
-	git merge --ff-only signed-head
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 	@MAKEFLAGS= MAKELEVEL= make all
 
-tag:
+checkout:
+	git verify-tag --raw signed-head 2>&1 | grep 'VALIDSIG 5C48FE6157F49179597087C64C5A6BAB12D2A7AE'
+	git merge --ff-only signed-head
+
+push:
 	git tag -d signed-head
 	git tag -s -m "HEAD" signed-head
+	git push
+	git push --tags --force
 
 com: commit
 commit: cleanup
