@@ -1,13 +1,9 @@
 #echo .bash_profile
 
 # update git checkout
-if [ "$(find ~/.git/FETCH_HEAD -mtime +2 2>/dev/null)" ]; then
+if [ -x /usr/bin/make ] && [ "$(find ~/.git/FETCH_HEAD -mtime +2 2>/dev/null)" ]; then
 	. ~/.bashrc # get GIT_SSL_CAINFO
-	if [ -x /usr/bin/make ]; then
-		( cd ; make up )
-	else
-		( cd ; git pull )
-	fi
+	make -C $HOME up
 fi
 
 . ~/.bashrc

@@ -172,13 +172,22 @@ status:
 
 up: update
 update: cleanup
-	git pull
+	git fetch -t
+	if [ "$$(git describe --all --match=master signed-head)" != "heads/master" ]; then $(MAKE) checkout; fi
+
+checkout:
+	git verify-tag signed-head
+	git merge --ff-only signed-head
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 	@MAKEFLAGS= MAKELEVEL= make all
 
+tag:
+	git tag -d signed-head
+	git tag -s -m "HEAD" signed-head
+
 com: commit
 commit: cleanup
-	git commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS) || :
+#	git commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS) || :
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
 ci:
