@@ -1,33 +1,20 @@
 \set QUIET on
 \set ON_ERROR_ROLLBACK interactive
 \set ON_ERROR_STOP on
---\unset AUTOCOMMIT
+\set VERBOSITY verbose
 
 \o /dev/null
---SET bytea_output = 'escape';
 UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 \o
 
---\o ~/.psql-version
---SHOW server_version;
---\o
---\set version `sed -ne 's/^ //;3p' ~/.psql-version; rm -f ~/.psql-version`
---SHOW server_version \gset
 \set PROMPT1 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
 \set PROMPT2 '%[\033]0;psql %x%n@%m:%>:%/\007\033[46m%]%`date +%H:%M` %[\033[1m%]%n@%/ %[\033[31m%]%x%[\033[34m%]%R%[\033[0;46m%]%#%[\033[0m%] '
---\set PROMPT1 '%n@%m:%>/%/ %:server_version: %x%R%# '
---\set PROMPT2 '%n@%m:%>/%/ %:server_version: %x%R%# '
-\set VERBOSITY verbose
 
---\setenv PAGER 'less -S'
-\setenv PAGER 'pspg -b --less-status-bar --ignore-case'
+\setenv PAGER `if test -x /usr/bin/pspg; then echo pspg -b --less-status-bar --ignore-case; else echo less -S; fi`
 \pset linestyle unicode
-\pset unicode_header_linestyle double
---\pset null '(n)'
 \pset null '∅'
 
 \timing
---\x auto
 \unset QUIET
 
 \set su 'SET ROLE postgres;'
