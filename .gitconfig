@@ -42,7 +42,6 @@
 	name = Christoph Berg
 	email = myon@debian.org
 	signingKey = 5C48FE6157F49179597087C64C5A6BAB12D2A7AE
-	#email = christoph.berg@credativ.de
 
 [push]
 	#default = simple
@@ -50,3 +49,6 @@
 
 [gitreview]
 	username = myon
+
+[include]
+	path = .gitconfig-local
