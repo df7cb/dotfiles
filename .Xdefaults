@@ -70,12 +70,10 @@ URxvt.matcher.pattern.4: (\\b[Gg][Cc][A-Za-z0-9]{3,5}\\b)
 URxvt.matcher.launcher.4: x-www-browser coord.info/$1
 URxvt.matcher.pattern.5: rt.debian.org.\\#(\\d{4,})
 URxvt.matcher.launcher.5: x-www-browser https:\/\/rt.debian.org/Ticket/Display.html?id=$1
-URxvt.matcher.pattern.6: (?:RT.?|\\#)(1\\d{5}\\b)
+URxvt.matcher.pattern.6: (?:RT.?|\\#)(12\\d{4}\\b)
 URxvt.matcher.launcher.6: x-www-browser https:\/\/portal.dg-i.net/rt/Ticket/Display.html?id=$1
-URxvt.matcher.pattern.7: (JT-\\d{2,5}\\b)
-URxvt.matcher.launcher.7: x-www-browser https:\/\/code.allsecur.de/jira/browse/$1
-URxvt.matcher.pattern.8: OSSC.\\#(\\d{3,})
-URxvt.matcher.launcher.8: x-www-browser https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
+URxvt.matcher.pattern.7: \\#(1\\d{4}\\b)
+URxvt.matcher.launcher.7: x-www-browser https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,font-size,tabbed,matcher,vtwheel,3digits
 URxvt.print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
