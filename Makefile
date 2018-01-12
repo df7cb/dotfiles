@@ -173,7 +173,7 @@ status:
 up: update
 update: cleanup
 	git fetch -t
-	if [ "$$(git describe --all --match=master signed-head)" != "heads/master" ]; then $(MAKE) checkout; fi
+	case $$(git describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
 
 checkout:
 	git verify-tag signed-head
