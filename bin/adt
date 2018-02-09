@@ -1,19 +1,21 @@
 #!/bin/sh
 
-set -ex
+set -e
 
 test -f debian/files
+quilt push -a || [ $? = 2 ]
 
 # new interface
 if [ -x /usr/bin/autopkgtest ]; then
 	binaries=$(awk '/\.deb / { print "../" $1 }' debian/files)
-	sudo autopkgtest ./ $binaries -- null
-	exit
+	set -x
+	exec sudo autopkgtest ./ $binaries -- null
 fi
 
 # old interface
 binaries=$(awk '/\.deb / { print "--binary ../" $1 }' debian/files)
 
+set -x
 sudo adt-run \
 	$binaries --built-tree $PWD \
 	--- adt-virt-null
