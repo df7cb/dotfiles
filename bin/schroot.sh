@@ -17,9 +17,9 @@ shift $(($OPTIND-1))
 if [ -z "$NOUPDATE" ]; then
 	schroot -c source:$CHROOT -u root <<-EOF
 		set -ex
-		apt-get -y update
-		apt-get -y dist-upgrade
-		apt-get -y autoremove
+		apt -y update
+		apt -y dist-upgrade
+		apt -y autoremove
 	EOF
 fi
 
@@ -42,8 +42,8 @@ if [ "${PG_SUPPORTED_VERSIONS:-}" ]; then
 		set -ex
 		sed -i -e "s/main/main $PG_SUPPORTED_VERSIONS/" /etc/apt/sources.list.d/pgdg.list
 		echo "$PG_SUPPORTED_VERSIONS" > /etc/postgresql-common/supported_versions
-		apt-get -y update
-		apt-get install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
+		apt -y update
+		apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
 	EOF
 fi
 
@@ -51,7 +51,7 @@ fi
 if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
 		set -ex
-		apt-get -y build-dep ./
+		apt -y build-dep ./
 	EOF
 fi
 

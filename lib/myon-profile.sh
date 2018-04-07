@@ -40,17 +40,18 @@ alias tree='tree -F'
 alias rd=rmdir
 
 # Debian
-alias agi="sudo apt-get install"
-alias agr="sudo apt-get remove"
-alias 'build-dep'="sudo apt-get build-dep"
-alias 'dist-upgrade'="sudo apt-get dist-upgrade"
-alias update="sudo apt-get update"
+alias agi="sudo apt install"
+alias agr="sudo apt remove"
+alias autoremove="sudo apt autoremove"
+alias 'build-dep'="sudo apt build-dep"
+alias 'dist-upgrade'="sudo apt dist-upgrade"
+alias update="sudo apt update"
+alias upgrade="sudo apt upgrade"
 alias policy="apt-cache policy"
 alias search="apt-cache search"
 alias show="apt-cache show"
 alias showpkg="apt-cache showpkg"
 alias showsrc="apt-cache showsrc"
-alias upgrade="sudo apt-get upgrade"
 
 # Services
 if [ -d /run/systemd/system ]; then
