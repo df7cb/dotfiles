@@ -43,6 +43,7 @@ install-dev: install-profile
 	test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io | sudo tee /etc/dpkg/dpkg.cfg.d/01unsafeio
 	test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' | sudo tee /etc/apt/apt.conf.d/20norecommends
 	test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' | sudo tee /etc/apt/apt.conf.d/50i18n
+	test -e /etc/apt/apt.conf.d/90keep-downloaded-packages || echo 'Binary::apt::APT::Keep-Downloaded-Packages "1";' | sudo tee /etc/apt/apt.conf.d/90keep-downloaded-packages
 	sudo rm -f /var/lib/apt/lists/*_Translation-de*
 	sudo apt-get install \
 		autodep8 \
