@@ -2,8 +2,9 @@
 
 : ${CHROOT:=sid}
 
-while getopts "c:n:p:u" opt ; do
+while getopts "bc:n:p:u" opt ; do
 	case $opt in
+		b) BACKPORTS="true" ;;
 		c) CHROOT="$OPTARG" ;;
 		n) SESSION="$OPTARG" ;;
 		p) PG_SUPPORTED_VERSIONS="$OPTARG" ;;
@@ -19,7 +20,7 @@ if [ -z "$NOUPDATE" ]; then
 		set -ex
 		apt -y update
 		apt -y dist-upgrade
-		apt -y autoremove
+		apt-get -y autoremove # doesn't work with apt on jessie
 	EOF
 fi
 
@@ -33,7 +34,16 @@ fi
 
 # begin session
 if schroot -c $CHROOT -n $SESSION -b; then
-	trap "set -x; schroot -c session:$SESSION -e" 0 2 3 15
+	trap "schroot -c session:$SESSION -e" 0 2 3 15
+fi
+
+# activate backports
+if [ "${BACKPORTS:-}" ]; then
+	schroot -c session:$SESSION -u root -r <<-EOF
+		set -ex
+		mv /etc/apt/sources.list.d/backports.list.disabled /etc/apt/sources.list.d/backports.list
+		apt -y update
+	EOF
 fi
 
 # install extra PG version
@@ -51,7 +61,7 @@ fi
 if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
 		set -ex
-		apt -y build-dep ./
+		apt -y build-dep . # doesn't work on jessie
 	EOF
 fi
 
