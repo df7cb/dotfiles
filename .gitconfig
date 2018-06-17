@@ -15,6 +15,7 @@
 	pull = pull --ff-only --stat
 	rb = rebase
 	rbc = rebase --continue
+	snapshot = !git archive --prefix=$(basename $PWD)/ -o $(git describe --tags).tar.gz HEAD
 	#st = !git --no-pager status
 	st = status
 	sti = status --ignored
