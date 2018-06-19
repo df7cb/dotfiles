@@ -6,16 +6,21 @@
 set -eu
 
 date=$(date '+%F.%H%M%S')
-output=$(mktemp --tmpdir $date.XXXXXX.png)
-name=${output##*/}
-
-trap "rm -f $output" 0 2 3 15
+if [ "${1:-}" ]; then
+  output="$1"
+else
+  output=$(mktemp --tmpdir $date.XXXXXX.png)
+  trap "rm -f $output" 0 2 3 15
+  name=${output##*/}
+fi
 
 scrot -s $output ${1:+--delay $1 --count}
 chmod +r $output
 
-dir="s"
-scp $output feynman.df7cb.de:html/$dir
-url="https://www.df7cb.de/$dir/$name"
-echo "$url"
-echo -n "$url" | xclip -i
+if [ -z "${1:-}" ]; then
+  dir="s"
+  scp $output feynman.df7cb.de:html/$dir
+  url="https://www.df7cb.de/$dir/$name"
+  echo "$url"
+  echo -n "$url" | xclip -i
+fi
