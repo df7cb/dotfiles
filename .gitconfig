@@ -12,6 +12,7 @@
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	di = diff
 	dih = diff HEAD
+	origtargz = !git archive -o ../$(dpkg-parsechangelog -SSource)_$(dpkg-parsechangelog -SVersion).orig.tar.gz --prefix=$(dpkg-parsechangelog -SSource)/ HEAD
 	pull = pull --ff-only --stat
 	rb = rebase
 	rbc = rebase --continue
