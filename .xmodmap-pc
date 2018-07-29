@@ -22,7 +22,7 @@ keycode 0x1D =	y		Y
 keycode 0x1E =	u		U		udiaeresis	Udiaeresis
 keycode 0x20 =	o		O		odiaeresis	Odiaeresis
 ! for whatever reason, there is no XK_spade in keysymdef.h, pick something else and remap that in urxvt
-keycode 0x21 =	p		P		maltesecross
+keycode 0x21 =	p		P		maltesecross	Greek_pi
 keycode 0x22 =	bracketleft	braceleft	lessthanequal
 keycode 0x23 =	bracketright	braceright	greaterthanequal
 keycode 0x26 =	a		A		adiaeresis	Adiaeresis
