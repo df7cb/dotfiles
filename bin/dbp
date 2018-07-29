@@ -94,7 +94,14 @@ case $1 in
   *) origtargz ;;
 esac
 
-trap "test -s ../log && gzip -9 ../log" 0 2 3 15
+# source build
+if [ "$1" = "-S" ]; then
+  # don't generate a buildinfo file for source-only builds
+  BUILDINFO=$(mktemp --tmpdir buildinfo.XXXXXX)
+  ARG="$ARG --buildinfo-option=-O$BUILDINFO"
+fi
+
+trap "test -s ../log && gzip -9 ../log; rm -f $BUILDINFO" 0 2 3 15
 
 case $(script --version 2>/dev/null) in
   script*2.17.*) SCRIPT="script" ;; # squeeze doesn't support -e
