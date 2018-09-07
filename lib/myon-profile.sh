@@ -40,18 +40,28 @@ alias tree='tree -F'
 alias rd=rmdir
 
 # Debian
-alias agi="sudo apt install"
-alias agr="sudo apt remove"
-alias autoremove="sudo apt autoremove"
-alias 'build-dep'="sudo apt build-dep"
-alias 'dist-upgrade'="sudo apt dist-upgrade"
-alias update="sudo apt update"
-alias upgrade="sudo apt upgrade"
-alias policy="apt-cache policy"
-alias search="apt-cache search"
-alias show="apt-cache show"
-alias showpkg="apt-cache showpkg"
-alias showsrc="apt-cache showsrc"
+if [ -f /etc/debian_version ]; then
+  alias agi="sudo apt install"
+  alias agr="sudo apt remove"
+  alias autoremove="sudo apt autoremove"
+  alias 'build-dep'="sudo apt build-dep"
+  alias 'dist-upgrade'="sudo apt dist-upgrade"
+  alias update="sudo apt update"
+  alias upgrade="sudo apt upgrade"
+  alias policy="apt-cache policy"
+  alias search="apt-cache search"
+  alias show="apt-cache show"
+  alias showpkg="apt-cache showpkg"
+  alias showsrc="apt-cache showsrc"
+fi
+
+# Red Hat
+if [ -f /etc/redhat-release ]; then
+  alias agi="sudo yum install"
+  alias search="yum search"
+  alias update="sudo yum check-update"
+  alias upgrade="sudo yum upgrade"
+fi
 
 # Services
 if [ -d /run/systemd/system ]; then
