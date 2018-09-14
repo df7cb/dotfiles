@@ -123,10 +123,11 @@ install-chroot:
 
 deploy:
 	test "$(HOST)"
-	ssh "$(HOST)" "rm -f .bash* .profile && \
-		if ! [ -x /usr/bin/git ]; then \
+	ssh "$(HOST)" "test ! -d .git && \
+		rm -f .bash* .profile && \
+		if ! [ -x /usr/bin/git ] || ! [ -x /usr/bin/make ]; then \
 			sudo apt-get update && \
-			sudo apt-get install --no-install-recommends git; \
+			sudo apt-get install --no-install-recommends -y git make; \
 		fi && \
 		if [ -f /etc/ssl/ca-global/ca-certificates.crt ]; then \
 			export GIT_SSL_CAINFO=/etc/ssl/ca-global/ca-certificates.crt; \
