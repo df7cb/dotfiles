@@ -22,7 +22,8 @@ fi
 
 echo "PG_CONFIG=$PG_CONFIG"
 
-make clean
-make PG_CONFIG=$PG_CONFIG PROFILE="-Werror"
-sudo make install PG_CONFIG=$PG_CONFIG
-make installcheck PG_CONFIG=$PG_CONFIG || cat regression.diffs
+set -x
+make clean PG_CONFIG=$PG_CONFIG USE_PGXS=1
+make PG_CONFIG=$PG_CONFIG USE_PGXS=1 PROFILE="-Werror"
+sudo make install PG_CONFIG=$PG_CONFIG USE_PGXS=1
+make installcheck PG_CONFIG=$PG_CONFIG USE_PGXS=1 || cat regression.diffs
