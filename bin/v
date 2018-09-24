@@ -91,7 +91,7 @@ case $command in
 		*) $VCS $command "$@" ;;
 	esac ;;
 	push) case $VCS in
-		git) $VCS $command "$@" && git push --tags ;;
+		#git) $VCS $command "$@" && git push --tags ;;
 		*) $VCS $command "$@" ;;
 	esac ;;
 	revert) case $VCS in
