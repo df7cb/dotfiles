@@ -60,6 +60,7 @@ install-dev: install-profile
 		git \
 		git-buildpackage \
 		less \
+		libmoo-perl \
 		libwww-perl \
 		lintian \
 		locales \
