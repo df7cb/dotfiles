@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -eu
+
+distribution=$(dpkg-parsechangelog -Sdistribution)
+if [ "$distribution" = "UNRELEASED" ]; then
+  echo "Distribution is UNRELEASED. Fix that before uploading."
+  exit 1
+fi
+
+dclean
+qpop -a || [ $? = 2 ]
+
+changes=$(ls -t ../*.changes | head -1)
+ls -l $changes
+echo
+cat $changes
+
+echo
+git --no-pager status
+
+echo
+echo -n "Upload? "
+read upload
+
+set -x
+git pull --ff-only
+if git status -s | grep -q '^[^?]'; then
+  git add -u
+  debcommit -r
+fi
+git push
+debsign $changes
+dput $changes
