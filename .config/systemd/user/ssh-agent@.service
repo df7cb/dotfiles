@@ -1,0 +1,9 @@
+[Unit]
+Description=OpenSSH Agent
+Documentation=man:ssh-agent(1)
+
+[Service]
+ExecStart=/usr/bin/ssh-agent -D -a %h/.ssh/agent-%i
+
+[Install]
+WantedBy=default.target
