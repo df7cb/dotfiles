@@ -1,0 +1,10 @@
+#!/bin/bash
+
+test -t 1 || exit 0
+
+case $TERM in
+  screen*)
+    echo -en "\\033k$1\\033\\" ;& # fallthrough
+  xterm*|rxvt*)
+    echo -en "\\033]0;$1\\007" ;;
+esac
