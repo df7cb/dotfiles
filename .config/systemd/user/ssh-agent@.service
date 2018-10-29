@@ -3,6 +3,7 @@ Description=OpenSSH Agent
 Documentation=man:ssh-agent(1)
 
 [Service]
+ExecStartPre=/bin/rm -f %h/.ssh/agent-%i
 ExecStart=/usr/bin/ssh-agent -D -a %h/.ssh/agent-%i
 
 [Install]
