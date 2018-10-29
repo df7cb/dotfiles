@@ -2,13 +2,26 @@
 
 set -eu
 
+CLEAN=yes
+GIT=git
+
+while getopts "cg" opt ; do
+  case $opt in
+    c) CLEAN="" ;;
+    g) GIT="" ;;
+    *) exit 5 ;;
+  esac
+done
+# shift away args
+shift $(($OPTIND - 1))
+
 distribution=$(dpkg-parsechangelog -Sdistribution)
 if [ "$distribution" = "UNRELEASED" ]; then
   echo "Distribution is UNRELEASED. Fix that before uploading."
   exit 1
 fi
 
-dclean
+[ "$CLEAN" ] && dclean
 qpop -a || [ $? = 2 ]
 
 changes=$(ls -t ../*.changes | head -1)
@@ -17,18 +30,20 @@ echo
 cat $changes
 
 echo
-git --no-pager status
+[ -d .git ] && git --no-pager status
 
 echo
 echo -n "Upload? "
 read upload
 
 set -x
-git pull --ff-only
-if git status -s | grep -q '^[^?]'; then
-  git add -u
-  debcommit -r
+if [ "$GIT" ]; then
+  git pull --ff-only
+  if git status -s | grep -q '^[^?]'; then
+    git add -u
+    debcommit -r
+  fi
+  git push
 fi
-git push
 debsign $changes
 dput $changes
