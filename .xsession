@@ -36,7 +36,7 @@ xset r rate 400 30
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy &
-	synclient TapButton1=1 SingleTapTimeout=50 HorizEdgeScroll=1
+	synclient TapButton1=1 SingleTapTimeout=50 HorizTwoFingerScroll=1
 	if exists clipit ; then
 		clipit &
 	elif exists autocutsel ; then
