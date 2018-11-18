@@ -19,7 +19,7 @@ if [ -z "$NOUPDATE" ]; then
 	schroot -c source:$CHROOT -u root <<-EOF
 		set -ex
 		apt -y update
-		apt -y dist-upgrade
+		apt -y -o DPkg::Options::=--force-confnew dist-upgrade
 		apt-get -y autoremove # doesn't work with apt on jessie
 	EOF
 fi
@@ -61,7 +61,7 @@ fi
 if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
 		set -ex
-		apt -y build-dep . # doesn't work on jessie
+		apt -y -o DPkg::Options::=--force-confnew build-dep . # doesn't work on jessie
 	EOF
 fi
 
