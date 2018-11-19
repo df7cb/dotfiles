@@ -42,21 +42,9 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	elif exists autocutsel ; then
 		autocutsel &
 	fi
-	fdpowermon &
 	nm-applet &
 	udiskie --smart-tray &
 	volumeicon &
-	#if exists ssh-agent ; then
-	#	[ -z "$SSH_AUTH_SOCK" ] && eval `ssh-agent`
-	#	if [ "$SSH_AUTH_SOCK" ] ; then
-	#		for key in .ssh/*.pub ; do
-	#			[ -f "$key" ] || break
-	#			KEY="$KEY .ssh/$(basename $key .pub)"
-	#		done
-	#		[ "$KEY" ] && ssh-add $KEY < /dev/null # there are keys
-	#		unset KEY
-	#	fi
-	#fi
 	exists gpg-agent && [ -z "$GPG_AGENT_INFO" ] && \
 		eval `gpg-agent --daemon`
 	exists gnome-keyring-daemon && [ -z "$GNOME_KEYRING_CONTROL" ] && \

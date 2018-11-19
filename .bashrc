@@ -12,7 +12,6 @@ unset L
 : ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
 export LANG LANGUAGE TZ
 
-#. ${CONF_HOME:-$HOME}/lib/session.sh
 . ${CONF_HOME:-$HOME}/bin/os > /dev/null
 . ${CONF_HOME:-$HOME}/.path
 . ${CONF_HOME:-$HOME}/lib/myon-profile.sh
@@ -50,20 +49,6 @@ esac
 unset cyan red bold blue purple reset
 unset job screentitle xtitle ps1_pwd prompt
 
-#export u=0 s=0
-#ps1_times () {
-#	local tmpfile="$HOME/.var/bashtimes-$$"
-#	times > $tmpfile
-#	eval $(perl -w -le '<>; $_ = <>;
-#		/(\d+)m([\d.]+)s (\d+)m([\d.]+)s/;
-#		$u = 60.0*$1 + $2; $s = 60.0*$3 + $4;
-#		$du = $u-$ENV{u};  $ds = $s-$ENV{s};
-#		printf STDERR "\033[47muser %.3fs system %.3fs\033[0m\n", $du, $ds
-#			if ($du > 1.0 or $ds > 1.0);
-#		print "u=$u;s=$s" ' $tmpfile )
-#	/bin/rm -f $tmpfile
-#}
-#PROMPT_COMMAND="ps1_times; ps1_vcs"
 PROMPT_COMMAND="ps1_vcs"
 
 # internal shell settings
