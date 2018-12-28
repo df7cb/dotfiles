@@ -1,2 +1,3 @@
 .pc
 .*.swp
+__pycache__/
