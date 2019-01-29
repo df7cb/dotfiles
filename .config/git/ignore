@@ -1,3 +1,4 @@
-.pc
+/debian/files
+/.pc
 .*.swp
 __pycache__/
