@@ -18,3 +18,16 @@ RMADISON_URL_MAP_u="http://people.canonical.com/~ubuntu-archive/madison.cgi"
 USCAN_DOWNLOAD=no
 USCAN_SYMLINK=rename
 USCAN_VERBOSE=yes
+
+SALSA_GROUP=postgresql
+SALSA_TOKEN_FILE=~/.priv/pw/salsa-token
+SALSA_IRKER=no
+SALSA_KGB=yes
+#SALSA_KGB_SERVER_URL='http://kgb.debian.net:9418/webhook/?channel='
+SALSA_IRC_CHANNEL='postgresql-apt;network=freenode;use_irc_notices=1;squash_threshold=3'
+SALSA_CI_CONFIG_PATH=debian/gitlab-ci.yml
+SALSA_EMAIL=yes
+SALSA_EMAIL_RECIPIENTS=dispatch+%p_vcs@tracker.debian.org
+SALSA_ENABLE_MR=yes
+SALSA_ENABLE_ISSUES=yes
+SALSA_TAGPENDING=yes
