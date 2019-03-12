@@ -48,8 +48,17 @@ esac
 export DEB_CHECK_COMMAND="lintian"
 SHIFT=1
 
-while getopts "nospd:" opt 2>/dev/null; do
+while getopts "abBSinospd:" opt 2>/dev/null; do
   case $opt in
+    a)
+      AUTOPKGTEST=yes
+      ;;
+    b|B|S)
+      ARG="$ARG -$opt"
+      ;;
+    i)
+      DEBI=yes
+      ;;
     n)
       export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
       unset DEB_CHECK_COMMAND
@@ -127,3 +136,11 @@ else
   dpkg-buildpackage $ARG 2>&1 | tee ../log
 fi
 head -n1 debian/changelog
+
+if [ "${DEBI:-}" ]; then
+  sudo debi
+fi
+
+if [ "${AUTOPKGTEST:-}" ]; then
+  adt
+fi
