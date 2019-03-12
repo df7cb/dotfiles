@@ -23,11 +23,14 @@ fi
 
 [ "$CLEAN" ] && dclean
 qpop -a || [ $? = 2 ]
+echo
 
 changes=$(ls -t ../*.changes | head -1)
+printf '\e[1;34m'
 ls -l $changes
-echo
+printf '\e[0;34m'
 cat $changes
+printf '\e[0m'
 
 echo
 [ -d .git ] && git --no-pager status
@@ -40,7 +43,7 @@ set -x
 if [ "$GIT" ]; then
   git pull --ff-only
   if git status -s | grep -q '^[^?]'; then
-    git add -u
+    git add -u debian
     debcommit -r
   fi
   git push
