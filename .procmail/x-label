@@ -4,16 +4,16 @@
 # Debian
 :0
 * !^X-Label:
-* ^X-(Debian|GUUG)-PR-Message: (report|closed|ack-info) \/[0-9]*
+* ^X-Debian-PR-Message: (report|closed|ack-info) \/[0-9]*
 {
 	ID=$MATCH
 	:0fhw
-	* ^X-(Debian|GUUG)-PR-Package: \/.*
+	* ^X-Debian-PR-Package: \/.*
 	| formail -i"X-Label: #$ID $MATCH"
 }
 :0fhw
 * !^X-Label:
-* ^X-PTS-Package: \/.*
+* ^X-(PTS-Package|Distro-Tracker-Team): \/.*
 | formail -i"X-Label: $MATCH"
 :0fhw
 * !^X-Label:
@@ -44,22 +44,8 @@
 # root
 :0fhw
 * !^X-Label:
-* ^From: .*(MAILER-DAEMON|root|rzsnetz|netacc|netzwarte|owner-.*|postmaster)@
+* ^From: .*(MAILER-DAEMON|root|owner-.*|postmaster)@
 | formail -i"X-Label: root"
-
-# Uni
-:0fhw
-* !^X-Label:
-* ^TO_f[br]-?mit@cs.uni-sb.de
-| formail -i"X-Label: frmit"
-:0fhw
-* !^X-Label:
-* ^TO_g-wilhelm@.*cs.uni-sb.de
-| formail -i"X-Label: g-wilhelm"
-:0fhw
-* !^X-Label:
-* ^TO_.*@avacs.org
-| formail -i"X-Label: avacs"
 
 # df7cb.de
 :0fhw
