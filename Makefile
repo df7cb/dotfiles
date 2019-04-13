@@ -1,4 +1,4 @@
-# rm -f .bash* .profile && git clone https://github.com/ChristophBerg/dotfiles.git . && make && . .bashrc
+# rm -f .bash* .profile && git clone https://github.com/df7cb/dotfiles.git . && make && . .bashrc
 
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
 QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qimport bin/qnew bin/qpop bin/qpush bin/qrefresh bin/qtop
@@ -134,7 +134,7 @@ deploy:
 			export GIT_SSL_CAINFO=/etc/ssl/ca-global/ca-certificates.crt; \
 		fi && \
 		git init && \
-		git remote add origin https://github.com/ChristophBerg/dotfiles.git && \
+		git remote add origin https://github.com/df7cb/dotfiles.git && \
 		git fetch origin && \
 		git checkout master && \
 		make"
@@ -176,6 +176,7 @@ status:
 
 up: update
 update: cleanup
+	@if grep -q ChristophBerg .git/config; then sed -i -e 's/ChristophBerg/df7cb/g' .git/config; fi
 	git fetch -t
 	case $$(git describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
