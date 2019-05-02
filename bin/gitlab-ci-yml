@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -eux
+
+test ! -f debian/gitlab-ci.yml
+
+cat > debian/gitlab-ci.yml <<EOF
+include:
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+
+variables:
+  RELEASE: 'unstable'
+EOF
+
+dch "Add debian/gitlab-ci.yml."
+git add debian/gitlab-ci.yml debian/changelog
