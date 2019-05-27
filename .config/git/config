@@ -15,6 +15,7 @@
 	dis = diff --staged
 	import-orig = !gbp import-orig --pristine-tar
 	ls = ls-files
+	npush = -c push.followTags=false push
 	origtargz = !git archive -o ../$(dpkg-parsechangelog -SSource)_$(dpkg-parsechangelog -SVersion).orig.tar.gz --prefix=$(dpkg-parsechangelog -SSource)/ HEAD
 	pull = pull --ff-only --stat
 	rb = rebase
