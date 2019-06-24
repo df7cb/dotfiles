@@ -1,7 +1,7 @@
 [DEFAULT]
 login = myon
 progress_indicator = 2
-#default_host_main = ssh-upload
+default_host_main = ssh-upload
 
 [feynman]
 fqdn = feynman.df7cb.de
