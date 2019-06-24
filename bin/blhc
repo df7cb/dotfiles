@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+LOG="${1:-../log.gz}"
+case $LOG in
+  *.gz) CAT=zcat ;;
+esac
+
+TMPLOG=$(mktemp --tmpdir blhc.XXXXXX.log)
+trap "rm -f $TMPLOG" EXIT
+
+${CAT:=cat} $LOG | sed -e 's/\o033\[[0-9;]*m//g' -e 's/\r$//' > $TMPLOG
+
+/usr/bin/blhc --debian --line-numbers --color $TMPLOG

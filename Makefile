@@ -48,6 +48,7 @@ install-dev: install-profile
 	sudo apt-get install \
 		autodep8 \
 		autopkgtest \
+		blhc \
 		build-essential \
 		ccache \
 		debhelper \
