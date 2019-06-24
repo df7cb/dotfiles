@@ -148,9 +148,3 @@ augroup cprog
 augroup END
 
 endif " has ("autocmd")
-
-" Avoid E173
-if argc() > 1
-  silent blast " load last buffer
-  silent bfirst " switch back to the first
-endif
