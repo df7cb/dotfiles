@@ -177,7 +177,7 @@ status:
 up: update
 update: cleanup
 	@if grep -q ChristophBerg .git/config; then sed -i -e 's/ChristophBerg/df7cb/g' .git/config; fi
-	git fetch -t
+	git fetch --tags --force
 	case $$(git describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 	@MAKEFLAGS= MAKELEVEL= make all
