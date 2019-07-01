@@ -188,7 +188,7 @@ checkout:
 	git merge --ff-only signed-head
 
 push:
-	git tag -d signed-head
+	-git tag -d signed-head
 	git tag -s -m "HEAD" signed-head
 	git push
 	git push --tags --force
