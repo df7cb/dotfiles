@@ -100,7 +100,7 @@ shift $((OPTIND - SHIFT))
 # get orig tarball
 case $1 in
   -[bB]) ;; # binary-only build requested
-  *) test -x /usr/bin/origtargz && origtargz ;;
+  *) test -x /usr/bin/origtargz && origtargz || : ;;
 esac
 
 # source build
