@@ -53,7 +53,7 @@ while getopts "abBSinospd:" opt 2>/dev/null; do
     a)
       AUTOPKGTEST=yes
       ;;
-    b|B|S)
+    b|B)
       ARG="$ARG -$opt"
       ;;
     i)
@@ -68,6 +68,9 @@ while getopts "abBSinospd:" opt 2>/dev/null; do
       ;;
     s)
       export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nostrip"
+      ;;
+    S)
+      ARG="$ARG -S --buildinfo-option=--version"
       ;;
     p)
       BUILDER="pdebuild"
@@ -103,14 +106,7 @@ case $1 in
   *) test -x /usr/bin/origtargz && origtargz || : ;;
 esac
 
-# source build
-if [ "$1" = "-S" ]; then
-  # don't generate a buildinfo file for source-only builds
-  BUILDINFO=$(mktemp --tmpdir buildinfo.XXXXXX)
-  ARG="$ARG --buildinfo-option=-O$BUILDINFO"
-fi
-
-trap "test -s ../log && gzip -9 ../log; rm -f $BUILDINFO" 0 2 3 15
+trap "test -s ../log && gzip -9 ../log" 0 2 3 15
 
 case $(script --version 2>/dev/null) in
   script*2.17.*) SCRIPT="script" ;; # squeeze doesn't support -e
