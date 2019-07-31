@@ -37,6 +37,9 @@
 [init]
 	templatedir = 
 
+[log]
+	mailmap = true
+
 [merge]
 	defaultToUpstream = true
 
