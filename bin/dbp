@@ -52,9 +52,11 @@ while getopts "abBSinospd:" opt 2>/dev/null; do
   case $opt in
     a)
       AUTOPKGTEST=yes
+      BINARY_ONLY=yes
       ;;
     b|B)
       ARG="$ARG -$opt"
+      BINARY_ONLY=yes
       ;;
     i)
       DEBI=yes
@@ -101,10 +103,9 @@ shift $((OPTIND - SHIFT))
 [ "$*" ] && ARG="$ARG $*"
 
 # get orig tarball
-case $1 in
-  -[bB]) ;; # binary-only build requested
-  *) test -x /usr/bin/origtargz && origtargz || : ;;
-esac
+if [ -z "${BINARY_ONLY:-}" ] && [ -x /usr/bin/origtargz ]; then
+  origtargz || :
+fi
 
 trap "test -s ../log && gzip -9 ../log" 0 2 3 15
 
