@@ -166,6 +166,7 @@ vim: .vim/spell/de.utf-8.spl .vim/spell/all.utf-8.add
 ## cleanup stuff ##
 
 cleanup:
+	@[ "$(shell stat -c %a .gnupg)" = 700 ] || chmod --changes 700 .gnupg
 COMMITS = $(wildcard .mutt/fortunes-??)
 
 ## update stuff ##
@@ -177,6 +178,7 @@ status:
 
 up: update
 update: cleanup
+	@gpg -k 5C48FE6157F49179597087C64C5A6BAB12D2A7AE > /dev/null || gpg --import .plan
 	@if grep -q ChristophBerg .git/config; then sed -i -e 's/ChristophBerg/df7cb/g' .git/config; fi
 	git fetch --tags --force
 	case $$(git describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
