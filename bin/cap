@@ -8,8 +8,10 @@ set -eu
 date=$(date '+%F.%H%M%S')
 if [ "${1:-}" ]; then
   output="$1"
+  shift
 else
   output=$(mktemp --tmpdir $date.XXXXXX.png)
+  rm -f $output
   trap "rm -f $output" 0 2 3 15
   name=${output##*/}
 fi
