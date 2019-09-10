@@ -17,6 +17,7 @@ UPDATE pg_settings SET setting = 'escape' WHERE "name" = 'bytea_output';
 \timing
 \unset QUIET
 
+\set e 'EXPLAIN (ANALYZE, BUFFERS)'
 \set su 'SET ROLE postgres;'
 
 \set config 'SELECT name, current_setting(name), CASE source WHEN $$configuration file$$ THEN sourcefile||$$:$$||sourceline ELSE source END FROM pg_settings WHERE source <> $$default$$;'
