@@ -48,18 +48,21 @@ esac
 export DEB_CHECK_COMMAND="lintian"
 SHIFT=1
 
-while getopts "abBSinospd:" opt 2>/dev/null; do
+while getopts "aAbBSij:nospd:" opt 2>/dev/null; do
   case $opt in
     a)
       AUTOPKGTEST=yes
       BINARY_ONLY=yes
       ;;
-    b|B)
+    A|b|B)
       ARG="$ARG -$opt"
       BINARY_ONLY=yes
       ;;
     i)
       DEBI=yes
+      ;;
+    j)
+      ARG="$ARG -$opt$OPTARG"
       ;;
     n)
       export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
