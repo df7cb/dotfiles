@@ -323,3 +323,6 @@ should be good enough.
 <chrisphonk> And we can also run daily backups now that are actually useful and
 	not just mandatory
 %
+<Myon> did you mean λf.λx. f (f x) ?
+<olasd> I'm sorry but this representation of integers succs
+%
