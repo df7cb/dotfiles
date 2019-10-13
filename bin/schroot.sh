@@ -15,6 +15,12 @@ done
 # shift away args
 shift $(($OPTIND-1))
 
+case $CHROOT in exp*)
+	CHROOT="sid"
+	EXPERIMENTAL="-t experimental"
+	;;
+esac
+
 if [ -z "$NOUPDATE" ]; then
 	schroot -c source:$CHROOT -u root <<-EOF
 		set -ex
@@ -34,7 +40,15 @@ fi
 
 # begin session
 if schroot -c $CHROOT -n $SESSION -b; then
-	trap "schroot -c session:$SESSION -e" 0 2 3 15
+	trap "schroot -c session:$SESSION -e" EXIT
+fi
+
+if [ "${EXPERIMENTAL:-}" ]; then
+	schroot -c session:$SESSION -u root -r <<-EOF
+		set -ex
+		sed -i -e '/sid/ { p; s/sid/experimental/ }' /etc/apt/sources.list
+		apt -y update
+	EOF
 fi
 
 # activate backports
@@ -61,7 +75,7 @@ fi
 if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
 		set -ex
-		apt -y -o DPkg::Options::=--force-confnew build-dep . # doesn't work on jessie
+		apt -y -o DPkg::Options::=--force-confnew ${EXPERIMENTAL:-} build-dep . # doesn't work on jessie
 	EOF
 fi
 
