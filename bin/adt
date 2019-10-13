@@ -5,11 +5,14 @@ set -e
 test -f debian/files
 quilt push -a || [ $? = 2 ]
 
+trap "test -s ../log && gzip -9 ../log" EXIT
+rm -f ../log ../log.gz
+
 # new interface
 if [ -x /usr/bin/autopkgtest ]; then
-	binaries=$(awk '/\.deb / { print "../" $1 }' debian/files)
+	binaries=$(awk '/\.deb / { print "../" $1 }' debian/files | xargs)
 	set -x
-	exec sudo autopkgtest ./ $binaries -- null
+	exec script -e -c "sudo autopkgtest ./ $binaries -- null" ../log
 fi
 
 # old interface
