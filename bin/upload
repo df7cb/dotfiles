@@ -39,18 +39,24 @@ if [ ! -f debian/gitlab-ci.yml ]; then
   printf '\e[1;31mNo debian/gitlab-ci.yml found\e[0m\n'
 fi
 
-echo
-echo -n "Upload? "
-read upload
-
-set -x
 if [ "$GIT" ]; then
+  echo
+  echo -n "Push? "
+  read push
+
   git pull --ff-only
   if git status -s | grep -q '^[^?]'; then
     git add -u debian
     debcommit -r
   fi
-  git push
+  git npush
 fi
+
+echo
+echo -n "Upload? "
+read upload
+
+[ "$GIT" ] && git push
+set -x
 debsign $changes
 dput $changes
