@@ -52,7 +52,6 @@ while getopts "aAbBSij:nospd:" opt 2>/dev/null; do
   case $opt in
     a)
       AUTOPKGTEST=yes
-      BINARY_ONLY=yes
       ;;
     A|b|B)
       ARG="$ARG -$opt"

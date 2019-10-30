@@ -4,6 +4,7 @@ set -eu
 
 CLEAN=yes
 GIT=git
+PACKAGE=$(dpkg-parsechangelog -SSource)
 
 while getopts "cg" opt ; do
   case $opt in
@@ -41,19 +42,21 @@ fi
 
 if [ "$GIT" ]; then
   echo
-  echo -n "Push? "
+  echo -n "$PACKAGE: Push? "
   read push
+
+  echo "https://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build"
 
   git pull --ff-only
   if git status -s | grep -q '^[^?]'; then
     git add -u debian
-    debcommit -r
+    debcommit -r --release-use-changelog
   fi
   git npush
 fi
 
 echo
-echo -n "Upload? "
+echo -n "$PACKAGE: Upload? "
 read upload
 
 [ "$GIT" ] && git push
