@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eux
+
+dch "New upstream version."
+dch -r
