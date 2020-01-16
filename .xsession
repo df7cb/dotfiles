@@ -52,7 +52,6 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	workrave &
 	xscreensaver -nosplash &
 	#type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
-	xroot loop &
 
 	SHLVL=0 x-terminal-emulator &
 	SHLVL=0 x-terminal-emulator &
