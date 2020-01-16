@@ -96,9 +96,9 @@ install-desktop: install-dev
 	sudo apt-get install \
 		arandr \
 		awesome \
-		chromium \
 		clipit \
 		fdpowermon \
+		firefox-esr \
 		fonts-dejavu \
 		gnome-keyring \
 		gpg-agent \
@@ -115,7 +115,7 @@ install-desktop: install-dev
 		sudo sed -i -e 's/99:battery-charging.png$$/100:battery-charging.png/' /etc/fdpowermon/theme.cfg; \
 	fi
 	sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
-	sudo update-alternatives --set x-www-browser /usr/bin/chromium
+	sudo update-alternatives --set x-www-browser /usr/bin/firefox-esr
 
 install-chroot:
 	sudo apt-get install \

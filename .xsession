@@ -55,7 +55,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 
 	SHLVL=0 x-terminal-emulator &
 	SHLVL=0 x-terminal-emulator &
-	chromium &
+	x-www-browser &
 
 	[ -f ~/.xsession-local ] && . ~/.xsession-local
 else
