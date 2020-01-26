@@ -36,9 +36,12 @@ printf '\e[0m'
 echo
 [ -d .git ] && git --no-pager status
 
-if [ ! -f debian/gitlab-ci.yml ]; then
+if [ ! -f debian/gitlab-ci.yml ] && [ ! -f debian/salsa-ci.yml ]; then
   printf '\e[1;31mNo debian/gitlab-ci.yml found\e[0m\n'
 fi
+
+export GPG_TTY="$(tty)"
+gpg-connect-agent updatestartuptty /bye > /dev/null
 
 if [ "$GIT" ]; then
   echo
