@@ -30,7 +30,7 @@ if [ "$BASH_VERSION" \> "2.04" ] ; then # new bash supporting '\j' and completio
 else
 	job='$([ $SHLVL -gt 1 ] && echo -n " ${SHLVL}s")'
 fi
-[ -f /etc/debian_chroot ] && chroot="$(cat /etc/debian_chroot)."
+[ -f /etc/debian_chroot ] && chroot="$(cat /etc/debian_chroot)." && export GPG_TTY="$(tty)"
 cyan='\[\033[0;46m\]' red='\[\033[1;31m\]' bold='\[\033[1m\]' blue='\[\033[34m\]' purple='\[\033[35m\]' reset='\[\033[0m\]'
 screentitle='\033k\u@'$chroot'\h\033\\'
 xtitle='\033]0;\u@'$chroot'\h:\w\007'
