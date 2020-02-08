@@ -10,6 +10,7 @@
 	cp = cherry-pick
 	cpc = cherry-pick --continue
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
+	ctags = !git ls-files | ctags --totals --tag-relative -L - -f .git/tags
 	di = diff
 	dih = diff HEAD
 	dis = diff --staged
