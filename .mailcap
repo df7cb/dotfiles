@@ -1,13 +1,8 @@
 application/bbolin; /usr/games/tenace '%s'; test=test -n "$DISPLAY"
-application/gpx; viking.sh '%s'; test=test -n "$DISPLAY"
-text/calendar; itip --myaddr "(cb|cbe|christoph.berg|myon)@" %s; copiousoutput; test=test -x /usr/bin/itip
 text/html; /usr/bin/w3m '%s'; needsterminal; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/w3m
 text/html; /usr/bin/w3m -dump '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/w3m
-#text/*; xless '%s'; test=test -n "$DISPLAY"
 image/*; geeqie '%s'; test=test -x /usr/bin/geeqie
 application/pdf; evince %s; test=test -n "$DISPLAY"
 application/pgp-encrypted; gpg --with-fingerprint '%s'; copiousoutput
 application/x-zip-compressed; unzip -l '%s'; copiousoutput
-application/x-gpx-zip; zip2plucker '%s'
-application/zip; zip2plucker '%s'
 application/xz; xzcat %s; copiousoutput
