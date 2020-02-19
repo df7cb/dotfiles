@@ -50,19 +50,26 @@ if [ "$GIT" ]; then
 
   echo "https://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build"
 
+  echo -n "git pull ... "
   git pull --ff-only
   if git status -s | grep -q '^[^?]'; then
     git add -u debian
     debcommit -r --release-use-changelog
   fi
+  echo -n "git npush master ... "
   git npush
+  echo -n "git npush upstream pristine-tar ... "
+  git npush origin upstream:upstream pristine-tar:pristine-tar || :
 fi
 
 echo
 echo -n "$PACKAGE: Upload? "
 read upload
 
-[ "$GIT" ] && git push
+if [ "$GIT" ]; then
+  echo -n "git push ... "
+  git push
+fi
 set -x
 debsign $changes
 dput $changes
