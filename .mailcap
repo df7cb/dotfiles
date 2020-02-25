@@ -1,4 +1,5 @@
 application/bbolin; /usr/games/tenace '%s'; test=test -n "$DISPLAY"
+text/calendar; /usr/bin/icalendar view '%s'; copiousoutput
 text/html; /usr/bin/w3m '%s'; needsterminal; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/w3m
 text/html; /usr/bin/w3m -dump '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html; test=test -x /usr/bin/w3m
 image/*; geeqie '%s'; test=test -x /usr/bin/geeqie

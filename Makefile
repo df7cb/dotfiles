@@ -105,6 +105,7 @@ install-desktop: install-dev
 		libsecret-tools \
 		network-manager-gnome \
 		postfix \
+		python3-icalendar \
 		rxvt-unicode \
 		udiskie  \
 		vim \
