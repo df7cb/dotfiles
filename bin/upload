@@ -58,8 +58,10 @@ if [ "$GIT" ]; then
   fi
   echo -n "git npush master ... "
   git npush
-  echo -n "git npush upstream pristine-tar ... "
-  git npush origin upstream:upstream pristine-tar:pristine-tar || :
+  if git branch | egrep -q 'upstream|pristine-tar'; then
+    echo -n "git npush upstream pristine-tar ... "
+    git npush origin upstream:upstream pristine-tar:pristine-tar || :
+  fi
 fi
 
 echo
