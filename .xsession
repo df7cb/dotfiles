@@ -5,7 +5,6 @@ echo
 echo "`date` $0: start"
 
 cd $HOME
-[ -s .var/tz ] && . .var/tz
 . ./.bashrc
 
 if [ "$SHELL" = /bin/sh ] ; then
@@ -28,7 +27,7 @@ XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
 
 # set up X server
 xhost - >/dev/null
-xkbd load
+xmodmap .xmodmap-pc
 xrdb .Xdefaults
 xset b 0 0  # xset b off does not work
 xset r rate 400 30
