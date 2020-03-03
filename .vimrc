@@ -29,6 +29,7 @@ endif
 "set statusline=\ %n:%<%f%M%R%W\ %y%a%=%l/%L,%c%V\ %P\ 
 set nostartofline	" Do not move to start of line on buffer change etc.
 "set textwidth=0		" Don't wrap words by default
+set tags^=./.git/tags;	" Read ctags from .git dir
 set title		" Set xterm title ... to:
 nmap _t :set titlestring=vim\ -\ %n:%f\ %(%{Tlist_Get_Tagname_By_Line()}\ %)%(%R%M%W\ %)%y%k<cr>:TlistUpdate<cr>
 set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
