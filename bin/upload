@@ -52,16 +52,20 @@ if [ "$GIT" ]; then
 
   echo -n "git pull ... "
   git pull --ff-only
+
   if git status -s | grep -q '^[^?]'; then
     git add -u debian
     debcommit -r --release-use-changelog
   fi
-  echo -n "git npush master ... "
-  git npush
-  if git branch | egrep -q 'upstream|pristine-tar'; then
-    echo -n "git npush upstream pristine-tar ... "
-    git npush origin upstream:upstream pristine-tar:pristine-tar || :
-  fi
+
+  BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
+  for branch in upstream pristine-tar; do
+    if git branch | grep -qw $branch; then
+      BRANCHES="$BRANCHES $branch"
+    fi
+  done
+  echo -n "git npush origin $BRANCHES ... "
+  git npush origin $BRANCHES
 fi
 
 echo
