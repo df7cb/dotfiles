@@ -36,9 +36,15 @@ printf '\e[0m'
 echo
 [ -d .git ] && git --no-pager status
 
+# sanity checks
 if [ ! -f debian/gitlab-ci.yml ] && [ ! -f debian/salsa-ci.yml ]; then
   printf '\e[1;31mNo debian/gitlab-ci.yml found\e[0m\n'
 fi
+case $changes in
+  *_source*) ;;
+  *) printf '\e[1;31mArchitecture-dependant changes file\e[0m\n'
+     ;;
+esac
 
 export GPG_TTY="$(tty)"
 gpg-connect-agent updatestartuptty /bye > /dev/null
