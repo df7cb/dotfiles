@@ -2,4 +2,4 @@
 OnCalendar=*:00/20:00
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

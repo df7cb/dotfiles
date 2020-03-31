@@ -49,7 +49,6 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	exists gnome-keyring-daemon && [ -z "$GNOME_KEYRING_CONTROL" ] && \
 		eval `gnome-keyring-daemon`
 	workrave &
-	xscreensaver -nosplash &
 	#type -p xplanet > /dev/null && xplanet -lat 51.191253 -lon 6.422786 &
 
 	SHLVL=0 x-terminal-emulator &

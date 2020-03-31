@@ -4,4 +4,4 @@ Environment="DISPLAY=:0"
 ExecStart=/bin/sh -c ~/bin/xroot
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
