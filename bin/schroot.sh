@@ -1,7 +1,5 @@
 #!/bin/sh
 
-: ${CHROOT:=sid}
-
 while getopts "bc:n:p:u" opt ; do
 	case $opt in
 		b) BACKPORTS="true" ;;
@@ -14,6 +12,8 @@ while getopts "bc:n:p:u" opt ; do
 done
 # shift away args
 shift $(($OPTIND-1))
+
+: ${CHROOT:=sid-$(dpkg --print-architecture)}
 
 case $CHROOT in exp*)
 	CHROOT="sid"
