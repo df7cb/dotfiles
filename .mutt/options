@@ -4,7 +4,7 @@
 #set abort_nosubject
 set abort_unmodified
 set alias_file="~/.priv/mutt/aliases"
-set attribution="Re: %F %[%Y-%m-%d] %i"
+set attribution="Re: %F"
 set auto_tag #smart_auto_tag
 unset beep
 #set beep_new
