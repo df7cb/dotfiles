@@ -42,6 +42,10 @@ keycode 0x3A =	m		M		mu		Greek_OMEGA
 keycode 0x3B =	comma		less		NoSymbol	guillemotleft
 keycode 0x3C =	period		greater		periodcentered	guillemotright
 keycode 0x3D =	slash		question	questiondown	questiondown
+! XF86Back on X200
+keycode 0xA6 =	Prior
+! XF86Forward on X200
+keycode 0xA7 =	Next
 
 ! X.org 1.6:
 ! capslock
