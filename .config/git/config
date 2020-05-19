@@ -50,6 +50,9 @@
 	name = debian/changelog merge driver
 	driver = dpkg-mergechangelogs -m %O %A %B %A
 
+[pull]
+	ff = only
+
 [user]
 	name = Christoph Berg
 	email = myon@debian.org
