@@ -36,11 +36,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy &
 	synclient TapButton1=1 SingleTapTimeout=50 #HorizTwoFingerScroll=1
-	if exists clipit ; then
-		clipit &
-	elif exists autocutsel ; then
-		autocutsel &
-	fi
+	diodon &
 	nm-applet &
 	udiskie --smart-tray &
 	volumeicon &
