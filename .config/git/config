@@ -14,6 +14,7 @@
 	di = diff
 	dih = diff HEAD
 	dis = diff --staged
+	fpush = push --force-with-lease
 	import-orig = !gbp import-orig --pristine-tar
 	ls = ls-files
 	npush = -c push.followTags=false push
