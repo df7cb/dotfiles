@@ -326,3 +326,5 @@ should be good enough.
 <Myon> did you mean λf.λx. f (f x) ?
 <olasd> I'm sorry but this representation of integers succs
 %
+<JordiGH> Also, unpacking tarballs isn't why I'm using Debian.
+%
