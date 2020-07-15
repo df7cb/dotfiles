@@ -15,7 +15,7 @@ $cmd = "unrar x" if $ARGV[0] =~ /\.rar$/;
 $cmd = "xar -xvf" if $ARGV[0] =~ /\.xar$/;
 $cmd = "unzip" if $ARGV[0] =~ /\.zip$/i;
 $cmd = "dpkg-source -x" if $ARGV[0] =~ /\.dsc$/;
-$cmd = "7z x" if $ARGV[0] =~ /\.7z$/;
+$cmd = "7z x" if $ARGV[0] =~ /\.7z/;
 
 if ($cmd eq "") {
 	print STDERR "$0 error: suffix not recognized: $ARGV[0]\n";
