@@ -67,7 +67,7 @@ if [ "${PG_SUPPORTED_VERSIONS:-}" ]; then
 		sed -i -e "s/main/main $PG_SUPPORTED_VERSIONS/" /etc/apt/sources.list.d/pgdg.list
 		echo "$PG_SUPPORTED_VERSIONS" > /etc/postgresql-common/supported_versions
 		apt -y update
-		apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
+		DEBIAN_FRONTEND=noninteractive apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
 	EOF
 fi
 
@@ -75,7 +75,7 @@ fi
 if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
 		set -ex
-		apt -y -o DPkg::Options::=--force-confnew ${EXPERIMENTAL:-} build-dep . # doesn't work on jessie
+		DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::Options::=--force-confnew ${EXPERIMENTAL:-} build-dep . # doesn't work on jessie
 	EOF
 fi
 
