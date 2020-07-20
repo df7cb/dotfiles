@@ -54,6 +54,9 @@
 [pull]
 	ff = only
 
+[transfer]
+	fsckObjects = true
+
 [user]
 	name = Christoph Berg
 	email = myon@debian.org
