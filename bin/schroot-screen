@@ -33,7 +33,7 @@ run () {
 }
 
 # begin session
-export ID="$USER-$CHROOT-1"
+export ID="$USER-$CHROOT${PACKAGE:+-$PACKAGE}"
 run schroot -b -c $CHROOT -n $ID
 run dd-schroot-cmd -c $ID apt-get update
 

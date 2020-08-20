@@ -33,9 +33,9 @@ fi
 # session name
 if [ -f debian/changelog ]; then
 	PKG=$(dpkg-parsechangelog -SSource)
-	: ${SESSION:="$PKG-$CHROOT-1"}
+	: ${SESSION:="$USER-$CHROOT-$PKG"}
 else
-	: ${SESSION:="$CHROOT-1"}
+	: ${SESSION:="$USER-$CHROOT"}
 fi
 
 # begin session
