@@ -1,9 +1,11 @@
 [alias]
 	au = add -u
+	aud = add -u debian/
 	br = branch
 	branches = branch
 	ci = commit -v
 	cia = commit -v -a
+	cid = commit -v debian/
 	ciam = commit -v --amend
 	co = checkout
 	commit = commit -v
@@ -12,6 +14,7 @@
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	ctags = !git ls-files | ctags --totals --tag-relative -L - -f .git/tags
 	di = diff
+	did = diff debian/
 	dih = diff HEAD
 	dis = diff --staged
 	fpush = push --force-with-lease
@@ -25,6 +28,7 @@
 	snapshot = !git archive --prefix=$(basename $PWD)/ -o $(git describe --tags).tar.gz HEAD
 	#st = !git --no-pager status
 	st = status
+	std = status debian/
 	sti = status --ignored
 	tags = tag
 	tig = !tig
