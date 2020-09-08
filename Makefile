@@ -38,7 +38,10 @@ deploy-profile:
 	test "$(HOST)"
 	ssh $(HOST) sudo tee /etc/profile.d/myon-profile.sh < lib/myon-profile.sh
 
-install-dev: install-profile
+/etc/apt/preferences.d/debian.pref: lib/debian.pref
+	sudo cp $< $@
+
+install-dev: install-profile /etc/apt/preferences.d/debian.pref
 	if [ ! -x /usr/bin/sudo ] && [ $$(id -u) = 0 ]; then apt-get install sudo; fi
 	test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io | sudo tee /etc/dpkg/dpkg.cfg.d/01unsafeio
 	test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' | sudo tee /etc/apt/apt.conf.d/20norecommends
@@ -51,6 +54,7 @@ install-dev: install-profile
 		blhc \
 		build-essential \
 		ccache \
+		curl \
 		debhelper \
 		devscripts \
 		diffstat \
@@ -61,7 +65,6 @@ install-dev: install-profile
 		git \
 		git-buildpackage \
 		less \
-		libmoo-perl \
 		libwww-perl \
 		lintian \
 		locales \
@@ -76,7 +79,9 @@ install-dev: install-profile
 		tig \
 		tree \
 		vim \
-		wdiff
+		w3m \
+		wdiff \
+		wget
 	if ! grep -q '^de_DE.UTF-8 UTF-8' /etc/locale.gen; then \
 		echo 'de_DE.UTF-8 UTF-8' | sudo tee -a /etc/locale.gen; \
 		sudo locale-gen; \
@@ -96,17 +101,22 @@ install-desktop: install-dev
 	sudo apt-get install \
 		arandr \
 		awesome \
-		clipit \
+		bind9-dnsutils \
+		chromium \
+		diodon \
 		fdpowermon \
 		firefox-esr \
 		fonts-dejavu \
 		gnome-keyring \
 		gpg-agent \
 		libsecret-tools \
+		mutt \
 		network-manager-gnome \
 		postfix \
 		python3-icalendar \
 		rxvt-unicode \
+		sbuild \
+		schroot \
 		udiskie  \
 		vim \
 		volumeicon-alsa \
@@ -116,7 +126,7 @@ install-desktop: install-dev
 		sudo sed -i -e 's/99:battery-charging.png$$/100:battery-charging.png/' /etc/fdpowermon/theme.cfg; \
 	fi
 	sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
-	sudo update-alternatives --set x-www-browser /usr/bin/firefox-esr
+	sudo update-alternatives --set x-www-browser /usr/bin/chromium
 
 install-chroot:
 	sudo apt-get install \
