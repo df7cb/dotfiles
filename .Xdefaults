@@ -72,6 +72,8 @@ URxvt.matcher.pattern.5: rt.debian.org.\\#(\\d{4,})
 URxvt.matcher.launcher.5: x-www-browser https:\/\/rt.debian.org/Ticket/Display.html?id=$1
 URxvt.matcher.pattern.6: \\#(1\\d{5}\\b)
 URxvt.matcher.launcher.6: x-www-browser https:\/\/rt.credativ.com/Ticket/Display.html?id=$1
+URxvt.matcher.pattern.7: \\b([A-Ra-r][A-Ra-r][0-9][0-9]([A-Xa-x][A-Xa-x]([0-9][0-9]([A-Xa-x][A-Xa-x])?)?)?)\\b
+URxvt.matcher.launcher.7: x-www-browser https:\/\/k7fry.com/grid/?qth=$1
 URxvt.mouseWheelScrollPage: true
 URxvt.perl-ext:		default,font-size,tabbed,matcher,vtwheel,3digits
 URxvt.print-pipe:	cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
