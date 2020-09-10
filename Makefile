@@ -97,7 +97,10 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		  echo "create_main_cluster = false" | sudo tee /etc/postgresql-common/createcluster.d/myon.conf ; }
 	sudo update-alternatives --set editor /usr/bin/vim.basic
 
-install-desktop: install-dev
+/etc/default/keyboard: lib/default.keyboard
+	sudo cp $< $@
+
+install-desktop: install-dev /etc/default/keyboard
 	sudo apt-get install \
 		arandr \
 		awesome \

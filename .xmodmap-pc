@@ -54,6 +54,8 @@ keycode 0x42 =	Control_L
 keycode 0x6C =	Mode_switch
 ! right win
 keycode 0x86 =	Mode_switch
+! menu
+keycode 0x87 =	Multi_key
 
 clear Shift
 clear Lock
