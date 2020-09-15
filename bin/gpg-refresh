@@ -1,21 +1,17 @@
 #!/bin/sh
 
-#HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
-HOSTS="keys.gnupg.net"
-SERVERS=$(echo $HOSTS | xargs -n1 getent hosts | awk '{ print $1 }' | sort -u | shuf)
-#KEYS="$PGPKEY $PGPKEY2 $PGPKEY3"
+HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
 KEYS="$PGPKEY2 $PGPKEY3"
 
-for server in $SERVERS ; do
-	getent hosts $server
-	case $server in *:*) server="[$server]" ;; esac
+set -ux
+
+for server in $HOSTS; do
 	gpg --keyserver $server --recv-keys $KEYS
-	echo
 done
 
-for server in $SERVERS ; do
-	getent hosts $server
-	case $server in *:*) server="[$server]" ;; esac
+for server in $HOSTS; do
 	gpg --keyserver $server --send-keys $KEYS
-	echo
 done
+
+sed -i '/-----BEGIN PGP PUBLIC KEY BLOCK-----/,$d' ~/.plan
+gpg --export -a $PGPKEY3 >> ~/.plan
