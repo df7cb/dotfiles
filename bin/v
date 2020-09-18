@@ -4,6 +4,8 @@
 # (public domain) 2008, 2009  Christoph Berg <cb@df7cb.de>
 # One of the scripts I should have written years ago.
 
+set -eu
+
 try_vcs_dir ()
 {
 	dir="$1"
@@ -109,7 +111,24 @@ case $command in
 	up|update|"") case $VCS in
 		bzr) bzr pull "$@" ;;
 		hg) hg pull -u "$@" ;;
-		git) git pull "$@" && git remote prune origin ;;
+		git)
+			git pull "$@"
+			# fast-forward Debian packaging branches
+			for branch in upstream debian/upstream pristine-tar; do
+				origin=$(git rev-parse origin/$branch 2> /dev/null) || continue
+				mine=$(git rev-parse $branch 2> /dev/null || :) # branch might not exist yet
+				if [ "$mine" != "$origin" ]; then
+					echo "+ Updating $branch ..."
+					git checkout $branch --
+					git merge --ff-only
+					git checkout -
+				else
+					echo "+ Branch $branch is up-to-date."
+				fi
+			done
+			echo "+ Pruning origin ..."
+			git remote prune origin
+			;;
 		*) $VCS update "$@" ;;
 	esac ;;
 	add|blame|co|cp|info|log|mv|resolved|revert|rm)
