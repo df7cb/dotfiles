@@ -113,12 +113,16 @@ install-desktop: install-dev /etc/default/keyboard
 		gnome-keyring \
 		gpg-agent \
 		libsecret-tools \
+		manpages-dev \
 		mutt \
+		net-tools \
 		network-manager-gnome \
 		postfix \
+		pspg \
 		python3-icalendar \
 		rxvt-unicode \
 		sbuild \
+		screen \
 		schroot \
 		udiskie  \
 		vim \

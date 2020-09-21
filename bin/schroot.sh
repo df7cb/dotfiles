@@ -26,6 +26,10 @@ if [ -z "$NOUPDATE" ]; then
 		set -ex
 		apt -y update
 		apt -y -o DPkg::Options::=--force-confnew dist-upgrade
+		apt -y install sudo
+		if ! grep '^%sudo.*NOPASSWD' /etc/sudoers; then
+			sed -i -e s/^%sudo.*/%sudo	ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+		fi
 		apt-get -y autoremove # doesn't work with apt on jessie
 	EOF
 fi
