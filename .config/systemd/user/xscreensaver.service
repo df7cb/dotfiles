@@ -3,4 +3,4 @@ Type=exec
 ExecStart=/usr/bin/xscreensaver -nosplash
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
