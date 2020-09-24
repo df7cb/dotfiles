@@ -1,3 +1,10 @@
 #!/bin/sh
 
-quilt $(basename $0 | cut -c 2-) "$@"
+NAME=${0##*/q}
+
+# if `qedit` is called without parameters, edit all files in the current patch
+if [ "$NAME" = "edit" ] && [ -z "$*" ]; then
+  set -- $(quilt files)
+fi
+
+quilt $NAME "$@"
