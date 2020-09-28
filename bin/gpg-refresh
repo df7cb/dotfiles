@@ -1,12 +1,12 @@
 #!/bin/sh
 
-HOSTS="subkeys.pgp.net keys.gnupg.net keys.snow-crash.org"
+HOSTS="hkps://keys.openpgp.org subkeys.pgp.net keys.gnupg.net"
 KEYS="$PGPKEY2 $PGPKEY3"
 
 set -ux
 
 for server in $HOSTS; do
-	gpg --keyserver $server --recv-keys $KEYS
+	gpg --keyserver $server --keyserver-options no-self-sigs-only --recv-keys $KEYS
 done
 
 for server in $HOSTS; do
