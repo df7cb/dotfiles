@@ -48,7 +48,7 @@ esac
 export DEB_CHECK_COMMAND="lintian"
 SHIFT=1
 
-while getopts "aAbBSij:nospd:" opt 2>/dev/null; do
+while getopts "aAbBSij:nosp:" opt 2>/dev/null; do
   case $opt in
     a)
       AUTOPKGTEST=yes
@@ -77,22 +77,7 @@ while getopts "aAbBSij:nospd:" opt 2>/dev/null; do
       ARG="$ARG -S --buildinfo-option=--version"
       ;;
     p)
-      BUILDER="pdebuild"
-      case $DIST in
-	*-backports)
-	  PBUILDER_DIST="${DIST%-*}"
-	  ;;
-	unstable|experimental|*UNREL*)
-	  PBUILDER_DIST="sid"
-	  ;;
-	*)
-	  PBUILDER_DIST="$DIST"
-	  ;;
-      esac
-      ;;
-    d)
-      BUILDER="pdebuild"
-      PBUILDER_DIST="$OPTARG"
+      export PG_SUPPORTED_VERSIONS="$OPTARG"
       ;;
     *)
       SHIFT=2 # don't eat the option we just couldn't parse
@@ -118,12 +103,7 @@ case $(script --version 2>/dev/null) in
 esac
 
 rm -f ../log ../log.gz
-if [ "$BUILDER" ]; then
-  $SCRIPT -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
-    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
-    pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/; \
-    pdebuild --buildresult $PWD/.. --debbuildopts '$ARG' -- --basepath /var/cache/pbuilder/base-$PBUILDER_DIST-amd64.cow/" ../log
-elif [ "$SCRIPT" ]; then
+if [ "$SCRIPT" ]; then
   $SCRIPT -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
     dpkg-buildpackage $ARG; \
