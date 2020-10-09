@@ -37,6 +37,12 @@ echo
 [ -d .git ] && git --no-pager status
 
 # sanity checks
+if [ -f debian/source/lintian-overrides ] && grep changelog-should-mention-nmu debian/source/lintian-overrides; then
+  printf '\e[1;31mObsolete lintian overrides found\e[0m\n'
+fi
+if grep -q postgres debian/control* && ! grep -q Rules-Requires-Root debian/control; then
+  printf '\e[1;31mRules-Requires-Root: no missing\e[0m\n'
+fi
 if [ ! -f debian/gitlab-ci.yml ] && [ ! -f debian/salsa-ci.yml ]; then
   printf '\e[1;31mNo debian/gitlab-ci.yml found\e[0m\n'
 fi
@@ -54,7 +60,8 @@ if [ "$GIT" ]; then
   echo -n "$PACKAGE: Push? "
   read push
 
-  echo "https://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build"
+  grep '^Vcs-Browser' debian/control || :
+  grep -q postgres debian/control* && printf "\e[1mhttps://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build\e[0m\n"
 
   echo -n "git pull ... "
   git pull --ff-only
