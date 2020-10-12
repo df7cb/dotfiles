@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -eu
 
@@ -68,7 +68,7 @@ if [ "$GIT" ]; then
 
   if git status -s | grep -q '^[^?]'; then
     git add -u debian
-    debcommit -r --release-use-changelog
+    debcommit
   fi
 
   BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
@@ -86,6 +86,11 @@ echo -n "$PACKAGE: Upload? "
 read upload
 
 if [ "$GIT" ]; then
+  version=$(dpkg-parsechangelog -SVersion)
+  tag="debian/${version/:/%}"
+  if ! git tag | grep -q "^$tag$"; then
+    ( set -x; git tag -s -m "tagging $PACKAGE $version" "$tag" )
+  fi
   echo -n "git push ... "
   git push
 fi
