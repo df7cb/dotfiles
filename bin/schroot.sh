@@ -23,6 +23,8 @@ esac
 
 if [ -z "$NOUPDATE" ]; then
 	schroot -c source:$CHROOT -u root <<-EOF
+		export DEBIAN_FRONTEND=noninteractive
+		export UCF_FORCE_CONFFNEW=y UCF_FORCE_CONFFMISS=y
 		set -ex
 		apt -y update
 		apt -y -o DPkg::Options::=--force-confnew dist-upgrade
@@ -67,19 +69,23 @@ fi
 # install extra PG version
 if [ "${PG_SUPPORTED_VERSIONS:-}" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
+		export DEBIAN_FRONTEND=noninteractive
+		export UCF_FORCE_CONFFNEW=y UCF_FORCE_CONFFMISS=y
 		set -ex
 		sed -i -e "s/main/main $PG_SUPPORTED_VERSIONS/" /etc/apt/sources.list.d/pgdg.list
 		echo "$PG_SUPPORTED_VERSIONS" > /etc/postgresql-common/supported_versions
 		apt -y update
-		DEBIAN_FRONTEND=noninteractive apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
+		apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
 	EOF
 fi
 
 # install build deps
 if [ "$PKG" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
+		export DEBIAN_FRONTEND=noninteractive
+		export UCF_FORCE_CONFFNEW=y UCF_FORCE_CONFFMISS=y
 		set -ex
-		DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::Options::=--force-confnew ${EXPERIMENTAL:-} build-dep . # doesn't work on jessie
+		apt -y -o DPkg::Options::=--force-confnew ${EXPERIMENTAL:-} build-dep . # doesn't work on jessie
 	EOF
 fi
 
