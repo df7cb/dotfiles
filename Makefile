@@ -109,6 +109,7 @@ install-desktop: install-dev /etc/default/keyboard
 		diodon \
 		etckeeper \
 		fdpowermon \
+		finger \
 		firefox-esr \
 		fonts-dejavu \
 		gnome-keyring \
@@ -134,8 +135,8 @@ install-desktop: install-dev /etc/default/keyboard
 	if grep -q '99:battery-charging.png$$' /etc/fdpowermon/theme.cfg; then \
 		sudo sed -i -e 's/99:battery-charging.png$$/100:battery-charging.png/' /etc/fdpowermon/theme.cfg; \
 	fi
-	if ! grep -q '^/run' /etc/schroot/default/fstab; then \
-		sudo sh -c 'echo "/run           /run            none    rw,rbind         0       0" >> /etc/schroot/default/fstab'; \
+	if ! grep -q '^/run/user' /etc/schroot/default/fstab; then \
+		sudo sh -c 'echo "/run/user      /run/user       none    rw,rbind         0       0" >> /etc/schroot/default/fstab'; \
 	fi
 	sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 	sudo update-alternatives --set x-www-browser /usr/bin/chromium
