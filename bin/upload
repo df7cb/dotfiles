@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -eu
 
@@ -87,7 +87,7 @@ read upload
 
 if [ "$GIT" ]; then
   version=$(dpkg-parsechangelog -SVersion)
-  tag="debian/${version/:/%}"
+  tag="debian/$(echo $version | tr ':~' '%_')"
   if ! git tag | grep -q "^$tag$"; then
     ( set -x; git tag -s -m "tagging $PACKAGE $version" "$tag" )
   fi
