@@ -1,0 +1,58 @@
+#!/bin/sh
+
+set -eux
+
+qpop -a || [ $? = 2 ]
+up
+
+if ! grep 'Upload for PostgreSQL 13' debian/changelog; then
+	dch "Upload for PostgreSQL 13."
+fi
+
+if ! grep 'postgresql-all (>= 217' debian/control.in; then
+	sed -i -e 's/postgresql[^,]*-all[^,]*/postgresql-all (>= 217~)/' debian/control*
+	if grep loop debian/rules; then
+		sed -i -e 's/	dh $@/	dh $@ --with pgxs_loop/' debian/rules
+		dch "Use dh --with pgxs_loop."
+	else
+		sed -i -e 's/	dh $@/	dh $@ --with pgxs/' debian/rules
+		dch "Use dh --with pgxs."
+	fi
+fi
+
+if ! grep '^Standards-Version: 4.5.0' debian/control.in; then
+	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.5.0/' debian/control*
+fi
+
+if ! grep '^Rules-Requires-Root:' debian/control.in; then
+	sed -i -e '/^Standards-Version/a Rules-Requires-Root: no' debian/control*
+	dch "R³: no."
+fi
+
+if ! grep 'debhelper-compat (= 13)' debian/control.in; then
+	sed -i -e 's/debhelper[^,]*/debhelper-compat (= 13)/' debian/control*
+	v rm debian/compat || :
+	dch "DH 13."
+fi
+
+if grep postgresql-server-dev-all debian/tests/control; then
+	sed -i -e 's/postgresql-server-dev-all[^,]*/make/' debian/tests/control*
+	dch "debian/tests: Use 'make' instead of postgresql-server-dev-all."
+fi
+
+if grep supported-versions debian/tests/*; then
+	sed -i -e 's/supported-versions/FIXME installed-versions/g' debian/tests/*
+	dch "debian/tests: Use installed-versions instead of supported-versions."
+fi
+
+pg_buildext checkcontrol
+
+if grep UNRELEASED debian/changelog; then
+	EDITOR=touch dch -r
+	rm -f '+1'
+fi
+
+vi debian/changelog debian/rules debian/control.in debian/tests/*
+
+#dbp -a
+#upload

@@ -60,7 +60,7 @@ if [ "$GIT" ]; then
   echo -n "$PACKAGE: Push? "
   read push
 
-  grep '^Vcs-Browser' debian/control || :
+  egrep '^Vcs|^Homepage' debian/control || :
   grep -q postgres debian/control* && printf "\e[1mhttps://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build\e[0m\n"
 
   echo -n "git pull ... "
@@ -71,14 +71,25 @@ if [ "$GIT" ]; then
     debcommit
   fi
 
+  # check which branches exist locally
   BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
   for branch in upstream pristine-tar; do
     if git branch | grep -qw $branch; then
       BRANCHES="$BRANCHES $branch"
     fi
   done
-  echo -n "git npush origin $BRANCHES ... "
-  git npush origin $BRANCHES
+  # check which branches need pushing
+  for branch in $BRANCHES; do
+    mine=$(git rev-parse $branch)
+    origin=$(git rev-parse origin/$branch 2> /dev/null || :) # branch might not exist yet
+    if [ "$mine" != "$origin" ]; then
+      PUSH_BRANCHES="${PUSH_BRANCHES:+$PUSH_BRANCHES }$branch"
+    fi
+  done
+  if [ "${PUSH_BRANCHES:-}" ]; then
+    echo -n "git npush origin $PUSH_BRANCHES ... "
+    git npush origin $PUSH_BRANCHES
+  fi
 fi
 
 echo
