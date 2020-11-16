@@ -62,6 +62,13 @@
 [transfer]
 	fsckObjects = true
 
+[url "ssh://github.com/"]
+	pushInsteadOf = https://github.com/
+[url "ssh://gitlab.com/"]
+	pushInsteadOf = https://gitlab.com/
+[url "ssh://salsa.debian.org/"]
+	pushInsteadOf = https://salsa.debian.org/
+
 [user]
 	name = Christoph Berg
 	email = myon@debian.org
