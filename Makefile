@@ -89,9 +89,6 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 	if ! sudo grep -q '^%sudo.*NOPASSWD' /etc/sudoers; then \
 		sudo sed -i -e 's/^%sudo.*/%sudo	ALL = NOPASSWD: ALL/' /etc/sudoers; \
 	fi
-	if grep -q '^ *HashKnownHosts yes' /etc/ssh/ssh_config; then \
-		sudo sed -i -e 's/^\( *HashKnownHosts\) .*/\1 no/' /etc/ssh/ssh_config; \
-	fi
 	test -e /etc/postgresql-common/createcluster.d/myon.conf || \
 		{ sudo mkdir -p /etc/postgresql-common/createcluster.d/ ; \
 		  echo "create_main_cluster = false" | sudo tee /etc/postgresql-common/createcluster.d/myon.conf ; }
