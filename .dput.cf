@@ -16,3 +16,9 @@ method = rsync
 incoming = /srv/apt/incoming
 post_upload_command = ssh atalia.postgresql.org sudo -u aptuser processincoming.sh
 allow_unsigned_uploads = 1
+
+[ports-master]
+fqdn = ports-master.debian.org
+method = ftp
+login = ftp
+incoming = /incoming

@@ -61,7 +61,11 @@ if [ "$GIT" ]; then
   read push
 
   egrep '^Vcs|^Homepage' debian/control || :
-  grep -q postgres debian/control* && printf "\e[1mhttps://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build\e[0m\n"
+  if grep -q postgres debian/control*; then
+    URL="https://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build"
+    printf "\e[1m$URL\e[0m\n"
+    x-www-browser "$URL" &
+  fi
 
   echo -n "git pull ... "
   git pull --ff-only
