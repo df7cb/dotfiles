@@ -6,6 +6,7 @@ set convert-meta off
 set editing-mode vi
 set keymap vi-insert
 set bell-style visible
+set enable-bracketed-paste off
 # Completion
 set completion-ignore-case off
 set completion-query-items 200
