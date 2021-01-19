@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# edit all files matching `git grep pattern`
+
+set -eu
+
+PATTERN="${@: -1}" # last argument
+FILES=$(git grep -lz "$@" | xargs -0) # git uses -z automatically here, force it for clarity
+${EDITOR:-vi} "+/$PATTERN" $FILES
