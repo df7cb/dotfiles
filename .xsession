@@ -35,6 +35,7 @@ xset r rate 400 30
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	dpmsoff init
 	xsetroot -solid navy &
+	xscreensaver -nosplash &
 	synclient TapButton1=1 SingleTapTimeout=50 #HorizTwoFingerScroll=1
 	diodon &
 	nm-applet &
