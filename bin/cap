@@ -5,23 +5,34 @@
 
 set -eu
 
-date=$(date '+%F.%H%M%S')
+upload="yes"
+
+while getopts "s:" opt ; do
+  case $opt in
+    n) upload="" ;;
+    s) sleep $OPTARG ;;
+    *) exit 5 ;;
+  esac
+done
+# shift away args
+shift $(($OPTIND - 1))
+
 if [ "${1:-}" ]; then
-  output="$1"
-  shift
-else
-  output=$(mktemp --tmpdir $date.XXXXXX.png)
-  rm -f $output
-  trap "rm -f $output" 0 2 3 15
-  name=${output##*/}
+  base="$1"
 fi
 
-scrot -s $output ${1:+--delay $1 --count}
+date=$(date '+%F.%H%M%S')
+output=$(mktemp --tmpdir ${base:+$base.}$date.XXXXXX.png)
+rm -f $output
+trap "rm -f $output" 0 2 3 15
+name=${output##*/}
+
+scrot -s $output #${1:+--delay $1 --count}
 chmod +r $output
 
-if [ -z "${1:-}" ]; then
+if [ "$upload" ]; then
   dir="s"
-  scp $output feynman.df7cb.de:html/$dir
+  scp $output feynman.df7cb.de:html/$dir/$name
   url="https://www.df7cb.de/$dir/$name"
   echo "$url"
   echo -n "$url" | xclip -i
