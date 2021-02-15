@@ -112,7 +112,7 @@ case $command in
 		bzr) bzr pull "$@" ;;
 		hg) hg pull -u "$@" ;;
 		git)
-			git pull "$@"
+			git pull --prune "$@"
 			# fast-forward Debian packaging branches
 			for branch in upstream debian/upstream pristine-tar; do
 				origin=$(git rev-parse origin/$branch 2> /dev/null) || continue
@@ -126,8 +126,6 @@ case $command in
 					echo "+ Branch $branch is up-to-date."
 				fi
 			done
-			echo "+ Pruning origin ..."
-			git remote prune origin
 			;;
 		*) $VCS update "$@" ;;
 	esac ;;
