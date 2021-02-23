@@ -25,6 +25,9 @@ case $1 in
 			rpm -q --scripts -p "$1"
 		else echo "rpm isn't available, no query on rpm package possible"; fi ;;
 
+	*.zst)
+		zstdcat "$1" ;;
+
 		*)
 			exit 1 ;;
 esac
