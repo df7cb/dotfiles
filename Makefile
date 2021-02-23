@@ -136,7 +136,7 @@ install-desktop: install-dev /etc/default/keyboard
 		sudo sh -c 'echo "/run/user      /run/user       none    rw,rbind         0       0" >> /etc/schroot/default/fstab'; \
 	fi
 	sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
-	sudo update-alternatives --set x-www-browser /usr/bin/chromium
+	sudo update-alternatives --set x-www-browser /usr/bin/firefox-esr
 
 install-chroot:
 	sudo apt-get install \
