@@ -115,8 +115,10 @@ install-desktop: install-dev /etc/default/keyboard
 		libsecret-tools \
 		manpages-dev \
 		mutt \
+		ncdu \
 		net-tools \
 		network-manager-gnome \
+		pinfo \
 		postfix \
 		pspg \
 		python3-icalendar \
@@ -127,6 +129,7 @@ install-desktop: install-dev /etc/default/keyboard
 		udiskie  \
 		vim \
 		volumeicon-alsa \
+		whois \
 		workrave \
 		xscreensaver
 	if grep -q '99:battery-charging.png$$' /etc/fdpowermon/theme.cfg; then \
@@ -163,8 +166,9 @@ deploy:
 
 scp:
 	test "$(HOST)"
-	ssh "$(HOST)" mkdir -p bin
+	ssh "$(HOST)" mkdir -p bin lib
 	scp bin/os $(HOST):bin
+	scp lib/myon-profile.sh $(HOST):lib
 	scp \
 		.bash_bind \
 		.bash_profile \
