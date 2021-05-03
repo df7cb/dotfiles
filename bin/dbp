@@ -61,7 +61,7 @@ while getopts "aAbBSij:nosp:" opt 2>/dev/null; do
       DEBI=yes
       ;;
     j)
-      ARG="$ARG -$opt$OPTARG"
+      PARALLEL="-$opt$OPTARG"
       ;;
     n)
       export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
@@ -106,8 +106,8 @@ rm -f ../log ../log.gz
 if [ "$SCRIPT" ]; then
   $SCRIPT -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
-    dpkg-buildpackage $ARG; \
-    dpkg-buildpackage $ARG" ../log
+    dpkg-buildpackage $ARG ${PARALLEL:=-j$(nproc)}; \
+    dpkg-buildpackage $ARG $PARALLEL" ../log
 else
   echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
