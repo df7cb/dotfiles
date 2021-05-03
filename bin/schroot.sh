@@ -26,6 +26,9 @@ if [ -z "$NOUPDATE" ]; then
 		export DEBIAN_FRONTEND=noninteractive
 		export UCF_FORCE_CONFFNEW=y UCF_FORCE_CONFFMISS=y
 		set -ex
+		if grep -q '^deb ' /etc/apt/sources.list && ! grep -q '^deb-src ' /etc/apt/sources.list; then \
+			sed -i -e '/^deb / { p; s/^deb /deb-src / }' /etc/apt/sources.list; \
+		fi
 		apt -y update
 		apt -y -o DPkg::Options::=--force-confnew dist-upgrade
 		apt -y install sudo
