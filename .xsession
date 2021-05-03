@@ -29,6 +29,7 @@ XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
 xhost - >/dev/null
 xmodmap .xmodmap-pc
 xrdb .Xdefaults
+[ -f .Xdefaults-local ] && xrdb -merge .Xdefaults-local
 xset b 0 0  # xset b off does not work
 xset r rate 400 30
 
