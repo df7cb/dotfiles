@@ -36,6 +36,7 @@ run () {
 export ID="$USER-$CHROOT${PACKAGE:+-$PACKAGE}"
 run schroot -b -c $CHROOT -n $ID
 run dd-schroot-cmd -c $ID apt-get update
+run dd-schroot-cmd -c $ID apt-get -y upgrade
 
 if [ "$PACKAGE" ]; then
 	run dd-schroot-cmd -c $ID apt-get -y build-dep $PACKAGE
