@@ -60,6 +60,7 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		diffstat \
 		dput \
 		eatmydata \
+		etckeeper \
 		exuberant-ctags \
 		fakeroot \
 		git \
@@ -104,7 +105,6 @@ install-desktop: install-dev /etc/default/keyboard
 		bind9-dnsutils \
 		chromium \
 		diodon \
-		etckeeper \
 		fdpowermon \
 		finger \
 		firefox-esr \
