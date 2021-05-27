@@ -65,6 +65,7 @@ while getopts "aAbBSij:nosp:" opt 2>/dev/null; do
       ;;
     n)
       export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
+      PROFILES="${PROFILES:+$PROFILES,}nocheck"
       unset DEB_CHECK_COMMAND
       ;;
     o)
@@ -88,6 +89,7 @@ done
 # shift away options
 shift $((OPTIND - SHIFT))
 [ "$*" ] && ARG="$ARG $*"
+[ "${PROFILES:-}" ] && ARG="-P$PROFILES $ARG"
 
 # get orig tarball
 if [ -z "${BINARY_ONLY:-}" ] && [ -x /usr/bin/origtargz ]; then
