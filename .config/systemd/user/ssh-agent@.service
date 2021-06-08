@@ -1,6 +1,7 @@
 [Unit]
 Description=OpenSSH Agent
 Documentation=man:ssh-agent(1)
+AssertPathExists=%h/.priv/ssh/%i
 
 [Service]
 ExecStartPre=/bin/rm -f %h/.ssh/agent-%i
