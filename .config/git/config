@@ -13,6 +13,7 @@
 	cpc = cherry-pick --continue
 	cdi = !GIT_EXTERNAL_DIFF=git-context-diff git diff
 	ctags = !git ls-files | ctags --totals --tag-relative -L - -f .git/tags
+	edit = !${EDITOR:-vi} $(git show --stat | grep '^ .* | ' | cut -d ' ' -f 2)
 	di = diff
 	did = diff debian/
 	dih = diff HEAD
