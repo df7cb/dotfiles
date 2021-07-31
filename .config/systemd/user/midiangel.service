@@ -1,0 +1,5 @@
+[Unit]
+Description=sdrangel midi interface
+
+[Service]
+ExecStart=/home/myon/shack/sdrangel/midiangel

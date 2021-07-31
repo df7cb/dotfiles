@@ -1,0 +1,5 @@
+[Path]
+PathChanged=/home/myon/log/wsjtx/wsjtx.log
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,4 @@
+[Service]
+Type=oneshot
+WorkingDirectory=/home/myon/log/wsjtx
+ExecStart=/home/myon/log/wsjtx/import

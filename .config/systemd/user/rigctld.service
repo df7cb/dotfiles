@@ -1,0 +1,11 @@
+[Unit]
+Description=TCP radio control daemon
+
+[Service]
+# IC-706
+ExecStart=/usr/bin/rigctld -m 3009 -r /dev/ttyUSBICOM -p /dev/ttyUSBPTT -P RTS
+# IC-7300
+#ExecStart=rigctld -r /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_IC-7300_03017523-if00-port0 -m 3073 -s 115200
+
+[Install]
+WantedBy=default.target

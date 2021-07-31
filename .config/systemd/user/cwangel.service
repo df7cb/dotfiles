@@ -1,0 +1,5 @@
+[Unit]
+Description=K3NG Keyer interface
+
+[Service]
+ExecStart=/home/myon/shack/sdrangel/cwangel /dev/ttyUSBK3NG
