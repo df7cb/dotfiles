@@ -17,7 +17,7 @@
 \set e 'EXPLAIN (ANALYZE, BUFFERS)'
 \set su 'SET ROLE postgres;'
 
-\set config 'SELECT name, current_setting(name), CASE source WHEN $$configuration file$$ THEN sourcefile||$$:$$||sourceline ELSE source END FROM pg_settings WHERE source <> $$default$$;'
+\set config 'SELECT name, current_setting(name), CASE source WHEN $$configuration file$$ THEN regexp_replace(sourcefile, $$^/.*/$$, $$$$)||$$:$$||sourceline ELSE source END FROM pg_settings WHERE source <> $$default$$;'
 
 \set act_91 'SELECT datname, procpid, usename, waiting AS wait, date_trunc($$second$$, age(clock_timestamp(), xact_start)) AS xact_age, date_trunc($$second$$, age(clock_timestamp(), query_start)) AS query_age, date_trunc($$second$$, age(clock_timestamp(), backend_start)) AS backend_age, host(client_addr) || $$:$$ || client_port AS client, CASE WHEN procpid = pg_backend_pid() THEN $$:act$$ ELSE current_query END FROM pg_stat_activity ORDER BY 1, 2;'
 \set act_9 'SELECT datname, pid, usename, waiting AS wait, date_trunc($$second$$, age(clock_timestamp(), xact_start)) AS xact_age, date_trunc($$second$$, age(clock_timestamp(), query_start)) AS query_age, date_trunc($$second$$, age(clock_timestamp(), backend_start)) AS backend_age, host(client_addr) || $$:$$ || client_port AS client, state, CASE WHEN pid = pg_backend_pid() THEN $$:act$$ ELSE query END FROM pg_stat_activity ORDER BY CASE WHEN state = $$idle$$ THEN $$zzz$$ ELSE state END, 1, 2;'
