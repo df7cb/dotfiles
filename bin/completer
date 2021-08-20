@@ -65,7 +65,7 @@ case $PROG in
 	perl -lne 's/^#| .*|^\[|\].*//g; foreach (split /,/) { print "$_:" if /[.:]/ }' ~/.ssh/known_hosts $ETC_KNOWN_HOSTS $DEBIAN_KNOWN_HOSTS
 	;;
 
-    start|stop|status|reload|restart|enable|disable)
+    sc|start|stop|status|reload|restart|enable|disable)
 	if [ -d /run/systemd/system ]; then
 	    for unit in $(systemctl --all --no-legend | awk '{ print $1 }' | grep "^$PREFIX"); do
 		echo "${unit%.service}"
@@ -78,6 +78,12 @@ case $PROG in
 		esac
 	    done
 	fi
+	;;
+
+    scu)
+	for unit in $(systemctl --user --all --no-legend | awk '{ print $1 }' | grep "^$PREFIX"); do
+	    echo "${unit%.service}"
+	done
 	;;
 
     super)
