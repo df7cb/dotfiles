@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOSTS="hkps://keys.openpgp.org subkeys.pgp.net keys.gnupg.net"
+HOSTS="hkps://keys.openpgp.org keyserver.ubuntu.com"
 KEYS="$PGPKEY2 $PGPKEY3"
 
 set -ux
