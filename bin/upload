@@ -78,7 +78,7 @@ if [ "$GIT" ]; then
   # check which branches exist locally
   BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
   for branch in upstream debian/upstream pristine-tar; do
-    if git branch | grep -qx $branch; then
+    if git branch | egrep -qx "^\*? ? ?$branch"; then
       BRANCHES="$BRANCHES $branch"
     fi
   done
