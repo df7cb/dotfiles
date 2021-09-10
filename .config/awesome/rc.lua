@@ -290,7 +290,9 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+    -- Global bindings
+    awful.key({ }, "Pause", function () awful.util.spawn("spotify_control playpause") end)
 )
 
 clientkeys = awful.util.table.join(
