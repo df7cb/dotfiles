@@ -6,4 +6,9 @@ set -eu
 
 PATTERN="${@: -1}" # last argument
 FILES=$(git grep -lz "$@" | xargs -0) # git uses -z automatically here, force it for clarity
+
+case $0 in
+  *qedit) quilt add $FILES || [ $? = 2 ] ;;
+esac
+
 ${EDITOR:-vi} "+/$PATTERN" $FILES
