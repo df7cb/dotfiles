@@ -29,12 +29,15 @@ if [ -z "$NOUPDATE" ]; then
 		if grep -q '^deb ' /etc/apt/sources.list && ! grep -q '^deb-src ' /etc/apt/sources.list; then \
 			sed -i -e '/^deb / { p; s/^deb /deb-src / }' /etc/apt/sources.list; \
 		fi
+		test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io > /etc/dpkg/dpkg.cfg.d/01unsafeio
+		test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/20norecommends
+		test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' > /etc/apt/apt.conf.d/50i18n
 		apt -y update
-		apt -y -o DPkg::Options::=--force-confnew dist-upgrade
-		apt -y install sudo
+		apt -y install build-essential debhelper devscripts fakeroot git nano- sudo vim
 		if ! grep '^%sudo.*NOPASSWD' /etc/sudoers; then
 			sed -i -e 's/^%sudo.*/%sudo	ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 		fi
+		apt -y -o DPkg::Options::=--force-confnew dist-upgrade
 		apt-get -y autoremove # doesn't work with apt on jessie
 	EOF
 fi
@@ -75,15 +78,50 @@ if [ "${PG_SUPPORTED_VERSIONS:-}" ]; then
 		export DEBIAN_FRONTEND=noninteractive
 		export UCF_FORCE_CONFFNEW=y UCF_FORCE_CONFFMISS=y
 		set -ex
-		sed -i -e "s/main/main $PG_SUPPORTED_VERSIONS/" /etc/apt/sources.list.d/pgdg.list
+		dpkg-query -s postgresql-common >/dev/null 2>&1 || apt -y install postgresql-common
 		echo "$PG_SUPPORTED_VERSIONS" > /etc/postgresql-common/supported_versions
-		apt -y update
+		echo y | /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 		apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
 	EOF
 fi
 
+# use older debhelper version
+debhelper_compat ()
+{
+	local level="$1"
+	if [ -f debian/compat ]; then
+		pkglevel="$(cat debian/compat)"
+	else
+		pkglevel="$(grep -o 'debhelper-compat (= [0-9]*' debian/control | sed -e 's/.* //')"
+	fi
+	if [ -z "$pkglevel" ]; then
+		echo "Could not determine debhelper compat level"
+		exit 1
+	fi
+	#echo "Package is using debhelper compat level $pkglevel"
+	[ "$level" -ge "$pkglevel" ] && return
+	if [ "$level" -ge 11 ]; then
+		sed -i -e "s/debhelper[^,]*/debhelper-compat (= $level)/" debian/control*
+	else
+		sed -i -e "s/debhelper[^,]*/debhelper (>= $level)/" debian/control*
+		echo "$level" > debian/compat
+	fi
+	echo "Using debhelper $level"
+}
+
 # install build deps
 if [ "$PKG" ]; then
+	case $CHROOT in
+		jessie*|stretch*) debhelper_compat 10 ;;
+		buster*) debhelper_compat 12 ;;
+		bullseye*) debhelper_compat 13 ;;
+		bookworm*) debhelper_compat 13 ;;
+		xenial*) debhelper_compat 9 ;;
+		bionic*) debhelper_compat 11 ;;
+		eoan*|focal*) debhelper_compat 12 ;;
+		groovy*|hirsute*|impish*) debhelper_compat 13 ;;
+	esac
+
 	schroot -c session:$SESSION -u root -r <<-EOF
 		export DEBIAN_FRONTEND=noninteractive
 		export UCF_FORCE_CONFFNEW=y UCF_FORCE_CONFFMISS=y
