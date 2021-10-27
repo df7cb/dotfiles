@@ -5,11 +5,11 @@ set -eux
 qpop -a || [ $? = 2 ]
 up
 
-if ! grep 'Upload for PostgreSQL 13' debian/changelog; then
-	dch "Upload for PostgreSQL 13."
+if ! grep 'Upload for PostgreSQL 14' debian/changelog; then
+	dch "Upload for PostgreSQL 14."
 fi
 
-if ! grep 'postgresql-all (>= 217' debian/control.in; then
+if ! grep 'postgresql-.*all (>= 21.' debian/control.in; then
 	sed -i -e 's/postgresql[^,]*-all[^,]*/postgresql-all (>= 217~)/' debian/control*
 	if grep loop debian/rules; then
 		sed -i -e 's/	dh $@/	dh $@ --with pgxs_loop/' debian/rules
@@ -51,6 +51,8 @@ if grep UNRELEASED debian/changelog; then
 	EDITOR=touch dch -r
 	rm -f '+1'
 fi
+
+dpkg-parsechangelog -SSource >> ~/postgresql/PG14
 
 vi debian/changelog debian/rules debian/control.in debian/tests/*
 
