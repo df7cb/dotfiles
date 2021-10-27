@@ -114,14 +114,19 @@ case $command in
 		git)
 			git pull --prune "$@"
 			# fast-forward Debian packaging branches
-			for branch in upstream debian/upstream pristine-tar; do
-				origin=$(git rev-parse origin/$branch 2> /dev/null) || continue
-				mine=$(git rev-parse $branch 2> /dev/null || :) # branch might not exist yet
+			current_branch=$(git symbolic-ref --short HEAD)
+			for branch in master experimental upstream debian/upstream pristine-tar; do
+				[ "$branch" = "$current_branch" ] && continue # skip currently checked out branch
+				origin=$(git rev-parse --verify origin/$branch 2> /dev/null) || continue
+				mine=$(git rev-parse --verify $branch 2> /dev/null || :) # branch might not exist yet
 				if [ "$mine" != "$origin" ]; then
-					echo "+ Updating $branch ..."
-					git checkout $branch --
-					git merge --ff-only
-					git checkout -
+					echo "+ Updating $branch $mine..$origin"
+					if [ -z "$mine" ] || git merge-base --is-ancestor $mine $origin; then
+						git update-ref refs/heads/$branch $origin $mine
+					else
+						echo "$branch cannot be fast-forwarded"
+						exit 1
+					fi
 				else
 					echo "+ Branch $branch is up-to-date."
 				fi
