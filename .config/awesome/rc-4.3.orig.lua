@@ -67,17 +67,17 @@ modkey = "Mod4"
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    -- Myon awful.layout.suit.tile.left,
+    awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    -- Myon awful.layout.suit.tile.top,
+    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    -- Myon awful.layout.suit.spiral,
-    -- Myon awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.spiral,
+    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    -- Myon awful.layout.suit.max.fullscreen,
+    awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
-    -- Myon awful.layout.suit.corner.nw,
+    awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -121,12 +121,11 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
--- Myon mykeyboardlayout = awful.widget.keyboardlayout()
+mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
--- Myon
-mytextclock = awful.widget.textclock(" %e. %H:%M:%S ", 1)
+mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -183,46 +182,12 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
--- Myon: split screens in half
-for s in screen do
-    local geo = s.geometry
-    if geo.width >= 2000 then
-        local new_width = math.ceil(geo.width/2)
-        local new_width2 = geo.width - new_width
-        s:fake_resize(geo.x, geo.y, new_width, geo.height)
-        screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
-    end
-end
--- move split screens into correct order
-if screen:count() >= 4 then
-    screen[2]:swap(screen[3])
-end
-
--- Myon: separate tags per screen
-if screen:count() == 1 then
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, screen[1], awful.layout.layouts[1])
-    tag_screen    = { 1, 1, 1, 1, 1, 1, 1, 1, 1 } -- on which screen to find a tag
-    tag_on_screen = { 1, 2, 3, 4, 5, 6, 7, 8, 9 } -- tag number on tag's screen
-elseif screen:count() == 2 then
-    awful.tag({ "1", "2", "3", "4"      }, screen[1], awful.layout.layouts[2])
-    awful.tag({ "5", "6", "7", "8", "9" }, screen[2], awful.layout.layouts[2])
-    tag_screen    = { 1, 1, 1, 1, 2, 2, 2, 2, 2 } -- on which screen to find a tag
-    tag_on_screen = { 1, 2, 3, 4, 1, 2, 3, 4, 5 } -- tag number on tag's screen
-else -- 4
-    awful.tag({ "1", "2"      }, screen[1], awful.layout.layouts[2])
-    awful.tag({ "3", "4", "5" }, screen[2], awful.layout.layouts[2])
-    awful.tag({ "6", "7"      }, screen[3], awful.layout.layouts[2])
-    awful.tag({ "8", "9"      }, screen[4], awful.layout.layouts[2])
-    tag_screen    = { 1, 1, 2, 2, 2, 3, 3, 4, 4 } -- on which screen to find a tag
-    tag_on_screen = { 1, 2, 1, 2, 3, 1, 2, 1, 2 } -- tag number on tag's screen
-end
-
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    -- Myon awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -263,7 +228,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            -- Myon mykeyboardlayout,
+            mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -311,12 +276,9 @@ globalkeys = gears.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    -- Myon
-    --awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
-    awful.key({ modkey,           }, "l", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    --awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
-    awful.key({ modkey,           }, "h", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
@@ -337,23 +299,22 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    -- Myon: different modifiers so l/h are free for moving screens
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift", "Control"}, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
+    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift", "Control"}, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
               {description = "decrease the number of master clients", group = "layout"}),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
-    -- Myon awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
-    -- Myon           {description = "select next", group = "layout"}),
-    -- Myon awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
-    -- Myon           {description = "select previous", group = "layout"}),
+    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
+              {description = "select next", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
+              {description = "select previous", group = "layout"}),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
@@ -383,10 +344,7 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
-    -- Myon
-    -- Global bindings
-    awful.key({ }, "Pause", function () awful.util.spawn("spotify_control playpause") end)
+              {description = "show the menubar", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -401,9 +359,6 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-              {description = "move to master", group = "client"}),
-    -- Myon
-    awful.key({ modkey,           }, "space", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
@@ -444,30 +399,20 @@ for i = 1, 9 do
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        --local screen = awful.screen.focused()
-                        --local tag = screen.tags[i]
-                        -- Myon
-                        local screen = screen[tag_screen[i]]
-                        local tag = screen.tags[tag_on_screen[i]]
+                        local screen = awful.screen.focused()
+                        local tag = screen.tags[i]
                         if tag then
                            tag:view_only()
-                           -- Myon
-                           awful.screen.focus(screen)
                         end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
-                      --local screen = awful.screen.focused()
-                      --local tag = screen.tags[i]
-                      -- Myon
-                      local screen = screen[tag_screen[i]]
-                      local tag = screen.tags[tag_on_screen[i]]
+                      local screen = awful.screen.focused()
+                      local tag = screen.tags[i]
                       if tag then
                          awful.tag.viewtoggle(tag)
-                         -- Myon
-                         awful.screen.focus(screen)
                       end
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
@@ -475,10 +420,7 @@ for i = 1, 9 do
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          --local tag = client.focus.screen.tags[i]
-                          -- Myon
-                          local screen = screen[tag_screen[i]]
-                          local tag = screen.tags[tag_on_screen[i]]
+                          local tag = client.focus.screen.tags[i]
                           if tag then
                               client.focus:move_to_tag(tag)
                           end
@@ -489,10 +431,7 @@ for i = 1, 9 do
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          --local tag = client.focus.screen.tags[i]
-                          -- Myon
-                          local screen = screen[tag_screen[i]]
-                          local tag = screen.tags[tag_on_screen[i]]
+                          local tag = client.focus.screen.tags[i]
                           if tag then
                               client.focus:toggle_tag(tag)
                           end
@@ -641,25 +580,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
--- Myon
--- -- http://rootslash.net/171541/how-to-set-focus-on-a-client-under-mouse-cursor-when-a-tag-is-changed
--- tag.connect_signal(
---   "property::selected",
---   function (t)
---     local selected = tostring(t.selected) == "false"
---     if selected then
---       local focus_timer = timer({ timeout = 0.05 })
---       focus_timer:connect_signal("timeout", function()
---         local c = awful.mouse.client_under_pointer()
---         if not (c == nil) then
---           client.focus = c
---           c:raise()
---         end
---         focus_timer:stop()
---       end)
---       focus_timer:start()
---     end
---   end
--- )
-
