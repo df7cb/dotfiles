@@ -71,5 +71,5 @@ add	Control	= Control_L Control_R
 add	Mod1	= Meta_L
 add	Mod2	= Num_Lock
 add	Mod3	= Mode_switch
-add	Mod4	= Hyper_L Hyper_R
+!add	Mod4	= Hyper_L Hyper_R
 add	Mod5	= Scroll_Lock
