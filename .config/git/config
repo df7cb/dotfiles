@@ -38,6 +38,9 @@
 	wd = diff --color-words
 	wdiff = diff --color-words
 
+[clean]
+	requireForce = false
+
 [color]
 	ui = auto
 
