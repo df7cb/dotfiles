@@ -2,10 +2,10 @@
 
 # headers
 ignore *
-unignore From\  Date: From: Reply-To: To: Cc: Subject: X-Debian X-MIA-Summary
+unignore From\  Date: From: Reply-To: To: Cc: Bcc: Subject: X-Debian X-MIA-Summary
 
 unhdr_order *
-hdr_order From\  Date: From: Reply-To: To: Cc: Subject:
+hdr_order From\  Date: From: Reply-To: To: Cc: Bcc: Subject:
 
 # MIME config
 auto_view text/calendar text/html application/pgp-encrypted
