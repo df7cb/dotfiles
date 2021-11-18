@@ -60,9 +60,9 @@ URxvt.keysym.maltesecross: \342\231\240
 URxvt.keysym.C-equal:	font-size:increase
 URxvt.keysym.C-slash:	font-size:show
 URxvt.matcher.button:	3
-URxvt.matcher.pattern.1: (?:Closes:.|\\#)([2-9]\\d{5}\\b)
+URxvt.matcher.pattern.1: (?:Closes:.|\\#)([2-9]\\d{5}\\b|1\\d{6}\\b)
 URxvt.matcher.launcher.1: x-www-browser https:\/\/bugs.debian.org/cgi-bin/bugreport.cgi?bug=$1
-URxvt.matcher.pattern.2: (\\d{6})@bugs.debian.org
+URxvt.matcher.pattern.2: (\\d{6,7})@bugs.debian.org
 URxvt.matcher.launcher.2: x-www-browser https:\/\/bugs.debian.org/cgi-bin/bugreport.cgi?bug=$1
 URxvt.matcher.pattern.3: <([^<>]+[0-9][^<>]+@[^<>]+)>
 URxvt.matcher.launcher.3: x-www-browser https:\/\/lists.debian.org/$1
