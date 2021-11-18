@@ -43,7 +43,7 @@ URxvt.cursorColor:	RoyalBlue
 URxvt.fadeColor:	white
 URxvt.font:		xft:DejaVu Sans Mono-8
 ! https://unix.stackexchange.com/questions/118641/font-rendering-issue-in-urxvt-too-much-space-between-characters
-URxvt.letterSpace:	-1
+URxvt.letterSpace:	-2
 URxvt.internalBorder:	0
 URxvt.iso14755:		false
 URxvt.keysym.M-C-1:	command:\033]710;5x8\007
