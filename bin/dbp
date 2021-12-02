@@ -48,7 +48,7 @@ esac
 export DEB_CHECK_COMMAND="lintian"
 SHIFT=1
 
-while getopts "aAbBSij:nosp:" opt 2>/dev/null; do
+while getopts "aAbBSij:nosp:P:" opt 2>/dev/null; do
   case $opt in
     a)
       AUTOPKGTEST=yes
@@ -65,7 +65,7 @@ while getopts "aAbBSij:nosp:" opt 2>/dev/null; do
       ;;
     n)
       export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
-      PROFILES="${PROFILES:+$PROFILES,}nocheck"
+      DEB_BUILD_PROFILES="${DEB_BUILD_PROFILES:+$DEB_BUILD_PROFILES,}nocheck"
       unset DEB_CHECK_COMMAND
       ;;
     o)
@@ -80,6 +80,9 @@ while getopts "aAbBSij:nosp:" opt 2>/dev/null; do
     p)
       export PG_SUPPORTED_VERSIONS="$OPTARG"
       ;;
+    P)
+      DEB_BUILD_PROFILES="${DEB_BUILD_PROFILES:+$DEB_BUILD_PROFILES,}$OPTARG"
+      ;;
     *)
       SHIFT=2 # don't eat the option we just couldn't parse
       break
@@ -89,7 +92,7 @@ done
 # shift away options
 shift $((OPTIND - SHIFT))
 [ "$*" ] && ARG="$ARG $*"
-[ "${PROFILES:-}" ] && ARG="-P$PROFILES $ARG"
+[ "${DEB_BUILD_PROFILES:-}" ] && ARG="-P$DEB_BUILD_PROFILES $ARG"
 
 # get orig tarball
 if [ -z "${BINARY_ONLY:-}" ] && [ -x /usr/bin/origtargz ]; then
