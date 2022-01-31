@@ -18,7 +18,7 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	diodon &
 	nm-applet &
 	udiskie --smart-tray &
-	volumeicon &
+	pasystray &
 	command -v gpg-agent >/dev/null && [ -z "$GPG_AGENT_INFO" ] && \
 		eval `gpg-agent --daemon`
 	command -v gnome-keyring-daemon >/dev/null && [ -z "$GNOME_KEYRING_CONTROL" ] && \

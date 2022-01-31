@@ -118,6 +118,7 @@ install-desktop: install-dev /etc/default/keyboard
 		ncdu \
 		net-tools \
 		network-manager-gnome \
+		pasystray \
 		pinfo \
 		postfix \
 		pspg \
@@ -128,7 +129,6 @@ install-desktop: install-dev /etc/default/keyboard
 		schroot \
 		udiskie  \
 		vim \
-		volumeicon-alsa \
 		whois \
 		workrave \
 		xscreensaver
