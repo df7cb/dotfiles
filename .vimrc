@@ -12,6 +12,7 @@ set hidden		" use multiple buffers
 set hlsearch		" highlight matches
 set ignorecase		" Do case insensitive matching
 set incsearch		" Incremental search
+set isfname-==		" make foo=file^X^F work
 set list		" show tabs et al.
 set lcs=tab:·\ ,trail:·	" how to show tabs
 set mouse=		" no mouse please
