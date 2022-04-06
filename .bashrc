@@ -12,7 +12,7 @@ unset L
 : ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
 export LANG LANGUAGE TZ
 
-. ~/lib/myon-profile.sh
+. ~/.profile
 . ~/.env
 
 # check whether we run interactively

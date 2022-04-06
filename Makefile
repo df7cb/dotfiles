@@ -32,11 +32,11 @@ tmp /tmp/$(USER):
 	mkdir -m 0700 $@
 
 install-profile:
-	sudo cp lib/myon-profile.sh /etc/profile.d/myon-profile.sh
+	sudo cp .profile /etc/profile.d/myon-profile.sh
 
 deploy-profile:
 	test "$(HOST)"
-	ssh $(HOST) sudo tee /etc/profile.d/myon-profile.sh < lib/myon-profile.sh
+	ssh $(HOST) sudo tee /etc/profile.d/myon-profile.sh < .profile
 
 /etc/apt/preferences.d/debian.pref: lib/debian.pref
 	sudo cp $< $@
@@ -167,7 +167,6 @@ deploy:
 scp:
 	test "$(HOST)"
 	ssh "$(HOST)" mkdir -p bin lib
-	scp lib/myon-profile.sh $(HOST):lib
 	scp \
 		.bash_bind \
 		.bash_profile \
