@@ -200,21 +200,21 @@ end
 
 -- Myon: separate tags per screen
 if screen:count() == 1 then
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, screen[1], awful.layout.layouts[1])
-    tag_screen    = { 1, 1, 1, 1, 1, 1, 1, 1, 1 } -- on which screen to find a tag
-    tag_on_screen = { 1, 2, 3, 4, 5, 6, 7, 8, 9 } -- tag number on tag's screen
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, screen[1], awful.layout.layouts[1])
+    tag_screen    = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 } -- on which screen to find a tag
+    tag_on_screen = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } -- tag number on tag's screen
 elseif screen:count() == 2 then
-    awful.tag({ "1", "2", "3", "4"      }, screen[1], awful.layout.layouts[2])
-    awful.tag({ "5", "6", "7", "8", "9" }, screen[2], awful.layout.layouts[2])
-    tag_screen    = { 1, 1, 1, 1, 2, 2, 2, 2, 2 } -- on which screen to find a tag
-    tag_on_screen = { 1, 2, 3, 4, 1, 2, 3, 4, 5 } -- tag number on tag's screen
+    awful.tag({ "1", "2", "3", "4", "5" }, screen[1], awful.layout.layouts[2])
+    awful.tag({ "6", "7", "8", "9", "0" }, screen[2], awful.layout.layouts[2])
+    tag_screen    = { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 } -- on which screen to find a tag
+    tag_on_screen = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5 } -- tag number on tag's screen
 else -- 4
     awful.tag({ "1", "2"      }, screen[1], awful.layout.layouts[2])
     awful.tag({ "3", "4", "5" }, screen[2], awful.layout.layouts[2])
-    awful.tag({ "6", "7"      }, screen[3], awful.layout.layouts[2])
-    awful.tag({ "8", "9"      }, screen[4], awful.layout.layouts[2])
-    tag_screen    = { 1, 1, 2, 2, 2, 3, 3, 4, 4 } -- on which screen to find a tag
-    tag_on_screen = { 1, 2, 1, 2, 3, 1, 2, 1, 2 } -- tag number on tag's screen
+    awful.tag({ "6", "7", "8" }, screen[3], awful.layout.layouts[2])
+    awful.tag({ "9", "0"      }, screen[4], awful.layout.layouts[2])
+    tag_screen    = { 1, 1, 2, 2, 2, 3, 3, 3, 4, 4 } -- on which screen to find a tag
+    tag_on_screen = { 1, 2, 1, 2, 3, 1, 2, 3, 1, 2 } -- tag number on tag's screen
 end
 
 awful.screen.connect_for_each_screen(function(s)
@@ -442,7 +442,7 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 10 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
