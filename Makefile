@@ -167,7 +167,6 @@ deploy:
 scp:
 	test "$(HOST)"
 	ssh "$(HOST)" mkdir -p bin lib
-	scp bin/os $(HOST):bin
 	scp lib/myon-profile.sh $(HOST):lib
 	scp \
 		.bash_bind \

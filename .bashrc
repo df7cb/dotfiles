@@ -12,8 +12,6 @@ unset L
 : ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
 export LANG LANGUAGE TZ
 
-. ${CONF_HOME:-$HOME}/bin/os > /dev/null
-. ${CONF_HOME:-$HOME}/.path
 . ${CONF_HOME:-$HOME}/lib/myon-profile.sh
 . ${CONF_HOME:-$HOME}/.env
 
