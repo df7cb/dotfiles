@@ -1,6 +1,0 @@
-#!/bin/sh
-
-echo "`date` lock"
-grep -q tazstick /proc/mounts && pumount tazstick
-xscreensaver-command -lock "$@"
-echo "`date` unlock"

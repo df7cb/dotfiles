@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# D<digit><digit><whatever-else-you-want> is executed before unpacking the
-# source  inside  the  chroot, after setting up the chroot environment.  Create
-# $TMP, and $TMPDIR if necessary.
-
-apt-get update

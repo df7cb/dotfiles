@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# B<digit><digit><whatever-else-you-want>  is  executed  after  build system
-# finishes building, successfully, before copying back the build result.
-
-exit 0
-
-cd /tmp/buildd/*/debian/..
-/bin/bash < /dev/tty > /dev/tty 2> /dev/tty
