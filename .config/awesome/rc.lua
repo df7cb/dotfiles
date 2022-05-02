@@ -389,7 +389,8 @@ globalkeys = gears.table.join(
     awful.key({ }, "KP_Add", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end),
     awful.key({ }, "KP_Subtract", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end),
     awful.key({ }, "KP_Multiply", function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
-    awful.key({ }, "Pause", function () awful.util.spawn("spotify_control playpause") end)
+    awful.key({ }, "Pause", function () awful.util.spawn("spotify_control playpause") end),
+    awful.key({ "Control" }, "Pause", function () awful.util.spawn("xscreensaver-command -lock") end)
 )
 
 clientkeys = gears.table.join(
