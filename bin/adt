@@ -2,23 +2,18 @@
 
 set -e
 
-test -f debian/files
-quilt push -a || [ $? = 2 ]
+if ! test -f debian/files; then
+  echo "debian/files is missing" >&2
+  exit 1
+fi
+
+if command -v quilt >/dev/null; then
+  quilt push -a || [ $? = 2 ]
+fi
 
 trap "test -s ../log && gzip -9 ../log" EXIT
 rm -f ../log ../log.gz
 
-# new interface
-if [ -x /usr/bin/autopkgtest ]; then
-	binaries=$(awk '/\.deb / { print "../" $1 }' debian/files | xargs)
-	set -x
-	exec script -e -c "sudo autopkgtest ./ $binaries -- null" ../log
-fi
-
-# old interface
-binaries=$(awk '/\.deb / { print "--binary ../" $1 }' debian/files)
-
+binaries=$(awk '/\.deb / { print "../" $1 }' debian/files | xargs)
 set -x
-sudo adt-run \
-	$binaries --built-tree $PWD \
-	--- adt-virt-null
+exec script -e -c "sudo autopkgtest ./ $binaries -- null" ../log
