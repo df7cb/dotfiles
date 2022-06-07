@@ -5,6 +5,8 @@ KEYS="$PGPKEY2 $PGPKEY3"
 
 set -ux
 
+gpg --import ~/.plan
+
 for server in $HOSTS; do
 	gpg --keyserver $server --keyserver-options no-self-sigs-only --recv-keys $KEYS
 done
