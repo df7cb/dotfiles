@@ -47,7 +47,9 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 	test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' | sudo tee /etc/apt/apt.conf.d/20norecommends
 	test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' | sudo tee /etc/apt/apt.conf.d/50i18n
 	test -e /etc/apt/apt.conf.d/90keep-downloaded-packages || echo 'Binary::apt::APT::Keep-Downloaded-Packages "1";' | sudo tee /etc/apt/apt.conf.d/90keep-downloaded-packages
-	sudo rm -f /var/lib/apt/lists/*_Translation-de*
+	sudo rm -f /var/lib/apt/lists/*_Translation-de* \
+		/etc/apt/apt.conf.d/50appstream \
+		/etc/apt/apt.conf.d/60icons
 	sudo apt-get install \
 		autodep8 \
 		autopkgtest \
@@ -107,7 +109,7 @@ install-desktop: install-dev /etc/default/keyboard
 		diodon \
 		fdpowermon \
 		finger \
-		firefox-esr \
+		firefox \
 		fonts-dejavu \
 		gnome-keyring \
 		gpg-agent \
@@ -139,7 +141,7 @@ install-desktop: install-dev /etc/default/keyboard
 		sudo sh -c 'echo "/run/user      /run/user       none    rw,rbind         0       0" >> /etc/schroot/default/fstab'; \
 	fi
 	sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
-	sudo update-alternatives --set x-www-browser /usr/bin/firefox-esr
+	sudo update-alternatives --set x-www-browser /usr/bin/firefox
 
 install-chroot:
 	sudo apt-get install \
