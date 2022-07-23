@@ -67,6 +67,7 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		fakeroot \
 		git \
 		git-buildpackage \
+		jq \
 		less \
 		libwww-perl \
 		lintian \
