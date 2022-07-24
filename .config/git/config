@@ -34,7 +34,6 @@
 	tags = tag
 	tig = !tig
 	uscan = import-orig --uscan
-	upstream = !set -x && git co upstream && git merge --ff-only && git co - && git co pristine-tar && git merge --ff-only && git co -
 	wd = diff --color-words
 	wdiff = diff --color-words
 

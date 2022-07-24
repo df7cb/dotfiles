@@ -115,7 +115,7 @@ case $command in
 			git pull --prune "$@"
 			# fast-forward Debian packaging branches
 			current_branch=$(git symbolic-ref --short HEAD)
-			for branch in master experimental upstream debian/upstream pristine-tar; do
+			for branch in master experimental upstream debian/upstream pristine-lfs pristine-tar; do
 				[ "$branch" = "$current_branch" ] && continue # skip currently checked out branch
 				origin=$(git rev-parse --verify origin/$branch 2> /dev/null) || continue
 				mine=$(git rev-parse --verify $branch 2> /dev/null || :) # branch might not exist yet

@@ -74,6 +74,7 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		locales \
 		newpid \
 		patchutils \
+		pristine-lfs \
 		pristine-tar \
 		psmisc \
 		openssh-client \
