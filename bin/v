@@ -120,15 +120,17 @@ case $command in
 				origin=$(git rev-parse --verify origin/$branch 2> /dev/null) || continue
 				mine=$(git rev-parse --verify $branch 2> /dev/null || :) # branch might not exist yet
 				if [ "$mine" != "$origin" ]; then
-					echo "+ Updating $branch $mine..$origin"
 					if [ -z "$mine" ] || git merge-base --is-ancestor $mine $origin; then
+						echo "+ Updating $branch $mine..$origin"
 						git update-ref refs/heads/$branch $origin $mine
+					elif git merge-base --is-ancestor $origin $mine; then
+						echo "+ $branch is ahead of origin/$branch"
 					else
-						echo "$branch cannot be fast-forwarded"
+						echo "+ $branch cannot be fast-forwarded"
 						exit 1
 					fi
 				else
-					echo "+ Branch $branch is up-to-date."
+					echo "+ $branch is up-to-date"
 				fi
 			done
 			;;
