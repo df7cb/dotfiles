@@ -80,8 +80,7 @@ if [ "${PG_SUPPORTED_VERSIONS:-}" ]; then
 		set -ex
 		dpkg-query -s postgresql-common >/dev/null 2>&1 || apt -y install postgresql-common
 		echo "$PG_SUPPORTED_VERSIONS" > /etc/postgresql-common/supported_versions
-		echo y | /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
-		apt install -y postgresql-$PG_SUPPORTED_VERSIONS postgresql-server-dev-$PG_SUPPORTED_VERSIONS
+		/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -v$PG_SUPPORTED_VERSIONS -i
 	EOF
 fi
 
