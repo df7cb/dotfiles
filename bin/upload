@@ -60,7 +60,7 @@ if [ "$GIT" ]; then
   echo -n "$PACKAGE: Push? "
   read push
 
-  egrep '^Vcs|^Homepage' debian/control || :
+  grep -E '^Vcs|^Homepage' debian/control || :
   if grep -q postgres debian/control*; then
     URL="https://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build"
     printf "\e[1m$URL\e[0m\n"
@@ -78,7 +78,7 @@ if [ "$GIT" ]; then
   # check which branches exist locally
   BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
   for branch in upstream debian/upstream pristine-lfs pristine-tar; do
-    if git branch | egrep -qx "^\*? ? ?$branch"; then
+    if git branch | grep -Eqx "^\*? ? ?$branch"; then
       BRANCHES="$BRANCHES $branch"
     fi
   done

@@ -176,7 +176,6 @@ scp:
 		.bash_profile \
 		.bashrc \
 		.env \
-		.path \
 		.profile \
 		$(HOST):
 
