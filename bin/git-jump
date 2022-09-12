@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec sh /usr/share/doc/git/contrib/git-jump/git-jump "$@"
