@@ -46,6 +46,9 @@ fi
 if [ ! -f debian/gitlab-ci.yml ] && [ ! -f debian/salsa-ci.yml ]; then
   printf '\e[1;31mNo debian/gitlab-ci.yml found\e[0m\n'
 fi
+if [ -f debian/watch ] && grep -q /releases debian/watch; then
+  printf '\e[1;31mdebian/watch references /releases instead of /tags\e[0m\n'
+fi
 case $changes in
   *_source*) ;;
   *) printf '\e[1;31mArchitecture-dependant changes file\e[0m\n'
