@@ -5,23 +5,23 @@ set -eux
 qpop -a || [ $? = 2 ]
 up
 
-if ! grep 'Upload for PostgreSQL 14' debian/changelog; then
-	dch "Upload for PostgreSQL 14."
+if ! grep 'Upload for PostgreSQL 15' debian/changelog; then
+	dch "Upload for PostgreSQL 15."
 fi
 
-if ! grep 'postgresql-.*all (>= 21.' debian/control.in; then
-	sed -i -e 's/postgresql[^,]*-all[^,]*/postgresql-all (>= 217~)/' debian/control*
-	if grep loop debian/rules; then
-		sed -i -e 's/	dh $@/	dh $@ --with pgxs_loop/' debian/rules
-		dch "Use dh --with pgxs_loop."
-	else
-		sed -i -e 's/	dh $@/	dh $@ --with pgxs/' debian/rules
-		dch "Use dh --with pgxs."
-	fi
-fi
+#if ! grep 'postgresql-.*all (>= 21.' debian/control.in; then
+#	sed -i -e 's/postgresql[^,]*-all[^,]*/postgresql-all (>= 217~)/' debian/control*
+#	if grep loop debian/rules; then
+#		sed -i -e 's/	dh $@/	dh $@ --with pgxs_loop/' debian/rules
+#		dch "Use dh --with pgxs_loop."
+#	else
+#		sed -i -e 's/	dh $@/	dh $@ --with pgxs/' debian/rules
+#		dch "Use dh --with pgxs."
+#	fi
+#fi
 
-if ! grep '^Standards-Version: 4.5.0' debian/control.in; then
-	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.5.0/' debian/control*
+if ! grep '^Standards-Version: 4.6.1' debian/control.in; then
+	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.6.1/' debian/control*
 fi
 
 if ! grep '^Rules-Requires-Root:' debian/control.in; then
@@ -45,6 +45,11 @@ if grep supported-versions debian/tests/*; then
 	dch "debian/tests: Use installed-versions instead of supported-versions."
 fi
 
+if grep 'github.*/releases' debian/watch; then
+	sed -i 's!/releases!/tags!' debian/watch
+	dch "debian/watch: Look at GitHub tags instead of releases."
+fi
+
 pg_buildext checkcontrol
 
 if grep UNRELEASED debian/changelog; then
@@ -52,7 +57,7 @@ if grep UNRELEASED debian/changelog; then
 	rm -f '+1'
 fi
 
-dpkg-parsechangelog -SSource >> ~/postgresql/PG14
+#dpkg-parsechangelog -SSource >> ~/postgresql/PG14
 
 vi debian/changelog debian/rules debian/control.in debian/tests/*
 
