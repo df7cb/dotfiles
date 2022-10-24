@@ -6,9 +6,10 @@ CLEAN=yes
 GIT=git
 PACKAGE=$(dpkg-parsechangelog -SSource)
 
-while getopts "cg" opt ; do
+while getopts "ce:g" opt ; do
   case $opt in
     c) CLEAN="" ;;
+    e) DELAYED="$OPTARG" ;;
     g) GIT="" ;;
     *) exit 5 ;;
   esac
@@ -114,4 +115,4 @@ if [ "$GIT" ]; then
 fi
 set -x
 debsign $changes
-dput $changes
+dput ${DELAYED:+-e $DELAYED} $changes
