@@ -8,7 +8,7 @@ export CHROOT
 while getopts "c:g" opt ; do
 	case $opt in
 	c) CHROOT="$OPTARG" ;;
-	g) GIT="yes" ;;
+	g) GIT="no" ;;
 	*) exit 5 ;;
 	esac
 done
@@ -37,12 +37,13 @@ export ID="$USER-$CHROOT${PACKAGE:+-$PACKAGE}"
 run schroot -b -c $CHROOT -n $ID
 run dd-schroot-cmd -c $ID apt-get update
 run dd-schroot-cmd -c $ID apt-get -y upgrade
+run dd-schroot-cmd -c $ID apt-get -y install exuberant-ctags git quilt vim
 
 if [ "$PACKAGE" ]; then
 	run dd-schroot-cmd -c $ID apt-get -y build-dep $PACKAGE
 	mkdir -p ~/$PACKAGE
 	cd ~/$PACKAGE
-	if [ "${GIT:-}" ]; then
+	if [ -z "${GIT:-}" ]; then
 		run schroot -r -c $ID debcheckout $PACKAGE
 	else
 		run schroot -r -c $ID apt-get source $PACKAGE
