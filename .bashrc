@@ -9,8 +9,8 @@ for L in de_DE.utf8 en_US.utf8 C.UTF-8 $LANG; do
 	fi
 done
 unset L
-: ${LANGUAGE:=de:en_US:en} ${TZ:=${LC_TZ:-CET}}
-export LANG LANGUAGE TZ
+: ${LANGUAGE:=de:en_US:en}
+export LANG LANGUAGE
 
 . ~/.profile
 . ~/.env
