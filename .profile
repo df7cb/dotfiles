@@ -41,18 +41,20 @@ alias rd=rmdir
 
 # Debian
 if [ -f /etc/debian_version ]; then
-  alias agi="sudo apt install"
-  alias agr="sudo apt remove"
-  alias autoremove="sudo apt autoremove"
-  alias 'build-dep'="sudo apt build-dep"
-  alias 'dist-upgrade'="sudo apt dist-upgrade"
-  alias update="sudo apt update"
-  alias upgrade="sudo apt upgrade"
-  alias policy="apt-cache policy"
-  alias search="apt-cache search"
-  alias show="apt-cache show"
-  alias showpkg="apt-cache showpkg"
-  alias showsrc="apt-cache showsrc"
+  if [ "${SCHROOT_SESSION_ID:-}" ] && command -v dd-schroot-cmd >/dev/null; then
+    sudo_apt="dd-schroot-cmd -c $SCHROOT_SESSION_ID apt-get -y"
+  else
+    sudo_apt="sudo apt"
+  fi
+  alias agi="$sudo_apt install"
+  alias agr="$sudo_apt remove"
+  for verb in autoremove build-dep dist-upgrade update upgrade; do
+    alias $verb="$sudo_apt $verb"
+  done
+  for verb in policy search show showpkg showsrc; do
+    alias $verb="apt-cache $verb"
+  done
+  unset sudo_apt verb
 fi
 
 # Red Hat

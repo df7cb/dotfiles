@@ -17,8 +17,10 @@ shift $(($OPTIND - 1))
 
 [ "$1" ] && export PACKAGE="$1"
 
-# reexec ourselves through screen
+# schroot session name for use in screen
+export SCHROOT_SESSION_ID="$USER-$CHROOT${PACKAGE:+-$PACKAGE}"
 
+# reexec ourselves through screen
 case $TERM in
 	screen*) ;;
 	*) exec screen $0 ; exit 1 ;;
@@ -33,27 +35,26 @@ run () {
 }
 
 # begin session
-export ID="$USER-$CHROOT${PACKAGE:+-$PACKAGE}"
-run schroot -b -c $CHROOT -n $ID
-run dd-schroot-cmd -c $ID apt-get update
-run dd-schroot-cmd -c $ID apt-get -y upgrade
-run dd-schroot-cmd -c $ID apt-get -y install exuberant-ctags git quilt vim
+run schroot -b -c $CHROOT -n $SCHROOT_SESSION_ID
+run dd-schroot-cmd -c $SCHROOT_SESSION_ID apt-get update
+run dd-schroot-cmd -c $SCHROOT_SESSION_ID apt-get -y upgrade
+run dd-schroot-cmd -c $SCHROOT_SESSION_ID apt-get -y install exuberant-ctags git quilt vim
 
 if [ "$PACKAGE" ]; then
-	run dd-schroot-cmd -c $ID apt-get -y build-dep $PACKAGE
+	run dd-schroot-cmd -c $SCHROOT_SESSION_ID apt-get -y build-dep $PACKAGE
 	mkdir -p ~/$PACKAGE
 	cd ~/$PACKAGE
 	if [ -z "${GIT:-}" ]; then
-		run schroot -r -c $ID debcheckout $PACKAGE
+		run schroot -r -c $SCHROOT_SESSION_ID debcheckout $PACKAGE
 	else
-		run schroot -r -c $ID apt-get source $PACKAGE
+		run schroot -r -c $SCHROOT_SESSION_ID apt-get source $PACKAGE
 	fi
 	cd $PACKAGE*/
-	[ "${GIT:-}" ] && run schroot -r -c $ID origtargz
+	run schroot -r -c $SCHROOT_SESSION_ID origtargz
 fi
 
 # enter session
-run schroot -r -c $ID
+run schroot -r -c $SCHROOT_SESSION_ID
 
 # end session
-run schroot -e -c $ID
+run schroot -e -c $SCHROOT_SESSION_ID
