@@ -19,7 +19,7 @@ set editor="vim -u ~/.priv/mutt/vimrc -c'/^$' -c'noh'"
 set envelope_from_address="cb@df7cb.de" use_envelope_from
 set delete=yes
 set fast_reply
-unset fcc_attach
+set fcc_attach
 set forward_format="%s (fwd)"
 set header_cache="~/.mutt/cache" message_cachedir="~/.mutt/message_cache"
 unset maildir_header_cache_verify
