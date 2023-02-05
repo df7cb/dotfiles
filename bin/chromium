@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# /usr/share/doc/chromium/NEWS.Debian.gz
-exec /usr/bin/chromium --enable-remote-extensions "$@"
