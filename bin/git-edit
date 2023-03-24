@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# modified files from working copy
+files=$(git status --porcelain | grep -E "^[A ][M ] " | cut -c 4-)
+if [ -z "$files" ]; then
+  # otherwise: files from last commit
+  files=$(git show --stat | grep '^ .* | ' | cut -d ' ' -f 2)
+fi
+
+exec ${EDITOR:-vi} $files
