@@ -75,12 +75,6 @@ set pastetoggle=<f11> " turn on/off paste in insert mode
 nmap <f12>      :set invlist<cr>
 imap <f12> <c-o>:set invlist<cr>
 
-" for imwheel
-nmap <s-f11>	:bp<cr>
-nmap <s-f12>	:bn<cr>
-imap <s-f11>	<c-o>:bp<cr>
-imap <s-f12>	<c-o>:bn<cr>
-
 " swap C arguments
 nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
 
@@ -88,6 +82,11 @@ nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
 hi NonText cterm=NONE
 " make search wrap more visible
 hi WarningMsg ctermfg=white ctermbg=red guifg=White guibg=Red gui=None
+
+" gitgutter
+highlight GitGutterAdd    guibg=#009900 ctermbg=2
+highlight GitGutterChange guibg=#bbbb00 ctermbg=3
+highlight GitGutterDelete guibg=#ff2222 ctermbg=1
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
