@@ -7,3 +7,4 @@
 /.pc
 __pycache__/
 .*.swp
+.*.swo
