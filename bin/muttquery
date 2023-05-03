@@ -20,41 +20,6 @@ if (open A, "$ENV{HOME}/.priv/mutt/aliases") {
 	close A;
 }
 
-# personal mutt aliases
-if (open A, "$ENV{HOME}/.priv/mutt/aliases.ab") {
-	while (<A>) {
-		next if /^#/;
-		next unless /$query/i;
-		next unless /^alias (.*?)\s+(.*)\s+<(.*)>/;
-		print "$3\t$2\t$1\n";
-	}
-	close A;
-}
-
-## personal pine aliases
-#if (open A, "$ENV{HOME}/.addressbook") {
-#	while (<A>) {
-#		next unless /$query/i;
-#		if (/(.*)\t(.*)\t(.*)/) {
-#			print "$3\t$2\t$1\n" unless $3 eq "";
-#			($alias, $name) = ($1, $2);
-#		}
-#		if (/^   (.*)/) { # multi-line
-#			print "$1\t$name\t$alias (pine)\n";
-#		}
-#	}
-#}
-
-## pgp keys
-#if (open P, "pgpk -l $query |") {
-#	while (<P>) {
-#		next unless /^uid  (.*) <(.*)>(.*)/;
-#		$comment = $3 . "(pgp)";
-#		print "$2\t$1\t$comment\n";
-#	}
-#	close P;
-#}
-
 # system passwd
 while (($name, $comment, $gecos) = (getpwent)[0,5,6]) {
 	$gecos =~ s/,| (\()/\t$1/;
