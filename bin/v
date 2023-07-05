@@ -10,11 +10,8 @@ try_vcs_dir ()
 {
 	dir="$1"
 	#echo "Looking in $dir ..."
-	if [ -d $dir/.git ] ; then
+	if [ -e $dir/.git ] ; then
 		VCS=git
-		if grep -q ChristophBerg $dir/.git/config; then
-			sed -i -e 's/ChristophBerg/df7cb/g' $dir/.git/config
-		fi
 	elif [ -d $dir/.svn ] ; then
 		VCS=svn
 	elif [ -d $dir/.hg ] ; then
