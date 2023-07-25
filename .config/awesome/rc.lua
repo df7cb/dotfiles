@@ -389,8 +389,19 @@ globalkeys = gears.table.join(
     awful.key({ }, "KP_Add", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end),
     awful.key({ }, "KP_Subtract", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end),
     awful.key({ }, "KP_Multiply", function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
+
     awful.key({ }, "Pause", function () awful.util.spawn("spotify_control playpause") end),
-    awful.key({     }, "XF86Launch1", function () awful.util.spawn("xscreensaver-command -lock") end), -- ThinkVantage button on L520
+    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("spotify_control playpause") end),
+    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("spotify_control previous") end),
+    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("spotify_control next") end),
+
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightnessctl s 10%-") end),
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("sudo brightnessctl s 10%+") end),
+
+    awful.key({ }, "XF86Launch1", function () awful.util.spawn("xscreensaver-command -lock") end), -- ThinkVantage button on L520
     awful.key({ "Control" }, "XF86Launch1", function () awful.util.spawn("xscreensaver-command -lock; sleep 1; sudo systemctl hibernate") end), -- ThinkVantage button on L520
     awful.key({ "Control" }, "Pause", function () awful.util.spawn("xscreensaver-command -lock") end)
 )

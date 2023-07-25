@@ -74,6 +74,7 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		locales \
 		newpid \
 		patchutils \
+		pkgconf \
 		pristine-lfs \
 		pristine-tar \
 		psmisc \
@@ -81,6 +82,7 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		quilt \
 		rsync \
 		strace \
+		systemd-coredump \
 		tig \
 		tree \
 		vim \
@@ -122,20 +124,25 @@ install-desktop: install-dev /etc/default/keyboard
 		ncdu \
 		net-tools \
 		network-manager-gnome \
+		pass \
 		pasystray \
+		pavucontrol \
 		pinfo \
 		postfix \
 		pspg \
+		pulseaudio-utils \
 		python3-icalendar \
 		rxvt-unicode \
 		sbuild \
+		scdaemon \
 		screen \
 		schroot \
 		udiskie  \
 		vim \
 		whois \
 		workrave \
-		xscreensaver
+		xscreensaver \
+		xserver-xorg-input-synaptics
 	if grep -q '99:battery-charging.png$$' /etc/fdpowermon/theme.cfg; then \
 		sudo sed -i -e 's/99:battery-charging.png$$/100:battery-charging.png/' /etc/fdpowermon/theme.cfg; \
 	fi
