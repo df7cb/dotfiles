@@ -45,7 +45,7 @@ case $DIST in
 #		;;
 esac
 
-export DEB_CHECK_COMMAND="lintian"
+export DEB_CHECK_COMMAND="lintian" PG_UPDATECONTROL="yes"
 SHIFT=1
 
 while getopts "aAbBSij:nosp:P:" opt 2>/dev/null; do
@@ -78,7 +78,7 @@ while getopts "aAbBSij:nosp:P:" opt 2>/dev/null; do
       ARG="$ARG -S --buildinfo-option=--version"
       ;;
     p)
-      export PG_SUPPORTED_VERSIONS="$OPTARG" PG_UPDATECONTROL="yes"
+      export PG_SUPPORTED_VERSIONS="$OPTARG"
       ;;
     P)
       DEB_BUILD_PROFILES="${DEB_BUILD_PROFILES:+$DEB_BUILD_PROFILES,}$OPTARG"
@@ -99,17 +99,11 @@ if [ -z "${BINARY_ONLY:-}" ] && [ -x /usr/bin/origtargz ]; then
   origtargz || :
 fi
 
-trap "test -s ../log && gzip -9 ../log" 0 2 3 15
-
-case $(script --version 2>/dev/null) in
-  script*2.17.*) SCRIPT="script" ;; # squeeze doesn't support -e
-  script*) SCRIPT="script -e" ;;
-  # script doesn't exist on kfreebsd and hurd
-esac
+trap "test -s ../log && gzip -9 ../log" EXIT
 
 rm -f ../log ../log.gz
-if [ "$SCRIPT" ]; then
-  $SCRIPT -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+if command -v script >/dev/null; then
+  script -e -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
     ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
     dpkg-buildpackage $ARG ${PARALLEL:=-j$(nproc)}; \
     dpkg-buildpackage $ARG $PARALLEL" ../log
