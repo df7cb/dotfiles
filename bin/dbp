@@ -78,7 +78,7 @@ while getopts "aAbBSij:nosp:P:" opt 2>/dev/null; do
       ARG="$ARG -S --buildinfo-option=--version"
       ;;
     p)
-      export PG_SUPPORTED_VERSIONS="$OPTARG"
+      export PG_SUPPORTED_VERSIONS="$OPTARG" PG_UPDATECONTROL="yes"
       ;;
     P)
       DEB_BUILD_PROFILES="${DEB_BUILD_PROFILES:+$DEB_BUILD_PROFILES,}$OPTARG"

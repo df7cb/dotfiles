@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+export PG_UPDATECONTROL="yes"
+
 dh_testdir
 case $0 in
 	*dclean) fakeroot ./debian/rules clean ;;
