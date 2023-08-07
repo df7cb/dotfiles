@@ -12,6 +12,11 @@ unset L
 : ${LANGUAGE:=de:en_US:en}
 export LANG LANGUAGE
 
+# import TZ from value sent over ssh
+if [ -z "${TZ:-}" ] && [ "${LC_TZ:-}" ]; then
+  export TZ="$LC_TZ"
+fi
+
 . ~/.profile
 . ~/.env
 

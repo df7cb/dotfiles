@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -eu
+
+# forward $TZ as $LC_TZ
+if [ "${TZ:-}" ]; then
+  LC_TZ="$TZ"
+elif [ -f /etc/timezone ]; then
+  LC_TZ="$(cat /etc/timezone)"
+elif [ -L /etc/timezone ]; then
+  LC_TZ="$(readlink /etc/timezone)"
+  LC_TZ="${LC_TZ#/usr/share/zoneinfo/}"
+elif [ -L /etc/localtime ]; then
+  LC_TZ="$(readlink /etc/localtime)"
+  LC_TZ="${LC_TZ#/usr/share/zoneinfo/}"
+fi
+export LC_TZ
+
+/usr/bin/ssh "$@"
