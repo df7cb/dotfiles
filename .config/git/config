@@ -47,7 +47,8 @@
 	pager = smart-less
 
 [init]
-	templatedir = 
+	defaultBranch = master
+	templatedir =
 
 [log]
 	mailmap = true
