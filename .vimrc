@@ -72,8 +72,8 @@ imap <f9>  <c-o>:set spell spelllang=de_de,all spellfile=~/.vim/spell/de.utf-8.a
 nmap <f10>      :set spell spelllang=en_us,all spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/all.utf-8.add<cr>
 imap <f10> <c-o>:set spell spelllang=en_us,all spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/all.utf-8.add<cr>
 set pastetoggle=<f11> " turn on/off paste in insert mode
-nmap <f12>      :set invlist<cr>
-imap <f12> <c-o>:set invlist<cr>
+nmap <f12>      :set invlist<cr>:execute "set signcolumn=" .. (&signcolumn == "auto" ? "no" : "auto")<cr>
+imap <f12> <c-o>:set invlist<cr><c-o>:execute "set signcolumn=" .. (&signcolumn == "auto" ? "no" : "auto")<cr>
 
 " swap C arguments
 nmap __ :s/\([(,]\)\(.\{-0,\}\)\%#\(, *\)\(.\{-0,\}\)\([),]\)/\1\4\3\2\5/<cr>
