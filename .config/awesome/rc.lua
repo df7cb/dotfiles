@@ -403,6 +403,7 @@ globalkeys = gears.table.join(
 
     awful.key({ }, "XF86Launch1", function () awful.util.spawn("xscreensaver-command -lock") end), -- ThinkVantage button on L520
     awful.key({ "Control" }, "XF86Launch1", function () awful.util.spawn("xscreensaver-command -lock; sleep 1; sudo systemctl hibernate") end), -- ThinkVantage button on L520
+    awful.key({ "Control" }, "Delete", function () awful.util.spawn("xscreensaver-command -lock") end),
     awful.key({ "Control" }, "Pause", function () awful.util.spawn("xscreensaver-command -lock") end)
 )
 
