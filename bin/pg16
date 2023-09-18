@@ -5,8 +5,13 @@ set -eux
 qpop -a || [ $? = 2 ]
 up
 
-if ! grep 'Upload for PostgreSQL 15' debian/changelog; then
-	dch "Upload for PostgreSQL 15."
+if ! grep 'Upload for PostgreSQL 16' debian/changelog; then
+	dch "Upload for PostgreSQL 16."
+fi
+
+if egrep "^[D ].*postgresql-PGVERSION" debian/control.in; then
+    sed -i -e '/^[D ]/ s/postgresql-PGVERSION/${postgresql:Depends}/' debian/control.in
+    dch "Use \${postgresql:Depends}."
 fi
 
 #if ! grep 'postgresql-.*all (>= 21.' debian/control.in; then
@@ -20,8 +25,8 @@ fi
 #	fi
 #fi
 
-if ! grep '^Standards-Version: 4.6.1' debian/control.in; then
-	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.6.1/' debian/control*
+if ! grep '^Standards-Version: 4.6.2' debian/control.in; then
+	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.6.2/' debian/control*
 fi
 
 if ! grep '^Rules-Requires-Root:' debian/control.in; then
@@ -56,8 +61,6 @@ if grep UNRELEASED debian/changelog; then
 	EDITOR=touch dch -r
 	rm -f '+1'
 fi
-
-#dpkg-parsechangelog -SSource >> ~/postgresql/PG14
 
 vi debian/changelog debian/rules debian/control.in debian/tests/*
 
