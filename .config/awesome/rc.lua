@@ -183,6 +183,11 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+-- Myon: put primary screen in the middle
+if screen:count() == 3 then
+    screen[1]:swap(screen[2])
+end
+
 -- Myon: split screens in half
 for s in screen do
     local geo = s.geometry
@@ -194,8 +199,12 @@ for s in screen do
     end
 end
 -- move split screens into correct order
-if screen:count() >= 4 then
+if screen:count() == 4 then
     screen[2]:swap(screen[3])
+elseif screen:count() == 6 then
+    screen[2]:swap(screen[4])
+    screen[3]:swap(screen[5])
+    screen[3]:swap(screen[4])
 end
 
 -- Myon: separate tags per screen
@@ -208,13 +217,28 @@ elseif screen:count() == 2 then
     awful.tag({ "6", "7", "8", "9", "0" }, screen[2], awful.layout.layouts[2])
     tag_screen    = { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 } -- on which screen to find a tag
     tag_on_screen = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5 } -- tag number on tag's screen
-else -- 4
+elseif screen:count() == 3 then
+    awful.tag({ "1", "2", "3"      }, screen[1], awful.layout.layouts[2])
+    awful.tag({ "4", "5", "6", "7" }, screen[2], awful.layout.layouts[2])
+    awful.tag({ "8", "9", "0"      }, screen[3], awful.layout.layouts[2])
+    tag_screen    = { 1, 1, 1, 2, 2, 2, 2, 3, 3, 3 } -- on which screen to find a tag
+    tag_on_screen = { 1, 2, 3, 1, 2, 3, 4, 1, 2, 3 } -- tag number on tag's screen
+elseif screen:count() == 4 then
     awful.tag({ "1", "2"      }, screen[1], awful.layout.layouts[2])
     awful.tag({ "3", "4", "5" }, screen[2], awful.layout.layouts[2])
     awful.tag({ "6", "7", "8" }, screen[3], awful.layout.layouts[2])
     awful.tag({ "9", "0"      }, screen[4], awful.layout.layouts[2])
     tag_screen    = { 1, 1, 2, 2, 2, 3, 3, 3, 4, 4 } -- on which screen to find a tag
     tag_on_screen = { 1, 2, 1, 2, 3, 1, 2, 3, 1, 2 } -- tag number on tag's screen
+else -- 6
+    awful.tag({ "1", "2" }, screen[1], awful.layout.layouts[2])
+    awful.tag({ "3", "4" }, screen[2], awful.layout.layouts[2])
+    awful.tag({ "5"      }, screen[3], awful.layout.layouts[2])
+    awful.tag({ "6"      }, screen[4], awful.layout.layouts[2])
+    awful.tag({ "7", "8" }, screen[5], awful.layout.layouts[2])
+    awful.tag({ "9", "0" }, screen[6], awful.layout.layouts[2])
+    tag_screen    = { 1, 1, 2, 2, 3, 4, 5, 5, 6, 6 } -- on which screen to find a tag
+    tag_on_screen = { 1, 2, 1, 2, 1, 1, 1, 2, 1, 2 } -- tag number on tag's screen
 end
 
 awful.screen.connect_for_each_screen(function(s)
