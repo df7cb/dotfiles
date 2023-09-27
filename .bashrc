@@ -2,7 +2,7 @@
 #echo .bashrc
 
 # Environment
-for L in de_DE.utf8 en_US.utf8 C.UTF-8 $LANG; do
+for L in de_DE.utf8 en_US.utf8 C.UTF-8 C.utf8 $LANG; do
 	if LC_ALL=C locale -a | grep -Fq $L; then
 		LANG=$L
 		break
