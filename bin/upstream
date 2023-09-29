@@ -2,5 +2,26 @@
 
 set -eux
 
-dch "New upstream version."
+quilt pop -a || [ $? = 2 ]
+up
+
+# gbp repo
+if git ls | grep -qv '^debian/'; then
+    git uscan
+
+# debian/ repo
+else
+    uscan
+    tarball=$(ls -v ../*.orig.tar.* | tail -n1)
+    tarball=${tarball##*_}
+    version=${tarball%.orig.tar.*}
+
+    oldepoch=$(dpkg-parsechangelog -SVersion | grep -o '[0-9]*:' || :)
+
+    dch -v "$oldepoch$version-1" "New upstream version $version."
+fi
+
 dch -r
+
+origtargz -u
+quilt push -a || [ $? = 2 ]
