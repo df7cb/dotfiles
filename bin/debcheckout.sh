@@ -16,15 +16,14 @@ v up
 git ctags
 )
 
-case $(git remote -v) in
+case $(cd $SRC && git remote -v) in
     *github.com/*) # Debian repo is on github, don't try to checkout upstream
         exit
         ;;
 esac
-cd ..
 
 # checkout upstream repository into 2nd directory level
-HOMEPAGE=$(apt-cache showsrc $SRC | awk '/^Homepage:/ { print $2 }')
+HOMEPAGE=$(apt-cache showsrc $SRC | awk '/^Homepage:/ { print $2 }' | head -n1)
 case $HOMEPAGE in
     *github.com/*)
         set -x
