@@ -25,16 +25,16 @@ fi
 #	fi
 #fi
 
-if ! grep '^Standards-Version: 4.6.2' debian/control.in; then
+if ! grep '^Standards-Version: 4.6.2' debian/control*; then
 	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.6.2/' debian/control*
 fi
 
-if ! grep '^Rules-Requires-Root:' debian/control.in; then
+if ! grep '^Rules-Requires-Root:' debian/control*; then
 	sed -i -e '/^Standards-Version/a Rules-Requires-Root: no' debian/control*
 	dch "R³: no."
 fi
 
-if ! grep 'debhelper-compat (= 13)' debian/control.in; then
+if ! grep 'debhelper-compat (= 13)' debian/control*; then
 	sed -i -e 's/debhelper[^,]*/debhelper-compat (= 13)/' debian/control*
 	v rm debian/compat || :
 	dch "DH 13."
