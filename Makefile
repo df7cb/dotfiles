@@ -2,7 +2,7 @@
 
 DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
 QUILT = bin/qadd bin/qapplied bin/qdiff bin/qedit bin/qimport bin/qnew bin/qpop bin/qpush bin/qrefresh bin/qtop
-all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) $(QUILT) .ssh/config
+all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) $(QUILT) .ssh/config tmp
 
 ## targets ##
 
@@ -86,6 +86,7 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		tig \
 		tree \
 		vim \
+		vim-gitgutter \
 		w3m \
 		wdiff \
 		wget
@@ -120,6 +121,7 @@ install-desktop: install-dev /etc/default/keyboard
 		imagemagick \
 		libsecret-tools \
 		manpages-dev \
+		mtr-tiny \
 		mutt \
 		ncdu \
 		net-tools \
@@ -131,6 +133,7 @@ install-desktop: install-dev /etc/default/keyboard
 		postfix \
 		pspg \
 		pulseaudio-utils \
+		pwgen \
 		python3-icalendar \
 		rxvt-unicode \
 		sbuild \
@@ -142,7 +145,7 @@ install-desktop: install-dev /etc/default/keyboard
 		whois \
 		workrave \
 		xscreensaver \
-		xserver-xorg-input-synaptics
+		--
 	if grep -q '99:battery-charging.png$$' /etc/fdpowermon/theme.cfg; then \
 		sudo sed -i -e 's/99:battery-charging.png$$/100:battery-charging.png/' /etc/fdpowermon/theme.cfg; \
 	fi
