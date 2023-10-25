@@ -11,6 +11,7 @@ XVENDOR=$(xdpyinfo | grep '^vendor string' | sed -e 's/.*: *//')
 
 # set up X server
 $HOME/bin/xset.sh
+[ -f ~/.xsession-local ] && . ~/.xsession-local
 
 if [[ "$XVENDOR" != *VNC* ]] ; then
 	xsetroot -solid navy &
@@ -30,7 +31,6 @@ if [[ "$XVENDOR" != *VNC* ]] ; then
 	SHLVL=0 x-terminal-emulator &
 	x-www-browser &
 
-	[ -f ~/.xsession-local ] && . ~/.xsession-local
 else
 	xsetroot -solid limegreen
 fi
