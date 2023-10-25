@@ -16,4 +16,4 @@ elif [ -L /etc/localtime ]; then
 fi
 export LC_TZ
 
-/usr/bin/ssh "$@"
+exec /usr/bin/ssh "$@"
