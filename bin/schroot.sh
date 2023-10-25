@@ -33,7 +33,20 @@ if [ -z "$NOUPDATE" ]; then
 		test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/20norecommends
 		test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' > /etc/apt/apt.conf.d/50i18n
 		apt -y update
-		apt -y install build-essential debhelper devscripts fakeroot git less locales nano- quilt sudo vim
+		apt -y install build-essential \
+			debhelper \
+			devscripts \
+			dput \
+			fakeroot \
+			git \
+			less \
+			locales \
+			nano- \
+			openssh-client \
+			quilt \
+			sudo \
+			tig \
+			vim
 		if ! grep '^%sudo.*NOPASSWD' /etc/sudoers; then
 			sed -i -e 's/^%sudo.*/%sudo	ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 		fi
@@ -44,7 +57,7 @@ fi
 
 # session name
 if [ -f debian/changelog ]; then
-	PKG=$(dpkg-parsechangelog -SSource)
+	PKG=$(dpkg-parsechangelog -SSource | tr + x)
 	: ${SESSION:="$USER-$CHROOT-$PKG"}
 else
 	: ${SESSION:="$USER-$CHROOT"}
