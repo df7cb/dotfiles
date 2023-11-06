@@ -11,7 +11,7 @@ my $day = "??";
 
 foreach my $file (@ARGV) {
 	if ($file =~ /\.gz$/) {
-		open F, "gunzip -c '$file' |" or die "$file: $!";
+		open F, "gunzip -c \"$file\" |" or die "$file: $!";
 	} else {
 		open F, $file or die "$file: $!";
 	}

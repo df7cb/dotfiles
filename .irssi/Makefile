@@ -21,7 +21,6 @@ autorun:
 links.main: links \
 	autorun/buf.pl \
 	autorun/keepnick.pl \
-	autorun/pisgcommits.pl \
 	autorun/nickident.pl \
 	autorun/screen_away.pl \
 	autorun/trigger.pl
