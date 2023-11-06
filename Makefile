@@ -203,14 +203,8 @@ vim: .vim/spell/de.utf-8.spl .vim/spell/all.utf-8.add
 
 cleanup:
 	@[ "$(shell stat -c %a .gnupg)" = 700 ] || chmod --changes 700 .gnupg
-COMMITS = $(wildcard .mutt/fortunes-??)
 
 ## update stuff ##
-
-st: status
-status:
-	@git status
-	@if [ -d .priv ] ; then $(MAKE) -C .priv status ; fi
 
 up: update
 update: cleanup
@@ -233,7 +227,6 @@ push:
 
 com: commit
 commit: cleanup
-#	git commit -m "make commit by $(USER)@$(shell hostname)" $(COMMITS) || :
 	@if [ -d .priv ] ; then $(MAKE) -C .priv commit ; fi
 
 ci:
