@@ -37,6 +37,7 @@ set titlestring=vim\ -\ %n:%f\ %(%R%M%W\ %)%y%k
 "set nottybuiltin term=$TERM " Make vim consult the external termcap entries first
 "set viminfo='20,\"50,/10	" read/write a .viminfo file, don't store more than
 			" 50 lines of registers, do not highlight searches
+set virtualedit=block   " allow cursor movement on blank space in block mode
 set wildmode=longest,list:longest,list:full " filename tab completion
 
 " don't let netrw mess with directories (interferes with "set hidden" when directories are listed on the command line)
