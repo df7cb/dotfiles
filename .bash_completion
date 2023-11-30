@@ -81,7 +81,7 @@ complete -o default -c fakeroot help ltrace strace sudo tsocks type xargs
 complete -v unset vared
 
 # generic filetype rules
-complete -o default -f -X '*.@(a|bc|o|so)' vi vim
+complete -o default -f -X '*.@(a|bc|o|pdf|so)' vi vim
 complete -o default -f -X '!*.pdf' evince xpdf
 complete -o default -f -X '!*.deb' dpkg-deb
 complete -o default -f -X '!*.dsc' dpkg-source
