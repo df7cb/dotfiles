@@ -26,4 +26,6 @@ fi
 dch -r
 
 origtargz -u
-quilt push -a || [ $? = 2 ]
+if test -d debian/patches; then
+    quilt push -a || [ $? = 2 ]
+fi
