@@ -73,7 +73,7 @@ set trash="=Trash"
 #set use_from
 unset wait_key
 #unset write_bcc
-set xterm_set_titles xterm_title="Mutt@$HOSTNAME: %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b?"
+set xterm_set_titles xterm_title="$my_profile %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b? Mutt"
 
 #set crypt_use_gpgme
 #set crypt_use_pka
