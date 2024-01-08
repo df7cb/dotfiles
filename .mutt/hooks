@@ -6,19 +6,10 @@ unhook send-hook
 folder-hook .			"set narrow_tree=no"
 folder-hook oss.postgresql	"set narrow_tree"
 
-#folder-hook .			'set record="!" trash="=Trash"'
-#folder-hook trash$		'unset trash'
+folder-hook .                   'set xterm_title="$my_profile %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b? Mutt"'
 
 folder-hook debian|lists|mutt	'push ,r'
 folder-hook .			'push <collapse-all>'
-
-# Debian archive messages
-message-hook .			"ignore Sender"
-message-hook '~h X-Katie:'	"unignore Sender"
-
-# Debian spam (http://wiki.debian.org/Teams/ListMaster/ListArchiveSpam/MUAPlugins/Mutt)
-message-hook '~A' 'macro index,pager S "<save-message>=Spam<enter>" "Save spam for processing with SA"'
-message-hook '~h "^List-Id: <[^ \t]+\.lists\.debian\.org>"' 'macro index,pager S "<enter-command>unset resolve<enter><save-message>=Spam<enter><bounce-message>report-listspam@lists.debian.org<enter><enter-command>set resolve<enter>" "report list spam to debian"'
 
 send-hook . "set pgp_autoinline=no mime_forward=ask-yes"
 send-hook '~t (majordomo\|-request\|fleas)@' "unset mime_forward"
