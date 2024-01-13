@@ -14,7 +14,7 @@ use File::Temp qw/tempfile/;
 use Getopt::Std;
 
 my %opts;
-getopts("0c:f:v", \%opts);
+getopts("0c:f:gv", \%opts);
 
 my $argc = @ARGV;
 $opts{f} ||= "-" if $opts{0};
@@ -89,7 +89,11 @@ while(<FH>) {
 			$exit = 1;
 			next;
 		}
-		rename $ARGV[$i], $n or warn "rename $ARGV[$i], $n: $!";
+		if ($opts{g}) {
+			system "git mv '$ARGV[$i]' '$n'";
+		} else {
+			rename $ARGV[$i], $n or warn "rename $ARGV[$i], $n: $!";
+		}
 		next;
 	}
 	die "$file.$.: parse error: $_"; # $_ ends with \n
