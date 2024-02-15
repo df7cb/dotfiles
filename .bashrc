@@ -34,7 +34,8 @@ job='$([ \j -gt 0 ] && echo -n " \jj")'
 cyan='\[\033[0;46m\]' red='\[\033[1;31m\]' bold='\[\033[1m\]' blue='\[\033[34m\]' purple='\[\033[35m\]' reset='\[\033[0m\]'
 screentitle='\033k\u@'$chroot'\h\033\\'
 xtitle='\033]0;\u@'$chroot'\h:\w\007'
-prompt="$cyan[$red\$?$cyan] \\A $bold\\u@$chroot\\h:$blue\w$purple\$PS1_VCS\$PS1_QUILT$cyan$lvl$job"
+ps1_vte='\[$PS1_VTE\]'
+prompt="$ps1_vte$cyan[$red\$?$cyan] \\A $bold\\u@$chroot\\h:$blue\w$purple\$PS1_VCS\$PS1_QUILT$cyan$lvl$job"
 case $TERM in
 linux*|*vt100*|cons25)
 	PS1="$prompt \\l \\\$$reset " ;;
@@ -46,7 +47,7 @@ xterm*|rxvt*|cygwin)
 	PS1="$bold[\$?] \\A \\u@$chroot\\h:\w$lvl$job \\\$$reset " ;;
 esac
 unset cyan red bold blue purple reset
-unset lvl job screentitle xtitle prompt
+unset lvl job screentitle xtitle ps1_vte prompt
 
 PROMPT_COMMAND="ps1_vcs"
 PROMPT_DIRTRIM=4
