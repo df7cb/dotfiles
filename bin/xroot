@@ -1,24 +1,18 @@
 #!/bin/sh
 
-cleanup () {
-	[ "$file" ] && rm -f "$file"
-}
+set -eu
 
-trap "cleanup" 0 1 2 15
+cd $HOME/.local/share/backgrounds/
 
-comic () {
-	file=$(mktemp -t comicXXXXXX)
-	wget -q -O "$file" "http://www.df7cb.de/bin/random-comic"
-	if [ -s "$file" ] ; then
-		display -background navy -backdrop -window root "$file"
-	fi
-	cleanup
-}
-
-comic
-
-if [ "$1" = "loop" ] ; then
-	while sleep 1200 ; do
-		comic
-	done
+# skip download if image was last fetched less than 20min ago
+if [ "$(find sun.jpg -mmin -20)" ]; then
+    exit 0
 fi
+
+flavors="0171 0193 0211 0304 0131 0335 0094 HMIIF 1600 1700 HMIB HMIBC"
+flavor="$(echo $flavors | xargs -n1 | shuf | head -n1)"
+
+wget -q -O sun2.jpg "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_2048_$flavor.jpg"
+mv sun2.jpg sun.jpg
+
+gsettings set org.gnome.desktop.background picture-uri file://$PWD/sun.jpg
