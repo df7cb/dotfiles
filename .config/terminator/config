@@ -1,0 +1,41 @@
+[global_config]
+  focus = mouse
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  inactive_color_offset = 1.0
+  enabled_plugins = CurrDirOpen, APTURLHandler, DebianBugURLHandler, MaidenheadURLHandler, CallsignURLHandler, ManpageURLHandler, SearchPlugin
+[keybindings]
+  zoom_in = <Primary>equal
+  zoom_normal = <Primary>0
+  new_tab = <Shift>Down
+  move_tab_right = <Primary>Right
+  move_tab_left = <Primary>Left
+  next_tab = <Shift>Right
+  prev_tab = <Shift>Left
+  full_screen = ""
+  new_window = <Shift>Up
+  new_terminator = <Primary>Up
+  help = ""
+[profiles]
+  [[default]]
+    background_color = "#ffffff"
+    foreground_color = "#000000"
+    show_titlebar = False
+    scrollback_lines = 2000
+    title_hide_sizetext = True
+    title_use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
+  [[CustomCommandsMenu]]
+    [[[firefox]]]
+      enabled = True
+      name = firefox
+      command = firefox
+      position = 0
