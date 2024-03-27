@@ -11,6 +11,8 @@ done
 unset L
 : ${LANGUAGE:=de:en_US:en}
 export LANG LANGUAGE
+# unset extra variables set by Gnome
+unset LC_ADDRESS LC_MEASUREMENT LC_MONETARY LC_NUMERIC LC_PAPER LC_TELEPHONE LC_TIME
 
 # import TZ from value sent over ssh
 if [ -z "${TZ:-}" ] && [ "${LC_TZ:-}" ]; then
