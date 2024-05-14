@@ -35,7 +35,7 @@ job='$([ \j -gt 0 ] && echo -n " \jj")'
 [ -f /etc/debian_chroot ] && chroot="$(cat /etc/debian_chroot)." && export GPG_TTY="$(tty)"
 cyan='\[\033[0;46m\]' red='\[\033[1;31m\]' bold='\[\033[1m\]' blue='\[\033[34m\]' purple='\[\033[35m\]' reset='\[\033[0m\]'
 screentitle='\033k\u@'$chroot'\h\033\\'
-xtitle='\033]0;\u@'$chroot'\h:\w\007'
+xtitle='\033]0;'$chroot'\h:\w\007'
 ps1_vte='\[$PS1_VTE\]'
 prompt="$ps1_vte$cyan[$red\$?$cyan] \\A $bold\\u@$chroot\\h:$blue\w$purple\$PS1_VCS\$PS1_QUILT$cyan$lvl$job"
 case $TERM in
