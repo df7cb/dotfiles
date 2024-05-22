@@ -290,7 +290,7 @@ abstracts = {
 };
 formats = {
   "fe-common/core" = {
-    pubmsg = "{pubmsgnick $2 {pubnick \00303$0}}$1";
+    pubmsg = "{pubmsgnick $2 {pubnick \00304$0}}$1";
     set_item = "$0 $1";
   };
   "Irssi::Script::joininfo" = {
@@ -298,7 +298,7 @@ formats = {
   };
   "fe-common/irc" = {
     notice_private = "{notice $0}$2";
-    notice_server = "%R{servernotice $0}$1";
+    notice_server = "%m{servernotice $0}$1";
     notice_public = "{notice $0}$2";
   };
   "Irssi::Script::twitter" = {
