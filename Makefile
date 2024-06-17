@@ -26,7 +26,7 @@ $(QUILT):
 
 .PHONY: .priv
 .priv:
-	@if [ -d .priv ] ; then $(MAKE) -C .priv ; fi
+	@if [ -f .priv/Makefile ]; then $(MAKE) -C .priv ; fi
 
 tmp /tmp/$(USER):
 	mkdir -m 0700 $@
