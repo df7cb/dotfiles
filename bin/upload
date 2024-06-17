@@ -30,6 +30,20 @@ if [ -d debian/patches ]; then
 fi
 echo
 
+read -p "Build with binaries? " reply
+case $reply in
+    n) ;;
+    *) dbp "$@" ;;
+esac
+echo
+
+read -p "Build source? " reply
+case $reply in
+    n) ;;
+    *) dbp -S "$@" ;;
+esac
+echo
+
 changes=$(ls -t ../*.changes | head -1)
 printf '\e[1;34m'
 ls -l $changes
@@ -46,6 +60,9 @@ if [ -f debian/source/lintian-overrides ] && grep changelog-should-mention-nmu d
 fi
 if grep -q postgres debian/control* && ! grep -q Rules-Requires-Root debian/control; then
   printf '\e[1;31mRules-Requires-Root: no missing\e[0m\n'
+fi
+if grep FIXME debian/control*; then
+  printf '\e[1;31mFIXME in debian/control\e[0m\n'
 fi
 if [ ! -f debian/gitlab-ci.yml ] && [ ! -f debian/salsa-ci.yml ]; then
   printf '\e[1;31mNo debian/gitlab-ci.yml found\e[0m\n'
@@ -84,7 +101,7 @@ if [ "$GIT" ]; then
 
   # check which branches exist locally
   BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
-  for branch in upstream debian/upstream pristine-lfs pristine-tar; do
+  for branch in upstream upstream/latest debian/upstream pristine-lfs pristine-tar; do
     if git branch | grep -Eqx "^\*? ? ?$branch"; then
       BRANCHES="$BRANCHES $branch"
     fi

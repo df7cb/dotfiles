@@ -33,20 +33,27 @@ if [ -z "$NOUPDATE" ]; then
 		test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/20norecommends
 		test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' > /etc/apt/apt.conf.d/50i18n
 		apt -y update
-		apt -y install build-essential \
+		apt -y install \
+			autopkgtest \
+			build-essential \
+			curl \
 			debhelper \
 			devscripts \
 			dput \
+			exuberant-ctags \
 			fakeroot \
 			git \
+			git-buildpackage \
 			less \
+			lintian \
 			locales \
 			nano- \
 			openssh-client \
 			quilt \
 			sudo \
 			tig \
-			vim
+			vim \
+			wget
 		if ! grep '^%sudo.*NOPASSWD' /etc/sudoers; then
 			sed -i -e 's/^%sudo.*/%sudo	ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 		fi

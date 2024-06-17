@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eux
+set -eu
 
 if test -d debian/patches; then
     quilt pop -a || [ $? = 2 ]
@@ -29,3 +29,5 @@ origtargz -u
 if test -d debian/patches; then
     quilt push -a || [ $? = 2 ]
 fi
+
+upload
