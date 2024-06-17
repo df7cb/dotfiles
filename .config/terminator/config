@@ -13,15 +13,17 @@
   next_tab = <Shift>Right
   prev_tab = <Shift>Left
   full_screen = ""
-  new_window = <Shift>Up
-  new_terminator = <Primary>Up
+  new_window = ""
+  new_terminator = <Shift>Up
   help = ""
 [profiles]
   [[default]]
     background_color = "#ffffff"
     foreground_color = "#000000"
     show_titlebar = False
-    scrollback_lines = 2000
+    scrollback_lines = 10000
+    palette = "#000000:#cd0000:#00cd00:#e5a50a:#0000cd:#c061cb:#00cdcd:#deddda:#404040:#ff8585:#00ff00:#f8e45c:#0000ff:#9141ac:#00ffff:#f6f5f4"
+    word_chars = "-./?%&#_+"
     title_hide_sizetext = True
     title_use_system_font = False
 [layouts]

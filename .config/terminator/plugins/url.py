@@ -21,7 +21,7 @@ class MaidenheadURLHandler(plugin.URLHandler):
     """Maidenhead URL handler"""
     capabilities = ['url_handler']
     handler_name = 'maidenhead_locator'
-    match = '\\b[A-R][A-R][0-9][0-9](?:[A-Xa-x][A-Xa-x])?\\b'
+    match = '\\b[A-R][A-R][0-9][0-9](?:[A-Xa-x][A-Xa-x](?:[0-9][0-9])?)?\\b'
     nameopen = "View locator on map"
     namecopy = "Copy locator URL"
 
