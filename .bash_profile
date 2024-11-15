@@ -1,7 +1,7 @@
 #echo .bash_profile
 
 # update git checkout
-if [ -x /usr/bin/make ] && [ "$(find ~/.git/FETCH_HEAD -mtime +2 2>/dev/null)" ]; then
+if [ -t 0 ] && [ -x /usr/bin/make ] && [ "$(find ~/.git/FETCH_HEAD -mtime +2 2>/dev/null)" ]; then
 	. ~/.bashrc # get GIT_SSL_CAINFO
 	make -C $HOME up
 fi
@@ -9,7 +9,6 @@ fi
 . ~/.bashrc
 
 [ "$TERM" = linux ] && case `tty` in */tty?) unicode_start 2> /dev/null ;; esac
-mesg y 2> /dev/null
 
 if [ -x /usr/bin/finger ] ; then
 	uptime
