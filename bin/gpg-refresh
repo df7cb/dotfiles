@@ -16,4 +16,4 @@ for server in $HOSTS; do
 done
 
 sed -i '/-----BEGIN PGP PUBLIC KEY BLOCK-----/,$d' ~/.plan
-gpg --export -a $PGPKEY3 >> ~/.plan
+gpg --export --export-options export-minimal -a $PGPKEY3 >> ~/.plan
