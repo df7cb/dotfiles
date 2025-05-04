@@ -82,12 +82,10 @@ install-dev: install-profile /etc/apt/preferences.d/debian.pref
 		quilt \
 		rsync \
 		strace \
-		systemd-coredump \
 		tig \
 		tree \
 		vim \
 		vim-gitgutter \
-		w3m \
 		wdiff \
 		wget
 	if ! grep -q '^de_DE.UTF-8 UTF-8' /etc/locale.gen; then \
@@ -140,6 +138,7 @@ install-desktop: install-dev /etc/default/keyboard
 		scdaemon \
 		screen \
 		schroot \
+		systemd-coredump \
 		udiskie  \
 		vim \
 		whois \
@@ -206,24 +205,26 @@ cleanup:
 
 ## update stuff ##
 
+HOMEGIT = git --git-dir=$(HOME)/.homegit --work-tree=$(HOME)
+
 up: update
 update: cleanup
 	@gpg -k 5C48FE6157F49179597087C64C5A6BAB12D2A7AE > /dev/null || gpg --import .plan
-	@if grep -q ChristophBerg .git/config; then sed -i -e 's/ChristophBerg/df7cb/g' .git/config; fi
-	git fetch --tags --force
-	case $$(git describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
+	@if [ -d .git ] && ! [ -d .homegit ]; then mv -v .git .homegit; fi
+	$(HOMEGIT) fetch --tags --force
+	case $$($(HOMEGIT) describe --always --contains master) in signed-head~*) $(MAKE) checkout ;; esac
 	@if [ -d .priv ] ; then $(MAKE) -C .priv update ; fi
 	@MAKEFLAGS= MAKELEVEL= make all
 
 checkout:
-	git verify-tag --raw signed-head 2>&1 | grep 'VALIDSIG 5C48FE6157F49179597087C64C5A6BAB12D2A7AE'
-	git merge --ff-only signed-head
+	$(HOMEGIT) verify-tag --raw signed-head 2>&1 | grep 'VALIDSIG 5C48FE6157F49179597087C64C5A6BAB12D2A7AE'
+	$(HOMEGIT) merge --ff-only signed-head
 
 push:
-	-git tag -d signed-head
-	git tag -s -m "HEAD" signed-head
-	git push
-	git push --tags --force
+	-$(HOMEGIT) tag -d signed-head
+	$(HOMEGIT) tag -s -m "HEAD" signed-head
+	$(HOMEGIT) push
+	$(HOMEGIT) push --tags --force
 
 com: commit
 commit: cleanup
