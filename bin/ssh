@@ -12,6 +12,7 @@ elif [ -L /etc/timezone ]; then
   LC_TZ="${LC_TZ#/usr/share/zoneinfo/}"
 elif [ -L /etc/localtime ]; then
   LC_TZ="$(readlink /etc/localtime)"
+  LC_TZ="${LC_TZ#..}"
   LC_TZ="${LC_TZ#/usr/share/zoneinfo/}"
 fi
 export LC_TZ
