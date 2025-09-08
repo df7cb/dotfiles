@@ -8,7 +8,7 @@ class DebianBugURLHandler(plugin.URLHandler):
     capabilities = ['url_handler']
     handler_name = 'debian_bug'
     match = '#(\\d{6,7})\\b'
-    nameopen = "Open Debian bug"
+    nameopen = "View Debian bug"
     namecopy = "Copy bug URL"
 
     def callback(self, url):

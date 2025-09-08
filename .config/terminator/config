@@ -15,6 +15,7 @@
   full_screen = ""
   new_window = ""
   new_terminator = <Shift>Up
+  layout_launcher = ""
   help = ""
 [profiles]
   [[default]]
