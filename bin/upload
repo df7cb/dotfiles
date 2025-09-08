@@ -55,12 +55,6 @@ echo
 [ -d .git ] && git --no-pager status
 
 # sanity checks
-if [ -f debian/source/lintian-overrides ] && grep changelog-should-mention-nmu debian/source/lintian-overrides; then
-  printf '\e[1;31mObsolete lintian overrides found\e[0m\n'
-fi
-if grep -q postgres debian/control* && ! grep -q Rules-Requires-Root debian/control; then
-  printf '\e[1;31mRules-Requires-Root: no missing\e[0m\n'
-fi
 if grep FIXME debian/control*; then
   printf '\e[1;31mFIXME in debian/control\e[0m\n'
 fi
@@ -86,7 +80,7 @@ if [ "$GIT" ]; then
 
   grep -E '^Vcs|^Homepage' debian/control || :
   if grep -q postgres debian/control*; then
-    URL="https://pgdgbuild.dus.dg-i.net/job/$PACKAGE/build"
+    URL="https://jengus.postgresql.org/job/$PACKAGE/build"
     printf "\e[1m$URL\e[0m\n"
     x-www-browser "$URL" &
   fi
@@ -94,7 +88,7 @@ if [ "$GIT" ]; then
   echo -n "git pull ... "
   git pull --ff-only
 
-  if git status -s | grep -q '^[^?]'; then
+  if git status -s | grep -q '^[^?]. debian/'; then
     git add -u debian
     debcommit
   fi
@@ -121,7 +115,7 @@ if [ "$GIT" ]; then
 fi
 
 echo
-echo -n "$PACKAGE: Upload? "
+echo -n "$PACKAGE: Upload to $distribution? "
 read upload
 
 if [ "$GIT" ]; then

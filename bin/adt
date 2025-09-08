@@ -7,7 +7,7 @@ if ! test -f debian/files; then
   exit 1
 fi
 
-if command -v quilt >/dev/null; then
+if test -d debian/patches && command -v quilt >/dev/null; then
   quilt push -a || [ $? = 2 ]
 fi
 

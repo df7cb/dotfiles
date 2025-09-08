@@ -32,10 +32,13 @@ if [ -z "$NOUPDATE" ]; then
 		test -e /etc/dpkg/dpkg.cfg.d/01unsafeio || echo force-unsafe-io > /etc/dpkg/dpkg.cfg.d/01unsafeio
 		test -e /etc/apt/apt.conf.d/20norecommends || echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/20norecommends
 		test -e /etc/apt/apt.conf.d/50i18n || echo 'Acquire::Languages { "en"; };' > /etc/apt/apt.conf.d/50i18n
+		test -e /etc/apt/apt.conf.d/90keep-downloaded-packages || echo 'Binary::apt::APT::Keep-Downloaded-Packages "1";' > /etc/apt/apt.conf.d/90keep-downloaded-packages
 		apt -y update
 		apt -y install \
 			autopkgtest \
+			architecture-properties \
 			build-essential \
+			blhc \
 			curl \
 			debhelper \
 			devscripts \
@@ -49,6 +52,7 @@ if [ -z "$NOUPDATE" ]; then
 			locales \
 			nano- \
 			openssh-client \
+			pristine-tar \
 			quilt \
 			sudo \
 			tig \

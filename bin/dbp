@@ -76,6 +76,7 @@ while getopts "aAbBSij:nosp:P:" opt 2>/dev/null; do
       ;;
     S)
       ARG="$ARG -S --buildinfo-option=--version"
+      SOURCE_ONLY=yes
       ;;
     p)
       export PG_SUPPORTED_VERSIONS="$OPTARG"
@@ -113,7 +114,10 @@ else
     dpkg-buildpackage $ARG
   dpkg-buildpackage $ARG 2>&1 | tee ../log
 fi
-head -n1 debian/changelog
+
+if [ "${SOURCE_ONLY:-}" != "yes" ] && grep -q '^Architecture: any' debian/control; then
+    blhc ../log
+fi
 
 if [ "${DEBI:-}" ]; then
   sudo debi

@@ -2,9 +2,13 @@
 
 set -eu
 
-if test -d debian/patches; then
-    quilt pop -a || [ $? = 2 ]
+if [ "${1:-}" != "-c" ]; then
+    if test -d debian/patches; then
+        quilt pop -a || [ $? = 2 ]
+    fi
+    dclean
 fi
+
 up
 
 # gbp repo
