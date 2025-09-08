@@ -26,7 +26,7 @@ unset maildir_header_cache_verify
 #set message_cache_clean
 unset help
 #unset hidden_host
-set index_format="%Z %?M?%3Mm&%4c? %[%e.%m.%y %k:%M] %-15.15F %-10.10Y %s"
+set index_format="%Z %?M?%3Mm&%4c? %[%e.%m.%y %k:%M] %-15.15F %s"
 set ispell="aspell --lang=de check"
 #set locale="de_DE.ISO-8859-1"
 unset markers
@@ -36,6 +36,7 @@ unset menu_move_off
 #set menu_scroll
 set mime_forward=ask-yes
 unset move
+set narrow_tree
 set pager_index_lines=5
 set pager_stop
 unset pipe_decode

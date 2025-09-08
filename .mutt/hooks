@@ -3,9 +3,6 @@ unhook folder-hook
 unhook message-hook
 unhook send-hook
 
-folder-hook .			"set narrow_tree=no"
-folder-hook oss.postgresql	"set narrow_tree"
-
 folder-hook .                   'set xterm_title="$my_profile %f %r [%?M?%M/?%m%?n? N:%n?%?o? O:%o?]%?b? Inc:%b? Mutt"'
 
 folder-hook debian|lists|mutt	'push ,r'
