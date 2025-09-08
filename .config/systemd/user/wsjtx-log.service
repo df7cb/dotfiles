@@ -1,7 +1,0 @@
-[Service]
-Type=oneshot
-WorkingDirectory=/home/myon/log/wsjtx
-ExecStart=/home/myon/log/wsjtx/import
-
-[Unit]
-OnFailure=notify-send@wsjtx-log.service

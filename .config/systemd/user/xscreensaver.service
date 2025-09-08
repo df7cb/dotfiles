@@ -1,6 +1,0 @@
-[Service]
-Type=exec
-ExecStart=/usr/bin/xscreensaver -nosplash
-
-[Install]
-WantedBy=default.target
