@@ -1,3 +1,6 @@
+[advice]
+	forceDeleteBranch = false
+
 [alias]
 	au = add -u
 	aud = add -u debian/
@@ -21,7 +24,8 @@
 	import-orig = !gbp import-orig --pristine-tar
 	ls = ls-files
 	npush = -c push.followTags=false push
-	origtargz = !git archive -o ../$(dpkg-parsechangelog -SSource)_$(dpkg-parsechangelog -SVersion).orig.tar.gz --prefix=$(dpkg-parsechangelog -SSource)/ HEAD
+	targz = !git archive -o ../$(basename $PWD)-$(git describe).tar.gz --prefix=$(basename $PWD)/ HEAD
+	origtargz = !git archive -o ../$(dpkg-parsechangelog -SSource)_$(dpkg-parsechangelog -SVersion | sed -e 's/-.*//').orig.tar.gz --prefix=$(dpkg-parsechangelog -SSource)/ HEAD
 	pull = pull --ff-only --stat
 	rb = rebase
 	rbc = rebase --continue
@@ -41,6 +45,9 @@
 
 [color]
 	ui = auto
+
+[commit]
+	cleanup = scissors
 
 [core]
 	autocrlf = false
@@ -63,6 +70,10 @@
 [pull]
 	ff = only
 
+[push]
+	default = current
+	followTags = true
+
 [transfer]
 	fsckObjects = true
 
@@ -79,10 +90,3 @@
 	name = Christoph Berg
 	email = myon@debian.org
 	signingKey = 5C48FE6157F49179597087C64C5A6BAB12D2A7AE
-
-[push]
-	default = current
-	followTags = true
-
-[gitreview]
-	username = myon

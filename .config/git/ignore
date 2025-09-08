@@ -1,3 +1,4 @@
+/debian/autoreconf.*
 /debian/.debhelper/
 /debian/debhelper-build-stamp
 /debian/*.debhelper.log
