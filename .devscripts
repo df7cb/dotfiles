@@ -14,7 +14,8 @@ DGET_VERIFY="no"
 DSCVERIFY_KEYRINGS="$HOME/.gnupg/pubring.gpg"
 RMADISON_URL_MAP_d="https://api.ftp-master.debian.org/madison"
 RMADISON_URL_MAP_pgapt="https://pgdgbuild.dus.dg-i.net/repos/apt/madison/"
-RMADISON_URL_MAP_u="http://people.canonical.com/~ubuntu-archive/madison.cgi"
+#RMADISON_URL_MAP_u="http://people.canonical.com/~ubuntu-archive/madison.cgi"
+RMADISON_URL_MAP_u="https://qa.debian.org/cgi-bin/madison.cgi?table=ubuntu"
 #USCAN_DOWNLOAD=no
 USCAN_SYMLINK=rename
 USCAN_VERBOSE=yes
