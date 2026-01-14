@@ -5,13 +5,17 @@ set -eu
 CLEAN=yes
 GIT=git
 PACKAGE=$(dpkg-parsechangelog -SSource)
+BUILD_BINARY="yes"
+BUILD_SOURCE="yes"
 
-while getopts "ce:gh:" opt ; do
+while getopts "ce:gh:sS" opt ; do
   case $opt in
     c) CLEAN="" ;;
     e) DELAYED="$OPTARG" ;;
     g) GIT="" ;;
     h) UPLOAD_HOST="$OPTARG" ;;
+    s) BUILD_SOURCE="" ;;
+    S) BUILD_BINARY="" ;;
     *) exit 5 ;;
   esac
 done
@@ -30,19 +34,23 @@ if [ -d debian/patches ]; then
 fi
 echo
 
-read -p "Build with binaries? " reply
-case $reply in
-    n) ;;
-    *) dbp "$@" ;;
-esac
-echo
+if [ "$BUILD_BINARY" ]; then
+    read -p "Build binaries? " reply
+    case $reply in
+        n) ;;
+        *) dbp "$@" ;;
+    esac
+    echo
+fi
 
-read -p "Build source? " reply
-case $reply in
-    n) ;;
-    *) dbp -S "$@" ;;
-esac
-echo
+if [ "$BUILD_SOURCE" ]; then
+    read -p "Build source? " reply
+    case $reply in
+        n) ;;
+        *) dbp -S "$@" ;;
+    esac
+    echo
+fi
 
 changes=$(ls -t ../*.changes | head -1)
 printf '\e[1;34m'
@@ -83,6 +91,9 @@ if [ "$GIT" ]; then
     URL="https://jengus.postgresql.org/job/$PACKAGE/build"
     printf "\e[1m$URL\e[0m\n"
     x-www-browser "$URL" &
+    #URL="http://10.0.0.35:8080/job/deb-$PACKAGE/build"
+    #printf "\e[1m$URL\e[0m\n"
+    #firefox -P cybertec $URL &
   fi
 
   echo -n "git pull ... "

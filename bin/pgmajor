@@ -2,17 +2,33 @@
 
 set -eux
 
-qpop -a || [ $? = 2 ]
+PGMAJOR="18"
+
+if test -f debian/patches/series; then
+    qpop -a || [ $? = 2 ]
+fi
 up
 
-if ! grep 'Upload for PostgreSQL 16' debian/changelog; then
-	dch "Upload for PostgreSQL 16."
+if ! grep "Upload for PostgreSQL $PGMAJOR" debian/changelog; then
+    PACKAGE=$(dpkg-parsechangelog -SSource)
+    BUG=$(grep "^$PACKAGE " ~/postgresql/bugs.$PGMAJOR | cut -d ' ' -f 2)
+    if [ "$BUG" ]; then
+        dch "Upload for PostgreSQL $PGMAJOR. (Closes: #$BUG)"
+    else
+        dch "Upload for PostgreSQL $PGMAJOR."
+    fi
 fi
 
-if egrep "^[D ].*postgresql-PGVERSION" debian/control.in; then
-    sed -i -e '/^[D ]/ s/postgresql-PGVERSION/${postgresql:Depends}/' debian/control.in
-    dch "Use \${postgresql:Depends}."
+if grep -q 'Architecture: any' debian/control.in && ! egrep "architecture-is-64-bit" debian/control.in; then
+    sed -i -e '/Build-Depends:/a architecture-is-64-bit <!pkg.postgresql.32-bit>,' debian/control.in
+    sed -i -e 's/^architecture-is-64-bit/ &/' debian/control.in
+    dch "Restrict to 64-bit architectures."
 fi
+
+#if egrep "^[D ].*postgresql-PGVERSION" debian/control.in && ! grep -q 'postgresql-PGVERSIONS' debian/control.in; then
+#    sed -i -e '/^[D ]/ s/postgresql-PGVERSION/${postgresql:Depends}/' debian/control.in
+#    dch "Use \${postgresql:Depends}."
+#fi
 
 #if ! grep 'postgresql-.*all (>= 21.' debian/control.in; then
 #	sed -i -e 's/postgresql[^,]*-all[^,]*/postgresql-all (>= 217~)/' debian/control*
@@ -25,13 +41,22 @@ fi
 #	fi
 #fi
 
-if ! grep '^Standards-Version: 4.6.2' debian/control*; then
-	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.6.2/' debian/control*
+if grep -q "postgresql-all" debian/control.in && ! grep -q nocheck debian/control.in; then
+    sed -i -e 's/postgresql-all.*/postgresql-server-dev-all,\n postgresql-all <!nocheck>,/' debian/control.in
+    dch "Mark postgresql-all as <!nocheck>."
 fi
 
-if ! grep '^Rules-Requires-Root:' debian/control*; then
-	sed -i -e '/^Standards-Version/a Rules-Requires-Root: no' debian/control*
-	dch "R³: no."
+if ! grep -q postgresql:Breaks debian/control.in; then
+    sed -i -e '/^Description:/ i Breaks:\n ${postgresql:Breaks},' debian/control.in
+    dch "Add \${postgresql:Breaks}."
+fi
+
+if ! grep '^Standards-Version: 4.7.2' debian/control*; then
+	sed -i -e 's/^Standards-Version:.*/Standards-Version: 4.7.2/' debian/control*
+fi
+
+if grep '^Rules-Requires-Root: no' debian/control*; then
+	sed -i -e '/^Rules-Requires-Root: no/d' debian/control*
 fi
 
 if ! grep 'debhelper-compat (= 13)' debian/control*; then
@@ -40,9 +65,9 @@ if ! grep 'debhelper-compat (= 13)' debian/control*; then
 	dch "DH 13."
 fi
 
-if grep postgresql-server-dev-all debian/tests/control; then
-	sed -i -e 's/postgresql-server-dev-all[^,]*/make/' debian/tests/control*
-	dch "debian/tests: Use 'make' instead of postgresql-server-dev-all."
+if grep -w make debian/tests/control; then
+	sed -i -e 's/make/postgresql-common-dev/' debian/tests/control*
+	dch "debian/tests: Depend on postgresql-common-dev instead of 'make'."
 fi
 
 if grep supported-versions debian/tests/*; then
@@ -55,14 +80,19 @@ if grep 'github.*/releases' debian/watch; then
 	dch "debian/watch: Look at GitHub tags instead of releases."
 fi
 
-pg_buildext checkcontrol
+for file in debian/control.in debian/tests/control*; do
+    wrap-and-sort -ast -f $file
+done
+
+pg_buildext updatecontrol
 
 if grep UNRELEASED debian/changelog; then
-	EDITOR=touch dch -r
+	EDITOR=touch dch -r --distribution unstable
 	rm -f '+1'
 fi
 
 vi debian/changelog debian/rules debian/control.in debian/tests/*
 
-#dbp -a
-#upload
+git diff
+
+upload -s
