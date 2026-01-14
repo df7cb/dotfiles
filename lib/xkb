@@ -1,0 +1,70 @@
+/usr/share/X11/xkb/symbols/us:
+
+partial alphanumeric_keys
+xkb_symbols "myon" {
+
+  include "us"
+  name[Group1]= "English (Myon)";
+
+  key <TLDE> { [ grave, asciitilde, dead_grave, dead_tilde ] };
+  key <AE01> { [ 1, exclam, onesuperior, exclamdown ] };
+  key <AE02> { [ 2, at, twosuperior, onehalf ] };
+  key <AE03> { [ 3, numbersign, threesuperior, threequarters ] };
+  key <AE04> { [ 4, dollar, sterling, onequarter ] };
+  key <AE05> { [ 5, percent, plusminus ] };
+  key <AE06> { [ 6, asciicircum, notsign, dead_circumflex ] };
+  key <AE07> { [ 7, ampersand, braceleft ] };
+  key <AE08> { [ 8, asterisk, bracketleft ] };
+  key <AE09> { [ 9, parenleft, bracketright ] };
+  key <AE10> { [ 0, parenright, braceright ] };
+  key <AE11> { [ minus, underscore, hyphen ] };
+  key <AE12> { [ equal, plus, backslash, plusminus ] };
+  key <TAB>  { [ Tab, ISO_Left_Tab, Multi_key ] };
+  key <AD01> { [ q, Q, at ] };
+  key <AD03> { [ e, E, EuroSign, currency ] };
+  key <AD04> { [ r, R, r, registered ] };
+  key <AD05> { [ t, T, club ] };
+  key <AD07> { [ u, U, udiaeresis, Udiaeresis ] };
+  key <AD09> { [ o, O, odiaeresis, Odiaeresis ] };
+  // for whatever reason, there is no XK_spade in keysymdef.h, pick something else and remap that in urxvt
+  key <AD10> { [ p, P, maltesecross, Greek_pi ] };
+  key <AD11> { [ bracketleft, braceleft, lessthanequal ] };
+  key <AD12> { [ bracketright, braceright, greaterthanequal ] };
+  key <AC01> { [ a, A, adiaeresis, Adiaeresis ] };
+  key <AC02> { [ s, S, ssharp, section ] };
+  key <AC03> { [ d, D, degree, dead_abovering ] };
+  key <AC06> { [ h, H, heart ] };
+  key <AC08> { [ k, K, diamond ] };
+  key <AC10> { [ semicolon, colon, dead_diaeresis, dead_diaeresis ] };
+  key <AC11> { [ apostrophe, quotedbl, dead_acute, dead_diaeresis ] };
+  key <BKSL> { [ backslash, bar, NoSymbol, brokenbar ] };
+  key <LSGT> { [ backslash, bar, NoSymbol, brokenbar ] };
+  key <AB03> { [ c, C, cent, dead_cedilla ] };
+  key <AB04> { [ v, V, singlelowquotemark, doublelowquotemark ] };
+  key <AB05> { [ b, B, leftsinglequotemark, leftdoublequotemark ] };
+  key <AB06> { [ n, N, rightsinglequotemark, rightdoublequotemark ] };
+  key <AB07> { [ m, M, mu, Greek_OMEGA ] };
+  key <AB08> { [ comma, less, NoSymbol, guillemotleft ] };
+  key <AB09> { [ period, greater, periodcentered, guillemotright ] };
+  key <AB10> { [ slash, question, questiondown, questiondown ] };
+
+  include "level3(ralt_switch)"
+};
+
+
+/usr/share/X11/xkb/rules/evdev.xml:
+
+        <variant>
+          <configItem>
+            <name>alt-intl</name>
+            <description>English (US, alt. intl.)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>myon</name>
+            <description>English (US, Myon)</description>
+          </configItem>
+        </variant>
+
+... neu einloggen
