@@ -17,7 +17,7 @@ set list		" show tabs et al.
 set lcs=tab:·\ ,trail:·	" how to show tabs
 set mouse=		" no mouse please
 set nojoinspaces	" \frenchspacing
-set nrformats=hex	" drop octal number format
+set nrformats=unsigned,hex " numbers are unsigned; drop octal number format
 set ruler		" Show the line and column numbers of the cursor 
 set rulerformat=%22(%n:%l/%L,%c%V%=%P%)
 set scrolloff=3		" always show n lines before and after current line
