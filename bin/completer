@@ -71,6 +71,7 @@ case $PROG in
 	for unit in $(systemctl --user --all --no-legend | awk '{ print $1 }' | grep "^$PREFIX"); do
 	    echo "${unit%.service}"
 	done
+	echo start stop status reload restart enable disable | xargs -n1 | grep "^$PREFIX"
 	;;
 
     *)
