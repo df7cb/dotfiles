@@ -61,7 +61,7 @@ macro	index	,=	"<tag-pattern>~=<enter><tag-prefix><purge-message>"	"Purge duplic
 macro	index	,r	"l~(!~R|~F)<enter><esc>V"	"Limit to threads with unread meassages"
 macro	index	,p	"l~(~p|~P)<enter>"	"Limit to threads with my mail"
 
-macro	pager	S	"<exit>S" "Save spam for processing with SA"
-macro	index	S	"<save-message>=Spam<enter>" "Save spam for processing with SA"
+macro	pager	S	"<exit>S" "Save spam message to Junk folder"
+macro	index	S	"<save-message>=Junk<enter>" "Save spam message to Junk folder"
 
 #macro	index	,d	"|listmanage_mailman -d<enter><purge-message>"
