@@ -2,6 +2,15 @@
 
 set -eu
 
+ask () {
+    echo
+    read -p "$1 " reply
+    case $reply in
+        n) return 1 ;;
+        *) return 0 ;;
+    esac
+}
+
 if [ "${1:-}" != "-c" ]; then
     if test -d debian/patches; then
         quilt pop -a || [ $? = 2 ]
@@ -11,6 +20,14 @@ if [ "${1:-}" != "-c" ]; then
 fi
 
 up
+
+if grep -q "version=" debian/watch; then
+    cat debian/watch
+    if ask "Upgrade debian/watch?"; then
+        uscan --update-watchfile || :
+        vi debian/watch
+    fi
+fi
 
 # gbp repo
 if git ls | grep -qv '^debian/'; then

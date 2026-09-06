@@ -22,34 +22,47 @@ done
 # shift away args
 shift $(($OPTIND - 1))
 
+ask () {
+    echo
+    read -p "$1 " reply
+    case $reply in
+        n) return 1 ;;
+        *) return 0 ;;
+    esac
+}
+
 distribution=$(dpkg-parsechangelog -Sdistribution)
 if [ "$distribution" = "UNRELEASED" ]; then
   echo "Distribution is UNRELEASED. Fix that before uploading."
   exit 1
 fi
 
+S_V=$(dpkg-query --show --showformat '${Version}' debian-policy || :)
+S_V=${S_V%.*}
+if ! grep -q "^Standards-Version: $S_V" debian/control; then
+    grep "^Standards-Version:" debian/control
+    ask "Bump Standards-Version?" && sed -i -e "s/^Standards-Version: .*/Standards-Version: $S_V/" debian/control*
+fi
+
+if grep -q "version=" debian/watch; then
+    cat debian/watch
+    if ask "Upgrade debian/watch?"; then
+        uscan --update-watchfile || :
+        vi debian/watch
+    fi
+fi
+
 [ "$CLEAN" ] && dclean
 if [ -d debian/patches ]; then
     qpop -a || [ $? = 2 ]
 fi
-echo
 
 if [ "$BUILD_BINARY" ]; then
-    read -p "Build binaries? " reply
-    case $reply in
-        n) ;;
-        *) dbp "$@" ;;
-    esac
-    echo
+    ask "Build binaries?" && dbp "$@"
 fi
 
 if [ "$BUILD_SOURCE" ]; then
-    read -p "Build source? " reply
-    case $reply in
-        n) ;;
-        *) dbp -S "$@" ;;
-    esac
-    echo
+    ask "Build source?" && dbp -S "$@"
 fi
 
 changes=$(ls -t ../*.changes | head -1)
@@ -81,10 +94,16 @@ esac
 export GPG_TTY="$(tty)"
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
-if [ "$GIT" ]; then
-  echo
-  echo -n "$PACKAGE: Push? "
-  read push
+if [ "$GIT" ] && ask "$PACKAGE: Push?"; then
+  echo -n "git pull ... "
+  git pull --ff-only
+
+  if git status -s | grep -q '^[^?]. debian/'; then
+    git add -u debian
+    debcommit
+  fi
+
+  git debpush
 
   grep -E '^Vcs|^Homepage' debian/control || :
   if grep -q postgres debian/control*; then
@@ -95,49 +114,19 @@ if [ "$GIT" ]; then
     #printf "\e[1m$URL\e[0m\n"
     #firefox -P cybertec $URL &
   fi
-
-  echo -n "git pull ... "
-  git pull --ff-only
-
-  if git status -s | grep -q '^[^?]. debian/'; then
-    git add -u debian
-    debcommit
-  fi
-
-  # check which branches exist locally
-  BRANCHES=$(git branch | grep '^\*' | cut -d ' ' -f 2)
-  for branch in upstream upstream/latest debian/upstream pristine-lfs pristine-tar; do
-    if git branch | grep -Eqx "^\*? ? ?$branch"; then
-      BRANCHES="$BRANCHES $branch"
-    fi
-  done
-  # check which branches need pushing
-  for branch in $BRANCHES; do
-    mine=$(git rev-parse $branch)
-    origin=$(git rev-parse origin/$branch 2> /dev/null || :) # branch might not exist yet
-    if [ "$mine" != "$origin" ]; then
-      PUSH_BRANCHES="${PUSH_BRANCHES:+$PUSH_BRANCHES }$branch"
-    fi
-  done
-  if [ "${PUSH_BRANCHES:-}" ]; then
-    echo -n "git npush origin $PUSH_BRANCHES ... "
-    git npush origin $PUSH_BRANCHES
-  fi
 fi
 
-echo
-echo -n "$PACKAGE: Upload to $distribution? "
-read upload
-
-if [ "$GIT" ]; then
-  version=$(dpkg-parsechangelog -SVersion)
-  tag="debian/$(echo $version | tr ':~' '%_')"
-  if ! git tag | grep -q "^$tag$"; then
-    ( set -x; git tag -s -m "tagging $PACKAGE $version" "$tag" )
-  fi
-  echo -n "git push ... "
-  git push
+if ask "$PACKAGE: Upload to $distribution?"; then
+    if [ "$GIT" ]; then
+        version=$(dpkg-parsechangelog -SVersion)
+        tag="debian/$(echo $version | tr ':~' '%_')"
+        if ! git tag | grep -q "^$tag$"; then
+            ( set -x; git tag -s -m "tagging $PACKAGE $version" "$tag" )
+        fi
+        echo -n "git push ... "
+        git push
+    fi
+    set -x
+    debsign $changes
+    dput ${DELAYED:+-e $DELAYED} ${UPLOAD_HOST:-} $changes
 fi
-set -x
-debsign $changes
-dput ${DELAYED:+-e $DELAYED} ${UPLOAD_HOST:-} $changes

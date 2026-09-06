@@ -46,8 +46,9 @@ case $DIST in
 esac
 
 export DEB_CHECK_COMMAND="lintian" PG_UPDATECONTROL="yes"
-SHIFT=1
+PARALLEL="-j$(nproc)"
 
+SHIFT=1
 while getopts "aAbBSij:nosp:P:" opt 2>/dev/null; do
   case $opt in
     a)
@@ -97,32 +98,55 @@ shift $((OPTIND - SHIFT))
 
 # get orig tarball
 if [ -z "${BINARY_ONLY:-}" ] && [ -x /usr/bin/origtargz ]; then
-  origtargz || :
+  (
+    set -x
+    origtargz || :
+  )
 fi
 
 trap "test -s ../log && gzip -9 ../log" EXIT
 
-rm -f ../log ../log.gz
-if command -v script >/dev/null; then
-  script -e -c "echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
-    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
-    dpkg-buildpackage $ARG ${PARALLEL:=-j$(nproc)}; \
-    dpkg-buildpackage $ARG $PARALLEL" ../log
-else
-  echo ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
-    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+if [ "${SOURCE_ONLY:-}" ]; then
+  # don't delete last (binary) build log here
+  (
+    set -x
     dpkg-buildpackage $ARG
-  dpkg-buildpackage $ARG 2>&1 | tee ../log
+  )
+  exit
 fi
 
-if [ "${SOURCE_ONLY:-}" != "yes" ] && grep -q '^Architecture: any' debian/control; then
+if command -v script >/dev/null; then
+  rm -f ../log ../log.gz
+  script -e -c "set -x; ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+    dpkg-buildpackage $ARG $PARALLEL" ../log
+else
+  rm -f ../log ../log.gz
+  (
+    set -x
+    ${DEB_BUILD_OPTIONS:+DEB_BUILD_OPTIONS=$DEB_BUILD_OPTIONS} \
+    ${DEB_CHECK_COMMAND:+DEB_CHECK_COMMAND=$DEB_CHECK_COMMAND} \
+    dpkg-buildpackage $ARG 2>&1
+  ) | tee ../log
+fi
+
+if grep -q '^Architecture: .*any' debian/control && [ "${DEB_CHECK_COMMAND:-}" ]; then
+  (
+    set -x
     blhc ../log
+  ) || :
 fi
 
 if [ "${DEBI:-}" ]; then
-  sudo debi
+  (
+    set -x
+    sudo debi
+  )
 fi
 
 if [ "${AUTOPKGTEST:-}" ]; then
-  adt
+  (
+    set -x
+    adt
+  )
 fi

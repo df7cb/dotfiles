@@ -6,6 +6,7 @@
 	aud = add -u debian/
 	br = branch
 	branches = branch
+	brd = "!set -x; git push ${2:-origin} :$1; git br -D $1; :"
 	ci = commit -v
 	cia = commit -v -a
 	cid = commit -v debian/

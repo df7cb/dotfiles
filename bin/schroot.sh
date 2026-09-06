@@ -39,6 +39,7 @@ if [ -z "$NOUPDATE" ]; then
 			architecture-properties \
 			build-essential \
 			blhc \
+			ccache \
 			curl \
 			debhelper \
 			devscripts \
@@ -55,6 +56,7 @@ if [ -z "$NOUPDATE" ]; then
 			pristine-tar \
 			quilt \
 			sudo \
+                        tree \
 			tig \
 			vim \
 			wget
@@ -82,7 +84,7 @@ fi
 if [ "${EXPERIMENTAL:-}" ]; then
 	schroot -c session:$SESSION -u root -r <<-EOF
 		set -ex
-		sed -i -e '/sid/ { p; s/sid/experimental/ }' /etc/apt/sources.list
+		sed -i -e 's/sid/sid experimental/' /etc/apt/sources.list.d/debian.sources
 		apt -y update
 	EOF
 fi
