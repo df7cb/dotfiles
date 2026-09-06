@@ -1,19 +1,10 @@
 # rm -f .bash* .profile && git clone https://github.com/df7cb/dotfiles.git . && make && . .bashrc
 
-DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary bin/dpatch_ bin/dunpatch
+DCLEAN = bin/dbuild bin/dconfigure bin/dinstall bin/dbinary
 QUILT = bin/qadd bin/qapplied bin/qdelete bin/qdiff bin/qedit bin/qimport bin/qnew bin/qpop bin/qpush bin/qrefresh bin/qtop
-all: cleanup .less .xinitrc bin/ctar .priv $(DCLEAN) $(QUILT) .ssh/config tmp
+all: cleanup bin/ctar .priv $(DCLEAN) $(QUILT) tmp
 
 ## targets ##
-
-.less: .lesskey
-	lesskey
-
-.ssh/config:
-	ln -s config.public $@
-
-.xinitrc:
-	ln -s .xsession .xinitrc
 
 bin/ctar:
 	ln -s ttar bin/ctar
