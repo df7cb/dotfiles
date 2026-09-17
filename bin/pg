@@ -1,0 +1,70 @@
+#!/bin/sh
+
+set -eu
+
+if [ "${1:-}" ]; then
+    action="$1"
+    shift
+else
+    action="build"
+fi
+
+BUILD=$PWD/../build
+PREFIX=$PWD/../inst
+PGBINDIR=$PREFIX/bin
+PATH=$PGBINDIR:$PATH
+export PGDATA=$PWD/../data
+export PGHOST=/tmp
+export PGPORT=5430
+export PG_CONFIG=$PGBINDIR/pg_config
+export LANG=C.UTF-8
+
+set -x
+
+case $action in
+    # building
+    setup)
+        meson setup --prefix "$PREFIX" $BUILD "$@"
+        ;;
+    build)
+        test -d $BUILD || $0 setup
+        ninja -C $BUILD "$@"
+        ;;
+    build*|test*|install*)
+        ninja -C $BUILD $action "$@"
+        ;;
+    clean)
+        test -d $PGDATA && pg_ctl stop || :
+        rm -rf $BUILD $PREFIX $PGDATA
+        ;;
+
+    # running
+    initdb)
+        test -d $PGDATA && pg_ctl stop || :
+        rm -rf $PGDATA
+        initdb "$@"
+        ;;
+    pg_ctl)
+        pg_ctl "$@"
+        ;;
+    start|run)
+        test -d $PGDATA || initdb
+        pg_ctl -o "-k $PGHOST -p $PGPORT" "$@" start
+        ;;
+    stop)
+        pg_ctl "$@" stop
+        ;;
+    restart)
+        test -d $PGDATA || initdb
+        pg_ctl "$@" restart
+        ;;
+
+    bench)
+        test -f $PGDATA/postmaster.pid || $0 start
+        pgbench -c 10 -T 60 --progress=10 "$@"
+        ;;
+
+    *)
+        $action "$@"
+        ;;
+esac
