@@ -6,4 +6,8 @@ if [ -S "${SSH_AUTH_SOCK:-}" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/auth_sock" ]
   SSH_AUTH_SOCK="$HOME/.ssh/auth_sock"
 fi
 
-exec screen -R "$@"
+if command -v tmux > /dev/null; then
+    exec tmux new -A "$@"
+else
+    exec screen -R "$@"
+fi

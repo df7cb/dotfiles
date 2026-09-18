@@ -43,7 +43,7 @@ linux*|*vt100*|cons25)
 	PS1="$prompt \\l \\\$$reset " ;;
 screen*)
 	PS1="\\[$screentitle$xtitle\\]$prompt \\\$$reset " ;;
-xterm*|rxvt*|cygwin)
+xterm*|rxvt*|tmux*|cygwin)
 	PS1="\\[$xtitle\\]$prompt \\\$$reset " ;;
 *)
 	PS1="$bold[\$?] \\A \\u@$chroot\\h:\w$lvl$job \\\$$reset " ;;
