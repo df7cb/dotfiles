@@ -3,7 +3,7 @@
   scroll_tabbar = True
   homogeneous_tabbar = False
   inactive_color_offset = 1.0
-  enabled_plugins = CurrDirOpen, APTURLHandler, DebianBugURLHandler, MaidenheadURLHandler, CallsignURLHandler, ManpageURLHandler, SearchPlugin
+  enabled_plugins = CurrDirOpen, APTURLHandler, CVEURLHandler, DebianBugURLHandler, MaidenheadURLHandler, CallsignURLHandler, ManpageURLHandler, SearchPlugin
 [keybindings]
   zoom_in = <Primary>equal
   zoom_normal = <Primary>0
