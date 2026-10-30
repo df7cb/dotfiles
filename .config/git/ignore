@@ -5,8 +5,10 @@
 /debian/files
 /debian/*.substvars
 /debian/tmp/
+*.orig
 /.pc
 __pycache__/
-.swp
-.*.swp
+*.rej
 .*.swo
+.*.swp
+.swp

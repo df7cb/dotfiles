@@ -27,6 +27,7 @@
 	npush = -c push.followTags=false push
 	targz = !git archive -o ../$(basename $PWD)-$(git describe).tar.gz --prefix=$(basename $PWD)/ HEAD
 	origtargz = !git archive -o ../$(dpkg-parsechangelog -SSource)_$(dpkg-parsechangelog -SVersion | sed -e 's/-.*//').orig.tar.gz --prefix=$(dpkg-parsechangelog -SSource)/ HEAD
+	pfush = push --force-with-lease
 	pull = pull --ff-only --stat
 	rb = rebase
 	rbc = rebase --continue
